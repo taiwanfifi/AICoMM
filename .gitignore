@@ -1,0 +1,48 @@
+# System files
+.DS_Store
+*.swp
+*~
+._.DS_Store
+
+# Backup
+backup*/
+*.backup
+*.bak
+
+# IDE
+.vscode/
+.idea/
+*.code-workspace
+
+# Temporary
+temp/
+tmp/
+*.tmp
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+ENV/
+
+# LaTeX
+*.aux
+*.log
+*.out
+*.toc
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+
+# Large binary files
+*.pdf
+*.mp4
+
+# Claude Code local config
+.claude/
+
+# OS
+Thumbs.db
