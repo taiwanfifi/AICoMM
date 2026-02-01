@@ -118,7 +118,7 @@ Formulation   Design         Design        & Simulation     & Analysis   Writing
 #### Week 11-12（4/16 - 4/30）
 - [ ] **Attention-Based Filtering**
   - DeepSeek DSA 的應用
-  - Lightning Indexer → Semantic Pilot Channel
+  - Semantic Indexer (DSA Lightning) → Semantic Pilot Channel
   - Top-k selection mechanism
   - 輸出：`03-technical-design/attention-filtering.md`
 

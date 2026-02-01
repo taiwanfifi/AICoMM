@@ -217,6 +217,72 @@ Agent 連續更新內部狀態，但 99% 的狀態變化其實不重要。
 我們是在研究：
 **「Agent 認知狀態是否需要共享，以及共享的最小充分條件」**
 
+## 兩種具體表示：Latent Mode vs. Structured Mode
+
+> **重要澄清**：上面的數學定義是抽象層（理論），實作時 Semantic Token 有兩種具體編碼方式，
+> 對應不同的使用場景。兩者都是 Semantic Token，只是序列化格式不同。
+
+### Latent Mode（KV-Cache Delta）
+
+**定義**：直接傳輸 Transformer 內部狀態的差量
+
+```
+Z_t = {(i, Δh_{t,i}) : a_{t,i} > τ}
+```
+
+**使用場景**：
+- 兩個 Agent 需要深度協作（如共同推理、聯合規劃）
+- Edge model 與 Cloud model 之間的 KV-Cache 同步
+- 需要 receiver 直接 apply delta 到自己的 latent space
+
+**編碼方式**：
+- FP8/FP16 量化 → ZSTD 壓縮 → 二進位傳輸
+- 詳見 `../06-implementation/ssc-pipeline-spec.md` 中的 TokenEncoder
+
+### Structured Mode（Protobuf 結構化訊息）
+
+**定義**：將語義概念編碼為結構化欄位
+
+```protobuf
+SemanticToken {
+  type: FIRE,
+  bbox: (x, y, w, h),
+  confidence: 0.92,
+  attributes: {...}
+}
+```
+
+**使用場景**：
+- Edge model 已經完成推理，只需回報高階結論
+- Receiver 不需要直接操作 latent space
+- 跨模態、跨模型的互通（不同架構的 Agent 之間）
+
+**編碼方式**：
+- Protobuf 序列化 → 量化 → ZSTD 壓縮
+- 詳見 `../03-technical-design/token-encoding.md`
+
+### 兩者的關係
+
+```
+抽象定義（數學層）
+   Z_t = Compress(ΔS_t, threshold=τ)
+         ↓
+    ┌────┴────┐
+    ↓         ↓
+Latent Mode   Structured Mode
+(KV-Cache Δ)  (Protobuf 結構化)
+    ↓         ↓
+深度協作場景   高階報告場景
+```
+
+**選擇原則**：
+| 條件 | 選擇 | 原因 |
+|------|------|------|
+| 兩端使用同系列模型 | Latent Mode | 可以直接 inject KV-Cache delta |
+| 兩端使用不同架構模型 | Latent Mode + Neural Projector | 需要維度對齊（512→4096）|
+| Edge 已完成推理只需報結論 | Structured Mode | 更小、更通用 |
+| 需要跨多個異質 Agent 廣播 | Structured Mode | 不依賴特定模型架構 |
+
 ## 下一步
 1. 實現 Semantic Token 的具體編碼方案
 2. 設計 KV-cache delta 的壓縮演算法

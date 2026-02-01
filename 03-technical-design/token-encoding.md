@@ -8,7 +8,11 @@
 
 ## Overview
 
-前面文档定义了Semantic Token的**概念**（参见 `semantic-token-definition.md`），但缺少从concept到binary的**完整pipeline**。本文档补充工程实现细节，解决：
+前面文档定义了Semantic Token的**概念**（参见 `../02-core-framework/semantic-token-definition.md`），但缺少从concept到binary的**完整pipeline**。本文档补充工程实现细节，解决：
+
+> **注意**：本文档描述的是 **Structured Mode**（结构化编码），适用于 Edge 已完成推理、只需传输高层语义结论的场景。
+> 另一种 **Latent Mode**（KV-Cache delta 传输）的编码方式见 `06-implementation/ssc-pipeline-spec.md`。
+> 两种模式的选择原则见 `../02-core-framework/semantic-token-definition.md` 的「兩種具體表示」章节。
 
 1. **如何序列化**？（Protobuf schema）
 2. **如何量化**？（FP32 → FP16/FP8/INT4）
@@ -477,7 +481,7 @@ def cloud_receive_fire_token(compressed_packet):
 | **CLIP embedding** (10fps) | 0.4 Mbps = 50 KB/s | 8 ms per embedding | Feature-based |
 | **Semantic Token** (event-driven) | 0.004 Mbps = 0.5 KB/s | **0.32 ms per token** | **Silence when no fire** |
 
-**Key Insight**: Event-driven transmission (silence during normal operation) achieves **1250x reduction** vs. H.264 in typical scenarios (fire occurs <10% of time).
+**Key Insight**: Event-driven transmission (silence during normal operation) achieves **~1250x reduction** vs. H.264 in typical scenarios (fire occurs <10% of time). 各阶段详细分解见 `../05-evaluation/cost-model.md`「Bandwidth Savings Breakdown」。
 
 ---
 
@@ -624,8 +628,9 @@ Quantized token (200 bytes) (-50%)
   ↓ ZSTD compression
 Compressed token (60 bytes) (-70%)
 
-Total: 50KB → 0.06KB = 833x reduction
-(加上 event-driven silence: 8333x reduction)
+Total: 50KB → 0.06KB = 833x reduction (单一 pipeline 极端值)
+(加上 event-driven silence: 可达数千倍)
+注：各阶段节省倍率的完整分解见 ../05-evaluation/cost-model.md「Bandwidth Savings Breakdown」
 ```
 
 ---

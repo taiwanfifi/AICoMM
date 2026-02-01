@@ -5,17 +5,25 @@
 ## 核心技術
 Attention-Based Filtering: 使用 Attention 機制決定哪些 semantic token 值得傳輸。
 
-## 待創建的文件
-- [ ] `attention-filtering.md`: 基於 DeepSeek DSA 的設計（從 t6.md 重構）
-- [ ] `token-representation.md`: Token 的編碼與解碼
-- [ ] `control-plane.md`: Control Plane 協定
-- [ ] `data-plane.md`: Data Plane 協定
-- [ ] `implementation-notes.md`: 實現細節
+## 文件清單
 
-## 參考資料
-- `t6-original-reference.md`: 原始的 t6.md（需要重構）
+| 文件 | 內容 | 狀態 |
+|------|------|------|
+| `attention-filtering.md` | Semantic Indexer（基於 DSA Lightning）、雙通道架構 | ✅ 完成 |
+| `token-encoding.md` | Protobuf schema、量化、壓縮（Structured Mode） | ✅ 完成 |
+| `state-integration.md` | Receiver 端整合：Anchor 對齊 + Neural Projector | ✅ 完成 |
+| `kv-cache-alignment.md` | 異質 KV-Cache 維度對齊（512→4096） | ✅ 完成（含理論修復） |
+| `t6-original-reference.md` | 原始 t6.md（僅供歷史參考，不再修改） | 📁 Archive |
 
-## 下一步
-1. 重構 t6.md，強調通訊角度而非 AI 角度
-2. 設計具體的協定流程
-3. 準備 pseudocode
+## 未創建但已被其他文件涵蓋的內容
+
+- `token-representation.md` → 內容已整合至 `token-encoding.md`
+- `control-plane.md` → 內容已整合至 `../02-core-framework/architecture-overview.md` Section 3.1
+- `data-plane.md` → 內容已整合至 `../02-core-framework/architecture-overview.md` Section 3.2
+- `implementation-notes.md` → 內容已整合至 `../06-implementation/ssc-pipeline-spec.md`
+
+## 建議閱讀順序
+1. `attention-filtering.md`（Source 端：怎麼選 token）
+2. `token-encoding.md`（中間：怎麼編碼傳輸）
+3. `state-integration.md`（Receiver 端：怎麼整合）
+4. `kv-cache-alignment.md`（異質模型：怎麼做維度對齊）

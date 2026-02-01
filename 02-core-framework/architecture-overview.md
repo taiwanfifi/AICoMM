@@ -152,9 +152,9 @@ Semantic Indexer (SASL L1: Lightning Indexer)
   - Discard background/redundant features
     ↓
 Token Packetization (SASL L2)
-  - Quantization: FP32 → FP8 (3.5-4.3x compression)
+  - Quantization: FP32 → FP8 (4x size reduction)
   - Serialization: Protobuf schema
-  - Compression: Arithmetic coding
+  - Compression: Arithmetic/ZSTD coding (additional 3-4x)
     ↓
 KV-Cache Delta Transmission (SASL L3)
   - Initial: Full baseline (<1KB for scene summary)
@@ -227,7 +227,7 @@ class KVCacheProjector(nn.Module):
 | **KV-Cache Streaming** | Differential transmission of Transformer KV-Cache states | STL core mechanism |
 | **MCP** | Model Context Protocol: Semantic Control Plane for handshake | STL Control Plane |
 | **Semantic Compression** | Task-aware reduction preserving task-relevant info | Communication layer optimization |
-| **Lightning Indexer** | Attention-driven importance estimator (analogous to DeepSeek DSA) | SASL L1 component |
+| **Semantic Indexer** | Attention-driven importance estimator (based on DeepSeek DSA Lightning mechanism) | SASL L1 component; 本系統統一使用 "Semantic Indexer" 名稱 |
 | **Semantic State Sync** | Core paradigm: Align receiver's world model to sender's state | Replaces "bit-perfect transmission" |
 
 ### Document Cross-References

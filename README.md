@@ -68,7 +68,7 @@
 
 ### 2. Attention-Based Source Filtering
 - 借鑒 **DeepSeek-V3.2 的 Sparse Attention (DSA)** 機制
-- Lightning Indexer：計算 Query (任務) 與 Key (狀態) 的匹配度
+- Semantic Indexer（基於 DSA Lightning）：計算 Query (任務) 與 Key (狀態) 的匹配度
 - **只傳 Top-k 的 task-critical tokens**
 
 ### 3. Control Plane (參考 Anthropic MCP 概念)

@@ -18,6 +18,27 @@ This document establishes a **formal cost model** for evaluating Semantic State 
 
 **Key Result**: Semantic Token transmission achieves **3-250x bandwidth reduction** (scenario-dependent) while maintaining **≥90% task success rate** compared to traditional approaches.
 
+### Bandwidth Savings Breakdown（統一說明）
+
+> 本專案各文件中出現多種頻寬節省數字（95%、833x、1250x 等），以下澄清每個數字的來源和適用範圍。
+
+| 階段 | 機制 | 節省倍率 | 計算依據 | 出處 |
+|------|------|---------|---------|------|
+| ① 量化 | FP32→FP8 | 4x | 32bit→8bit | architecture-overview.md |
+| ② 壓縮 | ZSTD-3 | 3-4x | CacheGen 論文實測 | token-encoding.md |
+| ③ 稀疏選擇 | Top-k filtering (k/T=5%) | 20x | 只傳 5% token | attention-filtering.md |
+| ①+②+③ 合計 | Protocol-level | **~200x** | 4×3.5×20 ≈ 280x (理論上限) | — |
+| ④ 事件驅動 | Silence when no event | 額外 5-10x | 火災僅佔 10% 時間 | token-encoding.md |
+| ①+②+③+④ | End-to-end (典型) | **~1250x** | 280×~5 (event rate 20%) | token-encoding.md |
+| 理論下界 | R-D optimal | 3-50x | IB framework，保守估計 | theoretical-foundations.md |
+| 對比 H.264 | 語義 vs 視訊 | 250x | 50KB frame → 200B token | cost-model.md §6.2 |
+
+**如何引用**：
+- 論文中使用 "3-250x"（含理論保守值到實測值的範圍）
+- 系統設計中使用 "~200x"（不含事件驅動沉默）
+- 場景分析中使用 "~1250x"（含事件驅動，fire detection 場景）
+- **不要混用**：833x 是單一 pipeline 的極端值（50KB→60B），非一般性結論
+
 ---
 
 ## 1. Total Communication Cost Model
@@ -75,7 +96,7 @@ def calculate_encode_cost(input_data, model, config):
 
 **Typical Values** (Edge UAV scenario):
 - E_perception: 0.1 J (MobileVLM on Jetson Nano)
-- E_indexer: 0.01 J (Lightning Indexer)
+- E_indexer: 0.01 J (Semantic Indexer, based on DSA Lightning)
 - E_quantization: 0.001 J (FP32→FP8, 512 floats)
 - E_compression: 0.005 J (ZSTD level 3, 500 bytes)
 - **Total C_encode ≈ 0.116 J**

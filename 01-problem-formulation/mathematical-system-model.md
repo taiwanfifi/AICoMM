@@ -129,7 +129,77 @@ R_{\text{eff}} = \sum_{i: a_i > \tau} \log_2 |\mathcal{H}_i|
 ```
 確保兩端的 policy 分布接近。
 
+## 核心假設（Assumptions）
+
+> 以下假設在 `theoretical-foundations.md` 的定理證明中被使用。
+> 這裡統一列出，以便交叉驗證。
+
+### Assumption 1: Attention-Importance Alignment
+
+**陳述**：Attention weight 與 task-relevant importance 正相關。
+
+```math
+\text{Corr}(a_{t,i}, \text{Importance}(h_{t,i} \to Y)) \geq \rho_{\min} > 0
+```
+
+**依據**：
+- DeepSeek-V3 實驗顯示 top-5% attention tokens 恢復 99%+ 輸出品質
+- Attention 被廣泛用作 feature importance 的 proxy（LIME, SHAP 等方法佐證）
+
+**使用於**：Theorem 1 (最優語義通信率), Theorem 3 (最優 threshold)
+
+### Assumption 2: Lipschitz Task Sensitivity
+
+**陳述**：Task distortion 對 state error 滿足 Lipschitz 條件。
+
+```math
+D_{\text{task}}(S, \hat{S}) \leq \kappa \cdot \|S - \hat{S}\|^2
+```
+
+其中 $\kappa > 0$ 為 task sensitivity 常數。
+
+**意義**：state 的小誤差只會造成有限的 task 影響，不會無限放大。
+
+**使用於**：Theorem 2 (R-D 函數), Theorem 4 (帶寬優勢), Section 5.1 (R-D 曲線)
+
+### Assumption 3: Error Contraction Property
+
+**陳述**：在接收端的整合過程中，歷史累積 error 有自然衰減。
+
+```math
+\|e_t\|_{\text{eff}} \leq \rho \cdot \|e_{t-1}\|_{\text{eff}} + \|\varepsilon_t\|
+```
+
+其中 $\rho \in [0, 1)$ 為 contraction parameter。
+
+**依據**：
+- Attention 機制自然遺忘舊 token（新 token 會搶佔 attention budget）
+- KV-Cache 固定長度時，舊 entry 被覆蓋
+
+**使用於**：Drift Theorem (semantic-state-sync.md), Reset Frequency 計算
+
+### Assumption 4: Error Source Independence
+
+**陳述**：不同來源的誤差（量化、投影、漂移）之間近似獨立。
+
+```math
+D_{\text{task}} \leq D_{\text{quant}} + D_{\text{proj}} + D_{\text{drift}}
+```
+
+**注意**：嚴格來說不完全成立（FP8 量化可能放大投影誤差），實際需要加 $(1+\delta)$ 修正係數。
+
+**使用於**：Theorem 5 (端到端誤差界)
+
+### 假設總覽
+
+| Assumption | 名稱 | 使用的定理 | 合理性 | 違反時影響 |
+|-----------|------|-----------|-------|-----------|
+| 1 | Attention-Importance Alignment | Theorem 1, 3 | 中高（DeepSeek 實驗支持） | Top-k 選擇效率下降 |
+| 2 | Lipschitz Task Sensitivity | Theorem 2, 4 | 高（平滑任務普遍成立） | R-D bound 不成立 |
+| 3 | Error Contraction | Drift Theorem | 中（依賴 attention 機制） | 需要更頻繁 reset |
+| 4 | Error Independence | Theorem 5 | 中（FP8 下近似成立） | 需加 $(1+\delta)$ 修正 |
+
 ## 下一步
-1. 推導 optimal threshold $\tau^*$
-2. 分析 rate-distortion trade-off
-3. 設計具體的 compression algorithm
+1. ✅ 推導 optimal threshold $\tau^*$（已完成，見 `theoretical-foundations.md` Theorem 3）
+2. ✅ 分析 rate-distortion trade-off（已完成，見 `theoretical-foundations.md` Theorem 2）
+3. 設計具體的 compression algorithm → Phase 4 (Implementation)

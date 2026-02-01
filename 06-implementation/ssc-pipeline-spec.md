@@ -659,9 +659,18 @@ class SemanticDriftMonitor:
     Monitors semantic drift and triggers reset when needed.
     """
 
-    def __init__(self, reset_threshold=0.3, forgetting_factor=0.95):
+    def __init__(self, reset_threshold=0.10, contraction_param=0.98):
+        """
+        Args:
+          reset_threshold: KL divergence threshold to trigger reset.
+            理论推导值见 semantic-state-sync.md:
+            - 0.05 (strict), 0.10 (moderate), 0.15 (lenient)
+            - 稳态漂移 = ε_max / (1 - ρ)
+          contraction_param: Error contraction parameter ρ ∈ [0,1).
+            越大表示 error 消退越慢，需要更频繁 reset。
+        """
         self.reset_threshold = reset_threshold
-        self.alpha = forgetting_factor
+        self.rho = contraction_param
         self.drift_history = []
 
     def compute_kl_divergence(self, p, q):
@@ -716,12 +725,13 @@ class SemanticDriftMonitor:
         Returns:
           reset: bool
         """
-        # Compute accumulated drift with exponential forgetting
+        # Compute accumulated drift with contraction weighting
+        # 理论基础: ||e_t||_eff ≤ ρ·||e_{t-1}||_eff + ||ε_t||
         if len(self.drift_history) == 0:
             accumulated_drift = current_drift
         else:
             accumulated_drift = sum(
-                d * (self.alpha ** (len(self.drift_history) - i))
+                d * (self.rho ** (len(self.drift_history) - i))
                 for i, d in enumerate(self.drift_history)
             )
 
@@ -804,7 +814,7 @@ class CloudServer:
         )
         self.projector = KVCacheProjector(d_source=512, d_target=4096)
         self.model = CloudFoundationModel(model_path=config['cloud_model'])
-        self.drift_monitor = SemanticDriftMonitor(reset_threshold=0.3)
+        self.drift_monitor = SemanticDriftMonitor(reset_threshold=0.10)
 
     def run(self):
         """
@@ -897,8 +907,8 @@ decoder:
   compression: "zstd"
 
 drift_monitor:
-  reset_threshold: 0.3
-  forgetting_factor: 0.95
+  reset_threshold: 0.10    # 理论值: 0.05(strict)/0.10(moderate)/0.15(lenient)
+  contraction_param: 0.98  # ρ parameter from Error Contraction Property
   check_interval_steps: 10
 ```
 

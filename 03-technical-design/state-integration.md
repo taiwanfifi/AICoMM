@@ -152,6 +152,62 @@ T_{\text{total}} = T_{\text{transmission}} + T_{\text{integration}}
 \text{Robustness} = P(\text{Task Success} | \text{packet loss rate} = p)
 ```
 
+## Receiver 端兩層對齊機制
+
+> **重要澄清**：Receiver 端的狀態整合包含兩個不同層次的對齊，散見於不同文件中。
+> 此處統一說明它們的關係。
+
+### 層次 1：語義對齊（Anchor-Based Alignment）
+
+**描述於**：本文件上方的 Anchor-based Alignment 機制
+
+**功能**：確保接收到的 token 插入正確的語義位置
+- 檢查 anchor 是否匹配（任務一致性）
+- 計算 ProjectionError（語義偏差）
+- 決定是否接受或丟棄 token
+
+**公式**：
+```math
+\hat{S}_{t+1} = \hat{S}_t + \alpha \cdot (\Delta_{\text{token}} - \text{ProjectionError}(\text{Anchor}))
+```
+
+### 層次 2：維度對齊（Neural Projector）
+
+**描述於**：`kv-cache-alignment.md` 和 `../06-implementation/ssc-pipeline-spec.md`
+
+**功能**：將 Edge 模型的 KV-Cache 維度映射到 Cloud 模型的維度空間
+- Edge (MobileVLM): 512-dim KV-Cache
+- Cloud (GPT-4V): 4096-dim KV-Cache
+- 使用 Neural Projector 做線性投影 + LayerNorm
+
+**公式**：
+```math
+K_{\text{cloud}} = \text{LayerNorm}(W \cdot K_{\text{edge}} + b)
+```
+
+### 兩層如何協作
+
+```
+接收到 Semantic Token
+    ↓
+[層次 1] Anchor 檢查：語義對齊
+    - 這個 token 是否屬於當前任務上下文？
+    - anchor 不匹配 → 拒絕 / 要求重新同步
+    ↓
+[層次 2] Neural Projector：維度對齊
+    - 512-dim → 4096-dim 映射（僅 Latent Mode 需要）
+    - Structured Mode 不需要此步驟
+    ↓
+Apply Delta：確定性整合
+    - 插入到正確的 latent slot
+    - 更新 Receiver 的世界模型
+```
+
+**注意**：
+- 如果兩端使用相同模型（同維度），跳過層次 2
+- 如果使用 Structured Mode token，跳過層次 2（不涉及 KV-Cache）
+- 兩層對齊是正交的：語義對齊確保「放對位置」，維度對齊確保「格式相容」
+
 ## 下一步
 1. 實現 StateIntegrator 原型
 2. 測試不同丟包率下的性能

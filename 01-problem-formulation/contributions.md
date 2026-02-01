@@ -9,7 +9,7 @@
 
 ### 技術貢獻
 1. **Semantic State Communication (SSC) Protocol**：完整的協定設計與實現
-2. **Lightning Indexer for Communication**：將 DeepSeek DSA 應用於通訊決策
+2. **Semantic Indexer for Communication**：將 DeepSeek DSA Lightning 機制應用於通訊決策
 3. **Deterministic State Integration Algorithm**：Receiver 端的狀態整合機制
 
 ### 實證貢獻
@@ -80,10 +80,10 @@ d_{\text{task}}(S, \hat{S}) = 1 - P(\text{Task Success} | \hat{S})
 3. **實用意義**：不需要 bit-perfect，只需 task-sufficient
 
 #### 理論結果
-我們證明：
-- 存在 optimal threshold $\tau^*$ 使得 task success rate 最大
-- 在 Information Bottleneck 框架下有 rate-distortion bound
-- Attention-based filtering 可以逼近 optimal solution
+我們證明（詳見 `theoretical-foundations.md`）：
+- **Theorem 3**（最優 Attention Threshold）：存在 optimal threshold $\tau^*$ 使得 task success rate 最大
+- **Theorem 2**（Task-Oriented R-D）：在 Information Bottleneck 框架下有 rate-distortion bound
+- **Theorem 1**（最優語義通信率）：Attention-based filtering 可以逼近 optimal solution
 
 ---
 
@@ -112,17 +112,19 @@ d_{\text{task}}(S, \hat{S}) = 1 - P(\text{Task Success} | \hat{S})
    ```
    表示 dimension $i$ 對當前任務的重要性。
 
-2. **Sparse Transmission Theorem**
-   在 mild conditions 下，只傳輸 top-k attention dimensions 可以保證：
+2. **Theorem 4: SSC Bandwidth Advantage**（原稱 "Sparse Transmission Theorem"）
+   在 Assumption 1-2 下，只傳輸 top-k attention dimensions 可以保證：
    ```math
    P(\text{Task Success} | Z_{\text{top-k}}) \geq (1-\epsilon) \cdot P(\text{Task Success} | Z_{\text{full}})
    ```
+   > 詳見 `theoretical-foundations.md` Theorem 4，正式名稱為「SSC vs. Traditional Communication」
 
-3. **Optimal k Selection**
+3. **Theorem 3: Optimal Threshold → Optimal k Selection**
    存在 optimal $k^*$ 使得：
    ```math
    k^* = \arg\max_k \left[ P(\text{Success} | k) - \lambda \cdot \frac{k}{T} \cdot C \right]
    ```
+   > 詳見 `theoretical-foundations.md` Theorem 3，正式名稱為「Optimal Attention Threshold」
 
 #### 創新點
 第一個將 attention mechanism 理論化為通訊決策工具的工作。
@@ -223,7 +225,7 @@ Receiver:
 
 ---
 
-### 2. Lightning Indexer for Communication
+### 2. Semantic Indexer for Communication
 
 #### 從 DeepSeek DSA 到通訊系統
 
@@ -529,7 +531,7 @@ Loss=20%: TCP=75%, UDP=30%, Ours=82%
 ### 核心創新
 1. **範式轉移**：Data Transmission → State Synchronization
 2. **理論擴展**：Task-oriented R-D, Attention-based transmission
-3. **系統設計**：SSC Protocol, Lightning Indexer, Deterministic Integration
+3. **系統設計**：SSC Protocol, Semantic Indexer, Deterministic Integration
 4. **實證驗證**：Trace-driven, Multi-baseline, Scalability & Robustness
 
 ### 學術價值

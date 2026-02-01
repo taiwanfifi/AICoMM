@@ -6,6 +6,33 @@
 
 ---
 
+## Notation Glossary（符号表）
+
+| 符号 | 含义 | 类型 | 首次出现 |
+|------|------|------|---------|
+| $X$ | 原始状态空间 | 随机变量 | Theorem 1 |
+| $Y$ | 任务变量 | 随机变量 | Theorem 1 |
+| $Z$ / $Z_t$ | 传输的 semantic token | 随机变量 / 向量 | Theorem 1 |
+| $S_t$ | 时刻 $t$ 的完整语义状态 | 向量 $(h_t, b_t, p_t, a_t)$ | System Model |
+| $\hat{S}_t$ | Receiver 端的估计状态 | 向量 | System Model |
+| $I_0$ | 互信息下界（所需最小信息量） | 标量 (bits) | Theorem 1 |
+| $\eta$ | 任务成功率 | 概率 $\in [0,1]$ | Theorem 4 |
+| $I_{\min}(\eta)$ | 达到成功率 $\eta$ 所需最小互信息 | 标量 (bits) | Lemma 3 |
+| $\beta$ | IB 权衡参数 | 标量 $> 0$ | Theorem 1 |
+| $\tau$ / $\tau^*$ | Attention threshold / 最优 threshold | 标量 $\in [0,1]$ | Theorem 3 |
+| $D_{\text{task}}$ | 任务失真 = $1 - P(\text{success})$ | 标量 $\in [0,1]$ | Theorem 2 |
+| $D_{\max}$ | 最大容许失真 = $1 - \eta$ | 标量 | Theorem 2 |
+| $\kappa$ | Lipschitz task sensitivity（Assumption 2） | 标量 $> 0$ | Theorem 2 |
+| $\rho$ | Error contraction parameter（Assumption 3） | 标量 $\in [0,1)$ | Drift Theorem |
+| $\alpha$ | Dampening strength = $1 - \rho$ | 标量 $\in (0,1]$ | Drift Theorem |
+| $\varepsilon_t$ | 时刻 $t$ 的新增量化/传输误差 | 标量 | Drift Theorem |
+| $d$ | 状态空间维度 | 整数 | Theorem 2 |
+| $k$ | Top-k 选择的 token 数量 | 整数 | Theorem 3 |
+
+> **关键区分**：$I_0$（bits）和 $\eta$（概率）是不同单位。两者通过 **Lemma 3 (Fano Bridge)** 转换：$I_{\min}(\eta) = H(Y) - H_b(1-\eta) - (1-\eta)\log(|\mathcal{Y}|-1)$
+
+---
+
 ## Executive Summary
 
 本文档提供SSC的**完整理论证明**，包括：

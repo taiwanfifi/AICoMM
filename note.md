@@ -892,6 +892,166 @@ Weibull 分布                   | 定理 3     | τ* 解析解不準，用數�
 
 ---
 
+## 八之三、架構一致性修復（A 級 × 6 個）— 白話版
+
+> 理論本身沒問題了，但各個文件之間有**名稱不統一、定義衝突、數值矛盾**的情況。
+> 就像一本書的第三章叫某東西 "A"，第五章叫同一個東西 "B"，讀者會困惑。
+> 以下是修了什麼。
+
+### A1：統一命名 — 「Lightning Indexer」vs「Semantic Indexer」
+
+**問題**：同一個元件（負責挑選重要 token 的模組），不同文件叫不同名字：
+- `attention-filtering.md` 叫 "Lightning Indexer"
+- `ssc-pipeline-spec.md` 叫 "Semantic Indexer"
+- `contributions.md` 叫 "Lightning Indexer for Communication"
+
+**好比**：同一個員工，有的文件叫他「小王」，有的叫「王大明」，讀者不知道是不是同一個人。
+
+**修法**：統一規則：
+- **我們系統中的正式名稱** → "Semantic Indexer"
+- **DeepSeek 原始機制** → 繼續叫 "Lightning Indexer"（那是人家的名字）
+- 第一次出現時寫 "Semantic Indexer (基於 DeepSeek DSA Lightning)"
+
+**改了哪些檔案**：`contributions.md`, `architecture-overview.md`, `attention-filtering.md`（加了命名說明）, `README.md`, `ROADMAP.md`, `cost-model.md`
+
+---
+
+### A2：Semantic Token 的兩種定義衝突
+
+**問題**：
+- `semantic-token-definition.md` 說 token 是 **KV-Cache 的差量**（一堆浮點數）
+- `token-encoding.md` 說 token 是 **Protobuf 結構化物件**（type=FIRE, bbox=..., confidence=0.92）
+
+這兩個長得完全不一樣！到底 token 是一團數字還是一個結構化訊息？
+
+**好比**：你要寄信告訴朋友「我家著火了」，有兩種方式：
+- 方式 A：直接把你大腦的神經活動傳過去（latent mode）→ 對方的大腦直接「感受到」
+- 方式 B：寫一封信：「火災，地點：我家，嚴重程度：高」（structured mode）→ 對方讀信
+
+**修法**：在 `semantic-token-definition.md` 加了「兩種具體表示」章節，說明：
+- **Latent Mode**：KV-Cache delta，適合深度協作（兩個 AI 之間同步「思維」）
+- **Structured Mode**：Protobuf 結構化，適合高階報告（Edge 已判斷完，只傳結論）
+- 加了選擇原則表格：什麼情況用哪種
+
+在 `token-encoding.md` 頂部加了說明：「本文件描述的是 Structured Mode」。
+
+---
+
+### A3：接收端整合策略的兩種說法
+
+**問題**：
+- `state-integration.md` 說用 **Anchor-based Alignment**（語義錨點對齊）
+- `ssc-pipeline-spec.md` 說用 **Neural Projector**（神經投影器，512→4096 維度轉換）
+
+這是兩個完全不同的東西，到底用哪個？
+
+**好比**：翻譯一封信，有兩個問題：
+1. 這封信是寄給你的嗎？（Anchor 檢查 → 語義對齊）
+2. 信是用法文寫的，你只懂英文（Projector → 維度對齊 / 語言轉換）
+
+**修法**：在 `state-integration.md` 加了「Receiver 端兩層對齊機制」章節：
+- **層次 1**：Anchor 檢查 → 確保 token 放對位置（語義層面）
+- **層次 2**：Neural Projector → 確保格式相容（維度層面）
+- 加了流程圖說明兩層如何協作
+
+---
+
+### A4：Reset 閾值不一致（0.3 vs 0.10）
+
+**問題**：
+- `ssc-pipeline-spec.md`（實作）寫 `reset_threshold = 0.3`
+- `semantic-state-sync.md`（理論）推導出的合理值是 0.05 ~ 0.15
+
+0.3 太高了，理論上說漂移到 0.15 就該重置，但程式碼要等到 0.3 才動作。
+
+**好比**：醫生說血壓超過 140 就要吃藥，但護理師的系統設定成超過 200 才提醒。
+
+**修法**：
+- 把 `ssc-pipeline-spec.md` 的 `reset_threshold` 從 0.3 改為 0.10（moderate 設定）
+- 把 `forgetting_factor = 0.95` 改成 `contraction_param = 0.98`（配合修正後的理論名稱）
+- 加了注釋說明三個等級：0.05 (strict) / 0.10 (moderate) / 0.15 (lenient)
+
+---
+
+### A5：數學系統模型缺少假設列表
+
+**問題**：`theoretical-foundations.md` 的每個定理都有用到 Assumption 1~4，但作為入口文件的 `mathematical-system-model.md` 完全沒有列出這些假設。讀者看系統模型時不知道理論建立在什麼前提上。
+
+**好比**：食譜寫了做法但沒寫食材清單。
+
+**修法**：在 `mathematical-system-model.md` 底部加了完整的假設列表（Assumption 1~4），每個包含：
+- 正式陳述（數學公式）
+- 直覺解釋
+- 哪個定理用到它
+- 合理性評估
+- 如果假設不成立會怎樣
+
+---
+
+### A6：Contributions 中的定理名稱對不上
+
+**問題**：`contributions.md` 用了「Sparse Transmission Theorem」這個名字，但 `theoretical-foundations.md` 裡根本沒有叫這個名字的定理。讀者會找不到對應的證明。
+
+**好比**：論文說「根據定理 X」，但定理 X 在附錄中不存在。
+
+**修法**：
+- 把「Sparse Transmission Theorem」改為「Theorem 4: SSC Bandwidth Advantage」
+- 把「Optimal k Selection」改為「Theorem 3: Optimal Threshold」
+- 理論結果段落加上正式的定理編號（Theorem 1, 2, 3）和交叉引用
+
+---
+
+## 八之四、文件品質修復（B 級 × 6 個）— 白話版
+
+> 不是理論錯誤，而是各文件之間數字不統一、引用格式不一致、過時清單等問題。
+
+### B1：頻寬節省數字不統一
+
+**問題**：不同文件宣稱的頻寬節省不一樣 — 有的說 95%、有的說 833x、有的說 1250x、有的說 50x。讀起來很混亂。
+
+**修法**：在 `cost-model.md` 加了「Bandwidth Savings Breakdown」表格，統一說明每個數字的來源：
+- 量化 4x + 壓縮 3-4x + 稀疏選擇 20x = 合計 ~200x（不含事件驅動）
+- 加上事件驅動沉默 = ~1250x（fire detection 場景）
+- 論文引用範圍 = 3-250x
+
+### B2：交叉引用路徑格式不統一
+
+**問題**：有的文件引用寫 `token-encoding.md`（沒有路徑），有的寫 `../03-technical-design/token-encoding.md`（有路徑），不一致。
+
+**修法**：統一改為 `../目錄/檔名.md` 格式，修了 `semantic-token-definition.md`, `token-encoding.md`, `state-integration.md`。
+
+### B3：壓縮 vs 量化搞混
+
+**問題**：`architecture-overview.md` 寫 "FP32→FP8 (3.5-4.3x compression)" — 但 FP32→FP8 是量化（4x），3.5-4.3x 是額外的 ZSTD 壓縮，兩個不同東西被混成一個了。
+
+**修法**：拆開寫清楚 — "量化 4x" + "壓縮 additional 3-4x"。
+
+### B4：理論文件缺符號表
+
+**問題**：`theoretical-foundations.md` 裡面用了 $I_0$、$\eta$、$\kappa$、$\rho$ 等很多符號，但沒有統一的符號表。讀者每次都要翻回去找定義。
+
+**修法**：在文件頂部加了 Notation Glossary（符號表），列出每個符號的含義、類型、首次出現位置。特別標明 $I_0$（bits）和 $\eta$（概率）是不同單位。
+
+### B5：目錄 README 的待辦清單過時
+
+**問題**：`02-core-framework/README.md` 和 `03-technical-design/README.md` 還列著「待創建」的檔案清單，但那些內容早就被整合到現有文件中了。讀者以為這些文件缺漏。
+
+**修法**：重寫兩個 README — 改為「文件清單」+「已被其他文件涵蓋的內容」+「建議閱讀順序」。
+
+### B6：Task Success Rate 數字不統一
+
+**問題**：不同文件寫的 TSR 不一樣 — 有的說 98%、有的說 95%、有的說 90%、有的說 88%。
+
+**修法**：在 `attention-filtering.md` 的對比表下面加了說明：
+- 最佳配置（同構模型）：~95%
+- 有 Neural Projector（異構模型）：~90-91%
+- 大規模部署 (N=20)：~88%
+- **研究目標下限**：≥90%
+
+把原本對比表的 98% 改為 ≥90%（更保守、更誠實）。
+
+---
+
 ## 九、怎麼看這些目錄？（導覽地圖）
 
 ### 建議的閱讀順序
@@ -1084,8 +1244,15 @@ Phase 7: Submission              ❌ 尚未開始
   ICC 2027:     ~2026年10月投稿
   距離最近 deadline 約 6 個月
 
+架構一致性修復：
+  A 級（跨文件衝突）: 6 個 → ✅ 全部修好
+  B 級（數字/引用/格式）: 6 個 → ✅ 全部修好
+
 下一步（建議）：
   1. 所有理論漏洞（P0+P1+P2 共 14 個）已全部修復 ✅
-  2. 開始 Phase 4: 搭建 simulation 環境
-  3. 用 aider + 本地 LLM 加速 coding
+  2. 架構一致性（A 級 6 個）已全部修復 ✅
+  3. 文件品質（B 級 6 個）已全部修復 ✅
+  4. 還有 C 級 5 個待修（風格/重複，非緊急，不影響正確性）
+  5. 開始 Phase 4: 搭建 simulation 環境
+  6. 用 aider + 本地 LLM 加速 coding
 ```

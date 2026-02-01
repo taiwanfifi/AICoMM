@@ -2,6 +2,10 @@
 
 ## 核心概念
 
+> **命名說明**：本文件描述的元件在 SSC 系統中統一稱為 **Semantic Indexer**。
+> 它的核心算法源自 DeepSeek DSA 的 Lightning Indexer 機制，但在通訊語境中以 Semantic Indexer 為正式名稱。
+> 本文件中出現的「Lightning Indexer」均指 DeepSeek 原始機制的名稱。
+
 ### 從 DeepSeek DSA 到通訊協定
 將 **DeepSeek Sparse Attention (DSA)** 機制映射到 **6G 通訊系統**，
 創造一個全新的概念：**Attention-Based Communication Protocol (ABCP)**
@@ -323,7 +327,13 @@ T_{\text{total}} = T_{\text{pilot}} + T_{\text{index}} + T_{\text{payload}}
 | **Full Transmission** | 100% | 高 | 低 | 100% (baseline) |
 | **H.264** | 10% | 中 | 中 | 95% |
 | **JSCC** | 5% | 中 | 高 | 90% |
-| **Ours (DSA-based)** | **5%** | **低** | 低 | **98%** |
+| **Ours (DSA-based)** | **5%** | **低** | 低 | **≥90%** |
+
+> **TSR 說明**：上表為預期值，實際 TSR 取決於配置：
+> - 同構模型 + 理想通道：~95%（最佳配置）
+> - 異構模型 + Neural Projector：~90-91%（投影損失 2-3%）
+> - 大規模部署 (N=20 agents)：~88%（協調開銷）
+> - **研究目標下限**：≥90%（定義於 `research-question.md`）
 
 ## 關鍵優勢
 
@@ -377,7 +387,7 @@ TX: 從 1 週的感測數據中，找出異常模式並傳輸
 ### 性能優勢
 - 頻寬節省：90%+
 - 延遲：< 10ms
-- Task Success Rate：>95%
+- Task Success Rate：≥90%（研究目標下限；最佳配置可達 ~95%）
 - 可擴展性：支援 100x 連接數
 
 ## 下一步
