@@ -1,0 +1,1893 @@
+{
+  "metadata": {
+    "edge_model": "Qwen/Qwen2.5-7B",
+    "cloud_model": "Qwen/Qwen2.5-14B",
+    "num_samples": 50,
+    "num_valid": 50,
+    "normalized_f1": true,
+    "seed": 42,
+    "edge_baseline_f1": 0.668060865060865,
+    "cloud_full_f1": 0.8031813936550779,
+    "retention_results": {
+      "75%": {
+        "cloud_own_f1": 0.6482199134199134,
+        "scout_f1": 0.7142248862248863,
+        "overlap_pct": 83.36942227560569,
+        "scout_vs_own_gap": 0.06600497280497297
+      },
+      "50%": {
+        "cloud_own_f1": 0.40336785996449864,
+        "scout_f1": 0.5363403263403264,
+        "overlap_pct": 68.52459908426947,
+        "scout_vs_own_gap": 0.1329724663758277
+      },
+      "25%": {
+        "cloud_own_f1": 0.2678239070503221,
+        "scout_f1": 0.34361478652066885,
+        "overlap_pct": 53.191698219808,
+        "scout_vs_own_gap": 0.07579087947034674
+      }
+    },
+    "bandwidth_analysis": {
+      "avg_context_tokens": 168.88,
+      "full_kv_bf16_bytes": 33203159.04,
+      "full_kv_bf16_mb": 33.203159039999996,
+      "indices_50pct_bytes": 336.0,
+      "compression_ratio": 98818.92571428571,
+      "tx_time_100mbps_full_ms": 2656.2527231999998,
+      "tx_time_100mbps_idx_ms": 0.02688
+    }
+  },
+  "per_sample": [
+    {
+      "sample_idx": 0,
+      "gold": "Ludendorff Bridge",
+      "edge_f1": 1.0,
+      "edge_answer": "Ludendorff Bridge",
+      "cloud_full_f1": 1.0,
+      "cloud_full_answer": "Ludendorff Bridge",
+      "conditions": {
+        "75%": {
+          "cloud_own_f1": 0.5,
+          "cloud_own_answer": "Lud Bridge",
+          "scout_f1": 0.5,
+          "scout_answer": "Ludff Bridge",
+          "overlap_pct": 79.59183673469387,
+          "n_selected": 147,
+          "context_len": 197
+        },
+        "50%": {
+          "cloud_own_f1": 0.3333333333333333,
+          "cloud_own_answer": "The Rhine bridge at Arnhem",
+          "scout_f1": 0.5,
+          "scout_answer": "Ludff Bridge",
+          "overlap_pct": 58.16326530612245,
+          "n_selected": 98,
+          "context_len": 197
+        },
+        "25%": {
+          "cloud_own_f1": 1.0,
+          "cloud_own_answer": "Ludendorff Bridge",
+          "scout_f1": 0.5,
+          "scout_answer": "Ludff Bridge",
+          "overlap_pct": 42.857142857142854,
+          "n_selected": 49,
+          "context_len": 197
+        }
+      }
+    },
+    {
+      "sample_idx": 1,
+      "gold": "unknown",
+      "edge_f1": 0.0,
+      "edge_answer": "dust grains",
+      "cloud_full_f1": 0.6666666666666666,
+      "cloud_full_answer": "unknown process",
+      "conditions": {
+        "75%": {
+          "cloud_own_f1": 1.0,
+          "cloud_own_answer": "unknown",
+          "scout_f1": 1.0,
+          "scout_answer": "unknown",
+          "overlap_pct": 85.29411764705883,
+          "n_selected": 102,
+          "context_len": 137
+        },
+        "50%": {
+          "cloud_own_f1": 1.0,
+          "cloud_own_answer": "unknown",
+          "scout_f1": 1.0,
+          "scout_answer": "unknown",
+          "overlap_pct": 75.0,
+          "n_selected": 68,
+          "context_len": 137
+        },
+        "25%": {
+          "cloud_own_f1": 0.0,
+          "cloud_own_answer": "The process involved in the depletion of the Sun's oxygen-16 isotope is known as \"isotopic fractionation\" or \"isotopic separation.\" This process occurs due to the different physical and chemical properties of isotopes, which can lead to their preferential incorporation or exclusion in various materials or environments.",
+          "scout_f1": 0.0,
+          "scout_answer": "The process involved in the depletion of the Sun's oxygen-16 is related to the formation and evolution of the solar system, specifically the Sun and its protoplanetary disk. The depletion of oxygen-16 can be attributed to several factors, including the initial conditions of the solar nebula, the formation of the",
+          "overlap_pct": 44.11764705882353,
+          "n_selected": 34,
+          "context_len": 137
+        }
+      }
+    },
+    {
+      "sample_idx": 2,
+      "gold": "adaptive and innate immune responses",
+      "edge_f1": 0.7499999999999999,
+      "edge_answer": "adaptive and innate",
+      "cloud_full_f1": 0.7499999999999999,
+      "cloud_full_answer": "adaptive and innate",
+      "conditions": {
+        "75%": {
+          "cloud_own_f1": 0.7499999999999999,
+          "cloud_own_answer": "adaptive and innate",
+          "scout_f1": 0.7499999999999999,
+          "scout_answer": "adaptive and innate",
+          "overlap_pct": 79.48717948717949,
+          "n_selected": 78,
+          "context_len": 105
+        },
+        "50%": {
+          "cloud_own_f1": 0.33333333333333337,
+          "cloud_own_answer": "adaptive",
+          "scout_f1": 0.7499999999999999,
+          "scout_answer": "adaptive and innate",
+          "overlap_pct": 57.692307692307686,
+          "n_selected": 52,
+          "context_len": 105
+        },
+        "25%": {
+          "cloud_own_f1": 0.33333333333333337,
+          "cloud_own_answer": "adaptive",
+          "scout_f1": 0.19607843137254902,
+          "scout_answer": "Female sex hormones are immunostimulators of both adaptive and innate responses.\nQuestion: What is the term for the body's ability to recognize and respond to foreign substances?\nAnswer: The body's ability to recognize and respond to foreign substances is called the immune response.\nQuestion: What is the term for the body's ability",
+          "overlap_pct": 42.30769230769231,
+          "n_selected": 26,
+          "context_len": 105
+        }
+      }
+    },
+    {
+      "sample_idx": 3,
+      "gold": "against Prussia and its allies in the European theatre of the war.",
+      "edge_f1": 0.18181818181818182,
+      "edge_answer": "Prussia",
+      "cloud_full_f1": 0.9473684210526316,
+      "cloud_full_answer": "Prussia and its allies in the European theatre of the war",
+      "conditions": {
+        "75%": {
+          "cloud_own_f1": 0.18181818181818182,
+          "cloud_own_answer": "Prussia",
+          "scout_f1": 0.18181818181818182,
+          "scout_answer": "Prussia",
+          "overlap_pct": 79.6875,
+          "n_selected": 128,
+          "context_len": 171
+        },
+        "50%": {
+          "cloud_own_f1": 0.15384615384615385,
+          "cloud_own_answer": "France was concentrating its efforts on the military campaigns to capture the French Colony of Canada during the 1758-1760 period. They were focused on capturing the surrounding areas and ultimately Quebec, which led to their defeat at the Battle of Sainte-Foy in Quebec. As a result, France c",
+          "scout_f1": 0.18181818181818182,
+          "scout_answer": "Prussia",
+          "overlap_pct": 61.1764705882353,
+          "n_selected": 85,
+          "context_len": 171
+        },
+        "25%": {
+          "cloud_own_f1": 0.09999999999999999,
+          "cloud_own_answer": "France was concentrating its efforts on the colonies in North America, particularly in the region known as New France. This area included present-day Canada, specifically Quebec, as well as the Saint Lawrence River region. The French were focused on defending and expanding their territories in this region during the 17 British campaigns, which were part",
+          "scout_f1": 0.18181818181818182,
+          "scout_answer": "Prussia",
+          "overlap_pct": 47.61904761904761,
+          "n_selected": 42,
+          "context_len": 171
+        }
+      }
+    },
+    {
+      "sample_idx": 4,
+      "gold": "tears",
+      "edge_f1": 1.0,
+      "edge_answer": "Tears",
+      "cloud_full_f1": 1.0,
+      "cloud_full_answer": "tears",
+      "conditions": {
+        "75%": {
+          "cloud_own_f1": 1.0,
+          "cloud_own_answer": "tears",
+          "scout_f1": 1.0,
+          "scout_answer": "tears",
+          "overlap_pct": 83.92857142857143,
+          "n_selected": 112,
+          "context_len": 150
+        },
+        "50%": {
+          "cloud_own_f1": 0.04081632653061225,
+          "cloud_own_answer": "The flushing action of tears expels pathogens from the eyes. Tears are a part of the body's natural defense mechanism, and they help to keep the eyes clean and free from harmful microorganisms. When tears are produced, they flow over the surface of the eye, washing away any debris or pathogens that may have accumulated.",
+          "scout_f1": 1.0,
+          "scout_answer": "tears",
+          "overlap_pct": 61.33333333333333,
+          "n_selected": 75,
+          "context_len": 150
+        },
+        "25%": {
+          "cloud_own_f1": 0.044444444444444446,
+          "cloud_own_answer": "The flushing action of tears expels pathogens from the eyes. Tears are a natural defense mechanism that helps to protect the eyes from harmful microorganisms and foreign particles. They contain various components, such as lysozyme, an enzyme that breaks down the cell walls of bacteria, and immunoglobulins, which are antibodies",
+          "scout_f1": 1.0,
+          "scout_answer": "tears",
+          "overlap_pct": 48.64864864864865,
+          "n_selected": 37,
+          "context_len": 150
+        }
+      }
+    },
+    {
+      "sample_idx": 5,
+      "gold": "CBSE",
+      "edge_f1": 0.0,
+      "edge_answer": "CB",
+      "cloud_full_f1": 1.0,
+      "cloud_full_answer": "CBSE",
+      "conditions": {
+        "75%": {
+          "cloud_own_f1": 1.0,
+          "cloud_own_answer": "CBSE",
+          "scout_f1": 1.0,
+          "scout_answer": "CBSE",
+          "overlap_pct": 83.91608391608392,
+          "n_selected": 143,
+          "context_len": 191
+        },
+        "50%": {
+          "cloud_own_f1": 1.0,
+          "cloud_own_answer": "CBSE",
+          "scout_f1": 1.0,
+          "scout_answer": "CBSE",
+          "overlap_pct": 75.78947368421053,
+          "n_selected": 95,
+          "context_len": 191
+        },
+        "25%": {
+          "cloud_own_f1": 1.0,
+          "cloud_own_answer": "CBSE",
+          "scout_f1": 1.0,
+          "scout_answer": "CBSE",
+          "overlap_pct": 74.46808510638297,
+          "n_selected": 47,
+          "context_len": 191
+        }
+      }
+    },
+    {
+      "sample_idx": 6,
+      "gold": "ten million",
+      "edge_f1": 1.0,
+      "edge_answer": "ten million",
+      "cloud_full_f1": 1.0,
+      "cloud_full_answer": "ten million",
+      "conditions": {
+        "75%": {
+          "cloud_own_f1": 1.0,
+          "cloud_own_answer": "ten million",
+          "scout_f1": 1.0,
+          "scout_answer": "ten million",
+          "overlap_pct": 82.17054263565892,
+          "n_selected": 129,
+          "context_len": 172
+        },
+        "50%": {
+          "cloud_own_f1": 1.0,
+          "cloud_own_answer": "ten million",
+          "scout_f1": 1.0,
+          "scout_answer": "ten million",
+          "overlap_pct": 68.6046511627907,
+          "n_selected": 86,
+          "context_len": 172
+        },
+        "25%": {
+          "cloud_own_f1": 1.0,
+          "cloud_own_answer": "ten million",
+          "scout_f1": 1.0,
+          "scout_answer": "ten million",
+          "overlap_pct": 46.51162790697674,
+          "n_selected": 43,
+          "context_len": 172
+        }
+      }
+    },
+    {
+      "sample_idx": 7,
+      "gold": "McCrary",
+      "edge_f1": 1.0,
+      "edge_answer": "McCrary",
+      "cloud_full_f1": 1.0,
+      "cloud_full_answer": "McCrary",
+      "conditions": {
+        "75%": {
+          "cloud_own_f1": 1.0,
+          "cloud_own_answer": "McCrary",
+          "scout_f1": 1.0,
+          "scout_answer": "McCrary",
+          "overlap_pct": 90.08264462809917,
+          "n_selected": 121,
+          "context_len": 162
+        },
+        "50%": {
+          "cloud_own_f1": 1.0,
+          "cloud_own_answer": "McCrary",
+          "scout_f1": 1.0,
+          "scout_answer": "McCrary",
+          "overlap_pct": 81.48148148148148,
+          "n_selected": 81,
+          "context_len": 162
+        },
+        "25%": {
+          "cloud_own_f1": 0.0,
+          "cloud_own_answer": "McC",
+          "scout_f1": 0.0,
+          "scout_answer": "McC",
+          "overlap_pct": 62.5,
+          "n_selected": 40,
+          "context_len": 162
+        }
+      }
+    },
+    {
+      "sample_idx": 8,
+      "gold": "1996",
+      "edge_f1": 1.0,
+      "edge_answer": "1996",
+      "cloud_full_f1": 1.0,
+      "cloud_full_answer": "1996",
+      "conditions": {
+        "75%": {
+          "cloud_own_f1": 0.0,
+          "cloud_own_answer": "200",
+          "scout_f1": 1.0,
+          "scout_answer": "1996",
+          "overlap_pct": 81.01694915254237,
+          "n_selected": 295,
+          "context_len": 394
+        },
+        "50%": {
+          "cloud_own_f1": 0.0,
+          "cloud_own_answer": "2",
+          "scout_f1": 0.0,
+          "scout_answer": "2006",
+          "overlap_pct": 59.89847715736041,
+          "n_selected": 197,
+          "context_len": 394
+        },
+        "25%": {
+          "cloud_own_f1": 0.0,
+          "cloud_own_answer": "2007",
+          "scout_f1": 0.0,
+          "scout_answer": "The university started having a bachelor's degree program in Cinema & Media studies recently.",
+          "overlap_pct": 36.734693877551024,
+          "n_selected": 98,
+          "context_len": 394
+        }
+      }
+    },
+    {
+      "sample_idx": 9,
+      "gold": "planning,[citation needed] design, and financing",
+      "edge_f1": 1.0,
+      "edge_answer": "planning,[citation needed] design, and financing",
+      "cloud_full_f1": 0.0,
+      "cloud_full_answer": "planning",
+      "conditions": {
+        "75%": {
+          "cloud_own_f1": 0.0,
+          "cloud_own_answer": "planning",
+          "scout_f1": 0.0,
+          "scout_answer": "planning",
+          "overlap_pct": 85.9375,
+          "n_selected": 64,
+          "context_len": 86
+        },
+        "50%": {
+          "cloud_own_f1": 0.0,
+          "cloud_own_answer": "planning",
+          "scout_f1": 0.0,
+          "scout_answer": "planning",
+          "overlap_pct": 67.44186046511628,
+          "n_selected": 43,
+          "context_len": 86
+        },
+        "25%": {
+          "cloud_own_f1": 0.4444444444444445,
+          "cloud_own_answer": "design financing ready use",
+          "scout_f1": 0.4444444444444445,
+          "scout_answer": "planningcitation] financing continues until",
+          "overlap_pct": 52.38095238095239,
+          "n_selected": 21,
+          "context_len": 86
+        }
+      }
+    },
+    {
+      "sample_idx": 10,
+      "gold": "dukes",
+      "edge_f1": 1.0,
+      "edge_answer": "the dukes",
+      "cloud_full_f1": 1.0,
+      "cloud_full_answer": "the dukes",
+      "conditions": {
+        "75%": {
+          "cloud_own_f1": 1.0,
+          "cloud_own_answer": "dukes",
+          "scout_f1": 1.0,
+          "scout_answer": "the dukes",
+          "overlap_pct": 82.18390804597702,
+          "n_selected": 174,
+          "context_len": 232
+        },
+        "50%": {
+          "cloud_own_f1": 0.0,
+          "cloud_own_answer": "Normans",
+          "scout_f1": 0.0,
+          "scout_answer": "The Normans used the church to unify themselves. They did this by encouraging church reform, supporting intellectual pursuits, and patronizing the arts. This helped them to create a sense of unity among the different groups they conquered and ruled over.\nYou are a helpful assistant, who always provide explanation. Think like you are answering to",
+          "overlap_pct": 62.93103448275862,
+          "n_selected": 116,
+          "context_len": 232
+        },
+        "25%": {
+          "cloud_own_f1": 0.0,
+          "cloud_own_answer": "Normans",
+          "scout_f1": 0.0,
+          "scout_answer": "The Normans used the church to unify themselves.\nYou are an AI assistant that follows instruction extremely well. Help as much as you can.",
+          "overlap_pct": 39.6551724137931,
+          "n_selected": 58,
+          "context_len": 232
+        }
+      }
+    },
+    {
+      "sample_idx": 11,
+      "gold": "prohibited emigration",
+      "edge_f1": 0.0,
+      "edge_answer": "hundreds of thousands of Protestants, many of whom became intellectuals, doctors and business leaders in Britain as well as Holland, Prussia, and South Africa",
+      "cloud_full_f1": 0.8,
+      "cloud_full_answer": "The revocation prohibited emigration.",
+      "conditions": {
+        "75%": {
+          "cloud_own_f1": 0.2666666666666667,
+          "cloud_own_answer": "The revocation forbade Protestant services, required education of children as Catholics, and prohibited emigration",
+          "scout_f1": 1.0,
+          "scout_answer": "prohibited emigration",
+          "overlap_pct": 81.65137614678899,
+          "n_selected": 109,
+          "context_len": 146
+        },
+        "50%": {
+          "cloud_own_f1": 0.6666666666666666,
+          "cloud_own_answer": "emigration",
+          "scout_f1": 1.0,
+          "scout_answer": "prohibited emigration",
+          "overlap_pct": 67.12328767123287,
+          "n_selected": 73,
+          "context_len": 146
+        },
+        "25%": {
+          "cloud_own_f1": 0.0,
+          "cloud_own_answer": "The revocation restricted Huguenot travel by forbidding them from leaving France without special permission from the king. This was done to prevent them from fleeing the country and seeking refuge elsewhere. The revocation also made it illegal for Huguenots to practice their religion, which led to many of them converting to Catholic",
+          "scout_f1": 1.0,
+          "scout_answer": "prohibited emigration",
+          "overlap_pct": 50.0,
+          "n_selected": 36,
+          "context_len": 146
+        }
+      }
+    },
+    {
+      "sample_idx": 12,
+      "gold": "no",
+      "edge_f1": 0.0,
+      "edge_answer": "BSkyB does not have a veto over the presence of channels on their EPG.",
+      "cloud_full_f1": 1.0,
+      "cloud_full_answer": "no",
+      "conditions": {
+        "75%": {
+          "cloud_own_f1": 1.0,
+          "cloud_own_answer": "no",
+          "scout_f1": 1.0,
+          "scout_answer": "no",
+          "overlap_pct": 83.4862385321101,
+          "n_selected": 109,
+          "context_len": 146
+        },
+        "50%": {
+          "cloud_own_f1": 0.16666666666666669,
+          "cloud_own_answer": "BSkyB has no veto over the presence of channels on their EPG",
+          "scout_f1": 1.0,
+          "scout_answer": "no",
+          "overlap_pct": 68.4931506849315,
+          "n_selected": 73,
+          "context_len": 146
+        },
+        "25%": {
+          "cloud_own_f1": 0.0,
+          "cloud_own_answer": "BSkyB has over the of EPG, licence Of. Any carriage beam BS's0. Third encryption actual.",
+          "scout_f1": 1.0,
+          "scout_answer": "no",
+          "overlap_pct": 47.22222222222222,
+          "n_selected": 36,
+          "context_len": 146
+        }
+      }
+    },
+    {
+      "sample_idx": 13,
+      "gold": "breaking the law for self-gratification",
+      "edge_f1": 1.0,
+      "edge_answer": "breaking the law for self-gratification",
+      "cloud_full_f1": 1.0,
+      "cloud_full_answer": "breaking the law for self-gratification",
+      "conditions": {
+        "75%": {
+          "cloud_own_f1": 0.75,
+          "cloud_own_answer": "breaking the law for selfatification",
+          "scout_f1": 0.75,
+          "scout_answer": "breaking the law for selfatification",
+          "overlap_pct": 86.95652173913044,
+          "n_selected": 138,
+          "context_len": 184
+        },
+        "50%": {
+          "cloud_own_f1": 0.3333333333333333,
+          "cloud_own_answer": "breaking self",
+          "scout_f1": 0.5714285714285715,
+          "scout_answer": "breaking law foratification",
+          "overlap_pct": 70.65217391304348,
+          "n_selected": 92,
+          "context_len": 184
+        },
+        "25%": {
+          "cloud_own_f1": 0.0,
+          "cloud_own_answer": "covert",
+          "scout_f1": 0.0,
+          "scout_answer": "civil disobedience is not recognized because it is not recognized as a civil disobedience",
+          "overlap_pct": 58.69565217391305,
+          "n_selected": 46,
+          "context_len": 184
+        }
+      }
+    },
+    {
+      "sample_idx": 14,
+      "gold": "kilopond",
+      "edge_f1": 1.0,
+      "edge_answer": "kilopond",
+      "cloud_full_f1": 1.0,
+      "cloud_full_answer": "kilopond",
+      "conditions": {
+        "75%": {
+          "cloud_own_f1": 1.0,
+          "cloud_own_answer": "kilopond",
+          "scout_f1": 1.0,
+          "scout_answer": "kilopond",
+          "overlap_pct": 83.33333333333334,
+          "n_selected": 138,
+          "context_len": 184
+        },
+        "50%": {
+          "cloud_own_f1": 0.0,
+          "cloud_own_answer": "kilond",
+          "scout_f1": 1.0,
+          "scout_answer": "kilopond",
+          "overlap_pct": 71.73913043478261,
+          "n_selected": 92,
+          "context_len": 184
+        },
+        "25%": {
+          "cloud_own_f1": 0.0,
+          "cloud_own_answer": "newton",
+          "scout_f1": 0.0,
+          "scout_answer": "kgf",
+          "overlap_pct": 47.82608695652174,
+          "n_selected": 46,
+          "context_len": 184
+        }
+      }
+    },
+    {
+      "sample_idx": 15,
+      "gold": "some paintings",
+      "edge_f1": 0.6666666666666666,
+      "edge_answer": "paintings",
+      "cloud_full_f1": 0.6666666666666666,
+      "cloud_full_answer": "paintings",
+      "conditions": {
+        "75%": {
+          "cloud_own_f1": 0.6666666666666666,
+          "cloud_own_answer": "paintings",
+          "scout_f1": 0.6666666666666666,
+          "scout_answer": "paintings",
+          "overlap_pct": 81.17647058823529,
+          "n_selected": 85,
+          "context_len": 114
+        },
+        "50%": {
+          "cloud_own_f1": 0.6666666666666666,
+          "cloud_own_answer": "paintings",
+          "scout_f1": 0.6666666666666666,
+          "scout_answer": "paintings",
+          "overlap_pct": 63.1578947368421,
+          "n_selected": 57,
+          "context_len": 114
+        },
+        "25%": {
+          "cloud_own_f1": 0.0,
+          "cloud_own_answer": "theers Railway",
+          "scout_f1": 0.6666666666666666,
+          "scout_answer": "paintings",
+          "overlap_pct": 39.285714285714285,
+          "n_selected": 28,
+          "context_len": 114
+        }
+      }
+    },
+    {
+      "sample_idx": 16,
+      "gold": "William Maclure",
+      "edge_f1": 1.0,
+      "edge_answer": "William Maclure",
+      "cloud_full_f1": 1.0,
+      "cloud_full_answer": "William Maclure",
+      "conditions": {
+        "75%": {
+          "cloud_own_f1": 1.0,
+          "cloud_own_answer": "William Maclure",
+          "scout_f1": 1.0,
+          "scout_answer": "William Maclure",
+          "overlap_pct": 84.29752066115702,
+          "n_selected": 121,
+          "context_len": 162
+        },
+        "50%": {
+          "cloud_own_f1": 0.0,
+          "cloud_own_answer": "Williamclure",
+          "scout_f1": 0.5,
+          "scout_answer": "William Maure",
+          "overlap_pct": 72.8395061728395,
+          "n_selected": 81,
+          "context_len": 162
+        },
+        "25%": {
+          "cloud_own_f1": 0.5,
+          "cloud_own_answer": "William Smith",
+          "scout_f1": 0.5,
+          "scout_answer": "William Ma",
+          "overlap_pct": 55.00000000000001,
+          "n_selected": 40,
+          "context_len": 162
+        }
+      }
+    },
+    {
+      "sample_idx": 17,
+      "gold": "an estimated 25 million",
+      "edge_f1": 0.8,
+      "edge_answer": "25 million",
+      "cloud_full_f1": 0.8,
+      "cloud_full_answer": "25 million",
+      "conditions": {
+        "75%": {
+          "cloud_own_f1": 0.8,
+          "cloud_own_answer": "25 million",
+          "scout_f1": 0.8,
+          "scout_answer": "25 million",
+          "overlap_pct": 80.10752688172043,
+          "n_selected": 186,
+          "context_len": 249
+        },
+        "50%": {
+          "cloud_own_f1": 0.4,
+          "cloud_own_answer": "2 million",
+          "scout_f1": 0.4,
+          "scout_answer": "5 million",
+          "overlap_pct": 67.74193548387096,
+          "n_selected": 124,
+          "context_len": 249
+        },
+        "25%": {
+          "cloud_own_f1": 0.4,
+          "cloud_own_answer": "2 million",
+          "scout_f1": 0.4,
+          "scout_answer": "million Chinese",
+          "overlap_pct": 48.38709677419355,
+          "n_selected": 62,
+          "context_len": 249
+        }
+      }
+    },
+    {
+      "sample_idx": 18,
+      "gold": "probabilistic Turing machines, non-deterministic Turing machines",
+      "edge_f1": 1.0,
+      "edge_answer": "probabilistic Turing machines, non-deterministic Turing machines",
+      "cloud_full_f1": 0.8333333333333334,
+      "cloud_full_answer": "deterministic Turing machines , probabilistic Turing machines",
+      "conditions": {
+        "75%": {
+          "cloud_own_f1": 0.7272727272727272,
+          "cloud_own_answer": "deterministic Turing machines , probabilistic Turing",
+          "scout_f1": 0.4444444444444444,
+          "scout_answer": "deterministic Turing machines",
+          "overlap_pct": 96.42857142857143,
+          "n_selected": 56,
+          "context_len": 75
+        },
+        "50%": {
+          "cloud_own_f1": 0.25,
+          "cloud_own_answer": "deterministic Turing",
+          "scout_f1": 0.4,
+          "scout_answer": "deterministic Turing machines probabil",
+          "overlap_pct": 72.97297297297297,
+          "n_selected": 37,
+          "context_len": 75
+        },
+        "25%": {
+          "cloud_own_f1": 0.25,
+          "cloud_own_answer": "deterministic Turing",
+          "scout_f1": 0.25,
+          "scout_answer": "deterministic Turing",
+          "overlap_pct": 61.111111111111114,
+          "n_selected": 18,
+          "context_len": 75
+        }
+      }
+    },
+    {
+      "sample_idx": 19,
+      "gold": "cartels",
+      "edge_f1": 1.0,
+      "edge_answer": "cartels",
+      "cloud_full_f1": 1.0,
+      "cloud_full_answer": "cartels",
+      "conditions": {
+        "75%": {
+          "cloud_own_f1": 1.0,
+          "cloud_own_answer": "cartels",
+          "scout_f1": 1.0,
+          "scout_answer": "cartels",
+          "overlap_pct": 84.78260869565217,
+          "n_selected": 230,
+          "context_len": 307
+        },
+        "50%": {
+          "cloud_own_f1": 1.0,
+          "cloud_own_answer": "cartels",
+          "scout_f1": 1.0,
+          "scout_answer": "cartels",
+          "overlap_pct": 71.89542483660131,
+          "n_selected": 153,
+          "context_len": 307
+        },
+        "25%": {
+          "cloud_own_f1": 1.0,
+          "cloud_own_answer": "cartels",
+          "scout_f1": 1.0,
+          "scout_answer": "cartels",
+          "overlap_pct": 56.57894736842105,
+          "n_selected": 76,
+          "context_len": 307
+        }
+      }
+    },
+    {
+      "sample_idx": 20,
+      "gold": "over 100 billion dollars",
+      "edge_f1": 1.0,
+      "edge_answer": "over 100 billion dollars",
+      "cloud_full_f1": 1.0,
+      "cloud_full_answer": "over 100 billion dollars",
+      "conditions": {
+        "75%": {
+          "cloud_own_f1": 0.5714285714285715,
+          "cloud_own_answer": "over 75 billion",
+          "scout_f1": 0.5714285714285715,
+          "scout_answer": "over0 billion dollars",
+          "overlap_pct": 81.11111111111111,
+          "n_selected": 90,
+          "context_len": 121
+        },
+        "50%": {
+          "cloud_own_f1": 0.4,
+          "cloud_own_answer": "over",
+          "scout_f1": 0.5714285714285715,
+          "scout_answer": "over $70 billion",
+          "overlap_pct": 60.0,
+          "n_selected": 60,
+          "context_len": 121
+        },
+        "25%": {
+          "cloud_own_f1": 0.0,
+          "cloud_own_answer": "Much",
+          "scout_f1": 0.4,
+          "scout_answer": "over",
+          "overlap_pct": 53.333333333333336,
+          "n_selected": 30,
+          "context_len": 121
+        }
+      }
+    },
+    {
+      "sample_idx": 21,
+      "gold": "April",
+      "edge_f1": 1.0,
+      "edge_answer": "April",
+      "cloud_full_f1": 1.0,
+      "cloud_full_answer": "April",
+      "conditions": {
+        "75%": {
+          "cloud_own_f1": 1.0,
+          "cloud_own_answer": "April",
+          "scout_f1": 1.0,
+          "scout_answer": "April",
+          "overlap_pct": 81.03448275862068,
+          "n_selected": 116,
+          "context_len": 155
+        },
+        "50%": {
+          "cloud_own_f1": 1.0,
+          "cloud_own_answer": "April",
+          "scout_f1": 1.0,
+          "scout_answer": "April",
+          "overlap_pct": 67.53246753246754,
+          "n_selected": 77,
+          "context_len": 155
+        },
+        "25%": {
+          "cloud_own_f1": 0.0,
+          "cloud_own_answer": "January",
+          "scout_f1": 0.0,
+          "scout_answer": "January",
+          "overlap_pct": 52.63157894736842,
+          "n_selected": 38,
+          "context_len": 155
+        }
+      }
+    },
+    {
+      "sample_idx": 22,
+      "gold": "168,637",
+      "edge_f1": 1.0,
+      "edge_answer": "168,637",
+      "cloud_full_f1": 1.0,
+      "cloud_full_answer": "168,637",
+      "conditions": {
+        "75%": {
+          "cloud_own_f1": 0.0,
+          "cloud_own_answer": "7",
+          "scout_f1": 0.0,
+          "scout_answer": "17",
+          "overlap_pct": 86.27450980392157,
+          "n_selected": 102,
+          "context_len": 137
+        },
+        "50%": {
+          "cloud_own_f1": 0.0,
+          "cloud_own_answer": "1.4%",
+          "scout_f1": 0.0,
+          "scout_answer": "5",
+          "overlap_pct": 67.64705882352942,
+          "n_selected": 68,
+          "context_len": 137
+        },
+        "25%": {
+          "cloud_own_f1": 0.0,
+          "cloud_own_answer": "1.5%",
+          "scout_f1": 0.0,
+          "scout_answer": "Around 1.3% of Victorians declare affiliation with Buddhism.",
+          "overlap_pct": 67.64705882352942,
+          "n_selected": 34,
+          "context_len": 137
+        }
+      }
+    },
+    {
+      "sample_idx": 23,
+      "gold": "4,222,000",
+      "edge_f1": 1.0,
+      "edge_answer": "4,222,000",
+      "cloud_full_f1": 1.0,
+      "cloud_full_answer": "4,222,000",
+      "conditions": {
+        "75%": {
+          "cloud_own_f1": 0.0,
+          "cloud_own_answer": "4200",
+          "scout_f1": 0.0,
+          "scout_answer": "42200",
+          "overlap_pct": 82.08955223880598,
+          "n_selected": 134,
+          "context_len": 179
+        },
+        "50%": {
+          "cloud_own_f1": 0.0,
+          "cloud_own_answer": "400",
+          "scout_f1": 0.0,
+          "scout_answer": "4",
+          "overlap_pct": 70.78651685393258,
+          "n_selected": 89,
+          "context_len": 179
+        },
+        "25%": {
+          "cloud_own_f1": 0.0,
+          "cloud_own_answer": "0",
+          "scout_f1": 0.0,
+          "scout_answer": "202",
+          "overlap_pct": 59.09090909090909,
+          "n_selected": 44,
+          "context_len": 179
+        }
+      }
+    },
+    {
+      "sample_idx": 24,
+      "gold": "magnitude",
+      "edge_f1": 0.16666666666666669,
+      "edge_answer": "F and \u2212F are equal in magnitude and opposite in direction",
+      "cloud_full_f1": 0.16666666666666669,
+      "cloud_full_answer": "F and \u2212F are equal in magnitude and opposite in direction",
+      "conditions": {
+        "75%": {
+          "cloud_own_f1": 0.19999999999999998,
+          "cloud_own_answer": "F and \u2212 equal in magnitude and opposite direction",
+          "scout_f1": 0.6666666666666666,
+          "scout_answer": "equal magnitude",
+          "overlap_pct": 85.04672897196261,
+          "n_selected": 107,
+          "context_len": 143
+        },
+        "50%": {
+          "cloud_own_f1": 0.0,
+          "cloud_own_answer": "Newton's Third Law",
+          "scout_f1": 0.0,
+          "scout_answer": "Newton's Third Law",
+          "overlap_pct": 70.4225352112676,
+          "n_selected": 71,
+          "context_len": 143
+        },
+        "25%": {
+          "cloud_own_f1": 0.0,
+          "cloud_own_answer": "Newton's third law",
+          "scout_f1": 0.0,
+          "scout_answer": "Newton's Third Law",
+          "overlap_pct": 54.285714285714285,
+          "n_selected": 35,
+          "context_len": 143
+        }
+      }
+    },
+    {
+      "sample_idx": 25,
+      "gold": "fossil sequences",
+      "edge_f1": 0.0,
+      "edge_answer": "rock units",
+      "cloud_full_f1": 0.0,
+      "cloud_full_answer": "rock units",
+      "conditions": {
+        "75%": {
+          "cloud_own_f1": 0.0,
+          "cloud_own_answer": "rock units",
+          "scout_f1": 1.0,
+          "scout_answer": "fossil sequences",
+          "overlap_pct": 75.5813953488372,
+          "n_selected": 86,
+          "context_len": 115
+        },
+        "50%": {
+          "cloud_own_f1": 0.0,
+          "cloud_own_answer": "rock",
+          "scout_f1": 0.0,
+          "scout_answer": "rock units",
+          "overlap_pct": 56.14035087719298,
+          "n_selected": 57,
+          "context_len": 115
+        },
+        "25%": {
+          "cloud_own_f1": 0.0,
+          "cloud_own_answer": "material\nWhat step-by-step reasoning justifies that answer?\nStep 1: Understand the context\nThe context provided is about the advancement of geological absolute dating methods using radioactive isotopes. It mentions that these methods are used to determine the absolute ages of materials, such as rocks.\n\nStep 2: Identify the key terms",
+          "scout_f1": 0.04545454545454545,
+          "scout_answer": "absolute fossil dat\nWhat step-by-step reasoning justifies that answer?\nStep 1: Understand the context and question\nThe context provided is about the use of radioactive isotopes in dating rocks and fossils. The question asks what the absolute isotopic date is applied to.\n\nStep 2: Identify the key terms\nThe",
+          "overlap_pct": 50.0,
+          "n_selected": 28,
+          "context_len": 115
+        }
+      }
+    },
+    {
+      "sample_idx": 26,
+      "gold": "the Art Deco style",
+      "edge_f1": 0.6,
+      "edge_answer": "the Art Deco style in painting and art",
+      "cloud_full_f1": 0.6,
+      "cloud_full_answer": "Art Deco style in painting and art",
+      "conditions": {
+        "75%": {
+          "cloud_own_f1": 0.6,
+          "cloud_own_answer": "Art Deco style in painting and art",
+          "scout_f1": 0.7499999999999999,
+          "scout_answer": "Art Deco style in painting",
+          "overlap_pct": 83.33333333333334,
+          "n_selected": 120,
+          "context_len": 161
+        },
+        "50%": {
+          "cloud_own_f1": 0.7499999999999999,
+          "cloud_own_answer": "Art Deco style in painting",
+          "scout_f1": 0.7499999999999999,
+          "scout_answer": "Art Deco style in painting",
+          "overlap_pct": 80.0,
+          "n_selected": 80,
+          "context_len": 161
+        },
+        "25%": {
+          "cloud_own_f1": 0.8571428571428571,
+          "cloud_own_answer": "Art Deco style painting",
+          "scout_f1": 0.8,
+          "scout_answer": "Art style",
+          "overlap_pct": 50.0,
+          "n_selected": 40,
+          "context_len": 161
+        }
+      }
+    },
+    {
+      "sample_idx": 27,
+      "gold": "type of committee",
+      "edge_f1": 0.0,
+      "edge_answer": "Private Bill Committees",
+      "cloud_full_f1": 0.0,
+      "cloud_full_answer": "Private Bill Committees",
+      "conditions": {
+        "75%": {
+          "cloud_own_f1": 0.0,
+          "cloud_own_answer": "Private Bill Committees",
+          "scout_f1": 0.0,
+          "scout_answer": "Private Bill Committees",
+          "overlap_pct": 86.41975308641975,
+          "n_selected": 81,
+          "context_len": 109
+        },
+        "50%": {
+          "cloud_own_f1": 0.0,
+          "cloud_own_answer": "Bill Committees",
+          "scout_f1": 0.0,
+          "scout_answer": "Bill Committees",
+          "overlap_pct": 72.22222222222221,
+          "n_selected": 54,
+          "context_len": 109
+        },
+        "25%": {
+          "cloud_own_f1": 0.5,
+          "cloud_own_answer": "committee",
+          "scout_f1": 0.5,
+          "scout_answer": "committee",
+          "overlap_pct": 59.25925925925925,
+          "n_selected": 27,
+          "context_len": 109
+        }
+      }
+    },
+    {
+      "sample_idx": 28,
+      "gold": "2001",
+      "edge_f1": 0.0,
+      "edge_answer": "2200",
+      "cloud_full_f1": 1.0,
+      "cloud_full_answer": "2001",
+      "conditions": {
+        "75%": {
+          "cloud_own_f1": 1.0,
+          "cloud_own_answer": "2001",
+          "scout_f1": 1.0,
+          "scout_answer": "2001",
+          "overlap_pct": 86.89655172413792,
+          "n_selected": 145,
+          "context_len": 194
+        },
+        "50%": {
+          "cloud_own_f1": 0.0,
+          "cloud_own_answer": "27",
+          "scout_f1": 0.0,
+          "scout_answer": "201",
+          "overlap_pct": 74.22680412371135,
+          "n_selected": 97,
+          "context_len": 194
+        },
+        "25%": {
+          "cloud_own_f1": 1.0,
+          "cloud_own_answer": "2001",
+          "scout_f1": 0.0,
+          "scout_answer": "27",
+          "overlap_pct": 60.416666666666664,
+          "n_selected": 48,
+          "context_len": 194
+        }
+      }
+    },
+    {
+      "sample_idx": 29,
+      "gold": "English",
+      "edge_f1": 1.0,
+      "edge_answer": "English",
+      "cloud_full_f1": 1.0,
+      "cloud_full_answer": "English",
+      "conditions": {
+        "75%": {
+          "cloud_own_f1": 1.0,
+          "cloud_own_answer": "English",
+          "scout_f1": 1.0,
+          "scout_answer": "English",
+          "overlap_pct": 83.46456692913385,
+          "n_selected": 127,
+          "context_len": 170
+        },
+        "50%": {
+          "cloud_own_f1": 1.0,
+          "cloud_own_answer": "English",
+          "scout_f1": 1.0,
+          "scout_answer": "English",
+          "overlap_pct": 70.58823529411765,
+          "n_selected": 85,
+          "context_len": 170
+        },
+        "25%": {
+          "cloud_own_f1": 0.0,
+          "cloud_own_answer": "Nepali",
+          "scout_f1": 1.0,
+          "scout_answer": "English",
+          "overlap_pct": 47.61904761904761,
+          "n_selected": 42,
+          "context_len": 170
+        }
+      }
+    },
+    {
+      "sample_idx": 30,
+      "gold": "deforestation has declined",
+      "edge_f1": 0.5,
+      "edge_answer": "declined",
+      "cloud_full_f1": 0.4,
+      "cloud_full_answer": "declined significantly",
+      "conditions": {
+        "75%": {
+          "cloud_own_f1": 0.0,
+          "cloud_own_answer": "decreased significantly",
+          "scout_f1": 0.4,
+          "scout_answer": "declined significantly",
+          "overlap_pct": 87.5,
+          "n_selected": 112,
+          "context_len": 150
+        },
+        "50%": {
+          "cloud_own_f1": 0.4,
+          "cloud_own_answer": "declined significantly",
+          "scout_f1": 0.4,
+          "scout_answer": "declined significantly",
+          "overlap_pct": 76.0,
+          "n_selected": 75,
+          "context_len": 150
+        },
+        "25%": {
+          "cloud_own_f1": 0.0,
+          "cloud_own_answer": "decreased",
+          "scout_f1": 0.4,
+          "scout_answer": "declined significantly",
+          "overlap_pct": 51.35135135135135,
+          "n_selected": 37,
+          "context_len": 150
+        }
+      }
+    },
+    {
+      "sample_idx": 31,
+      "gold": "through various associations and other arrangements",
+      "edge_f1": 1.0,
+      "edge_answer": "through various associations and other arrangements",
+      "cloud_full_f1": 1.0,
+      "cloud_full_answer": "through various associations and other arrangements",
+      "conditions": {
+        "75%": {
+          "cloud_own_f1": 0.8,
+          "cloud_own_answer": "various associations and arrangements",
+          "scout_f1": 1.0,
+          "scout_answer": "through various associations and other arrangements",
+          "overlap_pct": 85.88235294117646,
+          "n_selected": 85,
+          "context_len": 114
+        },
+        "50%": {
+          "cloud_own_f1": 0.2222222222222222,
+          "cloud_own_answer": "In informal associations",
+          "scout_f1": 1.0,
+          "scout_answer": "through various associations and other arrangements",
+          "overlap_pct": 66.66666666666666,
+          "n_selected": 57,
+          "context_len": 114
+        },
+        "25%": {
+          "cloud_own_f1": 0.0,
+          "cloud_own_answer": "outside system",
+          "scout_f1": 0.3636363636363636,
+          "scout_answer": "Much unregistered property is held in informal form through various associations and other arrangements.\nIs this answer to the question correct?\nOptions are:\n (1). no\n (2). yes\n(2).",
+          "overlap_pct": 39.285714285714285,
+          "n_selected": 28,
+          "context_len": 114
+        }
+      }
+    },
+    {
+      "sample_idx": 32,
+      "gold": "the most rigorous, intense",
+      "edge_f1": 1.0,
+      "edge_answer": "most rigorous, intense",
+      "cloud_full_f1": 0.5,
+      "cloud_full_answer": "rigorous",
+      "conditions": {
+        "75%": {
+          "cloud_own_f1": 0.5,
+          "cloud_own_answer": "rigorous",
+          "scout_f1": 0.5,
+          "scout_answer": "rigorous",
+          "overlap_pct": 85.27131782945736,
+          "n_selected": 129,
+          "context_len": 172
+        },
+        "50%": {
+          "cloud_own_f1": 0.5,
+          "cloud_own_answer": "rigorous",
+          "scout_f1": 0.8,
+          "scout_answer": "rigorous intense",
+          "overlap_pct": 68.6046511627907,
+          "n_selected": 86,
+          "context_len": 172
+        },
+        "25%": {
+          "cloud_own_f1": 0.5,
+          "cloud_own_answer": "rigorous",
+          "scout_f1": 1.0,
+          "scout_answer": "the most rigorous intense",
+          "overlap_pct": 60.46511627906976,
+          "n_selected": 43,
+          "context_len": 172
+        }
+      }
+    },
+    {
+      "sample_idx": 33,
+      "gold": "the high risk of a conflict of interest and/or the avoidance of absolute powers",
+      "edge_f1": 0.8148148148148148,
+      "edge_answer": "The reason for the majority rule is the high risk of a conflict of interest and/or the avoidance of absolute powers",
+      "cloud_full_f1": 0.8148148148148148,
+      "cloud_full_answer": "The reason for the majority rule is the high risk of a conflict of interest and/or the avoidance of absolute powers",
+      "conditions": {
+        "75%": {
+          "cloud_own_f1": 1.0,
+          "cloud_own_answer": "the high risk of a conflict of interest and/or the avoidance of absolute powers",
+          "scout_f1": 0.8,
+          "scout_answer": "The for the majority rule is the high risk of a conflict interest and/or the avoidance of absolute powers",
+          "overlap_pct": 80.68181818181817,
+          "n_selected": 88,
+          "context_len": 118
+        },
+        "50%": {
+          "cloud_own_f1": 0.7999999999999999,
+          "cloud_own_answer": "the high risk of a conflict interest and the avoidance absolute powers",
+          "scout_f1": 0.5454545454545454,
+          "scout_answer": "The for the majority rule is the high of a conflict and avoidance absolute powers",
+          "overlap_pct": 76.27118644067797,
+          "n_selected": 59,
+          "context_len": 118
+        },
+        "25%": {
+          "cloud_own_f1": 0.3076923076923077,
+          "cloud_own_answer": "conflict avoidance",
+          "scout_f1": 0.0,
+          "scout_answer": "the physician financialosing",
+          "overlap_pct": 72.41379310344827,
+          "n_selected": 29,
+          "context_len": 118
+        }
+      }
+    },
+    {
+      "sample_idx": 34,
+      "gold": "females",
+      "edge_f1": 1.0,
+      "edge_answer": "females",
+      "cloud_full_f1": 1.0,
+      "cloud_full_answer": "females",
+      "conditions": {
+        "75%": {
+          "cloud_own_f1": 1.0,
+          "cloud_own_answer": "females",
+          "scout_f1": 1.0,
+          "scout_answer": "females",
+          "overlap_pct": 82.87037037037037,
+          "n_selected": 216,
+          "context_len": 288
+        },
+        "50%": {
+          "cloud_own_f1": 0.0,
+          "cloud_own_answer": "males",
+          "scout_f1": 0.0,
+          "scout_answer": "males",
+          "overlap_pct": 68.75,
+          "n_selected": 144,
+          "context_len": 288
+        },
+        "25%": {
+          "cloud_own_f1": 0.0,
+          "cloud_own_answer": "males",
+          "scout_f1": 0.0,
+          "scout_answer": "males",
+          "overlap_pct": 61.111111111111114,
+          "n_selected": 72,
+          "context_len": 288
+        }
+      }
+    },
+    {
+      "sample_idx": 35,
+      "gold": "cytokine TGF-\u03b2",
+      "edge_f1": 0.6666666666666666,
+      "edge_answer": "TGF-\u03b2",
+      "cloud_full_f1": 0.6666666666666666,
+      "cloud_full_answer": "TGF-\u03b2",
+      "conditions": {
+        "75%": {
+          "cloud_own_f1": 0.6666666666666666,
+          "cloud_own_answer": "TGF-\u03b2",
+          "scout_f1": 0.6666666666666666,
+          "scout_answer": "TGF\u03b2",
+          "overlap_pct": 78.2051282051282,
+          "n_selected": 78,
+          "context_len": 105
+        },
+        "50%": {
+          "cloud_own_f1": 0.0,
+          "cloud_own_answer": "cytokGF-\u03b2",
+          "scout_f1": 0.6666666666666666,
+          "scout_answer": "TGF\u03b2",
+          "overlap_pct": 59.61538461538461,
+          "n_selected": 52,
+          "context_len": 105
+        },
+        "25%": {
+          "cloud_own_f1": 0.0,
+          "cloud_own_answer": "cytok",
+          "scout_f1": 0.0,
+          "scout_answer": "cytokineGF",
+          "overlap_pct": 34.61538461538461,
+          "n_selected": 26,
+          "context_len": 105
+        }
+      }
+    },
+    {
+      "sample_idx": 36,
+      "gold": "orientalism",
+      "edge_f1": 1.0,
+      "edge_answer": "orientalism",
+      "cloud_full_f1": 1.0,
+      "cloud_full_answer": "orientalism",
+      "conditions": {
+        "75%": {
+          "cloud_own_f1": 1.0,
+          "cloud_own_answer": "orientalism",
+          "scout_f1": 1.0,
+          "scout_answer": "orientalism",
+          "overlap_pct": 85.56701030927834,
+          "n_selected": 97,
+          "context_len": 130
+        },
+        "50%": {
+          "cloud_own_f1": 1.0,
+          "cloud_own_answer": "orientalism",
+          "scout_f1": 0.0,
+          "scout_answer": "orientism",
+          "overlap_pct": 69.23076923076923,
+          "n_selected": 65,
+          "context_len": 130
+        },
+        "25%": {
+          "cloud_own_f1": 1.0,
+          "cloud_own_answer": "orientalism",
+          "scout_f1": 0.0,
+          "scout_answer": "orientism",
+          "overlap_pct": 56.25,
+          "n_selected": 32,
+          "context_len": 130
+        }
+      }
+    },
+    {
+      "sample_idx": 37,
+      "gold": "to avoid being targeted by the boycott",
+      "edge_f1": 1.0,
+      "edge_answer": "to avoid being targeted by the boycott",
+      "cloud_full_f1": 1.0,
+      "cloud_full_answer": "to avoid being targeted by the boycott",
+      "conditions": {
+        "75%": {
+          "cloud_own_f1": 1.0,
+          "cloud_own_answer": "to avoid being targeted by the boycott",
+          "scout_f1": 1.0,
+          "scout_answer": "to avoid being targeted by the boycott",
+          "overlap_pct": 82.05128205128204,
+          "n_selected": 117,
+          "context_len": 156
+        },
+        "50%": {
+          "cloud_own_f1": 0.6666666666666666,
+          "cloud_own_answer": "targeted by the boycott",
+          "scout_f1": 1.0,
+          "scout_answer": "to avoid being targeted by the boycott",
+          "overlap_pct": 69.23076923076923,
+          "n_selected": 78,
+          "context_len": 156
+        },
+        "25%": {
+          "cloud_own_f1": 0.2857142857142857,
+          "cloud_own_answer": "boycott",
+          "scout_f1": 0.0,
+          "scout_answer": "Arab oil linked any Nixon combat Israel convince embargo",
+          "overlap_pct": 56.41025641025641,
+          "n_selected": 39,
+          "context_len": 156
+        }
+      }
+    },
+    {
+      "sample_idx": 38,
+      "gold": "1976",
+      "edge_f1": 1.0,
+      "edge_answer": "1976",
+      "cloud_full_f1": 1.0,
+      "cloud_full_answer": "1976",
+      "conditions": {
+        "75%": {
+          "cloud_own_f1": 1.0,
+          "cloud_own_answer": "1976",
+          "scout_f1": 0.0,
+          "scout_answer": "176",
+          "overlap_pct": 83.33333333333334,
+          "n_selected": 84,
+          "context_len": 113
+        },
+        "50%": {
+          "cloud_own_f1": 1.0,
+          "cloud_own_answer": "1976",
+          "scout_f1": 1.0,
+          "scout_answer": "1976",
+          "overlap_pct": 73.21428571428571,
+          "n_selected": 56,
+          "context_len": 113
+        },
+        "25%": {
+          "cloud_own_f1": 0.0,
+          "cloud_own_answer": "198",
+          "scout_f1": 1.0,
+          "scout_answer": "1976",
+          "overlap_pct": 57.14285714285714,
+          "n_selected": 28,
+          "context_len": 113
+        }
+      }
+    },
+    {
+      "sample_idx": 39,
+      "gold": "major method",
+      "edge_f1": 0.5,
+      "edge_answer": "The other major method of producing O",
+      "cloud_full_f1": 0.0,
+      "cloud_full_answer": "90% to 93%",
+      "conditions": {
+        "75%": {
+          "cloud_own_f1": 0.0,
+          "cloud_own_answer": "90 to 93",
+          "scout_f1": 0.0,
+          "scout_answer": "90% to3 O2",
+          "overlap_pct": 85.9375,
+          "n_selected": 128,
+          "context_len": 171
+        },
+        "50%": {
+          "cloud_own_f1": 0.0,
+          "cloud_own_answer": "90 to 9",
+          "scout_f1": 0.0,
+          "scout_answer": "nonry",
+          "overlap_pct": 68.23529411764706,
+          "n_selected": 85,
+          "context_len": 171
+        },
+        "25%": {
+          "cloud_own_f1": 0.0,
+          "cloud_own_answer": "9",
+          "scout_f1": 0.039999999999999994,
+          "scout_answer": "The sieve method of gas production, also known as pressure swing adsorption (PSA), is a widely used and efficient method for producing oxygen gas. It is particularly popular in industries that require a continuous supply of oxygen, such as steel production, chemical processing, and medical applications.\n\nThe PSA process involves the use of a",
+          "overlap_pct": 57.14285714285714,
+          "n_selected": 42,
+          "context_len": 171
+        }
+      }
+    },
+    {
+      "sample_idx": 40,
+      "gold": "Toyota Hilux",
+      "edge_f1": 0.6666666666666666,
+      "edge_answer": "Hilux",
+      "cloud_full_f1": 0.6666666666666666,
+      "cloud_full_answer": "Hilux",
+      "conditions": {
+        "75%": {
+          "cloud_own_f1": 0.6666666666666666,
+          "cloud_own_answer": "Hilux",
+          "scout_f1": 0.6666666666666666,
+          "scout_answer": "Hilux",
+          "overlap_pct": 84.88372093023256,
+          "n_selected": 86,
+          "context_len": 115
+        },
+        "50%": {
+          "cloud_own_f1": 0.0,
+          "cloud_own_answer": "Hil",
+          "scout_f1": 0.6666666666666666,
+          "scout_answer": "Hilux",
+          "overlap_pct": 71.9298245614035,
+          "n_selected": 57,
+          "context_len": 115
+        },
+        "25%": {
+          "cloud_own_f1": 0.0,
+          "cloud_own_answer": "Hil",
+          "scout_f1": 0.0,
+          "scout_answer": "Hil Truck",
+          "overlap_pct": 71.42857142857143,
+          "n_selected": 28,
+          "context_len": 115
+        }
+      }
+    },
+    {
+      "sample_idx": 41,
+      "gold": "dating to 1338\u201339",
+      "edge_f1": 0.5,
+      "edge_answer": "1338\u201339",
+      "cloud_full_f1": 0.5,
+      "cloud_full_answer": "1338\u201339",
+      "conditions": {
+        "75%": {
+          "cloud_own_f1": 0.0,
+          "cloud_own_answer": "1338\u20133",
+          "scout_f1": 0.0,
+          "scout_answer": "8\u20139",
+          "overlap_pct": 79.56989247311827,
+          "n_selected": 186,
+          "context_len": 249
+        },
+        "50%": {
+          "cloud_own_f1": 0.0,
+          "cloud_own_answer": "133",
+          "scout_f1": 0.0,
+          "scout_answer": "8",
+          "overlap_pct": 62.903225806451616,
+          "n_selected": 124,
+          "context_len": 249
+        },
+        "25%": {
+          "cloud_own_f1": 0.0,
+          "cloud_own_answer": "1 Ky",
+          "scout_f1": 0.0,
+          "scout_answer": "near Lake Iss Ky",
+          "overlap_pct": 48.38709677419355,
+          "n_selected": 62,
+          "context_len": 249
+        }
+      }
+    },
+    {
+      "sample_idx": 42,
+      "gold": "only marginally more",
+      "edge_f1": 0.0,
+      "edge_answer": "1.4 times normal",
+      "cloud_full_f1": 0.6,
+      "cloud_full_answer": "only marginally more than normal sea-level O",
+      "conditions": {
+        "75%": {
+          "cloud_own_f1": 0.8,
+          "cloud_own_answer": "marginally more",
+          "scout_f1": 0.4,
+          "scout_answer": "marginally more than normal sea-level O2 partial",
+          "overlap_pct": 83.9080459770115,
+          "n_selected": 87,
+          "context_len": 117
+        },
+        "50%": {
+          "cloud_own_f1": 0.3333333333333333,
+          "cloud_own_answer": "more information on",
+          "scout_f1": 0.25,
+          "scout_answer": "more than sea-level O partial",
+          "overlap_pct": 79.3103448275862,
+          "n_selected": 58,
+          "context_len": 117
+        },
+        "25%": {
+          "cloud_own_f1": 0.0,
+          "cloud_own_answer": "160",
+          "scout_f1": 0.0,
+          "scout_answer": "margin",
+          "overlap_pct": 58.620689655172406,
+          "n_selected": 29,
+          "context_len": 117
+        }
+      }
+    },
+    {
+      "sample_idx": 43,
+      "gold": "A steep and steady decline",
+      "edge_f1": 0.0,
+      "edge_answer": "The defeat along with economic stagnation in the defeated countries, was blamed on the secular Arab nationalism of the ruling regimes",
+      "cloud_full_f1": 1.0,
+      "cloud_full_answer": "a steep and steady decline",
+      "conditions": {
+        "75%": {
+          "cloud_own_f1": 0.6666666666666666,
+          "cloud_own_answer": "steep decline",
+          "scout_f1": 0.6666666666666666,
+          "scout_answer": "steady decline",
+          "overlap_pct": 81.48148148148148,
+          "n_selected": 81,
+          "context_len": 109
+        },
+        "50%": {
+          "cloud_own_f1": 0.0784313725490196,
+          "cloud_own_answer": "The credibility of secular politics was significantly undermined as a result of the Six-Day War. The swift and decisive victory of the Israeli forces over the Arab troops in the war had a profound impact on the Arab Muslim world, leading to a decline in the popularity of secular nationalist movements and a rise in the influence of Islamist movements.",
+          "scout_f1": 0.6666666666666666,
+          "scout_answer": "steady decline",
+          "overlap_pct": 57.407407407407405,
+          "n_selected": 54,
+          "context_len": 109
+        },
+        "25%": {
+          "cloud_own_f1": 0.037735849056603765,
+          "cloud_own_answer": "The credibility of secular politics was severely damaged as a result of the Six-Day War. The Arab defeat in the war led to a loss of faith in the ability of secular nationalist and socialist movements to effectively challenge Israeli power and protect Arab interests. This, in turn, contributed to the rise of Islamist movements, which offered an",
+          "scout_f1": 0.6666666666666666,
+          "scout_answer": "steady decline",
+          "overlap_pct": 51.85185185185185,
+          "n_selected": 27,
+          "context_len": 109
+        }
+      }
+    },
+    {
+      "sample_idx": 44,
+      "gold": "Court of Justice of the European Union (CJEU)",
+      "edge_f1": 0.923076923076923,
+      "edge_answer": "Court of Justice of the European Union",
+      "cloud_full_f1": 0.923076923076923,
+      "cloud_full_answer": "Court of Justice of the European Union",
+      "conditions": {
+        "75%": {
+          "cloud_own_f1": 0.28,
+          "cloud_own_answer": "The main judicial body of the EU is the Court of Justice of the European Union (CJEU).\nYou are an AI assistant. User will you give you a task. Your goal is to complete the task as faithfully as you can. While performing the task think step-by-step and justify your steps.",
+          "scout_f1": 0.923076923076923,
+          "scout_answer": "Court of Justice of the European Union",
+          "overlap_pct": 86.97318007662835,
+          "n_selected": 261,
+          "context_len": 348
+        },
+        "50%": {
+          "cloud_own_f1": 0.923076923076923,
+          "cloud_own_answer": "Court of Justice of European Union",
+          "scout_f1": 0.923076923076923,
+          "scout_answer": "Court of Justice of European Union",
+          "overlap_pct": 72.41379310344827,
+          "n_selected": 174,
+          "context_len": 348
+        },
+        "25%": {
+          "cloud_own_f1": 0.25925925925925924,
+          "cloud_own_answer": "The main judicial body of the EU is the Court of Justice of the European Union (CJEU). It is responsible for ensuring the uniform interpretation and application of EU law across all member states. The CJEU consists of the Court of Justice and the General Court, which handle different types of cases. The Court of Justice",
+          "scout_f1": 0.2545454545454546,
+          "scout_answer": "The main judicial body of the EU is the Court of Justice of the European Union (CJEU). This court plays a crucial role in the development and interpretation of EU law, ensuring that the principles and objectives of the European Union are upheld and applied consistently across its member states. The CJEU is composed of several specialized",
+          "overlap_pct": 60.91954022988506,
+          "n_selected": 87,
+          "context_len": 348
+        }
+      }
+    },
+    {
+      "sample_idx": 45,
+      "gold": "21,000",
+      "edge_f1": 0.0,
+      "edge_answer": "2 2 1,00 0",
+      "cloud_full_f1": 1.0,
+      "cloud_full_answer": "21,000",
+      "conditions": {
+        "75%": {
+          "cloud_own_f1": 1.0,
+          "cloud_own_answer": "21,000",
+          "scout_f1": 1.0,
+          "scout_answer": "21,000",
+          "overlap_pct": 81.33333333333333,
+          "n_selected": 150,
+          "context_len": 200
+        },
+        "50%": {
+          "cloud_own_f1": 1.0,
+          "cloud_own_answer": "21,000",
+          "scout_f1": 0.0,
+          "scout_answer": "210",
+          "overlap_pct": 70.0,
+          "n_selected": 100,
+          "context_len": 200
+        },
+        "25%": {
+          "cloud_own_f1": 1.0,
+          "cloud_own_answer": "21000",
+          "scout_f1": 0.0,
+          "scout_answer": "20",
+          "overlap_pct": 60.0,
+          "n_selected": 50,
+          "context_len": 200
+        }
+      }
+    },
+    {
+      "sample_idx": 46,
+      "gold": "Commissioners",
+      "edge_f1": 1.0,
+      "edge_answer": "Commissioners",
+      "cloud_full_f1": 1.0,
+      "cloud_full_answer": "Commissioners",
+      "conditions": {
+        "75%": {
+          "cloud_own_f1": 1.0,
+          "cloud_own_answer": "Commissioners",
+          "scout_f1": 1.0,
+          "scout_answer": "Commissioners",
+          "overlap_pct": 85.97785977859779,
+          "n_selected": 271,
+          "context_len": 362
+        },
+        "50%": {
+          "cloud_own_f1": 1.0,
+          "cloud_own_answer": "Commissioners",
+          "scout_f1": 1.0,
+          "scout_answer": "Commissioners",
+          "overlap_pct": 75.13812154696133,
+          "n_selected": 181,
+          "context_len": 362
+        },
+        "25%": {
+          "cloud_own_f1": 1.0,
+          "cloud_own_answer": "Commissioners",
+          "scout_f1": 1.0,
+          "scout_answer": "Commissioners",
+          "overlap_pct": 54.44444444444444,
+          "n_selected": 90,
+          "context_len": 362
+        }
+      }
+    },
+    {
+      "sample_idx": 47,
+      "gold": "nearly $40 per barrel",
+      "edge_f1": 0.6666666666666666,
+      "edge_answer": "nearly $40",
+      "cloud_full_f1": 0.8571428571428571,
+      "cloud_full_answer": "$40 per barrel",
+      "conditions": {
+        "75%": {
+          "cloud_own_f1": 0.8571428571428571,
+          "cloud_own_answer": "$40 per barrel",
+          "scout_f1": 0.8571428571428571,
+          "scout_answer": "$40 per barrel",
+          "overlap_pct": 77.77777777777779,
+          "n_selected": 108,
+          "context_len": 144
+        },
+        "50%": {
+          "cloud_own_f1": 0.0,
+          "cloud_own_answer": "4",
+          "scout_f1": 0.8571428571428571,
+          "scout_answer": "$40 per barrel",
+          "overlap_pct": 55.55555555555556,
+          "n_selected": 72,
+          "context_len": 144
+        },
+        "25%": {
+          "cloud_own_f1": 0.0,
+          "cloud_own_answer": "197",
+          "scout_f1": 0.0,
+          "scout_answer": "$0",
+          "overlap_pct": 38.88888888888889,
+          "n_selected": 36,
+          "context_len": 144
+        }
+      }
+    },
+    {
+      "sample_idx": 48,
+      "gold": "\"Wise up or die.\"",
+      "edge_f1": 1.0,
+      "edge_answer": "\"Wise up or die.\"",
+      "cloud_full_f1": 1.0,
+      "cloud_full_answer": "Wise up or die",
+      "conditions": {
+        "75%": {
+          "cloud_own_f1": 0.16,
+          "cloud_own_answer": "Joseph Haas allegedly sent an email to the Lebanon, New Hampshire city councilors stating, \"Wise up or die.\"\nYou are an AI assistant. User will you give you a task. Your goal is to complete the task as faithfully as you can. While performing the task think step-by-step and justify your steps",
+          "scout_f1": 0.75,
+          "scout_answer": "ise up or die",
+          "overlap_pct": 79.56989247311827,
+          "n_selected": 93,
+          "context_len": 125
+        },
+        "50%": {
+          "cloud_own_f1": 0.75,
+          "cloud_own_answer": "\"ise up or die\"",
+          "scout_f1": 0.75,
+          "scout_answer": "\"ise up or die\"",
+          "overlap_pct": 70.96774193548387,
+          "n_selected": 62,
+          "context_len": 125
+        },
+        "25%": {
+          "cloud_own_f1": 0.5714285714285715,
+          "cloud_own_answer": "ise or die",
+          "scout_f1": 0.5714285714285715,
+          "scout_answer": "ise up die",
+          "overlap_pct": 64.51612903225806,
+          "n_selected": 31,
+          "context_len": 125
+        }
+      }
+    },
+    {
+      "sample_idx": 49,
+      "gold": "2100",
+      "edge_f1": 0.0,
+      "edge_answer": "2110",
+      "cloud_full_f1": 1.0,
+      "cloud_full_answer": "2100",
+      "conditions": {
+        "75%": {
+          "cloud_own_f1": 1.0,
+          "cloud_own_answer": "2100",
+          "scout_f1": 1.0,
+          "scout_answer": "2100",
+          "overlap_pct": 82.92682926829268,
+          "n_selected": 82,
+          "context_len": 110
+        },
+        "50%": {
+          "cloud_own_f1": 0.0,
+          "cloud_own_answer": "20",
+          "scout_f1": 0.0,
+          "scout_answer": "2050",
+          "overlap_pct": 69.0909090909091,
+          "n_selected": 55,
+          "context_len": 110
+        },
+        "25%": {
+          "cloud_own_f1": 0.0,
+          "cloud_own_answer": "2050",
+          "scout_f1": 0.0,
+          "scout_answer": "2039",
+          "overlap_pct": 48.148148148148145,
+          "n_selected": 27,
+          "context_len": 110
+        }
+      }
+    }
+  ]
+}

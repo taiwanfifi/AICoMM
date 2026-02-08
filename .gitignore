@@ -3,6 +3,7 @@
 *.swp
 *~
 ._.DS_Store
+Thumbs.db
 
 # Backup
 backup*/
@@ -27,8 +28,9 @@ __pycache__/
 .Python
 venv/
 ENV/
+*.egg-info/
 
-# LaTeX
+# LaTeX build artifacts
 *.aux
 *.log
 *.out
@@ -36,13 +38,19 @@ ENV/
 *.fdb_latexmk
 *.fls
 *.synctex.gz
+*.bbl
+*.blg
 
-# Large binary files
-*.pdf
-*.mp4
+# Compiled PDFs (figures are tracked, compiled papers are not)
+papers/*/main.pdf
+
+# Environment / credentials
+.env
 
 # Claude Code local config
 .claude/
 
-# OS
-Thumbs.db
+# Internal / archived files (not for public)
+archive/
+CLAUDE.md
+ROADMAP.md

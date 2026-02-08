@@ -1,0 +1,1099 @@
+{
+  "metadata": {
+    "experiment": "batch30_adaptive_protocol",
+    "timestamp": "2026-02-08T18:53:28.005935",
+    "description": "Adaptive protocol simulation using Paper A empirical data"
+  },
+  "protocol_simulation": {
+    "Qwen-7B_deadline1000": {
+      "static_int8": {
+        "avg_quality": 99.59999999999998,
+        "std_quality": 1.4210854715202004e-14,
+        "min_quality": 99.6,
+        "max_quality": 99.6,
+        "deadline_success_rate": 0.586,
+        "avg_latency_ms": 2052.836,
+        "p50_latency_ms": 932.0000000000001,
+        "p95_latency_ms": 7628.0,
+        "p99_latency_ms": 7628.0
+      },
+      "static_int4": {
+        "avg_quality": 96.20000000000003,
+        "std_quality": 2.842170943040401e-14,
+        "min_quality": 96.2,
+        "max_quality": 96.2,
+        "deadline_success_rate": 0.749,
+        "avg_latency_ms": 1120.418,
+        "p50_latency_ms": 560.0,
+        "p95_latency_ms": 3908.0,
+        "p99_latency_ms": 3908.0
+      },
+      "adaptive": {
+        "avg_quality": 102.58739999999999,
+        "std_quality": 5.368778375012322,
+        "min_quality": 96.2,
+        "max_quality": 107.1,
+        "deadline_success_rate": 0.749,
+        "avg_latency_ms": 1134.097928,
+        "p50_latency_ms": 600.176,
+        "p95_latency_ms": 3908.0,
+        "p99_latency_ms": 3908.0
+      },
+      "scout": {
+        "avg_quality": 95.0,
+        "std_quality": 0.0,
+        "min_quality": 95.0,
+        "max_quality": 95.0,
+        "deadline_success_rate": 1.0,
+        "avg_latency_ms": 204.13635359999998,
+        "p50_latency_ms": 204.0544,
+        "p95_latency_ms": 204.54399999999998,
+        "p99_latency_ms": 204.54399999999998
+      },
+      "no_transfer": {
+        "avg_quality": 75.0,
+        "std_quality": 0.0,
+        "min_quality": 75.0,
+        "max_quality": 75.0,
+        "deadline_success_rate": 1.0,
+        "avg_latency_ms": 185.0,
+        "p50_latency_ms": 185.0,
+        "p95_latency_ms": 185.0,
+        "p99_latency_ms": 185.0
+      }
+    },
+    "Qwen-7B_deadline2000": {
+      "static_int8": {
+        "avg_quality": 99.59999999999998,
+        "std_quality": 1.4210854715202004e-14,
+        "min_quality": 99.6,
+        "max_quality": 99.6,
+        "deadline_success_rate": 0.749,
+        "avg_latency_ms": 2052.836,
+        "p50_latency_ms": 932.0000000000001,
+        "p95_latency_ms": 7628.0,
+        "p99_latency_ms": 7628.0
+      },
+      "static_int4": {
+        "avg_quality": 96.20000000000003,
+        "std_quality": 2.842170943040401e-14,
+        "min_quality": 96.2,
+        "max_quality": 96.2,
+        "deadline_success_rate": 0.749,
+        "avg_latency_ms": 1120.418,
+        "p50_latency_ms": 560.0,
+        "p95_latency_ms": 3908.0,
+        "p99_latency_ms": 3908.0
+      },
+      "adaptive": {
+        "avg_quality": 104.36409999999998,
+        "std_quality": 4.72611480922755,
+        "min_quality": 96.2,
+        "max_quality": 107.1,
+        "deadline_success_rate": 0.749,
+        "avg_latency_ms": 1147.195304,
+        "p50_latency_ms": 600.176,
+        "p95_latency_ms": 3908.0,
+        "p99_latency_ms": 3908.0
+      },
+      "scout": {
+        "avg_quality": 95.0,
+        "std_quality": 0.0,
+        "min_quality": 95.0,
+        "max_quality": 95.0,
+        "deadline_success_rate": 1.0,
+        "avg_latency_ms": 204.13635359999998,
+        "p50_latency_ms": 204.0544,
+        "p95_latency_ms": 204.54399999999998,
+        "p99_latency_ms": 204.54399999999998
+      },
+      "no_transfer": {
+        "avg_quality": 75.0,
+        "std_quality": 0.0,
+        "min_quality": 75.0,
+        "max_quality": 75.0,
+        "deadline_success_rate": 1.0,
+        "avg_latency_ms": 185.0,
+        "p50_latency_ms": 185.0,
+        "p95_latency_ms": 185.0,
+        "p99_latency_ms": 185.0
+      }
+    },
+    "Qwen-7B_deadline3000": {
+      "static_int8": {
+        "avg_quality": 99.59999999999998,
+        "std_quality": 1.4210854715202004e-14,
+        "min_quality": 99.6,
+        "max_quality": 99.6,
+        "deadline_success_rate": 0.749,
+        "avg_latency_ms": 2052.836,
+        "p50_latency_ms": 932.0000000000001,
+        "p95_latency_ms": 7628.0,
+        "p99_latency_ms": 7628.0
+      },
+      "static_int4": {
+        "avg_quality": 96.20000000000003,
+        "std_quality": 2.842170943040401e-14,
+        "min_quality": 96.2,
+        "max_quality": 96.2,
+        "deadline_success_rate": 0.883,
+        "avg_latency_ms": 1120.418,
+        "p50_latency_ms": 560.0,
+        "p95_latency_ms": 3908.0,
+        "p99_latency_ms": 3908.0
+      },
+      "adaptive": {
+        "avg_quality": 105.82469999999998,
+        "std_quality": 3.5034811131216306,
+        "min_quality": 96.2,
+        "max_quality": 107.1,
+        "deadline_success_rate": 0.883,
+        "avg_latency_ms": 1174.1132240000002,
+        "p50_latency_ms": 600.176,
+        "p95_latency_ms": 3908.0,
+        "p99_latency_ms": 3908.0
+      },
+      "scout": {
+        "avg_quality": 95.0,
+        "std_quality": 0.0,
+        "min_quality": 95.0,
+        "max_quality": 95.0,
+        "deadline_success_rate": 1.0,
+        "avg_latency_ms": 204.13635359999998,
+        "p50_latency_ms": 204.0544,
+        "p95_latency_ms": 204.54399999999998,
+        "p99_latency_ms": 204.54399999999998
+      },
+      "no_transfer": {
+        "avg_quality": 75.0,
+        "std_quality": 0.0,
+        "min_quality": 75.0,
+        "max_quality": 75.0,
+        "deadline_success_rate": 1.0,
+        "avg_latency_ms": 185.0,
+        "p50_latency_ms": 185.0,
+        "p95_latency_ms": 185.0,
+        "p99_latency_ms": 185.0
+      }
+    },
+    "Qwen-7B_deadline5000": {
+      "static_int8": {
+        "avg_quality": 99.59999999999998,
+        "std_quality": 1.4210854715202004e-14,
+        "min_quality": 99.6,
+        "max_quality": 99.6,
+        "deadline_success_rate": 0.883,
+        "avg_latency_ms": 2052.836,
+        "p50_latency_ms": 932.0000000000001,
+        "p95_latency_ms": 7628.0,
+        "p99_latency_ms": 7628.0
+      },
+      "static_int4": {
+        "avg_quality": 96.20000000000003,
+        "std_quality": 2.842170943040401e-14,
+        "min_quality": 96.2,
+        "max_quality": 96.2,
+        "deadline_success_rate": 1.0,
+        "avg_latency_ms": 1120.418,
+        "p50_latency_ms": 560.0,
+        "p95_latency_ms": 3908.0,
+        "p99_latency_ms": 3908.0
+      },
+      "adaptive": {
+        "avg_quality": 107.09999999999997,
+        "std_quality": 2.842170943040401e-14,
+        "min_quality": 107.1,
+        "max_quality": 107.1,
+        "deadline_success_rate": 1.0,
+        "avg_latency_ms": 1221.119144,
+        "p50_latency_ms": 600.176,
+        "p95_latency_ms": 4309.76,
+        "p99_latency_ms": 4309.76
+      },
+      "scout": {
+        "avg_quality": 95.0,
+        "std_quality": 0.0,
+        "min_quality": 95.0,
+        "max_quality": 95.0,
+        "deadline_success_rate": 1.0,
+        "avg_latency_ms": 204.13635359999998,
+        "p50_latency_ms": 204.0544,
+        "p95_latency_ms": 204.54399999999998,
+        "p99_latency_ms": 204.54399999999998
+      },
+      "no_transfer": {
+        "avg_quality": 75.0,
+        "std_quality": 0.0,
+        "min_quality": 75.0,
+        "max_quality": 75.0,
+        "deadline_success_rate": 1.0,
+        "avg_latency_ms": 185.0,
+        "p50_latency_ms": 185.0,
+        "p95_latency_ms": 185.0,
+        "p99_latency_ms": 185.0
+      }
+    },
+    "Mistral-7B_deadline1000": {
+      "static_int8": {
+        "avg_quality": 99.79999999999997,
+        "std_quality": 2.842170943040401e-14,
+        "min_quality": 99.8,
+        "max_quality": 99.8,
+        "deadline_success_rate": 0.18,
+        "avg_latency_ms": 4683.948,
+        "p50_latency_ms": 1984.2999999999997,
+        "p95_latency_ms": 18112.299999999996,
+        "p99_latency_ms": 18112.299999999996
+      },
+      "static_int4": {
+        "avg_quality": 96.09999999999998,
+        "std_quality": 1.4210854715202004e-14,
+        "min_quality": 96.1,
+        "max_quality": 96.1,
+        "deadline_success_rate": 0.401,
+        "avg_latency_ms": 2438.1239999999993,
+        "p50_latency_ms": 1088.2999999999997,
+        "p95_latency_ms": 9152.299999999997,
+        "p99_latency_ms": 9152.299999999997
+      },
+      "adaptive": {
+        "avg_quality": 96.89199999999998,
+        "std_quality": 1.6904247986822742,
+        "min_quality": 96.1,
+        "max_quality": 100.5,
+        "deadline_success_rate": 0.401,
+        "avg_latency_ms": 2518.17,
+        "p50_latency_ms": 1088.2999999999997,
+        "p95_latency_ms": 9152.299999999997,
+        "p99_latency_ms": 9152.299999999997
+      },
+      "scout": {
+        "avg_quality": 95.0,
+        "std_quality": 0.0,
+        "min_quality": 95.0,
+        "max_quality": 95.0,
+        "deadline_success_rate": 1.0,
+        "avg_latency_ms": 210.13635359999998,
+        "p50_latency_ms": 210.0544,
+        "p95_latency_ms": 210.54399999999998,
+        "p99_latency_ms": 210.54399999999998
+      },
+      "no_transfer": {
+        "avg_quality": 60.0,
+        "std_quality": 0.0,
+        "min_quality": 60.0,
+        "max_quality": 60.0,
+        "deadline_success_rate": 1.0,
+        "avg_latency_ms": 189.0,
+        "p50_latency_ms": 189.0,
+        "p95_latency_ms": 189.0,
+        "p99_latency_ms": 189.0
+      }
+    },
+    "Mistral-7B_deadline2000": {
+      "static_int8": {
+        "avg_quality": 99.79999999999997,
+        "std_quality": 2.842170943040401e-14,
+        "min_quality": 99.8,
+        "max_quality": 99.8,
+        "deadline_success_rate": 0.586,
+        "avg_latency_ms": 4683.948,
+        "p50_latency_ms": 1984.2999999999997,
+        "p95_latency_ms": 18112.299999999996,
+        "p99_latency_ms": 18112.299999999996
+      },
+      "static_int4": {
+        "avg_quality": 96.09999999999998,
+        "std_quality": 1.4210854715202004e-14,
+        "min_quality": 96.1,
+        "max_quality": 96.1,
+        "deadline_success_rate": 0.749,
+        "avg_latency_ms": 2438.1239999999993,
+        "p50_latency_ms": 1088.2999999999997,
+        "p95_latency_ms": 9152.299999999997,
+        "p99_latency_ms": 9152.299999999997
+      },
+      "adaptive": {
+        "avg_quality": 98.54889999999997,
+        "std_quality": 2.0733785930215474,
+        "min_quality": 96.1,
+        "max_quality": 100.5,
+        "deadline_success_rate": 0.749,
+        "avg_latency_ms": 2881.2167,
+        "p50_latency_ms": 1984.2999999999997,
+        "p95_latency_ms": 9152.299999999997,
+        "p99_latency_ms": 9152.299999999997
+      },
+      "scout": {
+        "avg_quality": 95.0,
+        "std_quality": 0.0,
+        "min_quality": 95.0,
+        "max_quality": 95.0,
+        "deadline_success_rate": 1.0,
+        "avg_latency_ms": 210.13635359999998,
+        "p50_latency_ms": 210.0544,
+        "p95_latency_ms": 210.54399999999998,
+        "p99_latency_ms": 210.54399999999998
+      },
+      "no_transfer": {
+        "avg_quality": 60.0,
+        "std_quality": 0.0,
+        "min_quality": 60.0,
+        "max_quality": 60.0,
+        "deadline_success_rate": 1.0,
+        "avg_latency_ms": 189.0,
+        "p50_latency_ms": 189.0,
+        "p95_latency_ms": 189.0,
+        "p99_latency_ms": 189.0
+      }
+    },
+    "Mistral-7B_deadline3000": {
+      "static_int8": {
+        "avg_quality": 99.79999999999997,
+        "std_quality": 2.842170943040401e-14,
+        "min_quality": 99.8,
+        "max_quality": 99.8,
+        "deadline_success_rate": 0.586,
+        "avg_latency_ms": 4683.948,
+        "p50_latency_ms": 1984.2999999999997,
+        "p95_latency_ms": 18112.299999999996,
+        "p99_latency_ms": 18112.299999999996
+      },
+      "static_int4": {
+        "avg_quality": 96.09999999999998,
+        "std_quality": 1.4210854715202004e-14,
+        "min_quality": 96.1,
+        "max_quality": 96.1,
+        "deadline_success_rate": 0.749,
+        "avg_latency_ms": 2438.1239999999993,
+        "p50_latency_ms": 1088.2999999999997,
+        "p95_latency_ms": 9152.299999999997,
+        "p99_latency_ms": 9152.299999999997
+      },
+      "adaptive": {
+        "avg_quality": 98.6784,
+        "std_quality": 2.1672132889958045,
+        "min_quality": 96.1,
+        "max_quality": 100.5,
+        "deadline_success_rate": 0.749,
+        "avg_latency_ms": 3046.3661999999995,
+        "p50_latency_ms": 1984.2999999999997,
+        "p95_latency_ms": 9152.299999999997,
+        "p99_latency_ms": 9152.299999999997
+      },
+      "scout": {
+        "avg_quality": 95.0,
+        "std_quality": 0.0,
+        "min_quality": 95.0,
+        "max_quality": 95.0,
+        "deadline_success_rate": 1.0,
+        "avg_latency_ms": 210.13635359999998,
+        "p50_latency_ms": 210.0544,
+        "p95_latency_ms": 210.54399999999998,
+        "p99_latency_ms": 210.54399999999998
+      },
+      "no_transfer": {
+        "avg_quality": 60.0,
+        "std_quality": 0.0,
+        "min_quality": 60.0,
+        "max_quality": 60.0,
+        "deadline_success_rate": 1.0,
+        "avg_latency_ms": 189.0,
+        "p50_latency_ms": 189.0,
+        "p95_latency_ms": 189.0,
+        "p99_latency_ms": 189.0
+      }
+    },
+    "Mistral-7B_deadline5000": {
+      "static_int8": {
+        "avg_quality": 99.79999999999997,
+        "std_quality": 2.842170943040401e-14,
+        "min_quality": 99.8,
+        "max_quality": 99.8,
+        "deadline_success_rate": 0.749,
+        "avg_latency_ms": 4683.948,
+        "p50_latency_ms": 1984.2999999999997,
+        "p95_latency_ms": 18112.299999999996,
+        "p99_latency_ms": 18112.299999999996
+      },
+      "static_int4": {
+        "avg_quality": 96.09999999999998,
+        "std_quality": 1.4210854715202004e-14,
+        "min_quality": 96.1,
+        "max_quality": 96.1,
+        "deadline_success_rate": 0.883,
+        "avg_latency_ms": 2438.1239999999993,
+        "p50_latency_ms": 1088.2999999999997,
+        "p95_latency_ms": 9152.299999999997,
+        "p99_latency_ms": 9152.299999999997
+      },
+      "adaptive": {
+        "avg_quality": 99.2815,
+        "std_quality": 1.8586252311856766,
+        "min_quality": 96.1,
+        "max_quality": 100.5,
+        "deadline_success_rate": 0.883,
+        "avg_latency_ms": 3338.4622,
+        "p50_latency_ms": 2876.9999999999995,
+        "p95_latency_ms": 9152.299999999997,
+        "p99_latency_ms": 9152.299999999997
+      },
+      "scout": {
+        "avg_quality": 95.0,
+        "std_quality": 0.0,
+        "min_quality": 95.0,
+        "max_quality": 95.0,
+        "deadline_success_rate": 1.0,
+        "avg_latency_ms": 210.13635359999998,
+        "p50_latency_ms": 210.0544,
+        "p95_latency_ms": 210.54399999999998,
+        "p99_latency_ms": 210.54399999999998
+      },
+      "no_transfer": {
+        "avg_quality": 60.0,
+        "std_quality": 0.0,
+        "min_quality": 60.0,
+        "max_quality": 60.0,
+        "deadline_success_rate": 1.0,
+        "avg_latency_ms": 189.0,
+        "p50_latency_ms": 189.0,
+        "p95_latency_ms": 189.0,
+        "p99_latency_ms": 189.0
+      }
+    },
+    "Qwen-14B_deadline1000": {
+      "static_int8": {
+        "avg_quality": 100.0,
+        "std_quality": 0.0,
+        "min_quality": 100.0,
+        "max_quality": 100.0,
+        "deadline_success_rate": 0.18,
+        "avg_latency_ms": 6625.388000000001,
+        "p50_latency_ms": 2780.8,
+        "p95_latency_ms": 25748.8,
+        "p99_latency_ms": 25748.8
+      },
+      "static_int4": {
+        "avg_quality": 95.5,
+        "std_quality": 0.0,
+        "min_quality": 95.5,
+        "max_quality": 95.5,
+        "deadline_success_rate": 0.401,
+        "avg_latency_ms": 3427.0940000000005,
+        "p50_latency_ms": 1504.8,
+        "p95_latency_ms": 12988.8,
+        "p99_latency_ms": 12988.8
+      },
+      "adaptive": {
+        "avg_quality": 96.33209999999998,
+        "std_quality": 1.718958868036115,
+        "min_quality": 95.5,
+        "max_quality": 100.0,
+        "deadline_success_rate": 0.401,
+        "avg_latency_ms": 3499.741784,
+        "p50_latency_ms": 1504.8,
+        "p95_latency_ms": 12988.8,
+        "p99_latency_ms": 12988.8
+      },
+      "scout": {
+        "avg_quality": 95.0,
+        "std_quality": 0.0,
+        "min_quality": 95.0,
+        "max_quality": 95.0,
+        "deadline_success_rate": 1.0,
+        "avg_latency_ms": 262.63635359999995,
+        "p50_latency_ms": 262.5544,
+        "p95_latency_ms": 263.044,
+        "p99_latency_ms": 263.044
+      },
+      "no_transfer": {
+        "avg_quality": 65.0,
+        "std_quality": 0.0,
+        "min_quality": 65.0,
+        "max_quality": 65.0,
+        "deadline_success_rate": 1.0,
+        "avg_latency_ms": 224.0,
+        "p50_latency_ms": 224.0,
+        "p95_latency_ms": 224.0,
+        "p99_latency_ms": 224.0
+      }
+    },
+    "Qwen-14B_deadline2000": {
+      "static_int8": {
+        "avg_quality": 100.0,
+        "std_quality": 0.0,
+        "min_quality": 100.0,
+        "max_quality": 100.0,
+        "deadline_success_rate": 0.401,
+        "avg_latency_ms": 6625.388000000001,
+        "p50_latency_ms": 2780.8,
+        "p95_latency_ms": 25748.8,
+        "p99_latency_ms": 25748.8
+      },
+      "static_int4": {
+        "avg_quality": 95.5,
+        "std_quality": 0.0,
+        "min_quality": 95.5,
+        "max_quality": 95.5,
+        "deadline_success_rate": 0.586,
+        "avg_latency_ms": 3427.0940000000005,
+        "p50_latency_ms": 1504.8,
+        "p95_latency_ms": 12988.8,
+        "p99_latency_ms": 12988.8
+      },
+      "adaptive": {
+        "avg_quality": 97.323,
+        "std_quality": 2.1906097324717613,
+        "min_quality": 95.5,
+        "max_quality": 100.0,
+        "deadline_success_rate": 0.586,
+        "avg_latency_ms": 3764.9824800000006,
+        "p50_latency_ms": 1642.608,
+        "p95_latency_ms": 12988.8,
+        "p99_latency_ms": 12988.8
+      },
+      "scout": {
+        "avg_quality": 95.0,
+        "std_quality": 0.0,
+        "min_quality": 95.0,
+        "max_quality": 95.0,
+        "deadline_success_rate": 1.0,
+        "avg_latency_ms": 262.63635359999995,
+        "p50_latency_ms": 262.5544,
+        "p95_latency_ms": 263.044,
+        "p99_latency_ms": 263.044
+      },
+      "no_transfer": {
+        "avg_quality": 65.0,
+        "std_quality": 0.0,
+        "min_quality": 65.0,
+        "max_quality": 65.0,
+        "deadline_success_rate": 1.0,
+        "avg_latency_ms": 224.0,
+        "p50_latency_ms": 224.0,
+        "p95_latency_ms": 224.0,
+        "p99_latency_ms": 224.0
+      }
+    },
+    "Qwen-14B_deadline3000": {
+      "static_int8": {
+        "avg_quality": 100.0,
+        "std_quality": 0.0,
+        "min_quality": 100.0,
+        "max_quality": 100.0,
+        "deadline_success_rate": 0.586,
+        "avg_latency_ms": 6625.388000000001,
+        "p50_latency_ms": 2780.8,
+        "p95_latency_ms": 25748.8,
+        "p99_latency_ms": 25748.8
+      },
+      "static_int4": {
+        "avg_quality": 95.5,
+        "std_quality": 0.0,
+        "min_quality": 95.5,
+        "max_quality": 95.5,
+        "deadline_success_rate": 0.749,
+        "avg_latency_ms": 3427.0940000000005,
+        "p50_latency_ms": 1504.8,
+        "p95_latency_ms": 12988.8,
+        "p99_latency_ms": 12988.8
+      },
+      "adaptive": {
+        "avg_quality": 98.137,
+        "std_quality": 2.216468136472979,
+        "min_quality": 95.5,
+        "max_quality": 100.0,
+        "deadline_success_rate": 0.749,
+        "avg_latency_ms": 4256.483200000001,
+        "p50_latency_ms": 2780.8,
+        "p95_latency_ms": 12988.8,
+        "p99_latency_ms": 12988.8
+      },
+      "scout": {
+        "avg_quality": 95.0,
+        "std_quality": 0.0,
+        "min_quality": 95.0,
+        "max_quality": 95.0,
+        "deadline_success_rate": 1.0,
+        "avg_latency_ms": 262.63635359999995,
+        "p50_latency_ms": 262.5544,
+        "p95_latency_ms": 263.044,
+        "p99_latency_ms": 263.044
+      },
+      "no_transfer": {
+        "avg_quality": 65.0,
+        "std_quality": 0.0,
+        "min_quality": 65.0,
+        "max_quality": 65.0,
+        "deadline_success_rate": 1.0,
+        "avg_latency_ms": 224.0,
+        "p50_latency_ms": 224.0,
+        "p95_latency_ms": 224.0,
+        "p99_latency_ms": 224.0
+      }
+    },
+    "Qwen-14B_deadline5000": {
+      "static_int8": {
+        "avg_quality": 100.0,
+        "std_quality": 0.0,
+        "min_quality": 100.0,
+        "max_quality": 100.0,
+        "deadline_success_rate": 0.586,
+        "avg_latency_ms": 6625.388000000001,
+        "p50_latency_ms": 2780.8,
+        "p95_latency_ms": 25748.8,
+        "p99_latency_ms": 25748.8
+      },
+      "static_int4": {
+        "avg_quality": 95.5,
+        "std_quality": 0.0,
+        "min_quality": 95.5,
+        "max_quality": 95.5,
+        "deadline_success_rate": 0.749,
+        "avg_latency_ms": 3427.0940000000005,
+        "p50_latency_ms": 1504.8,
+        "p95_latency_ms": 12988.8,
+        "p99_latency_ms": 12988.8
+      },
+      "adaptive": {
+        "avg_quality": 98.15329999999999,
+        "std_quality": 2.197300414144594,
+        "min_quality": 95.5,
+        "max_quality": 100.0,
+        "deadline_success_rate": 0.749,
+        "avg_latency_ms": 4301.408608,
+        "p50_latency_ms": 2780.8,
+        "p95_latency_ms": 12988.8,
+        "p99_latency_ms": 12988.8
+      },
+      "scout": {
+        "avg_quality": 95.0,
+        "std_quality": 0.0,
+        "min_quality": 95.0,
+        "max_quality": 95.0,
+        "deadline_success_rate": 1.0,
+        "avg_latency_ms": 262.63635359999995,
+        "p50_latency_ms": 262.5544,
+        "p95_latency_ms": 263.044,
+        "p99_latency_ms": 263.044
+      },
+      "no_transfer": {
+        "avg_quality": 65.0,
+        "std_quality": 0.0,
+        "min_quality": 65.0,
+        "max_quality": 65.0,
+        "deadline_success_rate": 1.0,
+        "avg_latency_ms": 224.0,
+        "p50_latency_ms": 224.0,
+        "p95_latency_ms": 224.0,
+        "p99_latency_ms": 224.0
+      }
+    }
+  },
+  "multi_agent": {
+    "multiagent_2agents_50mbps": {
+      "equal": {
+        "avg_total_quality": 206.90000000000006,
+        "avg_all_meet_deadline": 1.0,
+        "per_agent_avg_quality": {
+          "0": 107.09999999999997,
+          "1": 99.79999999999997
+        },
+        "jain_fairness": 0.5000000000000003
+      },
+      "model_aware": {
+        "avg_total_quality": 207.59999999999994,
+        "avg_all_meet_deadline": 1.0,
+        "per_agent_avg_quality": {
+          "0": 107.09999999999997,
+          "1": 100.5
+        },
+        "jain_fairness": 0.49999999999999967
+      },
+      "quality_max": {
+        "avg_total_quality": 207.59999999999994,
+        "avg_all_meet_deadline": 1.0,
+        "per_agent_avg_quality": {
+          "0": 107.09999999999997,
+          "1": 100.5
+        },
+        "jain_fairness": 0.49999999999999967
+      }
+    },
+    "multiagent_2agents_100mbps": {
+      "equal": {
+        "avg_total_quality": 207.59999999999994,
+        "avg_all_meet_deadline": 1.0,
+        "per_agent_avg_quality": {
+          "0": 107.09999999999997,
+          "1": 100.5
+        },
+        "jain_fairness": 0.49999999999999967
+      },
+      "model_aware": {
+        "avg_total_quality": 207.59999999999994,
+        "avg_all_meet_deadline": 1.0,
+        "per_agent_avg_quality": {
+          "0": 107.09999999999997,
+          "1": 100.5
+        },
+        "jain_fairness": 0.49999999999999967
+      },
+      "quality_max": {
+        "avg_total_quality": 207.59999999999994,
+        "avg_all_meet_deadline": 1.0,
+        "per_agent_avg_quality": {
+          "0": 107.09999999999997,
+          "1": 100.5
+        },
+        "jain_fairness": 0.49999999999999967
+      }
+    },
+    "multiagent_2agents_200mbps": {
+      "equal": {
+        "avg_total_quality": 207.59999999999994,
+        "avg_all_meet_deadline": 1.0,
+        "per_agent_avg_quality": {
+          "0": 107.09999999999997,
+          "1": 100.5
+        },
+        "jain_fairness": 0.49999999999999967
+      },
+      "model_aware": {
+        "avg_total_quality": 207.59999999999994,
+        "avg_all_meet_deadline": 1.0,
+        "per_agent_avg_quality": {
+          "0": 107.09999999999997,
+          "1": 100.5
+        },
+        "jain_fairness": 0.49999999999999967
+      },
+      "quality_max": {
+        "avg_total_quality": 207.59999999999994,
+        "avg_all_meet_deadline": 1.0,
+        "per_agent_avg_quality": {
+          "0": 107.09999999999997,
+          "1": 100.5
+        },
+        "jain_fairness": 0.49999999999999967
+      }
+    },
+    "multiagent_4agents_50mbps": {
+      "equal": {
+        "avg_total_quality": 405.80000000000007,
+        "avg_all_meet_deadline": 0.0,
+        "per_agent_avg_quality": {
+          "0": 107.09999999999997,
+          "1": 96.1,
+          "2": 95.5,
+          "3": 107.09999999999997
+        },
+        "jain_fairness": 0.25000000000000017
+      },
+      "model_aware": {
+        "avg_total_quality": 405.9,
+        "avg_all_meet_deadline": 1.0,
+        "per_agent_avg_quality": {
+          "0": 107.09999999999997,
+          "1": 96.1,
+          "2": 95.6,
+          "3": 107.09999999999997
+        },
+        "jain_fairness": 0.24999999999999994
+      },
+      "quality_max": {
+        "avg_total_quality": 407.9928,
+        "avg_all_meet_deadline": 1.0,
+        "per_agent_avg_quality": {
+          "0": 107.09999999999997,
+          "1": 97.7576,
+          "2": 96.07879999999999,
+          "3": 107.0564
+        },
+        "jain_fairness": 0.2499938293088
+      }
+    },
+    "multiagent_4agents_100mbps": {
+      "equal": {
+        "avg_total_quality": 409.6,
+        "avg_all_meet_deadline": 1.0,
+        "per_agent_avg_quality": {
+          "0": 107.09999999999997,
+          "1": 99.79999999999997,
+          "2": 95.6,
+          "3": 107.09999999999997
+        },
+        "jain_fairness": 0.24999999999999994
+      },
+      "model_aware": {
+        "avg_total_quality": 414.6999999999999,
+        "avg_all_meet_deadline": 1.0,
+        "per_agent_avg_quality": {
+          "0": 107.09999999999997,
+          "1": 100.5,
+          "2": 100.0,
+          "3": 107.09999999999997
+        },
+        "jain_fairness": 0.24999999999999983
+      },
+      "quality_max": {
+        "avg_total_quality": 414.6943999999999,
+        "avg_all_meet_deadline": 1.0,
+        "per_agent_avg_quality": {
+          "0": 107.09999999999997,
+          "1": 100.4944,
+          "2": 100.0,
+          "3": 107.09999999999997
+        },
+        "jain_fairness": 0.24999999434696848
+      }
+    },
+    "multiagent_4agents_200mbps": {
+      "equal": {
+        "avg_total_quality": 414.6999999999999,
+        "avg_all_meet_deadline": 1.0,
+        "per_agent_avg_quality": {
+          "0": 107.09999999999997,
+          "1": 100.5,
+          "2": 100.0,
+          "3": 107.09999999999997
+        },
+        "jain_fairness": 0.24999999999999983
+      },
+      "model_aware": {
+        "avg_total_quality": 414.6999999999999,
+        "avg_all_meet_deadline": 1.0,
+        "per_agent_avg_quality": {
+          "0": 107.09999999999997,
+          "1": 100.5,
+          "2": 100.0,
+          "3": 107.09999999999997
+        },
+        "jain_fairness": 0.24999999999999983
+      },
+      "quality_max": {
+        "avg_total_quality": 414.6999999999999,
+        "avg_all_meet_deadline": 1.0,
+        "per_agent_avg_quality": {
+          "0": 107.09999999999997,
+          "1": 100.5,
+          "2": 100.0,
+          "3": 107.09999999999997
+        },
+        "jain_fairness": 0.24999999999999983
+      }
+    },
+    "multiagent_8agents_50mbps": {
+      "equal": {
+        "avg_total_quality": 800.6000000000003,
+        "avg_all_meet_deadline": 0.0,
+        "per_agent_avg_quality": {
+          "0": 107.09999999999997,
+          "1": 96.1,
+          "2": 95.5,
+          "3": 107.09999999999997,
+          "4": 96.1,
+          "5": 95.5,
+          "6": 107.09999999999997,
+          "7": 96.1
+        },
+        "jain_fairness": 0.12500000000000008
+      },
+      "model_aware": {
+        "avg_total_quality": 767.8999999999999,
+        "avg_all_meet_deadline": 0.0,
+        "per_agent_avg_quality": {
+          "0": 96.20000000000003,
+          "1": 96.1,
+          "2": 95.5,
+          "3": 96.20000000000003,
+          "4": 96.1,
+          "5": 95.5,
+          "6": 96.20000000000003,
+          "7": 96.1
+        },
+        "jain_fairness": 0.12499999999999993
+      },
+      "quality_max": {
+        "avg_total_quality": 798.1398,
+        "avg_all_meet_deadline": 0.0,
+        "per_agent_avg_quality": {
+          "0": 106.02779999999998,
+          "1": 96.23319999999998,
+          "2": 95.43960000000001,
+          "3": 106.09719999999999,
+          "4": 96.316,
+          "5": 95.50220000000002,
+          "6": 106.22399999999999,
+          "7": 96.2998
+        },
+        "jain_fairness": 0.12498830911208764
+      }
+    },
+    "multiagent_8agents_100mbps": {
+      "equal": {
+        "avg_total_quality": 800.6000000000003,
+        "avg_all_meet_deadline": 0.0,
+        "per_agent_avg_quality": {
+          "0": 107.09999999999997,
+          "1": 96.1,
+          "2": 95.5,
+          "3": 107.09999999999997,
+          "4": 96.1,
+          "5": 95.5,
+          "6": 107.09999999999997,
+          "7": 96.1
+        },
+        "jain_fairness": 0.12500000000000008
+      },
+      "model_aware": {
+        "avg_total_quality": 800.8,
+        "avg_all_meet_deadline": 1.0,
+        "per_agent_avg_quality": {
+          "0": 107.09999999999997,
+          "1": 96.1,
+          "2": 95.6,
+          "3": 107.09999999999997,
+          "4": 96.1,
+          "5": 95.6,
+          "6": 107.09999999999997,
+          "7": 96.1
+        },
+        "jain_fairness": 0.12499999999999993
+      },
+      "quality_max": {
+        "avg_total_quality": 803.2868,
+        "avg_all_meet_deadline": 0.046,
+        "per_agent_avg_quality": {
+          "0": 106.75119999999998,
+          "1": 97.12519999999998,
+          "2": 95.9992,
+          "3": 106.50739999999999,
+          "4": 97.18419999999998,
+          "5": 96.0372,
+          "6": 106.68579999999999,
+          "7": 96.99659999999997
+        },
+        "jain_fairness": 0.12499247708178264
+      }
+    },
+    "multiagent_8agents_200mbps": {
+      "equal": {
+        "avg_total_quality": 811.8999999999997,
+        "avg_all_meet_deadline": 1.0,
+        "per_agent_avg_quality": {
+          "0": 107.09999999999997,
+          "1": 99.79999999999997,
+          "2": 95.6,
+          "3": 107.09999999999997,
+          "4": 99.79999999999997,
+          "5": 95.6,
+          "6": 107.09999999999997,
+          "7": 99.79999999999997
+        },
+        "jain_fairness": 0.12499999999999993
+      },
+      "model_aware": {
+        "avg_total_quality": 822.7999999999997,
+        "avg_all_meet_deadline": 1.0,
+        "per_agent_avg_quality": {
+          "0": 107.09999999999997,
+          "1": 100.5,
+          "2": 100.0,
+          "3": 107.09999999999997,
+          "4": 100.5,
+          "5": 100.0,
+          "6": 107.09999999999997,
+          "7": 100.5
+        },
+        "jain_fairness": 0.12499999999999992
+      },
+      "quality_max": {
+        "avg_total_quality": 816.7434000000001,
+        "avg_all_meet_deadline": 0.996,
+        "per_agent_avg_quality": {
+          "0": 107.09999999999997,
+          "1": 99.471,
+          "2": 98.8794,
+          "3": 107.03459999999998,
+          "4": 99.1736,
+          "5": 98.756,
+          "6": 107.09999999999997,
+          "7": 99.22879999999999
+        },
+        "jain_fairness": 0.12499839556767942
+      }
+    }
+  },
+  "pareto_frontiers": {
+    "Qwen-7B": [
+      {
+        "name": "INT4",
+        "bw_frac": 0.25,
+        "quality": 96.2,
+        "method": "int4"
+      },
+      {
+        "name": "Mixed-INT4",
+        "bw_frac": 0.277,
+        "quality": 107.1,
+        "method": "mixed_int4"
+      }
+    ],
+    "Mistral-7B": [
+      {
+        "name": "INT4",
+        "bw_frac": 0.25,
+        "quality": 96.1,
+        "method": "int4"
+      },
+      {
+        "name": "INT8",
+        "bw_frac": 0.5,
+        "quality": 99.8,
+        "method": "int8"
+      },
+      {
+        "name": "Q2C-75+BF16",
+        "bw_frac": 0.75,
+        "quality": 100.5,
+        "method": "q2c_75_fp16"
+      }
+    ],
+    "Qwen-14B": [
+      {
+        "name": "INT4",
+        "bw_frac": 0.25,
+        "quality": 95.5,
+        "method": "int4"
+      },
+      {
+        "name": "Mixed-INT4",
+        "bw_frac": 0.277,
+        "quality": 95.6,
+        "method": "mixed_int4"
+      },
+      {
+        "name": "INT8",
+        "bw_frac": 0.5,
+        "quality": 100.0,
+        "method": "int8"
+      }
+    ]
+  },
+  "bandwidth_stats": {
+    "mean": 72.8385,
+    "std": 65.8335052822649,
+    "median": 50.0,
+    "p5": 5.0,
+    "p95": 200.0,
+    "distribution": {
+      "5": 950,
+      "10": 1331,
+      "25": 1669,
+      "50": 2082,
+      "100": 2291,
+      "200": 1677
+    }
+  }
+}

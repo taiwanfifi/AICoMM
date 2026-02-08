@@ -1,0 +1,3662 @@
+{
+  "metadata": {
+    "num_samples": 50,
+    "full_f1": 0.7697163561076604,
+    "full_f1_std": 0.33340384348058555,
+    "full_f1_se": 0.047150423719756064,
+    "full_f1_raw": 0.752736345136345,
+    "h2o_25_f1": 0.16025732589871808,
+    "h2o_25_f1_std": 0.2410616343625224,
+    "h2o_25_f1_se": 0.03409126326833033,
+    "h2o_25_f1_raw": 0.12427337511789707,
+    "h2o_50_f1": 0.35927697448817986,
+    "h2o_50_f1_std": 0.37981482204308203,
+    "h2o_50_f1_se": 0.05371392725236502,
+    "h2o_50_f1_raw": 0.33918164680001867,
+    "h2o_75_f1": 0.5292506427022556,
+    "h2o_75_f1_std": 0.3900442239135755,
+    "h2o_75_f1_se": 0.055160583138386676,
+    "h2o_75_f1_raw": 0.5093694083694084,
+    "q2c_25_f1": 0.3604627440869595,
+    "q2c_25_f1_std": 0.38302107308124395,
+    "q2c_25_f1_se": 0.054167359622619156,
+    "q2c_25_f1_raw": 0.3315115734037266,
+    "q2c_50_f1": 0.5944262052647146,
+    "q2c_50_f1_std": 0.40048010517868676,
+    "q2c_50_f1_se": 0.05663643962043024,
+    "q2c_50_f1_raw": 0.5446449456975773,
+    "q2c_75_f1": 0.737208419599724,
+    "q2c_75_f1_std": 0.3454394420498823,
+    "q2c_75_f1_se": 0.048852514392553836,
+    "q2c_75_f1_raw": 0.7136113220113219,
+    "random_25_f1": 0.19215286209346036,
+    "random_25_f1_std": 0.30653320848018445,
+    "random_25_f1_se": 0.043350342075041626,
+    "random_25_f1_raw": 0.1444427895434254,
+    "random_50_f1": 0.1856998269498526,
+    "random_50_f1_std": 0.31165502100659614,
+    "random_50_f1_se": 0.04407467574892001,
+    "random_50_f1_raw": 0.17277828138647341,
+    "random_75_f1": 0.4252886183563976,
+    "random_75_f1_std": 0.40264289579619195,
+    "random_75_f1_se": 0.05694230440281515,
+    "random_75_f1_raw": 0.4047797619047619,
+    "snapkv_25_f1": 0.27916034775435444,
+    "snapkv_25_f1_std": 0.3478114131687421,
+    "snapkv_25_f1_se": 0.04918796176513872,
+    "snapkv_25_f1_raw": 0.25253638222581115,
+    "snapkv_50_f1": 0.5222854390810913,
+    "snapkv_50_f1_std": 0.42808279534803867,
+    "snapkv_50_f1_se": 0.06054004949997824,
+    "snapkv_50_f1_raw": 0.49449064078096333,
+    "snapkv_75_f1": 0.6623542188805347,
+    "snapkv_75_f1_std": 0.39102073610894333,
+    "snapkv_75_f1_se": 0.05529868281743786,
+    "snapkv_75_f1_raw": 0.642480016107923
+  },
+  "model": "Qwen-14B",
+  "normalized_f1": true,
+  "methodology": "attention_mask (batch 8 style)",
+  "results": [
+    {
+      "idx": 0,
+      "gold": "computational problems",
+      "seq_len": 106,
+      "num_context": 83,
+      "full": {
+        "answer": "Computational problem",
+        "f1": 0.5,
+        "f1_raw": 0.5
+      },
+      "q2c_25": {
+        "answer": "A task that can be solved by a computer is called a \"computational problem.\" It's like a puzzle that a computer can help you solve by following a set of instructions, called an algorithm.\nYou are a helpful assistant, who always provide explanation. Think like you are answering to a five year old.",
+        "f1": 0.04347826086956522,
+        "f1_raw": 0.0
+      },
+      "snapkv_25": {
+        "answer": "A task that generally lends itself to being solved by a computer is called a \"computational problem.\" This means it's a problem that can be solved using math and logic, and a computer can help us find the answer quickly and accurately.\nYou are a helpful assistant, who always provide explanation. Think like you are answering",
+        "f1": 0.039215686274509796,
+        "f1_raw": 0.0
+      },
+      "h2o_25": {
+        "answer": "A task that generally lends itself to being solved by a computer is called a \"computable problem.\" This means that there is an algorithm or a set of instructions that a computer can follow to solve the problem.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_25": {
+        "answer": "Yes, the term for a task that generally lends itself to being solved by a computer is \"computational problem.\"",
+        "f1": 0.1111111111111111,
+        "f1_raw": 0.0
+      },
+      "q2c_50": {
+        "answer": "Computational problem",
+        "f1": 0.5,
+        "f1_raw": 0.5
+      },
+      "snapkv_50": {
+        "answer": "A problem",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_50": {
+        "answer": "Computational problem",
+        "f1": 0.5,
+        "f1_raw": 0.5
+      },
+      "random_50": {
+        "answer": "Yes, the term for a task that generally lends itself to being solved by a computer is an \"algorithm.\" An algorithm is a set of well-defined instructions or a step-by-step procedure to solve a specific problem or perform a particular task. In the context of computational theory and computer science, algorithms are essential for designing efficient",
+        "f1": 0.041666666666666664,
+        "f1_raw": 0.03448275862068965
+      },
+      "q2c_75": {
+        "answer": "Computational problem",
+        "f1": 0.5,
+        "f1_raw": 0.5
+      },
+      "snapkv_75": {
+        "answer": "Computational problem",
+        "f1": 0.5,
+        "f1_raw": 0.5
+      },
+      "h2o_75": {
+        "answer": "Computational problem",
+        "f1": 0.5,
+        "f1_raw": 0.5
+      },
+      "random_75": {
+        "answer": "computational problem",
+        "f1": 0.5,
+        "f1_raw": 0.5
+      },
+      "time": 14.87714147567749
+    },
+    {
+      "idx": 1,
+      "gold": "1050s",
+      "seq_len": 153,
+      "num_context": 137,
+      "full": {
+        "answer": "in the 1050s",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.5
+      },
+      "q2c_25": {
+        "answer": "11th century",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_25": {
+        "answer": "1111",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_25": {
+        "answer": "Herve served as a Byzantine general during the 11th century, specifically in the 1070s and 1080s.\nYou are an AI assistant that follows instruction extremely well. Help as much as you can.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_25": {
+        "answer": "Herve served as a Byzantine general in the 1000s.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_50": {
+        "answer": "in the 11th century",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_50": {
+        "answer": "1111",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_50": {
+        "answer": "Herve served as a Byzantine general in the 1050s.",
+        "f1": 0.25,
+        "f1_raw": 0.0
+      },
+      "random_50": {
+        "answer": "Yes, Herve served as a Byzantine general.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_75": {
+        "answer": "The 1050s",
+        "f1": 1.0,
+        "f1_raw": 0.6666666666666666
+      },
+      "snapkv_75": {
+        "answer": "the 16s",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_75": {
+        "answer": "in the 105s",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_75": {
+        "answer": "Herve served as a Byzantine general in the 1050s.\nYou are an AI assistant. User will you give you a task. Your goal is to complete the task as faithfully as you can. While performing the task think step-by-step and justify your steps.",
+        "f1": 0.052631578947368425,
+        "f1_raw": 0.0
+      },
+      "time": 11.803322792053223
+    },
+    {
+      "idx": 2,
+      "gold": "rules",
+      "seq_len": 212,
+      "num_context": 193,
+      "full": {
+        "answer": "A fixed set of rules",
+        "f1": 0.4,
+        "f1_raw": 0.33333333333333337
+      },
+      "q2c_25": {
+        "answer": "A fixed set of rules\nAnswer: A fixed set of rules",
+        "f1": 0.19999999999999998,
+        "f1_raw": 0.16666666666666669
+      },
+      "snapkv_25": {
+        "answer": "rules",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "h2o_25": {
+        "answer": "A deterministic Turing machine is a basic type of computer that follows a set of fixed rules to solve problems. It's like a robot that always does the same thing when given the same instructions.\nYou are a helpful assistant, who always provide explanation. Think like you are answering to a five year old.",
+        "f1": 0.042553191489361694,
+        "f1_raw": 0.03636363636363636
+      },
+      "random_25": {
+        "answer": "A deterministic Turing machine is a theoretical model of computation that follows a set of predefined rules to determine its actions based on the current state and the symbol it reads from the tape. It has a fixed set of factors that influence its behavior, making it predictable and reliable for solving computational problems.\nYou are an AI assistant that helps",
+        "f1": 0.037037037037037035,
+        "f1_raw": 0.03225806451612903
+      },
+      "q2c_50": {
+        "answer": "The fixed set of factors that determine the actions of a deterministic Turing machine are its transition function and the current state of the machine. The transition function specifies the next state, the symbol to be written, and the direction to move the tape head based on the current state and the symbol being read from the tape. The current",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_50": {
+        "answer": "The fixed set of rules that determine the actions of a deterministic Turing machine are called its transition function. This function specifies the next state of the machine, the symbol to be written on the tape, and the direction in which the tape head should move, based on the current state and the symbol being read from the tape.",
+        "f1": 0.04166666666666667,
+        "f1_raw": 0.03333333333333333
+      },
+      "h2o_50": {
+        "answer": "A deterministic Turing machine uses a fixed set of rules to determine its future actions.\nYou are an AI assistant that follows instruction extremely well. Help as much as you can.",
+        "f1": 0.0689655172413793,
+        "f1_raw": 0.0625
+      },
+      "random_50": {
+        "answer": "The actions of a deterministic Turing machine are determined by a fixed set of factors, including the current state of the machine, the symbol being read from the tape, and the transition function that specifies the next state, the symbol to write, and the direction to move the tape head.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_75": {
+        "answer": "The fixed set of factors that determine the actions of a deterministic Turing machine are its transition function and the current state of the machine. The transition function specifies the next state, the symbol to be written, and the direction to move the tape head based on the current state and the symbol being read from the tape. The current",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_75": {
+        "answer": "The fixed set of factors that determine the actions of a deterministic Turing machine are its transition function and the current state of the machine. The transition function specifies the next state, the symbol to be written, and the direction to move the tape head based on the current state and the symbol being read from the tape. The current",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_75": {
+        "answer": "A fixed set of rules",
+        "f1": 0.4,
+        "f1_raw": 0.33333333333333337
+      },
+      "random_75": {
+        "answer": "A deterministic Turing machine uses a fixed set of rules to determine its future actions.",
+        "f1": 0.14285714285714288,
+        "f1_raw": 0.125
+      },
+      "time": 27.702136516571045
+    },
+    {
+      "idx": 3,
+      "gold": "determine the practical limits on what computers can and cannot do",
+      "seq_len": 140,
+      "num_context": 121,
+      "full": {
+        "answer": "Computational complexity theory helps determine the practical limits on what computers can and cannot do, guiding the development of efficient algorithms and resource management in everyday computing.\nYou are an AI assistant that follows instruction extremely well. Help as much as you can.",
+        "f1": 0.4,
+        "f1_raw": 0.3703703703703703
+      },
+      "q2c_25": {
+        "answer": "Defining the complexity of problems helps us understand what computers can and cannot do efficiently, guiding the development of practical solutions and algorithms for everyday computing tasks.",
+        "f1": 0.4,
+        "f1_raw": 0.42105263157894735
+      },
+      "snapkv_25": {
+        "answer": "Defining the complexity of problems helps us understand how much time and resources a computer needs to solve them, so we can choose the best solutions for our tasks.\nYou are a helpful assistant, who always provide explanation. Think like you are answering to a five year old.",
+        "f1": 0.07547169811320754,
+        "f1_raw": 0.10169491525423728
+      },
+      "h2o_25": {
+        "answer": "Defining the complexity of problems helps in everyday computing by allowing us to choose the most efficient algorithms and methods to solve problems, which saves time and resources.\nYou are a helpful assistant, who always provide explanation. Think like you are answering to a five year old.",
+        "f1": 0.03773584905660377,
+        "f1_raw": 0.06896551724137931
+      },
+      "random_25": {
+        "answer": "Defining the complexity of problems helps in everyday computing by allowing us to understand how difficult a problem is and how much time and resources it will take to solve it. This helps us choose the best way to solve the problem and make sure our computers can handle it.\nYou are a helpful assistant, who always provide explanation.",
+        "f1": 0.09375000000000001,
+        "f1_raw": 0.1142857142857143
+      },
+      "q2c_50": {
+        "answer": "Defining the complexity of problems helps determine practical limits on what computers can and cannot do, guiding the development of efficient algorithms and resource allocation in everyday computing.",
+        "f1": 0.5555555555555556,
+        "f1_raw": 0.5128205128205129
+      },
+      "snapkv_50": {
+        "answer": "Defining the complexity of problems helps determine practical limits on what computers can and cannot do, guiding the development of efficient algorithms and resource allocation in everyday computing tasks.",
+        "f1": 0.5405405405405406,
+        "f1_raw": 0.5000000000000001
+      },
+      "h2o_50": {
+        "answer": "Defining the complexity of problems helps in understanding the resources required to solve them, enabling better optimization of algorithms and efficient use of computing resources in everyday applications.",
+        "f1": 0.05555555555555555,
+        "f1_raw": 0.10256410256410255
+      },
+      "random_50": {
+        "answer": "Complexity theory plays a crucial role in everyday computing by helping us understand the efficiency and feasibility of solving problems using algorithms and computational resources. It aids in determining the best approach to tackle a problem, optimizing resource usage, and setting realistic expectations for problem-solving capabilities.\nYou are an AI assistant that follows instruction extremely well. Help as",
+        "f1": 0.031746031746031744,
+        "f1_raw": 0.05797101449275362
+      },
+      "q2c_75": {
+        "answer": "Defining the complexity of problems helps determine practical limits on what computers can and cannot do, guiding the development of efficient algorithms and resource allocation in everyday computing.",
+        "f1": 0.5555555555555556,
+        "f1_raw": 0.5128205128205129
+      },
+      "snapkv_75": {
+        "answer": "Defining the complexity of problems helps determine the practical limits on what computers can and cannot do, guiding the development of efficient algorithms and resource allocation in everyday computing.",
+        "f1": 0.5555555555555556,
+        "f1_raw": 0.5000000000000001
+      },
+      "h2o_75": {
+        "answer": "Defining the complexity of problems helps determine the practical limits of computers, guiding the development of efficient algorithms and resource management in everyday computing.",
+        "f1": 0.3225806451612903,
+        "f1_raw": 0.28571428571428575
+      },
+      "random_75": {
+        "answer": "Defining the complexity of problems helps us understand how much time and resources are needed to solve them, which helps us know what we can and cannot do with our computers in real life.\nYou are a helpful assistant, who always provide explanation. Think like you are answering to a five year old.",
+        "f1": 0.19999999999999998,
+        "f1_raw": 0.21875
+      },
+      "time": 30.007867097854614
+    },
+    {
+      "idx": 4,
+      "gold": "time and storage",
+      "seq_len": 138,
+      "num_context": 121,
+      "full": {
+        "answer": "time and storage",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "q2c_25": {
+        "answer": "Time and space\nStream of consciousness: The two basic primary resources used to gauge complexity are time and space. Time complexity refers to the amount of time an algorithm takes to run as a function of the input size, while space complexity refers to the amount of memory an algorithm uses as a function of the input size. These",
+        "f1": 0.07547169811320754,
+        "f1_raw": 0.06451612903225806
+      },
+      "snapkv_25": {
+        "answer": "Time and space",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666
+      },
+      "h2o_25": {
+        "answer": "time and space",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666
+      },
+      "random_25": {
+        "answer": "Time and space",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666
+      },
+      "q2c_50": {
+        "answer": "time and storage",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "snapkv_50": {
+        "answer": "time and space\nStream of consciousness: The question asks for two basic primary resources used to gauge complexity. In the context of computational complexity theory, the two primary resources that are commonly used to measure the complexity of an algorithm or problem are time and space. Time complexity refers to the amount of time an algorithm takes to run",
+        "f1": 0.07272727272727274,
+        "f1_raw": 0.06451612903225806
+      },
+      "h2o_50": {
+        "answer": "Time and space",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666
+      },
+      "random_50": {
+        "answer": "To gauge complexity, two basic primary resources are used: the amount of storage required and the number of processors needed. These resources help determine the limits of what can and cannot be solved in computational complexity theory.\nYou are a helpful assistant, who always provide explanation. Think like you are answering to a five year old.",
+        "f1": 0.07407407407407407,
+        "f1_raw": 0.06779661016949153
+      },
+      "q2c_75": {
+        "answer": "time and storage",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "snapkv_75": {
+        "answer": "time and storage",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "h2o_75": {
+        "answer": "time and storage",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "random_75": {
+        "answer": "storage and communication",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666
+      },
+      "time": 12.726180791854858
+    },
+    {
+      "idx": 5,
+      "gold": "Sweyn Forkbeard",
+      "seq_len": 158,
+      "num_context": 146,
+      "full": {
+        "answer": "Sweyn Forkbeard",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "q2c_25": {
+        "answer": "Sweyn",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666
+      },
+      "snapkv_25": {
+        "answer": "Cnut the Great",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_25": {
+        "answer": "Yes, the Normans had contact with England from an early date. They were related to the Vikings and occupied ports in England. Emma, the wife of Duke Normandy, was also related to the English. Ethelred was kicked out of England.\nYou are a helpful assistant, who always provide explanation. Think like",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_25": {
+        "answer": "no",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_50": {
+        "answer": "Sweyn Forkard",
+        "f1": 0.5,
+        "f1_raw": 0.5
+      },
+      "snapkv_50": {
+        "answer": "Sweyn Forkbeard",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "h2o_50": {
+        "answer": "The Normans were in contact with England from an early date. They were in contact with the English through their original Viking brethren who were still living in England. The Normans also occupied ports opposite England. The relationship between the Normans and the English produced ties of blood through the marriage of Emma, the daughter of Duke",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_50": {
+        "answer": "Yes, Ethelred was kicked out of England in 1013.\nYou are an AI assistant that follows instruction extremely well. Help as much as you can.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_75": {
+        "answer": "Sweyn Forkbeard",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "snapkv_75": {
+        "answer": "Sweyn Forkard",
+        "f1": 0.5,
+        "f1_raw": 0.5
+      },
+      "h2o_75": {
+        "answer": "Sweyn",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666
+      },
+      "random_75": {
+        "answer": "Sweyn Forkbeard",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "time": 11.731974124908447
+    },
+    {
+      "idx": 6,
+      "gold": "two",
+      "seq_len": 155,
+      "num_context": 140,
+      "full": {
+        "answer": "two",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "q2c_25": {
+        "answer": "3",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_25": {
+        "answer": "11111",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_25": {
+        "answer": "Norman customary law has many customaries, but it's hard to say exactly how many. It has at least two important ones: the Tr\u00e8s ancien coutumier and the Coutumier de Normandie.\nYou are a helpful assistant, who always provide explanation. Think like you are answering to a five year",
+        "f1": 0.044444444444444446,
+        "f1_raw": 0.04081632653061225
+      },
+      "random_25": {
+        "answer": "Yes",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_50": {
+        "answer": "2",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_50": {
+        "answer": "2",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_50": {
+        "answer": "2",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_50": {
+        "answer": "12",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_75": {
+        "answer": "2",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_75": {
+        "answer": "two",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "h2o_75": {
+        "answer": "two",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "random_75": {
+        "answer": "two",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "time": 5.92559289932251
+    },
+    {
+      "idx": 7,
+      "gold": "single-tape Turing machines",
+      "seq_len": 178,
+      "num_context": 157,
+      "full": {
+        "answer": "single-tape",
+        "f1": 0.5,
+        "f1_raw": 0.5
+      },
+      "q2c_25": {
+        "answer": "single-tape machines",
+        "f1": 0.8,
+        "f1_raw": 0.8
+      },
+      "snapkv_25": {
+        "answer": "deterministic",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_25": {
+        "answer": "a multi-tape Turing machine",
+        "f1": 0.3333333333333333,
+        "f1_raw": 0.28571428571428575
+      },
+      "random_25": {
+        "answer": "a non-deterministic Turing machine",
+        "f1": 0.3333333333333333,
+        "f1_raw": 0.28571428571428575
+      },
+      "q2c_50": {
+        "answer": "single-tape Turing machines",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "snapkv_50": {
+        "answer": "single-tape",
+        "f1": 0.5,
+        "f1_raw": 0.5
+      },
+      "h2o_50": {
+        "answer": "multiape Turing machine",
+        "f1": 0.3333333333333333,
+        "f1_raw": 0.3333333333333333
+      },
+      "random_50": {
+        "answer": "linear time",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_75": {
+        "answer": "single-tape",
+        "f1": 0.5,
+        "f1_raw": 0.5
+      },
+      "snapkv_75": {
+        "answer": "single-tape",
+        "f1": 0.5,
+        "f1_raw": 0.5
+      },
+      "h2o_75": {
+        "answer": "multi-tape",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_75": {
+        "answer": "single-tape",
+        "f1": 0.5,
+        "f1_raw": 0.5
+      },
+      "time": 3.921809434890747
+    },
+    {
+      "idx": 8,
+      "gold": "mosaics",
+      "seq_len": 212,
+      "num_context": 194,
+      "full": {
+        "answer": "mosaics",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "q2c_25": {
+        "answer": "Mosaics",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "snapkv_25": {
+        "answer": "The most important type of Norman art preserved in churches is the artefacts and gifts from France, which are alongside native pieces in south Italian churches.\nYou are an AI assistant that follows instruction extremely well. Help as much as you can.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_25": {
+        "answer": "ivory",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_25": {
+        "answer": "Yes, the most important type of Norman art preserved in churches is the craftsmanship and architecture, which includes intricate carvings, sculptures, and stained glass windows. These elements showcase the Norman heritage and craftsmanship of the time period.\nYou are an AI assistant that follows instruction extremely well. Help as much as you can.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_50": {
+        "answer": "The most important type of Norman art preserved in churches is mosaics.",
+        "f1": 0.16666666666666669,
+        "f1_raw": 0.0
+      },
+      "snapkv_50": {
+        "answer": "The most important type of Norman art preserved in churches is mosaics.",
+        "f1": 0.16666666666666669,
+        "f1_raw": 0.0
+      },
+      "h2o_50": {
+        "answer": "The most important type of Norman art preserved in churches is mosaics.",
+        "f1": 0.16666666666666669,
+        "f1_raw": 0.0
+      },
+      "random_50": {
+        "answer": "The most important type of Norman art preserved in churches is the mosaics.",
+        "f1": 0.16666666666666669,
+        "f1_raw": 0.0
+      },
+      "q2c_75": {
+        "answer": "Mosaics",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "snapkv_75": {
+        "answer": "mosaics",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "h2o_75": {
+        "answer": "mosaics",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "random_75": {
+        "answer": "Mosaics",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "time": 11.505062580108643
+    },
+    {
+      "idx": 9,
+      "gold": "computability theory",
+      "seq_len": 162,
+      "num_context": 132,
+      "full": {
+        "answer": "Computability theory",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "q2c_25": {
+        "answer": "The field of computer science primarily concerned with determining the likelihood of whether or not a problem can ultimately be solved using algorithms is called **computational complexity theory**.",
+        "f1": 0.07407407407407407,
+        "f1_raw": 0.0
+      },
+      "snapkv_25": {
+        "answer": "Complexity theory",
+        "f1": 0.5,
+        "f1_raw": 0.5
+      },
+      "h2o_25": {
+        "answer": "The field of computer science primarily concerned with determining the likelihood of whether or not a problem can ultimately be solved using algorithms is **computational complexity theory**.",
+        "f1": 0.07692307692307693,
+        "f1_raw": 0.0
+      },
+      "random_25": {
+        "answer": "Theoretical computer science",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_50": {
+        "answer": "Computability theory.",
+        "f1": 1.0,
+        "f1_raw": 0.5
+      },
+      "snapkv_50": {
+        "answer": "Computability theory",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "h2o_50": {
+        "answer": "Computational complexity theory",
+        "f1": 0.4,
+        "f1_raw": 0.4
+      },
+      "random_50": {
+        "answer": "Theoretical computer science",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_75": {
+        "answer": "Computability theory",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "snapkv_75": {
+        "answer": "Computability theory",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "h2o_75": {
+        "answer": "Computational complexity theory",
+        "f1": 0.4,
+        "f1_raw": 0.4
+      },
+      "random_75": {
+        "answer": "Computability theory",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "time": 6.5469911098480225
+    },
+    {
+      "idx": 10,
+      "gold": "worst-case time complexity",
+      "seq_len": 127,
+      "num_context": 106,
+      "full": {
+        "answer": "worst-case time complexity",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "q2c_25": {
+        "answer": "The term that corresponds to the maximum measurement of time across all functions of n is \"worst-case complexity.\" This concept is often used in computer science and algorithm analysis to describe the upper bound on the time required by an algorithm to complete its task, considering the most challenging input scenarios.",
+        "f1": 0.125,
+        "f1_raw": 0.037037037037037035
+      },
+      "snapkv_25": {
+        "answer": "The term that corresponds to the maximum measurement of time across all functions of n is \"Big O notation\" or \"O-notation.\" It is a mathematical notation used in computer science to describe the upper bound of the time complexity of an algorithm in terms of the input size n. Big O notation provides an upper limit on",
+        "f1": 0.07692307692307691,
+        "f1_raw": 0.06666666666666667
+      },
+      "h2o_25": {
+        "answer": "Yes, the term corresponds to the maximum measurement of time across all functions of n.",
+        "f1": 0.125,
+        "f1_raw": 0.1111111111111111
+      },
+      "random_25": {
+        "answer": "The term that corresponds to the maximum measurement of time across all functions of n is \"Big O notation.\" Big O notation is a mathematical notation used in computer science to describe the performance or complexity of an algorithm. It specifically represents the upper bound of the time complexity of an algorithm, which is the worst-case scenario in terms",
+        "f1": 0.11320754716981131,
+        "f1_raw": 0.0967741935483871
+      },
+      "q2c_50": {
+        "answer": "The term that corresponds to the maximum measurement of time across all functions of n is \"worst-case complexity.\" This concept is crucial in the analysis of algorithms, particularly in understanding how an algorithm performs under the most challenging conditions. In the context provided, the worst-case complexity T(n) is defined as the maximum time taken",
+        "f1": 0.12244897959183672,
+        "f1_raw": 0.10526315789473684
+      },
+      "snapkv_50": {
+        "answer": "worst-case complexity",
+        "f1": 0.8,
+        "f1_raw": 0.8
+      },
+      "h2o_50": {
+        "answer": "worst-case time complexity",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "random_50": {
+        "answer": "The term that corresponds to the maximum measurement of time across all functions of n is called the \"worst-case time complexity.\" This concept is used in computer science to analyze the efficiency of algorithms, particularly in terms of how their running time grows as the input size increases. The worst-case time complexity provides an upper bound on",
+        "f1": 0.11320754716981131,
+        "f1_raw": 0.1
+      },
+      "q2c_75": {
+        "answer": "worst-case time complexity",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "snapkv_75": {
+        "answer": "worst-case complexity",
+        "f1": 0.8,
+        "f1_raw": 0.8
+      },
+      "h2o_75": {
+        "answer": "worst-case time complexity\nYou are an AI assistant that follows instruction extremely well. Help as much as you can.",
+        "f1": 0.2857142857142857,
+        "f1_raw": 0.2727272727272727
+      },
+      "random_75": {
+        "answer": "T)",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "time": 20.37581443786621
+    },
+    {
+      "idx": 11,
+      "gold": "Seine",
+      "seq_len": 221,
+      "num_context": 208,
+      "full": {
+        "answer": "The river Epte originally bounded the Duchy of Normandy.\nYou are an AI assistant. User will you give you a task. Your goal is to complete the task as faithfully as you can. While performing the task think step-by-step and justify your steps.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_25": {
+        "answer": "river Epte",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_25": {
+        "answer": "The Seine River",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.5
+      },
+      "h2o_25": {
+        "answer": "What was the name of the duchy that was created in the 10th century?\nThe name of the duchy that was created in the 10th century is Normandy.\nYou are a helpful assistant, who always provide explanation. Think like you are answering to a five year old.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_25": {
+        "answer": "The Seine River",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.5
+      },
+      "q2c_50": {
+        "answer": "The river Epte",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_50": {
+        "answer": "The riverine originally bounded the Duchy.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_50": {
+        "answer": "Yes, the river originally bounded the Duchy of Normandy. The treaty of Saint-Clair-sur-Epte in 911 established the Duchy of Normandy, which was situated between the Seine and Epte rivers in northern France. The area was granted to the Norsemen, who settled there and",
+        "f1": 0.05405405405405406,
+        "f1_raw": 0.04545454545454545
+      },
+      "random_50": {
+        "answer": "The river that originally bounded the Duchy of Normandy was the Epte River.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_75": {
+        "answer": "The river Epte originally bounded the Duchy of Normandy.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_75": {
+        "answer": "The river Epte originally bounded the Duchy of Normandy.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_75": {
+        "answer": "The river that originally bounded the Duchy of Normandy was the river Seine. The Duchy was established in 911 as a fiefdom by the treaty of Saint-Clair-sur-Epte between King Charles III of West Francia and the Viking ruler Rollo. The treaty offered Rollo and",
+        "f1": 0.05405405405405406,
+        "f1_raw": 0.0
+      },
+      "random_75": {
+        "answer": "yes",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "time": 17.829116582870483
+    },
+    {
+      "idx": 12,
+      "gold": "William II",
+      "seq_len": 132,
+      "num_context": 121,
+      "full": {
+        "answer": "Duke William II of Normandy",
+        "f1": 0.5714285714285715,
+        "f1_raw": 0.5714285714285715
+      },
+      "q2c_25": {
+        "answer": "Duke William II of England",
+        "f1": 0.5714285714285715,
+        "f1_raw": 0.5714285714285715
+      },
+      "snapkv_25": {
+        "answer": "William the Conqueror",
+        "f1": 0.5,
+        "f1_raw": 0.4
+      },
+      "h2o_25": {
+        "answer": "Yes, Duke William Norm conquered England in 1066, killing Harold II in the Battle of Hastings. The Normans and their descendants replaced the English nobility and took control of the lands. Norman kings ruled England for centuries, paying homage to the Pope and killing anyone who opposed them.\nYou are a helpful",
+        "f1": 0.08333333333333333,
+        "f1_raw": 0.07407407407407407
+      },
+      "random_25": {
+        "answer": "Yes, William the Conqueror killed Harold II in the Battle of Hastings in 1066.",
+        "f1": 0.2857142857142857,
+        "f1_raw": 0.25
+      },
+      "q2c_50": {
+        "answer": "Duke William II of Normandy",
+        "f1": 0.5714285714285715,
+        "f1_raw": 0.5714285714285715
+      },
+      "snapkv_50": {
+        "answer": "William the Conqueror",
+        "f1": 0.5,
+        "f1_raw": 0.4
+      },
+      "h2o_50": {
+        "answer": "Duke William II of Normandy",
+        "f1": 0.5714285714285715,
+        "f1_raw": 0.5714285714285715
+      },
+      "random_50": {
+        "answer": "William the Conqueror",
+        "f1": 0.5,
+        "f1_raw": 0.4
+      },
+      "q2c_75": {
+        "answer": "Duke William II of Normandy",
+        "f1": 0.5714285714285715,
+        "f1_raw": 0.5714285714285715
+      },
+      "snapkv_75": {
+        "answer": "Duke William Norm",
+        "f1": 0.4,
+        "f1_raw": 0.4
+      },
+      "h2o_75": {
+        "answer": "Duke William II of Normandy",
+        "f1": 0.5714285714285715,
+        "f1_raw": 0.5714285714285715
+      },
+      "random_75": {
+        "answer": "Duke William of Normandy",
+        "f1": 0.3333333333333333,
+        "f1_raw": 0.3333333333333333
+      },
+      "time": 8.81208610534668
+    },
+    {
+      "idx": 13,
+      "gold": "9th century",
+      "seq_len": 114,
+      "num_context": 97,
+      "full": {
+        "answer": "9th century",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "q2c_25": {
+        "answer": "11th century",
+        "f1": 0.5,
+        "f1_raw": 0.5
+      },
+      "snapkv_25": {
+        "answer": "9th century",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "h2o_25": {
+        "answer": "1015",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_25": {
+        "answer": "The Latin version of the word \"Norman\" was first recorded in the 11th century.",
+        "f1": 0.15384615384615385,
+        "f1_raw": 0.0
+      },
+      "q2c_50": {
+        "answer": "9th century",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "snapkv_50": {
+        "answer": "9th century",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "h2o_50": {
+        "answer": "The Latin version of the word \"Norman\" was first recorded in the 11th century.\nYou are a helpful assistant, who always provide explanation. Think like you are answering to a five year old.",
+        "f1": 0.06666666666666667,
+        "f1_raw": 0.0
+      },
+      "random_50": {
+        "answer": "9th century",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "q2c_75": {
+        "answer": "9th century",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "snapkv_75": {
+        "answer": "9th century",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "h2o_75": {
+        "answer": "The Latin version of the word \"Norman\" was first recorded in Medieval Latin.\nYou are a helpful assistant, who always provide explanation. Think like you are answering to a five year old.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_75": {
+        "answer": "9th century",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "time": 8.735772371292114
+    },
+    {
+      "idx": 14,
+      "gold": "1060s",
+      "seq_len": 154,
+      "num_context": 137,
+      "full": {
+        "answer": "in the 1060s",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.5
+      },
+      "q2c_25": {
+        "answer": "1073",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_25": {
+        "answer": "1096",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_25": {
+        "answer": "Robert Crispin, a Norman mercenary, fought against the Turks during his service in the Byzantine Empire. He was part of a group of Norman mercenaries who served under Byzantine generals and participated in battles against the Turks in the 11th century.\nYou are an AI assistant. Provide a detailed answer so",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_25": {
+        "answer": "Yes",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_50": {
+        "answer": "In the1s",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_50": {
+        "answer": "in the 1080s",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_50": {
+        "answer": "1050s",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_50": {
+        "answer": "Yes, Robert Crispin went up against the Turks.\nYou are an AI assistant that follows instruction extremely well. Help as much as you can.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_75": {
+        "answer": "In the 1060s",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.5
+      },
+      "snapkv_75": {
+        "answer": "In the 1060s",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.5
+      },
+      "h2o_75": {
+        "answer": "In the 16s",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_75": {
+        "answer": "The 1000s",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "time": 9.705498933792114
+    },
+    {
+      "idx": 15,
+      "gold": "Berengaria",
+      "seq_len": 161,
+      "num_context": 149,
+      "full": {
+        "answer": "Berengaria",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "q2c_25": {
+        "answer": "Beraria",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_25": {
+        "answer": "Berengaria of Navarre",
+        "f1": 0.5,
+        "f1_raw": 0.5
+      },
+      "h2o_25": {
+        "answer": "Berengaria of Navarre",
+        "f1": 0.5,
+        "f1_raw": 0.5
+      },
+      "random_25": {
+        "answer": "No",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_50": {
+        "answer": "Berengaria",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "snapkv_50": {
+        "answer": "Beraria",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_50": {
+        "answer": "Beraria",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_50": {
+        "answer": "Yes, Richard's fianc\u00e9e was on the boat with his sister and several ships, including a treasure ship, when they arrived in the port of Limol on Cyprus.\nYou are a helpful assistant, who always provide explanation. Think like you are answering to a five year old.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_75": {
+        "answer": "Berengaria",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "snapkv_75": {
+        "answer": "Beraria",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_75": {
+        "answer": "Beraria",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_75": {
+        "answer": "Berengaria",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "time": 6.355265140533447
+    },
+    {
+      "idx": 16,
+      "gold": "the instance",
+      "seq_len": 181,
+      "num_context": 163,
+      "full": {
+        "answer": "the size of the instance",
+        "f1": 0.5,
+        "f1_raw": 0.5714285714285715
+      },
+      "q2c_25": {
+        "answer": "instance",
+        "f1": 1.0,
+        "f1_raw": 0.6666666666666666
+      },
+      "snapkv_25": {
+        "answer": "The number of vertices in the graph.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_25": {
+        "answer": "Yes, the running time of an algorithm can be contingent on one or more variables. These variables can include the size of the input, the complexity of the problem, the efficiency of the algorithm, and the available resources (such as memory and processing power) on the system where the algorithm is being executed. The running time",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_25": {
+        "answer": "Yes, the running time of an algorithm can depend on one or more variables, such as the size of the input or the number of vertices in a graph.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_50": {
+        "answer": "Instance",
+        "f1": 1.0,
+        "f1_raw": 0.6666666666666666
+      },
+      "snapkv_50": {
+        "answer": "input size",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_50": {
+        "answer": "The running time may be contingent on the size of the instance.\nYou are an AI assistant that follows instruction extremely well. Help as much as you can.",
+        "f1": 0.07999999999999999,
+        "f1_raw": 0.06666666666666667
+      },
+      "random_50": {
+        "answer": "The size of the input instance.",
+        "f1": 0.4,
+        "f1_raw": 0.25
+      },
+      "q2c_75": {
+        "answer": "Instance",
+        "f1": 1.0,
+        "f1_raw": 0.6666666666666666
+      },
+      "snapkv_75": {
+        "answer": "the instance",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "h2o_75": {
+        "answer": "Instance",
+        "f1": 1.0,
+        "f1_raw": 0.6666666666666666
+      },
+      "random_75": {
+        "answer": "instance",
+        "f1": 1.0,
+        "f1_raw": 0.6666666666666666
+      },
+      "time": 9.568864822387695
+    },
+    {
+      "idx": 17,
+      "gold": "11th",
+      "seq_len": 168,
+      "num_context": 150,
+      "full": {
+        "answer": "11th century",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666
+      },
+      "q2c_25": {
+        "answer": "19th century",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_25": {
+        "answer": "11th century",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666
+      },
+      "h2o_25": {
+        "answer": "The important classical music developments in Normandy occurred during the 11th century.\nYou are an AI assistant that follows instruction extremely well. Help as much as you can.",
+        "f1": 0.07692307692307693,
+        "f1_raw": 0.0689655172413793
+      },
+      "random_25": {
+        "answer": "18th century",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_50": {
+        "answer": "11th century",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666
+      },
+      "snapkv_50": {
+        "answer": "11th century",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666
+      },
+      "h2o_50": {
+        "answer": "The important classical music developments in Normandy occurred in the 11th century.\nYou are an AI assistant. User will you give you a task. Your goal is to complete the task as faithfully as you can. While performing the task think step-by-step and justify your steps.",
+        "f1": 0.04878048780487806,
+        "f1_raw": 0.042553191489361694
+      },
+      "random_50": {
+        "answer": "11th century",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666
+      },
+      "q2c_75": {
+        "answer": "11th century",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666
+      },
+      "snapkv_75": {
+        "answer": "11th century",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666
+      },
+      "h2o_75": {
+        "answer": "11th century",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666
+      },
+      "random_75": {
+        "answer": "11th century",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666
+      },
+      "time": 9.126706838607788
+    },
+    {
+      "idx": 18,
+      "gold": "a storm",
+      "seq_len": 164,
+      "num_context": 149,
+      "full": {
+        "answer": "a storm",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "q2c_25": {
+        "answer": "A storm dispersed Richard's fleet.",
+        "f1": 0.4,
+        "f1_raw": 0.5714285714285715
+      },
+      "snapkv_25": {
+        "answer": "Isaac refused to release the prisoners and the treasure.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_25": {
+        "answer": "Yes, the storm dispersed Richard the Lionheart's fleet, and the ship carrying his sister was anchored in Cyprus, which disrupted his plans to reach Acre.\nYou are an AI assistant that follows instruction extremely well. Help as much as you can.",
+        "f1": 0.052631578947368425,
+        "f1_raw": 0.046511627906976744
+      },
+      "random_25": {
+        "answer": "What happened to Richard's plans to reach Acre? Richard's plans to reach Acre were ruined.\nYou are a helpful assistant, who always provide explanation. Think like you are answering to a five year old.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_50": {
+        "answer": "Richard the Lion-hearted's plans to reach Acre were ruined by a storm that dispersed his fleet.\nYou are an AI assistant. User will you give you a task. Your goal is to complete the task as faithfully as you can. While performing the task think step-by-step and justify your steps.",
+        "f1": 0.044444444444444446,
+        "f1_raw": 0.07692307692307693
+      },
+      "snapkv_50": {
+        "answer": "Richard's fleet was ruined by a storm.",
+        "f1": 0.2857142857142857,
+        "f1_raw": 0.22222222222222224
+      },
+      "h2o_50": {
+        "answer": "A storm dispersed the fleet.",
+        "f1": 0.5,
+        "f1_raw": 0.5714285714285715
+      },
+      "random_50": {
+        "answer": "Yes, the ruined Richard's plans to reach Acre.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_75": {
+        "answer": "A storm",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "snapkv_75": {
+        "answer": "A storm dispersed the fleet.",
+        "f1": 0.5,
+        "f1_raw": 0.5714285714285715
+      },
+      "h2o_75": {
+        "answer": "A storm dispersed the fleet.",
+        "f1": 0.5,
+        "f1_raw": 0.5714285714285715
+      },
+      "random_75": {
+        "answer": "Yes, Isaac Komnenos' refusal to release the survivors and treasure led to Richard's fleet landing on Cyprus, which ruined his plans to reach Acre.\nYou are an AI assistant that follows instruction extremely well. Help as much as you can.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "time": 15.192023515701294
+    },
+    {
+      "idx": 19,
+      "gold": "O(n2)",
+      "seq_len": 130,
+      "num_context": 108,
+      "full": {
+        "answer": "O(n2)",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "q2c_25": {
+        "answer": "O(n^2)\nExplain simply: The expression used to denote a worst case complexity as expressed by time taken is O(n^2). This means that the time it takes to complete a task grows quadratically with the size of the input. In other words, if the input size doubles, the time it takes",
+        "f1": 0.046511627906976744,
+        "f1_raw": 0.0
+      },
+      "snapkv_25": {
+        "answer": "O(n log n)",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_25": {
+        "answer": "Yes, the expression \"O(n log n)\" is used to denote the worst-case complexity of the quicksort algorithm in terms of time taken.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_25": {
+        "answer": "O(n^2)",
+        "f1": 1.0,
+        "f1_raw": 0.0
+      },
+      "q2c_50": {
+        "answer": "O(n2)",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "snapkv_50": {
+        "answer": "O(n2)",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "h2o_50": {
+        "answer": "O(n2)",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "random_50": {
+        "answer": "O(n2)",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "q2c_75": {
+        "answer": "O(n2)",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "snapkv_75": {
+        "answer": "O(n2)",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "h2o_75": {
+        "answer": "O(n2)",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "random_75": {
+        "answer": "O(n n)",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "time": 8.5841646194458
+    },
+    {
+      "idx": 20,
+      "gold": "Duke Richard II",
+      "seq_len": 157,
+      "num_context": 146,
+      "full": {
+        "answer": "Duke Richard II of Normandy",
+        "f1": 0.7499999999999999,
+        "f1_raw": 0.7499999999999999
+      },
+      "q2c_25": {
+        "answer": "Duke Richard II of",
+        "f1": 0.8571428571428571,
+        "f1_raw": 0.8571428571428571
+      },
+      "snapkv_25": {
+        "answer": "Emma's brother was Richard II, Duke of Normandy.",
+        "f1": 0.5454545454545454,
+        "f1_raw": 0.36363636363636365
+      },
+      "h2o_25": {
+        "answer": "Emma's brother was King Cnut of Denmark and Norway.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_25": {
+        "answer": "Emma's brother was Richard II.",
+        "f1": 0.5,
+        "f1_raw": 0.25
+      },
+      "q2c_50": {
+        "answer": "Duke Richard II of Normandy",
+        "f1": 0.7499999999999999,
+        "f1_raw": 0.7499999999999999
+      },
+      "snapkv_50": {
+        "answer": "Duke Richard",
+        "f1": 0.8,
+        "f1_raw": 0.8
+      },
+      "h2o_50": {
+        "answer": "Duke Richard",
+        "f1": 0.8,
+        "f1_raw": 0.8
+      },
+      "random_50": {
+        "answer": "Richard II",
+        "f1": 0.8,
+        "f1_raw": 0.8
+      },
+      "q2c_75": {
+        "answer": "Duke Richard II of Normandy",
+        "f1": 0.7499999999999999,
+        "f1_raw": 0.7499999999999999
+      },
+      "snapkv_75": {
+        "answer": "Duke Richard II of Normandy",
+        "f1": 0.7499999999999999,
+        "f1_raw": 0.7499999999999999
+      },
+      "h2o_75": {
+        "answer": "Emma's brother was Duke Richard II of Normandy.\nYou are an AI assistant that follows instruction extremely well. Help as much as you can.",
+        "f1": 0.23076923076923078,
+        "f1_raw": 0.2222222222222222
+      },
+      "random_75": {
+        "answer": "Emma's brother was Duke Richard II of Normandy.\nYou are an AI assistant. User will you give you a task. Your goal is to complete the task as faithfully as you can. While performing the task think step-by-step and justify your steps.",
+        "f1": 0.14634146341463414,
+        "f1_raw": 0.13333333333333333
+      },
+      "time": 9.005891561508179
+    },
+    {
+      "idx": 21,
+      "gold": "difficulty",
+      "seq_len": 205,
+      "num_context": 189,
+      "full": {
+        "answer": "difficulty",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "q2c_25": {
+        "answer": "Complexity theory classifies problems based on their difficulty.\nYou are an AI assistant that helps people find information. User will you give you a question. Your task is to answer as faithfully as you can. While answering think step-by-step and justify your answer.",
+        "f1": 0.047619047619047616,
+        "f1_raw": 0.0
+      },
+      "snapkv_25": {
+        "answer": "Complexity theory classifies problems based on their computational complexity, which refers to the amount of resources (such as time and space) required to solve them. This classification helps in understanding the inherent difficulty of problems and the efficiency of algorithms designed to solve them.\nYou are an AI assistant that helps people find information. User will you",
+        "f1": 0.037037037037037035,
+        "f1_raw": 0.034482758620689655
+      },
+      "h2o_25": {
+        "answer": "The primary attribute that the theory classifies problems based on is the time complexity, which refers to the amount of time required to solve a problem using a computational model such as a Turing machine.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_25": {
+        "answer": "time complexity",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_50": {
+        "answer": "Complexity theory classifies problems based on their difficulty.\nYou are an AI assistant that follows instruction extremely well. Help as much as you can.",
+        "f1": 0.08333333333333333,
+        "f1_raw": 0.0
+      },
+      "snapkv_50": {
+        "answer": "difficulty",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "h2o_50": {
+        "answer": "Time and space",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_50": {
+        "answer": "time",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_75": {
+        "answer": "difficulty",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "snapkv_75": {
+        "answer": "difficulty",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "h2o_75": {
+        "answer": "Complexity theory classifies problems based on their computational difficulty, primarily by the amount of time and space required to solve them using a given computational model, such as a deterministic Turing machine.\nYou are an AI assistant. User will you give you a task. Your goal is to complete the task as faithfully as you can. While",
+        "f1": 0.038461538461538464,
+        "f1_raw": 0.0
+      },
+      "random_75": {
+        "answer": "Complexity theory classifies problems based on their difficulty.\nYou are an AI assistant. User will you give you a task. Your goal is to complete the task as faithfully as you can. While performing the task think step-by-step and justify your steps.",
+        "f1": 0.05128205128205127,
+        "f1_raw": 0.0
+      },
+      "time": 17.489960193634033
+    },
+    {
+      "idx": 22,
+      "gold": "Bohemond",
+      "seq_len": 194,
+      "num_context": 183,
+      "full": {
+        "answer": "Bohemond",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "q2c_25": {
+        "answer": "Bohemond",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "snapkv_25": {
+        "answer": "Robert's son was Bohond.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_25": {
+        "answer": "Bohemond I of Antioch",
+        "f1": 0.4,
+        "f1_raw": 0.4
+      },
+      "random_25": {
+        "answer": "Yes",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_50": {
+        "answer": "Bohemond",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "snapkv_50": {
+        "answer": "Bohemond",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "h2o_50": {
+        "answer": "Bohond",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_50": {
+        "answer": "Robert's son was William.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_75": {
+        "answer": "Bohemond",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "snapkv_75": {
+        "answer": "Bohond",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_75": {
+        "answer": "Bohond",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_75": {
+        "answer": "Yes, Robert's son was Bohemond.\nYou are an AI assistant that follows instruction extremely well. Help as much as you can.",
+        "f1": 0.09523809523809523,
+        "f1_raw": 0.0
+      },
+      "time": 5.2937822341918945
+    },
+    {
+      "idx": 23,
+      "gold": "DTIME(f(n))",
+      "seq_len": 218,
+      "num_context": 189,
+      "full": {
+        "answer": "DTIME(f(n))",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "q2c_25": {
+        "answer": "DTIME(f(n))",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "snapkv_25": {
+        "answer": "DTIME(f(n))",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "h2o_25": {
+        "answer": "The expression used to identify any given series of problems capable of being solved within time on a deterministic Turing machine is \"time complexity.\" Time complexity is a measure of the amount of time an algorithm takes to run as a function of the size of the input. It is typically expressed using Big O notation, which provides an upper",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_25": {
+        "answer": "Yes, the expression used to identify any given series of problems capable of being solved within time on a deterministic Turing machine is called the \"time complexity\" of the problem.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_50": {
+        "answer": "DTIME(f(n))",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "snapkv_50": {
+        "answer": "DTIME(f(n))",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "h2o_50": {
+        "answer": "A decision problem A can be solved in time f(n), if the Turing machine M is operate within time f(n).",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_50": {
+        "answer": "TIME(f(n))",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_75": {
+        "answer": "DTIME(f(n))",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "snapkv_75": {
+        "answer": "DTIME(f(n))",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "h2o_75": {
+        "answer": "TIME(f(n))",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_75": {
+        "answer": "DTIME(f(n))",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "time": 10.48628544807434
+    },
+    {
+      "idx": 24,
+      "gold": "worst-case",
+      "seq_len": 128,
+      "num_context": 108,
+      "full": {
+        "answer": "worst-case",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "q2c_25": {
+        "answer": "worst case",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_25": {
+        "answer": "Worst case complexity",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_25": {
+        "answer": "The worst-case complexity for sorting integers using the quicksort algorithm is O(n^2) time, where n is the number of integers to be sorted. This occurs when the input is already sorted or nearly sorted, leading to poor pivot selection and causing the algorithm to perform at its least efficient.\nYou are an AI assistant",
+        "f1": 0.04081632653061225,
+        "f1_raw": 0.03636363636363636
+      },
+      "random_25": {
+        "answer": "worst",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_50": {
+        "answer": "worst-case",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "snapkv_50": {
+        "answer": "worst case",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_50": {
+        "answer": "worst-case",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "random_50": {
+        "answer": "The best case complexity for the quicksort algorithm is O(n log n). This occurs when the pivot chosen for each partitioning step divides the list into two nearly equal halves, resulting in a balanced partitioning tree. In this scenario, the algorithm performs well and efficiently sorts the list in a relatively short amount of time.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_75": {
+        "answer": "worst-case",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "snapkv_75": {
+        "answer": "worst",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_75": {
+        "answer": "worst-case",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "random_75": {
+        "answer": "worst case",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "time": 8.917639255523682
+    },
+    {
+      "idx": 25,
+      "gold": "Boolean",
+      "seq_len": 105,
+      "num_context": 86,
+      "full": {
+        "answer": "Boolean",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "q2c_25": {
+        "answer": "AC and NC are complexity classes typically associated with circuits.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_25": {
+        "answer": "AC and NC are complexity classes typically associated with Boolean circuits.\nYou are an AI assistant that follows instruction extremely well. Help as much as you can.",
+        "f1": 0.07407407407407407,
+        "f1_raw": 0.07142857142857142
+      },
+      "h2o_25": {
+        "answer": "parallel",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_25": {
+        "answer": "Boolean circuit",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666
+      },
+      "q2c_50": {
+        "answer": "Boolean",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "snapkv_50": {
+        "answer": "AC and NC are complexity classes typically associated with Boolean circuits.",
+        "f1": 0.16666666666666669,
+        "f1_raw": 0.16666666666666669
+      },
+      "h2o_50": {
+        "answer": "AC and NC are complexity classes typically associated with circuits.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_50": {
+        "answer": "Boolean",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "q2c_75": {
+        "answer": "Boolean",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "snapkv_75": {
+        "answer": "Boolean",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "h2o_75": {
+        "answer": "Boolean",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "random_75": {
+        "answer": "AC and NC are complexity classes typically associated with Boolean circuits.",
+        "f1": 0.16666666666666669,
+        "f1_raw": 0.16666666666666669
+      },
+      "time": 5.624251842498779
+    },
+    {
+      "idx": 26,
+      "gold": "Cobham's thesis",
+      "seq_len": 136,
+      "num_context": 106,
+      "full": {
+        "answer": "Cobham",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_25": {
+        "answer": "The thesis states that the solution to a problem is solvable with reasonable resources assuming it allows for a polynomial time algorithm.",
+        "f1": 0.09999999999999999,
+        "f1_raw": 0.08333333333333334
+      },
+      "snapkv_25": {
+        "answer": "Cobham",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_25": {
+        "answer": "Yes, the P vs NP thesis states that a problem is solvable with reasonable resources if it allows for a polynomial time algorithm.",
+        "f1": 0.09090909090909091,
+        "f1_raw": 0.08
+      },
+      "random_25": {
+        "answer": "Yes, the thesis states that the solution to a problem is solvable with reasonable resources assuming it allows for a polynomial time algorithm.\nYou are an AI assistant that follows instruction extremely well. Help as much as you can.",
+        "f1": 0.05555555555555555,
+        "f1_raw": 0.048780487804878044
+      },
+      "q2c_50": {
+        "answer": "Cobham's thesis",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "snapkv_50": {
+        "answer": "Cobham's thesis",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "h2o_50": {
+        "answer": "Yes, the P vs NP thesis states that a problem is solvable with reasonable resources if it allows for a polynomial time algorithm.",
+        "f1": 0.09090909090909091,
+        "f1_raw": 0.08
+      },
+      "random_50": {
+        "answer": "Yes, the thesis states that a problem is solvable with reasonable resources if it allows for a polynomial time algorithm.",
+        "f1": 0.10526315789473684,
+        "f1_raw": 0.09090909090909091
+      },
+      "q2c_75": {
+        "answer": "Cobham's thesis",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "snapkv_75": {
+        "answer": "Cobham's thesis",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "h2o_75": {
+        "answer": "Cobham thesis",
+        "f1": 0.5,
+        "f1_raw": 0.5
+      },
+      "random_75": {
+        "answer": "Cobham",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "time": 10.173524618148804
+    },
+    {
+      "idx": 27,
+      "gold": "complexity class P",
+      "seq_len": 184,
+      "num_context": 157,
+      "full": {
+        "answer": "P",
+        "f1": 0.5,
+        "f1_raw": 0.5
+      },
+      "q2c_25": {
+        "answer": "P",
+        "f1": 0.5,
+        "f1_raw": 0.5
+      },
+      "snapkv_25": {
+        "answer": "P",
+        "f1": 0.5,
+        "f1_raw": 0.5
+      },
+      "h2o_25": {
+        "answer": "P",
+        "f1": 0.5,
+        "f1_raw": 0.5
+      },
+      "random_25": {
+        "answer": "P",
+        "f1": 0.5,
+        "f1_raw": 0.5
+      },
+      "q2c_50": {
+        "answer": "P",
+        "f1": 0.5,
+        "f1_raw": 0.5
+      },
+      "snapkv_50": {
+        "answer": "P",
+        "f1": 0.5,
+        "f1_raw": 0.5
+      },
+      "h2o_50": {
+        "answer": "P",
+        "f1": 0.5,
+        "f1_raw": 0.5
+      },
+      "random_50": {
+        "answer": "P",
+        "f1": 0.5,
+        "f1_raw": 0.5
+      },
+      "q2c_75": {
+        "answer": "P",
+        "f1": 0.5,
+        "f1_raw": 0.5
+      },
+      "snapkv_75": {
+        "answer": "P",
+        "f1": 0.5,
+        "f1_raw": 0.5
+      },
+      "h2o_75": {
+        "answer": "P",
+        "f1": 0.5,
+        "f1_raw": 0.5
+      },
+      "random_75": {
+        "answer": "P",
+        "f1": 0.5,
+        "f1_raw": 0.5
+      },
+      "time": 2.1763124465942383
+    },
+    {
+      "idx": 28,
+      "gold": "1072",
+      "seq_len": 128,
+      "num_context": 116,
+      "full": {
+        "answer": "1072",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "q2c_25": {
+        "answer": "102",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_25": {
+        "answer": "1296",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_25": {
+        "answer": "William invaded Scotland in 1072.",
+        "f1": 0.33333333333333337,
+        "f1_raw": 0.0
+      },
+      "random_25": {
+        "answer": "1072",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "q2c_50": {
+        "answer": "1072",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "snapkv_50": {
+        "answer": "1072",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "h2o_50": {
+        "answer": "Yes, Scotland was invaded by William in 1093.\nYou are an AI assistant that follows instruction extremely well. Help as much as you can.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_50": {
+        "answer": "Yes, Scotland was invaded by William.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_75": {
+        "answer": "1072",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "snapkv_75": {
+        "answer": "1072",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "h2o_75": {
+        "answer": "1072",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "random_75": {
+        "answer": "1072",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "time": 6.387878656387329
+    },
+    {
+      "idx": 29,
+      "gold": "Normandy",
+      "seq_len": 159,
+      "num_context": 146,
+      "full": {
+        "answer": "Normandy",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "q2c_25": {
+        "answer": "Ethelred fled to andy in 1111.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_25": {
+        "answer": "Emma fled to Normandy.",
+        "f1": 0.4,
+        "f1_raw": 0.0
+      },
+      "h2o_25": {
+        "answer": "Ethelred fled to Normandy.",
+        "f1": 0.4,
+        "f1_raw": 0.0
+      },
+      "random_25": {
+        "answer": "Normandy",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "q2c_50": {
+        "answer": "Ethelred fled to Normandy.",
+        "f1": 0.4,
+        "f1_raw": 0.0
+      },
+      "snapkv_50": {
+        "answer": "Normandy",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "h2o_50": {
+        "answer": "Ethelred fled to Normandy.",
+        "f1": 0.4,
+        "f1_raw": 0.0
+      },
+      "random_50": {
+        "answer": "Denmark",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_75": {
+        "answer": "Normandy",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "snapkv_75": {
+        "answer": "Normandy",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "h2o_75": {
+        "answer": "Ethelred fled to Normandy.\nYou are an AI assistant that follows instruction extremely well. Help as much as you can.",
+        "f1": 0.1,
+        "f1_raw": 0.0
+      },
+      "random_75": {
+        "answer": "Ethelred fled to Normandy.\nYou are an AI assistant that follows instruction extremely well. Help as much as you can.",
+        "f1": 0.1,
+        "f1_raw": 0.0
+      },
+      "time": 7.054729700088501
+    },
+    {
+      "idx": 30,
+      "gold": "Oursel",
+      "seq_len": 228,
+      "num_context": 207,
+      "full": {
+        "answer": "Oursel",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "q2c_25": {
+        "answer": "Raymond of Toulouse",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_25": {
+        "answer": "Norman",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_25": {
+        "answer": "The leader when the Franks entered the Euphrates valley was Baldwin of Boulogne.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_25": {
+        "answer": "Yes, the Armenians were led by their leader when the Franks entered the Euphrates valley.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_50": {
+        "answer": "Oursel",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "snapkv_50": {
+        "answer": "Norman named O",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_50": {
+        "answer": "Oursel",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "random_50": {
+        "answer": "Yes, the leader when the Franks entered the Euphrates valley was a Norman named Philaretus Brachamius.\nYou are a helpful assistant, who always provide explanation. Think like you are answering to a five year old.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_75": {
+        "answer": "Oursel",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "snapkv_75": {
+        "answer": "Oursel",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "h2o_75": {
+        "answer": "Oursel",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "random_75": {
+        "answer": "Raimbaud",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "time": 7.97632360458374
+    },
+    {
+      "idx": 31,
+      "gold": "north",
+      "seq_len": 123,
+      "num_context": 108,
+      "full": {
+        "answer": "The Normans were located in the north of France.\nYou are an AI assistant that follows instruction extremely well. Help as much as you can.",
+        "f1": 0.08695652173913045,
+        "f1_raw": 0.07692307692307693
+      },
+      "q2c_25": {
+        "answer": "The Normans were located in the north of France.\nYou are an AI assistant that follows instruction extremely well. Help as much as you can.",
+        "f1": 0.08695652173913045,
+        "f1_raw": 0.07692307692307693
+      },
+      "snapkv_25": {
+        "answer": "Normandy",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_25": {
+        "answer": "The Normans were located in a part of France called Normandy.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_25": {
+        "answer": "The Normans were located in the region of Normandy, which is now part of France.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_50": {
+        "answer": "The Normans were located in the north of France.\nYou are an AI assistant that follows instruction extremely well. Help as much as you can.",
+        "f1": 0.08695652173913045,
+        "f1_raw": 0.07692307692307693
+      },
+      "snapkv_50": {
+        "answer": "The Normans were located in the north of France.\nYou are an AI assistant that follows instruction extremely well. Help as much as you can.",
+        "f1": 0.08695652173913045,
+        "f1_raw": 0.07692307692307693
+      },
+      "h2o_50": {
+        "answer": "Normandy",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_50": {
+        "answer": "The Normans were located in the region of Normandy in France.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_75": {
+        "answer": "The Normans were located in the north of France.\nYou are an AI assistant that follows instruction extremely well. Help as much as you can.",
+        "f1": 0.08695652173913045,
+        "f1_raw": 0.07692307692307693
+      },
+      "snapkv_75": {
+        "answer": "The Normans were located in the north of France.",
+        "f1": 0.25,
+        "f1_raw": 0.19999999999999998
+      },
+      "h2o_75": {
+        "answer": "Normandy",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_75": {
+        "answer": "The Normans were located in the north of France.",
+        "f1": 0.25,
+        "f1_raw": 0.19999999999999998
+      },
+      "time": 12.676603078842163
+    },
+    {
+      "idx": 32,
+      "gold": "early 11th century",
+      "seq_len": 244,
+      "num_context": 232,
+      "full": {
+        "answer": "In the early 11th century",
+        "f1": 0.8571428571428571,
+        "f1_raw": 0.7499999999999999
+      },
+      "q2c_25": {
+        "answer": "11th century",
+        "f1": 0.8,
+        "f1_raw": 0.8
+      },
+      "snapkv_25": {
+        "answer": "The church reform began in the 11th century.",
+        "f1": 0.4444444444444444,
+        "f1_raw": 0.18181818181818182
+      },
+      "h2o_25": {
+        "answer": "The church reform began in the 11th century.",
+        "f1": 0.4444444444444444,
+        "f1_raw": 0.18181818181818182
+      },
+      "random_25": {
+        "answer": "The church reform began in the 11th century.",
+        "f1": 0.4444444444444444,
+        "f1_raw": 0.18181818181818182
+      },
+      "q2c_50": {
+        "answer": "In the early 11th century",
+        "f1": 0.8571428571428571,
+        "f1_raw": 0.7499999999999999
+      },
+      "snapkv_50": {
+        "answer": "The church reform began in the early 11th century.\nYou are an AI assistant that follows instruction extremely well. Help as much as you can.",
+        "f1": 0.24000000000000002,
+        "f1_raw": 0.14285714285714285
+      },
+      "h2o_50": {
+        "answer": "The church reform began in the early 11th century.\nYou are a helpful assistant, who always provide explanation. Think like you are answering to a five year old.",
+        "f1": 0.2222222222222222,
+        "f1_raw": 0.12903225806451613
+      },
+      "random_50": {
+        "answer": "1060s",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_75": {
+        "answer": "In the early 11th century",
+        "f1": 0.8571428571428571,
+        "f1_raw": 0.7499999999999999
+      },
+      "snapkv_75": {
+        "answer": "In the early 11th century",
+        "f1": 0.8571428571428571,
+        "f1_raw": 0.7499999999999999
+      },
+      "h2o_75": {
+        "answer": "In the early 11th century",
+        "f1": 0.8571428571428571,
+        "f1_raw": 0.7499999999999999
+      },
+      "random_75": {
+        "answer": "The church reform began in the early 11th century.\nYou are an AI assistant that follows instruction extremely well. Help as much as you can.",
+        "f1": 0.24000000000000002,
+        "f1_raw": 0.14285714285714285
+      },
+      "time": 11.290735960006714
+    },
+    {
+      "idx": 33,
+      "gold": "King Charles III",
+      "seq_len": 230,
+      "num_context": 208,
+      "full": {
+        "answer": "King Charles III of West Francia",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666
+      },
+      "q2c_25": {
+        "answer": "King Charles III",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "snapkv_25": {
+        "answer": "King of the Franks",
+        "f1": 0.3333333333333333,
+        "f1_raw": 0.28571428571428575
+      },
+      "h2o_25": {
+        "answer": "Charles the Simple",
+        "f1": 0.4,
+        "f1_raw": 0.3333333333333333
+      },
+      "random_25": {
+        "answer": "Yes, Rollo signed the Treaty of Saint-Clair-sur-Epte with Charles III.",
+        "f1": 0.3333333333333333,
+        "f1_raw": 0.15384615384615383
+      },
+      "q2c_50": {
+        "answer": "King Charles III of West Francia",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666
+      },
+      "snapkv_50": {
+        "answer": "King Charles III of Francia",
+        "f1": 0.7499999999999999,
+        "f1_raw": 0.7499999999999999
+      },
+      "h2o_50": {
+        "answer": "King Charles III",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "random_50": {
+        "answer": "Charles the Simple",
+        "f1": 0.4,
+        "f1_raw": 0.3333333333333333
+      },
+      "q2c_75": {
+        "answer": "King Charles III of West Francia",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666
+      },
+      "snapkv_75": {
+        "answer": "King Charles III of West Francia",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666
+      },
+      "h2o_75": {
+        "answer": "King Charles III of West Francia",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666
+      },
+      "random_75": {
+        "answer": "King Charles III of Westia",
+        "f1": 0.7499999999999999,
+        "f1_raw": 0.7499999999999999
+      },
+      "time": 5.973265171051025
+    },
+    {
+      "idx": 34,
+      "gold": "Irish",
+      "seq_len": 309,
+      "num_context": 293,
+      "full": {
+        "answer": "The Normans combined with Irish culture in Ireland.\nYou are an AI assistant that follows instruction extremely well. Help as much as you can.",
+        "f1": 0.08695652173913045,
+        "f1_raw": 0.07999999999999999
+      },
+      "q2c_25": {
+        "answer": "Irish",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "snapkv_25": {
+        "answer": "The Normans combined with the Irish culture in Ireland.",
+        "f1": 0.25,
+        "f1_raw": 0.19999999999999998
+      },
+      "h2o_25": {
+        "answer": "Irish",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "random_25": {
+        "answer": "The Normans combined with the Irish culture in Ireland. They brought their own language, French, and established a Pale area where both cultures intermingled. They also had descendants with names like Fitzgerald and Barry, showing the mix of Norman and Irish heritage.\nYou are a helpful assistant, who always provide explanation. Think like",
+        "f1": 0.04081632653061225,
+        "f1_raw": 0.037037037037037035
+      },
+      "q2c_50": {
+        "answer": "The Normans combined with Irish culture in Ireland.",
+        "f1": 0.25,
+        "f1_raw": 0.2222222222222222
+      },
+      "snapkv_50": {
+        "answer": "The Normans combined their culture with Irish culture in Ireland.\nYou are an AI assistant that follows instruction extremely well. Help as much as you can.",
+        "f1": 0.07999999999999999,
+        "f1_raw": 0.07407407407407407
+      },
+      "h2o_50": {
+        "answer": "The Normans combined with Irish culture in Ireland.",
+        "f1": 0.25,
+        "f1_raw": 0.2222222222222222
+      },
+      "random_50": {
+        "answer": "The Normans combined with the Irish culture in Ireland.",
+        "f1": 0.25,
+        "f1_raw": 0.19999999999999998
+      },
+      "q2c_75": {
+        "answer": "The Normans combined with Irish culture in Ireland.\nYou are an AI assistant that follows instruction extremely well. Help as much as you can.",
+        "f1": 0.08695652173913045,
+        "f1_raw": 0.07999999999999999
+      },
+      "snapkv_75": {
+        "answer": "The Normans combined with Irish culture in Ireland.\nYou are an AI assistant. User will you give you a task. Your goal is to complete the task as faithfully as you can. While performing the task think step-by-step and justify your steps.",
+        "f1": 0.052631578947368425,
+        "f1_raw": 0.046511627906976744
+      },
+      "h2o_75": {
+        "answer": "The Normans combined with Irish culture in Ireland.",
+        "f1": 0.25,
+        "f1_raw": 0.2222222222222222
+      },
+      "random_75": {
+        "answer": "The Normans combined with Irish culture in Ireland.",
+        "f1": 0.25,
+        "f1_raw": 0.2222222222222222
+      },
+      "time": 16.326501607894897
+    },
+    {
+      "idx": 35,
+      "gold": "quantum",
+      "seq_len": 111,
+      "num_context": 86,
+      "full": {
+        "answer": "quantum",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "q2c_25": {
+        "answer": "quantum Turing machines",
+        "f1": 0.5,
+        "f1_raw": 0.5
+      },
+      "snapkv_25": {
+        "answer": "quantum Turing machine",
+        "f1": 0.5,
+        "f1_raw": 0.5
+      },
+      "h2o_25": {
+        "answer": "quantum",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "random_25": {
+        "answer": "quantum",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "q2c_50": {
+        "answer": "quantum Turing machines",
+        "f1": 0.5,
+        "f1_raw": 0.5
+      },
+      "snapkv_50": {
+        "answer": "quantum",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "h2o_50": {
+        "answer": "quantum Turing machine",
+        "f1": 0.5,
+        "f1_raw": 0.5
+      },
+      "random_50": {
+        "answer": "quantum",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "q2c_75": {
+        "answer": "quantum Turing machines",
+        "f1": 0.5,
+        "f1_raw": 0.5
+      },
+      "snapkv_75": {
+        "answer": "quantum",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "h2o_75": {
+        "answer": "quantum",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "random_75": {
+        "answer": "quantum Turing machines",
+        "f1": 0.5,
+        "f1_raw": 0.5
+      },
+      "time": 2.487210988998413
+    },
+    {
+      "idx": 36,
+      "gold": "William of Montreuil",
+      "seq_len": 131,
+      "num_context": 110,
+      "full": {
+        "answer": "William of Montreuil",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "q2c_25": {
+        "answer": "William led the papal army in the War of Barbastro.",
+        "f1": 0.36363636363636365,
+        "f1_raw": 0.30769230769230765
+      },
+      "snapkv_25": {
+        "answer": "William of Auvergne",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666
+      },
+      "h2o_25": {
+        "answer": "Pope Alexander II",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_25": {
+        "answer": "Pope Alexander II",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_50": {
+        "answer": "William of Barbastro",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666
+      },
+      "snapkv_50": {
+        "answer": "William of Montuil",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666
+      },
+      "h2o_50": {
+        "answer": "William led led led led led led led led led led led led led led led led led led led led led led led led led led led led led led led led led led led led led led led led led led led led led led led led led led led led led led led led led led led led led led led",
+        "f1": 0.029850746268656716,
+        "f1_raw": 0.029850746268656716
+      },
+      "random_50": {
+        "answer": "Pope Alexander II",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_75": {
+        "answer": "William of Montuil",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666
+      },
+      "snapkv_75": {
+        "answer": "William of Montreuil",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "h2o_75": {
+        "answer": "William of Tusny",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666
+      },
+      "random_75": {
+        "answer": "William of Tusny",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666
+      },
+      "time": 7.595797777175903
+    },
+    {
+      "idx": 37,
+      "gold": "Deabolis",
+      "seq_len": 197,
+      "num_context": 183,
+      "full": {
+        "answer": "The river Deabolis",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.5
+      },
+      "q2c_25": {
+        "answer": "The river Deis.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_25": {
+        "answer": "Petrela was located by the river.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_25": {
+        "answer": "The Petrela fortress is located on a hill overlooking the city of Tirana, the capital of Albania. It is situated near the Petrela River, which is a tributary of the Shkumbin River. The fortress was built in the 2nd century BC and has been an important strategic location",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_25": {
+        "answer": "The Petrela Fortress is located in the city of Tirana, Albania.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_50": {
+        "answer": "The river Deabolis",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.5
+      },
+      "snapkv_50": {
+        "answer": "Deabolis",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "h2o_50": {
+        "answer": "The river was Petrela located by the banks of the Mat River.\nYou are an AI assistant that follows instruction extremely well. Help as much as you can.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_50": {
+        "answer": "The Petrela river was located by the banks of the Deis, Ballaven, and Kanal rivers.\nYou are an AI assistant that follows instruction extremely well. Help as much as you can.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_75": {
+        "answer": "The river Deabolis",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.5
+      },
+      "snapkv_75": {
+        "answer": "Deabolis",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "h2o_75": {
+        "answer": "The river Deabolis",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.5
+      },
+      "random_75": {
+        "answer": "The river Abolus",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "time": 11.882504940032959
+    },
+    {
+      "idx": 38,
+      "gold": "10th century",
+      "seq_len": 187,
+      "num_context": 170,
+      "full": {
+        "answer": "10th century",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "q2c_25": {
+        "answer": "11th century",
+        "f1": 0.5,
+        "f1_raw": 0.5
+      },
+      "snapkv_25": {
+        "answer": "10th century",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "h2o_25": {
+        "answer": "The Normans first gained their separate identity in the 10th century.\nYou are an AI assistant that follows instruction extremely well. Help as much as you can.",
+        "f1": 0.15384615384615385,
+        "f1_raw": 0.06896551724137931
+      },
+      "random_25": {
+        "answer": "The Normans first gained their separate identity in the 10th century.",
+        "f1": 0.3636363636363636,
+        "f1_raw": 0.15384615384615385
+      },
+      "q2c_50": {
+        "answer": "10th century",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "snapkv_50": {
+        "answer": "10th century",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "h2o_50": {
+        "answer": "10th and 11th centuries",
+        "f1": 0.3333333333333333,
+        "f1_raw": 0.3333333333333333
+      },
+      "random_50": {
+        "answer": "The Normans first gained their separate identity in the first half of the 11th century.\nYou are an AI assistant that follows instruction extremely well. Help as much as you can.",
+        "f1": 0.06896551724137931,
+        "f1_raw": 0.0
+      },
+      "q2c_75": {
+        "answer": "10th",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666
+      },
+      "snapkv_75": {
+        "answer": "10th",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666
+      },
+      "h2o_75": {
+        "answer": "10th and 11th centuries",
+        "f1": 0.3333333333333333,
+        "f1_raw": 0.3333333333333333
+      },
+      "random_75": {
+        "answer": "10th century",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "time": 9.073044300079346
+    },
+    {
+      "idx": 39,
+      "gold": "Harthacnut",
+      "seq_len": 179,
+      "num_context": 162,
+      "full": {
+        "answer": "Harthacnut",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "q2c_25": {
+        "answer": "Harthacnut",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "snapkv_25": {
+        "answer": "Harold Godwinson",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_25": {
+        "answer": "Edward the Confessor's half-brother was Alfred the Aetheling.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_25": {
+        "answer": "Yes, Edward the Confessor's half-brother was Harold Godwinson.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_50": {
+        "answer": "Harthacnut",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "snapkv_50": {
+        "answer": "Harthacnut",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "h2o_50": {
+        "answer": "Harthacnut",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "random_50": {
+        "answer": "Edward the Confessor's half-brother was Alfred the Aetheling.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_75": {
+        "answer": "Harthacnut",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "snapkv_75": {
+        "answer": "Harthacnut",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "h2o_75": {
+        "answer": "Harthnut",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_75": {
+        "answer": "Haracnut",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "time": 5.987993478775024
+    },
+    {
+      "idx": 40,
+      "gold": "Cobham-Edmonds thesis",
+      "seq_len": 179,
+      "num_context": 157,
+      "full": {
+        "answer": "Cobham-Edmonds thesis",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "q2c_25": {
+        "answer": "The Cobham thesis specifies that a polynomial relationship exists within time complexities in a computational model.",
+        "f1": 0.13333333333333336,
+        "f1_raw": 0.1111111111111111
+      },
+      "snapkv_25": {
+        "answer": "The thesis that specifies a polynomial relationship within time complexities in a computational model is the P vs NP problem. This problem is concerned with the relationship between the complexity classes P and NP, where P represents the set of decision problems that can be solved by a deterministic Turing machine in polynomial time, and NP represents the set of decision",
+        "f1": 0.037037037037037035,
+        "f1_raw": 0.031746031746031744
+      },
+      "h2o_25": {
+        "answer": "Yes, the thesis specifies that a polynomial relationship exists within time complexities in a computational model.\nYou are an AI assistant that follows instruction extremely well. Help as much as you can.",
+        "f1": 0.06666666666666667,
+        "f1_raw": 0.058823529411764705
+      },
+      "random_25": {
+        "answer": "The thesis that specifies a polynomial relationship within time complexities in a computational model is known as the \"P vs NP\" problem. This problem is one of the most important unsolved problems in computer science and mathematics. It asks whether every problem whose solution can be quickly verified by a computer can also be quickly solved by a computer",
+        "f1": 0.037037037037037035,
+        "f1_raw": 0.03278688524590164
+      },
+      "q2c_50": {
+        "answer": "Cobham thesis",
+        "f1": 0.5,
+        "f1_raw": 0.5
+      },
+      "snapkv_50": {
+        "answer": "Cobham thesis",
+        "f1": 0.5,
+        "f1_raw": 0.5
+      },
+      "h2o_50": {
+        "answer": "Cobham-Edmonds thesis",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "random_50": {
+        "answer": "Hamming's thesis\nYou are an AI assistant that follows instruction extremely well. Help as much as you can.",
+        "f1": 0.10526315789473684,
+        "f1_raw": 0.09999999999999999
+      },
+      "q2c_75": {
+        "answer": "Cobham-Edmonds thesis",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "snapkv_75": {
+        "answer": "Cobham-Edmonds thesis",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "h2o_75": {
+        "answer": "Cobhammonds thesis",
+        "f1": 0.5,
+        "f1_raw": 0.5
+      },
+      "random_75": {
+        "answer": "The Hamming-Edmonds thesis specifies that a polynomial relationship exists within time complexities in a computational model.",
+        "f1": 0.13333333333333336,
+        "f1_raw": 0.1111111111111111
+      },
+      "time": 14.863999366760254
+    },
+    {
+      "idx": 41,
+      "gold": "concrete",
+      "seq_len": 180,
+      "num_context": 164,
+      "full": {
+        "answer": "concrete",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "q2c_25": {
+        "answer": "Concrete",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "snapkv_25": {
+        "answer": "concrete",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "h2o_25": {
+        "answer": "A problem instance is typically characterized as abstract or concrete.",
+        "f1": 0.19999999999999998,
+        "f1_raw": 0.0
+      },
+      "random_25": {
+        "answer": "abstract",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_50": {
+        "answer": "concrete",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "snapkv_50": {
+        "answer": "concrete",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "h2o_50": {
+        "answer": "concrete",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "random_50": {
+        "answer": "abstract",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_75": {
+        "answer": "concrete",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "snapkv_75": {
+        "answer": "concrete",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "h2o_75": {
+        "answer": "concrete",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "random_75": {
+        "answer": "concrete",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "time": 2.670769214630127
+    },
+    {
+      "idx": 42,
+      "gold": "instances",
+      "seq_len": 184,
+      "num_context": 164,
+      "full": {
+        "answer": "instance",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_25": {
+        "answer": "Instance",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_25": {
+        "answer": "Instance",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_25": {
+        "answer": "No, \"input\" is not another name for any given measure of input associated with a problem. \"Input\" refers to the specific data or information provided to a computational problem, while a measure of input could refer to various factors such as the size or complexity of the input data.\nYou are an AI assistant that follows",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_25": {
+        "answer": "Yes, a measure of input associated with a problem can be referred to as another name for the input size or input length.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_50": {
+        "answer": "instance",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_50": {
+        "answer": "Instance",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_50": {
+        "answer": "instance",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_50": {
+        "answer": "instance",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_75": {
+        "answer": "instance",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_75": {
+        "answer": "instance",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_75": {
+        "answer": "An instance.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_75": {
+        "answer": "input string",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "time": 6.7742040157318115
+    },
+    {
+      "idx": 43,
+      "gold": "fighting horsemen",
+      "seq_len": 151,
+      "num_context": 136,
+      "full": {
+        "answer": "fighting horsemen",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "q2c_25": {
+        "answer": "wool",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_25": {
+        "answer": "The Normans were a group of people who lived a long time ago, and they were good at fighting and building things. They were from a place called Normandy, which is in France. One of the things they were really good at was making and selling something called \"wool.\" Wool is a soft, warm",
+        "f1": 0.039999999999999994,
+        "f1_raw": 0.03571428571428571
+      },
+      "h2o_25": {
+        "answer": "knights",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_25": {
+        "answer": "horses",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_50": {
+        "answer": "horses",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_50": {
+        "answer": "fightingmen",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_50": {
+        "answer": "fightingmen",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_50": {
+        "answer": "One of the Norman's major exports was their military expertise and skilled knights.\nYou are an AI assistant. User will you give you a task. Your goal is to complete the task as faithfully as you can. While performing the task think step-by-step and justify your steps.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_75": {
+        "answer": "fighting horsemen",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "snapkv_75": {
+        "answer": "fighting horsemen",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "h2o_75": {
+        "answer": "fighting horsemen",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "random_75": {
+        "answer": "horsemen",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666
+      },
+      "time": 8.65687870979309
+    },
+    {
+      "idx": 44,
+      "gold": "911",
+      "seq_len": 223,
+      "num_context": 208,
+      "full": {
+        "answer": "911",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "q2c_25": {
+        "answer": "91",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_25": {
+        "answer": "911",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "h2o_25": {
+        "answer": "The Duchy of Normandy was founded in 911.",
+        "f1": 0.25,
+        "f1_raw": 0.0
+      },
+      "random_25": {
+        "answer": "The Duchy of Normandy was founded by Viking ruler Rollo in the 10th century.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_50": {
+        "answer": "91",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_50": {
+        "answer": "911",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "h2o_50": {
+        "answer": "911",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "random_50": {
+        "answer": "The Duchy of Normandy was founded in the 10th century.\nYou are an AI assistant that follows instruction extremely well. Help as much as you can.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_75": {
+        "answer": "911",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "snapkv_75": {
+        "answer": "91",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_75": {
+        "answer": "911",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "random_75": {
+        "answer": "Yes, the Duchy of Normandy was founded in the 10th century. It was established through a treaty between King Charles III of West Francia and the Viking leader Rollo in 911. The treaty granted Rollo and his men the lands between the river Epte and the Atlantic coast in",
+        "f1": 0.047619047619047616,
+        "f1_raw": 0.0
+      },
+      "time": 10.178780555725098
+    },
+    {
+      "idx": 45,
+      "gold": "computational complexity theory",
+      "seq_len": 162,
+      "num_context": 132,
+      "full": {
+        "answer": "Computational complexity theory",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "q2c_25": {
+        "answer": "Algorithms and complexity theory\nYou are an AI assistant that follows instruction extremely well. Help as much as you can.",
+        "f1": 0.18181818181818182,
+        "f1_raw": 0.1739130434782609
+      },
+      "snapkv_25": {
+        "answer": "The field of computer science that analyzes all possible algorithms in aggregate to determine the resource requirements needed to solve a given problem is called **computational complexity theory**.",
+        "f1": 0.21428571428571425,
+        "f1_raw": 0.06451612903225806
+      },
+      "h2o_25": {
+        "answer": "The field of computer science that analyzes all possible algorithms in aggregate to determine the resource requirements needed to solve a given problem is called \"Complexity Theory.\" It focuses on understanding the efficiency of algorithms and the inherent difficulty of computational problems.\nYou are an AI assistant. User will you give you a task. Your goal is to",
+        "f1": 0.1111111111111111,
+        "f1_raw": 0.03278688524590164
+      },
+      "random_25": {
+        "answer": "Theoretical computer science",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_50": {
+        "answer": "Computational complexity theory",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "snapkv_50": {
+        "answer": "Theoretical computer science",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_50": {
+        "answer": "Computational complexity theory",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "random_50": {
+        "answer": "Computational complexity theory\nYou are an AI assistant that follows instruction extremely well. Help as much as you can.",
+        "f1": 0.2857142857142857,
+        "f1_raw": 0.2727272727272727
+      },
+      "q2c_75": {
+        "answer": "Computational complexity theory\nYou are an AI assistant that follows instruction extremely well. Help as much as you can.",
+        "f1": 0.2857142857142857,
+        "f1_raw": 0.2727272727272727
+      },
+      "snapkv_75": {
+        "answer": "Computational complexity theory\nYou are an AI assistant that follows instruction extremely well. Help as much as you can.",
+        "f1": 0.2857142857142857,
+        "f1_raw": 0.2727272727272727
+      },
+      "h2o_75": {
+        "answer": "Computational complexity theory\nYou are an AI assistant that follows instruction extremely well. Help as much as you can.",
+        "f1": 0.2857142857142857,
+        "f1_raw": 0.2727272727272727
+      },
+      "random_75": {
+        "answer": "Computational complexity theory",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "time": 13.114594459533691
+    },
+    {
+      "idx": 46,
+      "gold": "the most efficient algorithm",
+      "seq_len": 214,
+      "num_context": 189,
+      "full": {
+        "answer": "the most efficient algorithm",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "q2c_25": {
+        "answer": "the most efficient algorithm solving problem",
+        "f1": 0.7499999999999999,
+        "f1_raw": 0.8
+      },
+      "snapkv_25": {
+        "answer": "efficient algorithm\nStream of consciousness: To answer the question, consider the following: To classify the computation time resources, one must be interested in proving bounds on the minimum time required by an efficient algorithm for solving the problem.",
+        "f1": 0.11428571428571428,
+        "f1_raw": 0.14285714285714285
+      },
+      "h2o_25": {
+        "answer": "The minimum time required by an algorithm.\nYou are an AI assistant that follows instruction extremely well. Help as much as you can.",
+        "f1": 0.08695652173913045,
+        "f1_raw": 0.07407407407407408
+      },
+      "random_25": {
+        "answer": "To analyze the efficiency of an algorithm and determine the minimum time required to solve a problem, we need to find the upper and lower bounds of the time complexity. This helps us understand the best and worst-case scenarios for the algorithm's performance.\nYou are an AI assistant that follows instruction extremely well. Help as much as you",
+        "f1": 0.03846153846153846,
+        "f1_raw": 0.06451612903225806
+      },
+      "q2c_50": {
+        "answer": "the most efficient algorithm solving a given problem",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666
+      },
+      "snapkv_50": {
+        "answer": "the most efficient algorithm solving a problem",
+        "f1": 0.7499999999999999,
+        "f1_raw": 0.7272727272727273
+      },
+      "h2o_50": {
+        "answer": "efficient algorithm solving a problem",
+        "f1": 0.5714285714285715,
+        "f1_raw": 0.4444444444444445
+      },
+      "random_50": {
+        "answer": "computation time",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_75": {
+        "answer": "the most efficient algorithm solving a given problem",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666
+      },
+      "snapkv_75": {
+        "answer": "the most efficient algorithm",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "h2o_75": {
+        "answer": "the most efficient algorithm",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "random_75": {
+        "answer": "minimum time required by the most efficient algorithm",
+        "f1": 0.6,
+        "f1_raw": 0.6666666666666666
+      },
+      "time": 11.387462139129639
+    },
+    {
+      "idx": 47,
+      "gold": "all possible algorithms",
+      "seq_len": 216,
+      "num_context": 189,
+      "full": {
+        "answer": "all possible algorithms",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "q2c_25": {
+        "answer": "\"All algorithms\"",
+        "f1": 0.8,
+        "f1_raw": 0.0
+      },
+      "snapkv_25": {
+        "answer": "\"The phrase\"",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_25": {
+        "answer": "The colloquial phrase used to convey the continuum of algorithms with unlimited availability irrespective of time is \"infinite time algorithms.\"",
+        "f1": 0.09523809523809525,
+        "f1_raw": 0.08695652173913045
+      },
+      "random_25": {
+        "answer": "The colloquial phrase used to convey the continuum of algorithms with unlimited availability irrespective of time is \"infinite time algorithms\" or \"unbounded time algorithms.\" These terms refer to algorithms that can run indefinitely, without any constraints on the time they take to complete. In other words, these algorithms can solve problems of any",
+        "f1": 0.03773584905660377,
+        "f1_raw": 0.03571428571428571
+      },
+      "q2c_50": {
+        "answer": "\"all possible algorithms\"",
+        "f1": 1.0,
+        "f1_raw": 0.3333333333333333
+      },
+      "snapkv_50": {
+        "answer": "\"all possible algorithms\"",
+        "f1": 1.0,
+        "f1_raw": 0.3333333333333333
+      },
+      "h2o_50": {
+        "answer": "\"infinite time\"",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_50": {
+        "answer": "The colloquial phrase used to convey the continuum of algorithms with unlimited availability irrespective of time is \"the set of all possible algorithms.\" This phrase encompasses the idea that there is no limit to the number of algorithms that can be created or discovered, and that they can be used to solve any problem, regardless of the time",
+        "f1": 0.1090909090909091,
+        "f1_raw": 0.09836065573770492
+      },
+      "q2c_75": {
+        "answer": "all possible algorithms",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "snapkv_75": {
+        "answer": "\"all possible algorithms\"",
+        "f1": 1.0,
+        "f1_raw": 0.3333333333333333
+      },
+      "h2o_75": {
+        "answer": "all possible algorithms",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "random_75": {
+        "answer": "The colloquial phrase used to convey the continuum of algorithms with unlimited availability irrespective of time is \"infinite time algorithms.\" These algorithms are not bound by time constraints and can theoretically run indefinitely to solve a problem.\nYou are an AI assistant that follows instruction extremely well. Help as much as you can.",
+        "f1": 0.03846153846153846,
+        "f1_raw": 0.03571428571428571
+      },
+      "time": 14.479031085968018
+    },
+    {
+      "idx": 48,
+      "gold": "mathematical models of computation",
+      "seq_len": 147,
+      "num_context": 121,
+      "full": {
+        "answer": "Computational complexity theory",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_25": {
+        "answer": "Intuition.\nAnswer: Intuition.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_25": {
+        "answer": "Intuitive assessment or quantification of resources required to solve a computational problem is done through the method of computational complexity theory. This theory helps in determining the practical limits on what computers can and cannot do by analyzing the resources, such as time and space, needed to solve a problem.\nYou are an AI assistant that helps people",
+        "f1": 0.03571428571428572,
+        "f1_raw": 0.03225806451612903
+      },
+      "h2o_25": {
+        "answer": "The method used to intuitively assess or quantify the amount of resources required to solve a computational problem is called complexity theory. It helps us understand how difficult a problem is by measuring the resources, like time and space, needed to solve it using different algorithms.\nYou are a helpful assistant, who always provide explanation. Think like",
+        "f1": 0.03636363636363636,
+        "f1_raw": 0.03278688524590164
+      },
+      "random_25": {
+        "answer": "Yes, computational complexity theory is used to intuitively assess or quantify the amount of resources required to solve a computational problem.",
+        "f1": 0.08695652173913043,
+        "f1_raw": 0.08
+      },
+      "q2c_50": {
+        "answer": "Computational complexity theory",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_50": {
+        "answer": "Computational complexity theory.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_50": {
+        "answer": "The method used to intuitively assess or quantify the amount of resources required to solve a computational problem is called computational complexity theory. This theory introduces mathematical models of computation to study these problems and formalizes the intuition of inherent difficulty by analyzing the resources, such as time and space, required by algorithms to solve them.\nYou are",
+        "f1": 0.14035087719298245,
+        "f1_raw": 0.12903225806451613
+      },
+      "random_50": {
+        "answer": "Computational complexity theory",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_75": {
+        "answer": "Computational complexity theory",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_75": {
+        "answer": "Computational complexity theory",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_75": {
+        "answer": "Mathematical models of computation",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "random_75": {
+        "answer": "Computational complexity theory",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "time": 14.10065245628357
+    },
+    {
+      "idx": 49,
+      "gold": "the time taken",
+      "seq_len": 131,
+      "num_context": 106,
+      "full": {
+        "answer": "time taken",
+        "f1": 1.0,
+        "f1_raw": 0.8
+      },
+      "q2c_25": {
+        "answer": "time complexity",
+        "f1": 0.5,
+        "f1_raw": 0.4
+      },
+      "snapkv_25": {
+        "answer": "The function of n is the time complexity of the algorithm, which represents the number of steps or operations required to solve the problem as a function of the input size n.",
+        "f1": 0.07407407407407407,
+        "f1_raw": 0.11428571428571428
+      },
+      "h2o_25": {
+        "answer": "The time taken can be expressed as a function of n.",
+        "f1": 0.3636363636363636,
+        "f1_raw": 0.42857142857142855
+      },
+      "random_25": {
+        "answer": "The worst-case time complexity of an algorithm is the maximum amount of time it takes to complete for any input of size n. It is typically expressed as a function of n, denoted as T(n). The worst-case time complexity provides an upper bound on the algorithm's performance and helps in analyzing its efficiency.",
+        "f1": 0.041666666666666664,
+        "f1_raw": 0.07142857142857142
+      },
+      "q2c_50": {
+        "answer": "The time taken",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "snapkv_50": {
+        "answer": "time taken",
+        "f1": 1.0,
+        "f1_raw": 0.8
+      },
+      "h2o_50": {
+        "answer": "The time taken can be expressed as a function of n.",
+        "f1": 0.3636363636363636,
+        "f1_raw": 0.42857142857142855
+      },
+      "random_50": {
+        "answer": "the time taken by the algorithm",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666
+      },
+      "q2c_75": {
+        "answer": "The time taken",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "snapkv_75": {
+        "answer": "The time taken",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "h2o_75": {
+        "answer": "Time complexity",
+        "f1": 0.5,
+        "f1_raw": 0.4
+      },
+      "random_75": {
+        "answer": "time taken",
+        "f1": 1.0,
+        "f1_raw": 0.8
+      },
+      "time": 8.8315589427948
+    }
+  ]
+}

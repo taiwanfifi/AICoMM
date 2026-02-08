@@ -1,0 +1,3193 @@
+{
+  "metadata": {
+    "model": "Qwen2.5-7B",
+    "task": "SQuAD-v2",
+    "experiment": "grouped_delta_encoding",
+    "num_samples": 30,
+    "description": "Fair comparison with CacheGen: sequential vs grouped vs anchor-based delta encoding"
+  },
+  "results": [
+    {
+      "idx": 0,
+      "gold": "1169",
+      "seq_len": 311,
+      "fp16_baseline": {
+        "answer": "1169",
+        "f1": 1.0
+      },
+      "direct_int4": {
+        "answer": "1 year",
+        "f1": 0.0
+      },
+      "direct_int8": {
+        "answer": "1169",
+        "f1": 1.0
+      },
+      "seq_delta_int4": {
+        "answer": "::<main at the now\u2019s now,, their[[, now,,ed now,, now now now,,, (,,,,,)),,,,,,,,,,,,, nowerserg,,, is,,s is is the this,",
+        "f1": 0.0
+      },
+      "seq_delta_int8": {
+        "answer": "1169",
+        "f1": 1.0
+      },
+      "grp10_seq_int4": {
+        "answer": "116 the Norman settled mostly in the southeast Pale, and also built many fine castles and settlements, including Trim Castle and Dublin Castle.",
+        "f1": 0.0
+      },
+      "grp10_seq_int8": {
+        "answer": "1169",
+        "f1": 1.0
+      },
+      "grp4_seq_int4": {
+        "answer": "1 116669",
+        "f1": 0.0
+      },
+      "grp4_seq_int8": {
+        "answer": "1169",
+        "f1": 1.0
+      },
+      "anchor10_int4": {
+        "answer": "1 1166",
+        "f1": 0.0
+      },
+      "anchor10_int8": {
+        "answer": "1169",
+        "f1": 1.0
+      },
+      "anchor4_int4": {
+        "answer": "1 11669",
+        "f1": 0.0
+      },
+      "anchor4_int8": {
+        "answer": "1169",
+        "f1": 1.0
+      },
+      "mixed_direct_int4": {
+        "answer": "1169",
+        "f1": 1.0
+      },
+      "mixed_anchor10_int4": {
+        "answer": "1169",
+        "f1": 1.0
+      },
+      "mixed_grp10_int4": {
+        "answer": "1169",
+        "f1": 1.0
+      },
+      "time": 7.95974063873291
+    },
+    {
+      "idx": 1,
+      "gold": "Oursel",
+      "seq_len": 227,
+      "fp16_baseline": {
+        "answer": "Oursel",
+        "f1": 1.0
+      },
+      "direct_int4": {
+        "answer": "Oursel",
+        "f1": 1.0
+      },
+      "direct_int8": {
+        "answer": "Oursel",
+        "f1": 1.0
+      },
+      "seq_delta_int4": {
+        "answer": "O-H is schools?\n\ning......ed\n\n isinginginging toing Nening {inged'' I I I N N'''''s...... of of' & of of known hr known......I ( ( _...''' of \u201c... \" of of",
+        "f1": 0.0
+      },
+      "seq_delta_int8": {
+        "answer": "Oursel",
+        "f1": 1.0
+      },
+      "grp10_seq_int4": {
+        "answer": "Ourssel",
+        "f1": 0.0
+      },
+      "grp10_seq_int8": {
+        "answer": "Ourssel",
+        "f1": 0.0
+      },
+      "grp4_seq_int4": {
+        "answer": "Oursel",
+        "f1": 1.0
+      },
+      "grp4_seq_int8": {
+        "answer": "Oursel",
+        "f1": 1.0
+      },
+      "anchor10_int4": {
+        "answer": "Ourssel",
+        "f1": 0.0
+      },
+      "anchor10_int8": {
+        "answer": "Ourssel",
+        "f1": 0.0
+      },
+      "anchor4_int4": {
+        "answer": "Ourssel",
+        "f1": 0.0
+      },
+      "anchor4_int8": {
+        "answer": "Oursel",
+        "f1": 1.0
+      },
+      "mixed_direct_int4": {
+        "answer": "Oursel",
+        "f1": 1.0
+      },
+      "mixed_anchor10_int4": {
+        "answer": "Oursel",
+        "f1": 1.0
+      },
+      "mixed_grp10_int4": {
+        "answer": "Oursel",
+        "f1": 1.0
+      },
+      "time": 5.019479513168335
+    },
+    {
+      "idx": 2,
+      "gold": "a storm",
+      "seq_len": 163,
+      "fp16_baseline": {
+        "answer": "a storm",
+        "f1": 1.0
+      },
+      "direct_int4": {
+        "answer": "a storm",
+        "f1": 1.0
+      },
+      "direct_int8": {
+        "answer": "a storm",
+        "f1": 1.0
+      },
+      "seq_delta_int4": {
+        "answer": "a??? the the the?? - the",
+        "f1": 0.0
+      },
+      "seq_delta_int8": {
+        "answer": "a storm",
+        "f1": 1.0
+      },
+      "grp10_seq_int4": {
+        "answer": "a storm disperseded the fleet",
+        "f1": 0.5714285714285715
+      },
+      "grp10_seq_int8": {
+        "answer": "a storm dispersed the fleet",
+        "f1": 0.5714285714285715
+      },
+      "grp4_seq_int4": {
+        "answer": "a storm dispersed the fleet",
+        "f1": 0.5714285714285715
+      },
+      "grp4_seq_int8": {
+        "answer": "a storm dispersed the fleet",
+        "f1": 0.5714285714285715
+      },
+      "anchor10_int4": {
+        "answer": "a storm dispersed the fleet",
+        "f1": 0.5714285714285715
+      },
+      "anchor10_int8": {
+        "answer": "a storm",
+        "f1": 1.0
+      },
+      "anchor4_int4": {
+        "answer": "a storm dispersed the fleet",
+        "f1": 0.5714285714285715
+      },
+      "anchor4_int8": {
+        "answer": "a storm dispersed the fleet",
+        "f1": 0.5714285714285715
+      },
+      "mixed_direct_int4": {
+        "answer": "a storm",
+        "f1": 1.0
+      },
+      "mixed_anchor10_int4": {
+        "answer": "a storm",
+        "f1": 1.0
+      },
+      "mixed_grp10_int4": {
+        "answer": "a storm",
+        "f1": 1.0
+      },
+      "time": 3.3592028617858887
+    },
+    {
+      "idx": 3,
+      "gold": "William of Volpiano and John of Ravenna",
+      "seq_len": 166,
+      "fp16_baseline": {
+        "answer": "William of Volpiano and John of Ravenna",
+        "f1": 0.8571428571428571
+      },
+      "direct_int4": {
+        "answer": "William of Volpiano and John of Ravenna",
+        "f1": 0.8571428571428571
+      },
+      "direct_int8": {
+        "answer": "William of Volpiano and John of Ravenna",
+        "f1": 0.8571428571428571
+      },
+      "seq_delta_int4": {
+        "answer": "William",
+        "f1": 0.25
+      },
+      "seq_delta_int8": {
+        "answer": "William of Volpiano and John of Ravenna",
+        "f1": 0.8571428571428571
+      },
+      "grp10_seq_int4": {
+        "answer": "William of Volpiano and John of Ravenna",
+        "f1": 0.8571428571428571
+      },
+      "grp10_seq_int8": {
+        "answer": "William of Volpiano and John of Ravenna",
+        "f1": 0.8571428571428571
+      },
+      "grp4_seq_int4": {
+        "answer": "William of Volpiano and John John of Ravenna",
+        "f1": 0.7999999999999999
+      },
+      "grp4_seq_int8": {
+        "answer": "William of Volpiano and John of Ravenna",
+        "f1": 0.8571428571428571
+      },
+      "anchor10_int4": {
+        "answer": "William of Volpiano and John John of Ravenna",
+        "f1": 0.7999999999999999
+      },
+      "anchor10_int8": {
+        "answer": "William of Volpiano and John of Ravenna",
+        "f1": 0.8571428571428571
+      },
+      "anchor4_int4": {
+        "answer": "William of Volpano and John John of Ravenna",
+        "f1": 0.6666666666666666
+      },
+      "anchor4_int8": {
+        "answer": "William of Volpiano and John of Ravenna",
+        "f1": 0.8571428571428571
+      },
+      "mixed_direct_int4": {
+        "answer": "William of Volpiano and John of Ravenna",
+        "f1": 0.8571428571428571
+      },
+      "mixed_anchor10_int4": {
+        "answer": "William of Volpiano and John of Ravenna",
+        "f1": 0.8571428571428571
+      },
+      "mixed_grp10_int4": {
+        "answer": "William of Volpiano and John of Ravenna",
+        "f1": 0.8571428571428571
+      },
+      "time": 5.5010082721710205
+    },
+    {
+      "idx": 4,
+      "gold": "France",
+      "seq_len": 182,
+      "fp16_baseline": {
+        "answer": "France",
+        "f1": 1.0
+      },
+      "direct_int4": {
+        "answer": "France",
+        "f1": 1.0
+      },
+      "direct_int8": {
+        "answer": "France",
+        "f1": 1.0
+      },
+      "seq_delta_int4": {
+        "answer": "Franceely\n polit,,\n\n\n\n\n\n\n\n\n\n\n (\n\nmmmmm\nm\n\n\n\n\noor\n\n\n?\n\n\n\n\n\n\n\n\n\n\n\n\n\nu,m\n\n\nr\n\n\n\n\nr",
+        "f1": 0.0
+      },
+      "seq_delta_int8": {
+        "answer": "France",
+        "f1": 1.0
+      },
+      "grp10_seq_int4": {
+        "answer": "France",
+        "f1": 1.0
+      },
+      "grp10_seq_int8": {
+        "answer": "France",
+        "f1": 1.0
+      },
+      "grp4_seq_int4": {
+        "answer": "France",
+        "f1": 1.0
+      },
+      "grp4_seq_int8": {
+        "answer": "France",
+        "f1": 1.0
+      },
+      "anchor10_int4": {
+        "answer": "France",
+        "f1": 1.0
+      },
+      "anchor10_int8": {
+        "answer": "France",
+        "f1": 1.0
+      },
+      "anchor4_int4": {
+        "answer": "France",
+        "f1": 1.0
+      },
+      "anchor4_int8": {
+        "answer": "France",
+        "f1": 1.0
+      },
+      "mixed_direct_int4": {
+        "answer": "France",
+        "f1": 1.0
+      },
+      "mixed_anchor10_int4": {
+        "answer": "France",
+        "f1": 1.0
+      },
+      "mixed_grp10_int4": {
+        "answer": "France",
+        "f1": 1.0
+      },
+      "time": 3.9410994052886963
+    },
+    {
+      "idx": 5,
+      "gold": "Bohemond",
+      "seq_len": 193,
+      "fp16_baseline": {
+        "answer": "Bohemond",
+        "f1": 1.0
+      },
+      "direct_int4": {
+        "answer": "Bohemond",
+        "f1": 1.0
+      },
+      "direct_int8": {
+        "answer": "Bohemond",
+        "f1": 1.0
+      },
+      "seq_delta_int4": {
+        "answer": "Bohag, ined andag ofedag inedag if in and and (agagagag of in in ( ( (ag (-agag of (  years ofagag ag ag ag ag ag ag ag ag ag ag ag ag ag ag ag ag ag ag ag ag ag ag ag ag ag",
+        "f1": 0.0
+      },
+      "seq_delta_int8": {
+        "answer": "Bohemond",
+        "f1": 1.0
+      },
+      "grp10_seq_int4": {
+        "answer": "Bohemond",
+        "f1": 1.0
+      },
+      "grp10_seq_int8": {
+        "answer": "Bohemond",
+        "f1": 1.0
+      },
+      "grp4_seq_int4": {
+        "answer": "Bohemond",
+        "f1": 1.0
+      },
+      "grp4_seq_int8": {
+        "answer": "Bohemond",
+        "f1": 1.0
+      },
+      "anchor10_int4": {
+        "answer": "Bohemond",
+        "f1": 1.0
+      },
+      "anchor10_int8": {
+        "answer": "Bohemond",
+        "f1": 1.0
+      },
+      "anchor4_int4": {
+        "answer": "Bohemondnd",
+        "f1": 0.0
+      },
+      "anchor4_int8": {
+        "answer": "Bohemond",
+        "f1": 1.0
+      },
+      "mixed_direct_int4": {
+        "answer": "Bohemond",
+        "f1": 1.0
+      },
+      "mixed_anchor10_int4": {
+        "answer": "Bohemond",
+        "f1": 1.0
+      },
+      "mixed_grp10_int4": {
+        "answer": "Bohemond",
+        "f1": 1.0
+      },
+      "time": 4.704840421676636
+    },
+    {
+      "idx": 6,
+      "gold": "Modern English",
+      "seq_len": 141,
+      "fp16_baseline": {
+        "answer": "Modern English",
+        "f1": 1.0
+      },
+      "direct_int4": {
+        "answer": "Modern English",
+        "f1": 1.0
+      },
+      "direct_int8": {
+        "answer": "Modern English",
+        "f1": 1.0
+      },
+      "seq_delta_int4": {
+        "answer": "Modern",
+        "f1": 0.6666666666666666
+      },
+      "seq_delta_int8": {
+        "answer": "Modern English",
+        "f1": 1.0
+      },
+      "grp10_seq_int4": {
+        "answer": "Modern English",
+        "f1": 1.0
+      },
+      "grp10_seq_int8": {
+        "answer": "Modern English",
+        "f1": 1.0
+      },
+      "grp4_seq_int4": {
+        "answer": "Modern English",
+        "f1": 1.0
+      },
+      "grp4_seq_int8": {
+        "answer": "Modern English",
+        "f1": 1.0
+      },
+      "anchor10_int4": {
+        "answer": "Modern English",
+        "f1": 1.0
+      },
+      "anchor10_int8": {
+        "answer": "Modern English",
+        "f1": 1.0
+      },
+      "anchor4_int4": {
+        "answer": "Modern English",
+        "f1": 1.0
+      },
+      "anchor4_int8": {
+        "answer": "Modern English",
+        "f1": 1.0
+      },
+      "mixed_direct_int4": {
+        "answer": "Modern English",
+        "f1": 1.0
+      },
+      "mixed_anchor10_int4": {
+        "answer": "Modern English",
+        "f1": 1.0
+      },
+      "mixed_grp10_int4": {
+        "answer": "Modern English",
+        "f1": 1.0
+      },
+      "time": 2.380488872528076
+    },
+    {
+      "idx": 7,
+      "gold": "early 11th century",
+      "seq_len": 243,
+      "fp16_baseline": {
+        "answer": "the early 11th century",
+        "f1": 0.8571428571428571
+      },
+      "direct_int4": {
+        "answer": "the early 1 century",
+        "f1": 0.5714285714285715
+      },
+      "direct_int8": {
+        "answer": "the early 11th century",
+        "f1": 0.8571428571428571
+      },
+      "seq_delta_int4": {
+        "answer": "the \u6709\u6709\n\n \ufffd.. \n\n\n\n\n\n\u6709.\n\n\n\n\n\n\n\n\n\n.\n\n.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.\n\n\n\n.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.\n\n\n\n.\n\n\n\n.",
+        "f1": 0.0
+      },
+      "seq_delta_int8": {
+        "answer": "the early 11th century",
+        "f1": 0.8571428571428571
+      },
+      "grp10_seq_int4": {
+        "answer": "the early 1 1 1 1 1 1  in  in  in  of  the  1  the  the  the  the  the  the1  the  the  the  the  the  the  the  the  the  the  the  the",
+        "f1": 0.05714285714285714
+      },
+      "grp10_seq_int8": {
+        "answer": "the early 11th century",
+        "f1": 0.8571428571428571
+      },
+      "grp4_seq_int4": {
+        "answer": "the early 1 century",
+        "f1": 0.5714285714285715
+      },
+      "grp4_seq_int8": {
+        "answer": "the early 11th century",
+        "f1": 0.8571428571428571
+      },
+      "anchor10_int4": {
+        "answer": "the early 1",
+        "f1": 0.3333333333333333
+      },
+      "anchor10_int8": {
+        "answer": "the early 11th century",
+        "f1": 0.8571428571428571
+      },
+      "anchor4_int4": {
+        "answer": "the early 1",
+        "f1": 0.3333333333333333
+      },
+      "anchor4_int8": {
+        "answer": "the early 11th century",
+        "f1": 0.8571428571428571
+      },
+      "mixed_direct_int4": {
+        "answer": "the early 11th century",
+        "f1": 0.8571428571428571
+      },
+      "mixed_anchor10_int4": {
+        "answer": "the early 11th century",
+        "f1": 0.8571428571428571
+      },
+      "mixed_grp10_int4": {
+        "answer": "the early 11th century",
+        "f1": 0.8571428571428571
+      },
+      "time": 7.679964065551758
+    },
+    {
+      "idx": 8,
+      "gold": "911",
+      "seq_len": 222,
+      "fp16_baseline": {
+        "answer": "911",
+        "f1": 1.0
+      },
+      "direct_int4": {
+        "answer": "9 Francia",
+        "f1": 0.0
+      },
+      "direct_int8": {
+        "answer": "911",
+        "f1": 1.0
+      },
+      "seq_delta_int4": {
+        "answer": "$ \n\n three three R",
+        "f1": 0.0
+      },
+      "seq_delta_int8": {
+        "answer": "911",
+        "f1": 1.0
+      },
+      "grp10_seq_int4": {
+        "answer": "9 treaty of Saint--cl",
+        "f1": 0.0
+      },
+      "grp10_seq_int8": {
+        "answer": "911",
+        "f1": 1.0
+      },
+      "grp4_seq_int4": {
+        "answer": "9 10 0 the 10 10 1 was 1 was 1 was 1 was 1 was 1 was 1 was 1 was 1 was 1 was 1 was 1 was 1 was 1 was 1 was 1 was 1",
+        "f1": 0.0
+      },
+      "grp4_seq_int8": {
+        "answer": "911",
+        "f1": 1.0
+      },
+      "anchor10_int4": {
+        "answer": "1 the Duchy of Norm was the course of the 1 the 1 the 1 the  in Frankish and the Viking ruler Rollo, and was situated, but the river the the 1 the 1 the  in their the  in the  of the  of the  of the",
+        "f1": 0.0
+      },
+      "anchor10_int8": {
+        "answer": "911",
+        "f1": 1.0
+      },
+      "anchor4_int4": {
+        "answer": "9 the the of 9 10 1 10 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1",
+        "f1": 0.0
+      },
+      "anchor4_int8": {
+        "answer": "911",
+        "f1": 1.0
+      },
+      "mixed_direct_int4": {
+        "answer": "911",
+        "f1": 1.0
+      },
+      "mixed_anchor10_int4": {
+        "answer": "10 century",
+        "f1": 0.0
+      },
+      "mixed_grp10_int4": {
+        "answer": "911",
+        "f1": 1.0
+      },
+      "time": 8.431975364685059
+    },
+    {
+      "idx": 9,
+      "gold": "King Malcolm III of Scotland",
+      "seq_len": 126,
+      "fp16_baseline": {
+        "answer": "Malcolm III",
+        "f1": 0.5714285714285715
+      },
+      "direct_int4": {
+        "answer": "Malcolm III",
+        "f1": 0.5714285714285715
+      },
+      "direct_int8": {
+        "answer": "Malcolm III",
+        "f1": 0.5714285714285715
+      },
+      "seq_delta_int4": {
+        "answer": "Malcolm",
+        "f1": 0.33333333333333337
+      },
+      "seq_delta_int8": {
+        "answer": "Malcolm III",
+        "f1": 0.5714285714285715
+      },
+      "grp10_seq_int4": {
+        "answer": "Malcolm III",
+        "f1": 0.5714285714285715
+      },
+      "grp10_seq_int8": {
+        "answer": "Malcolm III",
+        "f1": 0.5714285714285715
+      },
+      "grp4_seq_int4": {
+        "answer": "Malcolm III",
+        "f1": 0.5714285714285715
+      },
+      "grp4_seq_int8": {
+        "answer": "Malcolm III",
+        "f1": 0.5714285714285715
+      },
+      "anchor10_int4": {
+        "answer": "Malcolm iii",
+        "f1": 0.5714285714285715
+      },
+      "anchor10_int8": {
+        "answer": "Malcolm III",
+        "f1": 0.5714285714285715
+      },
+      "anchor4_int4": {
+        "answer": "Malcolm III",
+        "f1": 0.5714285714285715
+      },
+      "anchor4_int8": {
+        "answer": "Malcolm III",
+        "f1": 0.5714285714285715
+      },
+      "mixed_direct_int4": {
+        "answer": "Malcolm III",
+        "f1": 0.5714285714285715
+      },
+      "mixed_anchor10_int4": {
+        "answer": "Malcolm III",
+        "f1": 0.5714285714285715
+      },
+      "mixed_grp10_int4": {
+        "answer": "Malcolm III",
+        "f1": 0.5714285714285715
+      },
+      "time": 2.2338125705718994
+    },
+    {
+      "idx": 10,
+      "gold": "computational complexity theory",
+      "seq_len": 161,
+      "fp16_baseline": {
+        "answer": "Computational complexity",
+        "f1": 0.8
+      },
+      "direct_int4": {
+        "answer": "Computational complexity theory",
+        "f1": 1.0
+      },
+      "direct_int8": {
+        "answer": "Computational complexity theory",
+        "f1": 1.0
+      },
+      "seq_delta_int4": {
+        "answer": "Computational is is is is is is all all all all all all all all all all all all all all all all all all all all all all all all all all all all all all all all all all all all all all all all all all ",
+        "f1": 0.029850746268656716
+      },
+      "seq_delta_int8": {
+        "answer": "Computational complexity theory",
+        "f1": 1.0
+      },
+      "grp10_seq_int4": {
+        "answer": "Computational theory",
+        "f1": 0.8
+      },
+      "grp10_seq_int8": {
+        "answer": "Computational complexity theory",
+        "f1": 1.0
+      },
+      "grp4_seq_int4": {
+        "answer": "Computational complexity theory",
+        "f1": 1.0
+      },
+      "grp4_seq_int8": {
+        "answer": "Computational complexity theory",
+        "f1": 1.0
+      },
+      "anchor10_int4": {
+        "answer": "Computational complexity theory",
+        "f1": 1.0
+      },
+      "anchor10_int8": {
+        "answer": "Computational complexity theory",
+        "f1": 1.0
+      },
+      "anchor4_int4": {
+        "answer": "Computational complexity theory",
+        "f1": 1.0
+      },
+      "anchor4_int8": {
+        "answer": "Computational complexity theory",
+        "f1": 1.0
+      },
+      "mixed_direct_int4": {
+        "answer": "Computational complexity theory",
+        "f1": 1.0
+      },
+      "mixed_anchor10_int4": {
+        "answer": "Computational complexity theory\n\nStream of of consciousness: The relevant sentence in the passage is a key distinction between analysis of algorithms and computational complexity theory is that the fo",
+        "f1": 0.09375
+      },
+      "mixed_grp10_int4": {
+        "answer": "Computational complexity\n\nStream of of consciousness: The relevant sentence in the passage is a key distinction between analysis of algorithms and computational complexity theory is that the former is",
+        "f1": 0.09375
+      },
+      "time": 7.338464736938477
+    },
+    {
+      "idx": 11,
+      "gold": "Battle of Hastings",
+      "seq_len": 131,
+      "fp16_baseline": {
+        "answer": "the Battle of Hastings",
+        "f1": 0.8571428571428571
+      },
+      "direct_int4": {
+        "answer": "the Battle of Hastings",
+        "f1": 0.8571428571428571
+      },
+      "direct_int8": {
+        "answer": "the Battle of Hastings",
+        "f1": 0.8571428571428571
+      },
+      "seq_delta_int4": {
+        "answer": "the",
+        "f1": 0.0
+      },
+      "seq_delta_int8": {
+        "answer": "the Battle of Hastings",
+        "f1": 0.8571428571428571
+      },
+      "grp10_seq_int4": {
+        "answer": "the Battle of Hastings",
+        "f1": 0.8571428571428571
+      },
+      "grp10_seq_int8": {
+        "answer": "the Battle of Hastings",
+        "f1": 0.8571428571428571
+      },
+      "grp4_seq_int4": {
+        "answer": "the Battle of Hastings",
+        "f1": 0.8571428571428571
+      },
+      "grp4_seq_int8": {
+        "answer": "the Battle of Hastings",
+        "f1": 0.8571428571428571
+      },
+      "anchor10_int4": {
+        "answer": "the Battle of Hastings",
+        "f1": 0.8571428571428571
+      },
+      "anchor10_int8": {
+        "answer": "the Battle of Hastings",
+        "f1": 0.8571428571428571
+      },
+      "anchor4_int4": {
+        "answer": "the Battle of Hastings",
+        "f1": 0.8571428571428571
+      },
+      "anchor4_int8": {
+        "answer": "the Battle of Hastings",
+        "f1": 0.8571428571428571
+      },
+      "mixed_direct_int4": {
+        "answer": "the Battle of Hastings",
+        "f1": 0.8571428571428571
+      },
+      "mixed_anchor10_int4": {
+        "answer": "the Battle of Hastings",
+        "f1": 0.8571428571428571
+      },
+      "mixed_grp10_int4": {
+        "answer": "the Battle of Hastings",
+        "f1": 0.8571428571428571
+      },
+      "time": 3.0068492889404297
+    },
+    {
+      "idx": 12,
+      "gold": "Berengaria",
+      "seq_len": 160,
+      "fp16_baseline": {
+        "answer": "Berengaria",
+        "f1": 1.0
+      },
+      "direct_int4": {
+        "answer": "Berengaria",
+        "f1": 1.0
+      },
+      "direct_int8": {
+        "answer": "Berengaria",
+        "f1": 1.0
+      },
+      "seq_delta_int4": {
+        "answer": "Bermodulo (",
+        "f1": 0.0
+      },
+      "seq_delta_int8": {
+        "answer": "Berengaria",
+        "f1": 1.0
+      },
+      "grp10_seq_int4": {
+        "answer": "Berengaria",
+        "f1": 1.0
+      },
+      "grp10_seq_int8": {
+        "answer": "Berengaria",
+        "f1": 1.0
+      },
+      "grp4_seq_int4": {
+        "answer": "Berengaria",
+        "f1": 1.0
+      },
+      "grp4_seq_int8": {
+        "answer": "Berengaria",
+        "f1": 1.0
+      },
+      "anchor10_int4": {
+        "answer": "Berengaria",
+        "f1": 1.0
+      },
+      "anchor10_int8": {
+        "answer": "Berengaria",
+        "f1": 1.0
+      },
+      "anchor4_int4": {
+        "answer": "Berengaria",
+        "f1": 1.0
+      },
+      "anchor4_int8": {
+        "answer": "Berengaria",
+        "f1": 1.0
+      },
+      "mixed_direct_int4": {
+        "answer": "Berengaria",
+        "f1": 1.0
+      },
+      "mixed_anchor10_int4": {
+        "answer": "Berengaria",
+        "f1": 1.0
+      },
+      "mixed_grp10_int4": {
+        "answer": "Berengaria",
+        "f1": 1.0
+      },
+      "time": 2.932293653488159
+    },
+    {
+      "idx": 13,
+      "gold": "instances",
+      "seq_len": 183,
+      "fp16_baseline": {
+        "answer": "instance",
+        "f1": 0.0
+      },
+      "direct_int4": {
+        "answer": "instance",
+        "f1": 0.0
+      },
+      "direct_int8": {
+        "answer": "instance",
+        "f1": 0.0
+      },
+      "seq_delta_int4": {
+        "answer": "instance",
+        "f1": 0.0
+      },
+      "seq_delta_int8": {
+        "answer": "instance",
+        "f1": 0.0
+      },
+      "grp10_seq_int4": {
+        "answer": "instance",
+        "f1": 0.0
+      },
+      "grp10_seq_int8": {
+        "answer": "instance",
+        "f1": 0.0
+      },
+      "grp4_seq_int4": {
+        "answer": "instance",
+        "f1": 0.0
+      },
+      "grp4_seq_int8": {
+        "answer": "instance",
+        "f1": 0.0
+      },
+      "anchor10_int4": {
+        "answer": "instance",
+        "f1": 0.0
+      },
+      "anchor10_int8": {
+        "answer": "instance",
+        "f1": 0.0
+      },
+      "anchor4_int4": {
+        "answer": "instance",
+        "f1": 0.0
+      },
+      "anchor4_int8": {
+        "answer": "instance",
+        "f1": 0.0
+      },
+      "mixed_direct_int4": {
+        "answer": "instance",
+        "f1": 0.0
+      },
+      "mixed_anchor10_int4": {
+        "answer": "instance",
+        "f1": 0.0
+      },
+      "mixed_grp10_int4": {
+        "answer": "instance",
+        "f1": 0.0
+      },
+      "time": 2.4541501998901367
+    },
+    {
+      "idx": 14,
+      "gold": "Seine",
+      "seq_len": 220,
+      "fp16_baseline": {
+        "answer": "the river Epte",
+        "f1": 0.0
+      },
+      "direct_int4": {
+        "answer": "the Atlantic coast",
+        "f1": 0.0
+      },
+      "direct_int8": {
+        "answer": "the river Epte",
+        "f1": 0.0
+      },
+      "seq_delta_int4": {
+        "answer": "the\n\n\n\n\n\n\n\n,par,Fl\n\n\n\n\n\n\n\n\n\n\n\t__re.\t would's",
+        "f1": 0.0
+      },
+      "seq_delta_int8": {
+        "answer": "the river Epte",
+        "f1": 0.0
+      },
+      "grp10_seq_int4": {
+        "answer": "the Atlantic coast",
+        "f1": 0.0
+      },
+      "grp10_seq_int8": {
+        "answer": "the river Epte",
+        "f1": 0.0
+      },
+      "grp4_seq_int4": {
+        "answer": "the river Epte",
+        "f1": 0.0
+      },
+      "grp4_seq_int8": {
+        "answer": "the river Epte",
+        "f1": 0.0
+      },
+      "anchor10_int4": {
+        "answer": "the Atlantic coast",
+        "f1": 0.0
+      },
+      "anchor10_int8": {
+        "answer": "the river Epte",
+        "f1": 0.0
+      },
+      "anchor4_int4": {
+        "answer": "the river Epte",
+        "f1": 0.0
+      },
+      "anchor4_int8": {
+        "answer": "the river Epte",
+        "f1": 0.0
+      },
+      "mixed_direct_int4": {
+        "answer": "the Atlantic coast",
+        "f1": 0.0
+      },
+      "mixed_anchor10_int4": {
+        "answer": "the Atlantic coast",
+        "f1": 0.0
+      },
+      "mixed_grp10_int4": {
+        "answer": "the Atlantic coast",
+        "f1": 0.0
+      },
+      "time": 4.178757190704346
+    },
+    {
+      "idx": 15,
+      "gold": "10th century",
+      "seq_len": 186,
+      "fp16_baseline": {
+        "answer": "10th",
+        "f1": 0.6666666666666666
+      },
+      "direct_int4": {
+        "answer": "1 half of the 1 century",
+        "f1": 0.25
+      },
+      "direct_int8": {
+        "answer": "10th",
+        "f1": 0.6666666666666666
+      },
+      "seq_delta_int4": {
+        "answer": "blth??",
+        "f1": 0.0
+      },
+      "seq_delta_int8": {
+        "answer": "10th",
+        "f1": 0.6666666666666666
+      },
+      "grp10_seq_int4": {
+        "answer": "10h",
+        "f1": 0.0
+      },
+      "grp10_seq_int8": {
+        "answer": "10th",
+        "f1": 0.6666666666666666
+      },
+      "grp4_seq_int4": {
+        "answer": "1 half of the 1 century",
+        "f1": 0.25
+      },
+      "grp4_seq_int8": {
+        "answer": "10th",
+        "f1": 0.6666666666666666
+      },
+      "anchor10_int4": {
+        "answer": "10th",
+        "f1": 0.6666666666666666
+      },
+      "anchor10_int8": {
+        "answer": "10th",
+        "f1": 0.6666666666666666
+      },
+      "anchor4_int4": {
+        "answer": "1 half half of the the",
+        "f1": 0.0
+      },
+      "anchor4_int8": {
+        "answer": "10th",
+        "f1": 0.6666666666666666
+      },
+      "mixed_direct_int4": {
+        "answer": "10th",
+        "f1": 0.6666666666666666
+      },
+      "mixed_anchor10_int4": {
+        "answer": "10th",
+        "f1": 0.6666666666666666
+      },
+      "mixed_grp10_int4": {
+        "answer": "10th",
+        "f1": 0.6666666666666666
+      },
+      "time": 3.809325695037842
+    },
+    {
+      "idx": 16,
+      "gold": "1050s",
+      "seq_len": 152,
+      "fp16_baseline": {
+        "answer": "1050s",
+        "f1": 1.0
+      },
+      "direct_int4": {
+        "answer": "1 the 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1",
+        "f1": 0.0
+      },
+      "direct_int8": {
+        "answer": "1050s",
+        "f1": 1.0
+      },
+      "seq_delta_int4": {
+        "answer": "eded with from the with for to",
+        "f1": 0.0
+      },
+      "seq_delta_int8": {
+        "answer": "1050s",
+        "f1": 1.0
+      },
+      "grp10_seq_int4": {
+        "answer": "1 10 50 s s",
+        "f1": 0.0
+      },
+      "grp10_seq_int8": {
+        "answer": "1050s",
+        "f1": 1.0
+      },
+      "grp4_seq_int4": {
+        "answer": "1 1 0 1 0 1  s  1  1  s  e  t  a  s  i  a  s  a  a  s  a  a  s  a  a  s  a  a  s  a  a",
+        "f1": 0.0
+      },
+      "grp4_seq_int8": {
+        "answer": "1050s",
+        "f1": 1.0
+      },
+      "anchor10_int4": {
+        "answer": "1 the 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1  in 1 1 1 1 1  in  in  in",
+        "f1": 0.0
+      },
+      "anchor10_int8": {
+        "answer": "1050s",
+        "f1": 1.0
+      },
+      "anchor4_int4": {
+        "answer": "1 the 10 50 s",
+        "f1": 0.0
+      },
+      "anchor4_int8": {
+        "answer": "1050s",
+        "f1": 1.0
+      },
+      "mixed_direct_int4": {
+        "answer": "1050s",
+        "f1": 1.0
+      },
+      "mixed_anchor10_int4": {
+        "answer": "1050s",
+        "f1": 1.0
+      },
+      "mixed_grp10_int4": {
+        "answer": "1050s",
+        "f1": 1.0
+      },
+      "time": 8.54958963394165
+    },
+    {
+      "idx": 17,
+      "gold": "King Ethelred II",
+      "seq_len": 156,
+      "fp16_baseline": {
+        "answer": "Duke Richard II of Normandy",
+        "f1": 0.25
+      },
+      "direct_int4": {
+        "answer": "Duke Richard II of Normandy",
+        "f1": 0.25
+      },
+      "direct_int8": {
+        "answer": "Duke Richard II of Normandy",
+        "f1": 0.25
+      },
+      "seq_delta_int4": {
+        "answer": "Duke 111111111111111111111111112\n111213\n11111\n111211111311111111111",
+        "f1": 0.0
+      },
+      "seq_delta_int8": {
+        "answer": "Duke Richard II of Normandy",
+        "f1": 0.25
+      },
+      "grp10_seq_int4": {
+        "answer": "Duke Richard II of Normandy",
+        "f1": 0.25
+      },
+      "grp10_seq_int8": {
+        "answer": "Duke Richard II of Normandy",
+        "f1": 0.25
+      },
+      "grp4_seq_int4": {
+        "answer": "Duke of Richard ii of normandy",
+        "f1": 0.2222222222222222
+      },
+      "grp4_seq_int8": {
+        "answer": "Duke Richard II of Normandy",
+        "f1": 0.25
+      },
+      "anchor10_int4": {
+        "answer": "Duke Richard II of Normandy",
+        "f1": 0.25
+      },
+      "anchor10_int8": {
+        "answer": "Duke Richard II of Normandy",
+        "f1": 0.25
+      },
+      "anchor4_int4": {
+        "answer": "Duke of Richard II of Normandy",
+        "f1": 0.2222222222222222
+      },
+      "anchor4_int8": {
+        "answer": "Duke Richard II of Normandy",
+        "f1": 0.25
+      },
+      "mixed_direct_int4": {
+        "answer": "Duke Richard II of Normandy",
+        "f1": 0.25
+      },
+      "mixed_anchor10_int4": {
+        "answer": "Duke Richard II of Normandy",
+        "f1": 0.25
+      },
+      "mixed_grp10_int4": {
+        "answer": "Duke Richard II of Normandy",
+        "f1": 0.25
+      },
+      "time": 5.5230467319488525
+    },
+    {
+      "idx": 18,
+      "gold": "Wales",
+      "seq_len": 110,
+      "fp16_baseline": {
+        "answer": "Wales",
+        "f1": 1.0
+      },
+      "direct_int4": {
+        "answer": "Wales",
+        "f1": 1.0
+      },
+      "direct_int8": {
+        "answer": "Wales",
+        "f1": 1.0
+      },
+      "seq_delta_int4": {
+        "answer": "Wales.",
+        "f1": 0.0
+      },
+      "seq_delta_int8": {
+        "answer": "Wales",
+        "f1": 1.0
+      },
+      "grp10_seq_int4": {
+        "answer": "Wales",
+        "f1": 1.0
+      },
+      "grp10_seq_int8": {
+        "answer": "Wales",
+        "f1": 1.0
+      },
+      "grp4_seq_int4": {
+        "answer": "Wales",
+        "f1": 1.0
+      },
+      "grp4_seq_int8": {
+        "answer": "Wales",
+        "f1": 1.0
+      },
+      "anchor10_int4": {
+        "answer": "Wales",
+        "f1": 1.0
+      },
+      "anchor10_int8": {
+        "answer": "Wales",
+        "f1": 1.0
+      },
+      "anchor4_int4": {
+        "answer": "Wales",
+        "f1": 1.0
+      },
+      "anchor4_int8": {
+        "answer": "Wales",
+        "f1": 1.0
+      },
+      "mixed_direct_int4": {
+        "answer": "Wales",
+        "f1": 1.0
+      },
+      "mixed_anchor10_int4": {
+        "answer": "Wales",
+        "f1": 1.0
+      },
+      "mixed_grp10_int4": {
+        "answer": "Wales",
+        "f1": 1.0
+      },
+      "time": 1.7918720245361328
+    },
+    {
+      "idx": 19,
+      "gold": "Africa",
+      "seq_len": 101,
+      "fp16_baseline": {
+        "answer": "Africa",
+        "f1": 1.0
+      },
+      "direct_int4": {
+        "answer": "Africa",
+        "f1": 1.0
+      },
+      "direct_int8": {
+        "answer": "Africa",
+        "f1": 1.0
+      },
+      "seq_delta_int4": {
+        "answer": "Africa -1 (1.\n?",
+        "f1": 0.4
+      },
+      "seq_delta_int8": {
+        "answer": "Africa",
+        "f1": 1.0
+      },
+      "grp10_seq_int4": {
+        "answer": "Africa",
+        "f1": 1.0
+      },
+      "grp10_seq_int8": {
+        "answer": "Africa",
+        "f1": 1.0
+      },
+      "grp4_seq_int4": {
+        "answer": "Africa",
+        "f1": 1.0
+      },
+      "grp4_seq_int8": {
+        "answer": "Africa",
+        "f1": 1.0
+      },
+      "anchor10_int4": {
+        "answer": "Africa",
+        "f1": 1.0
+      },
+      "anchor10_int8": {
+        "answer": "Africa",
+        "f1": 1.0
+      },
+      "anchor4_int4": {
+        "answer": "Africa",
+        "f1": 1.0
+      },
+      "anchor4_int8": {
+        "answer": "Africa",
+        "f1": 1.0
+      },
+      "mixed_direct_int4": {
+        "answer": "Africa",
+        "f1": 1.0
+      },
+      "mixed_anchor10_int4": {
+        "answer": "Africa",
+        "f1": 1.0
+      },
+      "mixed_grp10_int4": {
+        "answer": "Africa",
+        "f1": 1.0
+      },
+      "time": 1.9780333042144775
+    },
+    {
+      "idx": 20,
+      "gold": "computational problems",
+      "seq_len": 105,
+      "fp16_baseline": {
+        "answer": "computational problem",
+        "f1": 0.5
+      },
+      "direct_int4": {
+        "answer": "computational problem",
+        "f1": 0.5
+      },
+      "direct_int8": {
+        "answer": "computational problem",
+        "f1": 0.5
+      },
+      "seq_delta_int4": {
+        "answer": "computational",
+        "f1": 0.6666666666666666
+      },
+      "seq_delta_int8": {
+        "answer": "computational problem",
+        "f1": 0.5
+      },
+      "grp10_seq_int4": {
+        "answer": "computational problem",
+        "f1": 0.5
+      },
+      "grp10_seq_int8": {
+        "answer": "computational problem",
+        "f1": 0.5
+      },
+      "grp4_seq_int4": {
+        "answer": "computational problem",
+        "f1": 0.5
+      },
+      "grp4_seq_int8": {
+        "answer": "computational problem",
+        "f1": 0.5
+      },
+      "anchor10_int4": {
+        "answer": "computational problem",
+        "f1": 0.5
+      },
+      "anchor10_int8": {
+        "answer": "computational problem",
+        "f1": 0.5
+      },
+      "anchor4_int4": {
+        "answer": "computational problem",
+        "f1": 0.5
+      },
+      "anchor4_int8": {
+        "answer": "computational problem",
+        "f1": 0.5
+      },
+      "mixed_direct_int4": {
+        "answer": "computational problem",
+        "f1": 0.5
+      },
+      "mixed_anchor10_int4": {
+        "answer": "computational problem",
+        "f1": 0.5
+      },
+      "mixed_grp10_int4": {
+        "answer": "computational problem",
+        "f1": 0.5
+      },
+      "time": 2.1612234115600586
+    },
+    {
+      "idx": 21,
+      "gold": "11th",
+      "seq_len": 167,
+      "fp16_baseline": {
+        "answer": "11th",
+        "f1": 1.0
+      },
+      "direct_int4": {
+        "answer": "1 1 1 1 1 1 1 1 1 1 1  the 1  the  the  the  the  the  the  the  the  the  the  the  the  the  the  the  the  the  the  the",
+        "f1": 0.0
+      },
+      "direct_int8": {
+        "answer": "11th",
+        "f1": 1.0
+      },
+      "seq_delta_int4": {
+        "answer": "ed . . ne ne . ne . . . . . . . . . . . . . . . . .\u3000 . . . . in . . . . . . . . . . . . . . . . . . . . . . . .\u3002 . . . . . . . .",
+        "f1": 0.0
+      },
+      "seq_delta_int8": {
+        "answer": "11th",
+        "f1": 1.0
+      },
+      "grp10_seq_int4": {
+        "answer": "1 the 11th century.",
+        "f1": 0.4
+      },
+      "grp10_seq_int8": {
+        "answer": "11th",
+        "f1": 1.0
+      },
+      "grp4_seq_int4": {
+        "answer": "1 the 1 1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1",
+        "f1": 0.0
+      },
+      "grp4_seq_int8": {
+        "answer": "11th",
+        "f1": 1.0
+      },
+      "anchor10_int4": {
+        "answer": "1 11th century",
+        "f1": 0.5
+      },
+      "anchor10_int8": {
+        "answer": "11th",
+        "f1": 1.0
+      },
+      "anchor4_int4": {
+        "answer": "1 the 1 1 1 1 1 1 1 1 1 1 1 1  of  t  e 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1",
+        "f1": 0.0
+      },
+      "anchor4_int8": {
+        "answer": "11th",
+        "f1": 1.0
+      },
+      "mixed_direct_int4": {
+        "answer": "11th",
+        "f1": 1.0
+      },
+      "mixed_anchor10_int4": {
+        "answer": "11th",
+        "f1": 1.0
+      },
+      "mixed_grp10_int4": {
+        "answer": "11th century",
+        "f1": 0.6666666666666666
+      },
+      "time": 9.50434422492981
+    },
+    {
+      "idx": 22,
+      "gold": "time and storage",
+      "seq_len": 137,
+      "fp16_baseline": {
+        "answer": "time and storage",
+        "f1": 1.0
+      },
+      "direct_int4": {
+        "answer": "time and storage",
+        "f1": 1.0
+      },
+      "direct_int8": {
+        "answer": "time and storage",
+        "f1": 1.0
+      },
+      "seq_delta_int4": {
+        "answer": "time\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n........ are. are are are. are. are are are are are. are are are are are are are are are are are are are are are are are are are are",
+        "f1": 0.05714285714285714
+      },
+      "seq_delta_int8": {
+        "answer": "time and storage",
+        "f1": 1.0
+      },
+      "grp10_seq_int4": {
+        "answer": "time and storage",
+        "f1": 1.0
+      },
+      "grp10_seq_int8": {
+        "answer": "time and storage",
+        "f1": 1.0
+      },
+      "grp4_seq_int4": {
+        "answer": "time and storage",
+        "f1": 1.0
+      },
+      "grp4_seq_int8": {
+        "answer": "time and storage",
+        "f1": 1.0
+      },
+      "anchor10_int4": {
+        "answer": "time and storage",
+        "f1": 1.0
+      },
+      "anchor10_int8": {
+        "answer": "time and storage",
+        "f1": 1.0
+      },
+      "anchor4_int4": {
+        "answer": "time and storage",
+        "f1": 1.0
+      },
+      "anchor4_int8": {
+        "answer": "time",
+        "f1": 0.5
+      },
+      "mixed_direct_int4": {
+        "answer": "time and storage",
+        "f1": 1.0
+      },
+      "mixed_anchor10_int4": {
+        "answer": "time and storage",
+        "f1": 1.0
+      },
+      "mixed_grp10_int4": {
+        "answer": "time and storage",
+        "f1": 1.0
+      },
+      "time": 4.220197916030884
+    },
+    {
+      "idx": 23,
+      "gold": "Normandy",
+      "seq_len": 158,
+      "fp16_baseline": {
+        "answer": "Normandy",
+        "f1": 1.0
+      },
+      "direct_int4": {
+        "answer": "Normandy",
+        "f1": 1.0
+      },
+      "direct_int8": {
+        "answer": "Normandy",
+        "f1": 1.0
+      },
+      "seq_delta_int4": {
+        "answer": "Norm111111111111111111111111111111111114111111411111111111111111111",
+        "f1": 0.0
+      },
+      "seq_delta_int8": {
+        "answer": "Normandy",
+        "f1": 1.0
+      },
+      "grp10_seq_int4": {
+        "answer": "Normandy",
+        "f1": 1.0
+      },
+      "grp10_seq_int8": {
+        "answer": "Normandy",
+        "f1": 1.0
+      },
+      "grp4_seq_int4": {
+        "answer": "Normandy",
+        "f1": 1.0
+      },
+      "grp4_seq_int8": {
+        "answer": "Normandy",
+        "f1": 1.0
+      },
+      "anchor10_int4": {
+        "answer": "Normandy",
+        "f1": 1.0
+      },
+      "anchor10_int8": {
+        "answer": "Normandy",
+        "f1": 1.0
+      },
+      "anchor4_int4": {
+        "answer": "Normandy",
+        "f1": 1.0
+      },
+      "anchor4_int8": {
+        "answer": "Normandy",
+        "f1": 1.0
+      },
+      "mixed_direct_int4": {
+        "answer": "Normandy",
+        "f1": 1.0
+      },
+      "mixed_anchor10_int4": {
+        "answer": "Normandy",
+        "f1": 1.0
+      },
+      "mixed_grp10_int4": {
+        "answer": "Normandy",
+        "f1": 1.0
+      },
+      "time": 4.1067047119140625
+    },
+    {
+      "idx": 24,
+      "gold": "1041",
+      "seq_len": 171,
+      "fp16_baseline": {
+        "answer": "1041",
+        "f1": 1.0
+      },
+      "direct_int4": {
+        "answer": "10l-brother Harthac",
+        "f1": 0.0
+      },
+      "direct_int8": {
+        "answer": "1041",
+        "f1": 1.0
+      },
+      "seq_delta_int4": {
+        "answer": "best in during (<1 ( in < for light since since for not,< and in usually too not too not too too in too too too too in a too answer answer and too and in too usually he and and and too ( too too and t",
+        "f1": 0.0
+      },
+      "seq_delta_int8": {
+        "answer": "1141",
+        "f1": 0.0
+      },
+      "grp10_seq_int4": {
+        "answer": "1041",
+        "f1": 1.0
+      },
+      "grp10_seq_int8": {
+        "answer": "1041",
+        "f1": 1.0
+      },
+      "grp4_seq_int4": {
+        "answer": "1 the invitation",
+        "f1": 0.0
+      },
+      "grp4_seq_int8": {
+        "answer": "1041",
+        "f1": 1.0
+      },
+      "anchor10_int4": {
+        "answer": "1051",
+        "f1": 0.0
+      },
+      "anchor10_int8": {
+        "answer": "1041",
+        "f1": 1.0
+      },
+      "anchor4_int4": {
+        "answer": "1 the invitation",
+        "f1": 0.0
+      },
+      "anchor4_int8": {
+        "answer": "1041",
+        "f1": 1.0
+      },
+      "mixed_direct_int4": {
+        "answer": "1041",
+        "f1": 1.0
+      },
+      "mixed_anchor10_int4": {
+        "answer": "1041",
+        "f1": 1.0
+      },
+      "mixed_grp10_int4": {
+        "answer": "1041",
+        "f1": 1.0
+      },
+      "time": 5.33240008354187
+    },
+    {
+      "idx": 25,
+      "gold": "King Charles III",
+      "seq_len": 229,
+      "fp16_baseline": {
+        "answer": "King Charles III",
+        "f1": 1.0
+      },
+      "direct_int4": {
+        "answer": "King Charles III",
+        "f1": 1.0
+      },
+      "direct_int8": {
+        "answer": "King Charles III",
+        "f1": 1.0
+      },
+      "seq_delta_int4": {
+        "answer": "King",
+        "f1": 0.5
+      },
+      "seq_delta_int8": {
+        "answer": "King Charles III",
+        "f1": 1.0
+      },
+      "grp10_seq_int4": {
+        "answer": "King of Charles III",
+        "f1": 0.8571428571428571
+      },
+      "grp10_seq_int8": {
+        "answer": "King Charles III",
+        "f1": 1.0
+      },
+      "grp4_seq_int4": {
+        "answer": "King Charles III",
+        "f1": 1.0
+      },
+      "grp4_seq_int8": {
+        "answer": "King Charles III",
+        "f1": 1.0
+      },
+      "anchor10_int4": {
+        "answer": "King Charles III",
+        "f1": 1.0
+      },
+      "anchor10_int8": {
+        "answer": "King Charles III",
+        "f1": 1.0
+      },
+      "anchor4_int4": {
+        "answer": "King III",
+        "f1": 0.8
+      },
+      "anchor4_int8": {
+        "answer": "King Charles III",
+        "f1": 1.0
+      },
+      "mixed_direct_int4": {
+        "answer": "King Charles III",
+        "f1": 1.0
+      },
+      "mixed_anchor10_int4": {
+        "answer": "King Charles III",
+        "f1": 1.0
+      },
+      "mixed_grp10_int4": {
+        "answer": "King Charles III",
+        "f1": 1.0
+      },
+      "time": 3.5027530193328857
+    },
+    {
+      "idx": 26,
+      "gold": "dukes",
+      "seq_len": 244,
+      "fp16_baseline": {
+        "answer": "the dukes",
+        "f1": 0.6666666666666666
+      },
+      "direct_int4": {
+        "answer": "the d dukes",
+        "f1": 0.5
+      },
+      "direct_int8": {
+        "answer": "the dukes",
+        "f1": 0.6666666666666666
+      },
+      "seq_delta_int4": {
+        "answer": "the ........ Big. ( ( () The The The The The The ( ( (.\n\n.\n\n.\n\n ( ( ( ( (.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n ( (.\n\n\n\n. The..\n\n...\n\n.\n\n.\n\n.\n\n...........",
+        "f1": 0.0
+      },
+      "seq_delta_int8": {
+        "answer": "the dukes",
+        "f1": 0.6666666666666666
+      },
+      "grp10_seq_int4": {
+        "answer": "the dards 1 Norman",
+        "f1": 0.0
+      },
+      "grp10_seq_int8": {
+        "answer": "the dukes",
+        "f1": 0.6666666666666666
+      },
+      "grp4_seq_int4": {
+        "answer": "the d by the d d",
+        "f1": 0.0
+      },
+      "grp4_seq_int8": {
+        "answer": "the dukes",
+        "f1": 0.6666666666666666
+      },
+      "anchor10_int4": {
+        "answer": "the dification Norman art and scholarship",
+        "f1": 0.0
+      },
+      "anchor10_int8": {
+        "answer": "the dukes",
+        "f1": 0.6666666666666666
+      },
+      "anchor4_int4": {
+        "answer": "the d d dukes",
+        "f1": 0.4
+      },
+      "anchor4_int8": {
+        "answer": "the dukes",
+        "f1": 0.6666666666666666
+      },
+      "mixed_direct_int4": {
+        "answer": "the dukes",
+        "f1": 0.6666666666666666
+      },
+      "mixed_anchor10_int4": {
+        "answer": "the dukes",
+        "f1": 0.6666666666666666
+      },
+      "mixed_grp10_int4": {
+        "answer": "the dukes",
+        "f1": 0.6666666666666666
+      },
+      "time": 5.465208053588867
+    },
+    {
+      "idx": 27,
+      "gold": "16th century",
+      "seq_len": 109,
+      "fp16_baseline": {
+        "answer": "16th century",
+        "f1": 1.0
+      },
+      "direct_int4": {
+        "answer": "1 the 1 the 1 the 1 the 1 the 1 the 1 the 1 the  in the  in the  in the  in the  in the  in the  in the  in the  in the  in the  in the  in the  in the",
+        "f1": 0.0
+      },
+      "direct_int8": {
+        "answer": "16th century",
+        "f1": 1.0
+      },
+      "seq_delta_int4": {
+        "answer": "16\n  98\n\n\n\n\n  98 10 1\n  isolated 1\n 10 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1",
+        "f1": 0.0
+      },
+      "seq_delta_int8": {
+        "answer": "16th century",
+        "f1": 1.0
+      },
+      "grp10_seq_int4": {
+        "answer": "1 the the 1 of the 1 of",
+        "f1": 0.0
+      },
+      "grp10_seq_int8": {
+        "answer": "16th century",
+        "f1": 1.0
+      },
+      "grp4_seq_int4": {
+        "answer": "1 the 1 the 1 the 1 the 1 the  in the 1 the  in the  in the  in the  in the  on the  in the  on the  in the  on the  in the  on the  on the  on the  in the",
+        "f1": 0.0
+      },
+      "grp4_seq_int8": {
+        "answer": "16th century",
+        "f1": 1.0
+      },
+      "anchor10_int4": {
+        "answer": "1 the 1",
+        "f1": 0.0
+      },
+      "anchor10_int8": {
+        "answer": "16th century",
+        "f1": 1.0
+      },
+      "anchor4_int4": {
+        "answer": "1 the its 1 the 1 the 1 the  in the  in the  in the  in the  in the  in the  in the  in the  in the  in the  in the  in the  in the  in the the  in the  in the  in",
+        "f1": 0.0
+      },
+      "anchor4_int8": {
+        "answer": "16th century",
+        "f1": 1.0
+      },
+      "mixed_direct_int4": {
+        "answer": "16th century",
+        "f1": 1.0
+      },
+      "mixed_anchor10_int4": {
+        "answer": "16th century",
+        "f1": 1.0
+      },
+      "mixed_grp10_int4": {
+        "answer": "16th century",
+        "f1": 1.0
+      },
+      "time": 9.218024253845215
+    },
+    {
+      "idx": 28,
+      "gold": "Sweyn Forkbeard",
+      "seq_len": 157,
+      "fp16_baseline": {
+        "answer": "Sweyn Forkbeard",
+        "f1": 1.0
+      },
+      "direct_int4": {
+        "answer": "Sweyn Forkbeard",
+        "f1": 1.0
+      },
+      "direct_int8": {
+        "answer": "Sweyn Forkbeard",
+        "f1": 1.0
+      },
+      "seq_delta_int4": {
+        "answer": "Sweart\nutan\n\n\n\n\n\n\n\n\n\n& The\n\n\n\n 1\n 1\n  1 t\n\n    \n 1   \n\n 1    1  1    1 1 1",
+        "f1": 0.0
+      },
+      "seq_delta_int8": {
+        "answer": "Sweyn Forkbeard",
+        "f1": 1.0
+      },
+      "grp10_seq_int4": {
+        "answer": "Sweyn Forkbeard",
+        "f1": 1.0
+      },
+      "grp10_seq_int8": {
+        "answer": "Sweyn Forkbeard",
+        "f1": 1.0
+      },
+      "grp4_seq_int4": {
+        "answer": "Sweyn Forkbeard",
+        "f1": 1.0
+      },
+      "grp4_seq_int8": {
+        "answer": "Sweyn Forkbeard",
+        "f1": 1.0
+      },
+      "anchor10_int4": {
+        "answer": "Sweyn Forkbeard",
+        "f1": 1.0
+      },
+      "anchor10_int8": {
+        "answer": "Sweyn Forkbeard",
+        "f1": 1.0
+      },
+      "anchor4_int4": {
+        "answer": "Sweyn Forkbeard",
+        "f1": 1.0
+      },
+      "anchor4_int8": {
+        "answer": "Sweyn Forkbeard",
+        "f1": 1.0
+      },
+      "mixed_direct_int4": {
+        "answer": "Sweyn Forkbeard",
+        "f1": 1.0
+      },
+      "mixed_anchor10_int4": {
+        "answer": "Sweyn Forkbeard",
+        "f1": 1.0
+      },
+      "mixed_grp10_int4": {
+        "answer": "Sweyn Forkbeard",
+        "f1": 1.0
+      },
+      "time": 5.157449245452881
+    },
+    {
+      "idx": 29,
+      "gold": "mathematical models of computation",
+      "seq_len": 146,
+      "fp16_baseline": {
+        "answer": "The method used to intuitively assess or quantify the amount of resources required to solve a computational problem is computational complexity theory. This theory formalizes the intuition by introduc",
+        "f1": 0.12903225806451613
+      },
+      "direct_int4": {
+        "answer": "The method used to intuitively assess or quantify the amount of resources required to solve a computational problem is computational complexity theory.",
+        "f1": 0.07692307692307693
+      },
+      "direct_int8": {
+        "answer": "The method used to intuitively assess or quantify the amount of resources required to solve a computational problem is computational complexity theory. This theory formalizes the intuition by introduc",
+        "f1": 0.12903225806451613
+      },
+      "seq_delta_int4": {
+        "answer": "The\n\n\n\n\n.\n\n\n\n\n....\n.............. 11.. 11. 11... 11111111111111111",
+        "f1": 0.0
+      },
+      "seq_delta_int8": {
+        "answer": "The method used to intuitively assess or quantify the amount of resources required to solve a computational problem is computational complexity theory. This theory introduces mathematical models of co",
+        "f1": 0.12903225806451613
+      },
+      "grp10_seq_int4": {
+        "answer": "The amount of resources resources",
+        "f1": 0.22222222222222224
+      },
+      "grp10_seq_int8": {
+        "answer": "The method used to intuitively assess or quantify the amount of resources required to solve a computational problem is computational complexity theory. This theory formalizes the intuition by introduc",
+        "f1": 0.12903225806451613
+      },
+      "grp4_seq_int4": {
+        "answer": "The amount of time and storage",
+        "f1": 0.2
+      },
+      "grp4_seq_int8": {
+        "answer": "The method used to intuitively assess or quantify the amount of resources required to solve a computational problem is computational complexity theory. This theory formalizes the intuition by introduc",
+        "f1": 0.12903225806451613
+      },
+      "anchor10_int4": {
+        "answer": "The theory formalizes this this intuition, by introducing mathematical models of computation to study these problems and quantifying the amount resources needed to solve them",
+        "f1": 0.2758620689655173
+      },
+      "anchor10_int8": {
+        "answer": "The method used to intuitively assess or quantify the amount of resources required to solve a computational problem is computational complexity theory. This theory introduces mathematical models of co",
+        "f1": 0.12903225806451613
+      },
+      "anchor4_int4": {
+        "answer": "The theory formalizes this intuition, by introducing mathematical models of of computation to study these problems and quantifying the amount of resources needed to solve them, such as time and storag",
+        "f1": 0.2285714285714286
+      },
+      "anchor4_int8": {
+        "answer": "The method used to intuitively assess or quantify the amount of resources required to solve a computational problem is computational complexity theory. This theory introduces mathematical models of co",
+        "f1": 0.12903225806451613
+      },
+      "mixed_direct_int4": {
+        "answer": "The method used to intuitively assess or quantify the amount of resources required to solve a computational problem is computational complexity theory. This theory introduces mathematical models of co",
+        "f1": 0.12903225806451613
+      },
+      "mixed_anchor10_int4": {
+        "answer": "The theory formalizes this intuition, by introducing mathematical models of computation to study these problems and quantifying the amount of resources needed to solve them, such as time and storage",
+        "f1": 0.23529411764705882
+      },
+      "mixed_grp10_int4": {
+        "answer": "The theory formalizes this intuition by introducing mathematical models of computation to study the problems and quantifying the amount of resources needed to solve them, such as time and storage.",
+        "f1": 0.23529411764705882
+      },
+      "time": 20.154279947280884
+    }
+  ],
+  "variance_stats": [
+    {
+      "orig_var": 712.0,
+      "delta_var": 1.25,
+      "reduction": 569.6,
+      "sample": 0,
+      "layer": 0,
+      "type": "keys",
+      "method": "sequential",
+      "group_size": 4
+    },
+    {
+      "orig_var": 712.0,
+      "delta_var": 1.25,
+      "reduction": 569.6,
+      "sample": 0,
+      "layer": 0,
+      "type": "keys",
+      "method": "sequential",
+      "group_size": 10
+    },
+    {
+      "orig_var": 712.0,
+      "delta_var": 1.265625,
+      "reduction": 562.5679012345679,
+      "sample": 0,
+      "layer": 0,
+      "type": "keys",
+      "method": "grouped_seq",
+      "group_size": 4
+    },
+    {
+      "orig_var": 712.0,
+      "delta_var": 1.25,
+      "reduction": 569.6,
+      "sample": 0,
+      "layer": 0,
+      "type": "keys",
+      "method": "grouped_seq",
+      "group_size": 10
+    },
+    {
+      "orig_var": 712.0,
+      "delta_var": 1.421875,
+      "reduction": 500.74725274725273,
+      "sample": 0,
+      "layer": 0,
+      "type": "keys",
+      "method": "anchor",
+      "group_size": 4
+    },
+    {
+      "orig_var": 712.0,
+      "delta_var": 1.625,
+      "reduction": 438.15384615384613,
+      "sample": 0,
+      "layer": 0,
+      "type": "keys",
+      "method": "anchor",
+      "group_size": 10
+    },
+    {
+      "orig_var": 0.0634765625,
+      "delta_var": 0.115234375,
+      "reduction": 0.5508474576271186,
+      "sample": 0,
+      "layer": 0,
+      "type": "values",
+      "method": "sequential",
+      "group_size": 4
+    },
+    {
+      "orig_var": 0.0634765625,
+      "delta_var": 0.115234375,
+      "reduction": 0.5508474576271186,
+      "sample": 0,
+      "layer": 0,
+      "type": "values",
+      "method": "sequential",
+      "group_size": 10
+    },
+    {
+      "orig_var": 0.0634765625,
+      "delta_var": 0.1142578125,
+      "reduction": 0.5555555555555556,
+      "sample": 0,
+      "layer": 0,
+      "type": "values",
+      "method": "grouped_seq",
+      "group_size": 4
+    },
+    {
+      "orig_var": 0.0634765625,
+      "delta_var": 0.115234375,
+      "reduction": 0.5508474576271186,
+      "sample": 0,
+      "layer": 0,
+      "type": "values",
+      "method": "grouped_seq",
+      "group_size": 10
+    },
+    {
+      "orig_var": 0.0634765625,
+      "delta_var": 0.115234375,
+      "reduction": 0.5508474576271186,
+      "sample": 0,
+      "layer": 0,
+      "type": "values",
+      "method": "anchor",
+      "group_size": 4
+    },
+    {
+      "orig_var": 0.0634765625,
+      "delta_var": 0.10986328125,
+      "reduction": 0.5777777777777777,
+      "sample": 0,
+      "layer": 0,
+      "type": "values",
+      "method": "anchor",
+      "group_size": 10
+    },
+    {
+      "orig_var": 3.078125,
+      "delta_var": 1.53125,
+      "reduction": 2.010204081632653,
+      "sample": 0,
+      "layer": 14,
+      "type": "keys",
+      "method": "sequential",
+      "group_size": 4
+    },
+    {
+      "orig_var": 3.078125,
+      "delta_var": 1.53125,
+      "reduction": 2.010204081632653,
+      "sample": 0,
+      "layer": 14,
+      "type": "keys",
+      "method": "sequential",
+      "group_size": 10
+    },
+    {
+      "orig_var": 3.078125,
+      "delta_var": 1.5390625,
+      "reduction": 2.0,
+      "sample": 0,
+      "layer": 14,
+      "type": "keys",
+      "method": "grouped_seq",
+      "group_size": 4
+    },
+    {
+      "orig_var": 3.078125,
+      "delta_var": 1.546875,
+      "reduction": 1.9898989898989898,
+      "sample": 0,
+      "layer": 14,
+      "type": "keys",
+      "method": "grouped_seq",
+      "group_size": 10
+    },
+    {
+      "orig_var": 3.078125,
+      "delta_var": 1.953125,
+      "reduction": 1.576,
+      "sample": 0,
+      "layer": 14,
+      "type": "keys",
+      "method": "anchor",
+      "group_size": 4
+    },
+    {
+      "orig_var": 3.078125,
+      "delta_var": 2.3125,
+      "reduction": 1.3310810810810811,
+      "sample": 0,
+      "layer": 14,
+      "type": "keys",
+      "method": "anchor",
+      "group_size": 10
+    },
+    {
+      "orig_var": 0.486328125,
+      "delta_var": 0.48828125,
+      "reduction": 0.996,
+      "sample": 0,
+      "layer": 14,
+      "type": "values",
+      "method": "sequential",
+      "group_size": 4
+    },
+    {
+      "orig_var": 0.486328125,
+      "delta_var": 0.48828125,
+      "reduction": 0.996,
+      "sample": 0,
+      "layer": 14,
+      "type": "values",
+      "method": "sequential",
+      "group_size": 10
+    },
+    {
+      "orig_var": 0.486328125,
+      "delta_var": 0.4921875,
+      "reduction": 0.9880952380952381,
+      "sample": 0,
+      "layer": 14,
+      "type": "values",
+      "method": "grouped_seq",
+      "group_size": 4
+    },
+    {
+      "orig_var": 0.486328125,
+      "delta_var": 0.494140625,
+      "reduction": 0.9841897233201581,
+      "sample": 0,
+      "layer": 14,
+      "type": "values",
+      "method": "grouped_seq",
+      "group_size": 10
+    },
+    {
+      "orig_var": 0.486328125,
+      "delta_var": 0.58203125,
+      "reduction": 0.8355704697986577,
+      "sample": 0,
+      "layer": 14,
+      "type": "values",
+      "method": "anchor",
+      "group_size": 4
+    },
+    {
+      "orig_var": 0.486328125,
+      "delta_var": 0.65234375,
+      "reduction": 0.7455089820359282,
+      "sample": 0,
+      "layer": 14,
+      "type": "values",
+      "method": "anchor",
+      "group_size": 10
+    },
+    {
+      "orig_var": 1656.0,
+      "delta_var": 0.9921875,
+      "reduction": 1669.0393700787401,
+      "sample": 0,
+      "layer": 27,
+      "type": "keys",
+      "method": "sequential",
+      "group_size": 4
+    },
+    {
+      "orig_var": 1656.0,
+      "delta_var": 0.9921875,
+      "reduction": 1669.0393700787401,
+      "sample": 0,
+      "layer": 27,
+      "type": "keys",
+      "method": "sequential",
+      "group_size": 10
+    },
+    {
+      "orig_var": 1656.0,
+      "delta_var": 0.9921875,
+      "reduction": 1669.0393700787401,
+      "sample": 0,
+      "layer": 27,
+      "type": "keys",
+      "method": "grouped_seq",
+      "group_size": 4
+    },
+    {
+      "orig_var": 1656.0,
+      "delta_var": 0.99609375,
+      "reduction": 1662.4941176470588,
+      "sample": 0,
+      "layer": 27,
+      "type": "keys",
+      "method": "grouped_seq",
+      "group_size": 10
+    },
+    {
+      "orig_var": 1656.0,
+      "delta_var": 1.2265625,
+      "reduction": 1350.1146496815286,
+      "sample": 0,
+      "layer": 27,
+      "type": "keys",
+      "method": "anchor",
+      "group_size": 4
+    },
+    {
+      "orig_var": 1656.0,
+      "delta_var": 1.4296875,
+      "reduction": 1158.295081967213,
+      "sample": 0,
+      "layer": 27,
+      "type": "keys",
+      "method": "anchor",
+      "group_size": 10
+    },
+    {
+      "orig_var": 13.0625,
+      "delta_var": 20.625,
+      "reduction": 0.6333333333333333,
+      "sample": 0,
+      "layer": 27,
+      "type": "values",
+      "method": "sequential",
+      "group_size": 4
+    },
+    {
+      "orig_var": 13.0625,
+      "delta_var": 20.625,
+      "reduction": 0.6333333333333333,
+      "sample": 0,
+      "layer": 27,
+      "type": "values",
+      "method": "sequential",
+      "group_size": 10
+    },
+    {
+      "orig_var": 13.0625,
+      "delta_var": 20.625,
+      "reduction": 0.6333333333333333,
+      "sample": 0,
+      "layer": 27,
+      "type": "values",
+      "method": "grouped_seq",
+      "group_size": 4
+    },
+    {
+      "orig_var": 13.0625,
+      "delta_var": 20.75,
+      "reduction": 0.6295180722891566,
+      "sample": 0,
+      "layer": 27,
+      "type": "values",
+      "method": "grouped_seq",
+      "group_size": 10
+    },
+    {
+      "orig_var": 13.0625,
+      "delta_var": 23.25,
+      "reduction": 0.5618279569892473,
+      "sample": 0,
+      "layer": 27,
+      "type": "values",
+      "method": "anchor",
+      "group_size": 4
+    },
+    {
+      "orig_var": 13.0625,
+      "delta_var": 24.875,
+      "reduction": 0.5251256281407035,
+      "sample": 0,
+      "layer": 27,
+      "type": "values",
+      "method": "anchor",
+      "group_size": 10
+    },
+    {
+      "orig_var": 712.0,
+      "delta_var": 1.15625,
+      "reduction": 615.7837837837837,
+      "sample": 1,
+      "layer": 0,
+      "type": "keys",
+      "method": "sequential",
+      "group_size": 4
+    },
+    {
+      "orig_var": 712.0,
+      "delta_var": 1.15625,
+      "reduction": 615.7837837837837,
+      "sample": 1,
+      "layer": 0,
+      "type": "keys",
+      "method": "sequential",
+      "group_size": 10
+    },
+    {
+      "orig_var": 712.0,
+      "delta_var": 1.15625,
+      "reduction": 615.7837837837837,
+      "sample": 1,
+      "layer": 0,
+      "type": "keys",
+      "method": "grouped_seq",
+      "group_size": 4
+    },
+    {
+      "orig_var": 712.0,
+      "delta_var": 1.1640625,
+      "reduction": 611.6510067114094,
+      "sample": 1,
+      "layer": 0,
+      "type": "keys",
+      "method": "grouped_seq",
+      "group_size": 10
+    },
+    {
+      "orig_var": 712.0,
+      "delta_var": 1.3359375,
+      "reduction": 532.9590643274854,
+      "sample": 1,
+      "layer": 0,
+      "type": "keys",
+      "method": "anchor",
+      "group_size": 4
+    },
+    {
+      "orig_var": 712.0,
+      "delta_var": 1.4765625,
+      "reduction": 482.2010582010582,
+      "sample": 1,
+      "layer": 0,
+      "type": "keys",
+      "method": "anchor",
+      "group_size": 10
+    },
+    {
+      "orig_var": 0.059814453125,
+      "delta_var": 0.1064453125,
+      "reduction": 0.5619266055045872,
+      "sample": 1,
+      "layer": 0,
+      "type": "values",
+      "method": "sequential",
+      "group_size": 4
+    },
+    {
+      "orig_var": 0.059814453125,
+      "delta_var": 0.1064453125,
+      "reduction": 0.5619266055045872,
+      "sample": 1,
+      "layer": 0,
+      "type": "values",
+      "method": "sequential",
+      "group_size": 10
+    },
+    {
+      "orig_var": 0.059814453125,
+      "delta_var": 0.10400390625,
+      "reduction": 0.5751173708920188,
+      "sample": 1,
+      "layer": 0,
+      "type": "values",
+      "method": "grouped_seq",
+      "group_size": 4
+    },
+    {
+      "orig_var": 0.059814453125,
+      "delta_var": 0.1064453125,
+      "reduction": 0.5619266055045872,
+      "sample": 1,
+      "layer": 0,
+      "type": "values",
+      "method": "grouped_seq",
+      "group_size": 10
+    },
+    {
+      "orig_var": 0.059814453125,
+      "delta_var": 0.10498046875,
+      "reduction": 0.5697674418604651,
+      "sample": 1,
+      "layer": 0,
+      "type": "values",
+      "method": "anchor",
+      "group_size": 4
+    },
+    {
+      "orig_var": 0.059814453125,
+      "delta_var": 0.1005859375,
+      "reduction": 0.5946601941747572,
+      "sample": 1,
+      "layer": 0,
+      "type": "values",
+      "method": "anchor",
+      "group_size": 10
+    },
+    {
+      "orig_var": 3.109375,
+      "delta_var": 1.515625,
+      "reduction": 2.051546391752577,
+      "sample": 1,
+      "layer": 14,
+      "type": "keys",
+      "method": "sequential",
+      "group_size": 4
+    },
+    {
+      "orig_var": 3.109375,
+      "delta_var": 1.515625,
+      "reduction": 2.051546391752577,
+      "sample": 1,
+      "layer": 14,
+      "type": "keys",
+      "method": "sequential",
+      "group_size": 10
+    },
+    {
+      "orig_var": 3.109375,
+      "delta_var": 1.515625,
+      "reduction": 2.051546391752577,
+      "sample": 1,
+      "layer": 14,
+      "type": "keys",
+      "method": "grouped_seq",
+      "group_size": 4
+    },
+    {
+      "orig_var": 3.109375,
+      "delta_var": 1.5234375,
+      "reduction": 2.041025641025641,
+      "sample": 1,
+      "layer": 14,
+      "type": "keys",
+      "method": "grouped_seq",
+      "group_size": 10
+    },
+    {
+      "orig_var": 3.109375,
+      "delta_var": 1.96875,
+      "reduction": 1.5793650793650793,
+      "sample": 1,
+      "layer": 14,
+      "type": "keys",
+      "method": "anchor",
+      "group_size": 4
+    },
+    {
+      "orig_var": 3.109375,
+      "delta_var": 2.375,
+      "reduction": 1.3092105263157894,
+      "sample": 1,
+      "layer": 14,
+      "type": "keys",
+      "method": "anchor",
+      "group_size": 10
+    },
+    {
+      "orig_var": 0.458984375,
+      "delta_var": 0.458984375,
+      "reduction": 1.0,
+      "sample": 1,
+      "layer": 14,
+      "type": "values",
+      "method": "sequential",
+      "group_size": 4
+    },
+    {
+      "orig_var": 0.458984375,
+      "delta_var": 0.458984375,
+      "reduction": 1.0,
+      "sample": 1,
+      "layer": 14,
+      "type": "values",
+      "method": "sequential",
+      "group_size": 10
+    },
+    {
+      "orig_var": 0.458984375,
+      "delta_var": 0.458984375,
+      "reduction": 1.0,
+      "sample": 1,
+      "layer": 14,
+      "type": "values",
+      "method": "grouped_seq",
+      "group_size": 4
+    },
+    {
+      "orig_var": 0.458984375,
+      "delta_var": 0.458984375,
+      "reduction": 1.0,
+      "sample": 1,
+      "layer": 14,
+      "type": "values",
+      "method": "grouped_seq",
+      "group_size": 10
+    },
+    {
+      "orig_var": 0.458984375,
+      "delta_var": 0.5625,
+      "reduction": 0.8159722222222222,
+      "sample": 1,
+      "layer": 14,
+      "type": "values",
+      "method": "anchor",
+      "group_size": 4
+    },
+    {
+      "orig_var": 0.458984375,
+      "delta_var": 0.62890625,
+      "reduction": 0.7298136645962733,
+      "sample": 1,
+      "layer": 14,
+      "type": "values",
+      "method": "anchor",
+      "group_size": 10
+    },
+    {
+      "orig_var": 1656.0,
+      "delta_var": 1.03125,
+      "reduction": 1605.8181818181818,
+      "sample": 1,
+      "layer": 27,
+      "type": "keys",
+      "method": "sequential",
+      "group_size": 4
+    },
+    {
+      "orig_var": 1656.0,
+      "delta_var": 1.03125,
+      "reduction": 1605.8181818181818,
+      "sample": 1,
+      "layer": 27,
+      "type": "keys",
+      "method": "sequential",
+      "group_size": 10
+    },
+    {
+      "orig_var": 1656.0,
+      "delta_var": 1.046875,
+      "reduction": 1581.8507462686566,
+      "sample": 1,
+      "layer": 27,
+      "type": "keys",
+      "method": "grouped_seq",
+      "group_size": 4
+    },
+    {
+      "orig_var": 1656.0,
+      "delta_var": 1.0390625,
+      "reduction": 1593.7443609022557,
+      "sample": 1,
+      "layer": 27,
+      "type": "keys",
+      "method": "grouped_seq",
+      "group_size": 10
+    },
+    {
+      "orig_var": 1656.0,
+      "delta_var": 1.3359375,
+      "reduction": 1239.578947368421,
+      "sample": 1,
+      "layer": 27,
+      "type": "keys",
+      "method": "anchor",
+      "group_size": 4
+    },
+    {
+      "orig_var": 1656.0,
+      "delta_var": 1.53125,
+      "reduction": 1081.469387755102,
+      "sample": 1,
+      "layer": 27,
+      "type": "keys",
+      "method": "anchor",
+      "group_size": 10
+    },
+    {
+      "orig_var": 14.1875,
+      "delta_var": 22.25,
+      "reduction": 0.6376404494382022,
+      "sample": 1,
+      "layer": 27,
+      "type": "values",
+      "method": "sequential",
+      "group_size": 4
+    },
+    {
+      "orig_var": 14.1875,
+      "delta_var": 22.25,
+      "reduction": 0.6376404494382022,
+      "sample": 1,
+      "layer": 27,
+      "type": "values",
+      "method": "sequential",
+      "group_size": 10
+    },
+    {
+      "orig_var": 14.1875,
+      "delta_var": 22.375,
+      "reduction": 0.6340782122905028,
+      "sample": 1,
+      "layer": 27,
+      "type": "values",
+      "method": "grouped_seq",
+      "group_size": 4
+    },
+    {
+      "orig_var": 14.1875,
+      "delta_var": 22.375,
+      "reduction": 0.6340782122905028,
+      "sample": 1,
+      "layer": 27,
+      "type": "values",
+      "method": "grouped_seq",
+      "group_size": 10
+    },
+    {
+      "orig_var": 14.1875,
+      "delta_var": 26.375,
+      "reduction": 0.5379146919431279,
+      "sample": 1,
+      "layer": 27,
+      "type": "values",
+      "method": "anchor",
+      "group_size": 4
+    },
+    {
+      "orig_var": 14.1875,
+      "delta_var": 25.75,
+      "reduction": 0.5509708737864077,
+      "sample": 1,
+      "layer": 27,
+      "type": "values",
+      "method": "anchor",
+      "group_size": 10
+    },
+    {
+      "orig_var": 712.0,
+      "delta_var": 1.2265625,
+      "reduction": 580.484076433121,
+      "sample": 2,
+      "layer": 0,
+      "type": "keys",
+      "method": "sequential",
+      "group_size": 4
+    },
+    {
+      "orig_var": 712.0,
+      "delta_var": 1.2265625,
+      "reduction": 580.484076433121,
+      "sample": 2,
+      "layer": 0,
+      "type": "keys",
+      "method": "sequential",
+      "group_size": 10
+    },
+    {
+      "orig_var": 712.0,
+      "delta_var": 1.21875,
+      "reduction": 584.2051282051282,
+      "sample": 2,
+      "layer": 0,
+      "type": "keys",
+      "method": "grouped_seq",
+      "group_size": 4
+    },
+    {
+      "orig_var": 712.0,
+      "delta_var": 1.21875,
+      "reduction": 584.2051282051282,
+      "sample": 2,
+      "layer": 0,
+      "type": "keys",
+      "method": "grouped_seq",
+      "group_size": 10
+    },
+    {
+      "orig_var": 712.0,
+      "delta_var": 1.421875,
+      "reduction": 500.74725274725273,
+      "sample": 2,
+      "layer": 0,
+      "type": "keys",
+      "method": "anchor",
+      "group_size": 4
+    },
+    {
+      "orig_var": 712.0,
+      "delta_var": 1.6171875,
+      "reduction": 440.2705314009662,
+      "sample": 2,
+      "layer": 0,
+      "type": "keys",
+      "method": "anchor",
+      "group_size": 10
+    },
+    {
+      "orig_var": 0.06396484375,
+      "delta_var": 0.1162109375,
+      "reduction": 0.5504201680672269,
+      "sample": 2,
+      "layer": 0,
+      "type": "values",
+      "method": "sequential",
+      "group_size": 4
+    },
+    {
+      "orig_var": 0.06396484375,
+      "delta_var": 0.1162109375,
+      "reduction": 0.5504201680672269,
+      "sample": 2,
+      "layer": 0,
+      "type": "values",
+      "method": "sequential",
+      "group_size": 10
+    },
+    {
+      "orig_var": 0.06396484375,
+      "delta_var": 0.11328125,
+      "reduction": 0.5646551724137931,
+      "sample": 2,
+      "layer": 0,
+      "type": "values",
+      "method": "grouped_seq",
+      "group_size": 4
+    },
+    {
+      "orig_var": 0.06396484375,
+      "delta_var": 0.115234375,
+      "reduction": 0.5550847457627118,
+      "sample": 2,
+      "layer": 0,
+      "type": "values",
+      "method": "grouped_seq",
+      "group_size": 10
+    },
+    {
+      "orig_var": 0.06396484375,
+      "delta_var": 0.1220703125,
+      "reduction": 0.524,
+      "sample": 2,
+      "layer": 0,
+      "type": "values",
+      "method": "anchor",
+      "group_size": 4
+    },
+    {
+      "orig_var": 0.06396484375,
+      "delta_var": 0.12109375,
+      "reduction": 0.5282258064516129,
+      "sample": 2,
+      "layer": 0,
+      "type": "values",
+      "method": "anchor",
+      "group_size": 10
+    },
+    {
+      "orig_var": 3.140625,
+      "delta_var": 1.46875,
+      "reduction": 2.1382978723404253,
+      "sample": 2,
+      "layer": 14,
+      "type": "keys",
+      "method": "sequential",
+      "group_size": 4
+    },
+    {
+      "orig_var": 3.140625,
+      "delta_var": 1.46875,
+      "reduction": 2.1382978723404253,
+      "sample": 2,
+      "layer": 14,
+      "type": "keys",
+      "method": "sequential",
+      "group_size": 10
+    },
+    {
+      "orig_var": 3.140625,
+      "delta_var": 1.4609375,
+      "reduction": 2.1497326203208558,
+      "sample": 2,
+      "layer": 14,
+      "type": "keys",
+      "method": "grouped_seq",
+      "group_size": 4
+    },
+    {
+      "orig_var": 3.140625,
+      "delta_var": 1.4765625,
+      "reduction": 2.126984126984127,
+      "sample": 2,
+      "layer": 14,
+      "type": "keys",
+      "method": "grouped_seq",
+      "group_size": 10
+    },
+    {
+      "orig_var": 3.140625,
+      "delta_var": 1.7890625,
+      "reduction": 1.755458515283843,
+      "sample": 2,
+      "layer": 14,
+      "type": "keys",
+      "method": "anchor",
+      "group_size": 4
+    },
+    {
+      "orig_var": 3.140625,
+      "delta_var": 2.28125,
+      "reduction": 1.3767123287671232,
+      "sample": 2,
+      "layer": 14,
+      "type": "keys",
+      "method": "anchor",
+      "group_size": 10
+    },
+    {
+      "orig_var": 0.447265625,
+      "delta_var": 0.443359375,
+      "reduction": 1.0088105726872247,
+      "sample": 2,
+      "layer": 14,
+      "type": "values",
+      "method": "sequential",
+      "group_size": 4
+    },
+    {
+      "orig_var": 0.447265625,
+      "delta_var": 0.443359375,
+      "reduction": 1.0088105726872247,
+      "sample": 2,
+      "layer": 14,
+      "type": "values",
+      "method": "sequential",
+      "group_size": 10
+    },
+    {
+      "orig_var": 0.447265625,
+      "delta_var": 0.44140625,
+      "reduction": 1.0132743362831858,
+      "sample": 2,
+      "layer": 14,
+      "type": "values",
+      "method": "grouped_seq",
+      "group_size": 4
+    },
+    {
+      "orig_var": 0.447265625,
+      "delta_var": 0.4453125,
+      "reduction": 1.0043859649122806,
+      "sample": 2,
+      "layer": 14,
+      "type": "values",
+      "method": "grouped_seq",
+      "group_size": 10
+    },
+    {
+      "orig_var": 0.447265625,
+      "delta_var": 0.51171875,
+      "reduction": 0.8740458015267175,
+      "sample": 2,
+      "layer": 14,
+      "type": "values",
+      "method": "anchor",
+      "group_size": 4
+    },
+    {
+      "orig_var": 0.447265625,
+      "delta_var": 0.61328125,
+      "reduction": 0.7292993630573248,
+      "sample": 2,
+      "layer": 14,
+      "type": "values",
+      "method": "anchor",
+      "group_size": 10
+    },
+    {
+      "orig_var": 1656.0,
+      "delta_var": 1.0546875,
+      "reduction": 1570.1333333333334,
+      "sample": 2,
+      "layer": 27,
+      "type": "keys",
+      "method": "sequential",
+      "group_size": 4
+    },
+    {
+      "orig_var": 1656.0,
+      "delta_var": 1.0546875,
+      "reduction": 1570.1333333333334,
+      "sample": 2,
+      "layer": 27,
+      "type": "keys",
+      "method": "sequential",
+      "group_size": 10
+    },
+    {
+      "orig_var": 1656.0,
+      "delta_var": 1.046875,
+      "reduction": 1581.8507462686566,
+      "sample": 2,
+      "layer": 27,
+      "type": "keys",
+      "method": "grouped_seq",
+      "group_size": 4
+    },
+    {
+      "orig_var": 1656.0,
+      "delta_var": 1.0625,
+      "reduction": 1558.5882352941176,
+      "sample": 2,
+      "layer": 27,
+      "type": "keys",
+      "method": "grouped_seq",
+      "group_size": 10
+    },
+    {
+      "orig_var": 1656.0,
+      "delta_var": 1.28125,
+      "reduction": 1292.4878048780488,
+      "sample": 2,
+      "layer": 27,
+      "type": "keys",
+      "method": "anchor",
+      "group_size": 4
+    },
+    {
+      "orig_var": 1656.0,
+      "delta_var": 1.5,
+      "reduction": 1104.0,
+      "sample": 2,
+      "layer": 27,
+      "type": "keys",
+      "method": "anchor",
+      "group_size": 10
+    },
+    {
+      "orig_var": 12.6875,
+      "delta_var": 21.0,
+      "reduction": 0.6041666666666666,
+      "sample": 2,
+      "layer": 27,
+      "type": "values",
+      "method": "sequential",
+      "group_size": 4
+    },
+    {
+      "orig_var": 12.6875,
+      "delta_var": 21.0,
+      "reduction": 0.6041666666666666,
+      "sample": 2,
+      "layer": 27,
+      "type": "values",
+      "method": "sequential",
+      "group_size": 10
+    },
+    {
+      "orig_var": 12.6875,
+      "delta_var": 20.625,
+      "reduction": 0.6151515151515151,
+      "sample": 2,
+      "layer": 27,
+      "type": "values",
+      "method": "grouped_seq",
+      "group_size": 4
+    },
+    {
+      "orig_var": 12.6875,
+      "delta_var": 21.125,
+      "reduction": 0.6005917159763313,
+      "sample": 2,
+      "layer": 27,
+      "type": "values",
+      "method": "grouped_seq",
+      "group_size": 10
+    },
+    {
+      "orig_var": 12.6875,
+      "delta_var": 24.375,
+      "reduction": 0.5205128205128206,
+      "sample": 2,
+      "layer": 27,
+      "type": "values",
+      "method": "anchor",
+      "group_size": 4
+    },
+    {
+      "orig_var": 12.6875,
+      "delta_var": 27.625,
+      "reduction": 0.4592760180995475,
+      "sample": 2,
+      "layer": 27,
+      "type": "values",
+      "method": "anchor",
+      "group_size": 10
+    }
+  ]
+}

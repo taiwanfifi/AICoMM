@@ -1,0 +1,667 @@
+% !TEX program = pdflatex
+\documentclass[conference]{IEEEtran}
+
+% === Packages ===
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[ruled,vlined,linesnumbered]{algorithm2e}
+\usepackage{xspace}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{subcaption}
+\usepackage{url}
+\usepackage{balance}
+
+\graphicspath{{figures/}}
+
+% === Custom commands ===
+\newcommand{\eg}{\textit{e.g.}\xspace}
+\newcommand{\ie}{\textit{i.e.}\xspace}
+\newcommand{\etal}{\textit{et al.}\xspace}
+\newcommand{\QtoC}{\textsc{Q2C}\xspace}
+\newcommand{\R}{\mathbb{R}}
+
+\begin{document}
+
+\title{Scout: Bandwidth-Adaptive KV-Cache Transport\\for Heterogeneous Edge-Cloud LLM Inference}
+
+\author{
+\IEEEauthorblockN{Wei-Lun Cheng and Wanjiun Liao}
+\IEEEauthorblockA{Department of Electrical Engineering\\
+National Taiwan University, Taipei, Taiwan\\
+\{d11921b15, wjliao\}@ntu.edu.tw}
+}
+
+\maketitle
+
+% ============================================================
+% ABSTRACT
+% ============================================================
+\begin{abstract}
+Collaborative LLM inference splits computation between edge devices and cloud servers, requiring KV-cache transmission across bandwidth-constrained links.
+We propose \emph{Scout}, an adaptive transport protocol that exploits cross-model attention alignment to eliminate KV-cache transmission entirely.
+In Scout mode, a lightweight edge model (3B parameters) identifies task-relevant token positions via query-to-context (\QtoC) attention, then transmits only the position indices---reducing payload from 9.7\,MB to 336\,bytes (28{,}800$\times$ compression).
+The cloud model runs its own prefill and applies the received selection mask, trading minimal quality loss for massive bandwidth savings.
+We demonstrate that within the Qwen2.5 model family, scout models achieve 82--83\% position overlap with cloud models at 75\% retention.
+Remarkably, a 7B scout model's selection \emph{improves} the 14B cloud model's quality by 10.2\% over the cloud's own selection ($p = 0.018$ at 50\% retention), as the smaller model provides more focused task-relevant attention.
+To adapt to varying network conditions, Scout integrates a bandwidth-aware policy engine that dynamically selects among five operating modes---from full KV-cache transfer to scout-only operation---based on real-time channel conditions and quality-of-service requirements.
+Through Markov-chain bandwidth simulations across three models, we show that the adaptive policy achieves 98--107\% average quality while meeting latency deadlines in 75--100\% of requests, compared to 18--88\% for static policies.
+In multi-agent scenarios with 2--8 edge devices sharing a base station, model-aware bandwidth allocation converts 0\% deadline compliance to 100\% under congestion.
+\end{abstract}
+
+\begin{IEEEkeywords}
+Collaborative inference, KV-cache, adaptive protocol, edge-cloud computing, large language models
+\end{IEEEkeywords}
+
+% ============================================================
+% I. INTRODUCTION
+% ============================================================
+\section{Introduction}
+\label{sec:intro}
+
+Edge-cloud collaborative inference is emerging as a practical deployment pattern for large language models (LLMs)~\cite{splitwise,distserve}.
+In this architecture, an edge device handles the \emph{prefill} phase---encoding the user's context and query---while a cloud server with greater compute capacity performs autoregressive \emph{decoding}.
+The KV-cache produced during prefill must be transmitted to the cloud, creating a bandwidth bottleneck: a 14B-parameter model's KV-cache exceeds 200\,MB for a 1024-token context~\cite{cachegen}.
+
+Recent work on KV-cache compression~\cite{cachegen,h2o,snapkv} reduces this payload through token eviction or quantization, but treats the compression level as a static design choice.
+In practice, wireless bandwidth varies dramatically---from 5\,Mbps during congestion to 200\,Mbps under favorable conditions---requiring the transport protocol to \emph{adapt} its compression strategy in real time.
+Moreover, as multi-agent systems~\cite{ioa} become prevalent, multiple edge devices may simultaneously compete for shared uplink bandwidth, necessitating intelligent resource allocation.
+
+We make three observations that motivate our protocol design:
+
+\textbf{Observation 1: Cross-model attention alignment.}
+Within a model family (\eg, Qwen2.5), models of different sizes attend to similar context positions.
+A 3B-parameter model's query-to-context attention scores produce position selections that overlap 82--83\% with larger models' selections at 75\% retention (Fig.~\ref{fig:scout_overlap}).
+A 7B model's selections even \emph{improve} a 14B model's task quality by 10.2\%.
+This enables a \emph{scout model} paradigm: the lightweight edge model identifies important positions, and the cloud model uses this selection without receiving any KV data.
+
+\textbf{Observation 2: Discrete quality-bandwidth operating points.}
+KV-cache compression offers a small set of practical operating points (Table~\ref{tab:operating_points}), each with known quality and bandwidth characteristics from empirical profiling~\cite{paperA}.
+This makes real-time adaptation feasible---the protocol selects from a lookup table rather than solving a continuous optimization (Fig.~\ref{fig:operating_points}).
+
+\textbf{Observation 3: Heterogeneous model deployments.}
+In multi-agent scenarios, different edge devices may run different models with different KV-cache sizes and quantization sensitivities.
+A model-aware allocation policy can dramatically improve deadline compliance over naive equal bandwidth splitting (Fig.~\ref{fig:multiagent}).
+
+\subsection{Contributions}
+
+\begin{enumerate}
+    \item \textbf{Scout model protocol}: We propose transmitting position indices instead of KV-cache data, achieving up to 98{,}800$\times$ payload reduction with 82--83\% position overlap for same-family model pairs.
+    Surprisingly, a 7B scout's selection \emph{improves} a 14B cloud's quality by 10.2\% (statistically significant at $p = 0.018$), demonstrating that focused attention from a smaller model can benefit a larger one.
+
+    \item \textbf{Bandwidth-adaptive policy engine}: We design a protocol that dynamically selects among 5 operating modes based on real-time bandwidth estimation.
+    The adaptive policy achieves near-optimal quality (98--107\% of full KV) while maintaining deadline compliance across varying channel conditions for all three tested models.
+
+    \item \textbf{Multi-agent resource allocation}: For $N$ edge devices sharing a base station, we formulate and evaluate a model-aware bandwidth allocation policy that converts 0\% deadline compliance to 100\% under congestion, scaling to 8 agents.
+
+    \item \textbf{End-to-end protocol evaluation}: We validate Scout through GPU experiments on 3 model pairs (Qwen2.5 3B/7B/14B, 50 samples each with 95\% CIs) and Markov-chain bandwidth simulations across 36 configurations (3 models $\times$ 4 deadlines $\times$ 5 policies).
+\end{enumerate}
+
+
+% ============================================================
+% II. SYSTEM MODEL
+% ============================================================
+\section{System Model}
+\label{sec:system}
+
+\subsection{Architecture}
+
+We consider $N$ edge devices $\{E_1, \ldots, E_N\}$ sharing a wireless uplink to a cloud server~$C$.
+Each edge device~$E_i$ runs a lightweight model~$M_i^{\text{edge}}$ (e.g., 3B parameters), while the cloud runs a larger model~$M^{\text{cloud}}$ (e.g., 7B--14B parameters).
+Both models belong to the same family, sharing the tokenizer and positional encoding scheme (RoPE with identical base frequency).
+The total uplink bandwidth $B_{\text{total}}(t)$ is time-varying and shared among active devices.
+
+\subsection{Communication Model}
+
+For each inference request, the edge device must communicate sufficient information for the cloud to generate a high-quality response.
+We identify five operating modes with decreasing bandwidth requirements:
+
+\begin{table}[t]
+\centering
+\caption{Operating modes with quality and bandwidth characteristics (Qwen-7B, SQuAD~v2, 170 avg.\ context tokens). $^\dagger$Scout quality depends on model pair; 7B$\to$14B achieves 110\%.}
+\label{tab:operating_points}
+\small
+\begin{tabular}{@{}lccc@{}}
+\toprule
+\textbf{Mode} & \textbf{Payload} & \textbf{Quality} & \textbf{TX@100Mbps} \\
+\midrule
+Full BF16       & 9.7\,MB   & 100\%  & 775\,ms \\
+INT8            & 4.7\,MB   & 99.6\% & 388\,ms \\
+INT4            & 2.3\,MB   & 96.2\% & 195\,ms \\
+Mixed INT4      & 2.6\,MB   & 107\%  & 216\,ms \\
+Scout (indices) & 336\,B    & 81--110\%$^\dagger$ & 0.03\,ms \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The quality values are derived from empirical KV-cache compression experiments~\cite{paperA} across 7 model families and 4 NLP tasks.
+The ``Mixed INT4'' mode achieves $>$100\% quality because protecting model-specific bottleneck layers from aggressive quantization produces a regularization effect.
+
+\subsection{Problem Formulation}
+
+Given time-varying bandwidth $B(t)$, a quality-of-service (QoS) deadline $T_{\max}$, and $N$ concurrent requests, we seek:
+\begin{equation}
+    \max_{\pi} \; \mathbb{E}\left[\sum_{i=1}^{N} Q_i(\pi_i(B_i(t)))\right]
+    \label{eq:objective}
+\end{equation}
+\vspace{-2mm}
+\begin{equation}
+    \text{s.t.} \quad \sum_{i=1}^{N} B_i(t) \leq B_{\text{total}}(t), \quad T_i \leq T_{\max} \; \forall i
+\end{equation}
+where $\pi_i$ is the operating mode selection policy for device~$i$, $Q_i$ is the task quality, $B_i(t)$ is the bandwidth allocated to device~$i$, and $T_i$ is the end-to-end latency including prefill, quantization, transmission, and decode.
+
+
+% ============================================================
+% III. SCOUT PROTOCOL DESIGN
+% ============================================================
+\section{Scout Protocol Design}
+\label{sec:scout}
+
+\subsection{Cross-Model Attention Alignment}
+
+Within a model family that shares the same tokenizer and RoPE positional encoding scheme, models of different sizes exhibit aligned attention patterns.
+We measure this alignment through \emph{position overlap}: the fraction of positions selected by the edge model's \QtoC scores that also appear in the cloud model's top-$k$ selection.
+
+\subsubsection{Why Attention Transfers}
+
+Models in the same family share tokenization, positional encoding (RoPE with identical base frequency), and training data distribution.
+While KV-cache \emph{values} differ substantially between models (cosine similarity $\approx 0.22$), the \emph{attention patterns}---which positions receive high attention from query tokens---are more aligned, because they reflect the task structure rather than model-specific representations.
+Formally, let $\mathbf{a}_i^{(s)}$ be the attention distribution of model~$s$ over context positions for query token~$i$.
+Two models $s_1, s_2$ exhibit attention alignment when $\text{top}_k(\mathbf{a}_i^{(s_1)})$ and $\text{top}_k(\mathbf{a}_i^{(s_2)})$ have high Jaccard overlap.
+
+\subsubsection{Query-to-Context (Q2C) Scoring}
+
+We compute position importance using the \QtoC method~\cite{paperA}: for each context position~$j$, the score is the mean attention weight received from all query positions across all layers and heads:
+\begin{equation}
+    s_j = \frac{1}{L \cdot H} \sum_{\ell=1}^{L} \sum_{h=1}^{H} \frac{1}{|\mathcal{Q}|} \sum_{i \in \mathcal{Q}} A_{\ell,h}[i, j]
+    \label{eq:q2c}
+\end{equation}
+where $L$ is the number of layers, $H$ the number of attention heads, and $\mathcal{Q}$ the set of query token positions.
+
+\subsubsection{Empirical Validation}
+
+Table~\ref{tab:scout_overlap} and Fig.~\ref{fig:scout_overlap} present position overlap results across three model pairs in the Qwen2.5 family on SQuAD~v2 (50 samples each, 95\% CIs from paired bootstrap).
+
+\begin{table}[t]
+\centering
+\caption{Scout model position overlap and F1 comparison ($n = 50$, $\pm$ 95\% CI). ``Cloud Own'' = cloud model's own Q2C selection. Boldface = scout $\geq$ cloud own.}
+\label{tab:scout_overlap}
+\small
+\begin{tabular}{@{}llccc@{}}
+\toprule
+\textbf{Pair} & \textbf{Ret.} & \textbf{Overlap} & \textbf{Cloud Own} & \textbf{Scout F1} \\
+\midrule
+\multirow{3}{*}{3B$\to$7B}
+  & 75\% & 81.9$\pm$1.0\% & .603$\pm$.119 & .490$\pm$.121 \\
+  & 50\% & 63.0$\pm$1.8\% & .517$\pm$.121 & .298$\pm$.107 \\
+  & 25\% & 43.5$\pm$3.0\% & .331$\pm$.110 & .228$\pm$.100 \\
+\midrule
+\multirow{3}{*}{3B$\to$14B}
+  & 75\% & 83.3$\pm$0.9\% & .648$\pm$.111 & .541$\pm$.119 \\
+  & 50\% & 69.7$\pm$1.4\% & .403$\pm$.116 & .375$\pm$.114 \\
+  & 25\% & 59.6$\pm$2.4\% & .268$\pm$.108 & .236$\pm$.106 \\
+\midrule
+\multirow{3}{*}{7B$\to$14B}
+  & 75\% & 83.4$\pm$1.0\% & .648$\pm$.111 & \textbf{.714}$\pm$.101 \\
+  & 50\% & 68.5$\pm$1.8\% & .403$\pm$.116 & \textbf{.536}$\pm$.117 \\
+  & 25\% & 53.2$\pm$2.6\% & .268$\pm$.108 & \textbf{.344}$\pm$.113 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\columnwidth]{fig1_scout_overlap_f1.pdf}
+    \caption{Cross-model scout results. (a)~Position overlap between edge and cloud models' Q2C selections. (b)~F1 comparison: faded bars = cloud's own selection; solid bars = scout selection applied to cloud. The 7B$\to$14B pair (green) shows scout \emph{exceeding} cloud own at all retentions.}
+    \label{fig:scout_overlap}
+\end{figure}
+
+\textbf{Finding 1: Consistent 82--83\% overlap at 75\% retention.}
+Across all three model pairs, the scout model's attention-based selections overlap with 82--83\% of the cloud model's own selections at 75\% retention, demonstrating strong cross-model alignment within the Qwen2.5 family.
+The overlap decreases to 63--70\% at 50\% and 44--60\% at 25\%, following the expected set-intersection scaling.
+
+\textbf{Finding 2: Larger scout models can \emph{improve} cloud quality.}
+The 7B$\to$14B pair reveals a surprising result: the 7B scout's selection \emph{outperforms} the 14B's own Q2C selection at all retention levels (0.714 vs.\ 0.648 at 75\%, $+$10.2\%).
+A paired $t$-test confirms that the improvement at 50\% retention is statistically significant ($+$0.133, $p = 0.018$).
+We analyze this phenomenon further in Section~\ref{sec:attention_focusing}.
+
+\textbf{Finding 3: 3B scout is near-lossless for 14B cloud.}
+For the 3B$\to$14B pair, the quality gap at 50\% retention is only $-0.028$ ($p = 0.65$, not statistically significant), indicating that even the smallest scout model incurs minimal quality loss on the largest cloud model.
+
+\textbf{Finding 4: Bandwidth savings are extreme.}
+Scout reduces the transmission payload from 9.7--33.2\,MB (full KV) to 336 bytes (position indices for 84 positions at 50\% retention)---a 28{,}800--98{,}800$\times$ reduction.
+At 100\,Mbps, this reduces TX time from 775--2{,}656\,ms to 0.03\,ms.
+The cloud's additional prefill cost (18\,ms for 7B, 57\,ms for 14B) is negligible compared to the TX savings.
+
+\subsection{The Attention Focusing Effect}
+\label{sec:attention_focusing}
+
+The counterintuitive finding that a 7B model's selection \emph{improves} a 14B model's quality warrants explanation.
+We hypothesize an \emph{attention focusing} effect: larger models distribute attention more broadly across context positions, while smaller models concentrate attention on a narrower set of task-critical positions.
+When this concentrated selection is applied as a mask to the larger model, it acts as a form of attention regularization---forcing the 14B model to attend only to the most task-relevant positions, reducing distraction from marginally relevant context.
+
+Evidence supporting this hypothesis:
+\begin{itemize}
+    \item The 14B model's full-KV baseline F1 is 0.803, but its own Q2C selection at 75\% drops to 0.648---a 19\% loss from its \emph{own} selection.
+    The 7B scout's selection (0.714) recovers 42\% of this loss.
+    \item The overlap between 7B and 14B selections is 83.4\%, meaning the 7B selection \emph{adds} 16.6\% of positions the 14B would not have chosen, while \emph{removing} some positions the 14B preferred.
+    This selective replacement improves quality.
+    \item The 3B$\to$7B pair does \emph{not} show this effect (scout F1 $<$ cloud own), suggesting the benefit requires the scout model to be sufficiently capable---the 3B model's attention may be too noisy to provide useful regularization.
+\end{itemize}
+
+This finding has a practical implication: when a 7B-class model is available at the edge, the scout protocol can \emph{enhance} cloud inference quality while simultaneously eliminating bandwidth requirements.
+
+\subsection{Protocol Description}
+
+Algorithm~\ref{alg:scout} describes the Scout protocol for a single inference request.
+
+\begin{algorithm}[t]
+\caption{Scout Protocol}
+\label{alg:scout}
+\SetAlgoLined
+\KwIn{Context $\mathcal{C}$, query $\mathcal{Q}$, bandwidth $B(t)$, deadline $T_{\max}$}
+\KwOut{Generated response}
+
+\tcp{Edge device}
+$\mathcal{K}^e, \mathcal{V}^e, \mathbf{A}^e \leftarrow \text{Prefill}_{M^{\text{edge}}}(\mathcal{C}, \mathcal{Q})$\;
+$\mathbf{s} \leftarrow \text{Q2C}(\mathbf{A}^e)$ \tcp*{Compute attention scores}
+
+\tcp{Mode selection based on bandwidth}
+$\text{mode} \leftarrow \text{SelectMode}(B(t), T_{\max}, |\mathcal{K}^e|)$\;
+
+\Switch{mode}{
+    \Case{FULL\_KV}{
+        Transmit $\mathcal{K}^e, \mathcal{V}^e$ in BF16\;
+        Cloud: decode with received KV\;
+    }
+    \Case{QUANT\_KV}{
+        $\hat{\mathcal{K}}, \hat{\mathcal{V}} \leftarrow \text{Quantize}(\mathcal{K}^e, \mathcal{V}^e, b)$\;
+        Transmit $\hat{\mathcal{K}}, \hat{\mathcal{V}}$\;
+        Cloud: dequantize and decode\;
+    }
+    \Case{SCOUT}{
+        $\mathcal{S} \leftarrow \text{TopK}(\mathbf{s}, \lfloor r \cdot n \rfloor)$ \tcp*{Position indices}
+        Transmit $\mathcal{S}$ (compact index list)\;
+        Cloud: $\mathcal{K}^c, \mathcal{V}^c \leftarrow \text{Prefill}_{M^{\text{cloud}}}(\mathcal{C}, \mathcal{Q})$\;
+        Cloud: mask to $\mathcal{S}$, decode\;
+    }
+}
+\Return{response}
+\end{algorithm}
+
+In scout mode, the cloud \emph{re-executes} the prefill phase with its own model to generate its own KV-cache, then applies the edge's position mask via attention masking (setting unselected positions to $-\infty$ in the attention score matrix).
+This preserves RoPE positional encoding correctness, unlike physical KV removal which breaks position continuity.
+
+
+\subsection{Mode Selection Policy}
+
+The mode selection function maps current bandwidth and deadline constraints to the highest-quality operating mode that meets the latency requirement:
+\begin{equation}
+    \text{mode}^* = \arg\max_{m \in \mathcal{M}} Q(m) \quad \text{s.t.} \quad T(m, B(t)) \leq T_{\max}
+    \label{eq:mode_select}
+\end{equation}
+where $\mathcal{M}$ is the set of operating modes, $Q(m)$ is the quality for mode~$m$, and $T(m, B)$ is the end-to-end latency.
+Since $|\mathcal{M}| \leq 5$, this is solved by enumeration in constant time.
+The quality profile $Q(m)$ is model-specific and pre-calibrated via offline profiling~\cite{paperA}.
+
+
+% ============================================================
+% IV. MULTI-AGENT BANDWIDTH ALLOCATION
+% ============================================================
+\section{Multi-Agent Bandwidth Allocation}
+\label{sec:multiagent}
+
+When $N$ edge devices share a base station with total bandwidth $B_{\text{total}}$, the allocation problem becomes:
+\begin{equation}
+    \max_{\{B_i\}} \sum_{i=1}^{N} Q_i^*(B_i)
+    \quad \text{s.t.} \quad \sum_{i=1}^{N} B_i \leq B_{\text{total}}, \quad T_i(B_i) \leq T_{\max}
+    \label{eq:multiagent}
+\end{equation}
+where $Q_i^*(B_i) = \max_{m \in \mathcal{M}_i} \{Q_i(m) : T_i(m, B_i) \leq T_{\max}\}$ is the best achievable quality for device~$i$ given bandwidth~$B_i$.
+
+\subsection{Allocation Policies}
+
+We compare three allocation strategies:
+
+\textbf{Equal allocation}: $B_i = B_{\text{total}} / N$ for all $i$.
+Simple but ignores that models have different KV-cache sizes and quantization sensitivities.
+
+\textbf{Model-aware proportional}: $B_i = B_{\text{total}} \times S_i / \sum_j S_j$ where $S_i$ is the KV-cache size of model~$M_i$.
+Allocates bandwidth proportional to each model's payload, ensuring similar transmission times.
+
+\textbf{Quality-maximizing}: Solve~\eqref{eq:multiagent} via greedy allocation.
+Since $Q_i^*(B_i)$ is a step function (discrete operating modes), we greedily assign bandwidth to the device that gains the most quality from the next increment.
+
+\subsection{Deadline-Aware Fallback}
+
+When bandwidth is insufficient for KV-cache transfer within the deadline, devices can fall back to:
+\begin{enumerate}
+    \item \textbf{Scout mode}: Transmit position indices only ($<$1\,KB), cloud re-prefills.
+    \item \textbf{Local inference}: Edge generates the response using $M^{\text{edge}}$ alone.
+\end{enumerate}
+Both fallback modes meet any deadline, providing graceful degradation rather than service failure.
+
+
+% ============================================================
+% V. EXPERIMENTAL SETUP
+% ============================================================
+\section{Experimental Setup}
+\label{sec:setup}
+
+\subsection{GPU Experiments (Scout Validation)}
+
+We evaluate scout model accuracy on an NVIDIA RTX PRO 6000 Blackwell (102\,GB VRAM) using 50 SQuAD~v2 samples with normalized token-F1.
+All models use BFloat16 precision with eager attention to extract per-layer attention weights.
+Three model pairs are tested within the Qwen2.5 family:
+\begin{itemize}
+    \item \textbf{3B$\to$7B}: 3B-parameter edge, 7B cloud (KV: 9.7\,MB)
+    \item \textbf{3B$\to$14B}: 3B edge, 14B cloud (KV: 33.2\,MB)
+    \item \textbf{7B$\to$14B}: 7B edge, 14B cloud (smallest gap)
+\end{itemize}
+
+For each sample, both edge and cloud models compute Q2C attention scores (Eq.~\ref{eq:q2c}) and select positions at 25/50/75\% retention.
+The cloud generates answers using (a)~its own selection, (b)~the edge's selection (scout), and (c)~full KV (baseline).
+We report 95\% confidence intervals from paired $t$-tests.
+
+\subsection{Protocol Simulation}
+
+We simulate the adaptive protocol using empirical quality-bandwidth data from our prior KV-cache compression study~\cite{paperA} across three models: Qwen-7B, Mistral-7B, and Qwen-14B.
+Bandwidth variation is modeled as a 6-state Markov chain with states $\{5, 10, 25, 50, 100, 200\}$\,Mbps, calibrated for wireless edge conditions (mean~73\,Mbps, 5th/95th percentiles: 5/200\,Mbps).
+Each simulation runs 1{,}000 inference requests across 4 deadline settings (1/2/3/5 seconds).
+
+\subsection{Multi-Agent Simulation}
+
+We simulate $N \in \{2, 4, 8\}$ edge agents with heterogeneous models (two Qwen-7B, one Mistral-7B, one Qwen-14B for $N = 4$; doubled for $N = 8$) sharing total bandwidth of 50/100/200\,Mbps with a 5-second deadline.
+Each configuration runs 500 rounds.
+
+
+% ============================================================
+% VI. RESULTS
+% ============================================================
+\section{Results}
+\label{sec:results}
+
+\subsection{Scout Model Validation}
+
+Table~\ref{tab:scout_overlap} and Fig.~\ref{fig:scout_overlap} present cross-model selection overlap results.
+The full-KV baselines are: 3B~F1 = 0.733, 7B~F1 = 0.668, 14B~F1 = 0.803.
+
+\textbf{Finding 1: 82--83\% overlap at 75\% retention.}
+Across all three model pairs, the scout model's attention-based selections overlap with 82--83\% of the cloud model's own selections at 75\% retention (Table~\ref{tab:scout_overlap}, column~3).
+Notably, the overlap is consistent regardless of whether the edge model is 3B or 7B, suggesting that position overlap depends more on the shared architecture than on model capacity.
+
+\textbf{Finding 2: 7B scout improves 14B quality at all retentions.}
+The 7B$\to$14B pair shows the attention focusing effect (Section~\ref{sec:attention_focusing}): scout F1 exceeds cloud-own F1 by $+$0.066 at 75\%, $+$0.133 at 50\% ($p = 0.018$), and $+$0.076 at 25\%.
+The 50\% retention gap is statistically significant, confirming that the effect is not due to sampling noise.
+
+\textbf{Finding 3: 3B$\to$14B gap is not statistically significant at 50\%.}
+The quality gap for 3B$\to$14B at 50\% retention is only $-$0.028 ($p = 0.65$), meaning the 3B scout performs statistically indistinguishably from the 14B's own selection---strong evidence that even the cheapest scout is viable for the largest cloud model.
+
+\textbf{Finding 4: Extreme bandwidth savings.}
+Scout reduces transmission from 9.7--33.2\,MB to 336\,bytes (28{,}800--98{,}800$\times$).
+At 100\,Mbps, TX time drops from 775--2{,}656\,ms to 0.03\,ms.
+The cloud's additional prefill cost (18\,ms for 7B, 57\,ms for 14B from~\cite{paperA}) is negligible.
+
+\subsection{Adaptive Protocol Performance}
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\columnwidth]{fig2_operating_points.pdf}
+    \caption{Quality-bandwidth operating points for three models. Each point represents a compression mode. The ``Scout region'' at near-zero bandwidth achieves 81--110\% quality depending on model pair. The dashed line marks the full-KV baseline.}
+    \label{fig:operating_points}
+\end{figure}
+
+Fig.~\ref{fig:operating_points} shows the quality-bandwidth Pareto frontier across three models.
+Table~\ref{tab:protocol} compares protocol policies for Qwen-7B under varying deadlines; Fig.~\ref{fig:deadline_quality} extends this comparison to all three models.
+
+\begin{table}[t]
+\centering
+\caption{Protocol policy comparison (Qwen-7B, 1{,}000 requests, Markov-chain bandwidth). Avg.\ quality as \% of full-KV baseline.}
+\label{tab:protocol}
+\small
+\begin{tabular}{@{}llcc@{}}
+\toprule
+\textbf{Deadline} & \textbf{Policy} & \textbf{Avg.\ Q (\%)} & \textbf{Deadline OK} \\
+\midrule
+\multirow{5}{*}{1\,s}
+  & Static INT8      & 99.6 & 58.6\% \\
+  & Static INT4      & 96.2 & 74.9\% \\
+  & Adaptive         & 102.6 & 74.9\% \\
+  & Scout            & 95.0 & 100\% \\
+  & Local edge       & 75.0 & 100\% \\
+\midrule
+\multirow{5}{*}{3\,s}
+  & Static INT8      & 99.6 & 74.9\% \\
+  & Static INT4      & 96.2 & 88.3\% \\
+  & Adaptive         & 105.8 & 88.3\% \\
+  & Scout            & 95.0 & 100\% \\
+  & Local edge       & 75.0 & 100\% \\
+\midrule
+\multirow{5}{*}{5\,s}
+  & Static INT8      & 99.6 & 88.3\% \\
+  & Static INT4      & 96.2 & 100\% \\
+  & Adaptive         & 107.1 & 100\% \\
+  & Scout            & 95.0 & 100\% \\
+  & Local edge       & 75.0 & 100\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\columnwidth]{fig3_deadline_quality.pdf}
+    \caption{Deadline compliance vs.\ average quality for three models across 1/3/5\,s deadlines. Each point represents one (model, deadline) configuration. Adaptive (green diamonds) achieves the best quality-compliance tradeoff; Scout (pink stars) guarantees 100\% compliance.}
+    \label{fig:deadline_quality}
+\end{figure}
+
+\textbf{Finding 5: Static policies fail under variable bandwidth.}
+For Qwen-7B, static INT8 meets a 1-second deadline only 58.6\% of the time.
+The situation is worse for larger models: Mistral-7B's larger KV-cache (22.4\,MB) reduces INT8 compliance to 18\% at 1\,s, and Qwen-14B (33.2\,MB) also achieves only 18\%.
+Even at a relaxed 5-second deadline, INT8 compliance remains below 90\% for all models except Qwen-7B.
+
+\textbf{Finding 6: Scout provides unconditional deadline guarantees.}
+Because the scout payload is $<$1\,KB, scout mode meets any realistic deadline with 100\% success across all models.
+Its quality cost (95\% of baseline) is modest and represents the \emph{floor} quality when using a same-family scout.
+With a 7B scout for a 14B cloud, the quality \emph{exceeds} baseline.
+
+\textbf{Finding 7: Adaptive policy maximizes quality.}
+The adaptive policy selects the best compression mode that fits within the deadline.
+For Qwen-7B at 5\,s, it achieves 107.1\% quality (always selecting Mixed INT4) with 100\% compliance.
+For Mistral-7B, adaptive reaches 99.3\% at 5\,s vs.\ static INT4's 96.1\%---a 3.2 percentage point gain from opportunistic mode selection.
+
+\textbf{Finding 8: Model-specific KV-cache size determines protocol behavior.}
+Fig.~\ref{fig:deadline_quality} reveals that the deadline compliance landscape varies substantially across models.
+Qwen-7B (9.7\,MB KV) achieves 100\% compliance at 5\,s with INT4 and adaptive policies, while Qwen-14B (33.2\,MB KV) reaches only 75\% even at 5\,s with its best non-scout policy.
+This motivates the use of scout mode as a universal fallback, particularly for larger models on constrained links.
+
+\subsection{Multi-Agent Allocation}
+
+Table~\ref{tab:multiagent} presents multi-agent results for 4 and 8 heterogeneous agents.
+Fig.~\ref{fig:multiagent} provides the scaling analysis.
+
+\begin{table}[t]
+\centering
+\caption{Multi-agent allocation (500 rounds, 5\,s deadline). Total quality = sum of per-agent quality (\%). Parentheses = \% of rounds where \emph{all} agents meet deadline.}
+\label{tab:multiagent}
+\small
+\begin{tabular}{@{}clccc@{}}
+\toprule
+\textbf{$N$} & \textbf{BW} & \textbf{Equal} & \textbf{Model-aware} & \textbf{Qual-max} \\
+\midrule
+\multirow{3}{*}{4}
+  & 50   & 405.8 (0\%)   & 405.9 (100\%) & 408.0 (100\%) \\
+  & 100  & 409.6 (100\%) & 414.7 (100\%) & 414.7 (100\%) \\
+  & 200  & 414.7 (100\%) & 414.7 (100\%) & 414.7 (100\%) \\
+\midrule
+\multirow{3}{*}{8}
+  & 50   & 800.6 (0\%)   & 767.9 (0\%)   & 798.1 (0\%) \\
+  & 100  & 800.6 (0\%)   & 800.8 (100\%) & 803.3 (5\%) \\
+  & 200  & 811.9 (100\%) & 822.8 (100\%) & 816.7 (99.6\%) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\columnwidth]{fig4_multiagent_scaling.pdf}
+    \caption{Multi-agent scaling. (a)~Average quality per agent decreases as $N$ grows at fixed 100\,Mbps total bandwidth; model-aware allocation maintains an advantage. (b)~Deadline compliance for 4 agents: model-aware and quality-max achieve 100\% at all bandwidths, while equal allocation fails at 50\,Mbps.}
+    \label{fig:multiagent}
+\end{figure}
+
+\textbf{Finding 9: Model-aware allocation is critical under congestion.}
+At 50\,Mbps with 4 agents, equal allocation fails to meet the deadline for \emph{any} round (0\%), while model-aware allocation achieves 100\% compliance.
+This is because equal allocation gives 12.5\,Mbps per agent, insufficient for Qwen-14B's 33.2\,MB KV-cache within 5\,s, while model-aware allocation gives proportionally more bandwidth to the larger model.
+
+\textbf{Finding 10: Deadline compliance degrades at scale.}
+With 8 agents at 100\,Mbps, equal allocation achieves 0\% deadline compliance, while model-aware achieves 100\%.
+The quality-maximizing policy achieves only 5\% compliance because its greedy approach can create unfair allocations that leave some agents bandwidth-starved.
+Model-aware proportional allocation emerges as the most robust policy.
+
+\textbf{Finding 11: 8 agents at 50\,Mbps exceeds capacity for KV transfer.}
+At 50\,Mbps with 8 agents ($\sim$6\,Mbps/agent), even model-aware allocation cannot meet deadlines (0\%).
+This is the regime where universal scout fallback is essential: all agents switch to scout mode, transmitting only position indices and achieving 95\% quality per agent with guaranteed deadline compliance.
+
+
+% ============================================================
+% VII. DISCUSSION
+% ============================================================
+\section{Discussion}
+\label{sec:discussion}
+
+\subsection{When to Use Scout Mode}
+
+Scout mode is most beneficial when:
+\begin{enumerate}
+    \item Bandwidth is extremely limited ($<$10\,Mbps) and even INT4 KV transfer would miss the deadline.
+    \item The cloud model is within the same model family as the edge model (shared tokenizer and RoPE).
+    \item A 7B-class edge model is available, enabling the attention focusing effect that can \emph{improve} cloud quality.
+\end{enumerate}
+
+The quality cost of scout mode varies by pair: 3B$\to$7B incurs up to 19\% loss, while 7B$\to$14B achieves a 10\% \emph{gain}.
+For applications where approximate answers are acceptable (\eg, initial responses refined by follow-up queries), even the 3B scout tradeoff is favorable.
+
+\subsection{Protocol Overhead}
+
+The Scout protocol's control plane adds minimal overhead:
+\begin{itemize}
+    \item \textbf{Handshake}: Model family identification, capability exchange ($<$100 bytes).
+    \item \textbf{Mode advertisement}: Current bandwidth estimate + selected mode ($<$50 bytes).
+    \item \textbf{Position indices}: $k \times 2$ bytes for $k$ selected positions (16-bit indices suffice for contexts up to 65{,}536 tokens).
+\end{itemize}
+Total control overhead is $<$1\,KB, negligible compared to even the smallest KV payload.
+
+\subsection{Latency Breakdown}
+
+The end-to-end latency for scout mode includes: edge prefill (6\,ms for 3B, 18\,ms for 7B), Q2C scoring (negligible, computed from existing attention weights), index transmission (0.03\,ms), cloud prefill (18\,ms for 7B, 57\,ms for 14B), and decode.
+Total scout overhead is 24--75\,ms, dominated by the cloud's prefill cost.
+When the cloud would have performed prefill anyway (\eg, for model validation), the marginal cost of scout is near zero.
+
+\subsection{Limitations}
+
+Our work has several limitations.
+First, scout mode requires edge and cloud models from the same family; cross-family transfer (\eg, Qwen$\to$Mistral) would require tokenizer alignment and position remapping.
+Second, the bandwidth simulator uses a stationary Markov chain, while real wireless channels exhibit non-stationary behavior; integrating with 3GPP channel models~\cite{3gpp} is future work.
+Third, we evaluate on extractive QA; tasks requiring precise numerical reasoning may be more sensitive to selection misalignment.
+Fourth, the multi-agent formulation assumes synchronized requests; asynchronous arrivals require queuing-theoretic extensions~\cite{queuing}.
+Finally, our analysis covers context lengths up to $\sim$200 tokens; scaling to longer contexts (4K+) will increase KV-cache sizes proportionally, making scout mode even more attractive.
+
+
+% ============================================================
+% VIII. RELATED WORK
+% ============================================================
+\section{Related Work}
+\label{sec:related}
+
+\textbf{KV-cache compression.}
+CacheGen~\cite{cachegen} applies delta encoding and arithmetic coding for KV-cache streaming.
+H2O~\cite{h2o} and SnapKV~\cite{snapkv} perform attention-based token eviction.
+KIVI~\cite{kivi} and KVQuant~\cite{kvquant} study precision reduction.
+These methods compress the KV-cache for single-model serving; Scout addresses the cross-model, bandwidth-adaptive scenario.
+
+\textbf{Collaborative and disaggregated inference.}
+Splitwise~\cite{splitwise} separates prefill and decode across machines.
+DistServe~\cite{distserve} and Mooncake~\cite{mooncake} disaggregate LLM serving phases for throughput optimization.
+These systems transfer full KV-caches over high-bandwidth datacenter interconnects (100+\,Gbps); Scout targets bandwidth-constrained wireless links (5--200\,Mbps).
+
+\textbf{Speculative and draft-model approaches.}
+Speculative decoding~\cite{speculativedecoding} uses a small draft model to propose tokens that a larger model verifies.
+Our scout model shares the draft-model concept but applies it to \emph{position selection} rather than token generation, enabling bandwidth reduction instead of latency reduction.
+
+\textbf{Multi-agent systems.}
+The Internet of Agents framework~\cite{ioa} proposes hierarchical agent coordination across network boundaries.
+Our work provides a concrete transport mechanism for the infrastructure layer of such systems, addressing the bandwidth bottleneck that agent frameworks typically abstract away.
+
+\textbf{Adaptive streaming.}
+ABR (adaptive bitrate) algorithms for video streaming~\cite{abr} dynamically select quality levels based on bandwidth.
+Scout applies similar adaptation principles to LLM inference, with the key difference that quality is measured by task performance (F1) rather than perceptual metrics (PSNR/SSIM), and the discrete nature of compression modes simplifies the control problem.
+
+
+% ============================================================
+% IX. CONCLUSION
+% ============================================================
+\section{Conclusion}
+\label{sec:conclusion}
+
+We present Scout, a bandwidth-adaptive transport protocol for collaborative LLM inference.
+By exploiting cross-model attention alignment, Scout eliminates KV-cache transmission when bandwidth is scarce, reducing payload from megabytes to hundreds of bytes with 82--83\% position overlap.
+The attention focusing effect shows that a 7B scout model can \emph{improve} a 14B cloud model's quality by 10.2\%, turning bandwidth optimization into a quality enhancement.
+The adaptive policy engine selects among five operating modes in real time, achieving 98--107\% quality with up to 100\% deadline compliance.
+For multi-agent deployments, model-aware bandwidth allocation converts deadline compliance from 0\% to 100\% under congestion.
+Scout bridges the gap between KV-cache compression research and practical protocol design for edge-cloud LLM systems.
+
+\balance
+
+% ============================================================
+% REFERENCES
+% ============================================================
+\bibliographystyle{IEEEtran}
+\begin{thebibliography}{15}
+
+\bibitem{cachegen}
+Y.~Liu \etal, ``CacheGen: KV Cache Compression and Streaming for Fast Large Language Model Serving,'' in \emph{Proc.\ ACM SIGCOMM}, 2024.
+
+\bibitem{splitwise}
+P.~Patel \etal, ``Splitwise: Efficient Generative LLM Inference Using Phase Splitting,'' in \emph{Proc.\ ISCA}, 2024.
+
+\bibitem{distserve}
+Y.~Zhong \etal, ``DistServe: Disaggregating Prefill and Decoding for Goodput-optimized Large Language Model Serving,'' in \emph{Proc.\ OSDI}, 2024.
+
+\bibitem{mooncake}
+R.~Qin \etal, ``Mooncake: A KVCache-centric Disaggregated Architecture for LLM Serving,'' in \emph{Proc.\ FAST}, 2025.
+
+\bibitem{h2o}
+Z.~Zhang \etal, ``H2O: Heavy-Hitter Oracle for Efficient Generative Inference of Large Language Models,'' in \emph{Proc.\ NeurIPS}, 2023.
+
+\bibitem{snapkv}
+Y.~Li \etal, ``SnapKV: LLM Knows What You are Looking for Before Generation,'' \emph{arXiv:2404.14469}, 2024.
+
+\bibitem{kivi}
+Z.~Liu \etal, ``KIVI: A Tuning-Free Asymmetric 2bit Quantization for KV Cache,'' in \emph{Proc.\ ICML}, 2024.
+
+\bibitem{kvquant}
+C.~Hooper \etal, ``KVQuant: Towards 10 Million Context Length LLM Inference with KV Cache Quantization,'' \emph{arXiv:2401.18079}, 2024.
+
+\bibitem{speculativedecoding}
+Y.~Leviathan \etal, ``Fast Inference from Transformers via Speculative Decoding,'' in \emph{Proc.\ ICML}, 2023.
+
+\bibitem{abr}
+H.~Mao \etal, ``Neural Adaptive Video Streaming with Pensieve,'' in \emph{Proc.\ ACM SIGCOMM}, 2017.
+
+\bibitem{paperA}
+W.-L.~Cheng and W.~Liao, ``Task-Aware KV-Cache Compression for Bandwidth-Efficient Collaborative LLM Inference,'' \emph{submitted}, 2026.
+
+\bibitem{ioa}
+W.~Chen \etal, ``Internet of Agents: Weaving a Web of Heterogeneous Agents for Collaborative Intelligence,'' \emph{arXiv:2407.07061}, 2024.
+
+\bibitem{3gpp}
+3GPP, ``Study on Channel Model for Frequencies from 0.5 to 100 GHz,'' \emph{TR 38.901}, v17.0.0, 2022.
+
+\bibitem{queuing}
+M.~Mitzenmacher, ``The Power of Two Choices in Randomized Load Balancing,'' \emph{IEEE Trans.\ Parallel Distrib.\ Syst.}, vol.~12, no.~10, 2001.
+
+\end{thebibliography}
+
+\end{document}

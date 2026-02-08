@@ -1,0 +1,3743 @@
+{
+  "metadata": {
+    "model": "Yi-1.5-6B-Chat",
+    "experiment": "multi_task_validation",
+    "tasks": [
+      "squad",
+      "triviaqa",
+      "hotpotqa",
+      "mmlu"
+    ],
+    "num_samples_per_task": 30
+  },
+  "results": {
+    "squad": [
+      {
+        "idx": 0,
+        "gold": "1066",
+        "seq_len": 150,
+        "task": "squad",
+        "none": {
+          "answer": "The Battle of Hastings took place in 1066.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "The Battle of Hastings took place in 1066.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "The Battle of Hastings took place in 1066.",
+          "f1": 0.0
+        },
+        "mixed_int4": {
+          "answer": "The Battle of Hastings took place in 1066.",
+          "f1": 0.0
+        },
+        "anchor_delta_int4": {
+          "answer": "The Battle of Hastings took place in 1066.",
+          "f1": 0.0
+        },
+        "anchor_delta_int8": {
+          "answer": "The Battle of Hastings took place in 1066.",
+          "f1": 0.0
+        },
+        "time": 2.471677303314209
+      },
+      {
+        "idx": 1,
+        "gold": "Oursel",
+        "seq_len": 245,
+        "task": "squad",
+        "none": {
+          "answer": "The leader when the Franks entered the Euphrates valley was Raimbaud.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "The leader when the Franks entered the Euphrates valley was Raimbaud.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "The leader when the Franks entered the Euphrates valley was Raimbaud.",
+          "f1": 0.0
+        },
+        "mixed_int4": {
+          "answer": "The leader when the Franks entered the Euphrates valley was Raimbaud.",
+          "f1": 0.0
+        },
+        "anchor_delta_int4": {
+          "answer": "The leader when the Franks entered the Euphrates valley was a Norman named Oursel.",
+          "f1": 0.0
+        },
+        "anchor_delta_int8": {
+          "answer": "The leader when the Franks entered the Euphrates valley was Raimbaud.",
+          "f1": 0.0
+        },
+        "time": 2.8120617866516113
+      },
+      {
+        "idx": 2,
+        "gold": "1097",
+        "seq_len": 160,
+        "task": "squad",
+        "none": {
+          "answer": "The Siege of Antioch took place in 1097.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "The Siege of Antioch took place in 1097.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "The Siege of Antioch took place in 1097.",
+          "f1": 0.0
+        },
+        "mixed_int4": {
+          "answer": "The Siege of Antioch took place in 1097.",
+          "f1": 0.0
+        },
+        "anchor_delta_int4": {
+          "answer": "The Siege of Antioch took place in 1097.",
+          "f1": 0.0
+        },
+        "anchor_delta_int8": {
+          "answer": "The Siege of Antioch took place in 1097.",
+          "f1": 0.0
+        },
+        "time": 2.3097290992736816
+      },
+      {
+        "idx": 3,
+        "gold": "early 11th century",
+        "seq_len": 265,
+        "task": "squad",
+        "none": {
+          "answer": "The church reform began in the early 11th century.",
+          "f1": 0.3333333333333333
+        },
+        "int8": {
+          "answer": "The church reform began in the early 11th century.",
+          "f1": 0.3333333333333333
+        },
+        "int4": {
+          "answer": "The church reform in Normandy began in the early 11th century, as the dukes initiated a programme of church reform, encouraging the Cluniac reform of monasteries and patronising intellectual pursuits.",
+          "f1": 0.1212121212121212
+        },
+        "mixed_int4": {
+          "answer": "The church reform in Normandy began in the early 11th century, as the dukes initiated a programme of church reform, encouraging the Cluniac reform of monasteries and patronising intellectual pursuits.",
+          "f1": 0.1212121212121212
+        },
+        "anchor_delta_int4": {
+          "answer": "The church reform began in the early 11th century.",
+          "f1": 0.3333333333333333
+        },
+        "anchor_delta_int8": {
+          "answer": "The church reform began in the early 11th century.",
+          "f1": 0.3333333333333333
+        },
+        "time": 3.4482271671295166
+      },
+      {
+        "idx": 4,
+        "gold": "France",
+        "seq_len": 199,
+        "task": "squad",
+        "none": {
+          "answer": "Normandy is located in France.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "Normandy is located in France.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "Normandy is located in France.",
+          "f1": 0.0
+        },
+        "mixed_int4": {
+          "answer": "Normandy is located in France.",
+          "f1": 0.0
+        },
+        "anchor_delta_int4": {
+          "answer": "Normandy is located in the country of France.",
+          "f1": 0.0
+        },
+        "anchor_delta_int8": {
+          "answer": "Normandy is located in France.",
+          "f1": 0.0
+        },
+        "time": 1.301487922668457
+      },
+      {
+        "idx": 5,
+        "gold": "Bohemond",
+        "seq_len": 211,
+        "task": "squad",
+        "none": {
+          "answer": "Robert's son was Bohemond, who commanded the Norman forces during the 1107 campaign in the Balkans.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "Robert's son was Bohemond, who commanded the Norman forces during the 1107 campaign in the Balkans.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "Robert's son was Bohemond.",
+          "f1": 0.0
+        },
+        "mixed_int4": {
+          "answer": "Robert's son was Bohemond.",
+          "f1": 0.0
+        },
+        "anchor_delta_int4": {
+          "answer": "Robert's son was Bohemond.",
+          "f1": 0.0
+        },
+        "anchor_delta_int8": {
+          "answer": "Robert's son was Bohemond, who commanded the Norman forces during the 1107 campaign in the Balkans.",
+          "f1": 0.0
+        },
+        "time": 2.6187140941619873
+      },
+      {
+        "idx": 6,
+        "gold": "William II",
+        "seq_len": 148,
+        "task": "squad",
+        "none": {
+          "answer": "Duke William II of Normandy killed Harold II at the Battle of Hastings in 1066.",
+          "f1": 0.23529411764705882
+        },
+        "int8": {
+          "answer": "Duke William II of Normandy killed Harold II at the Battle of Hastings in 1066.",
+          "f1": 0.23529411764705882
+        },
+        "int4": {
+          "answer": "Duke William II of Normandy killed Harold II.",
+          "f1": 0.4
+        },
+        "mixed_int4": {
+          "answer": "Duke William II of Normandy killed Harold II.",
+          "f1": 0.4
+        },
+        "anchor_delta_int4": {
+          "answer": "Duke William II of Normandy killed King Harold II at the Battle of Hastings in 1066.",
+          "f1": 0.2222222222222222
+        },
+        "anchor_delta_int8": {
+          "answer": "Duke William II of Normandy killed Harold II at the Battle of Hastings in 1066.",
+          "f1": 0.23529411764705882
+        },
+        "time": 2.7054481506347656
+      },
+      {
+        "idx": 7,
+        "gold": "Africa",
+        "seq_len": 116,
+        "task": "squad",
+        "none": {
+          "answer": "The Canarian Islands are off the coast of Africa.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "The Canarian Islands are off the coast of Africa.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "The Canarian Islands are off the coast of Africa.",
+          "f1": 0.0
+        },
+        "mixed_int4": {
+          "answer": "The Canarian Islands are off the coast of Africa.",
+          "f1": 0.0
+        },
+        "anchor_delta_int4": {
+          "answer": "The Canarian Islands are off the coast of Africa.",
+          "f1": 0.0
+        },
+        "anchor_delta_int8": {
+          "answer": "The Canarian Islands are off the coast of Africa.",
+          "f1": 0.0
+        },
+        "time": 1.6079561710357666
+      },
+      {
+        "idx": 8,
+        "gold": "911",
+        "seq_len": 249,
+        "task": "squad",
+        "none": {
+          "answer": "The Duchy of Normandy was founded in 911.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "The Duchy of Normandy was founded in 911.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "The Duchy of Normandy was founded in 911.",
+          "f1": 0.0
+        },
+        "mixed_int4": {
+          "answer": "The Duchy of Normandy was founded in 911.",
+          "f1": 0.0
+        },
+        "anchor_delta_int4": {
+          "answer": "The Duchy of Normandy was founded in 911.",
+          "f1": 0.0
+        },
+        "anchor_delta_int8": {
+          "answer": "The Duchy of Normandy was founded in 911.",
+          "f1": 0.0
+        },
+        "time": 2.1598780155181885
+      },
+      {
+        "idx": 9,
+        "gold": "Ireland",
+        "seq_len": 326,
+        "task": "squad",
+        "none": {
+          "answer": "The Normans invaded Ireland in 1169.",
+          "f1": 0.2857142857142857
+        },
+        "int8": {
+          "answer": "The Normans invaded Ireland in 1169.",
+          "f1": 0.2857142857142857
+        },
+        "int4": {
+          "answer": "The Normans invaded Ireland in 1169.",
+          "f1": 0.2857142857142857
+        },
+        "mixed_int4": {
+          "answer": "The Normans invaded Ireland in 1169.",
+          "f1": 0.2857142857142857
+        },
+        "anchor_delta_int4": {
+          "answer": "The Normans invaded Ireland in 1169.",
+          "f1": 0.2857142857142857
+        },
+        "anchor_delta_int8": {
+          "answer": "The Normans invaded Ireland in 1169.",
+          "f1": 0.2857142857142857
+        },
+        "time": 2.0987255573272705
+      },
+      {
+        "idx": 10,
+        "gold": "singing",
+        "seq_len": 107,
+        "task": "squad",
+        "none": {
+          "answer": "The Saint-Evroul monks were known for their tradition of singing.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "The Saint-Evroul monks were known for their tradition of singing.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "The Saint-Evroul monks were known for their tradition of singing, which gained them fame in Normandy.",
+          "f1": 0.0
+        },
+        "mixed_int4": {
+          "answer": "The Saint-Evroul monks were known for their tradition of singing, which gained them fame in Normandy.",
+          "f1": 0.0
+        },
+        "anchor_delta_int4": {
+          "answer": "The Saint-Evroul monks were known for developing and maintaining a tradition of singing, which gained them fame in Normandy.",
+          "f1": 0.0
+        },
+        "anchor_delta_int8": {
+          "answer": "The Saint-Evroul monks were known for their tradition of singing.",
+          "f1": 0.0
+        },
+        "time": 2.65828800201416
+      },
+      {
+        "idx": 11,
+        "gold": "Harthacnut",
+        "seq_len": 197,
+        "task": "squad",
+        "none": {
+          "answer": "Edward the Confessor's half-brother was Harthacnut.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "Edward the Confessor's half-brother was Harthacnut.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "Edward the Confessor's half-brother was Harthacnut.",
+          "f1": 0.0
+        },
+        "mixed_int4": {
+          "answer": "Edward the Confessor's half-brother was Harthacnut.",
+          "f1": 0.0
+        },
+        "anchor_delta_int4": {
+          "answer": "Edward the Confessor's half-brother was Harthacnut.",
+          "f1": 0.0
+        },
+        "anchor_delta_int8": {
+          "answer": "Edward the Confessor's half-brother was Harthacnut.",
+          "f1": 0.0
+        },
+        "time": 2.4856696128845215
+      },
+      {
+        "idx": 12,
+        "gold": "Tancred",
+        "seq_len": 160,
+        "task": "squad",
+        "none": {
+          "answer": "The name of Bohemond's nephew was Tancred.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "The name of Bohemond's nephew was Tancred.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "The name of Bohemond's nephew was Tancred.",
+          "f1": 0.0
+        },
+        "mixed_int4": {
+          "answer": "The name of Bohemond's nephew was Tancred.",
+          "f1": 0.0
+        },
+        "anchor_delta_int4": {
+          "answer": "The name of Bohemond's nephew was Tancred.",
+          "f1": 0.0
+        },
+        "anchor_delta_int8": {
+          "answer": "The name of Bohemond's nephew was Tancred.",
+          "f1": 0.0
+        },
+        "time": 2.0684890747070312
+      },
+      {
+        "idx": 13,
+        "gold": "mathematical models of computation",
+        "seq_len": 160,
+        "task": "squad",
+        "none": {
+          "answer": "The method used to intuitively assess or quantify the amount of resources required to solve a computational problem is computational complexity theory. This field introduces mathematical models of com",
+          "f1": 0.1702127659574468
+        },
+        "int8": {
+          "answer": "The method used to intuitively assess or quantify the amount of resources required to solve a computational problem is computational complexity theory. This field introduces mathematical models of com",
+          "f1": 0.12903225806451613
+        },
+        "int4": {
+          "answer": "The method used to intuitively assess or quantify the amount of resources required to solve a computational problem is through computational complexity theory. This involves introducing mathematical m",
+          "f1": 0.13333333333333333
+        },
+        "mixed_int4": {
+          "answer": "The method used to intuitively assess or quantify the amount of resources required to solve a computational problem is through computational complexity theory. This involves introducing mathematical m",
+          "f1": 0.13559322033898305
+        },
+        "anchor_delta_int4": {
+          "answer": "The method used to intuitively assess or quantify the amount of resources required to solve a computational problem is through computational complexity theory. This theory introduces mathematical mode",
+          "f1": 0.14285714285714288
+        },
+        "anchor_delta_int8": {
+          "answer": "The method used to intuitively assess or quantify the amount of resources required to solve a computational problem is computational complexity theory. This field introduces mathematical models of com",
+          "f1": 0.16
+        },
+        "time": 7.606670618057251
+      },
+      {
+        "idx": 14,
+        "gold": "Seine",
+        "seq_len": 246,
+        "task": "squad",
+        "none": {
+          "answer": "The river originally bounding the Duchy of Normandy was the Epte.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "The river originally bounding the Duchy of Normandy was the Epte.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "The Duchy of Normandy was originally bounded by the River Epte. This river served as one of the primary geographical demarcations of the territory established by the treaty of Saint-Clair-sur-Epte bet",
+          "f1": 0.0
+        },
+        "mixed_int4": {
+          "answer": "The Duchy of Normandy was originally bounded by the River Epte. This river served as one of the primary geographical demarcations of the territory established by the treaty of Saint-Clair-sur-Epte bet",
+          "f1": 0.0
+        },
+        "anchor_delta_int4": {
+          "answer": "The river originally bounding the Duchy of Normandy was the Epte River. This is mentioned in the context provided, stating that the area corresponded to the northern part of present-day Upper Normandy",
+          "f1": 0.0
+        },
+        "anchor_delta_int8": {
+          "answer": "The river originally bounding the Duchy of Normandy was the Epte.",
+          "f1": 0.0
+        },
+        "time": 5.261819124221802
+      },
+      {
+        "idx": 15,
+        "gold": "10th century",
+        "seq_len": 203,
+        "task": "squad",
+        "none": {
+          "answer": "The Normans first gained their separate identity in the first half of the 10th century.",
+          "f1": 0.11764705882352941
+        },
+        "int8": {
+          "answer": "The Normans first gained their separate identity in the first half of the 10th century.",
+          "f1": 0.11764705882352941
+        },
+        "int4": {
+          "answer": "The Normans first gained their separate identity in the first half of the 10th century.",
+          "f1": 0.11764705882352941
+        },
+        "mixed_int4": {
+          "answer": "The Normans first gained their separate identity in the first half of the 10th century.",
+          "f1": 0.11764705882352941
+        },
+        "anchor_delta_int4": {
+          "answer": "The Normans first gained their separate cultural and ethnic identity in the first half of the 10th century.",
+          "f1": 0.09999999999999999
+        },
+        "anchor_delta_int8": {
+          "answer": "The Normans first gained their separate identity in the first half of the 10th century.",
+          "f1": 0.11764705882352941
+        },
+        "time": 2.940330982208252
+      },
+      {
+        "idx": 16,
+        "gold": "1050s",
+        "seq_len": 173,
+        "task": "squad",
+        "none": {
+          "answer": "Herve served as a Byzantine general in the 1050s.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "Herve served as a Byzantine general in the 1050s.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "Herve served as a Byzantine general in the 1050s.",
+          "f1": 0.0
+        },
+        "mixed_int4": {
+          "answer": "Herve served as a Byzantine general in the 1050s.",
+          "f1": 0.0
+        },
+        "anchor_delta_int4": {
+          "answer": "Herve served as a Byzantine general in the 1050s.",
+          "f1": 0.0
+        },
+        "anchor_delta_int8": {
+          "answer": "Herve served as a Byzantine general in the 1050s.",
+          "f1": 0.0
+        },
+        "time": 2.473320245742798
+      },
+      {
+        "idx": 17,
+        "gold": "1185",
+        "seq_len": 109,
+        "task": "squad",
+        "none": {
+          "answer": "The Normans attacked Dyrrachium in 1185.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "The Normans attacked Dyrrachium in 1185.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "The Normans attacked Dyrrachium in 1185.",
+          "f1": 0.0
+        },
+        "mixed_int4": {
+          "answer": "The Normans attacked Dyrrachium in 1185.",
+          "f1": 0.0
+        },
+        "anchor_delta_int4": {
+          "answer": "The Normans attacked Dyrrachium in 1185.",
+          "f1": 0.0
+        },
+        "anchor_delta_int8": {
+          "answer": "The Normans attacked Dyrrachium in 1185.",
+          "f1": 0.0
+        },
+        "time": 2.234431743621826
+      },
+      {
+        "idx": 18,
+        "gold": "Duncan",
+        "seq_len": 140,
+        "task": "squad",
+        "none": {
+          "answer": "The hostage was Duncan, the son of Malcolm III of Scotland.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "The hostage was Duncan, the son of Malcolm III of Scotland, who was surrendered to William the Conqueror as a means to ensure Scottish loyalty and maintain peace between the two kingdoms.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "The hostage was Duncan, the son of Malcolm III of Scotland, who was surrendered to William the Conqueror as a form of submission and as a pledge of Scottish loyalty.",
+          "f1": 0.0
+        },
+        "mixed_int4": {
+          "answer": "The hostage was Duncan, the son of Malcolm III of Scotland, who was surrendered to William the Conqueror as a form of ensuring allegiance and peace between the two kingdoms.",
+          "f1": 0.0
+        },
+        "anchor_delta_int4": {
+          "answer": "The hostage was Duncan, the son of Malcolm III of Scotland, who was surrendered to William the Conqueror as a symbol of Scottish submission and as a means to establish the loyalty of the Scottish Crow",
+          "f1": 0.0
+        },
+        "anchor_delta_int8": {
+          "answer": "The hostage was Duncan, the son of Malcolm III of Scotland, who was surrendered to William the Conqueror as a means to ensure Scottish loyalty and maintain peace between the two kingdoms.",
+          "f1": 0.0
+        },
+        "time": 4.641873836517334
+      },
+      {
+        "idx": 19,
+        "gold": "Conrad of Montferrat",
+        "seq_len": 244,
+        "task": "squad",
+        "none": {
+          "answer": "Guy's rival was Conrad of Montferrat.",
+          "f1": 0.4444444444444444
+        },
+        "int8": {
+          "answer": "Guy's rival was Conrad of Montferrat.",
+          "f1": 0.4444444444444444
+        },
+        "int4": {
+          "answer": "Guy's rival was Conrad of Montferrat.",
+          "f1": 0.4444444444444444
+        },
+        "mixed_int4": {
+          "answer": "Guy's rival was Conrad of Montferrat.",
+          "f1": 0.4444444444444444
+        },
+        "anchor_delta_int4": {
+          "answer": "Guy's rival was Conrad of Montferrat.",
+          "f1": 0.4444444444444444
+        },
+        "anchor_delta_int8": {
+          "answer": "Guy's rival was Conrad of Montferrat.",
+          "f1": 0.4444444444444444
+        },
+        "time": 2.172649383544922
+      },
+      {
+        "idx": 20,
+        "gold": "embroidery",
+        "seq_len": 108,
+        "task": "squad",
+        "none": {
+          "answer": "The Bayeux Tapestry was created using embroidery, a needlework technique involving the use of a needle and thread to stitch designs onto fabric.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "The Bayeux Tapestry was created using embroidery, a needlework technique involving the use of thread and needle to stitch designs onto fabric.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "The Bayeux Tapestry is a type of embroidery, a needlework technique that involves sewing fine threads onto a fabric background to create images, patterns, or text. In the creation of the Bayeux Tapest",
+          "f1": 0.0
+        },
+        "mixed_int4": {
+          "answer": "The Bayeux Tapestry is a type of embroidery, a needlework technique that involves sewing fine threads onto a fabric background to create images, patterns, or text. In the creation of the Bayeux Tapest",
+          "f1": 0.0
+        },
+        "anchor_delta_int4": {
+          "answer": "The Bayeux Tapestry was created using embroidery, a needlework technique involving the use of thread and needle to stitch designs onto fabric.",
+          "f1": 0.0
+        },
+        "anchor_delta_int8": {
+          "answer": "The Bayeux Tapestry was created using embroidery, a needlework technique involving the use of thread and needle to stitch designs onto fabric.",
+          "f1": 0.0
+        },
+        "time": 5.3168625831604
+      },
+      {
+        "idx": 21,
+        "gold": "rounded",
+        "seq_len": 104,
+        "task": "squad",
+        "none": {
+          "answer": "Norman architecture features rounded arches, particularly over windows and doorways, and has massive proportions.",
+          "f1": 0.13333333333333333
+        },
+        "int8": {
+          "answer": "Norman architecture features rounded arches, particularly over windows and doorways, and has massive proportions.",
+          "f1": 0.13333333333333333
+        },
+        "int4": {
+          "answer": "Norman architecture features rounded arches, particularly over windows and doorways, and has massive proportions.",
+          "f1": 0.13333333333333333
+        },
+        "mixed_int4": {
+          "answer": "Norman architecture features rounded arches, particularly over windows and doorways, and has massive proportions.",
+          "f1": 0.13333333333333333
+        },
+        "anchor_delta_int4": {
+          "answer": "Norman architecture features rounded arches, particularly over windows and doorways, and these arches are a distinctive characteristic of their style.",
+          "f1": 0.09523809523809523
+        },
+        "anchor_delta_int8": {
+          "answer": "Norman architecture features rounded arches, particularly over windows and doorways, and has massive proportions.",
+          "f1": 0.13333333333333333
+        },
+        "time": 2.889258861541748
+      },
+      {
+        "idx": 22,
+        "gold": "11th",
+        "seq_len": 182,
+        "task": "squad",
+        "none": {
+          "answer": "Important classical music developments occurred in Normandy in the 11th century.",
+          "f1": 0.16666666666666669
+        },
+        "int8": {
+          "answer": "Important classical music developments occurred in Normandy in the 11th century.",
+          "f1": 0.16666666666666669
+        },
+        "int4": {
+          "answer": "Important classical music developments in Normandy occurred in the 11th century.",
+          "f1": 0.16666666666666669
+        },
+        "mixed_int4": {
+          "answer": "Important classical music developments in Normandy occurred in the 11th century.",
+          "f1": 0.16666666666666669
+        },
+        "anchor_delta_int4": {
+          "answer": "Important classical music developments in Normandy occurred in the 11th century.",
+          "f1": 0.16666666666666669
+        },
+        "anchor_delta_int8": {
+          "answer": "Important classical music developments occurred in Normandy in the 11th century.",
+          "f1": 0.16666666666666669
+        },
+        "time": 2.4889326095581055
+      },
+      {
+        "idx": 23,
+        "gold": "the Adriatic",
+        "seq_len": 106,
+        "task": "squad",
+        "none": {
+          "answer": "Dyrrachium was located in the western part of the Balkan Peninsula, on the Adriatic coast, near the border between modern-day Albania and North Macedonia. It was an important naval base during the Byz",
+          "f1": 0.0851063829787234
+        },
+        "int8": {
+          "answer": "Dyrrachium was located in the western part of the Balkan Peninsula, on the Adriatic coast, near the border between modern-day Albania and North Macedonia. It was an important naval base during the Byz",
+          "f1": 0.0851063829787234
+        },
+        "int4": {
+          "answer": "Dyrrachium was located in the Adriatic region, on the western coast of modern-day Albania.",
+          "f1": 0.25
+        },
+        "mixed_int4": {
+          "answer": "Dyrrachium was located in the Adriatic region, on the western coast of modern-day Albania.",
+          "f1": 0.25
+        },
+        "anchor_delta_int4": {
+          "answer": "Dyrrachium was located in the Adriatic region, on the western coast of modern-day Albania.",
+          "f1": 0.25
+        },
+        "anchor_delta_int8": {
+          "answer": "Dyrrachium was located in the western part of the Balkan Peninsula, on the Adriatic coast, near the border between modern-day Albania and North Macedonia. It was an important naval base during the Byz",
+          "f1": 0.0851063829787234
+        },
+        "time": 5.76975417137146
+      },
+      {
+        "idx": 24,
+        "gold": "Normandy",
+        "seq_len": 175,
+        "task": "squad",
+        "none": {
+          "answer": "Ethelred fled to Normandy when he was forced from his kingdom by Sweyn Forkbeard in 1013.",
+          "f1": 0.11764705882352941
+        },
+        "int8": {
+          "answer": "Ethelred fled to Normandy when he was forced from his kingdom by Sweyn Forkbeard in 1013.",
+          "f1": 0.11764705882352941
+        },
+        "int4": {
+          "answer": "Ethelred fled to Normandy when he was forced from his kingdom by Sweyn Forkbeard in 1013.",
+          "f1": 0.11764705882352941
+        },
+        "mixed_int4": {
+          "answer": "Ethelred fled to Normandy when he was forced from his kingdom by Sweyn Forkbeard in 1013.",
+          "f1": 0.11764705882352941
+        },
+        "anchor_delta_int4": {
+          "answer": "Ethelred fled to Normandy.",
+          "f1": 0.0
+        },
+        "anchor_delta_int8": {
+          "answer": "Ethelred fled to Normandy when he was forced from his kingdom by Sweyn Forkbeard in 1013.",
+          "f1": 0.11764705882352941
+        },
+        "time": 3.454592227935791
+      },
+      {
+        "idx": 25,
+        "gold": "King Charles III",
+        "seq_len": 258,
+        "task": "squad",
+        "none": {
+          "answer": "Rollo signed the treaty of Saint-Clair-sur-Epte with King Charles III of West Francia.",
+          "f1": 0.375
+        },
+        "int8": {
+          "answer": "Rollo signed the treaty of Saint-Clair-sur-Epte with King Charles III of West Francia.",
+          "f1": 0.375
+        },
+        "int4": {
+          "answer": "Rollo signed the treaty of Saint-Clair-sur-Epte with King Charles III of West Francia.",
+          "f1": 0.375
+        },
+        "mixed_int4": {
+          "answer": "Rollo signed the treaty of Saint-Clair-sur-Epte with King Charles III of West Francia.",
+          "f1": 0.375
+        },
+        "anchor_delta_int4": {
+          "answer": "Rollo signed the treaty of Saint-Clair-sur-Epte with King Charles III of West Francia.",
+          "f1": 0.375
+        },
+        "anchor_delta_int8": {
+          "answer": "Rollo signed the treaty of Saint-Clair-sur-Epte with King Charles III of West Francia.",
+          "f1": 0.375
+        },
+        "time": 3.6848621368408203
+      },
+      {
+        "idx": 26,
+        "gold": "Channel Islands",
+        "seq_len": 170,
+        "task": "squad",
+        "none": {
+          "answer": "Jersey and Guernsey are the Channel Islands, which are located in the English Channel, between the coast of Normandy in France and the south coast of England.",
+          "f1": 0.06896551724137931
+        },
+        "int8": {
+          "answer": "Jersey and Guernsey are the Channel Islands located in the English Channel, off the coast of Normandy, France. They are part of the Bailiwick of Jersey and the Bailiwick of Guernsey, which are depende",
+          "f1": 0.09302325581395349
+        },
+        "int4": {
+          "answer": "Jersey and Guernsey are the Channel Islands located in the English Channel, off the southern coast of Normandy, France.",
+          "f1": 0.1904761904761905
+        },
+        "mixed_int4": {
+          "answer": "Jersey and Guernsey are the Channel Islands located in the English Channel, off the southern coast of Normandy, France.",
+          "f1": 0.1904761904761905
+        },
+        "anchor_delta_int4": {
+          "answer": "Jersey and Guernsey are Channel Islands located in the English Channel, off the coast of Normandy, France. They are part of the Bailiwick of Jersey, a dependency of the Crown in right of Jersey, and t",
+          "f1": 0.0851063829787234
+        },
+        "anchor_delta_int8": {
+          "answer": "Jersey and Guernsey are the Channel Islands located in the English Channel, off the coast of Normandy, France. They are part of the Bailiwick of Jersey and the Bailiwick of Guernsey, which are depende",
+          "f1": 0.09302325581395349
+        },
+        "time": 6.019845485687256
+      },
+      {
+        "idx": 27,
+        "gold": "two",
+        "seq_len": 173,
+        "task": "squad",
+        "none": {
+          "answer": "Norman customary law has two main customaries: the Tr\u00e8s ancien coutumier and the Grand coutumier de Normandie.",
+          "f1": 0.1111111111111111
+        },
+        "int8": {
+          "answer": "Norman customary law has two main customaries: the Tr\u00e8s ancien coutumier and the Grand coutumier de Normandie.",
+          "f1": 0.1111111111111111
+        },
+        "int4": {
+          "answer": "Norman customary law has two main customaries: the Tr\u00e8s ancien coutumier, authored between 1200 and 1245, and the Grand coutumier de Normandie, authored between 1235 and 1245.",
+          "f1": 0.07142857142857142
+        },
+        "mixed_int4": {
+          "answer": "Norman customary law has two main customaries: the Tr\u00e8s ancien coutumier, authored between 1200 and 1245, and the Grand coutumier de Normandie, authored between 1235 and 1245.",
+          "f1": 0.07142857142857142
+        },
+        "anchor_delta_int4": {
+          "answer": "Norman customary law has two main customaries: the Tr\u00e8s ancien coutumier and the Grand coutumier de Normandie.",
+          "f1": 0.1111111111111111
+        },
+        "anchor_delta_int8": {
+          "answer": "Norman customary law has two main customaries: the Tr\u00e8s ancien coutumier and the Grand coutumier de Normandie.",
+          "f1": 0.1111111111111111
+        },
+        "time": 5.735587120056152
+      },
+      {
+        "idx": 28,
+        "gold": "King Ethelred II",
+        "seq_len": 173,
+        "task": "squad",
+        "none": {
+          "answer": "Emma married Duke Richard II of Normandy, making them siblings as Emma was the sister of Duke Richard II.",
+          "f1": 0.09090909090909091
+        },
+        "int8": {
+          "answer": "Emma married Duke Richard II of Normandy, making them siblings as she was the sister of Duke Richard II.",
+          "f1": 0.09090909090909091
+        },
+        "int4": {
+          "answer": "Emma, sister of Duke Richard II of Normandy, married King Ethelred II of England.",
+          "f1": 0.35294117647058826
+        },
+        "mixed_int4": {
+          "answer": "Emma, sister of Duke Richard II of Normandy, married King Ethelred II of England.",
+          "f1": 0.35294117647058826
+        },
+        "anchor_delta_int4": {
+          "answer": "Emma, sister of Duke Richard II of Normandy, married King Ethelred II of England.",
+          "f1": 0.35294117647058826
+        },
+        "anchor_delta_int8": {
+          "answer": "Emma married Duke Richard II of Normandy, making them siblings as Emma was the sister of Duke Richard II.",
+          "f1": 0.09090909090909091
+        },
+        "time": 3.1180598735809326
+      },
+      {
+        "idx": 29,
+        "gold": "mosaics",
+        "seq_len": 230,
+        "task": "squad",
+        "none": {
+          "answer": "The most important type of Norman art preserved in churches, particularly in southern Italy, is mosaics, which drew heavily on the Greek heritage. These mosaics were common in Norman Italy and are pro",
+          "f1": 0.04166666666666667
+        },
+        "int8": {
+          "answer": "The most important type of Norman art preserved in churches, particularly in southern Italy, is mosaics, which drew heavily on the Greek heritage. These mosaics were common in Norman Italy and are pro",
+          "f1": 0.04081632653061225
+        },
+        "int4": {
+          "answer": "The most important type of Norman art preserved in churches is mosaics, which were common in Norman Italy and drew heavily on the Greek heritage. These mosaics are often found in sculptured fonts, cap",
+          "f1": 0.04166666666666667
+        },
+        "mixed_int4": {
+          "answer": "The most important type of Norman art preserved in churches is mosaics, which were common in Norman Italy and drew heavily on the Greek heritage. These mosaics are often found in sculptured fonts, cap",
+          "f1": 0.04166666666666667
+        },
+        "anchor_delta_int4": {
+          "answer": "The most important type of Norman art preserved in churches is mosaics, which drew heavily on the Greek heritage and were common in Norman Italy. These mosaics, along with sculptured fonts, capitals, ",
+          "f1": 0.0
+        },
+        "anchor_delta_int8": {
+          "answer": "The most important type of Norman art preserved in churches, particularly in southern Italy, is mosaics, which drew heavily on the Greek heritage. These mosaics were common in Norman Italy and are pro",
+          "f1": 0.044444444444444446
+        },
+        "time": 7.95848274230957
+      }
+    ],
+    "triviaqa": [
+      {
+        "idx": 0,
+        "gold": "Cyclopes (disambiguation)",
+        "seq_len": 167,
+        "task": "triviaqa",
+        "none": {
+          "answer": "In Greek mythology, Arges, Brontes, and Steropes were the first three sons of Gaia (Mother Earth) and Uranus (Sky), collectively known as the Cyclopes. They were known for their unique single-eye and ",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "In Greek mythology, Arges, Brontes, and Steropes were the first three sons of Gaia (Mother Earth) and Uranus (Sky), collectively known as the Cyclopes. They were known for their unique single-eye and ",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "In Greek mythology, Arges, Brontes, and Steropes were the first three sons of Gaia (Mother Earth) and Uranus (Sky), collectively known as the Cyclopes. They were known for their single eye and immunit",
+          "f1": 0.0
+        },
+        "mixed_int4": {
+          "answer": "In Greek mythology, Arges, Brontes, and Steropes were the first three sons of Gaia (Mother Earth) and Uranus (Sky), collectively known as the Cyclopes. They were known for their single eye and immunit",
+          "f1": 0.0
+        },
+        "anchor_delta_int4": {
+          "answer": "In Greek mythology, Arges, Brontes, and Steropes were the first three sons of Gaia (Mother Earth) and Uranus (Sky), collectively known as the Cyclopes. They were known for crafting various weapons for",
+          "f1": 0.0
+        },
+        "anchor_delta_int8": {
+          "answer": "In Greek mythology, Arges, Brontes, and Steropes were the first three sons of Gaia (Mother Earth) and Uranus (Sky), collectively known as the Cyclopes. They were known for their unique single-eye and ",
+          "f1": 0.0
+        },
+        "time": 8.26962399482727
+      },
+      {
+        "idx": 1,
+        "gold": "Wild Palms",
+        "seq_len": 317,
+        "task": "triviaqa",
+        "none": {
+          "answer": "The 90s sci-fi series \"Wild Palms\" with James Belushi, based on Bruce Wagner's comic strip of the same name, was a six-hour mini-series that aired on the ABC network in May 1993.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "The 90s sci-fi series \"Wild Palms\" with James Belushi, based on Bruce Wagner's comic strip of the same name, was a six-hour mini-series that aired on the ABC network in May 1993.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "The 90s sci-fi series \"Wild Palms,\" starring James Belushi, was based on Bruce Wagner's comic strip of the same name.",
+          "f1": 0.0
+        },
+        "mixed_int4": {
+          "answer": "The 90s sci-fi series \"Wild Palms,\" starring James Belushi, was based on Bruce Wagner's comic strip of the same name.",
+          "f1": 0.0
+        },
+        "anchor_delta_int4": {
+          "answer": "The 90s sci-fi series \"Wild Palms\" with James Belushi, based on Bruce Wagner's comic strip of the same name, was a six-hour mini-series that aired on the ABC network in May 1993.",
+          "f1": 0.0
+        },
+        "anchor_delta_int8": {
+          "answer": "The 90s sci-fi series \"Wild Palms\" with James Belushi, based on Bruce Wagner's comic strip of the same name, was a six-hour mini-series that aired on the ABC network in May 1993.",
+          "f1": 0.0
+        },
+        "time": 6.62454080581665
+      },
+      {
+        "idx": 2,
+        "gold": "Chi-Beria",
+        "seq_len": 307,
+        "task": "triviaqa",
+        "none": {
+          "answer": "Richard Daley was the Mayor of Chicago for 21 years.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "Richard Daley was the Mayor of Chicago for 21 years.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "Richard Daley was the mayor of Chicago for 21 years.",
+          "f1": 0.0
+        },
+        "mixed_int4": {
+          "answer": "Richard Daley was the mayor of Chicago for 21 years.",
+          "f1": 0.0
+        },
+        "anchor_delta_int4": {
+          "answer": "Richard Daley was the Mayor of Chicago for 21 years.",
+          "f1": 0.0
+        },
+        "anchor_delta_int8": {
+          "answer": "Richard Daley was the Mayor of Chicago for 21 years.",
+          "f1": 0.0
+        },
+        "time": 2.3492271900177
+      },
+      {
+        "idx": 3,
+        "gold": "July 20",
+        "seq_len": 294,
+        "task": "triviaqa",
+        "none": {
+          "answer": "Neil Armstrong first set foot on the Moon on July 20, 1969.",
+          "f1": 0.14285714285714285
+        },
+        "int8": {
+          "answer": "Neil Armstrong first set foot on the Moon on July 20, 1969.",
+          "f1": 0.14285714285714285
+        },
+        "int4": {
+          "answer": "Neil Armstrong first set foot on the Moon on July 20, 1969.",
+          "f1": 0.14285714285714285
+        },
+        "mixed_int4": {
+          "answer": "Neil Armstrong first set foot on the Moon on July 20, 1969.",
+          "f1": 0.14285714285714285
+        },
+        "anchor_delta_int4": {
+          "answer": "Neil Armstrong first set foot on the Moon on July 20, 1969.",
+          "f1": 0.14285714285714285
+        },
+        "anchor_delta_int8": {
+          "answer": "Neil Armstrong first set foot on the Moon on July 20, 1969.",
+          "f1": 0.14285714285714285
+        },
+        "time": 3.2236526012420654
+      },
+      {
+        "idx": 4,
+        "gold": "David Seville",
+        "seq_len": 389,
+        "task": "triviaqa",
+        "none": {
+          "answer": "The man behind The Chipmunks was Ross Bagdasarian Sr., also known as Alvin and the Chipmunks creator.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "The man behind The Chipmunks was Ross Bagdasarian Sr., also known as Alvin Carl \"Al\" Schwinger. He created the original singing chipmunks, including Alvin, Simon, and Theodore, and released their firs",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "The man behind The Chipmunks was Ross Bagdasarian Sr., also known as Alvin and the Chipmunks creator.",
+          "f1": 0.0
+        },
+        "mixed_int4": {
+          "answer": "The man behind The Chipmunks was Ross Bagdasarian Sr., also known as Alvin and the Chipmunks creator.",
+          "f1": 0.0
+        },
+        "anchor_delta_int4": {
+          "answer": "The man behind The Chipmunks was Ross Bagdasarian Sr., an American musician and voice actor who created the original Alvin, Simon, and Theodore characters.",
+          "f1": 0.0
+        },
+        "anchor_delta_int8": {
+          "answer": "The man behind The Chipmunks was Ross Bagdasarian Sr., also known as Alvin and the Chipmunks creator.",
+          "f1": 0.0
+        },
+        "time": 5.162576198577881
+      },
+      {
+        "idx": 5,
+        "gold": "Joshua of ephraim",
+        "seq_len": 293,
+        "task": "triviaqa",
+        "none": {
+          "answer": "Before Joshua, the Bible records instances where the Sun and the Moon stood still. In Numbers 22, the angel of the Lord stops the Sun and the Moon to hold back and not pass beyond the boundary of thei",
+          "f1": 0.03389830508474576
+        },
+        "int8": {
+          "answer": "Before Joshua, the Bible records instances where the Sun and the Moon stood still. In Numbers 22, the angel of the Lord stops the Sun and the Moon to hold back and not pass beyond the camp of Balaam, ",
+          "f1": 0.03636363636363637
+        },
+        "int4": {
+          "answer": "Before, the Sun and the Moon stood still for King Ahab, the king of Israel, and for King Josiah, the king of Judah, as narrated in the Books of Kings.",
+          "f1": 0.0606060606060606
+        },
+        "mixed_int4": {
+          "answer": "Before, the Sun and the Moon stood still for King Ahab, the king of Israel, and for King Josiah, the king of Judah, as narrated in the Books of Kings.",
+          "f1": 0.0606060606060606
+        },
+        "anchor_delta_int4": {
+          "answer": "Before Joshua, the Bible records instances where the Sun and Moon stood still for the Israelites. Notably, during the reign of King Josiah, the Sun stood still before him for a whole day (2 Chronicles",
+          "f1": 0.04347826086956522
+        },
+        "anchor_delta_int8": {
+          "answer": "Before Joshua, the Bible records instances where the Sun and Moon stood still for Pharaoh and his chariot drivers during the Exodus (Exodus 14:21), and for the Israelites during the invasion of Arad (",
+          "f1": 0.05263157894736842
+        },
+        "time": 7.6189961433410645
+      },
+      {
+        "idx": 6,
+        "gold": "A manticore",
+        "seq_len": 375,
+        "task": "triviaqa",
+        "none": {
+          "answer": "The mythological beast with the head of a man, the body of a lion, and the tail and feet of a dragon is called a manticore.",
+          "f1": 0.07142857142857144
+        },
+        "int8": {
+          "answer": "The mythological beast with the head of a man, the body of a lion, and the tail and feet of a dragon is called a manticore.",
+          "f1": 0.07142857142857144
+        },
+        "int4": {
+          "answer": "The mythological beast with the head of a man, the body of a lion, and the tail and feet of a dragon is called a manticore.",
+          "f1": 0.07142857142857144
+        },
+        "mixed_int4": {
+          "answer": "The mythological beast with the head of a man, the body of a lion, and the tail and feet of a dragon is called a manticore.",
+          "f1": 0.07142857142857144
+        },
+        "anchor_delta_int4": {
+          "answer": "The mythological beast with the head of a man, the body of a lion, and the tail and feet of a dragon is called a manticore.",
+          "f1": 0.07142857142857144
+        },
+        "anchor_delta_int8": {
+          "answer": "The mythological beast with the head of a man, the body of a lion, and the tail and feet of a dragon is called a manticore.",
+          "f1": 0.07142857142857144
+        },
+        "time": 4.834249019622803
+      },
+      {
+        "idx": 7,
+        "gold": "Carl Wilson",
+        "seq_len": 269,
+        "task": "triviaqa",
+        "none": {
+          "answer": "The youngest brother in the Beach Boys was Carl Wilson.",
+          "f1": 0.16666666666666669
+        },
+        "int8": {
+          "answer": "The youngest brother in the Beach Boys was Carl Wilson.",
+          "f1": 0.16666666666666669
+        },
+        "int4": {
+          "answer": "The youngest brother in the Beach Boys was Carl Wilson.",
+          "f1": 0.16666666666666669
+        },
+        "mixed_int4": {
+          "answer": "The youngest brother in the Beach Boys was Carl Wilson.",
+          "f1": 0.16666666666666669
+        },
+        "anchor_delta_int4": {
+          "answer": "The youngest brother in the Beach Boys was Carl Wilson.",
+          "f1": 0.16666666666666669
+        },
+        "anchor_delta_int8": {
+          "answer": "The youngest brother in the Beach Boys was Carl Wilson.",
+          "f1": 0.16666666666666669
+        },
+        "time": 1.929941177368164
+      },
+      {
+        "idx": 8,
+        "gold": "1930\u2019s",
+        "seq_len": 318,
+        "task": "triviaqa",
+        "none": {
+          "answer": "Stereo records first went on sale in the 1950s.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "Stereo records first went on sale in the 1950s.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "Stereo records first went on sale in the 1950s.",
+          "f1": 0.0
+        },
+        "mixed_int4": {
+          "answer": "Stereo records first went on sale in the 1950s.",
+          "f1": 0.0
+        },
+        "anchor_delta_int4": {
+          "answer": "Stereo records did not go on sale in the decade of radio broadcasting history. Stereo records became commercially available in the 1950s, which falls within the 1940s decade of radio broadcasting hist",
+          "f1": 0.0
+        },
+        "anchor_delta_int8": {
+          "answer": "Stereo records first went on sale in the 1950s.",
+          "f1": 0.0
+        },
+        "time": 3.424412250518799
+      },
+      {
+        "idx": 9,
+        "gold": "European Recovery Programme",
+        "seq_len": 267,
+        "task": "triviaqa",
+        "none": {
+          "answer": "The European Recovery Program in the 1940s was more commonly known as the Marshall Plan, after Secretary of State George Marshall.",
+          "f1": 0.16666666666666666
+        },
+        "int8": {
+          "answer": "The European Recovery Program in the 1940s was more commonly known as the Marshall Plan, after Secretary of State George Marshall.",
+          "f1": 0.16666666666666666
+        },
+        "int4": {
+          "answer": "The European Recovery Program in the 1940s was more commonly known as the Marshall Plan, after Secretary of State George Marshall.",
+          "f1": 0.16666666666666666
+        },
+        "mixed_int4": {
+          "answer": "The European Recovery Program in the 1940s was more commonly known as the Marshall Plan, after Secretary of State George Marshall.",
+          "f1": 0.16666666666666666
+        },
+        "anchor_delta_int4": {
+          "answer": "The European Recovery Program in the 1940s was more commonly known as the Marshall Plan.",
+          "f1": 0.2222222222222222
+        },
+        "anchor_delta_int8": {
+          "answer": "The European Recovery Program in the 1940s was more commonly known as the Marshall Plan, after Secretary of State George Marshall.",
+          "f1": 0.16666666666666666
+        },
+        "time": 3.936638355255127
+      },
+      {
+        "idx": 10,
+        "gold": "Masachusetts",
+        "seq_len": 251,
+        "task": "triviaqa",
+        "none": {
+          "answer": "The Isabella Stewart Gardner Museum is located in the state of Massachusetts, in the United States.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "The Isabella Stewart Gardner Museum is located in the state of Massachusetts, in the United States.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "The Isabella Stewart Gardner Museum is located in the state of Massachusetts, in the United States.",
+          "f1": 0.0
+        },
+        "mixed_int4": {
+          "answer": "The Isabella Stewart Gardner Museum is located in the state of Massachusetts, in the United States.",
+          "f1": 0.0
+        },
+        "anchor_delta_int4": {
+          "answer": "The Isabella Stewart Gardner Museum is located in the state of Massachusetts, in the United States.",
+          "f1": 0.0
+        },
+        "anchor_delta_int8": {
+          "answer": "The Isabella Stewart Gardner Museum is located in the state of Massachusetts, in the United States.",
+          "f1": 0.0
+        },
+        "time": 2.951582908630371
+      },
+      {
+        "idx": 11,
+        "gold": "Stars on 45 (Single)",
+        "seq_len": 310,
+        "task": "triviaqa",
+        "none": {
+          "answer": "Kim Carnes' nine weeks at No 1 with \"Bette Davis Eyes\" was interrupted for one week by \"Ebony and Ivory\" by Paul McCartney and Stevie Wonder.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "Kim Carnes' nine weeks at No 1 with \"Bette Davis Eyes\" was interrupted for one week by \"Ebony and Ivory\" by Paul McCartney and Stevie Wonder.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "Kim Carnes' nine weeks at No. 1 with \"Bette Davis Eyes\" was interrupted for one week by \"Ebony and Ivory\" by Paul McCartney and Stevie Wonder.",
+          "f1": 0.0
+        },
+        "mixed_int4": {
+          "answer": "Kim Carnes' nine weeks at No. 1 with \"Bette Davis Eyes\" was interrupted for one week by \"Ebony Eyes\" by Kim Carnes herself.",
+          "f1": 0.0
+        },
+        "anchor_delta_int4": {
+          "answer": "Kim Carnes' nine weeks at No 1 with \"Bette Davis Eyes\" was interrupted for one week by \"Ebony Eyes\" by Kim Carnes herself.",
+          "f1": 0.0
+        },
+        "anchor_delta_int8": {
+          "answer": "Kim Carnes' nine weeks at No 1 with \"Bette Davis Eyes\" was interrupted for one week by \"Ebony and Ivory\" by Paul McCartney and Stevie Wonder.",
+          "f1": 0.0
+        },
+        "time": 5.581504821777344
+      },
+      {
+        "idx": 12,
+        "gold": "The grand hotel",
+        "seq_len": 146,
+        "task": "triviaqa",
+        "none": {
+          "answer": "Garbo said, \"I want to be alone!\" in the movie \"Grand Hotel.\"",
+          "f1": 0.13333333333333333
+        },
+        "int8": {
+          "answer": "Garbo said, \"I want to be alone!\" in the movie \"Grand Hotel.\"",
+          "f1": 0.13333333333333333
+        },
+        "int4": {
+          "answer": "Garbo said, \"I want to be alone!\" in the movie \"Grand Hotel.\"",
+          "f1": 0.13333333333333333
+        },
+        "mixed_int4": {
+          "answer": "Garbo said, \"I want to be alone!\" in the movie \"Grand Hotel.\"",
+          "f1": 0.13333333333333333
+        },
+        "anchor_delta_int4": {
+          "answer": "Garbo said, \"I want to be alone!\" in the movie \"Grand Hotel.\"",
+          "f1": 0.13333333333333333
+        },
+        "anchor_delta_int8": {
+          "answer": "Garbo said, \"I want to be alone!\" in the movie \"Grand Hotel.\"",
+          "f1": 0.13333333333333333
+        },
+        "time": 2.8381693363189697
+      },
+      {
+        "idx": 13,
+        "gold": "Pixie dust",
+        "seq_len": 374,
+        "task": "triviaqa",
+        "none": {
+          "answer": "In Steven Spielberg's Hook (1991), Julia Roberts played the character of Wendy Darling.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "In Steven Spielberg's Hook (1991), Julia Roberts played the character of Wendy Darling. She is the younger sister of Peter Pan and becomes involved with Peter's love interest, Milly Swope, played by R",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "In Steven Spielberg's Hook (1991), Julia Roberts played the character of Wendy Darling, alongside Robin Williams as Peter Pan and Dustin Hoffman as Captain Hook.",
+          "f1": 0.0
+        },
+        "mixed_int4": {
+          "answer": "In Steven Spielberg's Hook (1991), Julia Roberts played the character of Wendy Darling, alongside Robin Williams as Peter Pan and Dustin Hoffman as Captain Hook.",
+          "f1": 0.0
+        },
+        "anchor_delta_int4": {
+          "answer": "In Steven Spielberg's 1991 film Hook, Julia Roberts played the character of Madeline \"Madge\" Swanson, the love interest of Peter Pan (played by Robin Williams).",
+          "f1": 0.0
+        },
+        "anchor_delta_int8": {
+          "answer": "In Steven Spielberg's Hook (1991), Julia Roberts played the character of Wendy Darling. She is the younger sister of Peter Pan and becomes involved with Peter's love interest, Milly Swope, played by R",
+          "f1": 0.0
+        },
+        "time": 6.152849197387695
+      },
+      {
+        "idx": 14,
+        "gold": "Mawensi",
+        "seq_len": 132,
+        "task": "triviaqa",
+        "none": {
+          "answer": "Kilimanjaro is the highest mountain in Africa and a volcano located in Tanzania.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "Kilimanjaro is the highest mountain in Africa and a volcano located in Tanzania.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "Kilimanjaro is the highest mountain in Africa and is located in Tanzania.",
+          "f1": 0.0
+        },
+        "mixed_int4": {
+          "answer": "Kilimanjaro is the highest mountain in Africa and is located in Tanzania.",
+          "f1": 0.0
+        },
+        "anchor_delta_int4": {
+          "answer": "Kilimanjaro, located in Tanzania, is the highest mountain in Africa, standing at 5,895 meters (19,341 feet) above sea level.",
+          "f1": 0.0
+        },
+        "anchor_delta_int8": {
+          "answer": "Kilimanjaro is the highest mountain in Africa and a volcano located in Tanzania.",
+          "f1": 0.0
+        },
+        "time": 3.231111764907837
+      },
+      {
+        "idx": 15,
+        "gold": "Cancer pathology",
+        "seq_len": 294,
+        "task": "triviaqa",
+        "none": {
+          "answer": "Kathleen Ferrier, a renowned contralto singer, passed away on October 8, 1953, due to tuberculosis.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "Kathleen Ferrier, a renowned contralto singer, passed away on October 8, 1953, due to tuberculosis.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "Kathleen Ferrier, a renowned contralto singer, passed away due to tuberculosis on October 8, 1953, in London, England.",
+          "f1": 0.0
+        },
+        "mixed_int4": {
+          "answer": "Kathleen Ferrier, a renowned contralto singer, passed away due to tuberculosis on October 8, 1953, in London, England.",
+          "f1": 0.0
+        },
+        "anchor_delta_int4": {
+          "answer": "Kathleen Ferrier, a renowned contralto singer, passed away on October 8, 1953, due to a lung cancer.",
+          "f1": 0.0
+        },
+        "anchor_delta_int8": {
+          "answer": "Kathleen Ferrier, a renowned contralto singer, passed away on October 8, 1953, due to tuberculosis.",
+          "f1": 0.0
+        },
+        "time": 4.908468246459961
+      },
+      {
+        "idx": 16,
+        "gold": "John Ford (1895-1973)",
+        "seq_len": 329,
+        "task": "triviaqa",
+        "none": {
+          "answer": "Ernest Haycox directed the classic 1939 western film Stagecoach, which was based on the original story by Ernest Haycox and had a screenplay by Dudley Nichols.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "Ernest Haycox directed the classic 1939 Western film Stagecoach, which was based on the original story by Ernest Haycox and had a screenplay by Dudley Nichols.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "Ernest Haycox directed the classic 1939 western film Stagecoach, with the original story by Ernest Haycox and the screenplay by Dudley Nichols.",
+          "f1": 0.0
+        },
+        "mixed_int4": {
+          "answer": "Ernest Haycox directed the classic 1939 western film Stagecoach, with the original story by Ernest Haycox and the screenplay by Dudley Nichols.",
+          "f1": 0.0
+        },
+        "anchor_delta_int4": {
+          "answer": "Ernest Haycox directed the classic 1939 western film Stagecoach.",
+          "f1": 0.0
+        },
+        "anchor_delta_int8": {
+          "answer": "Ernest Haycox directed the classic 1939 Western film, Stagecoach. He also co-wrote the original story for the film.",
+          "f1": 0.0
+        },
+        "time": 4.9036643505096436
+      },
+      {
+        "idx": 17,
+        "gold": "Rudolph (disambiguation)",
+        "seq_len": 341,
+        "task": "triviaqa",
+        "none": {
+          "answer": "President Gerald Ford's middle name was Rudolph.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "President Gerald Ford's middle name was Rudolph.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "President Gerald Ford's middle name was Rudolph.",
+          "f1": 0.0
+        },
+        "mixed_int4": {
+          "answer": "President Gerald Ford's middle name was Rudolph.",
+          "f1": 0.0
+        },
+        "anchor_delta_int4": {
+          "answer": "President Gerald Ford's middle name was Rudolph.",
+          "f1": 0.0
+        },
+        "anchor_delta_int8": {
+          "answer": "President Gerald Ford's middle name was Rudolph.",
+          "f1": 0.0
+        },
+        "time": 2.016901731491089
+      },
+      {
+        "idx": 18,
+        "gold": "Sir Elton",
+        "seq_len": 254,
+        "task": "triviaqa",
+        "none": {
+          "answer": "The most successful UK solo artist in the USA is Elton John, with over 350 million album sales in the United States alone, making him one of the best-selling music artists in the country.",
+          "f1": 0.05555555555555555
+        },
+        "int8": {
+          "answer": "The most successful UK solo artist in the USA is Elton John, with over 350 million album sales in the United States alone, making him one of the best-selling music artists in the country.",
+          "f1": 0.05555555555555555
+        },
+        "int4": {
+          "answer": "The most successful UK solo artist in the USA is Elton John, with over 35 million album sales in the United States and numerous hit songs that have reached the top of the charts.",
+          "f1": 0.05555555555555555
+        },
+        "mixed_int4": {
+          "answer": "The most successful UK solo artist in the USA is Elton John, with over 35 million album sales in the United States.",
+          "f1": 0.08333333333333334
+        },
+        "anchor_delta_int4": {
+          "answer": "The most successful UK solo artist in the USA is Elton John, who has achieved significant commercial success and popularity in the United States, making him one of the most successful British solo art",
+          "f1": 0.048780487804878044
+        },
+        "anchor_delta_int8": {
+          "answer": "The most successful UK solo artist in the USA is Elton John, with over 350 million album sales in the United States alone, making him one of the best-selling music artists in the country.",
+          "f1": 0.05555555555555555
+        },
+        "time": 5.4611146450042725
+      },
+      {
+        "idx": 19,
+        "gold": "Seymour Hersch",
+        "seq_len": 301,
+        "task": "triviaqa",
+        "none": {
+          "answer": "Seymour Hersh, a Pulitzer Prize-winning journalist for The New Yorker, first told the world about the My Lai massacre.",
+          "f1": 0.09523809523809525
+        },
+        "int8": {
+          "answer": "Seymour Hersh, a Pulitzer Prize-winning journalist for The New Yorker, first told the world about the My Lai massacre.",
+          "f1": 0.09523809523809525
+        },
+        "int4": {
+          "answer": "Seymour Hersh, a Pulitzer Prize-winning journalist for The New Yorker, first told the world about the My Lai massacre in his 1971 article, \"The Disaster at My Lai.\"",
+          "f1": 0.06666666666666667
+        },
+        "mixed_int4": {
+          "answer": "Seymour Hersh, a Pulitzer Prize-winning journalist for The New Yorker, first told the world about the My Lai massacre in his 1971 article, \"The Disaster at My Lai.\"",
+          "f1": 0.06666666666666667
+        },
+        "anchor_delta_int4": {
+          "answer": "Seymour Hersh, a Pulitzer Prize-winning journalist for The New Yorker, first told the world about the My Lai massacre through his investigative reporting.",
+          "f1": 0.08
+        },
+        "anchor_delta_int8": {
+          "answer": "Seymour Hersh, a Pulitzer Prize-winning journalist for The New Yorker, first told the world about the My Lai massacre in 1970.",
+          "f1": 0.08695652173913042
+        },
+        "time": 5.242811441421509
+      },
+      {
+        "idx": 20,
+        "gold": "Petula Clark",
+        "seq_len": 292,
+        "task": "triviaqa",
+        "none": {
+          "answer": "Petula Clark had a 60s No. 1 with \"Downtown\" in 1964.",
+          "f1": 0.3076923076923077
+        },
+        "int8": {
+          "answer": "Petula Clark had a 60s No. 1 with \"Downtown\" in 1964.",
+          "f1": 0.3076923076923077
+        },
+        "int4": {
+          "answer": "Petula Clark had a 60s No. 1 with \"Downtown\" in 1964.",
+          "f1": 0.3076923076923077
+        },
+        "mixed_int4": {
+          "answer": "Petula Clark had a 60s No. 1 with \"Downtown\" in 1964.",
+          "f1": 0.3076923076923077
+        },
+        "anchor_delta_int4": {
+          "answer": "Petula Clark had a 60s No. 1 with \"Downtown.\"",
+          "f1": 0.3636363636363636
+        },
+        "anchor_delta_int8": {
+          "answer": "Petula Clark had a 60s No. 1 with \"Downtown\" in 1964.",
+          "f1": 0.3076923076923077
+        },
+        "time": 3.6087911128997803
+      },
+      {
+        "idx": 21,
+        "gold": "All In The Family",
+        "seq_len": 272,
+        "task": "triviaqa",
+        "none": {
+          "answer": "The 70s show inspired by the British show Till Death Us Do Part is \"Days Like These.\"",
+          "f1": 0.09523809523809523
+        },
+        "int8": {
+          "answer": "The 70s show \"Till Death Us Do Part\" was adapted into the British sitcom \"Days Like These,\" which was inspired by the American show \"The Jeffersons.\"",
+          "f1": 0.06666666666666668
+        },
+        "int4": {
+          "answer": "The 70s show \"Till Death Us Do Part\" was adapted into the American sitcom \"The Jeffersons,\" which was inspired by the British show \"Days Like These.\"",
+          "f1": 0.06666666666666668
+        },
+        "mixed_int4": {
+          "answer": "The 70s show \"Till Death Us Do Part\" was adapted into the American sitcom \"The Jeffersons,\" which was inspired by the British show \"Days Like These.\"",
+          "f1": 0.06666666666666668
+        },
+        "anchor_delta_int4": {
+          "answer": "The 70s show, also known as \"The Thick of It,\" was based on the British show \"Till Death Us Do Part.\"",
+          "f1": 0.08
+        },
+        "anchor_delta_int8": {
+          "answer": "The 70s show inspired by the British show Till Death Us Do Part is \"Days Like These.\"",
+          "f1": 0.09523809523809523
+        },
+        "time": 4.763914108276367
+      },
+      {
+        "idx": 22,
+        "gold": "Hendrix",
+        "seq_len": 162,
+        "task": "triviaqa",
+        "none": {
+          "answer": "Jimi Hendrix set fire to his guitar at the Monterey Pop festival in 1967.",
+          "f1": 0.13333333333333333
+        },
+        "int8": {
+          "answer": "Jimi Hendrix set fire to his guitar at the Monterey Pop festival in 1967.",
+          "f1": 0.13333333333333333
+        },
+        "int4": {
+          "answer": "Jimi Hendrix set fire to his guitar at the Monterey Pop Festival in 1967.",
+          "f1": 0.13333333333333333
+        },
+        "mixed_int4": {
+          "answer": "Jimi Hendrix set fire to his guitar at the Monterey Pop Festival in 1967.",
+          "f1": 0.13333333333333333
+        },
+        "anchor_delta_int4": {
+          "answer": "Jimi Hendrix set fire to his guitar at the Monterey Pop Festival in 1967.",
+          "f1": 0.13333333333333333
+        },
+        "anchor_delta_int8": {
+          "answer": "Jimi Hendrix set fire to his guitar at the Monterey Pop festival in 1967.",
+          "f1": 0.13333333333333333
+        },
+        "time": 3.119293689727783
+      },
+      {
+        "idx": 23,
+        "gold": "Hess, Rudolf",
+        "seq_len": 305,
+        "task": "triviaqa",
+        "none": {
+          "answer": "The last inmate of Spandau jail in Berlin was Rudolf Hess. He spent the last four decades of his life there, passing away in 1987.",
+          "f1": 0.07407407407407407
+        },
+        "int8": {
+          "answer": "The last inmate of Spandau jail in Berlin was Rudolf Hess. He spent the last four decades of his life there, passing away in 1987.",
+          "f1": 0.07407407407407407
+        },
+        "int4": {
+          "answer": "The last inmate of Spandau jail in Berlin was Rudolf Hess, who spent the last four decades of his life there.",
+          "f1": 0.17391304347826084
+        },
+        "mixed_int4": {
+          "answer": "The last inmate of Spandau jail in Berlin was Rudolf Hess, who spent the last four decades of his life there.",
+          "f1": 0.17391304347826084
+        },
+        "anchor_delta_int4": {
+          "answer": "The last inmate of Spandau jail in Berlin was Rudolf Hess. He spent the last four decades of his life there, passing away in 1987.",
+          "f1": 0.07407407407407407
+        },
+        "anchor_delta_int8": {
+          "answer": "The last inmate of Spandau jail in Berlin was Rudolf Hess. He spent the last four decades of his life there, passing away in 1987.",
+          "f1": 0.07407407407407407
+        },
+        "time": 4.783578157424927
+      },
+      {
+        "idx": 24,
+        "gold": "\u65e5\u672c\u570b",
+        "seq_len": 329,
+        "task": "triviaqa",
+        "none": {
+          "answer": "Kagoshima International Airport is in Japan.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "Kagoshima International Airport is in Japan.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "Kagoshima International Airport is in Japan.",
+          "f1": 0.0
+        },
+        "mixed_int4": {
+          "answer": "Kagoshima International Airport is in Japan.",
+          "f1": 0.0
+        },
+        "anchor_delta_int4": {
+          "answer": "Kagoshima International Airport is in Japan.",
+          "f1": 0.0
+        },
+        "anchor_delta_int8": {
+          "answer": "Kagoshima International Airport is in Japan.",
+          "f1": 0.0
+        },
+        "time": 1.8763036727905273
+      },
+      {
+        "idx": 25,
+        "gold": "In 1912, in Stockholm",
+        "seq_len": 327,
+        "task": "triviaqa",
+        "none": {
+          "answer": "Electric timing devices and a public-address system were used for the first time in the 1900 Paris Olympics.",
+          "f1": 0.0909090909090909
+        },
+        "int8": {
+          "answer": "Electric timing devices and a public-address system were used for the first time in the 1900 Paris Olympics.",
+          "f1": 0.0909090909090909
+        },
+        "int4": {
+          "answer": "Electric timing devices and a public-address system were used for the first time in the 1900 Paris Olympics.",
+          "f1": 0.0909090909090909
+        },
+        "mixed_int4": {
+          "answer": "Electric timing devices and a public-address system were used for the first time in the 1900 Paris Olympics.",
+          "f1": 0.0909090909090909
+        },
+        "anchor_delta_int4": {
+          "answer": "Electric timing devices and a public-address system were first used in the 1904 St. Louis Olympics.",
+          "f1": 0.1
+        },
+        "anchor_delta_int8": {
+          "answer": "Electric timing devices and a public-address system were used for the first time in the 1900 Paris Olympics.",
+          "f1": 0.0909090909090909
+        },
+        "time": 3.8922665119171143
+      },
+      {
+        "idx": 26,
+        "gold": "Dick Dawson",
+        "seq_len": 274,
+        "task": "triviaqa",
+        "none": {
+          "answer": "Richard Dawson first hosted Family Feud, serving as the show's original host from 1976 through 1985, and returning for a single season in 1994.",
+          "f1": 0.07692307692307693
+        },
+        "int8": {
+          "answer": "Richard Dawson first hosted Family Feud, serving as the show's original host from 1976 through 1985, and returning for a single season in 1994.",
+          "f1": 0.07692307692307693
+        },
+        "int4": {
+          "answer": "Richard Dawson first hosted Family Feud, beginning in 1976 and continuing until 1985, with a single season return in 1994.",
+          "f1": 0.09090909090909091
+        },
+        "mixed_int4": {
+          "answer": "Richard Dawson first hosted Family Feud, beginning in 1976 and continuing until 1985, with a single season return in 1994.",
+          "f1": 0.09090909090909091
+        },
+        "anchor_delta_int4": {
+          "answer": "Richard Dawson first hosted Family Feud.",
+          "f1": 0.25
+        },
+        "anchor_delta_int8": {
+          "answer": "Richard Dawson first hosted Family Feud, serving as the show's original host from 1976 through 1985, and returning for a single season in 1994.",
+          "f1": 0.07692307692307693
+        },
+        "time": 4.9208314418792725
+      },
+      {
+        "idx": 27,
+        "gold": "L\u00e8ine bh\u00e0n",
+        "seq_len": 296,
+        "task": "triviaqa",
+        "none": {
+          "answer": "The Lone Ranger's title \"Kemo Sabe\" is believed to mean \"faithful friend\" in Apache. This interpretation comes from an episode in which Tonto helps a wounded Texas Ranger, and they recognize each othe",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "The Lone Ranger's title \"Kemo Sabe\" is believed to mean \"faithful friend\" in Apache. This interpretation comes from an episode in which Tonto helps a wounded Texas Ranger, and they recognize each othe",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "The Lone Ranger's title \"Kemo Sabe\" is believed to mean \"faithful friend\" in Apache. This interpretation is derived from an episode in which Tonto helps a wounded Texas Ranger and they recognize each ",
+          "f1": 0.0
+        },
+        "mixed_int4": {
+          "answer": "The Lone Ranger's title \"Kemo Sabe\" is believed to mean \"faithful friend\" in Apache. This interpretation is derived from an episode in which Tonto helps a wounded Texas Ranger and they recognize each ",
+          "f1": 0.0
+        },
+        "anchor_delta_int4": {
+          "answer": "The Lone Ranger's title \"Kemo Sabe\" is believed to mean \"faithful friend\" in Apache. This interpretation comes from the episode where Tonto helps a wounded Texas Ranger, and they recognize each other ",
+          "f1": 0.0
+        },
+        "anchor_delta_int8": {
+          "answer": "The Lone Ranger's title \"Kemo Sabe\" is believed to mean \"faithful friend\" in Apache. This interpretation comes from an episode in which Tonto helps a wounded Texas Ranger, and they recognize each othe",
+          "f1": 0.0
+        },
+        "time": 7.816817998886108
+      },
+      {
+        "idx": 28,
+        "gold": "48 time",
+        "seq_len": 260,
+        "task": "triviaqa",
+        "none": {
+          "answer": "Eddie Murphy's first movie was \"Eddie Murphy Delirious,\" a stand-up comedy special released in 1983.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "Eddie Murphy's first movie was \"Eddie Murphy Delirious,\" a stand-up comedy special released in 1983.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "Eddie Murphy's first movie was \"Eddie Murphy Delirious,\" a stand-up comedy special released in 1983.",
+          "f1": 0.0
+        },
+        "mixed_int4": {
+          "answer": "Eddie Murphy's first movie was \"Eddie Murphy Delirious,\" a stand-up comedy special released in 1983.",
+          "f1": 0.0
+        },
+        "anchor_delta_int4": {
+          "answer": "Eddie Murphy's first movie was \"Eddie Murphy Delirious,\" a stand-up comedy special released in 1983.",
+          "f1": 0.0
+        },
+        "anchor_delta_int8": {
+          "answer": "Eddie Murphy's first movie was \"Eddie Murphy Delirious,\" a stand-up comedy special released in 1983.",
+          "f1": 0.0
+        },
+        "time": 4.725011825561523
+      },
+      {
+        "idx": 29,
+        "gold": "10",
+        "seq_len": 296,
+        "task": "triviaqa",
+        "none": {
+          "answer": "Jimmy Connors won 8 tennis Grand Slam titles.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "Jimmy Connors won 8 tennis Grand Slam titles.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "Jimmy Connors won 8 tennis Grand Slam titles.",
+          "f1": 0.0
+        },
+        "mixed_int4": {
+          "answer": "Jimmy Connors won 8 tennis Grand Slam titles.",
+          "f1": 0.0
+        },
+        "anchor_delta_int4": {
+          "answer": "Jimmy Connors won 8 tennis Grand Slam titles.",
+          "f1": 0.0
+        },
+        "anchor_delta_int8": {
+          "answer": "Jimmy Connors won 8 tennis Grand Slam titles.",
+          "f1": 0.0
+        },
+        "time": 2.088589906692505
+      }
+    ],
+    "hotpotqa": [
+      {
+        "idx": 0,
+        "gold": "sovereignty",
+        "seq_len": 426,
+        "task": "hotpotqa",
+        "none": {
+          "answer": "The Battle of Adwa in 1896 secured Ethiopia's independence from Italian colonial rule.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "The Battle of Adwa in 1896 secured Ethiopia's independence from Italian colonial rule.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "The Battle of Adwa in 1896 secured Ethiopia's independence from Italy, ensuring that Ethiopia would not be colonized by the Italian Empire. This victory marked the first successful indigenous African ",
+          "f1": 0.0
+        },
+        "mixed_int4": {
+          "answer": "The Battle of Adwa in 1896 secured Ethiopia's independence from Italy for Ethiopia.",
+          "f1": 0.0
+        },
+        "anchor_delta_int4": {
+          "answer": "The Battle of Adwa in 1896 secured Ethiopia's independence from Italy.",
+          "f1": 0.0
+        },
+        "anchor_delta_int8": {
+          "answer": "The Battle of Adwa in 1896 secured Ethiopia's independence from Italy.",
+          "f1": 0.0
+        },
+        "time": 4.036870002746582
+      },
+      {
+        "idx": 1,
+        "gold": "Badly Drawn Boy",
+        "seq_len": 418,
+        "task": "hotpotqa",
+        "none": {
+          "answer": "Badly Drawn Boy typically has a higher instrument-to-person ratio compared to Wolf Alice. Badly Drawn Boy is an English alternative music singer/songwriter known for his intricate guitar work and mini",
+          "f1": 0.11538461538461538
+        },
+        "int8": {
+          "answer": "Badly Drawn Boy typically has a higher instrument-to-person ratio compared to Wolf Alice. Badly Drawn Boy is an English alternative music singer/songwriter known for his intricate guitar work and mini",
+          "f1": 0.11538461538461538
+        },
+        "int4": {
+          "answer": "Badly Drawn Boy typically has a higher instrument-to-person ratio compared to Wolf Alice. Badly Drawn Boy is an acoustic-driven band with Damon Gough playing multiple instruments, while Wolf Alice fea",
+          "f1": 0.11538461538461538
+        },
+        "mixed_int4": {
+          "answer": "Badly Drawn Boy typically has a higher instrument-to-person ratio compared to Wolf Alice. Badly Drawn Boy is an acoustic-driven band with Damon Gough playing multiple instruments, while Wolf Alice fea",
+          "f1": 0.11538461538461538
+        },
+        "anchor_delta_int4": {
+          "answer": "Badly Drawn Boy typically has a higher instrument-to-person ratio compared to Wolf Alice. Badly Drawn Boy often performs with a full band, featuring multiple instruments such as guitars, keyboards, an",
+          "f1": 0.125
+        },
+        "anchor_delta_int8": {
+          "answer": "Badly Drawn Boy typically has a higher instrument-to-person ratio compared to Wolf Alice. Badly Drawn Boy is an English alternative music singer/songwriter known for his intricate guitar work and mini",
+          "f1": 0.11764705882352941
+        },
+        "time": 8.803296089172363
+      },
+      {
+        "idx": 2,
+        "gold": "no",
+        "seq_len": 471,
+        "task": "hotpotqa",
+        "none": {
+          "answer": "Yes, both Cypress and Ajuga are genera. Cypress belongs to the Cupressaceae family, while Ajuga belongs to the Ajuga family, also known as the bugloss or bugloss family, Boraginaceae.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "Yes, both Cypress and Ajuga are genera. Cypress belongs to the Cupressaceae family, while Ajuga belongs to the Ajuga family, also known as the bugloss or bugloss family, Boraginaceae.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "Yes, both Cypress and Ajuga are genera. Cypress belongs to the Cupressaceae family, while Ajuga belongs to the Ajuga family (Ajugaceae).",
+          "f1": 0.0
+        },
+        "mixed_int4": {
+          "answer": "Yes, both Cypress and Ajuga are genera. Cypress belongs to the Cupressaceae family, while Ajuga belongs to the Ajuga family (Ajugaceae).",
+          "f1": 0.0
+        },
+        "anchor_delta_int4": {
+          "answer": "Yes, both Cypress and Ajuga are genera. Cypress refers to the Cupressaceae family, which includes genera like Cypress (Cupressus) and Fokienia. Ajuga belongs to the Ajuga or Buglossaceae family, with ",
+          "f1": 0.0
+        },
+        "anchor_delta_int8": {
+          "answer": "Yes, both Cypress and Ajuga are genera. Cypress belongs to the Cupressaceae family, while Ajuga belongs to the Ajuga family within the family Lamiaceae.",
+          "f1": 0.0
+        },
+        "time": 7.400339126586914
+      },
+      {
+        "idx": 3,
+        "gold": "Apalachees",
+        "seq_len": 352,
+        "task": "hotpotqa",
+        "none": {
+          "answer": "Alvaro Mexia had a diplomatic mission with the Guarani tribe of indigenous people.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "Alvaro Mexia had a diplomatic mission with the Guarani tribe of indigenous people.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "Alvaro Mexia had a diplomatic mission with the Tupi-Guarani tribe of indigenous people.",
+          "f1": 0.0
+        },
+        "mixed_int4": {
+          "answer": "Alvaro Mexia had a diplomatic mission with the Tupi-Guarani tribe of indigenous people.",
+          "f1": 0.0
+        },
+        "anchor_delta_int4": {
+          "answer": "Alvaro Mexia had a diplomatic mission with the Guarani tribe of indigenous people.",
+          "f1": 0.0
+        },
+        "anchor_delta_int8": {
+          "answer": "Alvaro Mexia had a diplomatic mission with the Guarani tribe of indigenous people.",
+          "f1": 0.0
+        },
+        "time": 3.2190210819244385
+      },
+      {
+        "idx": 4,
+        "gold": "yes",
+        "seq_len": 447,
+        "task": "hotpotqa",
+        "none": {
+          "answer": "No, Scott Derrickson and Ed Wood were not of the same nationality. Scott Derrickson is an American filmmaker and actor, born in 1972. Ed Wood, on the other hand, was an American filmmaker and actor kn",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "No, Scott Derrickson and Ed Wood were not of the same nationality. Scott Derrickson is an American filmmaker and actor, born in Provo, Utah, USA, while Ed Wood was an American filmmaker known for his ",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "No, Scott Derrickson and Ed Wood were not of the same nationality. Scott Derrickson is an American filmmaker and actor, born in the United States. Ed Wood, on the other hand, was a famous American fil",
+          "f1": 0.0
+        },
+        "mixed_int4": {
+          "answer": "No, Scott Derrickson and Ed Wood were not of the same nationality. Scott Derrickson is an American filmmaker and actor, born in the United States. Ed Wood, on the other hand, was an American filmmaker",
+          "f1": 0.0
+        },
+        "anchor_delta_int4": {
+          "answer": "No, Scott Derrickson and Ed Wood were not of the same nationality. Scott Derrickson is an American filmmaker, born in 1972, while Ed Wood was an American filmmaker as well, but he was born in 1914. De",
+          "f1": 0.0
+        },
+        "anchor_delta_int8": {
+          "answer": "No, Scott Derrickson and Ed Wood were not of the same nationality. Scott Derrickson is an American filmmaker and actor, born in Provo, Utah, USA, while Ed Wood was an American filmmaker known for his ",
+          "f1": 0.0
+        },
+        "time": 8.858272314071655
+      },
+      {
+        "idx": 5,
+        "gold": "Henry J. Kaiser",
+        "seq_len": 404,
+        "task": "hotpotqa",
+        "none": {
+          "answer": "Kaiser Ventures corporation was founded by Henry J. Kaiser, who became known as the father of modern American shipbuilding.",
+          "f1": 0.2727272727272727
+        },
+        "int8": {
+          "answer": "Kaiser Ventures corporation was founded by Henry J. Kaiser, who became known as the father of modern American shipbuilding.",
+          "f1": 0.2727272727272727
+        },
+        "int4": {
+          "answer": "Kaiser Ventures corporation was founded by Henry J. Kaiser, who became known as the father of modern American shipbuilding.",
+          "f1": 0.2727272727272727
+        },
+        "mixed_int4": {
+          "answer": "Kaiser Ventures corporation was founded by Henry J. Kaiser, who became known as the father of modern American shipbuilding.",
+          "f1": 0.2727272727272727
+        },
+        "anchor_delta_int4": {
+          "answer": "Kaiser Ventures corporation was founded by Henry J. Kaiser, who became known as the father of modern American shipbuilding.",
+          "f1": 0.2727272727272727
+        },
+        "anchor_delta_int8": {
+          "answer": "Kaiser Ventures corporation was founded by Henry J. Kaiser, who became known as the father of modern American shipbuilding.",
+          "f1": 0.2727272727272727
+        },
+        "time": 4.110051870346069
+      },
+      {
+        "idx": 6,
+        "gold": "1962",
+        "seq_len": 426,
+        "task": "hotpotqa",
+        "none": {
+          "answer": "Hiromu Arakawa, the writer and illustrator of the Japanese manga series Silver Spoon, was born in 1973.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "Hiromu Arakawa, the writer and illustrator of the Japanese manga series Silver Spoon, was born in 1973.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "Hiromu Arakawa, the writer and illustrator of the Japanese manga series Silver Spoon, was born in 1969.",
+          "f1": 0.0
+        },
+        "mixed_int4": {
+          "answer": "Hiromu Arakawa, the writer and illustrator of the Japanese manga series Silver Spoon, was born in 1969.",
+          "f1": 0.0
+        },
+        "anchor_delta_int4": {
+          "answer": "Hiromu Arakawa, the writer and illustrator of the Japanese manga series Silver Spoon, was born in 1969.",
+          "f1": 0.0
+        },
+        "anchor_delta_int8": {
+          "answer": "Hiromu Arakawa, the writer and illustrator of the Japanese manga series Silver Spoon, was born in 1973.",
+          "f1": 0.0
+        },
+        "time": 4.692370891571045
+      },
+      {
+        "idx": 7,
+        "gold": "Carabao Cup",
+        "seq_len": 438,
+        "task": "hotpotqa",
+        "none": {
+          "answer": "The 2017-18 Wigan Athletic F.C. season will be a year in which the team competes in the league cup known as the First Citizens Cup for sponsorship reasons.",
+          "f1": 0.06666666666666667
+        },
+        "int8": {
+          "answer": "The 2017-18 Wigan Athletic F.C. season will be a year in which the team competes in the league cup known as the First Citizens Cup for sponsorship reasons.",
+          "f1": 0.06666666666666667
+        },
+        "int4": {
+          "answer": "The 2017-18 Wigan Athletic F.C. season will be a year in which the team competes in the league cup known as the First Citizens Cup for sponsorship reasons.",
+          "f1": 0.06666666666666667
+        },
+        "mixed_int4": {
+          "answer": "The 2017-18 Wigan Athletic F.C. season will be a year in which the team competes in the league cup known as the First Citizens Cup for sponsorship reasons.",
+          "f1": 0.06666666666666667
+        },
+        "anchor_delta_int4": {
+          "answer": "The 2017-18 Wigan Athletic F.C. season will see the team competing in the league cup known as the First Citizens Cup for sponsorship reasons.",
+          "f1": 0.07692307692307693
+        },
+        "anchor_delta_int8": {
+          "answer": "The 2017-18 Wigan Athletic F.C. season will be a year in which the team competes in the league cup known as the First Citizens Cup for sponsorship reasons.",
+          "f1": 0.06666666666666667
+        },
+        "time": 5.884479761123657
+      },
+      {
+        "idx": 8,
+        "gold": "David Weissman",
+        "seq_len": 494,
+        "task": "hotpotqa",
+        "none": {
+          "answer": "David Diamond and David Weissman co-wrote the film \"The Family Man\" starring Nicolas Cage and T\u00e9a Leoni, and they have credits for the 2001 science fiction film \"Evolution.\"",
+          "f1": 0.13333333333333333
+        },
+        "int8": {
+          "answer": "David Diamond and David Weissman co-wrote the film \"The Family Man\" starring Nicolas Cage and T\u00e9a Leoni, and they have credits for the movie \"Evolution.\"",
+          "f1": 0.14814814814814814
+        },
+        "int4": {
+          "answer": "David Weissman, who has credits for \"Evolution,\" co-wrote the film \"The Family Man\" starring Nicolas Cage and T\u00e9a Leoni.",
+          "f1": 0.09523809523809525
+        },
+        "mixed_int4": {
+          "answer": "David Weissman, who has credits for \"Evolution,\" co-wrote the film \"The Family Man\" starring Nicolas Cage and T\u00e9a Leoni.",
+          "f1": 0.09523809523809525
+        },
+        "anchor_delta_int4": {
+          "answer": "David Diamond and David Weissman, the screenwriters for \"Evolution,\" co-wrote a film starring Nicolas Cage and T\u00e9a Leoni, which is \"The Family Man.\"",
+          "f1": 0.08
+        },
+        "anchor_delta_int8": {
+          "answer": "David Diamond and David Weissman co-wrote the film \"The Family Man\" starring Nicolas Cage and T\u00e9a Leoni, and they have credits for the 2001 science fiction film \"Evolution.\"",
+          "f1": 0.13333333333333333
+        },
+        "time": 6.187544822692871
+      },
+      {
+        "idx": 9,
+        "gold": "Organizations could come together to address global issues",
+        "seq_len": 432,
+        "task": "hotpotqa",
+        "none": {
+          "answer": "A former Soviet statesman, Ephraim Sklyansky, initiated a technical information tour of Germany, France, and the United States. This tour was aimed at acquiring technical knowledge and expertise to im",
+          "f1": 0.04081632653061225
+        },
+        "int8": {
+          "answer": "A former Soviet statesman, Ephraim Sklyansky, initiated a technical information tour of Germany, France, and the United States. This tour was aimed at acquiring technical knowledge and expertise to im",
+          "f1": 0.04081632653061225
+        },
+        "int4": {
+          "answer": "A former Soviet statesman, Ephraim Sklyansky, initiated a technical information exchange forum during his tour of Germany, France, and the United States in 1924. This forum aimed to acquire technical ",
+          "f1": 0.03773584905660377
+        },
+        "mixed_int4": {
+          "answer": "A former Soviet statesman, Ephraim Sklyansky, initiated a technical information exchange forum during his tour of Germany, France, and the United States in 1924. This forum aimed to acquire technical ",
+          "f1": 0.03773584905660377
+        },
+        "anchor_delta_int4": {
+          "answer": "A former Soviet statesman, Ephraim Sklyansky, initiated a technical information forum during his time as chairman of the Mossukno state textile trust. This forum involved a tour of Germany, France, an",
+          "f1": 0.03636363636363636
+        },
+        "anchor_delta_int8": {
+          "answer": "A former Soviet statesman, Ephraim Sklyansky, initiated a technical information tour of Germany, France, and the United States. This tour was aimed at acquiring technical knowledge and expertise to im",
+          "f1": 0.04081632653061225
+        },
+        "time": 8.241843938827515
+      },
+      {
+        "idx": 10,
+        "gold": "250 million",
+        "seq_len": 462,
+        "task": "hotpotqa",
+        "none": {
+          "answer": "The specific number of copies sold for Roald Dahl's variation on a popular anecdote, \"The Great Automatic Grammatizator,\" which was included in the 1953 collection \"Someone Like You,\" is not available",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "The specific number of copies sold for Roald Dahl's variation on a popular anecdote, such as \"Lionel Moon,\" is not provided in the given context.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "The specific number of copies sold for Roald Dahl's variation on a popular anecdote, \"The Great Automatic Grammatizator,\" is not mentioned in the provided context.",
+          "f1": 0.0
+        },
+        "mixed_int4": {
+          "answer": "The specific number of copies sold for Roald Dahl's variation on a popular anecdote, \"The Great Automatic Grammatizator,\" is not mentioned in the provided context.",
+          "f1": 0.0
+        },
+        "anchor_delta_int4": {
+          "answer": "The information provided does not specify the exact number of copies sold for Roald Dahl's variation on a popular anecdote.",
+          "f1": 0.0
+        },
+        "anchor_delta_int8": {
+          "answer": "The specific number of copies sold for Roald Dahl's variation on a popular anecdote, \"The Great Automatic Grammatizator,\" which was included in the 1953 collection \"Someone Like You,\" is not available",
+          "f1": 0.0
+        },
+        "time": 6.443064451217651
+      },
+      {
+        "idx": 11,
+        "gold": "no",
+        "seq_len": 372,
+        "task": "hotpotqa",
+        "none": {
+          "answer": "No, both Elko Regional Airport and Gerald R. Ford International Airport are not located in Michigan. Elko Regional Airport is in Elko, Nevada, while Gerald R. Ford International Airport, also known as",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "No, both Elko Regional Airport and Gerald R. Ford International Airport are not located in Michigan. Elko Regional Airport is in Elko, Nevada, while Gerald R. Ford International Airport, also known as",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "No, both Elko Regional Airport and Gerald R. Ford International Airport are not located in Michigan. Elko Regional Airport is in Elko, Nevada, while Gerald R. Ford International Airport, also known as",
+          "f1": 0.0
+        },
+        "mixed_int4": {
+          "answer": "No, both Elko Regional Airport and Gerald R. Ford International Airport are not located in Michigan. Elko Regional Airport is in Elko, Nevada, while Gerald R. Ford International Airport, also known as",
+          "f1": 0.0
+        },
+        "anchor_delta_int4": {
+          "answer": "No, both Elko Regional Airport and Gerald R. Ford International Airport are not located in Michigan. Elko Regional Airport is in Elko, Nevada, while Gerald R. Ford International Airport is in Washingt",
+          "f1": 0.0
+        },
+        "anchor_delta_int8": {
+          "answer": "No, both Elko Regional Airport and Gerald R. Ford International Airport are not located in Michigan. Elko Regional Airport is in Elko, Nevada, while Gerald R. Ford International Airport, also known as",
+          "f1": 0.0
+        },
+        "time": 7.809788227081299
+      },
+      {
+        "idx": 12,
+        "gold": "shortest player ever to play in the National Basketball Association",
+        "seq_len": 407,
+        "task": "hotpotqa",
+        "none": {
+          "answer": "The former NBA player who held these distinctions is Michael Jordan. During the 1992-93 NBA season, Michael Jordan played for the Charlotte Hornets before leaving the league to pursue a brief retireme",
+          "f1": 0.13114754098360654
+        },
+        "int8": {
+          "answer": "The former NBA player who held these distinctions is Michael Jordan. During the 1992-93 NBA season, Michael Jordan played for the Charlotte Hornets before leaving the league to pursue a brief retireme",
+          "f1": 0.13114754098360654
+        },
+        "int4": {
+          "answer": "The former NBA player who held these distinctions is Michael Jordan. During the 1992-93 NBA season, Michael Jordan played for the Charlotte Hornets before joining the Chicago Bulls as a player-coach. ",
+          "f1": 0.10526315789473684
+        },
+        "mixed_int4": {
+          "answer": "The former NBA player who held these distinctions is Michael Jordan. During the 1992-93 NBA season, Michael Jordan played for the Charlotte Hornets before joining the Chicago Bulls as a player-coach. ",
+          "f1": 0.10526315789473684
+        },
+        "anchor_delta_int4": {
+          "answer": "The distinction held by the former NBA player who was a member of the Charlotte Hornets during their 1992-93 season and was head coach for the WNBA team Charlotte Sting is being the first woman to ser",
+          "f1": 0.12903225806451613
+        },
+        "anchor_delta_int8": {
+          "answer": "The former NBA player who held these distinctions is Michael Jordan. During the 1992-93 NBA season, Michael Jordan played for the Charlotte Hornets before leaving the league to pursue a brief retireme",
+          "f1": 0.13114754098360654
+        },
+        "time": 8.882752418518066
+      },
+      {
+        "idx": 13,
+        "gold": "no",
+        "seq_len": 402,
+        "task": "hotpotqa",
+        "none": {
+          "answer": "No, the drinks Gibson and Zurracapote do not both contain gin. The Gibson is a mixed drink made with gin and vermouth, while Zurracapote is a Spanish liqueur made from a blend of brandy, apricot brand",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "No, the drinks Gibson and Zurracapote do not both contain gin. The Gibson is a mixed drink made with gin and vermouth, while Zurracapote is a Spanish liqueur made from a blend of fruits, including ora",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "No, the drinks Gibson and Zurracapote do not both contain gin. The Gibson is a mixed drink made with gin and vermouth, while Zurracapote is a Spanish liqueur made from a blend of brandy, apricot brand",
+          "f1": 0.0
+        },
+        "mixed_int4": {
+          "answer": "No, the drinks Gibson and Zurracapote do not both contain gin. The Gibson is a mixed drink made with gin and vermouth, while Zurracapote is a Spanish liqueur made from a blend of brandy, apricot brand",
+          "f1": 0.0
+        },
+        "anchor_delta_int4": {
+          "answer": "No, the drinks Gibson and Zurracapote do not both contain gin. The Gibson is a mixed drink made with gin and vermouth, while Zurracapote is a wine-based drink from the Canary Islands, Spain, made from",
+          "f1": 0.0
+        },
+        "anchor_delta_int8": {
+          "answer": "No, the drinks Gibson and Zurracapote do not both contain gin. The Gibson is a mixed drink made with gin and vermouth, while Zurracapote is a Spanish liqueur made from a blend of fruits, including ora",
+          "f1": 0.0
+        },
+        "time": 8.582543849945068
+      },
+      {
+        "idx": 14,
+        "gold": "no",
+        "seq_len": 326,
+        "task": "hotpotqa",
+        "none": {
+          "answer": "Yes, both the Random House Tower and 888 7th Avenue are used for real estate purposes. The Random House Tower is a skyscraper located in New York City, housing various businesses and offices. 888 7th ",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "Yes, both the Random House Tower and 888 7th Avenue are used for real estate purposes. The Random House Tower is a skyscraper located in New York City, housing various businesses and organizations. 88",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "Yes, both the Random House Tower and 888 7th Avenue are used for real estate purposes. The Random House Tower is a skyscraper located in New York City, housing various businesses and organizations. 88",
+          "f1": 0.0
+        },
+        "mixed_int4": {
+          "answer": "Yes, both the Random House Tower and 888 7th Avenue are used for real estate purposes. The Random House Tower is a skyscraper located in New York City, housing various businesses and organizations. 88",
+          "f1": 0.0
+        },
+        "anchor_delta_int4": {
+          "answer": "Yes, both the Random House Tower and 888 7th Avenue are used for real estate purposes. The Random House Tower is a skyscraper located in New York City, housing the headquarters of Random House, a majo",
+          "f1": 0.0
+        },
+        "anchor_delta_int8": {
+          "answer": "Yes, both the Random House Tower and 888 7th Avenue are used for real estate purposes. The Random House Tower is a skyscraper located in New York City, housing various businesses and offices. 888 7th ",
+          "f1": 0.0
+        },
+        "time": 8.662957668304443
+      },
+      {
+        "idx": 15,
+        "gold": "YG Entertainment",
+        "seq_len": 487,
+        "task": "hotpotqa",
+        "none": {
+          "answer": "SF9 is the South Korean boy group whose debut album \"2014 Summer Special Issue\" was formed by FNC Entertainment.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "SF9 is the South Korean boy group whose debut album \"2014 Summer Special Issue\" was formed by FNC Entertainment.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "SF9 is the South Korean boy group that released their debut album \"2014 Summer Special Issue\". They were formed by FNC Entertainment.",
+          "f1": 0.0
+        },
+        "mixed_int4": {
+          "answer": "SF9 is the South Korean boy group that released their debut album \"2014 Summer Special Issue\". They were formed by FNC Entertainment.",
+          "f1": 0.0
+        },
+        "anchor_delta_int4": {
+          "answer": "SF9's debut album, \"2014 Summer Special,\" is the debut album of South Korean boy group SF9, which was formed by FNC Entertainment.",
+          "f1": 0.0
+        },
+        "anchor_delta_int8": {
+          "answer": "SF9's debut album \"2014 Summer Special Issue\" was released by the South Korean boy group formed by FNC Entertainment.",
+          "f1": 0.0
+        },
+        "time": 4.674483060836792
+      },
+      {
+        "idx": 16,
+        "gold": "Robert Erskine Childers DSC",
+        "seq_len": 432,
+        "task": "hotpotqa",
+        "none": {
+          "answer": "Robert Erskine Childers was from England. Although he was born in Ireland, his family had strong connections to England, as his father, Erskine Hamilton Childers, was the fourth President of Ireland, ",
+          "f1": 0.125
+        },
+        "int8": {
+          "answer": "Robert Erskine Childers was from England, as he was an Irish writer with a significant connection to England through his family's involvement in Irish nationalism and his grandfather's execution durin",
+          "f1": 0.15789473684210525
+        },
+        "int4": {
+          "answer": "Robert Erskine Childers was from England, as he was an Irish writer with a significant connection to English culture and history through his family's involvement with the negotiation of Irish independ",
+          "f1": 0.10526315789473685
+        },
+        "mixed_int4": {
+          "answer": "Robert Erskine Childers was from England, as he was an Irish writer with a significant connection to England through his family's involvement in the negotiation of Irish independence and his grandfath",
+          "f1": 0.11538461538461539
+        },
+        "anchor_delta_int4": {
+          "answer": "Robert Erskine Childers was from England, as he was an Irish writer and BBC correspondent who had a significant connection to England through his family's involvement in Irish nationalism and his own ",
+          "f1": 0.1276595744680851
+        },
+        "anchor_delta_int8": {
+          "answer": "Robert Erskine Childers was from England, as he was an Irish writer with a significant connection to England through his family's involvement in Irish nationalism and his grandfather's execution durin",
+          "f1": 0.15789473684210525
+        },
+        "time": 7.774979591369629
+      },
+      {
+        "idx": 17,
+        "gold": "2000",
+        "seq_len": 423,
+        "task": "hotpotqa",
+        "none": {
+          "answer": "Poison's album \"Shut Up, Make Love\" was released in 1991.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "Poison's album \"Shut Up, Make Love\" was released in 1991.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "Poison's album \"Shut Up, Make Love\" was released in 1991.",
+          "f1": 0.0
+        },
+        "mixed_int4": {
+          "answer": "Poison's album \"Shut Up, Make Love\" was released in 1991.",
+          "f1": 0.0
+        },
+        "anchor_delta_int4": {
+          "answer": "Poison's album \"Shut Up, Make Love\" was released in 1991.",
+          "f1": 0.0
+        },
+        "anchor_delta_int8": {
+          "answer": "Poison's album \"Shut Up, Make Love\" was released in 1991.",
+          "f1": 0.0
+        },
+        "time": 3.541796922683716
+      },
+      {
+        "idx": 18,
+        "gold": "Indianapolis Motor Speedway",
+        "seq_len": 490,
+        "task": "hotpotqa",
+        "none": {
+          "answer": "The race track in the Midwest that hosts a 500-mile race every May is Darlington Raceway in Darlington, South Carolina, USA.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "The race track in the Midwest that hosts a 500-mile race every May is Darlington Raceway in Darlington, South Carolina, USA.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "The race track in the Midwest that hosts a 500-mile race every May is Darlington Raceway in Darlington, South Carolina, USA.",
+          "f1": 0.0
+        },
+        "mixed_int4": {
+          "answer": "The race track in the Midwest that hosts a 500-mile race every May is Darlington Raceway in Darlington, South Carolina, USA.",
+          "f1": 0.0
+        },
+        "anchor_delta_int4": {
+          "answer": "The Darlington Raceway in Darlington, South Carolina hosts a 500-mile race every May, known as the Darlington 500, which was previously the Carolina Dodge Dealers 400.",
+          "f1": 0.0
+        },
+        "anchor_delta_int8": {
+          "answer": "The race track in the Midwest that hosts a 500-mile race every May is Darlington Raceway in Darlington, South Carolina, USA.",
+          "f1": 0.0
+        },
+        "time": 5.2072930335998535
+      },
+      {
+        "idx": 19,
+        "gold": "International Boxing Hall of Fame",
+        "seq_len": 444,
+        "task": "hotpotqa",
+        "none": {
+          "answer": "Vince Phillips held a junior welterweight title by an organization recognized by the World Boxing Organization (WBO) Hall of Fame.",
+          "f1": 0.24
+        },
+        "int8": {
+          "answer": "Vince Phillips held a junior welterweight title by an organization recognized by the World Boxing Organization (WBO) Hall of Fame.",
+          "f1": 0.24
+        },
+        "int4": {
+          "answer": "Vince Phillips held a junior welterweight title recognized by the World Boxing Organization (WBO), which is an organization included in the Australian National Boxing Hall of Fame.",
+          "f1": 0.18750000000000003
+        },
+        "mixed_int4": {
+          "answer": "Vince Phillips held a junior welterweight title recognized by the World Boxing Organization (WBO), which is an organization included in the Australian National Boxing Hall of Fame.",
+          "f1": 0.18750000000000003
+        },
+        "anchor_delta_int4": {
+          "answer": "Vince Phillips held a junior welterweight title by an organization recognized by the World Boxing Organization (WBO) Hall of Fame.",
+          "f1": 0.24
+        },
+        "anchor_delta_int8": {
+          "answer": "Vince Phillips held a junior welterweight title by an organization recognized by the World Boxing Organization (WBO) Hall of Fame.",
+          "f1": 0.24
+        },
+        "time": 4.722647428512573
+      },
+      {
+        "idx": 20,
+        "gold": "Newport",
+        "seq_len": 419,
+        "task": "hotpotqa",
+        "none": {
+          "answer": "The county seat of Carroll County, where East Lempster, New Hampshire is located, is Ossipee.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "The county seat of Carroll County, where East Lempster, New Hampshire is located, is Ossipee.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "The county seat of the county where East Lempster, New Hampshire is located, which is Carroll County, is Ossipee.",
+          "f1": 0.0
+        },
+        "mixed_int4": {
+          "answer": "The county seat of the county where East Lempster, New Hampshire is located, which is Carroll County, is Ossipee.",
+          "f1": 0.0
+        },
+        "anchor_delta_int4": {
+          "answer": "The county seat of Carroll County, where East Lempster, New Hampshire is located, is Ossipee.",
+          "f1": 0.0
+        },
+        "anchor_delta_int8": {
+          "answer": "The county seat of Carroll County, where East Lempster, New Hampshire is located, is Ossipee.",
+          "f1": 0.0
+        },
+        "time": 3.9678492546081543
+      },
+      {
+        "idx": 21,
+        "gold": "Ann",
+        "seq_len": 391,
+        "task": "hotpotqa",
+        "none": {
+          "answer": "The middle name of the actress who plays Bobbi Bacha in Suburban Madness is Christopher.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "The middle name of the actress who plays Bobbi Bacha in Suburban Madness is Christopher.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "The middle name of the actress who plays Bobbi Bacha in Suburban Madness is Christopher.",
+          "f1": 0.0
+        },
+        "mixed_int4": {
+          "answer": "The middle name of the actress who plays Bobbi Bacha in Suburban Madness is Christopher.",
+          "f1": 0.0
+        },
+        "anchor_delta_int4": {
+          "answer": "The middle name of the actress who plays Bobbi Bacha in Suburban Madness is Christopher.",
+          "f1": 0.0
+        },
+        "anchor_delta_int8": {
+          "answer": "The middle name of the actress who plays Bobbi Bacha in Suburban Madness is Christopher.",
+          "f1": 0.0
+        },
+        "time": 3.3393280506134033
+      },
+      {
+        "idx": 22,
+        "gold": "Mondelez International, Inc.",
+        "seq_len": 411,
+        "task": "hotpotqa",
+        "none": {
+          "answer": "Handi-Snacks are a snack food product line sold by the American multinational confectionery, food, and beverage company called Yves, which is a division of PepsiCo.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "Handi-Snacks are a snack food product line sold by an American multinational confectionery, food, and beverage company called Yves Rocher, which is based in Illinois.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "Handi-Snacks are a snack food product line sold by an American multinational confectionery, food, and beverage company called Bimbo Bakeries Worldwide, which is based in Illinois.",
+          "f1": 0.0
+        },
+        "mixed_int4": {
+          "answer": "Handi-Snacks are a snack food product line sold by an American multinational confectionery, food, and beverage company called B&G Foods, which is based in Illinois.",
+          "f1": 0.0
+        },
+        "anchor_delta_int4": {
+          "answer": "Handi-Snacks are a snack food product line sold by Unilever, an American multinational confectionery, food, and beverage company based in Illinois.",
+          "f1": 0.0
+        },
+        "anchor_delta_int8": {
+          "answer": "Handi-Snacks are a snack food product line sold by the American multinational confectionery, food, and beverage company called Yves, which is a division of PepsiCo.",
+          "f1": 0.0
+        },
+        "time": 5.556457996368408
+      },
+      {
+        "idx": 23,
+        "gold": "Charles Eug\u00e8ne",
+        "seq_len": 476,
+        "task": "hotpotqa",
+        "none": {
+          "answer": "The French ace pilot and adventurer who flew \"L'Oiseau Blanc\" was Fran\u00e7ois Coli, who was known for his one-eyed flying partnership with Charles Nungesser.",
+          "f1": 0.07692307692307693
+        },
+        "int8": {
+          "answer": "The French ace pilot and adventurer who flew \"L'Oiseau Blanc\" was Fran\u00e7ois Coli, who was known for his one-eyed flying partnership with Charles Nungesser.",
+          "f1": 0.07692307692307693
+        },
+        "int4": {
+          "answer": "The French ace pilot and adventurer who flew \"L'Oiseau Blanc\" was Fran\u00e7ois Coli, who flew alongside Charles Nungesser in their attempt to win the Orteig Prize for the first transatlantic flight.",
+          "f1": 0.06060606060606061
+        },
+        "mixed_int4": {
+          "answer": "The French ace pilot and adventurer who flew \"L'Oiseau Blanc\" was Fran\u00e7ois Coli, who flew alongside Charles Nungesser in their attempt to win the Orteig Prize for the first transatlantic flight.",
+          "f1": 0.06060606060606061
+        },
+        "anchor_delta_int4": {
+          "answer": "The French ace pilot and adventurer who flew L'Oiseau Blanc (The White Bird) with Charles Nungesser was Fran\u00e7ois Coli.",
+          "f1": 0.09523809523809525
+        },
+        "anchor_delta_int8": {
+          "answer": "The French ace pilot and adventurer who flew \"L'Oiseau Blanc\" was Fran\u00e7ois Coli, who was known for his one-eyed flying partnership with Charles Nungesser.",
+          "f1": 0.07692307692307693
+        },
+        "time": 6.276211500167847
+      },
+      {
+        "idx": 24,
+        "gold": "2000",
+        "seq_len": 454,
+        "task": "hotpotqa",
+        "none": {
+          "answer": "Carlo Rovelli, the Italian physicist who wrote \"Seven Brief Lessons on Physics,\" has primarily worked in France since 1970.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "Carlo Rovelli, the Italian physicist who wrote \"Seven Brief Lessons on Physics,\" has primarily worked in France since 1970.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "Carlo Rovelli, the Italian physicist who wrote \"Seven Brief Lessons on Physics,\" has primarily worked in France since 1970.",
+          "f1": 0.0
+        },
+        "mixed_int4": {
+          "answer": "Carlo Rovelli, the Italian physicist who wrote \"Seven Brief Lessons on Physics,\" has primarily worked in France since 1970.",
+          "f1": 0.0
+        },
+        "anchor_delta_int4": {
+          "answer": "Carlo Rovelli, the Italian physicist who wrote \"Seven Brief Lessons on Physics,\" has primarily worked in France since 1970.",
+          "f1": 0.0
+        },
+        "anchor_delta_int8": {
+          "answer": "Carlo Rovelli, the Italian physicist who wrote \"Seven Brief Lessons on Physics,\" has primarily worked in France since 1970.",
+          "f1": 0.0
+        },
+        "time": 5.123973369598389
+      },
+      {
+        "idx": 25,
+        "gold": "1999",
+        "seq_len": 437,
+        "task": "hotpotqa",
+        "none": {
+          "answer": "Guns N' Roses did not perform a promo for a movie starring Arnold Schwarzenegger as a former New York Police detective. \"End of Days\" is a 1999 film, and there is no direct connection between Guns N' ",
+          "f1": 0.04347826086956522
+        },
+        "int8": {
+          "answer": "Guns N' Roses did not perform a promo for a movie starring Arnold Schwarzenegger as a former New York Police detective. \"End of Days\" is a 1999 film, and there is no direct connection between Guns N' ",
+          "f1": 0.04347826086956522
+        },
+        "int4": {
+          "answer": "Guns N' Roses did not perform a promo for a movie starring Arnold Schwarzenegger as a former New York Police detective. The movie \"End of Days\" featuring Schwarzenegger as a former NYPD detective was ",
+          "f1": 0.0
+        },
+        "mixed_int4": {
+          "answer": "Guns N' Roses did not perform a promo for a movie starring Arnold Schwarzenegger as a former New York Police detective. The movie \"End of Days\" featuring Schwarzenegger as a former NYPD detective was ",
+          "f1": 0.0
+        },
+        "anchor_delta_int4": {
+          "answer": "Guns N' Roses did not perform a promo for a movie starring Arnold Schwarzenegger as a former New York Police detective. Arnold Schwarzenegger starred in the movie \"End of Days\" in 1999, but there is n",
+          "f1": 0.0
+        },
+        "anchor_delta_int8": {
+          "answer": "Guns N' Roses did not perform a promo for a movie starring Arnold Schwarzenegger as a former New York Police detective. \"End of Days\" is a 1999 film, and there is no direct connection between Guns N' ",
+          "f1": 0.04347826086956522
+        },
+        "time": 8.867680549621582
+      },
+      {
+        "idx": 26,
+        "gold": "Teen Titans Go!",
+        "seq_len": 415,
+        "task": "hotpotqa",
+        "none": {
+          "answer": "Tara Strong's major voice role in the animated series based on the DC Comics fictional superhero team, the \"Teen Titans,\" is Raven.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "Tara Strong's major voice role in the animated series based on the DC Comics fictional superhero team, the \"Teen Titans,\" is Raven.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "Tara Strong's major voice role in the animated series based on the DC Comics fictional superhero team, the \"Teen Titans,\" is Raven in \"Teen Titans.\"",
+          "f1": 0.0
+        },
+        "mixed_int4": {
+          "answer": "Tara Strong's major voice role in the animated series based on the DC Comics fictional superhero team, the \"Teen Titans,\" is Raven in \"Teen Titans.\"",
+          "f1": 0.0
+        },
+        "anchor_delta_int4": {
+          "answer": "Tara Strong's major voice role in an animated series based on the DC Comics fictional superhero team, the \"Teen Titans,\" is her portrayal of Black Canary in \"Teen Titans.\"",
+          "f1": 0.0
+        },
+        "anchor_delta_int8": {
+          "answer": "Tara Strong's major voice role in the animated series based on the DC Comics fictional superhero team, the \"Teen Titans,\" is Raven. In \"Teen Titans,\" Raven is one of the main characters and is known f",
+          "f1": 0.0
+        },
+        "time": 5.975194215774536
+      },
+      {
+        "idx": 27,
+        "gold": "orange",
+        "seq_len": 394,
+        "task": "hotpotqa",
+        "none": {
+          "answer": "People of the Netherlands wear orange clothing during Oranjegekte or to celebrate the national holiday, Koningsdag, to honor King Willem-Alexander's birthday.",
+          "f1": 0.0909090909090909
+        },
+        "int8": {
+          "answer": "People of the Netherlands wear orange clothing during Oranjegekte or to celebrate the national holiday, Koningsdag, to honor King Willem-Alexander's birthday.",
+          "f1": 0.0909090909090909
+        },
+        "int4": {
+          "answer": "People of the Netherlands wear orange clothing during Oranjegekte or to celebrate the national holiday, Koningsdag, to honor King Willem-Alexander's birthday.",
+          "f1": 0.0909090909090909
+        },
+        "mixed_int4": {
+          "answer": "People of the Netherlands wear orange clothing during Oranjegekte or to celebrate the national holiday, Koningsdag, to honor King Willem-Alexander's birthday.",
+          "f1": 0.0909090909090909
+        },
+        "anchor_delta_int4": {
+          "answer": "People of the Netherlands wear orange clothing during Oranjegekte or to celebrate the national holiday, Koningsdag, in honor of King Willem-Alexander's birthday on April 27th.",
+          "f1": 0.07692307692307693
+        },
+        "anchor_delta_int8": {
+          "answer": "People of the Netherlands wear orange clothing during Oranjegekte or to celebrate the national holiday, Koningsdag, to honor King Willem-Alexander's birthday.",
+          "f1": 0.0909090909090909
+        },
+        "time": 5.81733250617981
+      },
+      {
+        "idx": 28,
+        "gold": "no",
+        "seq_len": 409,
+        "task": "hotpotqa",
+        "none": {
+          "answer": "No, Freakonomics and In the Realm of the Hackers are not both American documentaries. Freakonomics is an American documentary film, while In the Realm of the Hackers is a British documentary.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "No, Freakonomics and In the Realm of the Hackers are not both American documentaries. Freakonomics is an American documentary film, while In the Realm of the Hackers is a British documentary.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "No, Freakonomics and In the Realm of the Hackers are not both American documentaries. Freakonomics is an American documentary film, while In the Realm of the Hackers is a documentary series.",
+          "f1": 0.0
+        },
+        "mixed_int4": {
+          "answer": "No, Freakonomics and In the Realm of the Hackers are not both American documentaries. Freakonomics is an American documentary film, while In the Realm of the Hackers is a documentary series.",
+          "f1": 0.0
+        },
+        "anchor_delta_int4": {
+          "answer": "No, Freakonomics and In the Realm of the Hackers are not both American documentaries. Freakonomics is an American documentary film that explores the use of economics in everyday life, while In the Rea",
+          "f1": 0.0
+        },
+        "anchor_delta_int8": {
+          "answer": "No, Freakonomics and In the Realm of the Hackers are not both American documentaries. Freakonomics is an American documentary film, while In the Realm of the Hackers is a British documentary.",
+          "f1": 0.0
+        },
+        "time": 6.974052667617798
+      },
+      {
+        "idx": 29,
+        "gold": "Conscription",
+        "seq_len": 412,
+        "task": "hotpotqa",
+        "none": {
+          "answer": "Rostker v. Goldberg held that the practice of filling armed forces vacancies through a lottery system was constitutional.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "Rostker v. Goldberg held that the practice of filling armed forces vacancies through a lottery system was constitutional.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "Rostker v. Goldberg held that the practice of filling armed forces vacancies through a system that gives priority to veterans was constitutional.",
+          "f1": 0.0
+        },
+        "mixed_int4": {
+          "answer": "Rostker v. Goldberg held that the practice of filling armed forces vacancies through a system that gives priority to veterans was constitutional.",
+          "f1": 0.0
+        },
+        "anchor_delta_int4": {
+          "answer": "Rostker v. Goldberg held that the practice of filling armed forces vacancies through a preference system based on race (in this case, Vietnam-era draft registrants) was constitutional, as long as the ",
+          "f1": 0.0
+        },
+        "anchor_delta_int8": {
+          "answer": "Rostker v. Goldberg held that the practice of filling armed forces vacancies through a lottery system was constitutional.",
+          "f1": 0.0
+        },
+        "time": 4.782087326049805
+      }
+    ],
+    "mmlu": [
+      {
+        "idx": 0,
+        "gold": "C",
+        "seq_len": 79,
+        "task": "mmlu",
+        "none": {
+          "answer": "C",
+          "f1": 1.0
+        },
+        "int8": {
+          "answer": "C",
+          "f1": 1.0
+        },
+        "int4": {
+          "answer": "C",
+          "f1": 1.0
+        },
+        "mixed_int4": {
+          "answer": "C",
+          "f1": 1.0
+        },
+        "anchor_delta_int4": {
+          "answer": "C",
+          "f1": 1.0
+        },
+        "anchor_delta_int8": {
+          "answer": "C",
+          "f1": 1.0
+        },
+        "time": 0.3767385482788086
+      },
+      {
+        "idx": 1,
+        "gold": "D",
+        "seq_len": 104,
+        "task": "mmlu",
+        "none": {
+          "answer": "D",
+          "f1": 1.0
+        },
+        "int8": {
+          "answer": "D",
+          "f1": 1.0
+        },
+        "int4": {
+          "answer": "D",
+          "f1": 1.0
+        },
+        "mixed_int4": {
+          "answer": "D",
+          "f1": 1.0
+        },
+        "anchor_delta_int4": {
+          "answer": "D",
+          "f1": 1.0
+        },
+        "anchor_delta_int8": {
+          "answer": "D",
+          "f1": 1.0
+        },
+        "time": 0.36023783683776855
+      },
+      {
+        "idx": 2,
+        "gold": "A",
+        "seq_len": 70,
+        "task": "mmlu",
+        "none": {
+          "answer": "C",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "C",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "C",
+          "f1": 0.0
+        },
+        "mixed_int4": {
+          "answer": "C",
+          "f1": 0.0
+        },
+        "anchor_delta_int4": {
+          "answer": "C",
+          "f1": 0.0
+        },
+        "anchor_delta_int8": {
+          "answer": "C",
+          "f1": 0.0
+        },
+        "time": 0.35649991035461426
+      },
+      {
+        "idx": 3,
+        "gold": "D",
+        "seq_len": 72,
+        "task": "mmlu",
+        "none": {
+          "answer": "C",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "C",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "C",
+          "f1": 0.0
+        },
+        "mixed_int4": {
+          "answer": "C",
+          "f1": 0.0
+        },
+        "anchor_delta_int4": {
+          "answer": "C",
+          "f1": 0.0
+        },
+        "anchor_delta_int8": {
+          "answer": "C",
+          "f1": 0.0
+        },
+        "time": 0.36644816398620605
+      },
+      {
+        "idx": 4,
+        "gold": "B",
+        "seq_len": 64,
+        "task": "mmlu",
+        "none": {
+          "answer": "B",
+          "f1": 1.0
+        },
+        "int8": {
+          "answer": "B",
+          "f1": 1.0
+        },
+        "int4": {
+          "answer": "B",
+          "f1": 1.0
+        },
+        "mixed_int4": {
+          "answer": "B",
+          "f1": 1.0
+        },
+        "anchor_delta_int4": {
+          "answer": "B",
+          "f1": 1.0
+        },
+        "anchor_delta_int8": {
+          "answer": "B",
+          "f1": 1.0
+        },
+        "time": 0.3677372932434082
+      },
+      {
+        "idx": 5,
+        "gold": "C",
+        "seq_len": 80,
+        "task": "mmlu",
+        "none": {
+          "answer": "C",
+          "f1": 1.0
+        },
+        "int8": {
+          "answer": "C",
+          "f1": 1.0
+        },
+        "int4": {
+          "answer": "C",
+          "f1": 1.0
+        },
+        "mixed_int4": {
+          "answer": "C",
+          "f1": 1.0
+        },
+        "anchor_delta_int4": {
+          "answer": "C",
+          "f1": 1.0
+        },
+        "anchor_delta_int8": {
+          "answer": "C",
+          "f1": 1.0
+        },
+        "time": 0.3683631420135498
+      },
+      {
+        "idx": 6,
+        "gold": "D",
+        "seq_len": 60,
+        "task": "mmlu",
+        "none": {
+          "answer": "D",
+          "f1": 1.0
+        },
+        "int8": {
+          "answer": "D",
+          "f1": 1.0
+        },
+        "int4": {
+          "answer": "D",
+          "f1": 1.0
+        },
+        "mixed_int4": {
+          "answer": "D",
+          "f1": 1.0
+        },
+        "anchor_delta_int4": {
+          "answer": "D",
+          "f1": 1.0
+        },
+        "anchor_delta_int8": {
+          "answer": "D",
+          "f1": 1.0
+        },
+        "time": 0.36008286476135254
+      },
+      {
+        "idx": 7,
+        "gold": "C",
+        "seq_len": 62,
+        "task": "mmlu",
+        "none": {
+          "answer": "C",
+          "f1": 1.0
+        },
+        "int8": {
+          "answer": "C",
+          "f1": 1.0
+        },
+        "int4": {
+          "answer": "C",
+          "f1": 1.0
+        },
+        "mixed_int4": {
+          "answer": "C",
+          "f1": 1.0
+        },
+        "anchor_delta_int4": {
+          "answer": "C",
+          "f1": 1.0
+        },
+        "anchor_delta_int8": {
+          "answer": "C",
+          "f1": 1.0
+        },
+        "time": 0.3686392307281494
+      },
+      {
+        "idx": 8,
+        "gold": "C",
+        "seq_len": 96,
+        "task": "mmlu",
+        "none": {
+          "answer": "C",
+          "f1": 1.0
+        },
+        "int8": {
+          "answer": "C",
+          "f1": 1.0
+        },
+        "int4": {
+          "answer": "C",
+          "f1": 1.0
+        },
+        "mixed_int4": {
+          "answer": "C",
+          "f1": 1.0
+        },
+        "anchor_delta_int4": {
+          "answer": "C",
+          "f1": 1.0
+        },
+        "anchor_delta_int8": {
+          "answer": "C",
+          "f1": 1.0
+        },
+        "time": 0.3862941265106201
+      },
+      {
+        "idx": 9,
+        "gold": "C",
+        "seq_len": 103,
+        "task": "mmlu",
+        "none": {
+          "answer": "C",
+          "f1": 1.0
+        },
+        "int8": {
+          "answer": "C",
+          "f1": 1.0
+        },
+        "int4": {
+          "answer": "C",
+          "f1": 1.0
+        },
+        "mixed_int4": {
+          "answer": "C",
+          "f1": 1.0
+        },
+        "anchor_delta_int4": {
+          "answer": "C",
+          "f1": 1.0
+        },
+        "anchor_delta_int8": {
+          "answer": "C",
+          "f1": 1.0
+        },
+        "time": 0.3619205951690674
+      },
+      {
+        "idx": 10,
+        "gold": "D",
+        "seq_len": 77,
+        "task": "mmlu",
+        "none": {
+          "answer": "C",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "C",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "C",
+          "f1": 0.0
+        },
+        "mixed_int4": {
+          "answer": "C",
+          "f1": 0.0
+        },
+        "anchor_delta_int4": {
+          "answer": "C",
+          "f1": 0.0
+        },
+        "anchor_delta_int8": {
+          "answer": "C",
+          "f1": 0.0
+        },
+        "time": 0.3646235466003418
+      },
+      {
+        "idx": 11,
+        "gold": "B",
+        "seq_len": 58,
+        "task": "mmlu",
+        "none": {
+          "answer": "B",
+          "f1": 1.0
+        },
+        "int8": {
+          "answer": "B",
+          "f1": 1.0
+        },
+        "int4": {
+          "answer": "B",
+          "f1": 1.0
+        },
+        "mixed_int4": {
+          "answer": "B",
+          "f1": 1.0
+        },
+        "anchor_delta_int4": {
+          "answer": "B",
+          "f1": 1.0
+        },
+        "anchor_delta_int8": {
+          "answer": "B",
+          "f1": 1.0
+        },
+        "time": 0.35872697830200195
+      },
+      {
+        "idx": 12,
+        "gold": "D",
+        "seq_len": 70,
+        "task": "mmlu",
+        "none": {
+          "answer": "D",
+          "f1": 1.0
+        },
+        "int8": {
+          "answer": "D",
+          "f1": 1.0
+        },
+        "int4": {
+          "answer": "D",
+          "f1": 1.0
+        },
+        "mixed_int4": {
+          "answer": "D",
+          "f1": 1.0
+        },
+        "anchor_delta_int4": {
+          "answer": "D",
+          "f1": 1.0
+        },
+        "anchor_delta_int8": {
+          "answer": "D",
+          "f1": 1.0
+        },
+        "time": 0.3614933490753174
+      },
+      {
+        "idx": 13,
+        "gold": "A",
+        "seq_len": 98,
+        "task": "mmlu",
+        "none": {
+          "answer": "A",
+          "f1": 1.0
+        },
+        "int8": {
+          "answer": "A",
+          "f1": 1.0
+        },
+        "int4": {
+          "answer": "A",
+          "f1": 1.0
+        },
+        "mixed_int4": {
+          "answer": "A",
+          "f1": 1.0
+        },
+        "anchor_delta_int4": {
+          "answer": "A",
+          "f1": 1.0
+        },
+        "anchor_delta_int8": {
+          "answer": "A",
+          "f1": 1.0
+        },
+        "time": 0.3571183681488037
+      },
+      {
+        "idx": 14,
+        "gold": "A",
+        "seq_len": 61,
+        "task": "mmlu",
+        "none": {
+          "answer": "C",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "C",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "C",
+          "f1": 0.0
+        },
+        "mixed_int4": {
+          "answer": "C",
+          "f1": 0.0
+        },
+        "anchor_delta_int4": {
+          "answer": "C",
+          "f1": 0.0
+        },
+        "anchor_delta_int8": {
+          "answer": "C",
+          "f1": 0.0
+        },
+        "time": 0.3609278202056885
+      },
+      {
+        "idx": 15,
+        "gold": "B",
+        "seq_len": 106,
+        "task": "mmlu",
+        "none": {
+          "answer": "C",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "C",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "C",
+          "f1": 0.0
+        },
+        "mixed_int4": {
+          "answer": "C",
+          "f1": 0.0
+        },
+        "anchor_delta_int4": {
+          "answer": "C",
+          "f1": 0.0
+        },
+        "anchor_delta_int8": {
+          "answer": "C",
+          "f1": 0.0
+        },
+        "time": 0.36463356018066406
+      },
+      {
+        "idx": 16,
+        "gold": "D",
+        "seq_len": 64,
+        "task": "mmlu",
+        "none": {
+          "answer": "D",
+          "f1": 1.0
+        },
+        "int8": {
+          "answer": "D",
+          "f1": 1.0
+        },
+        "int4": {
+          "answer": "D",
+          "f1": 1.0
+        },
+        "mixed_int4": {
+          "answer": "D",
+          "f1": 1.0
+        },
+        "anchor_delta_int4": {
+          "answer": "D",
+          "f1": 1.0
+        },
+        "anchor_delta_int8": {
+          "answer": "D",
+          "f1": 1.0
+        },
+        "time": 0.36475181579589844
+      },
+      {
+        "idx": 17,
+        "gold": "D",
+        "seq_len": 87,
+        "task": "mmlu",
+        "none": {
+          "answer": "A",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "A",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "A",
+          "f1": 0.0
+        },
+        "mixed_int4": {
+          "answer": "A",
+          "f1": 0.0
+        },
+        "anchor_delta_int4": {
+          "answer": "A",
+          "f1": 0.0
+        },
+        "anchor_delta_int8": {
+          "answer": "A",
+          "f1": 0.0
+        },
+        "time": 0.37692975997924805
+      },
+      {
+        "idx": 18,
+        "gold": "B",
+        "seq_len": 64,
+        "task": "mmlu",
+        "none": {
+          "answer": "C",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "C",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "C",
+          "f1": 0.0
+        },
+        "mixed_int4": {
+          "answer": "C",
+          "f1": 0.0
+        },
+        "anchor_delta_int4": {
+          "answer": "C",
+          "f1": 0.0
+        },
+        "anchor_delta_int8": {
+          "answer": "C",
+          "f1": 0.0
+        },
+        "time": 0.36643123626708984
+      },
+      {
+        "idx": 19,
+        "gold": "C",
+        "seq_len": 85,
+        "task": "mmlu",
+        "none": {
+          "answer": "C",
+          "f1": 1.0
+        },
+        "int8": {
+          "answer": "C",
+          "f1": 1.0
+        },
+        "int4": {
+          "answer": "C",
+          "f1": 1.0
+        },
+        "mixed_int4": {
+          "answer": "C",
+          "f1": 1.0
+        },
+        "anchor_delta_int4": {
+          "answer": "C",
+          "f1": 1.0
+        },
+        "anchor_delta_int8": {
+          "answer": "C",
+          "f1": 1.0
+        },
+        "time": 0.37619662284851074
+      },
+      {
+        "idx": 20,
+        "gold": "B",
+        "seq_len": 52,
+        "task": "mmlu",
+        "none": {
+          "answer": "B",
+          "f1": 1.0
+        },
+        "int8": {
+          "answer": "B",
+          "f1": 1.0
+        },
+        "int4": {
+          "answer": "B",
+          "f1": 1.0
+        },
+        "mixed_int4": {
+          "answer": "B",
+          "f1": 1.0
+        },
+        "anchor_delta_int4": {
+          "answer": "B",
+          "f1": 1.0
+        },
+        "anchor_delta_int8": {
+          "answer": "B",
+          "f1": 1.0
+        },
+        "time": 0.3543388843536377
+      },
+      {
+        "idx": 21,
+        "gold": "A",
+        "seq_len": 83,
+        "task": "mmlu",
+        "none": {
+          "answer": "C",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "C",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "C",
+          "f1": 0.0
+        },
+        "mixed_int4": {
+          "answer": "C",
+          "f1": 0.0
+        },
+        "anchor_delta_int4": {
+          "answer": "C",
+          "f1": 0.0
+        },
+        "anchor_delta_int8": {
+          "answer": "C",
+          "f1": 0.0
+        },
+        "time": 0.3769714832305908
+      },
+      {
+        "idx": 22,
+        "gold": "C",
+        "seq_len": 100,
+        "task": "mmlu",
+        "none": {
+          "answer": "A",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "A",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "A",
+          "f1": 0.0
+        },
+        "mixed_int4": {
+          "answer": "A",
+          "f1": 0.0
+        },
+        "anchor_delta_int4": {
+          "answer": "A",
+          "f1": 0.0
+        },
+        "anchor_delta_int8": {
+          "answer": "A",
+          "f1": 0.0
+        },
+        "time": 0.35536718368530273
+      },
+      {
+        "idx": 23,
+        "gold": "B",
+        "seq_len": 91,
+        "task": "mmlu",
+        "none": {
+          "answer": "D",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "D",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "D",
+          "f1": 0.0
+        },
+        "mixed_int4": {
+          "answer": "D",
+          "f1": 0.0
+        },
+        "anchor_delta_int4": {
+          "answer": "D",
+          "f1": 0.0
+        },
+        "anchor_delta_int8": {
+          "answer": "D",
+          "f1": 0.0
+        },
+        "time": 0.3783571720123291
+      },
+      {
+        "idx": 24,
+        "gold": "C",
+        "seq_len": 99,
+        "task": "mmlu",
+        "none": {
+          "answer": "C",
+          "f1": 1.0
+        },
+        "int8": {
+          "answer": "C",
+          "f1": 1.0
+        },
+        "int4": {
+          "answer": "C",
+          "f1": 1.0
+        },
+        "mixed_int4": {
+          "answer": "C",
+          "f1": 1.0
+        },
+        "anchor_delta_int4": {
+          "answer": "C",
+          "f1": 1.0
+        },
+        "anchor_delta_int8": {
+          "answer": "C",
+          "f1": 1.0
+        },
+        "time": 0.35469889640808105
+      },
+      {
+        "idx": 25,
+        "gold": "C",
+        "seq_len": 73,
+        "task": "mmlu",
+        "none": {
+          "answer": "B.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "B.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "B.",
+          "f1": 0.0
+        },
+        "mixed_int4": {
+          "answer": "B.",
+          "f1": 0.0
+        },
+        "anchor_delta_int4": {
+          "answer": "B. anti-symmetric only",
+          "f1": 0.0
+        },
+        "anchor_delta_int8": {
+          "answer": "B.",
+          "f1": 0.0
+        },
+        "time": 0.5677924156188965
+      },
+      {
+        "idx": 26,
+        "gold": "D",
+        "seq_len": 112,
+        "task": "mmlu",
+        "none": {
+          "answer": "C",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "C",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "C",
+          "f1": 0.0
+        },
+        "mixed_int4": {
+          "answer": "C",
+          "f1": 0.0
+        },
+        "anchor_delta_int4": {
+          "answer": "C",
+          "f1": 0.0
+        },
+        "anchor_delta_int8": {
+          "answer": "C",
+          "f1": 0.0
+        },
+        "time": 0.3738422393798828
+      },
+      {
+        "idx": 27,
+        "gold": "C",
+        "seq_len": 80,
+        "task": "mmlu",
+        "none": {
+          "answer": "D",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "D",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "D",
+          "f1": 0.0
+        },
+        "mixed_int4": {
+          "answer": "D",
+          "f1": 0.0
+        },
+        "anchor_delta_int4": {
+          "answer": "D",
+          "f1": 0.0
+        },
+        "anchor_delta_int8": {
+          "answer": "D",
+          "f1": 0.0
+        },
+        "time": 0.3652927875518799
+      },
+      {
+        "idx": 28,
+        "gold": "B",
+        "seq_len": 80,
+        "task": "mmlu",
+        "none": {
+          "answer": "C",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "C",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "C",
+          "f1": 0.0
+        },
+        "mixed_int4": {
+          "answer": "C",
+          "f1": 0.0
+        },
+        "anchor_delta_int4": {
+          "answer": "C",
+          "f1": 0.0
+        },
+        "anchor_delta_int8": {
+          "answer": "C",
+          "f1": 0.0
+        },
+        "time": 0.3676419258117676
+      },
+      {
+        "idx": 29,
+        "gold": "B",
+        "seq_len": 80,
+        "task": "mmlu",
+        "none": {
+          "answer": "C",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "C",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "C",
+          "f1": 0.0
+        },
+        "mixed_int4": {
+          "answer": "C",
+          "f1": 0.0
+        },
+        "anchor_delta_int4": {
+          "answer": "C",
+          "f1": 0.0
+        },
+        "anchor_delta_int8": {
+          "answer": "C",
+          "f1": 0.0
+        },
+        "time": 0.36882615089416504
+      }
+    ]
+  }
+}

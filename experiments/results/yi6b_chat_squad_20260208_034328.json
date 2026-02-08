@@ -1,0 +1,2385 @@
+{
+  "metadata": {
+    "num_samples": 50,
+    "num_layers": 32,
+    "num_kv_heads": 4,
+    "head_dim": 128,
+    "model": "Yi-1.5-6B-Chat",
+    "task": "SQuAD-v2-ChatML",
+    "max_length": 1024,
+    "avg_seq_len": 239.62,
+    "prompt_format": "ChatML with system instruction for extractive answers",
+    "full_f1": 0.5964023619655198,
+    "full_std": 0.3476628015027281,
+    "int4_f1": 0.6142185298361769,
+    "int4_std": 0.34659780032035703,
+    "int8_f1": 0.5930690286321866,
+    "int8_std": 0.34777210827661564,
+    "mixed_L0fp16_int4_f1": 0.5932619047619048,
+    "mixed_L0fp16_int4_std": 0.35296114906788645,
+    "only_L0_int4_f1": 0.5930690286321866,
+    "only_L0_int4_std": 0.34777210827661564,
+    "only_L16_int4_f1": 0.5930690286321866,
+    "only_L16_int4_std": 0.34777210827661564,
+    "only_L24_int4_f1": 0.5975134730766309,
+    "only_L24_int4_std": 0.34152835289442257,
+    "only_L31_int4_f1": 0.5964023619655198,
+    "only_L31_int4_std": 0.3476628015027281,
+    "only_L4_int4_f1": 0.6130690286321865,
+    "only_L4_int4_std": 0.34179332666082674,
+    "only_L8_int4_f1": 0.6064023619655198,
+    "only_L8_int4_std": 0.33740387714046044
+  },
+  "results": [
+    {
+      "idx": 0,
+      "gold": "Ludendorff Bridge",
+      "seq_len": 260,
+      "question": "What bridge did the Germans fail to demolish?",
+      "full": {
+        "answer": "Ludendorff Bridge.",
+        "f1": 0.5
+      },
+      "int8": {
+        "answer": "Ludendorff Bridge.",
+        "f1": 0.5
+      },
+      "int4": {
+        "answer": "Ludendorff Bridge.",
+        "f1": 0.5
+      },
+      "only_L0_int4": {
+        "answer": "Ludendorff Bridge.",
+        "f1": 0.5
+      },
+      "only_L4_int4": {
+        "answer": "Ludendorff Bridge.",
+        "f1": 0.5
+      },
+      "only_L8_int4": {
+        "answer": "Ludendorff Bridge.",
+        "f1": 0.5
+      },
+      "only_L16_int4": {
+        "answer": "Ludendorff Bridge.",
+        "f1": 0.5
+      },
+      "only_L24_int4": {
+        "answer": "Ludendorff Bridge.",
+        "f1": 0.5
+      },
+      "only_L31_int4": {
+        "answer": "Ludendorff Bridge.",
+        "f1": 0.5
+      },
+      "mixed_L0fp16_int4": {
+        "answer": "Ludendorff Bridge.",
+        "f1": 0.5
+      },
+      "time": 2.3287694454193115
+    },
+    {
+      "idx": 1,
+      "gold": "unknown",
+      "seq_len": 201,
+      "question": "What type of process was involved the the depletion of the Sun's oxygen 16?",
+      "full": {
+        "answer": "unknown process",
+        "f1": 0.6666666666666666
+      },
+      "int8": {
+        "answer": "unknown process",
+        "f1": 0.6666666666666666
+      },
+      "int4": {
+        "answer": "unknown process",
+        "f1": 0.6666666666666666
+      },
+      "only_L0_int4": {
+        "answer": "unknown process",
+        "f1": 0.6666666666666666
+      },
+      "only_L4_int4": {
+        "answer": "unknown process",
+        "f1": 0.6666666666666666
+      },
+      "only_L8_int4": {
+        "answer": "unknown process",
+        "f1": 0.6666666666666666
+      },
+      "only_L16_int4": {
+        "answer": "unknown process",
+        "f1": 0.6666666666666666
+      },
+      "only_L24_int4": {
+        "answer": "unknown process",
+        "f1": 0.6666666666666666
+      },
+      "only_L31_int4": {
+        "answer": "unknown process",
+        "f1": 0.6666666666666666
+      },
+      "mixed_L0fp16_int4": {
+        "answer": "unknown process",
+        "f1": 0.6666666666666666
+      },
+      "time": 0.8205873966217041
+    },
+    {
+      "idx": 2,
+      "gold": "adaptive and innate immune responses",
+      "seq_len": 176,
+      "question": "Female sex hormones are immunostimulators of which immune responses?",
+      "full": {
+        "answer": "Adaptive and innate immune responses.",
+        "f1": 0.8000000000000002
+      },
+      "int8": {
+        "answer": "Adaptive and innate immune responses.",
+        "f1": 0.8000000000000002
+      },
+      "int4": {
+        "answer": "Adaptive and innate immune responses.",
+        "f1": 0.8000000000000002
+      },
+      "only_L0_int4": {
+        "answer": "Adaptive and innate immune responses.",
+        "f1": 0.8000000000000002
+      },
+      "only_L4_int4": {
+        "answer": "Adaptive and innate immune responses.",
+        "f1": 0.8000000000000002
+      },
+      "only_L8_int4": {
+        "answer": "Adaptive and innate immune responses.",
+        "f1": 0.8000000000000002
+      },
+      "only_L16_int4": {
+        "answer": "Adaptive and innate immune responses.",
+        "f1": 0.8000000000000002
+      },
+      "only_L24_int4": {
+        "answer": "Adaptive and innate immune responses.",
+        "f1": 0.8000000000000002
+      },
+      "only_L31_int4": {
+        "answer": "Adaptive and innate immune responses.",
+        "f1": 0.8000000000000002
+      },
+      "mixed_L0fp16_int4": {
+        "answer": "Adaptive and innate immune responses.",
+        "f1": 0.8000000000000002
+      },
+      "time": 1.7594823837280273
+    },
+    {
+      "idx": 3,
+      "gold": "against Prussia and its allies in the European theatre of the war.",
+      "seq_len": 235,
+      "question": "Where was France concentraing efforts?",
+      "full": {
+        "answer": "France concentrated efforts against Prussia and its allies in the European theatre.",
+        "f1": 0.6666666666666666
+      },
+      "int8": {
+        "answer": "France concentrated efforts against Prussia and its allies in the European theatre.",
+        "f1": 0.6666666666666666
+      },
+      "int4": {
+        "answer": "France concentrated efforts against Prussia and its allies in the European theatre.",
+        "f1": 0.6666666666666666
+      },
+      "only_L0_int4": {
+        "answer": "France concentrated efforts against Prussia and its allies in the European theatre.",
+        "f1": 0.6666666666666666
+      },
+      "only_L4_int4": {
+        "answer": "France concentrated efforts against Prussia and its allies in the European theatre.",
+        "f1": 0.6666666666666666
+      },
+      "only_L8_int4": {
+        "answer": "France concentrated efforts against Prussia and its allies in the European theatre.",
+        "f1": 0.6666666666666666
+      },
+      "only_L16_int4": {
+        "answer": "France concentrated efforts against Prussia and its allies in the European theatre.",
+        "f1": 0.6666666666666666
+      },
+      "only_L24_int4": {
+        "answer": "France concentrated efforts against Prussia and its allies in the European theatre.",
+        "f1": 0.6666666666666666
+      },
+      "only_L31_int4": {
+        "answer": "France concentrated efforts against Prussia and its allies in the European theatre.",
+        "f1": 0.6666666666666666
+      },
+      "mixed_L0fp16_int4": {
+        "answer": "France concentrated efforts against Prussia and its allies in the European theatre.",
+        "f1": 0.6666666666666666
+      },
+      "time": 3.337571382522583
+    },
+    {
+      "idx": 4,
+      "gold": "tears",
+      "seq_len": 224,
+      "question": "The flushing action of what expels pathogens from the eyes?",
+      "full": {
+        "answer": "tars.",
+        "f1": 0.0
+      },
+      "int8": {
+        "answer": "tars.",
+        "f1": 0.0
+      },
+      "int4": {
+        "answer": "tars.",
+        "f1": 0.0
+      },
+      "only_L0_int4": {
+        "answer": "tars.",
+        "f1": 0.0
+      },
+      "only_L4_int4": {
+        "answer": "tears",
+        "f1": 1.0
+      },
+      "only_L8_int4": {
+        "answer": "t tears",
+        "f1": 0.6666666666666666
+      },
+      "only_L16_int4": {
+        "answer": "tars.",
+        "f1": 0.0
+      },
+      "only_L24_int4": {
+        "answer": "tars.",
+        "f1": 0.0
+      },
+      "only_L31_int4": {
+        "answer": "tars.",
+        "f1": 0.0
+      },
+      "mixed_L0fp16_int4": {
+        "answer": "tars.",
+        "f1": 0.0
+      },
+      "time": 1.0021562576293945
+    },
+    {
+      "idx": 5,
+      "gold": "CBSE",
+      "seq_len": 269,
+      "question": "Along with the CISCE and NENBSE, what is a notable Examination Board in multiple Indian states?",
+      "full": {
+        "answer": "CBSE",
+        "f1": 1.0
+      },
+      "int8": {
+        "answer": "CBSE",
+        "f1": 1.0
+      },
+      "int4": {
+        "answer": "CBSE",
+        "f1": 1.0
+      },
+      "only_L0_int4": {
+        "answer": "CBSE",
+        "f1": 1.0
+      },
+      "only_L4_int4": {
+        "answer": "CBSE",
+        "f1": 1.0
+      },
+      "only_L8_int4": {
+        "answer": "CBSE",
+        "f1": 1.0
+      },
+      "only_L16_int4": {
+        "answer": "CBSE",
+        "f1": 1.0
+      },
+      "only_L24_int4": {
+        "answer": "CBSE",
+        "f1": 1.0
+      },
+      "only_L31_int4": {
+        "answer": "CBSE",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_int4": {
+        "answer": "CBSE",
+        "f1": 1.0
+      },
+      "time": 1.0578927993774414
+    },
+    {
+      "idx": 6,
+      "gold": "ten million",
+      "seq_len": 256,
+      "question": "How many people did the Islamic State control the territory of as of March 2015?",
+      "full": {
+        "answer": "Ten million",
+        "f1": 1.0
+      },
+      "int8": {
+        "answer": "Ten million",
+        "f1": 1.0
+      },
+      "int4": {
+        "answer": "Ten million",
+        "f1": 1.0
+      },
+      "only_L0_int4": {
+        "answer": "Ten million",
+        "f1": 1.0
+      },
+      "only_L4_int4": {
+        "answer": "Ten million",
+        "f1": 1.0
+      },
+      "only_L8_int4": {
+        "answer": "Ten million",
+        "f1": 1.0
+      },
+      "only_L16_int4": {
+        "answer": "Ten million",
+        "f1": 1.0
+      },
+      "only_L24_int4": {
+        "answer": "Ten million",
+        "f1": 1.0
+      },
+      "only_L31_int4": {
+        "answer": "Ten million",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_int4": {
+        "answer": "Ten million",
+        "f1": 1.0
+      },
+      "time": 0.8691017627716064
+    },
+    {
+      "idx": 7,
+      "gold": "McCrary",
+      "seq_len": 228,
+      "question": "Who was the opposing party in the Runyon case?",
+      "full": {
+        "answer": "McCrary",
+        "f1": 1.0
+      },
+      "int8": {
+        "answer": "McCrary",
+        "f1": 1.0
+      },
+      "int4": {
+        "answer": "McCrary",
+        "f1": 1.0
+      },
+      "only_L0_int4": {
+        "answer": "McCrary",
+        "f1": 1.0
+      },
+      "only_L4_int4": {
+        "answer": "McCrary",
+        "f1": 1.0
+      },
+      "only_L8_int4": {
+        "answer": "McCrary",
+        "f1": 1.0
+      },
+      "only_L16_int4": {
+        "answer": "McCrary",
+        "f1": 1.0
+      },
+      "only_L24_int4": {
+        "answer": "McCrary",
+        "f1": 1.0
+      },
+      "only_L31_int4": {
+        "answer": "McCrary",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_int4": {
+        "answer": "McCrary",
+        "f1": 1.0
+      },
+      "time": 1.0479400157928467
+    },
+    {
+      "idx": 8,
+      "gold": "1996",
+      "seq_len": 483,
+      "question": "When did the university start having a bachelor's degree program in Cinema & Media studies?",
+      "full": {
+        "answer": "1996",
+        "f1": 1.0
+      },
+      "int8": {
+        "answer": "1996",
+        "f1": 1.0
+      },
+      "int4": {
+        "answer": "1996",
+        "f1": 1.0
+      },
+      "only_L0_int4": {
+        "answer": "1996",
+        "f1": 1.0
+      },
+      "only_L4_int4": {
+        "answer": "1996",
+        "f1": 1.0
+      },
+      "only_L8_int4": {
+        "answer": "1996",
+        "f1": 1.0
+      },
+      "only_L16_int4": {
+        "answer": "1996",
+        "f1": 1.0
+      },
+      "only_L24_int4": {
+        "answer": "1996",
+        "f1": 1.0
+      },
+      "only_L31_int4": {
+        "answer": "1996",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_int4": {
+        "answer": "1996",
+        "f1": 1.0
+      },
+      "time": 1.6751282215118408
+    },
+    {
+      "idx": 9,
+      "gold": "planning,[citation needed] design, and financing",
+      "seq_len": 149,
+      "question": "What three things are needed for construction to take place?",
+      "full": {
+        "answer": "planning, design, financing",
+        "f1": 0.5
+      },
+      "int8": {
+        "answer": "planning, design, financing",
+        "f1": 0.5
+      },
+      "int4": {
+        "answer": "planning, design, financing",
+        "f1": 0.5
+      },
+      "only_L0_int4": {
+        "answer": "planning, design, financing",
+        "f1": 0.5
+      },
+      "only_L4_int4": {
+        "answer": "planning, design, financing",
+        "f1": 0.5
+      },
+      "only_L8_int4": {
+        "answer": "planning, design, financing",
+        "f1": 0.5
+      },
+      "only_L16_int4": {
+        "answer": "planning, design, financing",
+        "f1": 0.5
+      },
+      "only_L24_int4": {
+        "answer": "planning, design, financing",
+        "f1": 0.5
+      },
+      "only_L31_int4": {
+        "answer": "planning, design, financing",
+        "f1": 0.5
+      },
+      "mixed_L0fp16_int4": {
+        "answer": "planning, design, financing",
+        "f1": 0.5
+      },
+      "time": 1.5561912059783936
+    },
+    {
+      "idx": 10,
+      "gold": "dukes",
+      "seq_len": 301,
+      "question": "Who used the church to unify themselves?",
+      "full": {
+        "answer": "The dukes used the church to unify themselves.",
+        "f1": 0.2222222222222222
+      },
+      "int8": {
+        "answer": "The dukes used the church to unify themselves.",
+        "f1": 0.2222222222222222
+      },
+      "int4": {
+        "answer": "The dukes used the church to unify themselves.",
+        "f1": 0.2222222222222222
+      },
+      "only_L0_int4": {
+        "answer": "The dukes used the church to unify themselves.",
+        "f1": 0.2222222222222222
+      },
+      "only_L4_int4": {
+        "answer": "The dukes used the church to unify themselves.",
+        "f1": 0.2222222222222222
+      },
+      "only_L8_int4": {
+        "answer": "The dukes used the church to unify themselves.",
+        "f1": 0.2222222222222222
+      },
+      "only_L16_int4": {
+        "answer": "The dukes used the church to unify themselves.",
+        "f1": 0.2222222222222222
+      },
+      "only_L24_int4": {
+        "answer": "The dukes used the church to unify themselves.",
+        "f1": 0.2222222222222222
+      },
+      "only_L31_int4": {
+        "answer": "The dukes used the church to unify themselves.",
+        "f1": 0.2222222222222222
+      },
+      "mixed_L0fp16_int4": {
+        "answer": "The dukes used the church to unify themselves.",
+        "f1": 0.2222222222222222
+      },
+      "time": 2.8292038440704346
+    },
+    {
+      "idx": 11,
+      "gold": "prohibited emigration",
+      "seq_len": 212,
+      "question": "How did the revocation restrict Huguenot travel?",
+      "full": {
+        "answer": "prohibition emigration",
+        "f1": 0.5
+      },
+      "int8": {
+        "answer": "prohibition emigration",
+        "f1": 0.5
+      },
+      "int4": {
+        "answer": "prohibited emigration",
+        "f1": 1.0
+      },
+      "only_L0_int4": {
+        "answer": "prohibition emigration",
+        "f1": 0.5
+      },
+      "only_L4_int4": {
+        "answer": "prohibition emigration",
+        "f1": 0.5
+      },
+      "only_L8_int4": {
+        "answer": "prohibition emigration",
+        "f1": 0.5
+      },
+      "only_L16_int4": {
+        "answer": "prohibition emigration",
+        "f1": 0.5
+      },
+      "only_L24_int4": {
+        "answer": "prohibition emigration",
+        "f1": 0.5
+      },
+      "only_L31_int4": {
+        "answer": "prohibition emigration",
+        "f1": 0.5
+      },
+      "mixed_L0fp16_int4": {
+        "answer": "prohibited emigration",
+        "f1": 1.0
+      },
+      "time": 1.271355390548706
+    },
+    {
+      "idx": 12,
+      "gold": "no",
+      "seq_len": 215,
+      "question": "Can BSkyB veto the presence of channels on their EPG?",
+      "full": {
+        "answer": "No veto over the presence of channels on their EPG.",
+        "f1": 0.18181818181818182
+      },
+      "int8": {
+        "answer": "No veto over the presence of channels on their EPG.",
+        "f1": 0.18181818181818182
+      },
+      "int4": {
+        "answer": "No veto over presence of channels on EPG.",
+        "f1": 0.2222222222222222
+      },
+      "only_L0_int4": {
+        "answer": "No veto over the presence of channels on their EPG.",
+        "f1": 0.18181818181818182
+      },
+      "only_L4_int4": {
+        "answer": "No veto over the presence of channels on their EPG.",
+        "f1": 0.18181818181818182
+      },
+      "only_L8_int4": {
+        "answer": "No veto over the presence of channels on their EPG.",
+        "f1": 0.18181818181818182
+      },
+      "only_L16_int4": {
+        "answer": "No veto over the presence of channels on their EPG.",
+        "f1": 0.18181818181818182
+      },
+      "only_L24_int4": {
+        "answer": "No veto over the presence of channels on their EPG.",
+        "f1": 0.18181818181818182
+      },
+      "only_L31_int4": {
+        "answer": "No veto over the presence of channels on their EPG.",
+        "f1": 0.18181818181818182
+      },
+      "mixed_L0fp16_int4": {
+        "answer": "No veto over presence of channels on EPG.",
+        "f1": 0.2222222222222222
+      },
+      "time": 2.7083189487457275
+    },
+    {
+      "idx": 13,
+      "gold": "breaking the law for self-gratification",
+      "seq_len": 251,
+      "question": "What is one main reason that civil disobedience is not recognized?",
+      "full": {
+        "answer": "Test case creation",
+        "f1": 0.0
+      },
+      "int8": {
+        "answer": "Test case creation",
+        "f1": 0.0
+      },
+      "int4": {
+        "answer": "Test case creation",
+        "f1": 0.0
+      },
+      "only_L0_int4": {
+        "answer": "Test case creation",
+        "f1": 0.0
+      },
+      "only_L4_int4": {
+        "answer": "Test case creation",
+        "f1": 0.0
+      },
+      "only_L8_int4": {
+        "answer": "Test case creation",
+        "f1": 0.0
+      },
+      "only_L16_int4": {
+        "answer": "Test case creation",
+        "f1": 0.0
+      },
+      "only_L24_int4": {
+        "answer": "Test case creation",
+        "f1": 0.0
+      },
+      "only_L31_int4": {
+        "answer": "Test case creation",
+        "f1": 0.0
+      },
+      "mixed_L0fp16_int4": {
+        "answer": "Test case creation",
+        "f1": 0.0
+      },
+      "time": 1.0779716968536377
+    },
+    {
+      "idx": 14,
+      "gold": "kilopond",
+      "seq_len": 255,
+      "question": "What is the kilogram-force sometimes reffered to as?",
+      "full": {
+        "answer": "kilopond",
+        "f1": 1.0
+      },
+      "int8": {
+        "answer": "kilopond",
+        "f1": 1.0
+      },
+      "int4": {
+        "answer": "kilopond",
+        "f1": 1.0
+      },
+      "only_L0_int4": {
+        "answer": "kilopond",
+        "f1": 1.0
+      },
+      "only_L4_int4": {
+        "answer": "kilopond",
+        "f1": 1.0
+      },
+      "only_L8_int4": {
+        "answer": "kilopond",
+        "f1": 1.0
+      },
+      "only_L16_int4": {
+        "answer": "kilopond",
+        "f1": 1.0
+      },
+      "only_L24_int4": {
+        "answer": "kilopond",
+        "f1": 1.0
+      },
+      "only_L31_int4": {
+        "answer": "kilopond",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_int4": {
+        "answer": "kilopond",
+        "f1": 1.0
+      },
+      "time": 1.0790948867797852
+    },
+    {
+      "idx": 15,
+      "gold": "some paintings",
+      "seq_len": 189,
+      "question": "What does the National Museum boast having from Adolf Hitler's private collection?",
+      "full": {
+        "answer": "paintings",
+        "f1": 0.6666666666666666
+      },
+      "int8": {
+        "answer": "paintings",
+        "f1": 0.6666666666666666
+      },
+      "int4": {
+        "answer": "paintings",
+        "f1": 0.6666666666666666
+      },
+      "only_L0_int4": {
+        "answer": "paintings",
+        "f1": 0.6666666666666666
+      },
+      "only_L4_int4": {
+        "answer": "paintings",
+        "f1": 0.6666666666666666
+      },
+      "only_L8_int4": {
+        "answer": "paintings",
+        "f1": 0.6666666666666666
+      },
+      "only_L16_int4": {
+        "answer": "paintings",
+        "f1": 0.6666666666666666
+      },
+      "only_L24_int4": {
+        "answer": "paintings",
+        "f1": 0.6666666666666666
+      },
+      "only_L31_int4": {
+        "answer": "paintings",
+        "f1": 0.6666666666666666
+      },
+      "mixed_L0fp16_int4": {
+        "answer": "paintings",
+        "f1": 0.6666666666666666
+      },
+      "time": 1.0304007530212402
+    },
+    {
+      "idx": 16,
+      "gold": "William Maclure",
+      "seq_len": 238,
+      "question": "Who produced the first geological map of the U.S.?",
+      "full": {
+        "answer": "William Maclure.",
+        "f1": 0.5
+      },
+      "int8": {
+        "answer": "William Maclure.",
+        "f1": 0.5
+      },
+      "int4": {
+        "answer": "William Maclure.",
+        "f1": 0.5
+      },
+      "only_L0_int4": {
+        "answer": "William Maclure.",
+        "f1": 0.5
+      },
+      "only_L4_int4": {
+        "answer": "William Maclure.",
+        "f1": 0.5
+      },
+      "only_L8_int4": {
+        "answer": "William Maclure.",
+        "f1": 0.5
+      },
+      "only_L16_int4": {
+        "answer": "William Maclure.",
+        "f1": 0.5
+      },
+      "only_L24_int4": {
+        "answer": "William Maclure.",
+        "f1": 0.5
+      },
+      "only_L31_int4": {
+        "answer": "William Maclure.",
+        "f1": 0.5
+      },
+      "mixed_L0fp16_int4": {
+        "answer": "William Maclure.",
+        "f1": 0.5
+      },
+      "time": 1.6571331024169922
+    },
+    {
+      "idx": 17,
+      "gold": "an estimated 25 million",
+      "seq_len": 323,
+      "question": "How many did this epidemic in China kill?",
+      "full": {
+        "answer": "25 million",
+        "f1": 0.6666666666666666
+      },
+      "int8": {
+        "answer": "25 million",
+        "f1": 0.6666666666666666
+      },
+      "int4": {
+        "answer": "25 million",
+        "f1": 0.6666666666666666
+      },
+      "only_L0_int4": {
+        "answer": "25 million",
+        "f1": 0.6666666666666666
+      },
+      "only_L4_int4": {
+        "answer": "25 million",
+        "f1": 0.6666666666666666
+      },
+      "only_L8_int4": {
+        "answer": "25 million",
+        "f1": 0.6666666666666666
+      },
+      "only_L16_int4": {
+        "answer": "25 million",
+        "f1": 0.6666666666666666
+      },
+      "only_L24_int4": {
+        "answer": "25 million",
+        "f1": 0.6666666666666666
+      },
+      "only_L31_int4": {
+        "answer": "25 million",
+        "f1": 0.6666666666666666
+      },
+      "mixed_L0fp16_int4": {
+        "answer": "25 million",
+        "f1": 0.6666666666666666
+      },
+      "time": 1.3206493854522705
+    },
+    {
+      "idx": 18,
+      "gold": "probabilistic Turing machines, non-deterministic Turing machines",
+      "seq_len": 150,
+      "question": "In the determination of complexity classes, what are two examples of types of Turing machines?",
+      "full": {
+        "answer": "Deterministic Turing machines, non-deterministic Turing machines.",
+        "f1": 0.5
+      },
+      "int8": {
+        "answer": "Deterministic Turing machines, non-deterministic Turing machines.",
+        "f1": 0.5
+      },
+      "int4": {
+        "answer": "Deterministic Turing machines, non-deterministic Turing machines.",
+        "f1": 0.5
+      },
+      "only_L0_int4": {
+        "answer": "Deterministic Turing machines, non-deterministic Turing machines.",
+        "f1": 0.5
+      },
+      "only_L4_int4": {
+        "answer": "Deterministic Turing machines, non-deterministic Turing machines.",
+        "f1": 0.5
+      },
+      "only_L8_int4": {
+        "answer": "Deterministic Turing machines, non-deterministic Turing machines.",
+        "f1": 0.5
+      },
+      "only_L16_int4": {
+        "answer": "Deterministic Turing machines, non-deterministic Turing machines.",
+        "f1": 0.5
+      },
+      "only_L24_int4": {
+        "answer": "Deterministic Turing machines, non-deterministic Turing machines.",
+        "f1": 0.5
+      },
+      "only_L31_int4": {
+        "answer": "Deterministic Turing machines, non-deterministic Turing machines.",
+        "f1": 0.5
+      },
+      "mixed_L0fp16_int4": {
+        "answer": "Deterministic Turing machines, non-deterministic Turing machines.",
+        "f1": 0.5
+      },
+      "time": 3.717214822769165
+    },
+    {
+      "idx": 19,
+      "gold": "cartels",
+      "seq_len": 379,
+      "question": "What did article 65 of the ECSC ban?",
+      "full": {
+        "answer": "Cartels",
+        "f1": 1.0
+      },
+      "int8": {
+        "answer": "Cartels",
+        "f1": 1.0
+      },
+      "int4": {
+        "answer": "Cartels",
+        "f1": 1.0
+      },
+      "only_L0_int4": {
+        "answer": "Cartels",
+        "f1": 1.0
+      },
+      "only_L4_int4": {
+        "answer": "Cartels",
+        "f1": 1.0
+      },
+      "only_L8_int4": {
+        "answer": "Cartels",
+        "f1": 1.0
+      },
+      "only_L16_int4": {
+        "answer": "Cartels",
+        "f1": 1.0
+      },
+      "only_L24_int4": {
+        "answer": "Cartels",
+        "f1": 1.0
+      },
+      "only_L31_int4": {
+        "answer": "Cartels",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_int4": {
+        "answer": "Cartels",
+        "f1": 1.0
+      },
+      "time": 1.3356273174285889
+    },
+    {
+      "idx": 20,
+      "gold": "over 100 billion dollars",
+      "seq_len": 188,
+      "question": "How much did Saudi Arabia spend on spreading Wahhabism?",
+      "full": {
+        "answer": "Over 100 billion dollars.",
+        "f1": 0.75
+      },
+      "int8": {
+        "answer": "Over 100 billion dollars.",
+        "f1": 0.75
+      },
+      "int4": {
+        "answer": "Over 100 billion dollars.",
+        "f1": 0.75
+      },
+      "only_L0_int4": {
+        "answer": "Over 100 billion dollars.",
+        "f1": 0.75
+      },
+      "only_L4_int4": {
+        "answer": "Over 100 billion dollars.",
+        "f1": 0.75
+      },
+      "only_L8_int4": {
+        "answer": "Over 100 billion dollars.",
+        "f1": 0.75
+      },
+      "only_L16_int4": {
+        "answer": "Over 100 billion dollars.",
+        "f1": 0.75
+      },
+      "only_L24_int4": {
+        "answer": "Over 100 billion dollars.",
+        "f1": 0.75
+      },
+      "only_L31_int4": {
+        "answer": "Over 100 billion dollars.",
+        "f1": 0.75
+      },
+      "mixed_L0fp16_int4": {
+        "answer": "Over 100 billion dollars.",
+        "f1": 0.75
+      },
+      "time": 2.007333755493164
+    },
+    {
+      "idx": 21,
+      "gold": "April",
+      "seq_len": 229,
+      "question": "Which month is the first in the year Parliament takes a two week vacation?",
+      "full": {
+        "answer": "April",
+        "f1": 1.0
+      },
+      "int8": {
+        "answer": "April",
+        "f1": 1.0
+      },
+      "int4": {
+        "answer": "April",
+        "f1": 1.0
+      },
+      "only_L0_int4": {
+        "answer": "April",
+        "f1": 1.0
+      },
+      "only_L4_int4": {
+        "answer": "April",
+        "f1": 1.0
+      },
+      "only_L8_int4": {
+        "answer": "April",
+        "f1": 1.0
+      },
+      "only_L16_int4": {
+        "answer": "April",
+        "f1": 1.0
+      },
+      "only_L24_int4": {
+        "answer": "April",
+        "f1": 1.0
+      },
+      "only_L31_int4": {
+        "answer": "April",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_int4": {
+        "answer": "April",
+        "f1": 1.0
+      },
+      "time": 0.6831393241882324
+    },
+    {
+      "idx": 22,
+      "gold": "168,637",
+      "seq_len": 197,
+      "question": "How many Victorians are Buddhist?",
+      "full": {
+        "answer": "168,637",
+        "f1": 1.0
+      },
+      "int8": {
+        "answer": "168,637",
+        "f1": 1.0
+      },
+      "int4": {
+        "answer": "168,637",
+        "f1": 1.0
+      },
+      "only_L0_int4": {
+        "answer": "168,637",
+        "f1": 1.0
+      },
+      "only_L4_int4": {
+        "answer": "168,637",
+        "f1": 1.0
+      },
+      "only_L8_int4": {
+        "answer": "168,637",
+        "f1": 1.0
+      },
+      "only_L16_int4": {
+        "answer": "168,637",
+        "f1": 1.0
+      },
+      "only_L24_int4": {
+        "answer": "168,637",
+        "f1": 1.0
+      },
+      "only_L31_int4": {
+        "answer": "168,637",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_int4": {
+        "answer": "168,637",
+        "f1": 1.0
+      },
+      "time": 1.8374722003936768
+    },
+    {
+      "idx": 23,
+      "gold": "4,222,000",
+      "seq_len": 253,
+      "question": "What was the total number of homes Sky announced that had Sky+HD in March of 2012?",
+      "full": {
+        "answer": "4,222,000",
+        "f1": 1.0
+      },
+      "int8": {
+        "answer": "4,222,000",
+        "f1": 1.0
+      },
+      "int4": {
+        "answer": "4,222,000",
+        "f1": 1.0
+      },
+      "only_L0_int4": {
+        "answer": "4,222,000",
+        "f1": 1.0
+      },
+      "only_L4_int4": {
+        "answer": "4,222,000",
+        "f1": 1.0
+      },
+      "only_L8_int4": {
+        "answer": "4,222,000",
+        "f1": 1.0
+      },
+      "only_L16_int4": {
+        "answer": "4,222,000",
+        "f1": 1.0
+      },
+      "only_L24_int4": {
+        "answer": "4,222,000",
+        "f1": 1.0
+      },
+      "only_L31_int4": {
+        "answer": "4,222,000",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_int4": {
+        "answer": "4,222,000",
+        "f1": 1.0
+      },
+      "time": 2.2746942043304443
+    },
+    {
+      "idx": 24,
+      "gold": "magnitude",
+      "seq_len": 213,
+      "question": "What is the equality of forces between two objects exerting force on each other??",
+      "full": {
+        "answer": "equal in magnitude and opposite in direction",
+        "f1": 0.25
+      },
+      "int8": {
+        "answer": "equal in magnitude and opposite in direction",
+        "f1": 0.25
+      },
+      "int4": {
+        "answer": "equal in magnitude and opposite in direction",
+        "f1": 0.25
+      },
+      "only_L0_int4": {
+        "answer": "equal in magnitude and opposite in direction",
+        "f1": 0.25
+      },
+      "only_L4_int4": {
+        "answer": "equal in magnitude and opposite in direction",
+        "f1": 0.25
+      },
+      "only_L8_int4": {
+        "answer": "equal in magnitude and opposite in direction",
+        "f1": 0.25
+      },
+      "only_L16_int4": {
+        "answer": "equal in magnitude and opposite in direction",
+        "f1": 0.25
+      },
+      "only_L24_int4": {
+        "answer": "equal in magnitude and opposite in direction",
+        "f1": 0.25
+      },
+      "only_L31_int4": {
+        "answer": "equal in magnitude and opposite in direction",
+        "f1": 0.25
+      },
+      "mixed_L0fp16_int4": {
+        "answer": "equal in magnitude and opposite in direction",
+        "f1": 0.25
+      },
+      "time": 1.8495979309082031
+    },
+    {
+      "idx": 25,
+      "gold": "fossil sequences",
+      "seq_len": 181,
+      "question": "When dating rocks, what is the absolute isotopic date applied to?",
+      "full": {
+        "answer": "Absolute isotopic date applied to: fossil sequences with datable material, converting old relative ages into new absolute ages.",
+        "f1": 0.19999999999999998
+      },
+      "int8": {
+        "answer": "Absolute isotopic date applied to: fossil sequences with datable material, converting old relative ages into new absolute ages.",
+        "f1": 0.19999999999999998
+      },
+      "int4": {
+        "answer": "Absolute isotopic date applied to fossil sequences in which there was datable material, converting relative ages into new absolute ages.",
+        "f1": 0.18181818181818182
+      },
+      "only_L0_int4": {
+        "answer": "Absolute isotopic date applied to: fossil sequences with datable material, converting old relative ages into new absolute ages.",
+        "f1": 0.19999999999999998
+      },
+      "only_L4_int4": {
+        "answer": "Absolute isotopic date applied to: fossil sequences with datable material, converting old relative ages into new absolute ages.",
+        "f1": 0.19999999999999998
+      },
+      "only_L8_int4": {
+        "answer": "Absolute isotopic date applied to: fossil sequences with datable material, converting old relative ages into new absolute ages.",
+        "f1": 0.19999999999999998
+      },
+      "only_L16_int4": {
+        "answer": "Absolute isotopic date applied to: fossil sequences with datable material, converting old relative ages into new absolute ages.",
+        "f1": 0.19999999999999998
+      },
+      "only_L24_int4": {
+        "answer": "Absolute isotopic date applied to: fossil sequences with datable material, converting old relative ages into new absolute ages.",
+        "f1": 0.19999999999999998
+      },
+      "only_L31_int4": {
+        "answer": "Absolute isotopic date applied to: fossil sequences with datable material, converting old relative ages into new absolute ages.",
+        "f1": 0.19999999999999998
+      },
+      "mixed_L0fp16_int4": {
+        "answer": "Absolute isotopic date applied to fossil sequences in which there was datable material, converting the old relative ages into new absolute ages.",
+        "f1": 0.16666666666666669
+      },
+      "time": 5.250831127166748
+    },
+    {
+      "idx": 26,
+      "gold": "the Art Deco style",
+      "seq_len": 237,
+      "question": "What did Lempicka represent better than anyone else?",
+      "full": {
+        "answer": "Art Deco style.",
+        "f1": 0.5714285714285715
+      },
+      "int8": {
+        "answer": "Art Deco style.",
+        "f1": 0.5714285714285715
+      },
+      "int4": {
+        "answer": "Art Deco style.",
+        "f1": 0.5714285714285715
+      },
+      "only_L0_int4": {
+        "answer": "Art Deco style.",
+        "f1": 0.5714285714285715
+      },
+      "only_L4_int4": {
+        "answer": "Art Deco style.",
+        "f1": 0.5714285714285715
+      },
+      "only_L8_int4": {
+        "answer": "Art Deco style.",
+        "f1": 0.5714285714285715
+      },
+      "only_L16_int4": {
+        "answer": "Art Deco style.",
+        "f1": 0.5714285714285715
+      },
+      "only_L24_int4": {
+        "answer": "Art Deco style.",
+        "f1": 0.5714285714285715
+      },
+      "only_L31_int4": {
+        "answer": "Art Deco style.",
+        "f1": 0.5714285714285715
+      },
+      "mixed_L0fp16_int4": {
+        "answer": "Art Deco style.",
+        "f1": 0.5714285714285715
+      },
+      "time": 1.48697829246521
+    },
+    {
+      "idx": 27,
+      "gold": "type of committee",
+      "seq_len": 177,
+      "question": "What is set up to scrutinize private bills submitted by party outsiders?",
+      "full": {
+        "answer": "Private Bill Committees",
+        "f1": 0.0
+      },
+      "int8": {
+        "answer": "Private Bill Committees",
+        "f1": 0.0
+      },
+      "int4": {
+        "answer": "Private Bill Committees",
+        "f1": 0.0
+      },
+      "only_L0_int4": {
+        "answer": "Private Bill Committees",
+        "f1": 0.0
+      },
+      "only_L4_int4": {
+        "answer": "Private Bill Committees",
+        "f1": 0.0
+      },
+      "only_L8_int4": {
+        "answer": "Private Bill Committees",
+        "f1": 0.0
+      },
+      "only_L16_int4": {
+        "answer": "Private Bill Committees",
+        "f1": 0.0
+      },
+      "only_L24_int4": {
+        "answer": "Private Bill Committees",
+        "f1": 0.0
+      },
+      "only_L31_int4": {
+        "answer": "Private Bill Committees",
+        "f1": 0.0
+      },
+      "mixed_L0fp16_int4": {
+        "answer": "Private Bill Committees",
+        "f1": 0.0
+      },
+      "time": 1.2386488914489746
+    },
+    {
+      "idx": 28,
+      "gold": "2001",
+      "seq_len": 258,
+      "question": "When was the IPCC Third Assessment Report published?",
+      "full": {
+        "answer": "2001",
+        "f1": 1.0
+      },
+      "int8": {
+        "answer": "2001",
+        "f1": 1.0
+      },
+      "int4": {
+        "answer": "2001",
+        "f1": 1.0
+      },
+      "only_L0_int4": {
+        "answer": "2001",
+        "f1": 1.0
+      },
+      "only_L4_int4": {
+        "answer": "2001",
+        "f1": 1.0
+      },
+      "only_L8_int4": {
+        "answer": "2001",
+        "f1": 1.0
+      },
+      "only_L16_int4": {
+        "answer": "2001",
+        "f1": 1.0
+      },
+      "only_L24_int4": {
+        "answer": "2001",
+        "f1": 1.0
+      },
+      "only_L31_int4": {
+        "answer": "2001",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_int4": {
+        "answer": "2001",
+        "f1": 1.0
+      },
+      "time": 1.479689121246338
+    },
+    {
+      "idx": 29,
+      "gold": "English",
+      "seq_len": 241,
+      "question": "In Nepalese private schools, what is the primary language of instruction?",
+      "full": {
+        "answer": "English, Nepali and/or the state's official language.",
+        "f1": 0.0
+      },
+      "int8": {
+        "answer": "English, Nepali and/or the state's official language.",
+        "f1": 0.0
+      },
+      "int4": {
+        "answer": "English, Nepali, and official language.",
+        "f1": 0.0
+      },
+      "only_L0_int4": {
+        "answer": "English, Nepali and/or the state's official language.",
+        "f1": 0.0
+      },
+      "only_L4_int4": {
+        "answer": "English, Nepali and/or the state's official language.",
+        "f1": 0.0
+      },
+      "only_L8_int4": {
+        "answer": "English, Nepali and/or the state's official language.",
+        "f1": 0.0
+      },
+      "only_L16_int4": {
+        "answer": "English, Nepali and/or the state's official language.",
+        "f1": 0.0
+      },
+      "only_L24_int4": {
+        "answer": "English, Nepali and/or the state's official language.",
+        "f1": 0.0
+      },
+      "only_L31_int4": {
+        "answer": "English, Nepali and/or the state's official language.",
+        "f1": 0.0
+      },
+      "mixed_L0fp16_int4": {
+        "answer": "English, Nepali, and official language.",
+        "f1": 0.0
+      },
+      "time": 3.073029041290283
+    },
+    {
+      "idx": 30,
+      "gold": "deforestation has declined",
+      "seq_len": 232,
+      "question": "What happened to the rate of deforestation in the Amazon region of Brazil between 2004 and 2014?",
+      "full": {
+        "answer": "decreased significantly",
+        "f1": 0.0
+      },
+      "int8": {
+        "answer": "decreased significantly",
+        "f1": 0.0
+      },
+      "int4": {
+        "answer": "decreased significantly.",
+        "f1": 0.0
+      },
+      "only_L0_int4": {
+        "answer": "decreased significantly",
+        "f1": 0.0
+      },
+      "only_L4_int4": {
+        "answer": "decreased significantly",
+        "f1": 0.0
+      },
+      "only_L8_int4": {
+        "answer": "decreased significantly",
+        "f1": 0.0
+      },
+      "only_L16_int4": {
+        "answer": "decreased significantly",
+        "f1": 0.0
+      },
+      "only_L24_int4": {
+        "answer": "decreased significantly",
+        "f1": 0.0
+      },
+      "only_L31_int4": {
+        "answer": "decreased significantly",
+        "f1": 0.0
+      },
+      "mixed_L0fp16_int4": {
+        "answer": "decreased significantly.",
+        "f1": 0.0
+      },
+      "time": 1.1228415966033936
+    },
+    {
+      "idx": 31,
+      "gold": "through various associations and other arrangements",
+      "seq_len": 176,
+      "question": "How is unregistered property held in informal form?",
+      "full": {
+        "answer": "unregistered property is held in informal form through various associations and other arrangements.",
+        "f1": 0.5263157894736842
+      },
+      "int8": {
+        "answer": "unregistered property is held in informal form through various associations and other arrangements.",
+        "f1": 0.5263157894736842
+      },
+      "int4": {
+        "answer": "unregistered property held informal form through various associations and other arrangements.",
+        "f1": 0.5882352941176471
+      },
+      "only_L0_int4": {
+        "answer": "unregistered property is held in informal form through various associations and other arrangements.",
+        "f1": 0.5263157894736842
+      },
+      "only_L4_int4": {
+        "answer": "unregistered property is held in informal form through various associations and other arrangements.",
+        "f1": 0.5263157894736842
+      },
+      "only_L8_int4": {
+        "answer": "unregistered property is held in informal form through various associations and other arrangements.",
+        "f1": 0.5263157894736842
+      },
+      "only_L16_int4": {
+        "answer": "unregistered property is held in informal form through various associations and other arrangements.",
+        "f1": 0.5263157894736842
+      },
+      "only_L24_int4": {
+        "answer": "unregistered property is held in informal form through various associations and other arrangements.",
+        "f1": 0.5263157894736842
+      },
+      "only_L31_int4": {
+        "answer": "unregistered property is held in informal form through various associations and other arrangements.",
+        "f1": 0.5263157894736842
+      },
+      "mixed_L0fp16_int4": {
+        "answer": "unregistered property is held informal form through various associations and other arrangements.",
+        "f1": 0.5555555555555556
+      },
+      "time": 3.3602333068847656
+    },
+    {
+      "idx": 32,
+      "gold": "the most rigorous, intense",
+      "seq_len": 245,
+      "question": "UChicago claims to have what kind of learning experience compared to other universities? ",
+      "full": {
+        "answer": "rigorous, intense",
+        "f1": 0.6666666666666666
+      },
+      "int8": {
+        "answer": "rigorous, intense",
+        "f1": 0.6666666666666666
+      },
+      "int4": {
+        "answer": "rigorous, intense",
+        "f1": 0.6666666666666666
+      },
+      "only_L0_int4": {
+        "answer": "rigorous, intense",
+        "f1": 0.6666666666666666
+      },
+      "only_L4_int4": {
+        "answer": "rigorous, intense",
+        "f1": 0.6666666666666666
+      },
+      "only_L8_int4": {
+        "answer": "rigorous, intense",
+        "f1": 0.6666666666666666
+      },
+      "only_L16_int4": {
+        "answer": "rigorous, intense",
+        "f1": 0.6666666666666666
+      },
+      "only_L24_int4": {
+        "answer": "rigorous, intense",
+        "f1": 0.6666666666666666
+      },
+      "only_L31_int4": {
+        "answer": "rigorous, intense",
+        "f1": 0.6666666666666666
+      },
+      "mixed_L0fp16_int4": {
+        "answer": "rigorous, intense",
+        "f1": 0.6666666666666666
+      },
+      "time": 1.3005502223968506
+    },
+    {
+      "idx": 33,
+      "gold": "the high risk of a conflict of interest and/or the avoidance of absolute powers",
+      "seq_len": 182,
+      "question": "Why is majority rule used?",
+      "full": {
+        "answer": "High risk of conflict of interest and avoidance of absolute powers.",
+        "f1": 0.56
+      },
+      "int8": {
+        "answer": "High risk of conflict of interest and avoidance of absolute powers.",
+        "f1": 0.56
+      },
+      "int4": {
+        "answer": "High risk of conflict of interest, avoidance of absolute powers.",
+        "f1": 0.5
+      },
+      "only_L0_int4": {
+        "answer": "High risk of conflict of interest and avoidance of absolute powers.",
+        "f1": 0.56
+      },
+      "only_L4_int4": {
+        "answer": "High risk of conflict of interest and avoidance of absolute powers.",
+        "f1": 0.56
+      },
+      "only_L8_int4": {
+        "answer": "High risk of conflict of interest and avoidance of absolute powers.",
+        "f1": 0.56
+      },
+      "only_L16_int4": {
+        "answer": "High risk of conflict of interest and avoidance of absolute powers.",
+        "f1": 0.56
+      },
+      "only_L24_int4": {
+        "answer": "High risk of conflict of interest and avoidance of absolute powers.",
+        "f1": 0.56
+      },
+      "only_L31_int4": {
+        "answer": "High risk of conflict of interest and avoidance of absolute powers.",
+        "f1": 0.56
+      },
+      "mixed_L0fp16_int4": {
+        "answer": "High risk of conflict of interest, avoidance of absolute powers.",
+        "f1": 0.5
+      },
+      "time": 2.836602210998535
+    },
+    {
+      "idx": 34,
+      "gold": "females",
+      "seq_len": 350,
+      "question": "Which gender is more populous across all groups in Jacksonville?",
+      "full": {
+        "answer": "Females",
+        "f1": 1.0
+      },
+      "int8": {
+        "answer": "Females",
+        "f1": 1.0
+      },
+      "int4": {
+        "answer": "Females",
+        "f1": 1.0
+      },
+      "only_L0_int4": {
+        "answer": "Females",
+        "f1": 1.0
+      },
+      "only_L4_int4": {
+        "answer": "Females",
+        "f1": 1.0
+      },
+      "only_L8_int4": {
+        "answer": "Females",
+        "f1": 1.0
+      },
+      "only_L16_int4": {
+        "answer": "Females",
+        "f1": 1.0
+      },
+      "only_L24_int4": {
+        "answer": "Females",
+        "f1": 1.0
+      },
+      "only_L31_int4": {
+        "answer": "Females",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_int4": {
+        "answer": "Females",
+        "f1": 1.0
+      },
+      "time": 1.363205909729004
+    },
+    {
+      "idx": 35,
+      "gold": "cytokine TGF-\u03b2",
+      "seq_len": 174,
+      "question": "What is a chemical secreted by tumors that suppresses the immune response?",
+      "full": {
+        "answer": "TGF-\u03b2",
+        "f1": 0.6666666666666666
+      },
+      "int8": {
+        "answer": "TGF-\u03b2",
+        "f1": 0.6666666666666666
+      },
+      "int4": {
+        "answer": "TGF-\u03b2",
+        "f1": 0.6666666666666666
+      },
+      "only_L0_int4": {
+        "answer": "TGF-\u03b2",
+        "f1": 0.6666666666666666
+      },
+      "only_L4_int4": {
+        "answer": "TGF-\u03b2",
+        "f1": 0.6666666666666666
+      },
+      "only_L8_int4": {
+        "answer": "TGF-\u03b2",
+        "f1": 0.6666666666666666
+      },
+      "only_L16_int4": {
+        "answer": "TGF-\u03b2",
+        "f1": 0.6666666666666666
+      },
+      "only_L24_int4": {
+        "answer": "TGF-\u03b2",
+        "f1": 0.6666666666666666
+      },
+      "only_L31_int4": {
+        "answer": "TGF-\u03b2",
+        "f1": 0.6666666666666666
+      },
+      "mixed_L0fp16_int4": {
+        "answer": "TGF-\u03b2",
+        "f1": 0.6666666666666666
+      },
+      "time": 1.240727424621582
+    },
+    {
+      "idx": 36,
+      "gold": "orientalism",
+      "seq_len": 193,
+      "question": "What was a similar view about the Asian continent called?",
+      "full": {
+        "answer": "Orientalism",
+        "f1": 1.0
+      },
+      "int8": {
+        "answer": "Orientalism",
+        "f1": 1.0
+      },
+      "int4": {
+        "answer": "Orientalism",
+        "f1": 1.0
+      },
+      "only_L0_int4": {
+        "answer": "Orientalism",
+        "f1": 1.0
+      },
+      "only_L4_int4": {
+        "answer": "Orientalism",
+        "f1": 1.0
+      },
+      "only_L8_int4": {
+        "answer": "Orientalism",
+        "f1": 1.0
+      },
+      "only_L16_int4": {
+        "answer": "Orientalism",
+        "f1": 1.0
+      },
+      "only_L24_int4": {
+        "answer": "Orientalism",
+        "f1": 1.0
+      },
+      "only_L31_int4": {
+        "answer": "Orientalism",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_int4": {
+        "answer": "Orientalism.",
+        "f1": 0.0
+      },
+      "time": 1.084951639175415
+    },
+    {
+      "idx": 37,
+      "gold": "to avoid being targeted by the boycott",
+      "seq_len": 229,
+      "question": "Why did the European nations and Japan separated themselves from United States during the crisis?",
+      "full": {
+        "answer": "Boycott targeting, avoid being targeted by the boycott.",
+        "f1": 0.7999999999999999
+      },
+      "int8": {
+        "answer": "Boycott targeting, avoid being targeted by the boycott.",
+        "f1": 0.7999999999999999
+      },
+      "int4": {
+        "answer": "Boycott targeting, avoid policy changes.",
+        "f1": 0.3333333333333333
+      },
+      "only_L0_int4": {
+        "answer": "Boycott targeting, avoid being targeted by the boycott.",
+        "f1": 0.7999999999999999
+      },
+      "only_L4_int4": {
+        "answer": "Boycott targeting, avoid being targeted by the boycott.",
+        "f1": 0.7999999999999999
+      },
+      "only_L8_int4": {
+        "answer": "Boycott targeting, avoid being targeted by the boycott.",
+        "f1": 0.7999999999999999
+      },
+      "only_L16_int4": {
+        "answer": "Boycott targeting, avoid being targeted by the boycott.",
+        "f1": 0.7999999999999999
+      },
+      "only_L24_int4": {
+        "answer": "Boycott targeting, avoid being targeted by the boycott.",
+        "f1": 0.7999999999999999
+      },
+      "only_L31_int4": {
+        "answer": "Boycott targeting, avoid being targeted by the boycott.",
+        "f1": 0.7999999999999999
+      },
+      "mixed_L0fp16_int4": {
+        "answer": "Boycott targeting, avoid policy changes.",
+        "f1": 0.3333333333333333
+      },
+      "time": 2.5771050453186035
+    },
+    {
+      "idx": 38,
+      "gold": "1976",
+      "seq_len": 176,
+      "question": "In what year did BankAmericard change its name?",
+      "full": {
+        "answer": "1976",
+        "f1": 1.0
+      },
+      "int8": {
+        "answer": "1976",
+        "f1": 1.0
+      },
+      "int4": {
+        "answer": "1976",
+        "f1": 1.0
+      },
+      "only_L0_int4": {
+        "answer": "1976",
+        "f1": 1.0
+      },
+      "only_L4_int4": {
+        "answer": "1976",
+        "f1": 1.0
+      },
+      "only_L8_int4": {
+        "answer": "1976",
+        "f1": 1.0
+      },
+      "only_L16_int4": {
+        "answer": "1976",
+        "f1": 1.0
+      },
+      "only_L24_int4": {
+        "answer": "1976",
+        "f1": 1.0
+      },
+      "only_L31_int4": {
+        "answer": "1976",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_int4": {
+        "answer": "1976",
+        "f1": 1.0
+      },
+      "time": 1.247692584991455
+    },
+    {
+      "idx": 39,
+      "gold": "major method",
+      "seq_len": 237,
+      "question": "How much is the sieve method of gas production used?",
+      "full": {
+        "answer": "Pressure swing adsorption.",
+        "f1": 0.0
+      },
+      "int8": {
+        "answer": "Pressure swing adsorption.",
+        "f1": 0.0
+      },
+      "int4": {
+        "answer": "Pressure swing adsorption.",
+        "f1": 0.0
+      },
+      "only_L0_int4": {
+        "answer": "Pressure swing adsorption.",
+        "f1": 0.0
+      },
+      "only_L4_int4": {
+        "answer": "Pressure swing adsorption.",
+        "f1": 0.0
+      },
+      "only_L8_int4": {
+        "answer": "Pressure swing adsorption.",
+        "f1": 0.0
+      },
+      "only_L16_int4": {
+        "answer": "Pressure swing adsorption.",
+        "f1": 0.0
+      },
+      "only_L24_int4": {
+        "answer": "Pressure swing adsorption.",
+        "f1": 0.0
+      },
+      "only_L31_int4": {
+        "answer": "Pressure swing adsorption.",
+        "f1": 0.0
+      },
+      "mixed_L0fp16_int4": {
+        "answer": "Pressure swing adsorption.",
+        "f1": 0.0
+      },
+      "time": 1.7090721130371094
+    },
+    {
+      "idx": 40,
+      "gold": "Toyota Hilux",
+      "seq_len": 186,
+      "question": "Name a type of Toyota compact trucks?",
+      "full": {
+        "answer": "Hilux",
+        "f1": 0.6666666666666666
+      },
+      "int8": {
+        "answer": "Hilux",
+        "f1": 0.6666666666666666
+      },
+      "int4": {
+        "answer": "Hilux",
+        "f1": 0.6666666666666666
+      },
+      "only_L0_int4": {
+        "answer": "Hilux",
+        "f1": 0.6666666666666666
+      },
+      "only_L4_int4": {
+        "answer": "Hilux",
+        "f1": 0.6666666666666666
+      },
+      "only_L8_int4": {
+        "answer": "Hilux",
+        "f1": 0.6666666666666666
+      },
+      "only_L16_int4": {
+        "answer": "Hilux",
+        "f1": 0.6666666666666666
+      },
+      "only_L24_int4": {
+        "answer": "Hilux",
+        "f1": 0.6666666666666666
+      },
+      "only_L31_int4": {
+        "answer": "Hilux",
+        "f1": 0.6666666666666666
+      },
+      "mixed_L0fp16_int4": {
+        "answer": "Hilux",
+        "f1": 0.6666666666666666
+      },
+      "time": 1.0558323860168457
+    },
+    {
+      "idx": 41,
+      "gold": "dating to 1338\u201339",
+      "seq_len": 326,
+      "question": "How old are the gravestones that reference the plague?",
+      "full": {
+        "answer": "Nestorian graves dating to 1338\u201339.",
+        "f1": 0.5
+      },
+      "int8": {
+        "answer": "Nestorian graves dating to 1338\u201339.",
+        "f1": 0.5
+      },
+      "int4": {
+        "answer": "Nestorian graves dating to 1338\u201339.",
+        "f1": 0.5
+      },
+      "only_L0_int4": {
+        "answer": "Nestorian graves dating to 1338\u201339.",
+        "f1": 0.5
+      },
+      "only_L4_int4": {
+        "answer": "Nestorian graves dating to 1338\u201339.",
+        "f1": 0.5
+      },
+      "only_L8_int4": {
+        "answer": "Nestorian graves dating to 1338\u201339.",
+        "f1": 0.5
+      },
+      "only_L16_int4": {
+        "answer": "Nestorian graves dating to 1338\u201339.",
+        "f1": 0.5
+      },
+      "only_L24_int4": {
+        "answer": "Nestorian graves, dating to 1338\u201339.",
+        "f1": 0.5
+      },
+      "only_L31_int4": {
+        "answer": "Nestorian graves dating to 1338\u201339.",
+        "f1": 0.5
+      },
+      "mixed_L0fp16_int4": {
+        "answer": "Nestorian graves dating to 1338\u201339.",
+        "f1": 0.5
+      },
+      "time": 4.1961493492126465
+    },
+    {
+      "idx": 42,
+      "gold": "only marginally more",
+      "seq_len": 187,
+      "question": "What si the comparison to sea level with the oxygen level in space suits?",
+      "full": {
+        "answer": "marginally more than normal sea-level",
+        "f1": 0.5
+      },
+      "int8": {
+        "answer": "marginally more than normal sea-level",
+        "f1": 0.5
+      },
+      "int4": {
+        "answer": "marginally more than normal sea-level",
+        "f1": 0.5
+      },
+      "only_L0_int4": {
+        "answer": "marginally more than normal sea-level",
+        "f1": 0.5
+      },
+      "only_L4_int4": {
+        "answer": "marginally more than normal sea-level",
+        "f1": 0.5
+      },
+      "only_L8_int4": {
+        "answer": "marginally more than normal sea-level",
+        "f1": 0.5
+      },
+      "only_L16_int4": {
+        "answer": "marginally more than normal sea-level",
+        "f1": 0.5
+      },
+      "only_L24_int4": {
+        "answer": "marginally more than normal sea-level",
+        "f1": 0.5
+      },
+      "only_L31_int4": {
+        "answer": "marginally more than normal sea-level",
+        "f1": 0.5
+      },
+      "mixed_L0fp16_int4": {
+        "answer": "marginally more than normal sea-level",
+        "f1": 0.5
+      },
+      "time": 2.2624034881591797
+    },
+    {
+      "idx": 43,
+      "gold": "A steep and steady decline",
+      "seq_len": 183,
+      "question": "What happened to the credibility of secular politics as a result of the Six-Day War?",
+      "full": {
+        "answer": "credibility declined",
+        "f1": 0.0
+      },
+      "int8": {
+        "answer": "credibility declined",
+        "f1": 0.0
+      },
+      "int4": {
+        "answer": "credibility of secular politics declined",
+        "f1": 0.0
+      },
+      "only_L0_int4": {
+        "answer": "credibility declined",
+        "f1": 0.0
+      },
+      "only_L4_int4": {
+        "answer": "credibility declined",
+        "f1": 0.0
+      },
+      "only_L8_int4": {
+        "answer": "credibility declined",
+        "f1": 0.0
+      },
+      "only_L16_int4": {
+        "answer": "credibility declined",
+        "f1": 0.0
+      },
+      "only_L24_int4": {
+        "answer": "credibility declined",
+        "f1": 0.0
+      },
+      "only_L31_int4": {
+        "answer": "credibility declined",
+        "f1": 0.0
+      },
+      "mixed_L0fp16_int4": {
+        "answer": "credibility of secular politics declined",
+        "f1": 0.0
+      },
+      "time": 1.1856803894042969
+    },
+    {
+      "idx": 44,
+      "gold": "Court of Justice of the European Union (CJEU)",
+      "seq_len": 420,
+      "question": "What is the main judicial body of the EU?",
+      "full": {
+        "answer": "Court of Justice of the European Union (CJEU)",
+        "f1": 0.875
+      },
+      "int8": {
+        "answer": "Court of Justice of the European Union (CJEU)",
+        "f1": 0.875
+      },
+      "int4": {
+        "answer": "Court of Justice of the European Union (CJEU)",
+        "f1": 0.875
+      },
+      "only_L0_int4": {
+        "answer": "Court of Justice of the European Union (CJEU)",
+        "f1": 0.875
+      },
+      "only_L4_int4": {
+        "answer": "Court of Justice of the European Union (CJEU)",
+        "f1": 0.875
+      },
+      "only_L8_int4": {
+        "answer": "Court of Justice of the European Union (CJEU)",
+        "f1": 0.875
+      },
+      "only_L16_int4": {
+        "answer": "Court of Justice of the European Union (CJEU)",
+        "f1": 0.875
+      },
+      "only_L24_int4": {
+        "answer": "Court of Justice of the European Union (CJEU)",
+        "f1": 0.875
+      },
+      "only_L31_int4": {
+        "answer": "Court of Justice of the European Union (CJEU)",
+        "f1": 0.875
+      },
+      "mixed_L0fp16_int4": {
+        "answer": "Court of Justice of the European Union (CJEU)",
+        "f1": 0.875
+      },
+      "time": 3.512434244155884
+    },
+    {
+      "idx": 45,
+      "gold": "21,000",
+      "seq_len": 279,
+      "question": "Many changes in the vegetation of the amazon rainforest took place since the  Last Glacial Maximum, ",
+      "full": {
+        "answer": "21,000 years",
+        "f1": 0.6666666666666666
+      },
+      "int8": {
+        "answer": "21,000 years ago",
+        "f1": 0.5
+      },
+      "int4": {
+        "answer": "21,000 years ago.",
+        "f1": 0.5
+      },
+      "only_L0_int4": {
+        "answer": "21,000 years ago",
+        "f1": 0.5
+      },
+      "only_L4_int4": {
+        "answer": "21,000 years ago",
+        "f1": 0.5
+      },
+      "only_L8_int4": {
+        "answer": "21,000 years ago",
+        "f1": 0.5
+      },
+      "only_L16_int4": {
+        "answer": "21,000 years ago",
+        "f1": 0.5
+      },
+      "only_L24_int4": {
+        "answer": "21,000 years ago",
+        "f1": 0.5
+      },
+      "only_L31_int4": {
+        "answer": "21,000 years",
+        "f1": 0.6666666666666666
+      },
+      "mixed_L0fp16_int4": {
+        "answer": "21,000 years ago.",
+        "f1": 0.5
+      },
+      "time": 2.3164539337158203
+    },
+    {
+      "idx": 46,
+      "gold": "Commissioners",
+      "seq_len": 446,
+      "question": "Who are the un-elected subordinates of member state governments?",
+      "full": {
+        "answer": "Commissioners.",
+        "f1": 0.0
+      },
+      "int8": {
+        "answer": "Commissioners.",
+        "f1": 0.0
+      },
+      "int4": {
+        "answer": "Commissioners",
+        "f1": 1.0
+      },
+      "only_L0_int4": {
+        "answer": "Commissioners.",
+        "f1": 0.0
+      },
+      "only_L4_int4": {
+        "answer": "Commissioners.",
+        "f1": 0.0
+      },
+      "only_L8_int4": {
+        "answer": "Commissioners.",
+        "f1": 0.0
+      },
+      "only_L16_int4": {
+        "answer": "Commissioners.",
+        "f1": 0.0
+      },
+      "only_L24_int4": {
+        "answer": "Commissioners for each of the 28 member states.",
+        "f1": 0.2222222222222222
+      },
+      "only_L31_int4": {
+        "answer": "Commissioners.",
+        "f1": 0.0
+      },
+      "mixed_L0fp16_int4": {
+        "answer": "Commissioners",
+        "f1": 1.0
+      },
+      "time": 1.8297479152679443
+    },
+    {
+      "idx": 47,
+      "gold": "nearly $40 per barrel",
+      "seq_len": 216,
+      "question": "In 1979, during the oil crisis, what was the highest price of oil?",
+      "full": {
+        "answer": "Nearly $40 per barrel.",
+        "f1": 0.75
+      },
+      "int8": {
+        "answer": "Nearly $40 per barrel.",
+        "f1": 0.75
+      },
+      "int4": {
+        "answer": "Nearly $40 per barrel.",
+        "f1": 0.75
+      },
+      "only_L0_int4": {
+        "answer": "Nearly $40 per barrel.",
+        "f1": 0.75
+      },
+      "only_L4_int4": {
+        "answer": "Nearly $40 per barrel.",
+        "f1": 0.75
+      },
+      "only_L8_int4": {
+        "answer": "Nearly $40 per barrel.",
+        "f1": 0.75
+      },
+      "only_L16_int4": {
+        "answer": "Nearly $40 per barrel.",
+        "f1": 0.75
+      },
+      "only_L24_int4": {
+        "answer": "Nearly $40 per barrel.",
+        "f1": 0.75
+      },
+      "only_L31_int4": {
+        "answer": "Nearly $40 per barrel.",
+        "f1": 0.75
+      },
+      "mixed_L0fp16_int4": {
+        "answer": "Nearly $40 per barrel.",
+        "f1": 0.75
+      },
+      "time": 2.0834269523620605
+    },
+    {
+      "idx": 48,
+      "gold": "\"Wise up or die.\"",
+      "seq_len": 188,
+      "question": "What did Joseph Haas say in his email?",
+      "full": {
+        "answer": "Wise up or die.",
+        "f1": 0.5
+      },
+      "int8": {
+        "answer": "Wise up or die.",
+        "f1": 0.5
+      },
+      "int4": {
+        "answer": "Wise up or die.",
+        "f1": 0.5
+      },
+      "only_L0_int4": {
+        "answer": "Wise up or die.",
+        "f1": 0.5
+      },
+      "only_L4_int4": {
+        "answer": "Wise up or die.",
+        "f1": 0.5
+      },
+      "only_L8_int4": {
+        "answer": "Wise up or die.",
+        "f1": 0.5
+      },
+      "only_L16_int4": {
+        "answer": "Wise up or die.",
+        "f1": 0.5
+      },
+      "only_L24_int4": {
+        "answer": "Wise up or die.",
+        "f1": 0.5
+      },
+      "only_L31_int4": {
+        "answer": "Wise up or die.",
+        "f1": 0.5
+      },
+      "mixed_L0fp16_int4": {
+        "answer": "Wise up or die.",
+        "f1": 0.5
+      },
+      "time": 1.6740601062774658
+    },
+    {
+      "idx": 49,
+      "gold": "2100",
+      "seq_len": 188,
+      "question": "If one computer model turns out correct, by what year would there be a nearly complete loss of rainf",
+      "full": {
+        "answer": "2100",
+        "f1": 1.0
+      },
+      "int8": {
+        "answer": "2100",
+        "f1": 1.0
+      },
+      "int4": {
+        "answer": "2100",
+        "f1": 1.0
+      },
+      "only_L0_int4": {
+        "answer": "2100",
+        "f1": 1.0
+      },
+      "only_L4_int4": {
+        "answer": "2100",
+        "f1": 1.0
+      },
+      "only_L8_int4": {
+        "answer": "2100",
+        "f1": 1.0
+      },
+      "only_L16_int4": {
+        "answer": "2100",
+        "f1": 1.0
+      },
+      "only_L24_int4": {
+        "answer": "2100",
+        "f1": 1.0
+      },
+      "only_L31_int4": {
+        "answer": "2100",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_int4": {
+        "answer": "2100",
+        "f1": 1.0
+      },
+      "time": 1.2701752185821533
+    }
+  ]
+}

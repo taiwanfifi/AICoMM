@@ -1,0 +1,2931 @@
+{
+  "metadata": {
+    "model": "Yi-1.5-6B-Chat",
+    "task": "SQuAD-v2-needle-in-haystack-ChatML",
+    "target_lengths": [
+      512,
+      1024,
+      2048,
+      4096
+    ],
+    "num_samples_per_length": 30,
+    "full_f1_512": 0.2138463902896056,
+    "int4_f1_512": 0.2406207260107516,
+    "int4_pct_512": 112.5203589758454,
+    "int8_f1_512": 0.2138463902896056,
+    "int8_pct_512": 100.0,
+    "mixed_L0fp16_int4_f1_512": 0.2541472960590608,
+    "mixed_L0fp16_int4_pct_512": 118.84572646509343,
+    "full_f1_1024": 0.19486616327448153,
+    "int4_f1_1024": 0.19534510684553033,
+    "int4_pct_1024": 100.24578077743244,
+    "int8_f1_1024": 0.19592436433268257,
+    "int8_pct_1024": 100.54303992053792,
+    "mixed_L0fp16_int4_f1_1024": 0.19457756298588122,
+    "mixed_L0fp16_int4_pct_1024": 99.85189820348964,
+    "full_f1_2048": 0.1362523279810616,
+    "int4_f1_2048": 0.1434460167519903,
+    "int4_pct_2048": 105.27968136583223,
+    "int8_f1_2048": 0.13535833428463306,
+    "int8_pct_2048": 99.3438690482024,
+    "mixed_L0fp16_int4_f1_2048": 0.1434460167519903,
+    "mixed_L0fp16_int4_pct_2048": 105.27968136583223,
+    "full_f1_4096": 0.19543375065036717,
+    "int4_f1_4096": 0.19087610026612584,
+    "int4_pct_4096": 97.66793075961839,
+    "int8_f1_4096": 0.19543375065036717,
+    "int8_pct_4096": 100.0,
+    "mixed_L0fp16_int4_f1_4096": 0.19183303806516888,
+    "mixed_L0fp16_int4_pct_4096": 98.15757893750911
+  },
+  "results_by_length": {
+    "512": [
+      {
+        "idx": 0,
+        "gold": "Jerusalem",
+        "seq_len": 507,
+        "target_len": 512,
+        "sample_idx": 0,
+        "full": {
+          "answer": "Tancred played a role in the conquest of Jerusalem.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "Tancred played a role in the conquest of Jerusalem.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "Tancred played a role in the conquest of Jerusalem.",
+          "f1": 0.0
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "Tancred played a role in the conquest of Jerusalem.",
+          "f1": 0.0
+        },
+        "time": 1.790266752243042
+      },
+      {
+        "idx": 1,
+        "gold": "Sweyn Forkbeard",
+        "seq_len": 507,
+        "target_len": 512,
+        "sample_idx": 1,
+        "full": {
+          "answer": "Sweyn Forkbeard kicked Ethelred out.",
+          "f1": 0.5714285714285715
+        },
+        "int4": {
+          "answer": "Sweyn Forkbeard kicked Ethelred out.",
+          "f1": 0.5714285714285715
+        },
+        "int8": {
+          "answer": "Sweyn Forkbeard kicked Ethelred out.",
+          "f1": 0.5714285714285715
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "Sweyn Forkbeard kicked Ethelred out.",
+          "f1": 0.5714285714285715
+        },
+        "time": 1.3250586986541748
+      },
+      {
+        "idx": 2,
+        "gold": "if its solution requires significant resources",
+        "seq_len": 507,
+        "target_len": 512,
+        "sample_idx": 2,
+        "full": {
+          "answer": "The measure of a computational problem that broadly defines the inherent difficulty of the solution is the amount of resources required, such as time and storage.",
+          "f1": 0.125
+        },
+        "int4": {
+          "answer": "The measure of a computational problem that broadly defines the inherent difficulty of the solution is the amount of resources required, such as time and storage.",
+          "f1": 0.125
+        },
+        "int8": {
+          "answer": "The measure of a computational problem that broadly defines the inherent difficulty of the solution is the amount of resources required, such as time and storage.",
+          "f1": 0.125
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "The measure of a computational problem that broadly defines the inherent difficulty of the solution is the amount of resources required, such as time and storage.",
+          "f1": 0.125
+        },
+        "time": 2.4962007999420166
+      },
+      {
+        "idx": 3,
+        "gold": "round trip through all sites in Milan",
+        "seq_len": 507,
+        "target_len": 512,
+        "sample_idx": 3,
+        "full": {
+          "answer": "One example of an instance that the quantitative answer to the traveling salesman problem fails to answer is finding a route of at most 10 kilometers passing through all of Milan's 15 largest cities.",
+          "f1": 0.0975609756097561
+        },
+        "int4": {
+          "answer": "One example of an instance that the quantitative answer to the traveling salesman problem fails to answer is finding a route of at most 10 km passing through all sites in Milan.",
+          "f1": 0.20512820512820512
+        },
+        "int8": {
+          "answer": "One example of an instance that the quantitative answer to the traveling salesman problem fails to answer is finding a route of at most 10 kilometers passing through all of Milan's 15 largest cities.",
+          "f1": 0.0975609756097561
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "One example of an instance that the quantitative answer to the traveling salesman problem fails to answer is finding a route of at most 10 km passing through all sites in Milan.",
+          "f1": 0.20512820512820512
+        },
+        "time": 3.370229482650757
+      },
+      {
+        "idx": 4,
+        "gold": "France",
+        "seq_len": 507,
+        "target_len": 512,
+        "sample_idx": 4,
+        "full": {
+          "answer": "Normandy is located in France.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "Normandy is located in France.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "Normandy is located in France.",
+          "f1": 0.0
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "Normandy is located in France.",
+          "f1": 0.0
+        },
+        "time": 0.8685195446014404
+      },
+      {
+        "idx": 5,
+        "gold": "Battle of Hastings",
+        "seq_len": 507,
+        "target_len": 512,
+        "sample_idx": 5,
+        "full": {
+          "answer": "Harold II died at the Battle of Hastings.",
+          "f1": 0.36363636363636365
+        },
+        "int4": {
+          "answer": "Harold II died at the Battle of Hastings in 1066.",
+          "f1": 0.4615384615384615
+        },
+        "int8": {
+          "answer": "Harold II died at the Battle of Hastings.",
+          "f1": 0.36363636363636365
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "Harold II died at the Battle of Hastings in 1066.",
+          "f1": 0.4615384615384615
+        },
+        "time": 1.4187941551208496
+      },
+      {
+        "idx": 6,
+        "gold": "Tancred",
+        "seq_len": 507,
+        "target_len": 512,
+        "sample_idx": 6,
+        "full": {
+          "answer": "Tancred.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "Tancred",
+          "f1": 1.0
+        },
+        "int8": {
+          "answer": "Tancred.",
+          "f1": 0.0
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "Tancred",
+          "f1": 1.0
+        },
+        "time": 0.5968658924102783
+      },
+      {
+        "idx": 7,
+        "gold": "the problem",
+        "seq_len": 507,
+        "target_len": 512,
+        "sample_idx": 7,
+        "full": {
+          "answer": "Problem",
+          "f1": 0.6666666666666666
+        },
+        "int4": {
+          "answer": "Problem",
+          "f1": 0.6666666666666666
+        },
+        "int8": {
+          "answer": "Problem",
+          "f1": 0.6666666666666666
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "Problem",
+          "f1": 0.6666666666666666
+        },
+        "time": 0.4005885124206543
+      },
+      {
+        "idx": 8,
+        "gold": "fighting horsemen",
+        "seq_len": 507,
+        "target_len": 512,
+        "sample_idx": 8,
+        "full": {
+          "answer": "One of the Norman's major exports was fighting horsemen.",
+          "f1": 0.1818181818181818
+        },
+        "int4": {
+          "answer": "One of the Norman's major exports was fighting horsemen.",
+          "f1": 0.1818181818181818
+        },
+        "int8": {
+          "answer": "One of the Norman's major exports was fighting horsemen.",
+          "f1": 0.1818181818181818
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "One of the Norman's major exports was fighting horsemen.",
+          "f1": 0.1818181818181818
+        },
+        "time": 1.3435101509094238
+      },
+      {
+        "idx": 9,
+        "gold": "Isaac Komnenos",
+        "seq_len": 507,
+        "target_len": 512,
+        "sample_idx": 9,
+        "full": {
+          "answer": "Isaac Komnenos ruled Cyprus in 1191.",
+          "f1": 0.5
+        },
+        "int4": {
+          "answer": "Isaac Komnenos ruled Cyprus in 1191.",
+          "f1": 0.5
+        },
+        "int8": {
+          "answer": "Isaac Komnenos ruled Cyprus in 1191.",
+          "f1": 0.5
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "Isaac Komnenos ruled Cyprus in 1191.",
+          "f1": 0.5
+        },
+        "time": 1.4260497093200684
+      },
+      {
+        "idx": 10,
+        "gold": "yes",
+        "seq_len": 507,
+        "target_len": 512,
+        "sample_idx": 10,
+        "full": {
+          "answer": "The answer \"yes\" denotes that an algorithm has accepted an input string.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "The algorithm denotes acceptance by returning the answer \"yes.\"",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "The answer \"yes\" denotes that an algorithm has accepted an input string.",
+          "f1": 0.0
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "The algorithm denotes acceptance by returning the answer \"yes.\"",
+          "f1": 0.0
+        },
+        "time": 1.386202096939087
+      },
+      {
+        "idx": 11,
+        "gold": "Wales",
+        "seq_len": 507,
+        "target_len": 512,
+        "sample_idx": 11,
+        "full": {
+          "answer": "Wales was under the control of Norman barons.",
+          "f1": 0.2222222222222222
+        },
+        "int4": {
+          "answer": "Wales was under the control of Norman barons.",
+          "f1": 0.2222222222222222
+        },
+        "int8": {
+          "answer": "Wales was under the control of Norman barons.",
+          "f1": 0.2222222222222222
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "Wales was under the control of Norman barons.",
+          "f1": 0.2222222222222222
+        },
+        "time": 1.1915864944458008
+      },
+      {
+        "idx": 12,
+        "gold": "mathematical models of computation",
+        "seq_len": 507,
+        "target_len": 512,
+        "sample_idx": 12,
+        "full": {
+          "answer": "Mathematical models of computation are used to assess or quantify the amount of resources required to solve a computational problem.",
+          "f1": 0.33333333333333337
+        },
+        "int4": {
+          "answer": "Mathematical models of computation are used to assess or quantify the amount of resources required to solve a computational problem.",
+          "f1": 0.33333333333333337
+        },
+        "int8": {
+          "answer": "Mathematical models of computation are used to assess and quantify the amount of resources required to solve a computational problem.",
+          "f1": 0.33333333333333337
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "Mathematical models of computation are used to assess or quantify the amount of resources required to solve a computational problem.",
+          "f1": 0.33333333333333337
+        },
+        "time": 2.1401097774505615
+      },
+      {
+        "idx": 13,
+        "gold": "as a function of the size of the instance",
+        "seq_len": 507,
+        "target_len": 512,
+        "sample_idx": 13,
+        "full": {
+          "answer": "The time needed to obtain the solution to a problem is calculated as a function of the size of the instance, typically the size of the input in bits.",
+          "f1": 0.31578947368421056
+        },
+        "int4": {
+          "answer": "The time required to solve a problem is calculated as a function of the size of the input instance, typically the size of the input in bits.",
+          "f1": 0.3333333333333333
+        },
+        "int8": {
+          "answer": "The time needed to obtain the solution to a problem is calculated as a function of the size of the instance, typically the size of the input in bits.",
+          "f1": 0.31578947368421056
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "The time required to solve a problem is calculated as a function of the size of the input instance, typically the size of the input in bits.",
+          "f1": 0.3333333333333333
+        },
+        "time": 2.7012813091278076
+      },
+      {
+        "idx": 14,
+        "gold": "1050s",
+        "seq_len": 507,
+        "target_len": 512,
+        "sample_idx": 14,
+        "full": {
+          "answer": "Herve served as a Byzantine general in the 1050s.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "Herve served as a Byzantine general in the 1050s.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "Herve served as a Byzantine general in the 1050s.",
+          "f1": 0.0
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "Herve served as a Byzantine general in the 1050s.",
+          "f1": 0.0
+        },
+        "time": 1.6718792915344238
+      },
+      {
+        "idx": 15,
+        "gold": "10th century",
+        "seq_len": 507,
+        "target_len": 512,
+        "sample_idx": 15,
+        "full": {
+          "answer": "The Normans first gained their separate identity in the first half of the 10th century.",
+          "f1": 0.11764705882352941
+        },
+        "int4": {
+          "answer": "The Normans first gain their separate identity in the first half of the 10th century.",
+          "f1": 0.11764705882352941
+        },
+        "int8": {
+          "answer": "The Normans first gained their separate identity in the first half of the 10th century.",
+          "f1": 0.11764705882352941
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "The Normans first gain their separate identity in the first half of the 10th century.",
+          "f1": 0.11764705882352941
+        },
+        "time": 1.9147555828094482
+      },
+      {
+        "idx": 16,
+        "gold": "Deabolis",
+        "seq_len": 507,
+        "target_len": 512,
+        "sample_idx": 16,
+        "full": {
+          "answer": "Petrela was located by the river Deabolis.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "Petrela was located by the river Deabolis.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "Petrela was located by the river Deabolis.",
+          "f1": 0.0
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "Petrela was located by the river Deabolis.",
+          "f1": 0.0
+        },
+        "time": 1.281172275543213
+      },
+      {
+        "idx": 17,
+        "gold": "1066",
+        "seq_len": 507,
+        "target_len": 512,
+        "sample_idx": 17,
+        "full": {
+          "answer": "The Battle of Hastings occurred in 1066.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "The Battle of Hastings occurred in 1066.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "The Battle of Hastings occurred in 1066.",
+          "f1": 0.0
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "The Battle of Hastings occurred in 1066.",
+          "f1": 0.0
+        },
+        "time": 1.3624613285064697
+      },
+      {
+        "idx": 18,
+        "gold": "mosaics",
+        "seq_len": 507,
+        "target_len": 512,
+        "sample_idx": 18,
+        "full": {
+          "answer": "Mosaics are the most important type of Norman art preserved in churches.",
+          "f1": 0.15384615384615385
+        },
+        "int4": {
+          "answer": "Mosaics are the most important type of Norman art preserved in churches.",
+          "f1": 0.15384615384615385
+        },
+        "int8": {
+          "answer": "Mosaics are the most important type of Norman art preserved in churches.",
+          "f1": 0.15384615384615385
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "Mosaics are the most important type of Norman art preserved in churches.",
+          "f1": 0.15384615384615385
+        },
+        "time": 1.5225279331207275
+      },
+      {
+        "idx": 19,
+        "gold": "computational complexity theory",
+        "seq_len": 507,
+        "target_len": 512,
+        "sample_idx": 19,
+        "full": {
+          "answer": "Computational Complexity Theory.",
+          "f1": 0.6666666666666666
+        },
+        "int4": {
+          "answer": "Computational Complexity Theory analyzes all possible algorithms in aggregate to determine the resource requirements needed to solve a given problem.",
+          "f1": 0.2608695652173913
+        },
+        "int8": {
+          "answer": "Computational Complexity Theory.",
+          "f1": 0.6666666666666666
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "Computational Complexity Theory.",
+          "f1": 0.6666666666666666
+        },
+        "time": 1.1646785736083984
+      },
+      {
+        "idx": 20,
+        "gold": "binary alphabet",
+        "seq_len": 507,
+        "target_len": 512,
+        "sample_idx": 20,
+        "full": {
+          "answer": "Binary alphabet",
+          "f1": 1.0
+        },
+        "int4": {
+          "answer": "Binary alphabet",
+          "f1": 1.0
+        },
+        "int8": {
+          "answer": "Binary alphabet",
+          "f1": 1.0
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "Binary alphabet",
+          "f1": 1.0
+        },
+        "time": 0.48567700386047363
+      },
+      {
+        "idx": 21,
+        "gold": "2000",
+        "seq_len": 507,
+        "target_len": 512,
+        "sample_idx": 21,
+        "full": {
+          "answer": "The traveling salesman problem seeks to classify a route between the 15 largest cities in Germany by at most 2000 kilometers.",
+          "f1": 0.0909090909090909
+        },
+        "int4": {
+          "answer": "The traveling salesman problem seeks to classify a route between the 15 largest cities in Germany as having a distance of at most 2000 kilometers.",
+          "f1": 0.07692307692307693
+        },
+        "int8": {
+          "answer": "The traveling salesman problem seeks to classify a route between the 15 largest cities in Germany by at most 2000 kilometers.",
+          "f1": 0.0909090909090909
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "The traveling salesman problem seeks to classify a route between the 15 largest cities in Germany as having a distance of at most 2000 kilometers.",
+          "f1": 0.07692307692307693
+        },
+        "time": 2.8103835582733154
+      },
+      {
+        "idx": 22,
+        "gold": "adjacency matrices",
+        "seq_len": 507,
+        "target_len": 512,
+        "sample_idx": 22,
+        "full": {
+          "answer": "One way to encode graphs is by using their adjacency matrices.",
+          "f1": 0.15384615384615385
+        },
+        "int4": {
+          "answer": "One way to encode graphs is by using their adjacency matrices.",
+          "f1": 0.15384615384615385
+        },
+        "int8": {
+          "answer": "One way to encode graphs is by using their adjacency matrices.",
+          "f1": 0.15384615384615385
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "One way to encode graphs is by using their adjacency matrices.",
+          "f1": 0.15384615384615385
+        },
+        "time": 1.368776798248291
+      },
+      {
+        "idx": 23,
+        "gold": "Modern English",
+        "seq_len": 507,
+        "target_len": 512,
+        "sample_idx": 23,
+        "full": {
+          "answer": "The Anglo-Norman language's final form evolved into Modern English.",
+          "f1": 0.1818181818181818
+        },
+        "int4": {
+          "answer": "The Anglo-Norman language's final form evolved into Modern English.",
+          "f1": 0.1818181818181818
+        },
+        "int8": {
+          "answer": "The Anglo-Norman language's final form evolved into Modern English.",
+          "f1": 0.1818181818181818
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "The Anglo-Norman language's final form evolved into Modern English.",
+          "f1": 0.1818181818181818
+        },
+        "time": 1.5323972702026367
+      },
+      {
+        "idx": 24,
+        "gold": "1072",
+        "seq_len": 507,
+        "target_len": 512,
+        "sample_idx": 24,
+        "full": {
+          "answer": "Scotland was invaded by William in 1072.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "Scotland was invaded by William in 1072.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "Scotland was invaded by William in 1072.",
+          "f1": 0.0
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "Scotland was invaded by William in 1072.",
+          "f1": 0.0
+        },
+        "time": 1.452298641204834
+      },
+      {
+        "idx": 25,
+        "gold": "Seljuk Turks",
+        "seq_len": 507,
+        "target_len": 512,
+        "sample_idx": 25,
+        "full": {
+          "answer": "The Normans' main enemy in Italy, the Byzantine Empire, and Armenia was the Seljuk Turks.",
+          "f1": 0.11764705882352941
+        },
+        "int4": {
+          "answer": "The Normans' main enemy in Italy, the Byzantine Empire, and Armenia was the Seljuk Turks.",
+          "f1": 0.11764705882352941
+        },
+        "int8": {
+          "answer": "The Normans' main enemy in Italy, the Byzantine Empire, and Armenia was the Seljuk Turks.",
+          "f1": 0.11764705882352941
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "The Normans' main enemy in Italy, the Byzantine Empire, and Armenia was the Seljuk Turks.",
+          "f1": 0.11764705882352941
+        },
+        "time": 2.3416688442230225
+      },
+      {
+        "idx": 26,
+        "gold": "concrete",
+        "seq_len": 507,
+        "target_len": 512,
+        "sample_idx": 26,
+        "full": {
+          "answer": "A problem instance is typically characterized as concrete.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "A problem instance is typically characterized as concrete.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "A problem instance is typically characterized as concrete.",
+          "f1": 0.0
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "A problem instance is typically characterized as concrete.",
+          "f1": 0.0
+        },
+        "time": 1.0533511638641357
+      },
+      {
+        "idx": 27,
+        "gold": "instances",
+        "seq_len": 507,
+        "target_len": 512,
+        "sample_idx": 27,
+        "full": {
+          "answer": "Instance",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "Instance.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "Instance",
+          "f1": 0.0
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "Instance",
+          "f1": 0.0
+        },
+        "time": 0.42930102348327637
+      },
+      {
+        "idx": 28,
+        "gold": "Edgar",
+        "seq_len": 507,
+        "target_len": 512,
+        "sample_idx": 28,
+        "full": {
+          "answer": "Edgar Atheling was Margaret's brother.",
+          "f1": 0.33333333333333337
+        },
+        "int4": {
+          "answer": "Edgar Atheling was Margaret's brother.",
+          "f1": 0.33333333333333337
+        },
+        "int8": {
+          "answer": "Edgar Atheling was Margaret's brother.",
+          "f1": 0.33333333333333337
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "Edgar Atheling was Margaret's brother.",
+          "f1": 0.33333333333333337
+        },
+        "time": 1.1336705684661865
+      },
+      {
+        "idx": 29,
+        "gold": "binary notation",
+        "seq_len": 507,
+        "target_len": 512,
+        "sample_idx": 29,
+        "full": {
+          "answer": "Integers are commonly expressed in binary notation.",
+          "f1": 0.22222222222222224
+        },
+        "int4": {
+          "answer": "Integers are commonly expressed in binary notation.",
+          "f1": 0.22222222222222224
+        },
+        "int8": {
+          "answer": "Integers are commonly expressed in binary notation.",
+          "f1": 0.22222222222222224
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "Integers are commonly expressed in binary notation.",
+          "f1": 0.22222222222222224
+        },
+        "time": 1.0543897151947021
+      }
+    ],
+    "1024": [
+      {
+        "idx": 0,
+        "gold": "Jerusalem",
+        "seq_len": 1019,
+        "target_len": 1024,
+        "sample_idx": 0,
+        "full": {
+          "answer": "Tancred played a role in the conquest of Jerusalem.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "Tancred played a role in the conquest of Jerusalem.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "Tancred played a role in the conquest of Jerusalem.",
+          "f1": 0.0
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "Tancred played a role in the conquest of Jerusalem.",
+          "f1": 0.0
+        },
+        "time": 1.7468085289001465
+      },
+      {
+        "idx": 1,
+        "gold": "Sweyn Forkbeard",
+        "seq_len": 1019,
+        "target_len": 1024,
+        "sample_idx": 1,
+        "full": {
+          "answer": "Sweyn Forkbeard kicked Ethelred out.",
+          "f1": 0.5714285714285715
+        },
+        "int4": {
+          "answer": "Sweyn Forkbeard kicked Ethelred out.",
+          "f1": 0.5714285714285715
+        },
+        "int8": {
+          "answer": "Sweyn Forkbeard kicked Ethelred out.",
+          "f1": 0.5714285714285715
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "Sweyn Forkbeard kicked Ethelred out.",
+          "f1": 0.5714285714285715
+        },
+        "time": 1.7516140937805176
+      },
+      {
+        "idx": 2,
+        "gold": "if its solution requires significant resources",
+        "seq_len": 1019,
+        "target_len": 1024,
+        "sample_idx": 2,
+        "full": {
+          "answer": "The measure of a computational problem that broadly defines the inherent difficulty of the solution is the amount of resources required, such as time and storage.",
+          "f1": 0.125
+        },
+        "int4": {
+          "answer": "The measure of a computational problem that broadly defines the inherent difficulty of the solution is the amount of resources required, such as time and storage.",
+          "f1": 0.125
+        },
+        "int8": {
+          "answer": "The measure of a computational problem that broadly defines the inherent difficulty of the solution is the amount of resources required, such as time and storage.",
+          "f1": 0.125
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "The measure of a computational problem that broadly defines the inherent difficulty of the solution is the amount of resources required, such as time and storage.",
+          "f1": 0.125
+        },
+        "time": 3.009870767593384
+      },
+      {
+        "idx": 3,
+        "gold": "round trip through all sites in Milan",
+        "seq_len": 1019,
+        "target_len": 1024,
+        "sample_idx": 3,
+        "full": {
+          "answer": "One example of an instance that the quantitative answer to the traveling salesman problem fails to answer is finding a route of at most 10 kilometers passing through all of Milan's 15 largest cities.",
+          "f1": 0.0975609756097561
+        },
+        "int4": {
+          "answer": "One example of an instance that the quantitative answer to the traveling salesman problem fails to answer is finding a route of at most 10 kilometers passing through all of Milan's 5 largest cities.",
+          "f1": 0.0975609756097561
+        },
+        "int8": {
+          "answer": "One example of an instance that the quantitative answer to the traveling salesman problem fails to answer is finding a route of at most 10 kilometers passing through all of Milan's 15 largest cities.",
+          "f1": 0.0975609756097561
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "One example of an instance that the quantitative answer to the traveling salesman problem fails to answer is finding a route of at most 10 kilometers passing through all of Milan's 5 largest cities.",
+          "f1": 0.0975609756097561
+        },
+        "time": 4.146835565567017
+      },
+      {
+        "idx": 4,
+        "gold": "France",
+        "seq_len": 1019,
+        "target_len": 1024,
+        "sample_idx": 4,
+        "full": {
+          "answer": "Normandy is located in France.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "Normandy is located in France.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "Normandy is located in France.",
+          "f1": 0.0
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "Normandy is located in France.",
+          "f1": 0.0
+        },
+        "time": 1.2526440620422363
+      },
+      {
+        "idx": 5,
+        "gold": "Battle of Hastings",
+        "seq_len": 1019,
+        "target_len": 1024,
+        "sample_idx": 5,
+        "full": {
+          "answer": "Harold II died at the Battle of Hastings in 1066.",
+          "f1": 0.4615384615384615
+        },
+        "int4": {
+          "answer": "Harold II died at the Battle of Hastings in 1066.",
+          "f1": 0.4615384615384615
+        },
+        "int8": {
+          "answer": "Harold II died at the Battle of Hastings in 1066.",
+          "f1": 0.4615384615384615
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "Harold II died at the Battle of Hastings in 1066.",
+          "f1": 0.4615384615384615
+        },
+        "time": 2.096050500869751
+      },
+      {
+        "idx": 6,
+        "gold": "Tancred",
+        "seq_len": 1019,
+        "target_len": 1024,
+        "sample_idx": 6,
+        "full": {
+          "answer": "Tancred",
+          "f1": 1.0
+        },
+        "int4": {
+          "answer": "Tancred",
+          "f1": 1.0
+        },
+        "int8": {
+          "answer": "Tancred",
+          "f1": 1.0
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "Tancred",
+          "f1": 1.0
+        },
+        "time": 0.9193196296691895
+      },
+      {
+        "idx": 7,
+        "gold": "the problem",
+        "seq_len": 1019,
+        "target_len": 1024,
+        "sample_idx": 7,
+        "full": {
+          "answer": "Problem",
+          "f1": 0.6666666666666666
+        },
+        "int4": {
+          "answer": "Problem",
+          "f1": 0.6666666666666666
+        },
+        "int8": {
+          "answer": "Problem",
+          "f1": 0.6666666666666666
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "Problem",
+          "f1": 0.6666666666666666
+        },
+        "time": 0.7518455982208252
+      },
+      {
+        "idx": 8,
+        "gold": "fighting horsemen",
+        "seq_len": 1019,
+        "target_len": 1024,
+        "sample_idx": 8,
+        "full": {
+          "answer": "One of the Norman's major exports was fighting horsemen.",
+          "f1": 0.1818181818181818
+        },
+        "int4": {
+          "answer": "One of the Norman's major exports was fighting horsemen.",
+          "f1": 0.1818181818181818
+        },
+        "int8": {
+          "answer": "One of the Norman's major exports was fighting horsemen.",
+          "f1": 0.1818181818181818
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "One of the Norman's major exports was fighting horsemen.",
+          "f1": 0.1818181818181818
+        },
+        "time": 1.7605280876159668
+      },
+      {
+        "idx": 9,
+        "gold": "Isaac Komnenos",
+        "seq_len": 1019,
+        "target_len": 1024,
+        "sample_idx": 9,
+        "full": {
+          "answer": "Isaac Komnenos ruled Cyprus in 1191.",
+          "f1": 0.5
+        },
+        "int4": {
+          "answer": "Isaac Komnenos ruled Cyprus in 1191.",
+          "f1": 0.5
+        },
+        "int8": {
+          "answer": "Isaac Komnenos ruled Cyprus in 1191.",
+          "f1": 0.5
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "Isaac Komnenos ruled Cyprus in 1191.",
+          "f1": 0.5
+        },
+        "time": 1.8473777770996094
+      },
+      {
+        "idx": 10,
+        "gold": "yes",
+        "seq_len": 1019,
+        "target_len": 1024,
+        "sample_idx": 10,
+        "full": {
+          "answer": "The answer \"yes\" denotes that an algorithm has accepted an input string.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "The algorithm has accepted an input string when it returns the answer \"yes.\"",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "The answer \"yes\" denotes that an algorithm has accepted an input string.",
+          "f1": 0.0
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "The algorithm has accepted an input string when it returns the answer \"yes.\"",
+          "f1": 0.0
+        },
+        "time": 1.9748482704162598
+      },
+      {
+        "idx": 11,
+        "gold": "Wales",
+        "seq_len": 1019,
+        "target_len": 1024,
+        "sample_idx": 11,
+        "full": {
+          "answer": "Wales was under the control of Norman barons.",
+          "f1": 0.2222222222222222
+        },
+        "int4": {
+          "answer": "Wales was under the control of Norman barons.",
+          "f1": 0.2222222222222222
+        },
+        "int8": {
+          "answer": "Wales was under the control of Norman barons.",
+          "f1": 0.2222222222222222
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "Wales was under the control of Norman barons.",
+          "f1": 0.2222222222222222
+        },
+        "time": 1.5974395275115967
+      },
+      {
+        "idx": 12,
+        "gold": "mathematical models of computation",
+        "seq_len": 1019,
+        "target_len": 1024,
+        "sample_idx": 12,
+        "full": {
+          "answer": "The method used to intuitively assess or quantify the amount of resources required to solve a computational problem is computational complexity theory.",
+          "f1": 0.07692307692307693
+        },
+        "int4": {
+          "answer": "The method used to intuitively assess or quantify the amount of resources required to solve a computational problem is computational complexity theory.",
+          "f1": 0.07692307692307693
+        },
+        "int8": {
+          "answer": "The method used to intuitively assess or quantify the amount of resources required to solve a computational problem is computational complexity theory.",
+          "f1": 0.07692307692307693
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "The method used to intuitively assess or quantify the amount of resources required to solve a computational problem is computational complexity theory.",
+          "f1": 0.07692307692307693
+        },
+        "time": 2.699490547180176
+      },
+      {
+        "idx": 13,
+        "gold": "as a function of the size of the instance",
+        "seq_len": 1019,
+        "target_len": 1024,
+        "sample_idx": 13,
+        "full": {
+          "answer": "The time needed to obtain the solution to a problem is calculated as a function of the size of the instance, typically the size of the input in bits. This measures how much more time it takes to solve",
+          "f1": 0.1875
+        },
+        "int4": {
+          "answer": "The time required to solve a problem is calculated as a function of the size of the instance, typically the input size in bits, for computational problems. This means that the running time can vary de",
+          "f1": 0.18181818181818182
+        },
+        "int8": {
+          "answer": "The time needed to obtain the solution to a problem is calculated as a function of the size of the instance, typically the size of the input in bits. This measures how much more time it takes to solve",
+          "f1": 0.1875
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "The time required to solve a problem is calculated as a function of the size of the instance, typically the input size in bits, for the algorithm. This measures how much more time it takes to solve a ",
+          "f1": 0.1875
+        },
+        "time": 5.783018350601196
+      },
+      {
+        "idx": 14,
+        "gold": "1050s",
+        "seq_len": 1019,
+        "target_len": 1024,
+        "sample_idx": 14,
+        "full": {
+          "answer": "Herve served as a Byzantine general in the 1050s.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "Herve served as a Byzantine general in the 1050s.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "Herve served as a Byzantine general in the 1050s.",
+          "f1": 0.0
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "Herve served as a Byzantine general in the 1050s.",
+          "f1": 0.0
+        },
+        "time": 2.1201868057250977
+      },
+      {
+        "idx": 15,
+        "gold": "10th century",
+        "seq_len": 1019,
+        "target_len": 1024,
+        "sample_idx": 15,
+        "full": {
+          "answer": "The Normans first gained their separate identity in the first half of the 10th century.",
+          "f1": 0.11764705882352941
+        },
+        "int4": {
+          "answer": "The Normans first gained their separate identity in the first half of the 10th century.",
+          "f1": 0.11764705882352941
+        },
+        "int8": {
+          "answer": "The Normans first gained their separate identity in the first half of the 10th century.",
+          "f1": 0.11764705882352941
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "The Normans first gained their separate identity in the first half of the 10th century.",
+          "f1": 0.11764705882352941
+        },
+        "time": 2.3761818408966064
+      },
+      {
+        "idx": 16,
+        "gold": "Deabolis",
+        "seq_len": 1019,
+        "target_len": 1024,
+        "sample_idx": 16,
+        "full": {
+          "answer": "Petrela was located by the river Deabolis.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "Petrela was located by the river Deabolis.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "Petrela was located by the river Deabolis.",
+          "f1": 0.0
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "Petrela was located by the river Deabolis.",
+          "f1": 0.0
+        },
+        "time": 1.695068120956421
+      },
+      {
+        "idx": 17,
+        "gold": "1066",
+        "seq_len": 1019,
+        "target_len": 1024,
+        "sample_idx": 17,
+        "full": {
+          "answer": "The Battle of Hastings occurred in 1066.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "The Battle of Hastings occurred in 1066.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "The Battle of Hastings occurred in 1066.",
+          "f1": 0.0
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "The Battle of Hastings occurred in 1066.",
+          "f1": 0.0
+        },
+        "time": 1.7806713581085205
+      },
+      {
+        "idx": 18,
+        "gold": "mosaics",
+        "seq_len": 1019,
+        "target_len": 1024,
+        "sample_idx": 18,
+        "full": {
+          "answer": "The most important type of Norman art preserved in churches is mosaics.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "The most important type of Norman art preserved in churches is mosaics, which were common in Norman Italy and drew heavily on the Greek heritage.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "The most important type of Norman art preserved in churches is mosaics.",
+          "f1": 0.0
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "The most important type of Norman art preserved in churches is mosaics, which were common in Norman Italy and drew heavily on the Greek heritage.",
+          "f1": 0.0
+        },
+        "time": 2.5486934185028076
+      },
+      {
+        "idx": 19,
+        "gold": "computational complexity theory",
+        "seq_len": 1019,
+        "target_len": 1024,
+        "sample_idx": 19,
+        "full": {
+          "answer": "Computational complexity theory analyzes all possible algorithms in aggregate to determine the resource requirements needed to solve a given problem.",
+          "f1": 0.2608695652173913
+        },
+        "int4": {
+          "answer": "Computational complexity theory analyzes all possible algorithms in aggregate to determine the resource requirements needed to solve a given problem.",
+          "f1": 0.2608695652173913
+        },
+        "int8": {
+          "answer": "Computational complexity theory analyzes all possible algorithms in aggregate to determine the resource requirements needed to solve a given problem.",
+          "f1": 0.2608695652173913
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "Computational complexity theory analyzes all possible algorithms in aggregate to determine the resource requirements needed to solve a given problem.",
+          "f1": 0.2608695652173913
+        },
+        "time": 2.6370697021484375
+      },
+      {
+        "idx": 20,
+        "gold": "binary alphabet",
+        "seq_len": 1019,
+        "target_len": 1024,
+        "sample_idx": 20,
+        "full": {
+          "answer": "The name of the alphabet most commonly used in a problem instance is the binary alphabet.",
+          "f1": 0.2222222222222222
+        },
+        "int4": {
+          "answer": "The name of the alphabet most commonly used in a problem instance is the binary alphabet.",
+          "f1": 0.2222222222222222
+        },
+        "int8": {
+          "answer": "The name of the alphabet most commonly used in a problem instance is the binary alphabet.",
+          "f1": 0.2222222222222222
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "The name of the alphabet most commonly used in a problem instance is the binary alphabet.",
+          "f1": 0.2222222222222222
+        },
+        "time": 2.1277098655700684
+      },
+      {
+        "idx": 21,
+        "gold": "2000",
+        "seq_len": 1019,
+        "target_len": 1024,
+        "sample_idx": 21,
+        "full": {
+          "answer": "The traveling salesman problem seeks to classify a route between the 15 largest cities in Germany by at most 2000 kilometers.",
+          "f1": 0.0909090909090909
+        },
+        "int4": {
+          "answer": "The traveling salesman problem seeks to classify a route between the 15 largest cities in Germany by at most 2000 kilometers.",
+          "f1": 0.0909090909090909
+        },
+        "int8": {
+          "answer": "The traveling salesman problem seeks to classify a route between the 15 largest cities in Germany by at most 2000 kilometers.",
+          "f1": 0.0909090909090909
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "The traveling salesman problem seeks to classify a route between the 15 largest cities in Germany by at most 2000 kilometers.",
+          "f1": 0.0909090909090909
+        },
+        "time": 3.155625343322754
+      },
+      {
+        "idx": 22,
+        "gold": "adjacency matrices",
+        "seq_len": 1019,
+        "target_len": 1024,
+        "sample_idx": 22,
+        "full": {
+          "answer": "One way to encode graphs is by using their adjacency matrices or by encoding their adjacency lists in binary.",
+          "f1": 0.1904761904761905
+        },
+        "int4": {
+          "answer": "One way to encode graphs is by using their adjacency matrices or adjacency lists in binary format.",
+          "f1": 0.21052631578947367
+        },
+        "int8": {
+          "answer": "One way to encode graphs is by using their adjacency matrices or adjacency lists in binary.",
+          "f1": 0.2222222222222222
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "One way to encode graphs for computational purposes is by using their adjacency matrices or adjacency lists in binary format.",
+          "f1": 0.18181818181818182
+        },
+        "time": 2.4741859436035156
+      },
+      {
+        "idx": 23,
+        "gold": "Modern English",
+        "seq_len": 1019,
+        "target_len": 1024,
+        "sample_idx": 23,
+        "full": {
+          "answer": "The Anglo-Norman language's final form was Modern English.",
+          "f1": 0.2
+        },
+        "int4": {
+          "answer": "The Anglo-Norman language's final form was Modern English.",
+          "f1": 0.2
+        },
+        "int8": {
+          "answer": "The Anglo-Norman language's final form was Modern English.",
+          "f1": 0.2
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "The Anglo-Norman language's final form was Modern English.",
+          "f1": 0.2
+        },
+        "time": 1.8747882843017578
+      },
+      {
+        "idx": 24,
+        "gold": "1072",
+        "seq_len": 1019,
+        "target_len": 1024,
+        "sample_idx": 24,
+        "full": {
+          "answer": "Scotland was invaded by William in 1072.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "Scotland was invaded by William in 1072.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "Scotland was invaded by William in 1072.",
+          "f1": 0.0
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "Scotland was invaded by William in 1072.",
+          "f1": 0.0
+        },
+        "time": 1.8752737045288086
+      },
+      {
+        "idx": 25,
+        "gold": "Seljuk Turks",
+        "seq_len": 1019,
+        "target_len": 1024,
+        "sample_idx": 25,
+        "full": {
+          "answer": "The Normans' main enemy in Italy, the Byzantine Empire, and Armenia was the Seljuk Turks.",
+          "f1": 0.11764705882352941
+        },
+        "int4": {
+          "answer": "The Normans' main enemy in Italy, the Byzantine Empire, and Armenia was the Seljuk Turks.",
+          "f1": 0.11764705882352941
+        },
+        "int8": {
+          "answer": "The Normans' main enemy in Italy, the Byzantine Empire, and Armenia was the Seljuk Turks.",
+          "f1": 0.11764705882352941
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "The Normans' main enemy in Italy, the Byzantine Empire, and Armenia was the Seljuk Turks.",
+          "f1": 0.11764705882352941
+        },
+        "time": 2.8211803436279297
+      },
+      {
+        "idx": 26,
+        "gold": "concrete",
+        "seq_len": 1019,
+        "target_len": 1024,
+        "sample_idx": 26,
+        "full": {
+          "answer": "A problem instance is typically characterized as concrete.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "A problem instance is typically concrete.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "A problem instance is typically characterized as concrete.",
+          "f1": 0.0
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "A problem instance is typically concrete.",
+          "f1": 0.0
+        },
+        "time": 1.3633990287780762
+      },
+      {
+        "idx": 27,
+        "gold": "instances",
+        "seq_len": 1019,
+        "target_len": 1024,
+        "sample_idx": 27,
+        "full": {
+          "answer": "Another name for any given measure of input associated with a problem is an instance.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "Another name for any given measure of input associated with a problem is an instance.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "Another name for any given measure of input associated with a problem is an instance.",
+          "f1": 0.0
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "Another name for any given measure of input associated with a problem is an instance.",
+          "f1": 0.0
+        },
+        "time": 2.051151990890503
+      },
+      {
+        "idx": 28,
+        "gold": "Edgar",
+        "seq_len": 1019,
+        "target_len": 1024,
+        "sample_idx": 28,
+        "full": {
+          "answer": "Edgar Atheling was Margaret's brother.",
+          "f1": 0.33333333333333337
+        },
+        "int4": {
+          "answer": "Edgar Atheling was Margaret's brother.",
+          "f1": 0.33333333333333337
+        },
+        "int8": {
+          "answer": "Edgar Atheling was Margaret's brother.",
+          "f1": 0.33333333333333337
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "Edgar Atheling was Margaret's brother.",
+          "f1": 0.33333333333333337
+        },
+        "time": 1.538816213607788
+      },
+      {
+        "idx": 29,
+        "gold": "binary notation",
+        "seq_len": 1019,
+        "target_len": 1024,
+        "sample_idx": 29,
+        "full": {
+          "answer": "Integers are commonly expressed in binary notation.",
+          "f1": 0.22222222222222224
+        },
+        "int4": {
+          "answer": "Integers are commonly expressed in binary notation.",
+          "f1": 0.22222222222222224
+        },
+        "int8": {
+          "answer": "Integers are commonly expressed in binary notation.",
+          "f1": 0.22222222222222224
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "Integers are commonly expressed in binary notation.",
+          "f1": 0.22222222222222224
+        },
+        "time": 1.4524366855621338
+      }
+    ],
+    "2048": [
+      {
+        "idx": 0,
+        "gold": "Jerusalem",
+        "seq_len": 2043,
+        "target_len": 2048,
+        "sample_idx": 0,
+        "full": {
+          "answer": "Tancred played a significant role in the conquest of Jerusalem.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "Tancred played a significant role in the conquest of Jerusalem.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "Tancred played a significant role in the conquest of Jerusalem.",
+          "f1": 0.0
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "Tancred played a significant role in the conquest of Jerusalem.",
+          "f1": 0.0
+        },
+        "time": 3.0386500358581543
+      },
+      {
+        "idx": 1,
+        "gold": "Sweyn Forkbeard",
+        "seq_len": 2043,
+        "target_len": 2048,
+        "sample_idx": 1,
+        "full": {
+          "answer": "Sweyn Forkbeard kicked Ethelred out of his kingdom.",
+          "f1": 0.4
+        },
+        "int4": {
+          "answer": "Sweyn Forkbeard kicked Ethelred out of England.",
+          "f1": 0.4444444444444445
+        },
+        "int8": {
+          "answer": "Sweyn Forkbeard kicked Ethelred out of his kingdom.",
+          "f1": 0.4
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "Sweyn Forkbeard kicked Ethelred out of England.",
+          "f1": 0.4444444444444445
+        },
+        "time": 3.1809704303741455
+      },
+      {
+        "idx": 2,
+        "gold": "if its solution requires significant resources",
+        "seq_len": 2043,
+        "target_len": 2048,
+        "sample_idx": 2,
+        "full": {
+          "answer": "The measure of a computational problem that broadly defines the inherent difficulty of the solution is computational complexity.",
+          "f1": 0.08333333333333333
+        },
+        "int4": {
+          "answer": "The measure of a computational problem that broadly defines the inherent difficulty of the solution is computational complexity.",
+          "f1": 0.08333333333333333
+        },
+        "int8": {
+          "answer": "The measure of a computational problem that broadly defines the inherent difficulty of the solution is computational complexity.",
+          "f1": 0.08333333333333333
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "The measure of a computational problem that broadly defines the inherent difficulty of the solution is computational complexity.",
+          "f1": 0.08333333333333333
+        },
+        "time": 3.5129237174987793
+      },
+      {
+        "idx": 3,
+        "gold": "round trip through all sites in Milan",
+        "seq_len": 2043,
+        "target_len": 2048,
+        "sample_idx": 3,
+        "full": {
+          "answer": "One example of an instance that the quantitative answer to the traveling salesman problem fails to answer is asking for a round trip through all sites in Milan whose total length is at most 10 km.",
+          "f1": 0.32558139534883723
+        },
+        "int4": {
+          "answer": "One example of an instance that the quantitative answer to the traveling salesman problem fails to answer is asking for a round trip through all sites in Milan whose total length is at most 10 km.",
+          "f1": 0.32558139534883723
+        },
+        "int8": {
+          "answer": "One example of an instance that the quantitative answer to the traveling salesman problem fails to answer is asking for a round trip through all sites in Milan whose total length is at most 10 km.",
+          "f1": 0.32558139534883723
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "One example of an instance that the quantitative answer to the traveling salesman problem fails to answer is asking for a round trip through all sites in Milan whose total length is at most 10 km.",
+          "f1": 0.32558139534883723
+        },
+        "time": 5.493218183517456
+      },
+      {
+        "idx": 4,
+        "gold": "France",
+        "seq_len": 2043,
+        "target_len": 2048,
+        "sample_idx": 4,
+        "full": {
+          "answer": "Normandy is located in France.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "Normandy is located in France.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "Normandy is located in France.",
+          "f1": 0.0
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "Normandy is located in France.",
+          "f1": 0.0
+        },
+        "time": 2.3961827754974365
+      },
+      {
+        "idx": 5,
+        "gold": "Battle of Hastings",
+        "seq_len": 2043,
+        "target_len": 2048,
+        "sample_idx": 5,
+        "full": {
+          "answer": "Harold II died at the Battle of Hastings in 1066.",
+          "f1": 0.4615384615384615
+        },
+        "int4": {
+          "answer": "Harold II died at the Battle of Hastings in 1066.",
+          "f1": 0.4615384615384615
+        },
+        "int8": {
+          "answer": "Harold II died at the Battle of Hastings in 1066.",
+          "f1": 0.4615384615384615
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "Harold II died at the Battle of Hastings in 1066.",
+          "f1": 0.4615384615384615
+        },
+        "time": 3.3352808952331543
+      },
+      {
+        "idx": 6,
+        "gold": "Tancred",
+        "seq_len": 2043,
+        "target_len": 2048,
+        "sample_idx": 6,
+        "full": {
+          "answer": "Tancred was the name of Bohemond's nephew.",
+          "f1": 0.25
+        },
+        "int4": {
+          "answer": "Tancred was the name of Bohemond's nephew.",
+          "f1": 0.25
+        },
+        "int8": {
+          "answer": "Tancred was the name of Bohemond's nephew.",
+          "f1": 0.25
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "Tancred was the name of Bohemond's nephew.",
+          "f1": 0.25
+        },
+        "time": 3.059203863143921
+      },
+      {
+        "idx": 7,
+        "gold": "the problem",
+        "seq_len": 2043,
+        "target_len": 2048,
+        "sample_idx": 7,
+        "full": {
+          "answer": "The term given in computational complexity theory to describe the baseline abstract question needing to be solved is called a \"problem.\"",
+          "f1": 0.08695652173913042
+        },
+        "int4": {
+          "answer": "The term given to describe the baseline abstract question needing to be solved in computational complexity theory is the \"problem.\"",
+          "f1": 0.09090909090909091
+        },
+        "int8": {
+          "answer": "The term given in computational complexity theory to describe the baseline abstract question needing to be solved is called a \"problem.\"",
+          "f1": 0.08695652173913042
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "The term given to describe the baseline abstract question needing to be solved in computational complexity theory is the \"problem.\"",
+          "f1": 0.09090909090909091
+        },
+        "time": 3.953664541244507
+      },
+      {
+        "idx": 8,
+        "gold": "fighting horsemen",
+        "seq_len": 2043,
+        "target_len": 2048,
+        "sample_idx": 8,
+        "full": {
+          "answer": "One of the Norman's major exports was fighting horsemen.",
+          "f1": 0.1818181818181818
+        },
+        "int4": {
+          "answer": "One of the Norman's major exports was fighting horsemen.",
+          "f1": 0.1818181818181818
+        },
+        "int8": {
+          "answer": "One of the Norman's major exports was fighting horsemen.",
+          "f1": 0.1818181818181818
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "One of the Norman's major exports was fighting horsemen.",
+          "f1": 0.1818181818181818
+        },
+        "time": 2.966432809829712
+      },
+      {
+        "idx": 9,
+        "gold": "Isaac Komnenos",
+        "seq_len": 2043,
+        "target_len": 2048,
+        "sample_idx": 9,
+        "full": {
+          "answer": "Isaac Komnenos ruled Cyprus in 1191.",
+          "f1": 0.5
+        },
+        "int4": {
+          "answer": "Isaac Komnenos ruled Cyprus in 1191.",
+          "f1": 0.5
+        },
+        "int8": {
+          "answer": "Isaac Komnenos ruled Cyprus in 1191.",
+          "f1": 0.5
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "Isaac Komnenos ruled Cyprus in 1191.",
+          "f1": 0.5
+        },
+        "time": 3.062009334564209
+      },
+      {
+        "idx": 10,
+        "gold": "yes",
+        "seq_len": 2043,
+        "target_len": 2048,
+        "sample_idx": 10,
+        "full": {
+          "answer": "Yes.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "Yes.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "Yes.",
+          "f1": 0.0
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "Yes.",
+          "f1": 0.0
+        },
+        "time": 1.9331574440002441
+      },
+      {
+        "idx": 11,
+        "gold": "Wales",
+        "seq_len": 2043,
+        "target_len": 2048,
+        "sample_idx": 11,
+        "full": {
+          "answer": "The country under the control of Norman barons was Wales.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "The country under the control of Norman barons was Wales.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "The country under the control of Norman barons was Wales.",
+          "f1": 0.0
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "The country under the control of Norman barons was Wales.",
+          "f1": 0.0
+        },
+        "time": 2.8726806640625
+      },
+      {
+        "idx": 12,
+        "gold": "mathematical models of computation",
+        "seq_len": 2043,
+        "target_len": 2048,
+        "sample_idx": 12,
+        "full": {
+          "answer": "The method used to intuitively assess or quantify the amount of resources required to solve a computational problem is called computational complexity theory.",
+          "f1": 0.07407407407407408
+        },
+        "int4": {
+          "answer": "The method used to intuitively assess or quantify the amount of resources required to solve a computational problem is called computational complexity theory.",
+          "f1": 0.07407407407407408
+        },
+        "int8": {
+          "answer": "The method used to intuitively assess or quantify the amount of resources required to solve a computational problem is called computational complexity theory.",
+          "f1": 0.07407407407407408
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "The method used to intuitively assess or quantify the amount of resources required to solve a computational problem is called computational complexity theory.",
+          "f1": 0.07407407407407408
+        },
+        "time": 4.108485460281372
+      },
+      {
+        "idx": 13,
+        "gold": "as a function of the size of the instance",
+        "seq_len": 2043,
+        "target_len": 2048,
+        "sample_idx": 13,
+        "full": {
+          "answer": "The time needed to obtain the solution to a problem is calculated as a function of the size of the instance, typically the size of the input in bits. This measures how much more time it takes to solve",
+          "f1": 0.1875
+        },
+        "int4": {
+          "answer": "The time needed to obtain the solution to a problem is calculated as a function of the size of the instance of the problem, typically the size of the input in bits. This measures how much more time an",
+          "f1": 0.2058823529411765
+        },
+        "int8": {
+          "answer": "The time needed to obtain the solution to a problem is calculated as a function of the size of the instance, typically the size of the input in bits. This measures how much more time an algorithm requ",
+          "f1": 0.1739130434782609
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "The time needed to obtain the solution to a problem is calculated as a function of the size of the instance of the problem, typically the size of the input in bits. This measures how much more time an",
+          "f1": 0.2058823529411765
+        },
+        "time": 7.62109112739563
+      },
+      {
+        "idx": 14,
+        "gold": "1050s",
+        "seq_len": 2043,
+        "target_len": 2048,
+        "sample_idx": 14,
+        "full": {
+          "answer": "Herve served as a Byzantine general in the 1050s.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "Herve served as a Byzantine general in the 1050s.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "Herve served as a Byzantine general in the 1050s.",
+          "f1": 0.0
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "Herve served as a Byzantine general in the 1050s.",
+          "f1": 0.0
+        },
+        "time": 3.3617818355560303
+      },
+      {
+        "idx": 15,
+        "gold": "10th century",
+        "seq_len": 2043,
+        "target_len": 2048,
+        "sample_idx": 15,
+        "full": {
+          "answer": "The Normans first gained their separate identity in the first half of the 10th century.",
+          "f1": 0.11764705882352941
+        },
+        "int4": {
+          "answer": "The Normans first gained their separate identity in the first half of the 10th century.",
+          "f1": 0.11764705882352941
+        },
+        "int8": {
+          "answer": "The Normans first gained their separate identity in the first half of the 10th century.",
+          "f1": 0.11764705882352941
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "The Normans first gained their separate identity in the first half of the 10th century.",
+          "f1": 0.11764705882352941
+        },
+        "time": 3.6450984477996826
+      },
+      {
+        "idx": 16,
+        "gold": "Deabolis",
+        "seq_len": 2043,
+        "target_len": 2048,
+        "sample_idx": 16,
+        "full": {
+          "answer": "Petrela was located by the river Deabolis.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "Petrela was located by the river Deabolis.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "Petrela was located by the river Deabolis.",
+          "f1": 0.0
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "Petrela was located by the river Deabolis.",
+          "f1": 0.0
+        },
+        "time": 2.885399580001831
+      },
+      {
+        "idx": 17,
+        "gold": "1066",
+        "seq_len": 2043,
+        "target_len": 2048,
+        "sample_idx": 17,
+        "full": {
+          "answer": "The Battle of Hastings occurred in 1066.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "The Battle of Hastings took place in 1066.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "The Battle of Hastings occurred in 1066.",
+          "f1": 0.0
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "The Battle of Hastings took place in 1066.",
+          "f1": 0.0
+        },
+        "time": 3.0296599864959717
+      },
+      {
+        "idx": 18,
+        "gold": "mosaics",
+        "seq_len": 2043,
+        "target_len": 2048,
+        "sample_idx": 18,
+        "full": {
+          "answer": "The most important type of Norman art preserved in churches is mosaics, which were common in Norman Italy and drew heavily on the Greek heritage.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "The most important type of Norman art preserved in churches is mosaics, which were common in Norman Italy and drew heavily on the Greek heritage.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "The most important type of Norman art preserved in churches is mosaics, which were common in Norman Italy and drew heavily on the Greek heritage.",
+          "f1": 0.0
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "The most important type of Norman art preserved in churches is mosaics, which were common in Norman Italy and drew heavily on the Greek heritage.",
+          "f1": 0.0
+        },
+        "time": 4.5066893100738525
+      },
+      {
+        "idx": 19,
+        "gold": "computational complexity theory",
+        "seq_len": 2043,
+        "target_len": 2048,
+        "sample_idx": 19,
+        "full": {
+          "answer": "Computational complexity theory is the field of computer science that analyzes all possible algorithms in aggregate to determine the resource requirements needed to solve a given problem.",
+          "f1": 0.19999999999999998
+        },
+        "int4": {
+          "answer": "Computational complexity theory is the field of computer science that analyzes all possible algorithms in aggregate to determine the resource requirements needed to solve a given problem.",
+          "f1": 0.19999999999999998
+        },
+        "int8": {
+          "answer": "Computational complexity theory is the field of computer science that analyzes all possible algorithms in aggregate to determine the resource requirements needed to solve a given problem.",
+          "f1": 0.19999999999999998
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "Computational complexity theory is the field of computer science that analyzes all possible algorithms in aggregate to determine the resource requirements needed to solve a given problem.",
+          "f1": 0.19999999999999998
+        },
+        "time": 4.605170249938965
+      },
+      {
+        "idx": 20,
+        "gold": "binary alphabet",
+        "seq_len": 2043,
+        "target_len": 2048,
+        "sample_idx": 20,
+        "full": {
+          "answer": "The name of the alphabet most commonly used in a problem instance is the binary alphabet.",
+          "f1": 0.2222222222222222
+        },
+        "int4": {
+          "answer": "The name of the alphabet most commonly used in a problem instance is the binary alphabet.",
+          "f1": 0.2222222222222222
+        },
+        "int8": {
+          "answer": "The name of the alphabet most commonly used in a problem instance is the binary alphabet.",
+          "f1": 0.2222222222222222
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "The name of the alphabet most commonly used in a problem instance is the binary alphabet.",
+          "f1": 0.2222222222222222
+        },
+        "time": 3.370763063430786
+      },
+      {
+        "idx": 21,
+        "gold": "2000",
+        "seq_len": 2043,
+        "target_len": 2048,
+        "sample_idx": 21,
+        "full": {
+          "answer": "The traveling salesman problem seeks to classify a route between the 15 largest cities in Germany by at most 2000 kilometers.",
+          "f1": 0.0909090909090909
+        },
+        "int4": {
+          "answer": "The traveling salesman problem seeks to classify a route between the 15 largest cities in Germany by at most 2000 kilometers.",
+          "f1": 0.0909090909090909
+        },
+        "int8": {
+          "answer": "The traveling salesman problem seeks to classify a route between the 15 largest cities in Germany by at most 2000 kilometers.",
+          "f1": 0.0909090909090909
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "The traveling salesman problem seeks to classify a route between the 15 largest cities in Germany by at most 2000 kilometers.",
+          "f1": 0.0909090909090909
+        },
+        "time": 4.510391473770142
+      },
+      {
+        "idx": 22,
+        "gold": "adjacency matrices",
+        "seq_len": 2043,
+        "target_len": 2048,
+        "sample_idx": 22,
+        "full": {
+          "answer": "One way in which graphs can be encoded is by using their adjacency matrices. In this representation, each vertex in the graph is assigned a unique index or label, and the adjacency matrix is a square ",
+          "f1": 0.03278688524590164
+        },
+        "int4": {
+          "answer": "One way in which graphs can be encoded is by using their adjacency matrices or adjacency lists in binary representation.",
+          "f1": 0.18181818181818182
+        },
+        "int8": {
+          "answer": "One way in which graphs can be encoded is by using their adjacency matrices. In an adjacency matrix, each row and column represent a vertex in the graph, and the elements indicate whether an edge exis",
+          "f1": 0.03773584905660377
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "One way in which graphs can be encoded is by using their adjacency matrices or adjacency lists in binary representation.",
+          "f1": 0.18181818181818182
+        },
+        "time": 5.773900985717773
+      },
+      {
+        "idx": 23,
+        "gold": "Modern English",
+        "seq_len": 2043,
+        "target_len": 2048,
+        "sample_idx": 23,
+        "full": {
+          "answer": "The Anglo-Norman language's final form was Modern English.",
+          "f1": 0.2
+        },
+        "int4": {
+          "answer": "The Anglo-Norman language's final form was Modern English.",
+          "f1": 0.2
+        },
+        "int8": {
+          "answer": "The Anglo-Norman language's final form evolved into Modern English.",
+          "f1": 0.1818181818181818
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "The Anglo-Norman language's final form was Modern English.",
+          "f1": 0.2
+        },
+        "time": 3.1148409843444824
+      },
+      {
+        "idx": 24,
+        "gold": "1072",
+        "seq_len": 2043,
+        "target_len": 2048,
+        "sample_idx": 24,
+        "full": {
+          "answer": "Scotland was invaded by William in 1072.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "Scotland was invaded by William in 1072.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "Scotland was invaded by William in 1072.",
+          "f1": 0.0
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "Scotland was invaded by William in 1072.",
+          "f1": 0.0
+        },
+        "time": 3.094233751296997
+      },
+      {
+        "idx": 25,
+        "gold": "Seljuk Turks",
+        "seq_len": 2043,
+        "target_len": 2048,
+        "sample_idx": 25,
+        "full": {
+          "answer": "The Normans' main enemy in Italy, the Byzantine Empire, and Armenia was the Seljuk Turks.",
+          "f1": 0.11764705882352941
+        },
+        "int4": {
+          "answer": "The Normans' main enemy in Italy, the Byzantine Empire, and Armenia was the Seljuk Turks.",
+          "f1": 0.11764705882352941
+        },
+        "int8": {
+          "answer": "The Normans' main enemy in Italy, the Byzantine Empire, and Armenia was the Seljuk Turks.",
+          "f1": 0.11764705882352941
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "The Normans' main enemy in Italy, the Byzantine Empire, and Armenia was the Seljuk Turks.",
+          "f1": 0.11764705882352941
+        },
+        "time": 4.140759229660034
+      },
+      {
+        "idx": 26,
+        "gold": "concrete",
+        "seq_len": 2043,
+        "target_len": 2048,
+        "sample_idx": 26,
+        "full": {
+          "answer": "A problem instance is typically characterized as concrete.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "A problem instance is typically characterized as concrete.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "A problem instance is typically characterized as concrete.",
+          "f1": 0.0
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "A problem instance is typically characterized as concrete.",
+          "f1": 0.0
+        },
+        "time": 2.619323968887329
+      },
+      {
+        "idx": 27,
+        "gold": "instances",
+        "seq_len": 2043,
+        "target_len": 2048,
+        "sample_idx": 27,
+        "full": {
+          "answer": "Another name for any given measure of input associated with a problem is an instance.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "Another name for any given measure of input associated with a problem is an instance.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "Another name for any given measure of input associated with a problem is an instance.",
+          "f1": 0.0
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "Another name for any given measure of input associated with a problem is an instance.",
+          "f1": 0.0
+        },
+        "time": 3.286736011505127
+      },
+      {
+        "idx": 28,
+        "gold": "Edgar",
+        "seq_len": 2043,
+        "target_len": 2048,
+        "sample_idx": 28,
+        "full": {
+          "answer": "Margaret's brother was Edgar Atheling.",
+          "f1": 0.33333333333333337
+        },
+        "int4": {
+          "answer": "Margaret's brother was Edgar Atheling.",
+          "f1": 0.33333333333333337
+        },
+        "int8": {
+          "answer": "Margaret's brother was Edgar Atheling.",
+          "f1": 0.33333333333333337
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "Margaret's brother was Edgar Atheling.",
+          "f1": 0.33333333333333337
+        },
+        "time": 2.80891489982605
+      },
+      {
+        "idx": 29,
+        "gold": "binary notation",
+        "seq_len": 2043,
+        "target_len": 2048,
+        "sample_idx": 29,
+        "full": {
+          "answer": "Integers are commonly expressed in binary notation.",
+          "f1": 0.22222222222222224
+        },
+        "int4": {
+          "answer": "Integers are commonly expressed in binary notation.",
+          "f1": 0.22222222222222224
+        },
+        "int8": {
+          "answer": "Integers are commonly expressed in binary notation.",
+          "f1": 0.22222222222222224
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "Integers are commonly expressed in binary notation.",
+          "f1": 0.22222222222222224
+        },
+        "time": 2.6229255199432373
+      }
+    ],
+    "4096": [
+      {
+        "idx": 0,
+        "gold": "Jerusalem",
+        "seq_len": 4091,
+        "target_len": 4096,
+        "sample_idx": 0,
+        "full": {
+          "answer": "Tancred played a role in the conquest of Jerusalem.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "Tancred played a role in the conquest of Jerusalem.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "Tancred played a role in the conquest of Jerusalem.",
+          "f1": 0.0
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "Tancred played a role in the conquest of Jerusalem.",
+          "f1": 0.0
+        },
+        "time": 6.876612424850464
+      },
+      {
+        "idx": 1,
+        "gold": "Sweyn Forkbeard",
+        "seq_len": 4091,
+        "target_len": 4096,
+        "sample_idx": 1,
+        "full": {
+          "answer": "Sweyn Forkbeard kicked Ethelred out.",
+          "f1": 0.5714285714285715
+        },
+        "int4": {
+          "answer": "Sweyn Forkbeard kicked Ethelred out.",
+          "f1": 0.5714285714285715
+        },
+        "int8": {
+          "answer": "Sweyn Forkbeard kicked Ethelred out.",
+          "f1": 0.5714285714285715
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "Sweyn Forkbeard kicked Ethelred out.",
+          "f1": 0.5714285714285715
+        },
+        "time": 6.875646114349365
+      },
+      {
+        "idx": 2,
+        "gold": "if its solution requires significant resources",
+        "seq_len": 4091,
+        "target_len": 4096,
+        "sample_idx": 2,
+        "full": {
+          "answer": "The measure of a computational problem that broadly defines the inherent difficulty of the solution is the amount of resources required, such as time and storage.",
+          "f1": 0.125
+        },
+        "int4": {
+          "answer": "The measure of a computational problem that broadly defines the inherent difficulty of the solution is the amount of resources required, such as time and storage.",
+          "f1": 0.125
+        },
+        "int8": {
+          "answer": "The measure of a computational problem that broadly defines the inherent difficulty of the solution is the amount of resources required, such as time and storage.",
+          "f1": 0.125
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "The measure of a computational problem that broadly defines the inherent difficulty of the solution is the amount of resources required, such as time and storage.",
+          "f1": 0.125
+        },
+        "time": 8.551918268203735
+      },
+      {
+        "idx": 3,
+        "gold": "round trip through all sites in Milan",
+        "seq_len": 4091,
+        "target_len": 4096,
+        "sample_idx": 3,
+        "full": {
+          "answer": "One example of an instance that the quantitative answer to the traveling salesman problem fails to answer is asking for a round trip through all sites in Milan whose total length is at most 10 km.",
+          "f1": 0.32558139534883723
+        },
+        "int4": {
+          "answer": "One example of an instance that the quantitative answer to the traveling salesman problem fails to answer is finding a route of at most 10 km passing through all sites in Milan.",
+          "f1": 0.20512820512820512
+        },
+        "int8": {
+          "answer": "One example of an instance that the quantitative answer to the traveling salesman problem fails to answer is asking for a round trip through all sites in Milan whose total length is at most 10 km.",
+          "f1": 0.32558139534883723
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "One example of an instance that the quantitative answer to the traveling salesman problem fails to answer is finding a route of at most 10 km passing through all sites in Milan.",
+          "f1": 0.20512820512820512
+        },
+        "time": 9.669252395629883
+      },
+      {
+        "idx": 4,
+        "gold": "France",
+        "seq_len": 4090,
+        "target_len": 4096,
+        "sample_idx": 4,
+        "full": {
+          "answer": "Normandy is located in France.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "Normandy is located in France.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "Normandy is located in France.",
+          "f1": 0.0
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "Normandy is located in France.",
+          "f1": 0.0
+        },
+        "time": 5.648072004318237
+      },
+      {
+        "idx": 5,
+        "gold": "Battle of Hastings",
+        "seq_len": 4091,
+        "target_len": 4096,
+        "sample_idx": 5,
+        "full": {
+          "answer": "Harold II died at the Battle of Hastings in 1066.",
+          "f1": 0.4615384615384615
+        },
+        "int4": {
+          "answer": "Harold II died at the Battle of Hastings in 1066.",
+          "f1": 0.4615384615384615
+        },
+        "int8": {
+          "answer": "Harold II died at the Battle of Hastings in 1066.",
+          "f1": 0.4615384615384615
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "Harold II died at the Battle of Hastings in 1066.",
+          "f1": 0.4615384615384615
+        },
+        "time": 7.353350639343262
+      },
+      {
+        "idx": 6,
+        "gold": "Tancred",
+        "seq_len": 4091,
+        "target_len": 4096,
+        "sample_idx": 6,
+        "full": {
+          "answer": "Tancred",
+          "f1": 1.0
+        },
+        "int4": {
+          "answer": "Tancred",
+          "f1": 1.0
+        },
+        "int8": {
+          "answer": "Tancred",
+          "f1": 1.0
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "Tancred",
+          "f1": 1.0
+        },
+        "time": 5.80120062828064
+      },
+      {
+        "idx": 7,
+        "gold": "the problem",
+        "seq_len": 4091,
+        "target_len": 4096,
+        "sample_idx": 7,
+        "full": {
+          "answer": "The term given in computational complexity theory to describe the baseline abstract question needing to be solved is called a \"problem.\"",
+          "f1": 0.08695652173913042
+        },
+        "int4": {
+          "answer": "The term given to describe the baseline abstract question needing to be solved in computational complexity theory is the \"problem.\"",
+          "f1": 0.09090909090909091
+        },
+        "int8": {
+          "answer": "The term given in computational complexity theory to describe the baseline abstract question needing to be solved is called a \"problem.\"",
+          "f1": 0.08695652173913042
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "The term given to describe the baseline abstract question needing to be solved in computational complexity theory is the \"problem.\"",
+          "f1": 0.09090909090909091
+        },
+        "time": 8.085009574890137
+      },
+      {
+        "idx": 8,
+        "gold": "fighting horsemen",
+        "seq_len": 4091,
+        "target_len": 4096,
+        "sample_idx": 8,
+        "full": {
+          "answer": "One of the Norman's major exports was fighting horsemen.",
+          "f1": 0.1818181818181818
+        },
+        "int4": {
+          "answer": "One of the Norman's major exports was fighting horsemen.",
+          "f1": 0.1818181818181818
+        },
+        "int8": {
+          "answer": "One of the Norman's major exports was fighting horsemen.",
+          "f1": 0.1818181818181818
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "One of the Norman's major exports was fighting horsemen.",
+          "f1": 0.1818181818181818
+        },
+        "time": 6.928224086761475
+      },
+      {
+        "idx": 9,
+        "gold": "Isaac Komnenos",
+        "seq_len": 4091,
+        "target_len": 4096,
+        "sample_idx": 9,
+        "full": {
+          "answer": "Isaac Komnenos ruled Cyprus in 1191.",
+          "f1": 0.5
+        },
+        "int4": {
+          "answer": "Isaac Komnenos ruled Cyprus in 1191.",
+          "f1": 0.5
+        },
+        "int8": {
+          "answer": "Isaac Komnenos ruled Cyprus in 1191.",
+          "f1": 0.5
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "Isaac Komnenos ruled Cyprus in 1191.",
+          "f1": 0.5
+        },
+        "time": 7.048799276351929
+      },
+      {
+        "idx": 10,
+        "gold": "yes",
+        "seq_len": 4091,
+        "target_len": 4096,
+        "sample_idx": 10,
+        "full": {
+          "answer": "The answer \"yes\" denotes that an algorithm has accepted an input string.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "The answer \"yes\" denotes that an algorithm has accepted an input string.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "The answer \"yes\" denotes that an algorithm has accepted an input string.",
+          "f1": 0.0
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "The answer \"yes\" denotes that an algorithm has accepted an input string.",
+          "f1": 0.0
+        },
+        "time": 7.1676177978515625
+      },
+      {
+        "idx": 11,
+        "gold": "Wales",
+        "seq_len": 4091,
+        "target_len": 4096,
+        "sample_idx": 11,
+        "full": {
+          "answer": "Wales was under the control of Norman barons.",
+          "f1": 0.2222222222222222
+        },
+        "int4": {
+          "answer": "Wales was under the control of Norman barons.",
+          "f1": 0.2222222222222222
+        },
+        "int8": {
+          "answer": "Wales was under the control of Norman barons.",
+          "f1": 0.2222222222222222
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "Wales was under the control of Norman barons.",
+          "f1": 0.2222222222222222
+        },
+        "time": 6.7262489795684814
+      },
+      {
+        "idx": 12,
+        "gold": "mathematical models of computation",
+        "seq_len": 4091,
+        "target_len": 4096,
+        "sample_idx": 12,
+        "full": {
+          "answer": "The method used to intuitively assess or quantify the amount of resources required to solve a computational problem is computational complexity theory.",
+          "f1": 0.07692307692307693
+        },
+        "int4": {
+          "answer": "The method used to intuitively assess or quantify the amount of resources required to solve a computational problem is computational complexity theory.",
+          "f1": 0.07692307692307693
+        },
+        "int8": {
+          "answer": "The method used to intuitively assess or quantify the amount of resources required to solve a computational problem is computational complexity theory.",
+          "f1": 0.07692307692307693
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "The method used to intuitively assess or quantify the amount of resources required to solve a computational problem is computational complexity theory.",
+          "f1": 0.07692307692307693
+        },
+        "time": 8.17950987815857
+      },
+      {
+        "idx": 13,
+        "gold": "as a function of the size of the instance",
+        "seq_len": 4091,
+        "target_len": 4096,
+        "sample_idx": 13,
+        "full": {
+          "answer": "The time needed to obtain the solution to a problem is calculated as a function of the size of the instance, typically the size of the input in bits.",
+          "f1": 0.31578947368421056
+        },
+        "int4": {
+          "answer": "The time needed to obtain the solution to a problem is calculated as a function of the size of the instance, typically the size of the input in bits, and how much more time it takes to solve a problem",
+          "f1": 0.2222222222222222
+        },
+        "int8": {
+          "answer": "The time needed to obtain the solution to a problem is calculated as a function of the size of the instance, typically the size of the input in bits.",
+          "f1": 0.31578947368421056
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "The time needed to obtain the solution to a problem is calculated as a function of the size of the instance, typically the size of the input in bits, and how much more time it takes to solve a problem",
+          "f1": 0.2222222222222222
+        },
+        "time": 9.917747974395752
+      },
+      {
+        "idx": 14,
+        "gold": "1050s",
+        "seq_len": 4091,
+        "target_len": 4096,
+        "sample_idx": 14,
+        "full": {
+          "answer": "Herve served as a Byzantine general in the 1050s.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "Herve served as a Byzantine general in the 1050s.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "Herve served as a Byzantine general in the 1050s.",
+          "f1": 0.0
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "Herve served as a Byzantine general in the 1050s.",
+          "f1": 0.0
+        },
+        "time": 7.414851188659668
+      },
+      {
+        "idx": 15,
+        "gold": "10th century",
+        "seq_len": 4091,
+        "target_len": 4096,
+        "sample_idx": 15,
+        "full": {
+          "answer": "The Normans first gained their separate identity in the first half of the 10th century.",
+          "f1": 0.11764705882352941
+        },
+        "int4": {
+          "answer": "The Normans first gained their separate identity in the first half of the 10th century.",
+          "f1": 0.11764705882352941
+        },
+        "int8": {
+          "answer": "The Normans first gained their separate identity in the first half of the 10th century.",
+          "f1": 0.11764705882352941
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "The Normans first gained their separate identity in the first half of the 10th century.",
+          "f1": 0.11764705882352941
+        },
+        "time": 7.746539115905762
+      },
+      {
+        "idx": 16,
+        "gold": "Deabolis",
+        "seq_len": 4091,
+        "target_len": 4096,
+        "sample_idx": 16,
+        "full": {
+          "answer": "Petrela was located by the Deabolis river.",
+          "f1": 0.25
+        },
+        "int4": {
+          "answer": "Petrela was located by the river Deabolis.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "Petrela was located by the Deabolis river.",
+          "f1": 0.25
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "Petrela was located by the river Deabolis.",
+          "f1": 0.0
+        },
+        "time": 6.858738422393799
+      },
+      {
+        "idx": 17,
+        "gold": "1066",
+        "seq_len": 4091,
+        "target_len": 4096,
+        "sample_idx": 17,
+        "full": {
+          "answer": "The Battle of Hastings occurred in 1066.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "The Battle of Hastings occurred in 1066.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "The Battle of Hastings occurred in 1066.",
+          "f1": 0.0
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "The Battle of Hastings occurred in 1066.",
+          "f1": 0.0
+        },
+        "time": 6.979497671127319
+      },
+      {
+        "idx": 18,
+        "gold": "mosaics",
+        "seq_len": 4091,
+        "target_len": 4096,
+        "sample_idx": 18,
+        "full": {
+          "answer": "The most important type of Norman art preserved in churches is mosaics, which were influenced by the Greek heritage.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "The most important type of Norman art preserved in churches is mosaics, which drew heavily on the Greek heritage.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "The most important type of Norman art preserved in churches is mosaics, which were influenced by the Greek heritage.",
+          "f1": 0.0
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "The most important type of Norman art preserved in churches is mosaics, which drew heavily on the Greek heritage.",
+          "f1": 0.0
+        },
+        "time": 8.097182989120483
+      },
+      {
+        "idx": 19,
+        "gold": "computational complexity theory",
+        "seq_len": 4091,
+        "target_len": 4096,
+        "sample_idx": 19,
+        "full": {
+          "answer": "Computational complexity theory analyzes all possible algorithms in aggregate to determine the resource requirements needed to solve a given problem.",
+          "f1": 0.2608695652173913
+        },
+        "int4": {
+          "answer": "Computational complexity theory analyzes all possible algorithms in aggregate to determine the resource requirements needed to solve a given problem.",
+          "f1": 0.2608695652173913
+        },
+        "int8": {
+          "answer": "Computational complexity theory analyzes all possible algorithms in aggregate to determine the resource requirements needed to solve a given problem.",
+          "f1": 0.2608695652173913
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "Computational complexity theory analyzes all possible algorithms in aggregate to determine the resource requirements needed to solve a given problem.",
+          "f1": 0.2608695652173913
+        },
+        "time": 8.109344244003296
+      },
+      {
+        "idx": 20,
+        "gold": "binary alphabet",
+        "seq_len": 4091,
+        "target_len": 4096,
+        "sample_idx": 20,
+        "full": {
+          "answer": "The binary alphabet (i.e., the set {0,1}) is most commonly used in a problem instance.",
+          "f1": 0.23529411764705882
+        },
+        "int4": {
+          "answer": "The name of the alphabet most commonly used in a problem instance is the binary alphabet.",
+          "f1": 0.2222222222222222
+        },
+        "int8": {
+          "answer": "The binary alphabet (i.e., the set {0,1}) is most commonly used in a problem instance.",
+          "f1": 0.23529411764705882
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "The name of the alphabet most commonly used in a problem instance is the binary alphabet.",
+          "f1": 0.2222222222222222
+        },
+        "time": 7.882584571838379
+      },
+      {
+        "idx": 21,
+        "gold": "2000",
+        "seq_len": 4091,
+        "target_len": 4096,
+        "sample_idx": 21,
+        "full": {
+          "answer": "The traveling salesman problem seeks to classify a route between the 15 largest cities in Germany with a total length of at most 2000 kilometers.",
+          "f1": 0.07692307692307693
+        },
+        "int4": {
+          "answer": "The traveling salesman problem seeks to classify a route between the 15 largest cities in Germany to be at most 2000 kilometers in length.",
+          "f1": 0.07999999999999999
+        },
+        "int8": {
+          "answer": "The traveling salesman problem seeks to classify a route between the 15 largest cities in Germany with a total length of at most 2000 kilometers.",
+          "f1": 0.07692307692307693
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "The traveling salesman problem seeks to classify a route between the 15 largest cities in Germany to be at most 2000 kilometers in length.",
+          "f1": 0.07999999999999999
+        },
+        "time": 9.165492057800293
+      },
+      {
+        "idx": 22,
+        "gold": "adjacency matrices",
+        "seq_len": 4091,
+        "target_len": 4096,
+        "sample_idx": 22,
+        "full": {
+          "answer": "One way to encode graphs is by using their adjacency matrices or adjacency lists, and then representing these in binary.",
+          "f1": 0.18181818181818182
+        },
+        "int4": {
+          "answer": "One way to encode graphs is by using their adjacency matrices or adjacency lists, and then representing these in binary.",
+          "f1": 0.18181818181818182
+        },
+        "int8": {
+          "answer": "One way to encode graphs is by using their adjacency matrices or adjacency lists, and then representing these in binary.",
+          "f1": 0.18181818181818182
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "One way to encode graphs is by using their adjacency matrices or adjacency lists, represented in binary.",
+          "f1": 0.21052631578947367
+        },
+        "time": 8.138565063476562
+      },
+      {
+        "idx": 23,
+        "gold": "Modern English",
+        "seq_len": 4091,
+        "target_len": 4096,
+        "sample_idx": 23,
+        "full": {
+          "answer": "The Anglo-Norman language's final form was Modern English.",
+          "f1": 0.2
+        },
+        "int4": {
+          "answer": "The Anglo-Norman language's final form was Modern English.",
+          "f1": 0.2
+        },
+        "int8": {
+          "answer": "The Anglo-Norman language's final form was Modern English.",
+          "f1": 0.2
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "The Anglo-Norman language's final form was Modern English.",
+          "f1": 0.2
+        },
+        "time": 7.095985412597656
+      },
+      {
+        "idx": 24,
+        "gold": "1072",
+        "seq_len": 4091,
+        "target_len": 4096,
+        "sample_idx": 24,
+        "full": {
+          "answer": "Scotland was invaded by William in 1072.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "Scotland was invaded by William in 1072.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "Scotland was invaded by William in 1072.",
+          "f1": 0.0
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "Scotland was invaded by William in 1072.",
+          "f1": 0.0
+        },
+        "time": 7.0962913036346436
+      },
+      {
+        "idx": 25,
+        "gold": "Seljuk Turks",
+        "seq_len": 4091,
+        "target_len": 4096,
+        "sample_idx": 25,
+        "full": {
+          "answer": "The Normans' main enemy in Italy, the Byzantine Empire, and Armenia was the Seljuk Turks.",
+          "f1": 0.11764705882352941
+        },
+        "int4": {
+          "answer": "The Normans' main enemy in Italy, the Byzantine Empire, and Armenia was the Seljuk Turks.",
+          "f1": 0.11764705882352941
+        },
+        "int8": {
+          "answer": "The Normans' main enemy in Italy, the Byzantine Empire, and Armenia was the Seljuk Turks.",
+          "f1": 0.11764705882352941
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "The Normans' main enemy in Italy, the Byzantine Empire, and Armenia was the Seljuk Turks.",
+          "f1": 0.11764705882352941
+        },
+        "time": 8.329555749893188
+      },
+      {
+        "idx": 26,
+        "gold": "concrete",
+        "seq_len": 4091,
+        "target_len": 4096,
+        "sample_idx": 26,
+        "full": {
+          "answer": "A problem instance is typically characterized as concrete.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "A problem instance is typically characterized as concrete.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "A problem instance is typically characterized as concrete.",
+          "f1": 0.0
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "A problem instance is typically characterized as concrete.",
+          "f1": 0.0
+        },
+        "time": 6.529106616973877
+      },
+      {
+        "idx": 27,
+        "gold": "instances",
+        "seq_len": 4091,
+        "target_len": 4096,
+        "sample_idx": 27,
+        "full": {
+          "answer": "Another name for any given measure of input associated with a problem is an instance.",
+          "f1": 0.0
+        },
+        "int4": {
+          "answer": "Another name for any given measure of input associated with a problem is an instance.",
+          "f1": 0.0
+        },
+        "int8": {
+          "answer": "Another name for any given measure of input associated with a problem is an instance.",
+          "f1": 0.0
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "Another name for any given measure of input associated with a problem is an instance.",
+          "f1": 0.0
+        },
+        "time": 7.315808057785034
+      },
+      {
+        "idx": 28,
+        "gold": "Edgar",
+        "seq_len": 4091,
+        "target_len": 4096,
+        "sample_idx": 28,
+        "full": {
+          "answer": "Edgar Atheling was Margaret's brother.",
+          "f1": 0.33333333333333337
+        },
+        "int4": {
+          "answer": "Edgar Atheling.",
+          "f1": 0.6666666666666666
+        },
+        "int8": {
+          "answer": "Edgar Atheling was Margaret's brother.",
+          "f1": 0.33333333333333337
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "Edgar Atheling.",
+          "f1": 0.6666666666666666
+        },
+        "time": 6.358469724655151
+      },
+      {
+        "idx": 29,
+        "gold": "binary notation",
+        "seq_len": 4091,
+        "target_len": 4096,
+        "sample_idx": 29,
+        "full": {
+          "answer": "Integers are commonly expressed in binary notation.",
+          "f1": 0.22222222222222224
+        },
+        "int4": {
+          "answer": "Integers are commonly expressed in binary notation.",
+          "f1": 0.22222222222222224
+        },
+        "int8": {
+          "answer": "Integers are commonly expressed in binary notation.",
+          "f1": 0.22222222222222224
+        },
+        "mixed_L0fp16_int4": {
+          "answer": "Integers are commonly expressed in binary notation.",
+          "f1": 0.22222222222222224
+        },
+        "time": 6.527318716049194
+      }
+    ]
+  }
+}

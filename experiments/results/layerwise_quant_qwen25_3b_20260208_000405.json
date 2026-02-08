@@ -1,0 +1,3762 @@
+{
+  "metadata": {
+    "num_samples": 50,
+    "num_layers": 36,
+    "all_fp16_f1": 0.7699408369408368,
+    "all_fp16_std": 0.3425922026260846,
+    "all_int4_f1": 0.7393558029272315,
+    "all_int4_std": 0.3697900838769688,
+    "first_third_int4_f1": 0.7499408369408368,
+    "first_third_int4_std": 0.35744517170864915,
+    "middle_third_int4_f1": 0.7632741702741701,
+    "middle_third_int4_std": 0.34129128258793023,
+    "last_third_int4_f1": 0.7962778332778332,
+    "last_third_int4_std": 0.3157493574992337,
+    "only_layer0_int4_f1": 0.7428701298701297,
+    "only_layer0_int4_std": 0.36679279138000076,
+    "only_layer6_int4_f1": 0.7699408369408368,
+    "only_layer6_int4_std": 0.3425922026260846,
+    "only_layer12_int4_f1": 0.7699408369408368,
+    "only_layer12_int4_std": 0.3425922026260846,
+    "only_layer18_int4_f1": 0.7699408369408368,
+    "only_layer18_int4_std": 0.3425922026260846,
+    "only_layer24_int4_f1": 0.7699408369408368,
+    "only_layer24_int4_std": 0.3425922026260846,
+    "only_layer35_int4_f1": 0.7699408369408368,
+    "only_layer35_int4_std": 0.3425922026260846,
+    "except_layer0_fp16_f1": 0.7710519480519481,
+    "except_layer0_fp16_std": 0.3357915551748486,
+    "except_layer6_fp16_f1": 0.7517850178806701,
+    "except_layer6_fp16_std": 0.3646816297004218,
+    "except_layer12_fp16_f1": 0.7496358527600764,
+    "except_layer12_fp16_std": 0.36775842316891955,
+    "except_layer18_fp16_f1": 0.7369099743202513,
+    "except_layer18_fp16_std": 0.3639782699155125,
+    "except_layer24_fp16_f1": 0.7434341092869394,
+    "except_layer24_fp16_std": 0.3659338307719217,
+    "except_layer35_fp16_f1": 0.7359920148734165,
+    "except_layer35_fp16_std": 0.3753567292566706
+  },
+  "model": "qwen25_3b",
+  "configs": {
+    "all_fp16": "{}",
+    "all_int4": "{0: 4, 1: 4, 2: 4, 3: 4, 4: 4, 5: 4, 6: 4, 7: 4, 8: 4, 9: 4, 10: 4, 11: 4, 12: 4, 13: 4, 14: 4, 15: 4, 16: 4, 17: 4, 18: 4, 19: 4, 20: 4, 21: 4, 22: 4, 23: 4, 24: 4, 25: 4, 26: 4, 27: 4, 28: 4, 29: 4, 30: 4, 31: 4, 32: 4, 33: 4, 34: 4, 35: 4}",
+    "first_third_int4": "{0: 4, 1: 4, 2: 4, 3: 4, 4: 4, 5: 4, 6: 4, 7: 4, 8: 4, 9: 4, 10: 4, 11: 4}",
+    "middle_third_int4": "{12: 4, 13: 4, 14: 4, 15: 4, 16: 4, 17: 4, 18: 4, 19: 4, 20: 4, 21: 4, 22: 4, 23: 4}",
+    "last_third_int4": "{24: 4, 25: 4, 26: 4, 27: 4, 28: 4, 29: 4, 30: 4, 31: 4, 32: 4, 33: 4, 34: 4, 35: 4}",
+    "only_layer0_int4": "{0: 4}",
+    "only_layer6_int4": "{6: 4}",
+    "only_layer12_int4": "{12: 4}",
+    "only_layer18_int4": "{18: 4}",
+    "only_layer24_int4": "{24: 4}",
+    "only_layer35_int4": "{35: 4}",
+    "except_layer0_fp16": "{1: 4, 2: 4, 3: 4, 4: 4, 5: 4, 6: 4, 7: 4, 8: 4, 9: 4, 10: 4, 11: 4, 12: 4, 13: 4, 14: 4, 15: 4, 16: 4, 17: 4, 18: 4, 19: 4, 20: 4, 21: 4, 22: 4, 23: 4, 24: 4, 25: 4, 26: 4, 27: 4, 28: 4, 29: 4, 30: 4, 31: 4, 32: 4, 33: 4, 34: 4, 35: 4}",
+    "except_layer6_fp16": "{0: 4, 1: 4, 2: 4, 3: 4, 4: 4, 5: 4, 7: 4, 8: 4, 9: 4, 10: 4, 11: 4, 12: 4, 13: 4, 14: 4, 15: 4, 16: 4, 17: 4, 18: 4, 19: 4, 20: 4, 21: 4, 22: 4, 23: 4, 24: 4, 25: 4, 26: 4, 27: 4, 28: 4, 29: 4, 30: 4, 31: 4, 32: 4, 33: 4, 34: 4, 35: 4}",
+    "except_layer12_fp16": "{0: 4, 1: 4, 2: 4, 3: 4, 4: 4, 5: 4, 6: 4, 7: 4, 8: 4, 9: 4, 10: 4, 11: 4, 13: 4, 14: 4, 15: 4, 16: 4, 17: 4, 18: 4, 19: 4, 20: 4, 21: 4, 22: 4, 23: 4, 24: 4, 25: 4, 26: 4, 27: 4, 28: 4, 29: 4, 30: 4, 31: 4, 32: 4, 33: 4, 34: 4, 35: 4}",
+    "except_layer18_fp16": "{0: 4, 1: 4, 2: 4, 3: 4, 4: 4, 5: 4, 6: 4, 7: 4, 8: 4, 9: 4, 10: 4, 11: 4, 12: 4, 13: 4, 14: 4, 15: 4, 16: 4, 17: 4, 19: 4, 20: 4, 21: 4, 22: 4, 23: 4, 24: 4, 25: 4, 26: 4, 27: 4, 28: 4, 29: 4, 30: 4, 31: 4, 32: 4, 33: 4, 34: 4, 35: 4}",
+    "except_layer24_fp16": "{0: 4, 1: 4, 2: 4, 3: 4, 4: 4, 5: 4, 6: 4, 7: 4, 8: 4, 9: 4, 10: 4, 11: 4, 12: 4, 13: 4, 14: 4, 15: 4, 16: 4, 17: 4, 18: 4, 19: 4, 20: 4, 21: 4, 22: 4, 23: 4, 25: 4, 26: 4, 27: 4, 28: 4, 29: 4, 30: 4, 31: 4, 32: 4, 33: 4, 34: 4, 35: 4}",
+    "except_layer35_fp16": "{0: 4, 1: 4, 2: 4, 3: 4, 4: 4, 5: 4, 6: 4, 7: 4, 8: 4, 9: 4, 10: 4, 11: 4, 12: 4, 13: 4, 14: 4, 15: 4, 16: 4, 17: 4, 18: 4, 19: 4, 20: 4, 21: 4, 22: 4, 23: 4, 24: 4, 25: 4, 26: 4, 27: 4, 28: 4, 29: 4, 30: 4, 31: 4, 32: 4, 33: 4, 34: 4}"
+  },
+  "results": [
+    {
+      "idx": 0,
+      "gold": "France",
+      "seq_len": 182,
+      "all_fp16": {
+        "answer": "France",
+        "f1": 1.0
+      },
+      "all_int4": {
+        "answer": "France",
+        "f1": 1.0
+      },
+      "first_third_int4": {
+        "answer": "France",
+        "f1": 1.0
+      },
+      "middle_third_int4": {
+        "answer": "France",
+        "f1": 1.0
+      },
+      "last_third_int4": {
+        "answer": "France",
+        "f1": 1.0
+      },
+      "only_layer0_int4": {
+        "answer": "France",
+        "f1": 1.0
+      },
+      "only_layer6_int4": {
+        "answer": "France",
+        "f1": 1.0
+      },
+      "only_layer12_int4": {
+        "answer": "France",
+        "f1": 1.0
+      },
+      "only_layer18_int4": {
+        "answer": "France",
+        "f1": 1.0
+      },
+      "only_layer24_int4": {
+        "answer": "France",
+        "f1": 1.0
+      },
+      "only_layer35_int4": {
+        "answer": "France",
+        "f1": 1.0
+      },
+      "except_layer0_fp16": {
+        "answer": "France",
+        "f1": 1.0
+      },
+      "except_layer6_fp16": {
+        "answer": "France",
+        "f1": 1.0
+      },
+      "except_layer12_fp16": {
+        "answer": "France",
+        "f1": 1.0
+      },
+      "except_layer18_fp16": {
+        "answer": "France",
+        "f1": 1.0
+      },
+      "except_layer24_fp16": {
+        "answer": "France",
+        "f1": 1.0
+      },
+      "except_layer35_fp16": {
+        "answer": "France",
+        "f1": 1.0
+      },
+      "time": 0.932283878326416
+    },
+    {
+      "idx": 1,
+      "gold": "10th and 11th centuries",
+      "seq_len": 183,
+      "all_fp16": {
+        "answer": "the 10th and 11th centuries",
+        "f1": 0.888888888888889
+      },
+      "all_int4": {
+        "answer": "the first half of the 10th century",
+        "f1": 0.18181818181818182
+      },
+      "first_third_int4": {
+        "answer": "the 10th and 11th centuries",
+        "f1": 0.888888888888889
+      },
+      "middle_third_int4": {
+        "answer": "the 10th and 11th centuries",
+        "f1": 0.888888888888889
+      },
+      "last_third_int4": {
+        "answer": "the 10th and 11th centuries",
+        "f1": 0.888888888888889
+      },
+      "only_layer0_int4": {
+        "answer": "the 10th and 11th centuries",
+        "f1": 0.888888888888889
+      },
+      "only_layer6_int4": {
+        "answer": "the 10th and 11th centuries",
+        "f1": 0.888888888888889
+      },
+      "only_layer12_int4": {
+        "answer": "the 10th and 11th centuries",
+        "f1": 0.888888888888889
+      },
+      "only_layer18_int4": {
+        "answer": "the 10th and 11th centuries",
+        "f1": 0.888888888888889
+      },
+      "only_layer24_int4": {
+        "answer": "the 10th and 11th centuries",
+        "f1": 0.888888888888889
+      },
+      "only_layer35_int4": {
+        "answer": "the 10th and 11th centuries",
+        "f1": 0.888888888888889
+      },
+      "except_layer0_fp16": {
+        "answer": "the 10th and 11th centuries",
+        "f1": 0.888888888888889
+      },
+      "except_layer6_fp16": {
+        "answer": "the 10th and 11th centuries",
+        "f1": 0.888888888888889
+      },
+      "except_layer12_fp16": {
+        "answer": "the 10th and 11th centuries",
+        "f1": 0.888888888888889
+      },
+      "except_layer18_fp16": {
+        "answer": "the 10th and 11th centuries",
+        "f1": 0.888888888888889
+      },
+      "except_layer24_fp16": {
+        "answer": "the 10th and 11th centuries",
+        "f1": 0.888888888888889
+      },
+      "except_layer35_fp16": {
+        "answer": "the first half of the 10th century",
+        "f1": 0.18181818181818182
+      },
+      "time": 4.261723518371582
+    },
+    {
+      "idx": 2,
+      "gold": "Denmark, Iceland and Norway",
+      "seq_len": 182,
+      "all_fp16": {
+        "answer": "Denmark , Iceland and Norway",
+        "f1": 0.6666666666666665
+      },
+      "all_int4": {
+        "answer": "Denmark , Iceland and Norway",
+        "f1": 0.6666666666666665
+      },
+      "first_third_int4": {
+        "answer": "Denmark , Iceland and Norway",
+        "f1": 0.6666666666666665
+      },
+      "middle_third_int4": {
+        "answer": "Denmark , Iceland and Norway",
+        "f1": 0.6666666666666665
+      },
+      "last_third_int4": {
+        "answer": "Denmark , Iceland and Norway",
+        "f1": 0.6666666666666665
+      },
+      "only_layer0_int4": {
+        "answer": "Denmark , Iceland and Norway",
+        "f1": 0.6666666666666665
+      },
+      "only_layer6_int4": {
+        "answer": "Denmark , Iceland and Norway",
+        "f1": 0.6666666666666665
+      },
+      "only_layer12_int4": {
+        "answer": "Denmark , Iceland and Norway",
+        "f1": 0.6666666666666665
+      },
+      "only_layer18_int4": {
+        "answer": "Denmark , Iceland and Norway",
+        "f1": 0.6666666666666665
+      },
+      "only_layer24_int4": {
+        "answer": "Denmark , Iceland and Norway",
+        "f1": 0.6666666666666665
+      },
+      "only_layer35_int4": {
+        "answer": "Denmark , Iceland and Norway",
+        "f1": 0.6666666666666665
+      },
+      "except_layer0_fp16": {
+        "answer": "Denmark , Iceland and Norway",
+        "f1": 0.6666666666666665
+      },
+      "except_layer6_fp16": {
+        "answer": "Denmark , Iceland and Norway",
+        "f1": 0.6666666666666665
+      },
+      "except_layer12_fp16": {
+        "answer": "Denmark , Iceland and Norway",
+        "f1": 0.6666666666666665
+      },
+      "except_layer18_fp16": {
+        "answer": "Denmark , Iceland and Norway",
+        "f1": 0.6666666666666665
+      },
+      "except_layer24_fp16": {
+        "answer": "Denmark , Iceland and Norway",
+        "f1": 0.6666666666666665
+      },
+      "except_layer35_fp16": {
+        "answer": "Denmark , Iceland and Norway",
+        "f1": 0.6666666666666665
+      },
+      "time": 2.1906580924987793
+    },
+    {
+      "idx": 3,
+      "gold": "Rollo",
+      "seq_len": 180,
+      "all_fp16": {
+        "answer": "Rollo",
+        "f1": 1.0
+      },
+      "all_int4": {
+        "answer": "Rollo",
+        "f1": 1.0
+      },
+      "first_third_int4": {
+        "answer": "Rollo",
+        "f1": 1.0
+      },
+      "middle_third_int4": {
+        "answer": "Rollo",
+        "f1": 1.0
+      },
+      "last_third_int4": {
+        "answer": "Rollo",
+        "f1": 1.0
+      },
+      "only_layer0_int4": {
+        "answer": "Rollo",
+        "f1": 1.0
+      },
+      "only_layer6_int4": {
+        "answer": "Rollo",
+        "f1": 1.0
+      },
+      "only_layer12_int4": {
+        "answer": "Rollo",
+        "f1": 1.0
+      },
+      "only_layer18_int4": {
+        "answer": "Rollo",
+        "f1": 1.0
+      },
+      "only_layer24_int4": {
+        "answer": "Rollo",
+        "f1": 1.0
+      },
+      "only_layer35_int4": {
+        "answer": "Rollo",
+        "f1": 1.0
+      },
+      "except_layer0_fp16": {
+        "answer": "Rollo",
+        "f1": 1.0
+      },
+      "except_layer6_fp16": {
+        "answer": "Rollo",
+        "f1": 1.0
+      },
+      "except_layer12_fp16": {
+        "answer": "Rollo",
+        "f1": 1.0
+      },
+      "except_layer18_fp16": {
+        "answer": "Rollo",
+        "f1": 1.0
+      },
+      "except_layer24_fp16": {
+        "answer": "Rollo",
+        "f1": 1.0
+      },
+      "except_layer35_fp16": {
+        "answer": "Rollo",
+        "f1": 1.0
+      },
+      "time": 1.1433651447296143
+    },
+    {
+      "idx": 4,
+      "gold": "10th century",
+      "seq_len": 186,
+      "all_fp16": {
+        "answer": "the first half of the 10th century",
+        "f1": 0.4444444444444445
+      },
+      "all_int4": {
+        "answer": "the first half of the 10th century",
+        "f1": 0.4444444444444445
+      },
+      "first_third_int4": {
+        "answer": "the first half of the 10th century",
+        "f1": 0.4444444444444445
+      },
+      "middle_third_int4": {
+        "answer": "the first half of the 10th century",
+        "f1": 0.4444444444444445
+      },
+      "last_third_int4": {
+        "answer": "the first half of the 10th century",
+        "f1": 0.4444444444444445
+      },
+      "only_layer0_int4": {
+        "answer": "the first half of the 10th century",
+        "f1": 0.4444444444444445
+      },
+      "only_layer6_int4": {
+        "answer": "the first half of the 10th century",
+        "f1": 0.4444444444444445
+      },
+      "only_layer12_int4": {
+        "answer": "the first half of the 10th century",
+        "f1": 0.4444444444444445
+      },
+      "only_layer18_int4": {
+        "answer": "the first half of the 10th century",
+        "f1": 0.4444444444444445
+      },
+      "only_layer24_int4": {
+        "answer": "the first half of the 10th century",
+        "f1": 0.4444444444444445
+      },
+      "only_layer35_int4": {
+        "answer": "the first half of the 10th century",
+        "f1": 0.4444444444444445
+      },
+      "except_layer0_fp16": {
+        "answer": "the first half of the 10th century",
+        "f1": 0.4444444444444445
+      },
+      "except_layer6_fp16": {
+        "answer": "the first half of the 10th century",
+        "f1": 0.4444444444444445
+      },
+      "except_layer12_fp16": {
+        "answer": "the first half of the 10th century",
+        "f1": 0.4444444444444445
+      },
+      "except_layer18_fp16": {
+        "answer": "the first half of the 10th century",
+        "f1": 0.4444444444444445
+      },
+      "except_layer24_fp16": {
+        "answer": "the first half of the 10th century",
+        "f1": 0.4444444444444445
+      },
+      "except_layer35_fp16": {
+        "answer": "the first half of the 10th century",
+        "f1": 0.4444444444444445
+      },
+      "time": 3.952681303024292
+    },
+    {
+      "idx": 5,
+      "gold": "William the Conqueror",
+      "seq_len": 306,
+      "all_fp16": {
+        "answer": "William the Conqueror",
+        "f1": 1.0
+      },
+      "all_int4": {
+        "answer": "William the Conqueror",
+        "f1": 1.0
+      },
+      "first_third_int4": {
+        "answer": "William the Conqueror",
+        "f1": 1.0
+      },
+      "middle_third_int4": {
+        "answer": "William the Conqueror",
+        "f1": 1.0
+      },
+      "last_third_int4": {
+        "answer": "William the Conqueror",
+        "f1": 1.0
+      },
+      "only_layer0_int4": {
+        "answer": "William the Conqueror",
+        "f1": 1.0
+      },
+      "only_layer6_int4": {
+        "answer": "William the Conqueror",
+        "f1": 1.0
+      },
+      "only_layer12_int4": {
+        "answer": "William the Conqueror",
+        "f1": 1.0
+      },
+      "only_layer18_int4": {
+        "answer": "William the Conqueror",
+        "f1": 1.0
+      },
+      "only_layer24_int4": {
+        "answer": "William the Conqueror",
+        "f1": 1.0
+      },
+      "only_layer35_int4": {
+        "answer": "William the Conqueror",
+        "f1": 1.0
+      },
+      "except_layer0_fp16": {
+        "answer": "William the Conqueror",
+        "f1": 1.0
+      },
+      "except_layer6_fp16": {
+        "answer": "William the Conqueror",
+        "f1": 1.0
+      },
+      "except_layer12_fp16": {
+        "answer": "William the Conqueror",
+        "f1": 1.0
+      },
+      "except_layer18_fp16": {
+        "answer": "William the Conqueror",
+        "f1": 1.0
+      },
+      "except_layer24_fp16": {
+        "answer": "William the Conqueror",
+        "f1": 1.0
+      },
+      "except_layer35_fp16": {
+        "answer": "William the Conqueror",
+        "f1": 1.0
+      },
+      "time": 2.287322998046875
+    },
+    {
+      "idx": 6,
+      "gold": "Richard I",
+      "seq_len": 306,
+      "all_fp16": {
+        "answer": "the French crown",
+        "f1": 0.0
+      },
+      "all_int4": {
+        "answer": "the Duchy of Normandy, which they formed by treaty with the French crown",
+        "f1": 0.0
+      },
+      "first_third_int4": {
+        "answer": "the French crown",
+        "f1": 0.0
+      },
+      "middle_third_int4": {
+        "answer": "the French crown",
+        "f1": 0.0
+      },
+      "last_third_int4": {
+        "answer": "the Duchy of Normandy, which they formed by treaty with the French crown, was a great fief of medieval France, and under Richard I of Normandy was forged into a cohesive and formidable principality in",
+        "f1": 0.10256410256410257
+      },
+      "only_layer0_int4": {
+        "answer": "the French crown",
+        "f1": 0.0
+      },
+      "only_layer6_int4": {
+        "answer": "the French crown",
+        "f1": 0.0
+      },
+      "only_layer12_int4": {
+        "answer": "the French crown",
+        "f1": 0.0
+      },
+      "only_layer18_int4": {
+        "answer": "the French crown",
+        "f1": 0.0
+      },
+      "only_layer24_int4": {
+        "answer": "the French crown",
+        "f1": 0.0
+      },
+      "only_layer35_int4": {
+        "answer": "the French crown",
+        "f1": 0.0
+      },
+      "except_layer0_fp16": {
+        "answer": "the Duchy of Normandy, which they formed by treaty with the French crown",
+        "f1": 0.0
+      },
+      "except_layer6_fp16": {
+        "answer": "the Duchy of Normandy, which they formed by treaty with the French crown",
+        "f1": 0.0
+      },
+      "except_layer12_fp16": {
+        "answer": "the Duchy of Normandy, which they formed by treaty with the French crown",
+        "f1": 0.0
+      },
+      "except_layer18_fp16": {
+        "answer": "the French crown",
+        "f1": 0.0
+      },
+      "except_layer24_fp16": {
+        "answer": "the Duchy of Normandy, which they formed by treaty with the French crown",
+        "f1": 0.0
+      },
+      "except_layer35_fp16": {
+        "answer": "the Duchy of Normandy, which they formed by treaty with the French crown",
+        "f1": 0.0
+      },
+      "time": 4.078642845153809
+    },
+    {
+      "idx": 7,
+      "gold": "Catholic",
+      "seq_len": 303,
+      "all_fp16": {
+        "answer": "Catholic orthodoxy",
+        "f1": 0.6666666666666666
+      },
+      "all_int4": {
+        "answer": "Catholic",
+        "f1": 1.0
+      },
+      "first_third_int4": {
+        "answer": "Catholic orthodoxy",
+        "f1": 0.6666666666666666
+      },
+      "middle_third_int4": {
+        "answer": "Catholic",
+        "f1": 1.0
+      },
+      "last_third_int4": {
+        "answer": "Catholic",
+        "f1": 1.0
+      },
+      "only_layer0_int4": {
+        "answer": "Catholic orthodoxy",
+        "f1": 0.6666666666666666
+      },
+      "only_layer6_int4": {
+        "answer": "Catholic orthodoxy",
+        "f1": 0.6666666666666666
+      },
+      "only_layer12_int4": {
+        "answer": "Catholic orthodoxy",
+        "f1": 0.6666666666666666
+      },
+      "only_layer18_int4": {
+        "answer": "Catholic orthodoxy",
+        "f1": 0.6666666666666666
+      },
+      "only_layer24_int4": {
+        "answer": "Catholic orthodoxy",
+        "f1": 0.6666666666666666
+      },
+      "only_layer35_int4": {
+        "answer": "Catholic orthodoxy",
+        "f1": 0.6666666666666666
+      },
+      "except_layer0_fp16": {
+        "answer": "Catholic",
+        "f1": 1.0
+      },
+      "except_layer6_fp16": {
+        "answer": "Catholic",
+        "f1": 1.0
+      },
+      "except_layer12_fp16": {
+        "answer": "Catholic",
+        "f1": 1.0
+      },
+      "except_layer18_fp16": {
+        "answer": "Catholic",
+        "f1": 1.0
+      },
+      "except_layer24_fp16": {
+        "answer": "Catholic",
+        "f1": 1.0
+      },
+      "except_layer35_fp16": {
+        "answer": "Catholic",
+        "f1": 1.0
+      },
+      "time": 1.247953176498413
+    },
+    {
+      "idx": 8,
+      "gold": "Viking",
+      "seq_len": 111,
+      "all_fp16": {
+        "answer": "Norseman",
+        "f1": 0.0
+      },
+      "all_int4": {
+        "answer": "Norseman",
+        "f1": 0.0
+      },
+      "first_third_int4": {
+        "answer": "Norseman",
+        "f1": 0.0
+      },
+      "middle_third_int4": {
+        "answer": "Norseman",
+        "f1": 0.0
+      },
+      "last_third_int4": {
+        "answer": "Norseman, Viking",
+        "f1": 0.6666666666666666
+      },
+      "only_layer0_int4": {
+        "answer": "Norseman",
+        "f1": 0.0
+      },
+      "only_layer6_int4": {
+        "answer": "Norseman",
+        "f1": 0.0
+      },
+      "only_layer12_int4": {
+        "answer": "Norseman",
+        "f1": 0.0
+      },
+      "only_layer18_int4": {
+        "answer": "Norseman",
+        "f1": 0.0
+      },
+      "only_layer24_int4": {
+        "answer": "Norseman",
+        "f1": 0.0
+      },
+      "only_layer35_int4": {
+        "answer": "Norseman",
+        "f1": 0.0
+      },
+      "except_layer0_fp16": {
+        "answer": "Norseman",
+        "f1": 0.0
+      },
+      "except_layer6_fp16": {
+        "answer": "Norseman",
+        "f1": 0.0
+      },
+      "except_layer12_fp16": {
+        "answer": "Norseman",
+        "f1": 0.0
+      },
+      "except_layer18_fp16": {
+        "answer": "Norseman",
+        "f1": 0.0
+      },
+      "except_layer24_fp16": {
+        "answer": "Norseman",
+        "f1": 0.0
+      },
+      "except_layer35_fp16": {
+        "answer": "Norseman",
+        "f1": 0.0
+      },
+      "time": 1.193284511566162
+    },
+    {
+      "idx": 9,
+      "gold": "9th century",
+      "seq_len": 113,
+      "all_fp16": {
+        "answer": "9th century",
+        "f1": 1.0
+      },
+      "all_int4": {
+        "answer": "9th century",
+        "f1": 1.0
+      },
+      "first_third_int4": {
+        "answer": "9th century",
+        "f1": 1.0
+      },
+      "middle_third_int4": {
+        "answer": "9th century",
+        "f1": 1.0
+      },
+      "last_third_int4": {
+        "answer": "9th century",
+        "f1": 1.0
+      },
+      "only_layer0_int4": {
+        "answer": "9th century",
+        "f1": 1.0
+      },
+      "only_layer6_int4": {
+        "answer": "9th century",
+        "f1": 1.0
+      },
+      "only_layer12_int4": {
+        "answer": "9th century",
+        "f1": 1.0
+      },
+      "only_layer18_int4": {
+        "answer": "9th century",
+        "f1": 1.0
+      },
+      "only_layer24_int4": {
+        "answer": "9th century",
+        "f1": 1.0
+      },
+      "only_layer35_int4": {
+        "answer": "9th century",
+        "f1": 1.0
+      },
+      "except_layer0_fp16": {
+        "answer": "9th century",
+        "f1": 1.0
+      },
+      "except_layer6_fp16": {
+        "answer": "9th century",
+        "f1": 1.0
+      },
+      "except_layer12_fp16": {
+        "answer": "9th century",
+        "f1": 1.0
+      },
+      "except_layer18_fp16": {
+        "answer": "9th century",
+        "f1": 1.0
+      },
+      "except_layer24_fp16": {
+        "answer": "9th century",
+        "f1": 1.0
+      },
+      "except_layer35_fp16": {
+        "answer": "9th century",
+        "f1": 1.0
+      },
+      "time": 1.8416991233825684
+    },
+    {
+      "idx": 10,
+      "gold": "911",
+      "seq_len": 222,
+      "all_fp16": {
+        "answer": "911",
+        "f1": 1.0
+      },
+      "all_int4": {
+        "answer": "911",
+        "f1": 1.0
+      },
+      "first_third_int4": {
+        "answer": "911",
+        "f1": 1.0
+      },
+      "middle_third_int4": {
+        "answer": "911",
+        "f1": 1.0
+      },
+      "last_third_int4": {
+        "answer": "911",
+        "f1": 1.0
+      },
+      "only_layer0_int4": {
+        "answer": "911",
+        "f1": 1.0
+      },
+      "only_layer6_int4": {
+        "answer": "911",
+        "f1": 1.0
+      },
+      "only_layer12_int4": {
+        "answer": "911",
+        "f1": 1.0
+      },
+      "only_layer18_int4": {
+        "answer": "911",
+        "f1": 1.0
+      },
+      "only_layer24_int4": {
+        "answer": "911",
+        "f1": 1.0
+      },
+      "only_layer35_int4": {
+        "answer": "911",
+        "f1": 1.0
+      },
+      "except_layer0_fp16": {
+        "answer": "911",
+        "f1": 1.0
+      },
+      "except_layer6_fp16": {
+        "answer": "911",
+        "f1": 1.0
+      },
+      "except_layer12_fp16": {
+        "answer": "911",
+        "f1": 1.0
+      },
+      "except_layer18_fp16": {
+        "answer": "911",
+        "f1": 1.0
+      },
+      "except_layer24_fp16": {
+        "answer": "911",
+        "f1": 1.0
+      },
+      "except_layer35_fp16": {
+        "answer": "911",
+        "f1": 1.0
+      },
+      "time": 1.8483316898345947
+    },
+    {
+      "idx": 11,
+      "gold": "King Charles III",
+      "seq_len": 229,
+      "all_fp16": {
+        "answer": "King Charles III of West Francia",
+        "f1": 0.6666666666666666
+      },
+      "all_int4": {
+        "answer": "King Charles III of West Francia",
+        "f1": 0.6666666666666666
+      },
+      "first_third_int4": {
+        "answer": "King Charles III of West Francia",
+        "f1": 0.6666666666666666
+      },
+      "middle_third_int4": {
+        "answer": "King Charles III of West Francia",
+        "f1": 0.6666666666666666
+      },
+      "last_third_int4": {
+        "answer": "King Charles III of West Francia",
+        "f1": 0.6666666666666666
+      },
+      "only_layer0_int4": {
+        "answer": "King Charles III of West Francia",
+        "f1": 0.6666666666666666
+      },
+      "only_layer6_int4": {
+        "answer": "King Charles III of West Francia",
+        "f1": 0.6666666666666666
+      },
+      "only_layer12_int4": {
+        "answer": "King Charles III of West Francia",
+        "f1": 0.6666666666666666
+      },
+      "only_layer18_int4": {
+        "answer": "King Charles III of West Francia",
+        "f1": 0.6666666666666666
+      },
+      "only_layer24_int4": {
+        "answer": "King Charles III of West Francia",
+        "f1": 0.6666666666666666
+      },
+      "only_layer35_int4": {
+        "answer": "King Charles III of West Francia",
+        "f1": 0.6666666666666666
+      },
+      "except_layer0_fp16": {
+        "answer": "King Charles III of West Francia",
+        "f1": 0.6666666666666666
+      },
+      "except_layer6_fp16": {
+        "answer": "King Charles III of West Francia",
+        "f1": 0.6666666666666666
+      },
+      "except_layer12_fp16": {
+        "answer": "King Charles III of West Francia",
+        "f1": 0.6666666666666666
+      },
+      "except_layer18_fp16": {
+        "answer": "King Charles III of West Francia",
+        "f1": 0.6666666666666666
+      },
+      "except_layer24_fp16": {
+        "answer": "King Charles III of West Francia",
+        "f1": 0.6666666666666666
+      },
+      "except_layer35_fp16": {
+        "answer": "King Charles III of West Francia",
+        "f1": 0.6666666666666666
+      },
+      "time": 2.8970768451690674
+    },
+    {
+      "idx": 12,
+      "gold": "Seine",
+      "seq_len": 220,
+      "all_fp16": {
+        "answer": "the river Epte",
+        "f1": 0.0
+      },
+      "all_int4": {
+        "answer": "the river Epte",
+        "f1": 0.0
+      },
+      "first_third_int4": {
+        "answer": "the river Epte",
+        "f1": 0.0
+      },
+      "middle_third_int4": {
+        "answer": "the river Epte",
+        "f1": 0.0
+      },
+      "last_third_int4": {
+        "answer": "the river Epte",
+        "f1": 0.0
+      },
+      "only_layer0_int4": {
+        "answer": "the river Epte",
+        "f1": 0.0
+      },
+      "only_layer6_int4": {
+        "answer": "the river Epte",
+        "f1": 0.0
+      },
+      "only_layer12_int4": {
+        "answer": "the river Epte",
+        "f1": 0.0
+      },
+      "only_layer18_int4": {
+        "answer": "the river Epte",
+        "f1": 0.0
+      },
+      "only_layer24_int4": {
+        "answer": "the river Epte",
+        "f1": 0.0
+      },
+      "only_layer35_int4": {
+        "answer": "the river Epte",
+        "f1": 0.0
+      },
+      "except_layer0_fp16": {
+        "answer": "the river Seine",
+        "f1": 0.5
+      },
+      "except_layer6_fp16": {
+        "answer": "the river Epte",
+        "f1": 0.0
+      },
+      "except_layer12_fp16": {
+        "answer": "the river Epte",
+        "f1": 0.0
+      },
+      "except_layer18_fp16": {
+        "answer": "the river Epte",
+        "f1": 0.0
+      },
+      "except_layer24_fp16": {
+        "answer": "the river Epte",
+        "f1": 0.0
+      },
+      "except_layer35_fp16": {
+        "answer": "the river Epte",
+        "f1": 0.0
+      },
+      "time": 1.8462975025177002
+    },
+    {
+      "idx": 13,
+      "gold": "Rollo",
+      "seq_len": 172,
+      "all_fp16": {
+        "answer": "Rollo",
+        "f1": 1.0
+      },
+      "all_int4": {
+        "answer": "Rollo",
+        "f1": 1.0
+      },
+      "first_third_int4": {
+        "answer": "Rollo",
+        "f1": 1.0
+      },
+      "middle_third_int4": {
+        "answer": "Rollo",
+        "f1": 1.0
+      },
+      "last_third_int4": {
+        "answer": "Rollo",
+        "f1": 1.0
+      },
+      "only_layer0_int4": {
+        "answer": "Rollo",
+        "f1": 1.0
+      },
+      "only_layer6_int4": {
+        "answer": "Rollo",
+        "f1": 1.0
+      },
+      "only_layer12_int4": {
+        "answer": "Rollo",
+        "f1": 1.0
+      },
+      "only_layer18_int4": {
+        "answer": "Rollo",
+        "f1": 1.0
+      },
+      "only_layer24_int4": {
+        "answer": "Rollo",
+        "f1": 1.0
+      },
+      "only_layer35_int4": {
+        "answer": "Rollo",
+        "f1": 1.0
+      },
+      "except_layer0_fp16": {
+        "answer": "Rollo",
+        "f1": 1.0
+      },
+      "except_layer6_fp16": {
+        "answer": "Rollo",
+        "f1": 1.0
+      },
+      "except_layer12_fp16": {
+        "answer": "Rollo",
+        "f1": 1.0
+      },
+      "except_layer18_fp16": {
+        "answer": "Rollo",
+        "f1": 1.0
+      },
+      "except_layer24_fp16": {
+        "answer": "Rollo",
+        "f1": 1.0
+      },
+      "except_layer35_fp16": {
+        "answer": "Rollo",
+        "f1": 1.0
+      },
+      "time": 1.1461906433105469
+    },
+    {
+      "idx": 14,
+      "gold": "Catholicism",
+      "seq_len": 118,
+      "all_fp16": {
+        "answer": "Catholicism",
+        "f1": 1.0
+      },
+      "all_int4": {
+        "answer": "Catholicism",
+        "f1": 1.0
+      },
+      "first_third_int4": {
+        "answer": "Catholicism",
+        "f1": 1.0
+      },
+      "middle_third_int4": {
+        "answer": "Catholicism (Christianity)",
+        "f1": 0.6666666666666666
+      },
+      "last_third_int4": {
+        "answer": "Catholicism",
+        "f1": 1.0
+      },
+      "only_layer0_int4": {
+        "answer": "Catholicism",
+        "f1": 1.0
+      },
+      "only_layer6_int4": {
+        "answer": "Catholicism",
+        "f1": 1.0
+      },
+      "only_layer12_int4": {
+        "answer": "Catholicism",
+        "f1": 1.0
+      },
+      "only_layer18_int4": {
+        "answer": "Catholicism",
+        "f1": 1.0
+      },
+      "only_layer24_int4": {
+        "answer": "Catholicism",
+        "f1": 1.0
+      },
+      "only_layer35_int4": {
+        "answer": "Catholicism",
+        "f1": 1.0
+      },
+      "except_layer0_fp16": {
+        "answer": "Catholicism",
+        "f1": 1.0
+      },
+      "except_layer6_fp16": {
+        "answer": "Catholicism",
+        "f1": 1.0
+      },
+      "except_layer12_fp16": {
+        "answer": "Catholicism",
+        "f1": 1.0
+      },
+      "except_layer18_fp16": {
+        "answer": "Catholicism (Christianity)",
+        "f1": 0.6666666666666666
+      },
+      "except_layer24_fp16": {
+        "answer": "Catholicism (Christianity)",
+        "f1": 0.6666666666666666
+      },
+      "except_layer35_fp16": {
+        "answer": "Catholicism",
+        "f1": 1.0
+      },
+      "time": 1.380706787109375
+    },
+    {
+      "idx": 15,
+      "gold": "north",
+      "seq_len": 122,
+      "all_fp16": {
+        "answer": "the north of France",
+        "f1": 0.4
+      },
+      "all_int4": {
+        "answer": "the north of France",
+        "f1": 0.4
+      },
+      "first_third_int4": {
+        "answer": "the north of France",
+        "f1": 0.4
+      },
+      "middle_third_int4": {
+        "answer": "the north of France",
+        "f1": 0.4
+      },
+      "last_third_int4": {
+        "answer": "the north of France",
+        "f1": 0.4
+      },
+      "only_layer0_int4": {
+        "answer": "the north of France",
+        "f1": 0.4
+      },
+      "only_layer6_int4": {
+        "answer": "the north of France",
+        "f1": 0.4
+      },
+      "only_layer12_int4": {
+        "answer": "the north of France",
+        "f1": 0.4
+      },
+      "only_layer18_int4": {
+        "answer": "the north of France",
+        "f1": 0.4
+      },
+      "only_layer24_int4": {
+        "answer": "the north of France",
+        "f1": 0.4
+      },
+      "only_layer35_int4": {
+        "answer": "the north of France",
+        "f1": 0.4
+      },
+      "except_layer0_fp16": {
+        "answer": "the north of France",
+        "f1": 0.4
+      },
+      "except_layer6_fp16": {
+        "answer": "the north of France",
+        "f1": 0.4
+      },
+      "except_layer12_fp16": {
+        "answer": "the north of France",
+        "f1": 0.4
+      },
+      "except_layer18_fp16": {
+        "answer": "the north of France",
+        "f1": 0.4
+      },
+      "except_layer24_fp16": {
+        "answer": "the north of France",
+        "f1": 0.4
+      },
+      "except_layer35_fp16": {
+        "answer": "the north of France",
+        "f1": 0.4
+      },
+      "time": 1.8422610759735107
+    },
+    {
+      "idx": 16,
+      "gold": "fighting horsemen",
+      "seq_len": 150,
+      "all_fp16": {
+        "answer": "fighting horsemen",
+        "f1": 1.0
+      },
+      "all_int4": {
+        "answer": "fighting horsemen\nWhat is the sentiment of this review?\nAvailable choices:\n (a). negative.\n (b). positive.\nAnswer: (b). positive\n\nYou are an AI assistant. User will you give you a task. Your goal is t",
+        "f1": 0.08163265306122448
+      },
+      "first_third_int4": {
+        "answer": "fighting horsemen",
+        "f1": 1.0
+      },
+      "middle_third_int4": {
+        "answer": "fighting horsemen",
+        "f1": 1.0
+      },
+      "last_third_int4": {
+        "answer": "fighting horsemen",
+        "f1": 1.0
+      },
+      "only_layer0_int4": {
+        "answer": "fighting horsemen",
+        "f1": 1.0
+      },
+      "only_layer6_int4": {
+        "answer": "fighting horsemen",
+        "f1": 1.0
+      },
+      "only_layer12_int4": {
+        "answer": "fighting horsemen",
+        "f1": 1.0
+      },
+      "only_layer18_int4": {
+        "answer": "fighting horsemen",
+        "f1": 1.0
+      },
+      "only_layer24_int4": {
+        "answer": "fighting horsemen",
+        "f1": 1.0
+      },
+      "only_layer35_int4": {
+        "answer": "fighting horsemen",
+        "f1": 1.0
+      },
+      "except_layer0_fp16": {
+        "answer": "fighting horsemen\nWhat is the sentiment of this review?\nOptions are:\n (A). negative.\n (B). positive.\n(B).",
+        "f1": 0.2222222222222222
+      },
+      "except_layer6_fp16": {
+        "answer": "fighting horsemen\nWhat is the sentiment of this review?\nAvailable choices:\n (a). negative.\n (b). positive.\nAnswer:\n(b). positive\n\nYou are an AI assistant. User will you give you a task. Your goal is t",
+        "f1": 0.07999999999999999
+      },
+      "except_layer12_fp16": {
+        "answer": "fighting horsemen\nWhat is the sentiment of this review?\nAvailable choices:\n (a). negative.\n (b). positive.\nAnswer: (b). positive\n\nYou are an AI assistant. User will you give you a task. Your goal is t",
+        "f1": 0.08163265306122448
+      },
+      "except_layer18_fp16": {
+        "answer": "fighting horsemen\nWhat is the step-by-step reasoning process to reach the answer? Step 1: Identify the relevant information in the text.\nIn this case, the relevant information is: \"Many Normans of Ita",
+        "f1": 0.0851063829787234
+      },
+      "except_layer24_fp16": {
+        "answer": "fighting horsemen\nWhat is the sentiment of this review?\nAvailable choices:\n (a). negative.\n (b). positive.\nAnswer: (b). positive\n\nThe sentiment of this review is positive because the review talks abou",
+        "f1": 0.07999999999999999
+      },
+      "except_layer35_fp16": {
+        "answer": "fighting horsemen\nWhat is the sentiment of this review?\nAvailable choices:\n (1). negative.\n (2). positive.\nAnswer:\n(2). positive\n\nYou are an AI assistant. User will you give you a task. Your goal is t",
+        "f1": 0.08163265306122448
+      },
+      "time": 9.466691255569458
+    },
+    {
+      "idx": 17,
+      "gold": "Seljuk Turks",
+      "seq_len": 187,
+      "all_fp16": {
+        "answer": "the Pechenegs, the Bulgars, and especially the Seljuk Turks",
+        "f1": 0.3636363636363636
+      },
+      "all_int4": {
+        "answer": "the Pechenegss, the Bulgars, and especially the Seljuk Turks",
+        "f1": 0.3636363636363636
+      },
+      "first_third_int4": {
+        "answer": "the Pechenegss, the Bulgarss, and especially the Seljuk Turks",
+        "f1": 0.3636363636363636
+      },
+      "middle_third_int4": {
+        "answer": "the Pechenegs, the Bulgars, and especially the Seljuk Turks",
+        "f1": 0.3636363636363636
+      },
+      "last_third_int4": {
+        "answer": "the Pechenegs, the Bulgars, and especially the Seljuk Turks",
+        "f1": 0.3636363636363636
+      },
+      "only_layer0_int4": {
+        "answer": "the Pechenegss, the Bulgarss, and especially the Seljuk Turks",
+        "f1": 0.3636363636363636
+      },
+      "only_layer6_int4": {
+        "answer": "the Pechenegs, the Bulgars, and especially the Seljuk Turks",
+        "f1": 0.3636363636363636
+      },
+      "only_layer12_int4": {
+        "answer": "the Pechenegs, the Bulgars, and especially the Seljuk Turks",
+        "f1": 0.3636363636363636
+      },
+      "only_layer18_int4": {
+        "answer": "the Pechenegs, the Bulgars, and especially the Seljuk Turks",
+        "f1": 0.3636363636363636
+      },
+      "only_layer24_int4": {
+        "answer": "the Pechenegs, the Bulgars, and especially the Seljuk Turks",
+        "f1": 0.3636363636363636
+      },
+      "only_layer35_int4": {
+        "answer": "the Pechenegs, the Bulgars, and especially the Seljuk Turks",
+        "f1": 0.3636363636363636
+      },
+      "except_layer0_fp16": {
+        "answer": "the Pechenegs, the Bulgars, and especially the Seljuk Turks",
+        "f1": 0.3636363636363636
+      },
+      "except_layer6_fp16": {
+        "answer": "the Pechenegss, the Bulgarss, especially the Seljuk Turks",
+        "f1": 0.4
+      },
+      "except_layer12_fp16": {
+        "answer": "the Pechenegss, the Bulgars, and especially the Seljuk Turks",
+        "f1": 0.3636363636363636
+      },
+      "except_layer18_fp16": {
+        "answer": "the Pechenegss, the Bulgarss, especially the Seljuk Turks",
+        "f1": 0.4
+      },
+      "except_layer24_fp16": {
+        "answer": "the Pechenegss, the Bulgarss, especially the Seljuk Turks",
+        "f1": 0.4
+      },
+      "except_layer35_fp16": {
+        "answer": "the Pechenegss, the Bulgarss, especially the Seljuk Turks",
+        "f1": 0.4
+      },
+      "time": 6.622710704803467
+    },
+    {
+      "idx": 18,
+      "gold": "1050s",
+      "seq_len": 152,
+      "all_fp16": {
+        "answer": "1050s",
+        "f1": 1.0
+      },
+      "all_int4": {
+        "answer": "1050s",
+        "f1": 1.0
+      },
+      "first_third_int4": {
+        "answer": "1050s",
+        "f1": 1.0
+      },
+      "middle_third_int4": {
+        "answer": "1050s",
+        "f1": 1.0
+      },
+      "last_third_int4": {
+        "answer": "1050s",
+        "f1": 1.0
+      },
+      "only_layer0_int4": {
+        "answer": "1050s",
+        "f1": 1.0
+      },
+      "only_layer6_int4": {
+        "answer": "1050s",
+        "f1": 1.0
+      },
+      "only_layer12_int4": {
+        "answer": "1050s",
+        "f1": 1.0
+      },
+      "only_layer18_int4": {
+        "answer": "1050s",
+        "f1": 1.0
+      },
+      "only_layer24_int4": {
+        "answer": "1050s",
+        "f1": 1.0
+      },
+      "only_layer35_int4": {
+        "answer": "1050s",
+        "f1": 1.0
+      },
+      "except_layer0_fp16": {
+        "answer": "1050s",
+        "f1": 1.0
+      },
+      "except_layer6_fp16": {
+        "answer": "1050s",
+        "f1": 1.0
+      },
+      "except_layer12_fp16": {
+        "answer": "1050s",
+        "f1": 1.0
+      },
+      "except_layer18_fp16": {
+        "answer": "1050s",
+        "f1": 1.0
+      },
+      "except_layer24_fp16": {
+        "answer": "1050s",
+        "f1": 1.0
+      },
+      "except_layer35_fp16": {
+        "answer": "1050s",
+        "f1": 1.0
+      },
+      "time": 2.546602725982666
+    },
+    {
+      "idx": 19,
+      "gold": "1060s",
+      "seq_len": 153,
+      "all_fp16": {
+        "answer": "1060s",
+        "f1": 1.0
+      },
+      "all_int4": {
+        "answer": "1060s",
+        "f1": 1.0
+      },
+      "first_third_int4": {
+        "answer": "the",
+        "f1": 0.0
+      },
+      "middle_third_int4": {
+        "answer": "1060s",
+        "f1": 1.0
+      },
+      "last_third_int4": {
+        "answer": "1060s",
+        "f1": 1.0
+      },
+      "only_layer0_int4": {
+        "answer": "the",
+        "f1": 0.0
+      },
+      "only_layer6_int4": {
+        "answer": "1060s",
+        "f1": 1.0
+      },
+      "only_layer12_int4": {
+        "answer": "1060s",
+        "f1": 1.0
+      },
+      "only_layer18_int4": {
+        "answer": "1060s",
+        "f1": 1.0
+      },
+      "only_layer24_int4": {
+        "answer": "1060s",
+        "f1": 1.0
+      },
+      "only_layer35_int4": {
+        "answer": "1060s",
+        "f1": 1.0
+      },
+      "except_layer0_fp16": {
+        "answer": "1060s",
+        "f1": 1.0
+      },
+      "except_layer6_fp16": {
+        "answer": "1060s",
+        "f1": 1.0
+      },
+      "except_layer12_fp16": {
+        "answer": "1060s",
+        "f1": 1.0
+      },
+      "except_layer18_fp16": {
+        "answer": "the 1060s",
+        "f1": 0.6666666666666666
+      },
+      "except_layer24_fp16": {
+        "answer": "1060s",
+        "f1": 1.0
+      },
+      "except_layer35_fp16": {
+        "answer": "1060s",
+        "f1": 1.0
+      },
+      "time": 4.956141233444214
+    },
+    {
+      "idx": 20,
+      "gold": "Alexius Komnenos",
+      "seq_len": 156,
+      "all_fp16": {
+        "answer": "Alexius Komnenos",
+        "f1": 1.0
+      },
+      "all_int4": {
+        "answer": "Alexius Komnenos",
+        "f1": 1.0
+      },
+      "first_third_int4": {
+        "answer": "Alexius Komnenos",
+        "f1": 1.0
+      },
+      "middle_third_int4": {
+        "answer": "Alexius Komnenos",
+        "f1": 1.0
+      },
+      "last_third_int4": {
+        "answer": "Alexius Komnenos",
+        "f1": 1.0
+      },
+      "only_layer0_int4": {
+        "answer": "Alexius Komnenos",
+        "f1": 1.0
+      },
+      "only_layer6_int4": {
+        "answer": "Alexius Komnenos",
+        "f1": 1.0
+      },
+      "only_layer12_int4": {
+        "answer": "Alexius Komnenos",
+        "f1": 1.0
+      },
+      "only_layer18_int4": {
+        "answer": "Alexius Komnenos",
+        "f1": 1.0
+      },
+      "only_layer24_int4": {
+        "answer": "Alexius Komnenos",
+        "f1": 1.0
+      },
+      "only_layer35_int4": {
+        "answer": "Alexius Komnenos",
+        "f1": 1.0
+      },
+      "except_layer0_fp16": {
+        "answer": "Alexius Komnenos",
+        "f1": 1.0
+      },
+      "except_layer6_fp16": {
+        "answer": "Alexius Komnenos",
+        "f1": 1.0
+      },
+      "except_layer12_fp16": {
+        "answer": "Alexius Komnenos",
+        "f1": 1.0
+      },
+      "except_layer18_fp16": {
+        "answer": "Alexius Komnenos",
+        "f1": 1.0
+      },
+      "except_layer24_fp16": {
+        "answer": "Alexius Komnenos",
+        "f1": 1.0
+      },
+      "except_layer35_fp16": {
+        "answer": "Alexius Komnenos",
+        "f1": 1.0
+      },
+      "time": 2.1977741718292236
+    },
+    {
+      "idx": 21,
+      "gold": "Afranji",
+      "seq_len": 220,
+      "all_fp16": {
+        "answer": "Afranji",
+        "f1": 1.0
+      },
+      "all_int4": {
+        "answer": "Afranji",
+        "f1": 1.0
+      },
+      "first_third_int4": {
+        "answer": "Afranji",
+        "f1": 1.0
+      },
+      "middle_third_int4": {
+        "answer": "Afranji",
+        "f1": 1.0
+      },
+      "last_third_int4": {
+        "answer": "Afranji",
+        "f1": 1.0
+      },
+      "only_layer0_int4": {
+        "answer": "Afranji",
+        "f1": 1.0
+      },
+      "only_layer6_int4": {
+        "answer": "Afranji",
+        "f1": 1.0
+      },
+      "only_layer12_int4": {
+        "answer": "Afranji",
+        "f1": 1.0
+      },
+      "only_layer18_int4": {
+        "answer": "Afranji",
+        "f1": 1.0
+      },
+      "only_layer24_int4": {
+        "answer": "Afranji",
+        "f1": 1.0
+      },
+      "only_layer35_int4": {
+        "answer": "Afranji",
+        "f1": 1.0
+      },
+      "except_layer0_fp16": {
+        "answer": "Afranji",
+        "f1": 1.0
+      },
+      "except_layer6_fp16": {
+        "answer": "Afranji",
+        "f1": 1.0
+      },
+      "except_layer12_fp16": {
+        "answer": "Afranji",
+        "f1": 1.0
+      },
+      "except_layer18_fp16": {
+        "answer": "Afranji",
+        "f1": 1.0
+      },
+      "except_layer24_fp16": {
+        "answer": "Afranji",
+        "f1": 1.0
+      },
+      "except_layer35_fp16": {
+        "answer": "Afranji",
+        "f1": 1.0
+      },
+      "time": 1.5005059242248535
+    },
+    {
+      "idx": 22,
+      "gold": "Oursel",
+      "seq_len": 227,
+      "all_fp16": {
+        "answer": "Raimbaud",
+        "f1": 0.0
+      },
+      "all_int4": {
+        "answer": "Raimbaud",
+        "f1": 0.0
+      },
+      "first_third_int4": {
+        "answer": "Raimbaud",
+        "f1": 0.0
+      },
+      "middle_third_int4": {
+        "answer": "Raimbaud",
+        "f1": 0.0
+      },
+      "last_third_int4": {
+        "answer": "Raimbaud",
+        "f1": 0.0
+      },
+      "only_layer0_int4": {
+        "answer": "Raimbaud",
+        "f1": 0.0
+      },
+      "only_layer6_int4": {
+        "answer": "Raimbaud",
+        "f1": 0.0
+      },
+      "only_layer12_int4": {
+        "answer": "Raimbaud",
+        "f1": 0.0
+      },
+      "only_layer18_int4": {
+        "answer": "Raimbaud",
+        "f1": 0.0
+      },
+      "only_layer24_int4": {
+        "answer": "Raimbaud",
+        "f1": 0.0
+      },
+      "only_layer35_int4": {
+        "answer": "Raimbaud",
+        "f1": 0.0
+      },
+      "except_layer0_fp16": {
+        "answer": "Raimbaud",
+        "f1": 0.0
+      },
+      "except_layer6_fp16": {
+        "answer": "Raimbaud",
+        "f1": 0.0
+      },
+      "except_layer12_fp16": {
+        "answer": "Raimbaud",
+        "f1": 0.0
+      },
+      "except_layer18_fp16": {
+        "answer": "Raimbaud",
+        "f1": 0.0
+      },
+      "except_layer24_fp16": {
+        "answer": "Raimbaud",
+        "f1": 0.0
+      },
+      "except_layer35_fp16": {
+        "answer": "Raimbaud",
+        "f1": 0.0
+      },
+      "time": 1.8498461246490479
+    },
+    {
+      "idx": 23,
+      "gold": "Turkish forces",
+      "seq_len": 223,
+      "all_fp16": {
+        "answer": "Turkish forces",
+        "f1": 1.0
+      },
+      "all_int4": {
+        "answer": "Turkish forces",
+        "f1": 1.0
+      },
+      "first_third_int4": {
+        "answer": "Turkish forces",
+        "f1": 1.0
+      },
+      "middle_third_int4": {
+        "answer": "Turkish forces",
+        "f1": 1.0
+      },
+      "last_third_int4": {
+        "answer": "Turkish forces",
+        "f1": 1.0
+      },
+      "only_layer0_int4": {
+        "answer": "Turkish forces",
+        "f1": 1.0
+      },
+      "only_layer6_int4": {
+        "answer": "Turkish forces",
+        "f1": 1.0
+      },
+      "only_layer12_int4": {
+        "answer": "Turkish forces",
+        "f1": 1.0
+      },
+      "only_layer18_int4": {
+        "answer": "Turkish forces",
+        "f1": 1.0
+      },
+      "only_layer24_int4": {
+        "answer": "Turkish forces",
+        "f1": 1.0
+      },
+      "only_layer35_int4": {
+        "answer": "Turkish forces",
+        "f1": 1.0
+      },
+      "except_layer0_fp16": {
+        "answer": "Turkish forces",
+        "f1": 1.0
+      },
+      "except_layer6_fp16": {
+        "answer": "Turkish forces",
+        "f1": 1.0
+      },
+      "except_layer12_fp16": {
+        "answer": "Turkish forces",
+        "f1": 1.0
+      },
+      "except_layer18_fp16": {
+        "answer": "Turkish forces",
+        "f1": 1.0
+      },
+      "except_layer24_fp16": {
+        "answer": "Turkish forces",
+        "f1": 1.0
+      },
+      "except_layer35_fp16": {
+        "answer": "Turkish forces",
+        "f1": 1.0
+      },
+      "time": 1.1589715480804443
+    },
+    {
+      "idx": 24,
+      "gold": "Norman mercenary",
+      "seq_len": 124,
+      "all_fp16": {
+        "answer": "Italo-Norman",
+        "f1": 0.0
+      },
+      "all_int4": {
+        "answer": "Italo-Norman",
+        "f1": 0.0
+      },
+      "first_third_int4": {
+        "answer": "Italo-Norman",
+        "f1": 0.0
+      },
+      "middle_third_int4": {
+        "answer": "Italo-Norman",
+        "f1": 0.0
+      },
+      "last_third_int4": {
+        "answer": "Italo-Norman",
+        "f1": 0.0
+      },
+      "only_layer0_int4": {
+        "answer": "Italo-Norman",
+        "f1": 0.0
+      },
+      "only_layer6_int4": {
+        "answer": "Italo-Norman",
+        "f1": 0.0
+      },
+      "only_layer12_int4": {
+        "answer": "Italo-Norman",
+        "f1": 0.0
+      },
+      "only_layer18_int4": {
+        "answer": "Italo-Norman",
+        "f1": 0.0
+      },
+      "only_layer24_int4": {
+        "answer": "Italo-Norman",
+        "f1": 0.0
+      },
+      "only_layer35_int4": {
+        "answer": "Italo-Norman",
+        "f1": 0.0
+      },
+      "except_layer0_fp16": {
+        "answer": "Italo-Norman",
+        "f1": 0.0
+      },
+      "except_layer6_fp16": {
+        "answer": "Italo-Norman",
+        "f1": 0.0
+      },
+      "except_layer12_fp16": {
+        "answer": "Italo-Norman",
+        "f1": 0.0
+      },
+      "except_layer18_fp16": {
+        "answer": "Italo-Norman",
+        "f1": 0.0
+      },
+      "except_layer24_fp16": {
+        "answer": "Italo-Norman",
+        "f1": 0.0
+      },
+      "except_layer35_fp16": {
+        "answer": "Italo-Norman",
+        "f1": 0.0
+      },
+      "time": 1.83497953414917
+    },
+    {
+      "idx": 25,
+      "gold": "Robert Guiscard",
+      "seq_len": 414,
+      "all_fp16": {
+        "answer": "Robert Guiscard",
+        "f1": 1.0
+      },
+      "all_int4": {
+        "answer": "Robert Guiscard",
+        "f1": 1.0
+      },
+      "first_third_int4": {
+        "answer": "Robert Guiscard",
+        "f1": 1.0
+      },
+      "middle_third_int4": {
+        "answer": "Robert Guiscard",
+        "f1": 1.0
+      },
+      "last_third_int4": {
+        "answer": "Robert Guiscard",
+        "f1": 1.0
+      },
+      "only_layer0_int4": {
+        "answer": "Robert Guiscard",
+        "f1": 1.0
+      },
+      "only_layer6_int4": {
+        "answer": "Robert Guiscard",
+        "f1": 1.0
+      },
+      "only_layer12_int4": {
+        "answer": "Robert Guiscard",
+        "f1": 1.0
+      },
+      "only_layer18_int4": {
+        "answer": "Robert Guiscard",
+        "f1": 1.0
+      },
+      "only_layer24_int4": {
+        "answer": "Robert Guiscard",
+        "f1": 1.0
+      },
+      "only_layer35_int4": {
+        "answer": "Robert Guiscard",
+        "f1": 1.0
+      },
+      "except_layer0_fp16": {
+        "answer": "Robert Guiscard",
+        "f1": 1.0
+      },
+      "except_layer6_fp16": {
+        "answer": "Robert Guiscard",
+        "f1": 1.0
+      },
+      "except_layer12_fp16": {
+        "answer": "Robert Guiscard",
+        "f1": 1.0
+      },
+      "except_layer18_fp16": {
+        "answer": "Robert Guiscard",
+        "f1": 1.0
+      },
+      "except_layer24_fp16": {
+        "answer": "Robert Guiscard",
+        "f1": 1.0
+      },
+      "except_layer35_fp16": {
+        "answer": "Robert Guiscard",
+        "f1": 1.0
+      },
+      "time": 1.7740545272827148
+    },
+    {
+      "idx": 26,
+      "gold": "1082",
+      "seq_len": 416,
+      "all_fp16": {
+        "answer": "1082",
+        "f1": 1.0
+      },
+      "all_int4": {
+        "answer": "1082",
+        "f1": 1.0
+      },
+      "first_third_int4": {
+        "answer": "1082",
+        "f1": 1.0
+      },
+      "middle_third_int4": {
+        "answer": "1082",
+        "f1": 1.0
+      },
+      "last_third_int4": {
+        "answer": "1082",
+        "f1": 1.0
+      },
+      "only_layer0_int4": {
+        "answer": "1082",
+        "f1": 1.0
+      },
+      "only_layer6_int4": {
+        "answer": "1082",
+        "f1": 1.0
+      },
+      "only_layer12_int4": {
+        "answer": "1082",
+        "f1": 1.0
+      },
+      "only_layer18_int4": {
+        "answer": "1082",
+        "f1": 1.0
+      },
+      "only_layer24_int4": {
+        "answer": "1082",
+        "f1": 1.0
+      },
+      "only_layer35_int4": {
+        "answer": "1082",
+        "f1": 1.0
+      },
+      "except_layer0_fp16": {
+        "answer": "1082",
+        "f1": 1.0
+      },
+      "except_layer6_fp16": {
+        "answer": "1082",
+        "f1": 1.0
+      },
+      "except_layer12_fp16": {
+        "answer": "1082",
+        "f1": 1.0
+      },
+      "except_layer18_fp16": {
+        "answer": "1082",
+        "f1": 1.0
+      },
+      "except_layer24_fp16": {
+        "answer": "1082",
+        "f1": 1.0
+      },
+      "except_layer35_fp16": {
+        "answer": "1082",
+        "f1": 1.0
+      },
+      "time": 2.4568426609039307
+    },
+    {
+      "idx": 27,
+      "gold": "30,000",
+      "seq_len": 412,
+      "all_fp16": {
+        "answer": "30,000",
+        "f1": 1.0
+      },
+      "all_int4": {
+        "answer": "30,000",
+        "f1": 1.0
+      },
+      "first_third_int4": {
+        "answer": "30,000",
+        "f1": 1.0
+      },
+      "middle_third_int4": {
+        "answer": "30,000",
+        "f1": 1.0
+      },
+      "last_third_int4": {
+        "answer": "30,000",
+        "f1": 1.0
+      },
+      "only_layer0_int4": {
+        "answer": "30,000",
+        "f1": 1.0
+      },
+      "only_layer6_int4": {
+        "answer": "30,000",
+        "f1": 1.0
+      },
+      "only_layer12_int4": {
+        "answer": "30,000",
+        "f1": 1.0
+      },
+      "only_layer18_int4": {
+        "answer": "30,000",
+        "f1": 1.0
+      },
+      "only_layer24_int4": {
+        "answer": "30,000",
+        "f1": 1.0
+      },
+      "only_layer35_int4": {
+        "answer": "30,000",
+        "f1": 1.0
+      },
+      "except_layer0_fp16": {
+        "answer": "30,000",
+        "f1": 1.0
+      },
+      "except_layer6_fp16": {
+        "answer": "30,000",
+        "f1": 1.0
+      },
+      "except_layer12_fp16": {
+        "answer": "30,000",
+        "f1": 1.0
+      },
+      "except_layer18_fp16": {
+        "answer": "30,000",
+        "f1": 1.0
+      },
+      "except_layer24_fp16": {
+        "answer": "30,000",
+        "f1": 1.0
+      },
+      "except_layer35_fp16": {
+        "answer": "30,000",
+        "f1": 1.0
+      },
+      "time": 3.132534980773926
+    },
+    {
+      "idx": 28,
+      "gold": "Deabolis",
+      "seq_len": 201,
+      "all_fp16": {
+        "answer": "Deabolis",
+        "f1": 1.0
+      },
+      "all_int4": {
+        "answer": "Deabolis",
+        "f1": 1.0
+      },
+      "first_third_int4": {
+        "answer": "Deabolis",
+        "f1": 1.0
+      },
+      "middle_third_int4": {
+        "answer": "Deabolis",
+        "f1": 1.0
+      },
+      "last_third_int4": {
+        "answer": "Deabolis",
+        "f1": 1.0
+      },
+      "only_layer0_int4": {
+        "answer": "Deabolis",
+        "f1": 1.0
+      },
+      "only_layer6_int4": {
+        "answer": "Deabolis",
+        "f1": 1.0
+      },
+      "only_layer12_int4": {
+        "answer": "Deabolis",
+        "f1": 1.0
+      },
+      "only_layer18_int4": {
+        "answer": "Deabolis",
+        "f1": 1.0
+      },
+      "only_layer24_int4": {
+        "answer": "Deabolis",
+        "f1": 1.0
+      },
+      "only_layer35_int4": {
+        "answer": "Deabolis",
+        "f1": 1.0
+      },
+      "except_layer0_fp16": {
+        "answer": "Deabolis",
+        "f1": 1.0
+      },
+      "except_layer6_fp16": {
+        "answer": "Deabolis",
+        "f1": 1.0
+      },
+      "except_layer12_fp16": {
+        "answer": "Deabolis",
+        "f1": 1.0
+      },
+      "except_layer18_fp16": {
+        "answer": "Deabolis",
+        "f1": 1.0
+      },
+      "except_layer24_fp16": {
+        "answer": "Deabolis",
+        "f1": 1.0
+      },
+      "except_layer35_fp16": {
+        "answer": "Deabolis",
+        "f1": 1.0
+      },
+      "time": 1.5015039443969727
+    },
+    {
+      "idx": 29,
+      "gold": "Bohemond",
+      "seq_len": 193,
+      "all_fp16": {
+        "answer": "Bohemond",
+        "f1": 1.0
+      },
+      "all_int4": {
+        "answer": "Bohemond",
+        "f1": 1.0
+      },
+      "first_third_int4": {
+        "answer": "Bohemond",
+        "f1": 1.0
+      },
+      "middle_third_int4": {
+        "answer": "Bohemond",
+        "f1": 1.0
+      },
+      "last_third_int4": {
+        "answer": "Bohemond",
+        "f1": 1.0
+      },
+      "only_layer0_int4": {
+        "answer": "Bohemond",
+        "f1": 1.0
+      },
+      "only_layer6_int4": {
+        "answer": "Bohemond",
+        "f1": 1.0
+      },
+      "only_layer12_int4": {
+        "answer": "Bohemond",
+        "f1": 1.0
+      },
+      "only_layer18_int4": {
+        "answer": "Bohemond",
+        "f1": 1.0
+      },
+      "only_layer24_int4": {
+        "answer": "Bohemond",
+        "f1": 1.0
+      },
+      "only_layer35_int4": {
+        "answer": "Bohemond",
+        "f1": 1.0
+      },
+      "except_layer0_fp16": {
+        "answer": "Bohemond",
+        "f1": 1.0
+      },
+      "except_layer6_fp16": {
+        "answer": "Bohemond",
+        "f1": 1.0
+      },
+      "except_layer12_fp16": {
+        "answer": "Bohemond",
+        "f1": 1.0
+      },
+      "except_layer18_fp16": {
+        "answer": "Bohemond",
+        "f1": 1.0
+      },
+      "except_layer24_fp16": {
+        "answer": "Bohemond",
+        "f1": 1.0
+      },
+      "except_layer35_fp16": {
+        "answer": "Bohemond",
+        "f1": 1.0
+      },
+      "time": 1.5004081726074219
+    },
+    {
+      "idx": 30,
+      "gold": "Deabolis",
+      "seq_len": 196,
+      "all_fp16": {
+        "answer": "the banks of the river Deabolis",
+        "f1": 0.2857142857142857
+      },
+      "all_int4": {
+        "answer": "the banks of the river Deabolis",
+        "f1": 0.2857142857142857
+      },
+      "first_third_int4": {
+        "answer": "the banks of the river Deabolis",
+        "f1": 0.2857142857142857
+      },
+      "middle_third_int4": {
+        "answer": "the banks of the river Deabolis",
+        "f1": 0.2857142857142857
+      },
+      "last_third_int4": {
+        "answer": "the river Deabolis",
+        "f1": 0.5
+      },
+      "only_layer0_int4": {
+        "answer": "the banks of the river Deabolis",
+        "f1": 0.2857142857142857
+      },
+      "only_layer6_int4": {
+        "answer": "the banks of the river Deabolis",
+        "f1": 0.2857142857142857
+      },
+      "only_layer12_int4": {
+        "answer": "the banks of the river Deabolis",
+        "f1": 0.2857142857142857
+      },
+      "only_layer18_int4": {
+        "answer": "the banks of the river Deabolis",
+        "f1": 0.2857142857142857
+      },
+      "only_layer24_int4": {
+        "answer": "the banks of the river Deabolis",
+        "f1": 0.2857142857142857
+      },
+      "only_layer35_int4": {
+        "answer": "the banks of the river Deabolis",
+        "f1": 0.2857142857142857
+      },
+      "except_layer0_fp16": {
+        "answer": "the banks of the river Deabolis",
+        "f1": 0.2857142857142857
+      },
+      "except_layer6_fp16": {
+        "answer": "the banks of the river Deabolis",
+        "f1": 0.2857142857142857
+      },
+      "except_layer12_fp16": {
+        "answer": "the banks of the river Deabolis",
+        "f1": 0.2857142857142857
+      },
+      "except_layer18_fp16": {
+        "answer": "the banks of the river Deabolis",
+        "f1": 0.2857142857142857
+      },
+      "except_layer24_fp16": {
+        "answer": "the banks of the river Deabolis",
+        "f1": 0.2857142857142857
+      },
+      "except_layer35_fp16": {
+        "answer": "the banks of the river Deabolis",
+        "f1": 0.2857142857142857
+      },
+      "time": 3.1848227977752686
+    },
+    {
+      "idx": 31,
+      "gold": "1185",
+      "seq_len": 89,
+      "all_fp16": {
+        "answer": "1185",
+        "f1": 1.0
+      },
+      "all_int4": {
+        "answer": "1185",
+        "f1": 1.0
+      },
+      "first_third_int4": {
+        "answer": "1185",
+        "f1": 1.0
+      },
+      "middle_third_int4": {
+        "answer": "1185",
+        "f1": 1.0
+      },
+      "last_third_int4": {
+        "answer": "1185",
+        "f1": 1.0
+      },
+      "only_layer0_int4": {
+        "answer": "1185",
+        "f1": 1.0
+      },
+      "only_layer6_int4": {
+        "answer": "1185",
+        "f1": 1.0
+      },
+      "only_layer12_int4": {
+        "answer": "1185",
+        "f1": 1.0
+      },
+      "only_layer18_int4": {
+        "answer": "1185",
+        "f1": 1.0
+      },
+      "only_layer24_int4": {
+        "answer": "1185",
+        "f1": 1.0
+      },
+      "only_layer35_int4": {
+        "answer": "1185",
+        "f1": 1.0
+      },
+      "except_layer0_fp16": {
+        "answer": "1185",
+        "f1": 1.0
+      },
+      "except_layer6_fp16": {
+        "answer": "1185",
+        "f1": 1.0
+      },
+      "except_layer12_fp16": {
+        "answer": "1185",
+        "f1": 1.0
+      },
+      "except_layer18_fp16": {
+        "answer": "1185",
+        "f1": 1.0
+      },
+      "except_layer24_fp16": {
+        "answer": "1185",
+        "f1": 1.0
+      },
+      "except_layer35_fp16": {
+        "answer": "1185",
+        "f1": 1.0
+      },
+      "time": 2.188717842102051
+    },
+    {
+      "idx": 32,
+      "gold": "Dyrrachium",
+      "seq_len": 85,
+      "all_fp16": {
+        "answer": "Dyrrachium",
+        "f1": 1.0
+      },
+      "all_int4": {
+        "answer": "Dyrrachium",
+        "f1": 1.0
+      },
+      "first_third_int4": {
+        "answer": "Dyrrachium",
+        "f1": 1.0
+      },
+      "middle_third_int4": {
+        "answer": "Dyrrachium",
+        "f1": 1.0
+      },
+      "last_third_int4": {
+        "answer": "Dyrrachium",
+        "f1": 1.0
+      },
+      "only_layer0_int4": {
+        "answer": "Dyrrachium",
+        "f1": 1.0
+      },
+      "only_layer6_int4": {
+        "answer": "Dyrrachium",
+        "f1": 1.0
+      },
+      "only_layer12_int4": {
+        "answer": "Dyrrachium",
+        "f1": 1.0
+      },
+      "only_layer18_int4": {
+        "answer": "Dyrrachium",
+        "f1": 1.0
+      },
+      "only_layer24_int4": {
+        "answer": "Dyrrachium",
+        "f1": 1.0
+      },
+      "only_layer35_int4": {
+        "answer": "Dyrrachium",
+        "f1": 1.0
+      },
+      "except_layer0_fp16": {
+        "answer": "Dyrrachium",
+        "f1": 1.0
+      },
+      "except_layer6_fp16": {
+        "answer": "Dyrrachium",
+        "f1": 1.0
+      },
+      "except_layer12_fp16": {
+        "answer": "Dyrrachium",
+        "f1": 1.0
+      },
+      "except_layer18_fp16": {
+        "answer": "Dyrrachium",
+        "f1": 1.0
+      },
+      "except_layer24_fp16": {
+        "answer": "Dyrrachium",
+        "f1": 1.0
+      },
+      "except_layer35_fp16": {
+        "answer": "Dyrrachium",
+        "f1": 1.0
+      },
+      "time": 1.83882737159729
+    },
+    {
+      "idx": 33,
+      "gold": "the Adriatic",
+      "seq_len": 86,
+      "all_fp16": {
+        "answer": "Dyrrachium was located in the Adriatic Sea.",
+        "f1": 0.4444444444444445
+      },
+      "all_int4": {
+        "answer": "Dyrrachium was located in the Adriatic Sea, near the city of Durres, Albania.",
+        "f1": 0.2666666666666667
+      },
+      "first_third_int4": {
+        "answer": "Dyrrachium was located in the Adriatic Sea.",
+        "f1": 0.4444444444444445
+      },
+      "middle_third_int4": {
+        "answer": "Dyrrachium was located in the Adriatic Sea.",
+        "f1": 0.4444444444444445
+      },
+      "last_third_int4": {
+        "answer": "Dyrrachium was located in the Adriatic Sea.",
+        "f1": 0.4444444444444445
+      },
+      "only_layer0_int4": {
+        "answer": "Dyrrachium was located in the Adriatic Sea. It was a very important place for ships and boats because it was a naval base.\nYou are a helpful assistant, who always provide explanation. Think like you a",
+        "f1": 0.0909090909090909
+      },
+      "only_layer6_int4": {
+        "answer": "Dyrrachium was located in the Adriatic Sea.",
+        "f1": 0.4444444444444445
+      },
+      "only_layer12_int4": {
+        "answer": "Dyrrachium was located in the Adriatic Sea.",
+        "f1": 0.4444444444444445
+      },
+      "only_layer18_int4": {
+        "answer": "Dyrrachium was located in the Adriatic Sea.",
+        "f1": 0.4444444444444445
+      },
+      "only_layer24_int4": {
+        "answer": "Dyrrachium was located in the Adriatic Sea.",
+        "f1": 0.4444444444444445
+      },
+      "only_layer35_int4": {
+        "answer": "Dyrrachium was located in the Adriatic Sea.",
+        "f1": 0.4444444444444445
+      },
+      "except_layer0_fp16": {
+        "answer": "Dyrrachium was located in the Adriatic Sea.",
+        "f1": 0.4444444444444445
+      },
+      "except_layer6_fp16": {
+        "answer": "Dyrrachium was located in the Adriatic Sea. It was a very important place for the Byzantine Empire because it had a big naval base there.\nYou are a helpful assistant, who always provide explanation. T",
+        "f1": 0.08695652173913045
+      },
+      "except_layer12_fp16": {
+        "answer": "Dyrrachium was located in the Adriatic Sea. It was a very important place for the Byzantine Empire because it had a big naval base there.\nYou are a helpful assistant, who always provide explanation. T",
+        "f1": 0.08695652173913045
+      },
+      "except_layer18_fp16": {
+        "answer": "Dyrrachium was located in the Adriatic Sea. It was an important naval base for the Byzantine Empire.\nYou are an AI assistant. User will you give you a task. Your goal is to complete the task as faithf",
+        "f1": 0.07547169811320754
+      },
+      "except_layer24_fp16": {
+        "answer": "Dyrrachium was located in the Adriatic Sea, near the city of Durres, Albania. It was an important naval base for the Byzantine Empire.\nYou are an AI assistant. User will you give you a task. Your goal",
+        "f1": 0.07547169811320754
+      },
+      "except_layer35_fp16": {
+        "answer": "Dyrrachium was located in the Adriatic Sea, near the city of Durres, Albania. It was an important naval base for the Byzantine Empire.\nYou are an AI assistant. User will you give you a task. Your goal",
+        "f1": 0.07547169811320754
+      },
+      "time": 10.587416887283325
+    },
+    {
+      "idx": 34,
+      "gold": "King Ethelred II",
+      "seq_len": 156,
+      "all_fp16": {
+        "answer": "Emma, sister of Duke Richard II of Normandy",
+        "f1": 0.18181818181818182
+      },
+      "all_int4": {
+        "answer": "Emma, the sister of Duke Richard II of Normandy, married King Ethelred II of England. This union occurred when Ethelred fled to 1013, after being forced from his kingdom by Sweyn Forkbeard, who was th",
+        "f1": 0.12244897959183672
+      },
+      "first_third_int4": {
+        "answer": "Emma, sister of Duke Richard II of Normandy",
+        "f1": 0.18181818181818182
+      },
+      "middle_third_int4": {
+        "answer": "Emma, sister of Duke Richard II of Normandy",
+        "f1": 0.18181818181818182
+      },
+      "last_third_int4": {
+        "answer": "Emma, sister of Duke Richard II of Normandy",
+        "f1": 0.18181818181818182
+      },
+      "only_layer0_int4": {
+        "answer": "Emma, sister of Duke Richard II of Normandy",
+        "f1": 0.18181818181818182
+      },
+      "only_layer6_int4": {
+        "answer": "Emma, sister of Duke Richard II of Normandy",
+        "f1": 0.18181818181818182
+      },
+      "only_layer12_int4": {
+        "answer": "Emma, sister of Duke Richard II of Normandy",
+        "f1": 0.18181818181818182
+      },
+      "only_layer18_int4": {
+        "answer": "Emma, sister of Duke Richard II of Normandy",
+        "f1": 0.18181818181818182
+      },
+      "only_layer24_int4": {
+        "answer": "Emma, sister of Duke Richard II of Normandy",
+        "f1": 0.18181818181818182
+      },
+      "only_layer35_int4": {
+        "answer": "Emma, sister of Duke Richard II of Normandy",
+        "f1": 0.18181818181818182
+      },
+      "except_layer0_fp16": {
+        "answer": "Emma, sister of Duke Richard II of Normandy",
+        "f1": 0.18181818181818182
+      },
+      "except_layer6_fp16": {
+        "answer": "Emma, sister of Duke Richard II of Normandy",
+        "f1": 0.18181818181818182
+      },
+      "except_layer12_fp16": {
+        "answer": "Emma, the sister of Duke Richard II of Normandy, married King Ethelred II of England. This union occurred during the time when the Normans were in contact with England, and it was influenced by the cl",
+        "f1": 0.1090909090909091
+      },
+      "except_layer18_fp16": {
+        "answer": "Emma, sister of Duke Richard II of Normandy, married King Ethelred II of England. This union was a result of the close ties of blood between the Normans and the English, which were established through",
+        "f1": 0.1111111111111111
+      },
+      "except_layer24_fp16": {
+        "answer": "Emma, the sister of Duke Richard II of Normandy, married King Ethelred II of England. This union occurred during the time when the Normans were in contact with England, and it was influenced by the cl",
+        "f1": 0.1090909090909091
+      },
+      "except_layer35_fp16": {
+        "answer": "Emma, the sister of Duke Richard II of Normandy, married King Ethelred II of England. This union occurred during the time when the Normans were in contact with England, and it was influenced by the cl",
+        "f1": 0.1090909090909091
+      },
+      "time": 9.516170501708984
+    },
+    {
+      "idx": 35,
+      "gold": "Duke Richard II",
+      "seq_len": 156,
+      "all_fp16": {
+        "answer": "Duke Richard II of Normandy",
+        "f1": 0.7499999999999999
+      },
+      "all_int4": {
+        "answer": "Duke Richard II of Normandy",
+        "f1": 0.7499999999999999
+      },
+      "first_third_int4": {
+        "answer": "Duke Richard II of Normandy",
+        "f1": 0.7499999999999999
+      },
+      "middle_third_int4": {
+        "answer": "Duke Richard II of Normandy",
+        "f1": 0.7499999999999999
+      },
+      "last_third_int4": {
+        "answer": "Duke Richard II of Normandy",
+        "f1": 0.7499999999999999
+      },
+      "only_layer0_int4": {
+        "answer": "Duke Richard II of Normandy",
+        "f1": 0.7499999999999999
+      },
+      "only_layer6_int4": {
+        "answer": "Duke Richard II of Normandy",
+        "f1": 0.7499999999999999
+      },
+      "only_layer12_int4": {
+        "answer": "Duke Richard II of Normandy",
+        "f1": 0.7499999999999999
+      },
+      "only_layer18_int4": {
+        "answer": "Duke Richard II of Normandy",
+        "f1": 0.7499999999999999
+      },
+      "only_layer24_int4": {
+        "answer": "Duke Richard II of Normandy",
+        "f1": 0.7499999999999999
+      },
+      "only_layer35_int4": {
+        "answer": "Duke Richard II of Normandy",
+        "f1": 0.7499999999999999
+      },
+      "except_layer0_fp16": {
+        "answer": "Duke Richard II of Normandy",
+        "f1": 0.7499999999999999
+      },
+      "except_layer6_fp16": {
+        "answer": "Duke Richard II of Normandy",
+        "f1": 0.7499999999999999
+      },
+      "except_layer12_fp16": {
+        "answer": "Duke Richard II of Normandy",
+        "f1": 0.7499999999999999
+      },
+      "except_layer18_fp16": {
+        "answer": "Duke Richard II of Normandy",
+        "f1": 0.7499999999999999
+      },
+      "except_layer24_fp16": {
+        "answer": "Duke Richard II of Normandy",
+        "f1": 0.7499999999999999
+      },
+      "except_layer35_fp16": {
+        "answer": "Duke Richard II of Normandy",
+        "f1": 0.7499999999999999
+      },
+      "time": 2.5634307861328125
+    },
+    {
+      "idx": 36,
+      "gold": "Normandy",
+      "seq_len": 158,
+      "all_fp16": {
+        "answer": "Normandy",
+        "f1": 1.0
+      },
+      "all_int4": {
+        "answer": "Normandy",
+        "f1": 1.0
+      },
+      "first_third_int4": {
+        "answer": "Normandy",
+        "f1": 1.0
+      },
+      "middle_third_int4": {
+        "answer": "Normandy",
+        "f1": 1.0
+      },
+      "last_third_int4": {
+        "answer": "Normandy",
+        "f1": 1.0
+      },
+      "only_layer0_int4": {
+        "answer": "Normandy",
+        "f1": 1.0
+      },
+      "only_layer6_int4": {
+        "answer": "Normandy",
+        "f1": 1.0
+      },
+      "only_layer12_int4": {
+        "answer": "Normandy",
+        "f1": 1.0
+      },
+      "only_layer18_int4": {
+        "answer": "Normandy",
+        "f1": 1.0
+      },
+      "only_layer24_int4": {
+        "answer": "Normandy",
+        "f1": 1.0
+      },
+      "only_layer35_int4": {
+        "answer": "Normandy",
+        "f1": 1.0
+      },
+      "except_layer0_fp16": {
+        "answer": "Normandy",
+        "f1": 1.0
+      },
+      "except_layer6_fp16": {
+        "answer": "Normandy",
+        "f1": 1.0
+      },
+      "except_layer12_fp16": {
+        "answer": "Normandy",
+        "f1": 1.0
+      },
+      "except_layer18_fp16": {
+        "answer": "Normandy",
+        "f1": 1.0
+      },
+      "except_layer24_fp16": {
+        "answer": "Normandy",
+        "f1": 1.0
+      },
+      "except_layer35_fp16": {
+        "answer": "Normandy",
+        "f1": 1.0
+      },
+      "time": 1.1559267044067383
+    },
+    {
+      "idx": 37,
+      "gold": "Sweyn Forkbeard",
+      "seq_len": 157,
+      "all_fp16": {
+        "answer": "Sweyn Forkbeard",
+        "f1": 1.0
+      },
+      "all_int4": {
+        "answer": "Sweyn Forkbeard",
+        "f1": 1.0
+      },
+      "first_third_int4": {
+        "answer": "Sweyn Forkbeard",
+        "f1": 1.0
+      },
+      "middle_third_int4": {
+        "answer": "Sweyn Forkbeard",
+        "f1": 1.0
+      },
+      "last_third_int4": {
+        "answer": "Sweyn Forkbeard",
+        "f1": 1.0
+      },
+      "only_layer0_int4": {
+        "answer": "Sweyn Forkbeard",
+        "f1": 1.0
+      },
+      "only_layer6_int4": {
+        "answer": "Sweyn Forkbeard",
+        "f1": 1.0
+      },
+      "only_layer12_int4": {
+        "answer": "Sweyn Forkbeard",
+        "f1": 1.0
+      },
+      "only_layer18_int4": {
+        "answer": "Sweyn Forkbeard",
+        "f1": 1.0
+      },
+      "only_layer24_int4": {
+        "answer": "Sweyn Forkbeard",
+        "f1": 1.0
+      },
+      "only_layer35_int4": {
+        "answer": "Sweyn Forkbeard",
+        "f1": 1.0
+      },
+      "except_layer0_fp16": {
+        "answer": "Sweyn Forkbeard",
+        "f1": 1.0
+      },
+      "except_layer6_fp16": {
+        "answer": "Sweyn Forkbeard",
+        "f1": 1.0
+      },
+      "except_layer12_fp16": {
+        "answer": "Sweyn Forkbeard",
+        "f1": 1.0
+      },
+      "except_layer18_fp16": {
+        "answer": "Sweyn Forkbeard",
+        "f1": 1.0
+      },
+      "except_layer24_fp16": {
+        "answer": "Sweyn Forkbeard",
+        "f1": 1.0
+      },
+      "except_layer35_fp16": {
+        "answer": "Sweyn Forkbeard",
+        "f1": 1.0
+      },
+      "time": 2.2003138065338135
+    },
+    {
+      "idx": 38,
+      "gold": "Harthacnut",
+      "seq_len": 178,
+      "all_fp16": {
+        "answer": "Harthacnut",
+        "f1": 1.0
+      },
+      "all_int4": {
+        "answer": "Harthacnut",
+        "f1": 1.0
+      },
+      "first_third_int4": {
+        "answer": "Harthacnut",
+        "f1": 1.0
+      },
+      "middle_third_int4": {
+        "answer": "Harthacnut",
+        "f1": 1.0
+      },
+      "last_third_int4": {
+        "answer": "Harthacnut",
+        "f1": 1.0
+      },
+      "only_layer0_int4": {
+        "answer": "Harthacnut",
+        "f1": 1.0
+      },
+      "only_layer6_int4": {
+        "answer": "Harthacnut",
+        "f1": 1.0
+      },
+      "only_layer12_int4": {
+        "answer": "Harthacnut",
+        "f1": 1.0
+      },
+      "only_layer18_int4": {
+        "answer": "Harthacnut",
+        "f1": 1.0
+      },
+      "only_layer24_int4": {
+        "answer": "Harthacnut",
+        "f1": 1.0
+      },
+      "only_layer35_int4": {
+        "answer": "Harthacnut",
+        "f1": 1.0
+      },
+      "except_layer0_fp16": {
+        "answer": "Harthacnut",
+        "f1": 1.0
+      },
+      "except_layer6_fp16": {
+        "answer": "Harthacnut",
+        "f1": 1.0
+      },
+      "except_layer12_fp16": {
+        "answer": "Harthacnut",
+        "f1": 1.0
+      },
+      "except_layer18_fp16": {
+        "answer": "Harthacnut",
+        "f1": 1.0
+      },
+      "except_layer24_fp16": {
+        "answer": "Harthacnut",
+        "f1": 1.0
+      },
+      "except_layer35_fp16": {
+        "answer": "Harthacnut",
+        "f1": 1.0
+      },
+      "time": 1.8415467739105225
+    },
+    {
+      "idx": 39,
+      "gold": "1041",
+      "seq_len": 171,
+      "all_fp16": {
+        "answer": "1041",
+        "f1": 1.0
+      },
+      "all_int4": {
+        "answer": "1041",
+        "f1": 1.0
+      },
+      "first_third_int4": {
+        "answer": "1041",
+        "f1": 1.0
+      },
+      "middle_third_int4": {
+        "answer": "1041",
+        "f1": 1.0
+      },
+      "last_third_int4": {
+        "answer": "1041",
+        "f1": 1.0
+      },
+      "only_layer0_int4": {
+        "answer": "1041",
+        "f1": 1.0
+      },
+      "only_layer6_int4": {
+        "answer": "1041",
+        "f1": 1.0
+      },
+      "only_layer12_int4": {
+        "answer": "1041",
+        "f1": 1.0
+      },
+      "only_layer18_int4": {
+        "answer": "1041",
+        "f1": 1.0
+      },
+      "only_layer24_int4": {
+        "answer": "1041",
+        "f1": 1.0
+      },
+      "only_layer35_int4": {
+        "answer": "1041",
+        "f1": 1.0
+      },
+      "except_layer0_fp16": {
+        "answer": "1041",
+        "f1": 1.0
+      },
+      "except_layer6_fp16": {
+        "answer": "1041",
+        "f1": 1.0
+      },
+      "except_layer12_fp16": {
+        "answer": "1041",
+        "f1": 1.0
+      },
+      "except_layer18_fp16": {
+        "answer": "1041",
+        "f1": 1.0
+      },
+      "except_layer24_fp16": {
+        "answer": "1041",
+        "f1": 1.0
+      },
+      "except_layer35_fp16": {
+        "answer": "1041",
+        "f1": 1.0
+      },
+      "time": 2.202685832977295
+    },
+    {
+      "idx": 40,
+      "gold": "Robert of Jumi\u00e8ges",
+      "seq_len": 175,
+      "all_fp16": {
+        "answer": "Robert of Jumi\u00e8ges",
+        "f1": 1.0
+      },
+      "all_int4": {
+        "answer": "Robert of Jumi\u00e8ges",
+        "f1": 1.0
+      },
+      "first_third_int4": {
+        "answer": "Robert of Jumi\u00e8ges",
+        "f1": 1.0
+      },
+      "middle_third_int4": {
+        "answer": "Robert of Jumi\u00e8ges",
+        "f1": 1.0
+      },
+      "last_third_int4": {
+        "answer": "Robert of Jumi\u00e8ges",
+        "f1": 1.0
+      },
+      "only_layer0_int4": {
+        "answer": "Robert of Jumi\u00e8ges",
+        "f1": 1.0
+      },
+      "only_layer6_int4": {
+        "answer": "Robert of Jumi\u00e8ges",
+        "f1": 1.0
+      },
+      "only_layer12_int4": {
+        "answer": "Robert of Jumi\u00e8ges",
+        "f1": 1.0
+      },
+      "only_layer18_int4": {
+        "answer": "Robert of Jumi\u00e8ges",
+        "f1": 1.0
+      },
+      "only_layer24_int4": {
+        "answer": "Robert of Jumi\u00e8ges",
+        "f1": 1.0
+      },
+      "only_layer35_int4": {
+        "answer": "Robert of Jumi\u00e8ges",
+        "f1": 1.0
+      },
+      "except_layer0_fp16": {
+        "answer": "Robert of Jumi\u00e8ges",
+        "f1": 1.0
+      },
+      "except_layer6_fp16": {
+        "answer": "Robert of Jumi\u00e8ges",
+        "f1": 1.0
+      },
+      "except_layer12_fp16": {
+        "answer": "Robert of Jumi\u00e8ges",
+        "f1": 1.0
+      },
+      "except_layer18_fp16": {
+        "answer": "Robert of Jumi\u00e8ges",
+        "f1": 1.0
+      },
+      "except_layer24_fp16": {
+        "answer": "Robert of Jumi\u00e8ges",
+        "f1": 1.0
+      },
+      "except_layer35_fp16": {
+        "answer": "Robert of Jumi\u00e8ges",
+        "f1": 1.0
+      },
+      "time": 2.5509374141693115
+    },
+    {
+      "idx": 41,
+      "gold": "Battle of Hastings",
+      "seq_len": 131,
+      "all_fp16": {
+        "answer": "Battle of Hastings",
+        "f1": 1.0
+      },
+      "all_int4": {
+        "answer": "Battle of Hastings",
+        "f1": 1.0
+      },
+      "first_third_int4": {
+        "answer": "Battle of Hastings",
+        "f1": 1.0
+      },
+      "middle_third_int4": {
+        "answer": "Battle of Hastings",
+        "f1": 1.0
+      },
+      "last_third_int4": {
+        "answer": "Battle of Hastings",
+        "f1": 1.0
+      },
+      "only_layer0_int4": {
+        "answer": "Battle of Hastings",
+        "f1": 1.0
+      },
+      "only_layer6_int4": {
+        "answer": "Battle of Hastings",
+        "f1": 1.0
+      },
+      "only_layer12_int4": {
+        "answer": "Battle of Hastings",
+        "f1": 1.0
+      },
+      "only_layer18_int4": {
+        "answer": "Battle of Hastings",
+        "f1": 1.0
+      },
+      "only_layer24_int4": {
+        "answer": "Battle of Hastings",
+        "f1": 1.0
+      },
+      "only_layer35_int4": {
+        "answer": "Battle of Hastings",
+        "f1": 1.0
+      },
+      "except_layer0_fp16": {
+        "answer": "Battle of Hastings",
+        "f1": 1.0
+      },
+      "except_layer6_fp16": {
+        "answer": "Battle of Hastings",
+        "f1": 1.0
+      },
+      "except_layer12_fp16": {
+        "answer": "Battle of Hastings",
+        "f1": 1.0
+      },
+      "except_layer18_fp16": {
+        "answer": "Battle of Hastings",
+        "f1": 1.0
+      },
+      "except_layer24_fp16": {
+        "answer": "Battle of Hastings",
+        "f1": 1.0
+      },
+      "except_layer35_fp16": {
+        "answer": "Battle of Hastings",
+        "f1": 1.0
+      },
+      "time": 1.4978911876678467
+    },
+    {
+      "idx": 42,
+      "gold": "William II",
+      "seq_len": 131,
+      "all_fp16": {
+        "answer": "Duke William II of Normandy",
+        "f1": 0.5714285714285715
+      },
+      "all_int4": {
+        "answer": "Duke William II of Normandy",
+        "f1": 0.5714285714285715
+      },
+      "first_third_int4": {
+        "answer": "Duke William II of Normandy",
+        "f1": 0.5714285714285715
+      },
+      "middle_third_int4": {
+        "answer": "Duke William II of Normandy",
+        "f1": 0.5714285714285715
+      },
+      "last_third_int4": {
+        "answer": "Duke William II of Normandy",
+        "f1": 0.5714285714285715
+      },
+      "only_layer0_int4": {
+        "answer": "Duke William II of Normandy",
+        "f1": 0.5714285714285715
+      },
+      "only_layer6_int4": {
+        "answer": "Duke William II of Normandy",
+        "f1": 0.5714285714285715
+      },
+      "only_layer12_int4": {
+        "answer": "Duke William II of Normandy",
+        "f1": 0.5714285714285715
+      },
+      "only_layer18_int4": {
+        "answer": "Duke William II of Normandy",
+        "f1": 0.5714285714285715
+      },
+      "only_layer24_int4": {
+        "answer": "Duke William II of Normandy",
+        "f1": 0.5714285714285715
+      },
+      "only_layer35_int4": {
+        "answer": "Duke William II of Normandy",
+        "f1": 0.5714285714285715
+      },
+      "except_layer0_fp16": {
+        "answer": "Duke William II of Normandy",
+        "f1": 0.5714285714285715
+      },
+      "except_layer6_fp16": {
+        "answer": "Duke William II of Normandy",
+        "f1": 0.5714285714285715
+      },
+      "except_layer12_fp16": {
+        "answer": "Duke William II of Normandy",
+        "f1": 0.5714285714285715
+      },
+      "except_layer18_fp16": {
+        "answer": "Duke William II of Normandy",
+        "f1": 0.5714285714285715
+      },
+      "except_layer24_fp16": {
+        "answer": "Duke William II of Normandy",
+        "f1": 0.5714285714285715
+      },
+      "except_layer35_fp16": {
+        "answer": "Duke William II of Normandy",
+        "f1": 0.5714285714285715
+      },
+      "time": 2.551893711090088
+    },
+    {
+      "idx": 43,
+      "gold": "1066",
+      "seq_len": 132,
+      "all_fp16": {
+        "answer": "1066",
+        "f1": 1.0
+      },
+      "all_int4": {
+        "answer": "1066",
+        "f1": 1.0
+      },
+      "first_third_int4": {
+        "answer": "1066",
+        "f1": 1.0
+      },
+      "middle_third_int4": {
+        "answer": "1066",
+        "f1": 1.0
+      },
+      "last_third_int4": {
+        "answer": "1066",
+        "f1": 1.0
+      },
+      "only_layer0_int4": {
+        "answer": "1066",
+        "f1": 1.0
+      },
+      "only_layer6_int4": {
+        "answer": "1066",
+        "f1": 1.0
+      },
+      "only_layer12_int4": {
+        "answer": "1066",
+        "f1": 1.0
+      },
+      "only_layer18_int4": {
+        "answer": "1066",
+        "f1": 1.0
+      },
+      "only_layer24_int4": {
+        "answer": "1066",
+        "f1": 1.0
+      },
+      "only_layer35_int4": {
+        "answer": "1066",
+        "f1": 1.0
+      },
+      "except_layer0_fp16": {
+        "answer": "1066",
+        "f1": 1.0
+      },
+      "except_layer6_fp16": {
+        "answer": "1066",
+        "f1": 1.0
+      },
+      "except_layer12_fp16": {
+        "answer": "1066",
+        "f1": 1.0
+      },
+      "except_layer18_fp16": {
+        "answer": "1066",
+        "f1": 1.0
+      },
+      "except_layer24_fp16": {
+        "answer": "1066",
+        "f1": 1.0
+      },
+      "except_layer35_fp16": {
+        "answer": "1066",
+        "f1": 1.0
+      },
+      "time": 2.1995396614074707
+    },
+    {
+      "idx": 44,
+      "gold": "Anglo-Saxons",
+      "seq_len": 136,
+      "all_fp16": {
+        "answer": "Anglo-Saxons",
+        "f1": 1.0
+      },
+      "all_int4": {
+        "answer": "Anglo-Saxons",
+        "f1": 1.0
+      },
+      "first_third_int4": {
+        "answer": "Anglo-Saxons",
+        "f1": 1.0
+      },
+      "middle_third_int4": {
+        "answer": "Anglo-Saxons",
+        "f1": 1.0
+      },
+      "last_third_int4": {
+        "answer": "Anglo-Saxons",
+        "f1": 1.0
+      },
+      "only_layer0_int4": {
+        "answer": "Anglo-Saxons",
+        "f1": 1.0
+      },
+      "only_layer6_int4": {
+        "answer": "Anglo-Saxons",
+        "f1": 1.0
+      },
+      "only_layer12_int4": {
+        "answer": "Anglo-Saxons",
+        "f1": 1.0
+      },
+      "only_layer18_int4": {
+        "answer": "Anglo-Saxons",
+        "f1": 1.0
+      },
+      "only_layer24_int4": {
+        "answer": "Anglo-Saxons",
+        "f1": 1.0
+      },
+      "only_layer35_int4": {
+        "answer": "Anglo-Saxons",
+        "f1": 1.0
+      },
+      "except_layer0_fp16": {
+        "answer": "Anglo-Saxons",
+        "f1": 1.0
+      },
+      "except_layer6_fp16": {
+        "answer": "Anglo-Saxons",
+        "f1": 1.0
+      },
+      "except_layer12_fp16": {
+        "answer": "Anglo-Saxons",
+        "f1": 1.0
+      },
+      "except_layer18_fp16": {
+        "answer": "Anglo-Saxons",
+        "f1": 1.0
+      },
+      "except_layer24_fp16": {
+        "answer": "Anglo-Saxons",
+        "f1": 1.0
+      },
+      "except_layer35_fp16": {
+        "answer": "Anglo-Saxons",
+        "f1": 1.0
+      },
+      "time": 1.8453338146209717
+    },
+    {
+      "idx": 45,
+      "gold": "Modern English",
+      "seq_len": 141,
+      "all_fp16": {
+        "answer": "Middle English",
+        "f1": 0.5
+      },
+      "all_int4": {
+        "answer": "Middle English",
+        "f1": 0.5
+      },
+      "first_third_int4": {
+        "answer": "Middle English",
+        "f1": 0.5
+      },
+      "middle_third_int4": {
+        "answer": "Middle English",
+        "f1": 0.5
+      },
+      "last_third_int4": {
+        "answer": "Middle English",
+        "f1": 0.5
+      },
+      "only_layer0_int4": {
+        "answer": "Middle English",
+        "f1": 0.5
+      },
+      "only_layer6_int4": {
+        "answer": "Middle English",
+        "f1": 0.5
+      },
+      "only_layer12_int4": {
+        "answer": "Middle English",
+        "f1": 0.5
+      },
+      "only_layer18_int4": {
+        "answer": "Middle English",
+        "f1": 0.5
+      },
+      "only_layer24_int4": {
+        "answer": "Middle English",
+        "f1": 0.5
+      },
+      "only_layer35_int4": {
+        "answer": "Middle English",
+        "f1": 0.5
+      },
+      "except_layer0_fp16": {
+        "answer": "Middle English",
+        "f1": 0.5
+      },
+      "except_layer6_fp16": {
+        "answer": "Middle English",
+        "f1": 0.5
+      },
+      "except_layer12_fp16": {
+        "answer": "Middle English",
+        "f1": 0.5
+      },
+      "except_layer18_fp16": {
+        "answer": "Middle English",
+        "f1": 0.5
+      },
+      "except_layer24_fp16": {
+        "answer": "Middle English",
+        "f1": 0.5
+      },
+      "except_layer35_fp16": {
+        "answer": "Middle English",
+        "f1": 0.5
+      },
+      "time": 1.1416265964508057
+    },
+    {
+      "idx": 46,
+      "gold": "1169",
+      "seq_len": 311,
+      "all_fp16": {
+        "answer": "1169",
+        "f1": 1.0
+      },
+      "all_int4": {
+        "answer": "1169",
+        "f1": 1.0
+      },
+      "first_third_int4": {
+        "answer": "1169",
+        "f1": 1.0
+      },
+      "middle_third_int4": {
+        "answer": "1169",
+        "f1": 1.0
+      },
+      "last_third_int4": {
+        "answer": "1169",
+        "f1": 1.0
+      },
+      "only_layer0_int4": {
+        "answer": "1169",
+        "f1": 1.0
+      },
+      "only_layer6_int4": {
+        "answer": "1169",
+        "f1": 1.0
+      },
+      "only_layer12_int4": {
+        "answer": "1169",
+        "f1": 1.0
+      },
+      "only_layer18_int4": {
+        "answer": "1169",
+        "f1": 1.0
+      },
+      "only_layer24_int4": {
+        "answer": "1169",
+        "f1": 1.0
+      },
+      "only_layer35_int4": {
+        "answer": "1169",
+        "f1": 1.0
+      },
+      "except_layer0_fp16": {
+        "answer": "1169",
+        "f1": 1.0
+      },
+      "except_layer6_fp16": {
+        "answer": "1169",
+        "f1": 1.0
+      },
+      "except_layer12_fp16": {
+        "answer": "1169",
+        "f1": 1.0
+      },
+      "except_layer18_fp16": {
+        "answer": "1169",
+        "f1": 1.0
+      },
+      "except_layer24_fp16": {
+        "answer": "1169",
+        "f1": 1.0
+      },
+      "except_layer35_fp16": {
+        "answer": "1169",
+        "f1": 1.0
+      },
+      "time": 2.30240535736084
+    },
+    {
+      "idx": 47,
+      "gold": "Ireland",
+      "seq_len": 311,
+      "all_fp16": {
+        "answer": "Ireland",
+        "f1": 1.0
+      },
+      "all_int4": {
+        "answer": "Ireland",
+        "f1": 1.0
+      },
+      "first_third_int4": {
+        "answer": "Ireland",
+        "f1": 1.0
+      },
+      "middle_third_int4": {
+        "answer": "Ireland",
+        "f1": 1.0
+      },
+      "last_third_int4": {
+        "answer": "Ireland",
+        "f1": 1.0
+      },
+      "only_layer0_int4": {
+        "answer": "Ireland",
+        "f1": 1.0
+      },
+      "only_layer6_int4": {
+        "answer": "Ireland",
+        "f1": 1.0
+      },
+      "only_layer12_int4": {
+        "answer": "Ireland",
+        "f1": 1.0
+      },
+      "only_layer18_int4": {
+        "answer": "Ireland",
+        "f1": 1.0
+      },
+      "only_layer24_int4": {
+        "answer": "Ireland",
+        "f1": 1.0
+      },
+      "only_layer35_int4": {
+        "answer": "Ireland",
+        "f1": 1.0
+      },
+      "except_layer0_fp16": {
+        "answer": "Ireland",
+        "f1": 1.0
+      },
+      "except_layer6_fp16": {
+        "answer": "Ireland",
+        "f1": 1.0
+      },
+      "except_layer12_fp16": {
+        "answer": "Ireland",
+        "f1": 1.0
+      },
+      "except_layer18_fp16": {
+        "answer": "Ireland",
+        "f1": 1.0
+      },
+      "except_layer24_fp16": {
+        "answer": "Ireland",
+        "f1": 1.0
+      },
+      "except_layer35_fp16": {
+        "answer": "Ireland",
+        "f1": 1.0
+      },
+      "time": 0.9402947425842285
+    },
+    {
+      "idx": 48,
+      "gold": "Irish",
+      "seq_len": 308,
+      "all_fp16": {
+        "answer": "Irish",
+        "f1": 1.0
+      },
+      "all_int4": {
+        "answer": "Irish",
+        "f1": 1.0
+      },
+      "first_third_int4": {
+        "answer": "Irish",
+        "f1": 1.0
+      },
+      "middle_third_int4": {
+        "answer": "Irish culture",
+        "f1": 0.6666666666666666
+      },
+      "last_third_int4": {
+        "answer": "Irish",
+        "f1": 1.0
+      },
+      "only_layer0_int4": {
+        "answer": "Irish",
+        "f1": 1.0
+      },
+      "only_layer6_int4": {
+        "answer": "Irish",
+        "f1": 1.0
+      },
+      "only_layer12_int4": {
+        "answer": "Irish",
+        "f1": 1.0
+      },
+      "only_layer18_int4": {
+        "answer": "Irish",
+        "f1": 1.0
+      },
+      "only_layer24_int4": {
+        "answer": "Irish",
+        "f1": 1.0
+      },
+      "only_layer35_int4": {
+        "answer": "Irish",
+        "f1": 1.0
+      },
+      "except_layer0_fp16": {
+        "answer": "Irish",
+        "f1": 1.0
+      },
+      "except_layer6_fp16": {
+        "answer": "Irish",
+        "f1": 1.0
+      },
+      "except_layer12_fp16": {
+        "answer": "Irish",
+        "f1": 1.0
+      },
+      "except_layer18_fp16": {
+        "answer": "Irish",
+        "f1": 1.0
+      },
+      "except_layer24_fp16": {
+        "answer": "Irish",
+        "f1": 1.0
+      },
+      "except_layer35_fp16": {
+        "answer": "Irish",
+        "f1": 1.0
+      },
+      "time": 0.9671299457550049
+    },
+    {
+      "idx": 49,
+      "gold": "Edgar",
+      "seq_len": 126,
+      "all_fp16": {
+        "answer": "Edgar Atheling",
+        "f1": 0.6666666666666666
+      },
+      "all_int4": {
+        "answer": "Edgar Atheling",
+        "f1": 0.6666666666666666
+      },
+      "first_third_int4": {
+        "answer": "Edgar Atheling",
+        "f1": 0.6666666666666666
+      },
+      "middle_third_int4": {
+        "answer": "Edgar Atheling",
+        "f1": 0.6666666666666666
+      },
+      "last_third_int4": {
+        "answer": "Edgar Atheling",
+        "f1": 0.6666666666666666
+      },
+      "only_layer0_int4": {
+        "answer": "Edgar Atheling",
+        "f1": 0.6666666666666666
+      },
+      "only_layer6_int4": {
+        "answer": "Edgar Atheling",
+        "f1": 0.6666666666666666
+      },
+      "only_layer12_int4": {
+        "answer": "Edgar Atheling",
+        "f1": 0.6666666666666666
+      },
+      "only_layer18_int4": {
+        "answer": "Edgar Atheling",
+        "f1": 0.6666666666666666
+      },
+      "only_layer24_int4": {
+        "answer": "Edgar Atheling",
+        "f1": 0.6666666666666666
+      },
+      "only_layer35_int4": {
+        "answer": "Edgar Atheling",
+        "f1": 0.6666666666666666
+      },
+      "except_layer0_fp16": {
+        "answer": "Edgar Atheling",
+        "f1": 0.6666666666666666
+      },
+      "except_layer6_fp16": {
+        "answer": "Edgar Atheling",
+        "f1": 0.6666666666666666
+      },
+      "except_layer12_fp16": {
+        "answer": "Edgar Atheling",
+        "f1": 0.6666666666666666
+      },
+      "except_layer18_fp16": {
+        "answer": "Edgar Atheling",
+        "f1": 0.6666666666666666
+      },
+      "except_layer24_fp16": {
+        "answer": "Edgar Atheling",
+        "f1": 0.6666666666666666
+      },
+      "except_layer35_fp16": {
+        "answer": "Edgar Atheling",
+        "f1": 0.6666666666666666
+      },
+      "time": 1.4836063385009766
+    }
+  ]
+}

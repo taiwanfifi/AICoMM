@@ -1,0 +1,3662 @@
+{
+  "metadata": {
+    "num_samples": 50,
+    "full_f1": 0.4290498259061528,
+    "full_f1_std": 0.36963480349328043,
+    "full_f1_se": 0.0522742552225311,
+    "full_f1_raw": 0.26039522123770964,
+    "h2o_25_f1": 0.1289024703420159,
+    "h2o_25_f1_std": 0.17522522575808766,
+    "h2o_25_f1_se": 0.024780589073697495,
+    "h2o_25_f1_raw": 0.092083727606432,
+    "h2o_50_f1": 0.22369070444410785,
+    "h2o_50_f1_std": 0.28711140939316265,
+    "h2o_50_f1_se": 0.040603684907586465,
+    "h2o_50_f1_raw": 0.16821987112430148,
+    "h2o_75_f1": 0.3621402863938817,
+    "h2o_75_f1_std": 0.3559905442695618,
+    "h2o_75_f1_se": 0.050344665578259395,
+    "h2o_75_f1_raw": 0.25414128837914,
+    "q2c_25_f1": 0.2940814504821494,
+    "q2c_25_f1_std": 0.3502418637070352,
+    "q2c_25_f1_se": 0.04953167937653183,
+    "q2c_25_f1_raw": 0.18182752726873347,
+    "q2c_50_f1": 0.35005385702296676,
+    "q2c_50_f1_std": 0.33033328414320945,
+    "q2c_50_f1_se": 0.046716181053857206,
+    "q2c_50_f1_raw": 0.18245174309645648,
+    "q2c_75_f1": 0.3971923928633807,
+    "q2c_75_f1_std": 0.3345071644939758,
+    "q2c_75_f1_se": 0.047306456873834835,
+    "q2c_75_f1_raw": 0.23903570480893202,
+    "random_25_f1": 0.10405127929728433,
+    "random_25_f1_std": 0.17958817077171266,
+    "random_25_f1_se": 0.025397602674713148,
+    "random_25_f1_raw": 0.0670208672867488,
+    "random_50_f1": 0.2050614066265962,
+    "random_50_f1_std": 0.306610455962533,
+    "random_50_f1_se": 0.04336126651876128,
+    "random_50_f1_raw": 0.13724073697978198,
+    "random_75_f1": 0.25589327785879507,
+    "random_75_f1_std": 0.30179549055913796,
+    "random_75_f1_se": 0.04268032758117742,
+    "random_75_f1_raw": 0.19545486427596662,
+    "snapkv_25_f1": 0.2054241092492936,
+    "snapkv_25_f1_std": 0.26423945203969407,
+    "snapkv_25_f1_se": 0.037369101678857035,
+    "snapkv_25_f1_raw": 0.14821021949472793,
+    "snapkv_50_f1": 0.35379526865511157,
+    "snapkv_50_f1_std": 0.3436332360782205,
+    "snapkv_50_f1_se": 0.048597078294397494,
+    "snapkv_50_f1_raw": 0.19891677087982196,
+    "snapkv_75_f1": 0.354924118419186,
+    "snapkv_75_f1_std": 0.32498172499711003,
+    "snapkv_75_f1_se": 0.04595935630143165,
+    "snapkv_75_f1_raw": 0.20909829522231288
+  },
+  "model": "Mistral-7B",
+  "normalized_f1": true,
+  "methodology": "attention_mask (batch 8 style)",
+  "results": [
+    {
+      "idx": 0,
+      "gold": "embroidery",
+      "seq_len": 110,
+      "num_context": 83,
+      "full": {
+        "answer": "The Bayeux Tapestry was created using embroidery.",
+        "f1": 0.2857142857142857,
+        "f1_raw": 0.0
+      },
+      "q2c_25": {
+        "answer": "Embroidery.",
+        "f1": 1.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_25": {
+        "answer": "The Bayeux Tapestry was created using embroidery, specifically using wool yarn on linen.",
+        "f1": 0.15384615384615385,
+        "f1_raw": 0.0
+      },
+      "h2o_25": {
+        "answer": "The Bayeux Tapestry was embroidered.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_25": {
+        "answer": "Embroidery was used in the creation of the Bayeux Tapestry.",
+        "f1": 0.2222222222222222,
+        "f1_raw": 0.18181818181818182
+      },
+      "q2c_50": {
+        "answer": "The Bayeux Tapestry was created using embroidery.",
+        "f1": 0.2857142857142857,
+        "f1_raw": 0.0
+      },
+      "snapkv_50": {
+        "answer": "The Bayeux Tapestry was created using embroidery.",
+        "f1": 0.2857142857142857,
+        "f1_raw": 0.0
+      },
+      "h2o_50": {
+        "answer": "The Bayeux Tapestry was created using embroidery.",
+        "f1": 0.2857142857142857,
+        "f1_raw": 0.0
+      },
+      "random_50": {
+        "answer": "The Bayeux Tapestry was created using a type of embroidery known as \"opus anglicanum,\" which was a highly detailed and intricate form of needlework that was popular in England during the Middle Ages. This technique was influenced by the Nordic traditions of the previous century.",
+        "f1": 0.05,
+        "f1_raw": 0.04347826086956522
+      },
+      "q2c_75": {
+        "answer": "The Bayeux Tapestry was created using embroidery.",
+        "f1": 0.2857142857142857,
+        "f1_raw": 0.0
+      },
+      "snapkv_75": {
+        "answer": "The Bayeux Tapestry was created using embroidery.",
+        "f1": 0.2857142857142857,
+        "f1_raw": 0.0
+      },
+      "h2o_75": {
+        "answer": "The Bayeux Tapestry was created using embroidery.",
+        "f1": 0.2857142857142857,
+        "f1_raw": 0.0
+      },
+      "random_75": {
+        "answer": "The Bayeux Tapestry was not a tapestry but an embroidery.",
+        "f1": 0.25,
+        "f1_raw": 0.0
+      },
+      "time": 6.50930380821228
+    },
+    {
+      "idx": 1,
+      "gold": "1050s",
+      "seq_len": 169,
+      "num_context": 149,
+      "full": {
+        "answer": "In the 1050s.",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.0
+      },
+      "q2c_25": {
+        "answer": "In the 11th century.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_25": {
+        "answer": "Herve did not serve as a Byzantine general. The Byzantine general who stopped Robert Robert Robert Robert Robert Robert Robert Robert Robert Robert Robert Robert Robert Robert Robert Robert Robert Robert Robert Robert Robert Robert Robert Robert Robert Robert Robert Robert Robert Robert Robert Robert Robert Robert Robert Robert Robert Robert Robert Robert Robert Robert Robert Robert Robert",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_25": {
+        "answer": "Yes, Herv\u00e9 served as a Byzantine general.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_25": {
+        "answer": "No, Herve was not a Byzantine general. He was a Norman knight who served in the service of the Kingdom of Jerusalem.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_50": {
+        "answer": "In the 1000s.\n\nReference(s):\nThe information provided is based on the context given in the question. No specific reference is given as the question does not ask for a citation. However, for more detailed information, one could refer to historical texts about the Norman conquests and",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_50": {
+        "answer": "Herve served as a Byzantine general in the 1110s.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_50": {
+        "answer": "Yes, Herv\u00e9 served as a Byzantine general.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_50": {
+        "answer": "No, Herve did not serve as a Byzantine general. He was a Norman knight who served under Robert of Normandy in the Crusades.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_75": {
+        "answer": "In the 1050s.",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.0
+      },
+      "snapkv_75": {
+        "answer": "Herve served as a Byzantine general in the 11050s.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_75": {
+        "answer": "In the 1050s.",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.0
+      },
+      "random_75": {
+        "answer": "Herve served as a Byzantine general in 1053.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "time": 7.463068246841431
+    },
+    {
+      "idx": 2,
+      "gold": "as a function of the size of the instance",
+      "seq_len": 188,
+      "num_context": 166,
+      "full": {
+        "answer": "The time required to solve a problem is calculated as a function of the size of the input, usually in bits. The function is often expressed in terms of Big O notation, which describes the upper bound on the growth rate of the time required as a function of the input size.",
+        "f1": 0.1702127659574468,
+        "f1_raw": 0.19672131147540986
+      },
+      "q2c_25": {
+        "answer": "To calculate the time needed to obtain the solution to a problem, we need to solve the problem instance using the best algorithm available, measure the time it takes to solve that instance, and then generalize the time to all problem instances of the same size using complexity theory. The complexity complexity is calculated using a function that depends",
+        "f1": 0.14545454545454545,
+        "f1_raw": 0.1764705882352941
+      },
+      "snapkv_25": {
+        "answer": "The time needed to obtain the solution to a problem is calculated by measuring the number of operations or steps required to solve the problem, and then multiplying this by the time taken for each operation or step. This can be affected by factors such as the size of the problem (e.g., the number of vertices in",
+        "f1": 0.1111111111111111,
+        "f1_raw": 0.1515151515151515
+      },
+      "h2o_25": {
+        "answer": "Yes, the time complexity is the time needed to obtain the solution to a problem calculated.\n\nDetailed explanation:\n\nIn computer science, time complexity is a measure of the amount of time an algorithm takes to run as a function of the size of the input. It is a key concept in the analysis of",
+        "f1": 0.16666666666666666,
+        "f1_raw": 0.1904761904761905
+      },
+      "random_25": {
+        "answer": "Yes, the time needed to obtain the solution to a problem is calculated based on the size of the graph (number of vertices) and the complexity of the algorithm used to solve the problem.",
+        "f1": 0.125,
+        "f1_raw": 0.18604651162790695
+      },
+      "q2c_50": {
+        "answer": "The time needed to solve a problem is calculated as a function of the size of the input instance using the best algorithm. The size of the input is usually measured in the number of bits. The time complexity theory is interested in how algorithms scale with an increase in the input size. For example, the time required to solve",
+        "f1": 0.18867924528301885,
+        "f1_raw": 0.2028985507246377
+      },
+      "snapkv_50": {
+        "answer": "The time needed to obtain the solution to a problem is calculated using the best algorithm for the problem, taking into account the time complexity of the algorithm and the size of the input instance. The time complexity is a function of the size of the input, and the size of the input is the number of bits required to represent",
+        "f1": 0.1568627450980392,
+        "f1_raw": 0.14285714285714285
+      },
+      "h2o_50": {
+        "answer": "Yes, the time complexity of an algorithm is calculated to determine the running time of the best algorithm for a problem instance of a given size.",
+        "f1": 0.23076923076923075,
+        "f1_raw": 0.2285714285714286
+      },
+      "random_50": {
+        "answer": "Yes, the time complexity of an algorithm is calculated to measure the efficiency of the algorithm in terms of the time it takes to solve a problem as the size of the input increases.\n\nDetailed explanation:\n\nIn computer science, the time complexity of an algorithm is a measure of the amount of time an algorithm",
+        "f1": 0.125,
+        "f1_raw": 0.15625
+      },
+      "q2c_75": {
+        "answer": "The time needed to obtain the solution to a problem is calculated as a function of the size of the input instance, usually in bits. Complexity theory is interested in how algorithms scale with an increase in input size.",
+        "f1": 0.2631578947368421,
+        "f1_raw": 0.25
+      },
+      "snapkv_75": {
+        "answer": "The time required to solve a problem is calculated as a function of the size of the input instance, often measured in terms of the number of input bits. This function is used to measure the complexity of the problem, with the goal of understanding how algorithms scale with increasing input size.",
+        "f1": 0.20408163265306123,
+        "f1_raw": 0.19672131147540986
+      },
+      "h2o_75": {
+        "answer": "The time needed to obtain the solution to a problem is calculated as a function of the size of the input, often measured in the number of bits. This function is called the running time of the algorithm and is a key concept in computational complexity theory. The goal is to understand how the time required to solve a problem",
+        "f1": 0.1509433962264151,
+        "f1_raw": 0.1739130434782609
+      },
+      "random_75": {
+        "answer": "The time needed to obtain the solution to a problem is calculated as a function of the size of the instance, usually taken to be the size of the input in bits. The complexity is usually expressed in terms of big O notation, which describes the upper bound of the time or space required as a function of the size of",
+        "f1": 0.1851851851851852,
+        "f1_raw": 0.1714285714285714
+      },
+      "time": 17.277522325515747
+    },
+    {
+      "idx": 3,
+      "gold": "Latin monastery at Sant'Eufemia.",
+      "seq_len": 106,
+      "num_context": 82,
+      "full": {
+        "answer": "Sant'Eufemia\n\nReference(s):\n\n- The Normans in the South, 1016-1057, by John France, 1992, p. 111.",
+        "f1": 0.125,
+        "f1_raw": 0.0
+      },
+      "q2c_25": {
+        "answer": "Monte Cassino\n\nReference(s):\nhttps://en.wikipedia.org/wiki/Monte_Cassino\nhttps://www.britannica.com/topic/Monte-Cassino-abbey\nhttps://www.history.com/news/monte-cass",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_25": {
+        "answer": "The Saint-Evroul monks established the Monte Cassino monastery in Italy.",
+        "f1": 0.16666666666666666,
+        "f1_raw": 0.14285714285714288
+      },
+      "h2o_25": {
+        "answer": "The Saint-Evroul monks established their monastery in Monte Cassino, Italy.",
+        "f1": 0.15384615384615383,
+        "f1_raw": 0.14285714285714288
+      },
+      "random_25": {
+        "answer": "Monte Cassino\n\nExplanation:\nThe Saint-Evroul monks, led by Abbot Desiderius, established the Monte Cassino monastery in Italy during the 11th century. This monastery was the first of the Benedictine monasteries to be built in Italy after the",
+        "f1": 0.05714285714285715,
+        "f1_raw": 0.04878048780487805
+      },
+      "q2c_50": {
+        "answer": "Sant'Eufemia\n\nReference(s):\n- \"The Monastic Order of Saint-Evroul: A Study in the History of the Norman Conquest\" by John Le Patourel\n- \"The Monastic Order of Saint-Evroul: A Study in the History of the",
+        "f1": 0.07142857142857142,
+        "f1_raw": 0.0
+      },
+      "snapkv_50": {
+        "answer": "Santia-Evroul monks did not establish a monastery in Italy. They established a Latin monastery at Santia-Evroul in France.",
+        "f1": 0.3,
+        "f1_raw": 0.27272727272727276
+      },
+      "h2o_50": {
+        "answer": "Monte Cassino\n\nReference(s):\nMonte Cassino was established by the Saint-Evroul monks in Italy. This is known because under the Norman abbot Robert de Nilnil, several monks from Saint-Evroul fled to Italy and established Monte Cassino. (Source:",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_50": {
+        "answer": "Monte Cassino\n\nExplanation:\nThe Saint-Evroul monks, who were known for their tradition of singing, were patronized by Robert Guiscard and established a monastery in Italy at Monte Cassino. This monastery was the first of the Benedictine monasteries to be founded",
+        "f1": 0.09999999999999999,
+        "f1_raw": 0.09090909090909091
+      },
+      "q2c_75": {
+        "answer": "Sant'Eufemia.",
+        "f1": 0.4,
+        "f1_raw": 0.4
+      },
+      "snapkv_75": {
+        "answer": "Sant'Evvlia\n\nReference(s):\nHistory of the Monastery of Saint-Evroul, by Dom Jean Mabillon, 1689\nThe Monastic Order of Saint Benedict: Its History, Spirituality, and Practices, by Dom David Knowles,",
+        "f1": 0.06666666666666668,
+        "f1_raw": 0.0625
+      },
+      "h2o_75": {
+        "answer": "Sant'Eustachio\n\nReference(s):\n- https://en.wikipedia.org/wiki/Saint-Evroul\n- https://en.wikipedia.org/wiki/Robert_de_Graville",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_75": {
+        "answer": "Sant'Eemia.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "time": 13.560254335403442
+    },
+    {
+      "idx": 4,
+      "gold": "11th",
+      "seq_len": 181,
+      "num_context": 160,
+      "full": {
+        "answer": "11th century",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666
+      },
+      "q2c_25": {
+        "answer": "11th century",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666
+      },
+      "snapkv_25": {
+        "answer": "11th century",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666
+      },
+      "h2o_25": {
+        "answer": "11th century.\n\nDetailed explanation:\n\nIn the 11th century, significant developments in classical music took place in Normandy, particularly at F\u00e9camp Abbey. Under the direction of Italian monk William, the abbey's musical production was developed, with notes, letters",
+        "f1": 0.05714285714285715,
+        "f1_raw": 0.052631578947368425
+      },
+      "random_25": {
+        "answer": "11th century",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666
+      },
+      "q2c_50": {
+        "answer": "11th century",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666
+      },
+      "snapkv_50": {
+        "answer": "11th century",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666
+      },
+      "h2o_50": {
+        "answer": "11th century",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666
+      },
+      "random_50": {
+        "answer": "11th century",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666
+      },
+      "q2c_75": {
+        "answer": "11th century",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666
+      },
+      "snapkv_75": {
+        "answer": "11th century",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666
+      },
+      "h2o_75": {
+        "answer": "11th century",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666
+      },
+      "random_75": {
+        "answer": "11th century",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666
+      },
+      "time": 3.5970778465270996
+    },
+    {
+      "idx": 5,
+      "gold": "King Ethelred II",
+      "seq_len": 170,
+      "num_context": 156,
+      "full": {
+        "answer": "King Ethelred II of England.",
+        "f1": 0.7499999999999999,
+        "f1_raw": 0.7499999999999999
+      },
+      "q2c_25": {
+        "answer": "Emma married King \u00c6thelred II of England.",
+        "f1": 0.4,
+        "f1_raw": 0.4
+      },
+      "snapkv_25": {
+        "answer": "Emma married King Ethelred II of England.",
+        "f1": 0.6,
+        "f1_raw": 0.6
+      },
+      "h2o_25": {
+        "answer": "Yes, Emma married King Ethelred II of England in 999 AD.\n\nDetailed answer:\nEmma of Normandy, also known as Emma of France, was the daughter of Richard I, Duke of Normandy, and Gunnor, daughter of King \u00c6thelw",
+        "f1": 0.15384615384615385,
+        "f1_raw": 0.15
+      },
+      "random_25": {
+        "answer": "Yes, Emma married Richard of Normandy.\n\nDetailed answer:\nEmma, also known as Emma of Normandy, was the daughter of Richard I, Duke of Normandy, and Gunnor of Brittany. She was born around 985 AD. In 1002",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_50": {
+        "answer": "Emma married King Ethelred II of England.",
+        "f1": 0.6,
+        "f1_raw": 0.6
+      },
+      "snapkv_50": {
+        "answer": "Emma married King Cnut the Great of England.",
+        "f1": 0.2,
+        "f1_raw": 0.18181818181818182
+      },
+      "h2o_50": {
+        "answer": "Yes, Emma married King \u00c6thelred II of England.",
+        "f1": 0.36363636363636365,
+        "f1_raw": 0.36363636363636365
+      },
+      "random_50": {
+        "answer": "Emma married King Ethelred II of England.",
+        "f1": 0.6,
+        "f1_raw": 0.6
+      },
+      "q2c_75": {
+        "answer": "Emma married King Ethelred II of England.",
+        "f1": 0.6,
+        "f1_raw": 0.6
+      },
+      "snapkv_75": {
+        "answer": "Emma married King Ethelred II of England.",
+        "f1": 0.6,
+        "f1_raw": 0.6
+      },
+      "h2o_75": {
+        "answer": "Emma married King Ethelred II of England.",
+        "f1": 0.6,
+        "f1_raw": 0.6
+      },
+      "random_75": {
+        "answer": "Emma married King Ethelred II of England.",
+        "f1": 0.6,
+        "f1_raw": 0.6
+      },
+      "time": 6.5118513107299805
+    },
+    {
+      "idx": 6,
+      "gold": "Guy de Lusignan",
+      "seq_len": 253,
+      "num_context": 231,
+      "full": {
+        "answer": "Guy de Lusignan.",
+        "f1": 1.0,
+        "f1_raw": 0.6666666666666666
+      },
+      "q2c_25": {
+        "answer": "Richard himself did not conquer Cyprus. The question refers to the conquest of an unspecified island, not Cyprus.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_25": {
+        "answer": "Guy of Lusignan.",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.3333333333333333
+      },
+      "h2o_25": {
+        "answer": "Guy de Lusignan led Richard's troops when Cyprus was conquered.",
+        "f1": 0.4615384615384615,
+        "f1_raw": 0.4615384615384615
+      },
+      "random_25": {
+        "answer": "Isaac Comnenus led Richard's troops when Cyprus was conquered.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_50": {
+        "answer": "Guy Lignan.",
+        "f1": 0.4,
+        "f1_raw": 0.4
+      },
+      "snapkv_50": {
+        "answer": "Guy de Lusignan.",
+        "f1": 1.0,
+        "f1_raw": 0.6666666666666666
+      },
+      "h2o_50": {
+        "answer": "Guy de Lusignan",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "random_50": {
+        "answer": "Richard Cam.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_75": {
+        "answer": "Guy de Lignan led Richard's troops when Cyprus was conquered.",
+        "f1": 0.30769230769230765,
+        "f1_raw": 0.30769230769230765
+      },
+      "snapkv_75": {
+        "answer": "Guy de Lignan led Richard's troops when Cyprus was conquered.",
+        "f1": 0.30769230769230765,
+        "f1_raw": 0.30769230769230765
+      },
+      "h2o_75": {
+        "answer": "Guy de Lusignan.",
+        "f1": 1.0,
+        "f1_raw": 0.6666666666666666
+      },
+      "random_75": {
+        "answer": "Guy de Lusignan led Richard's troops when Cyprus was conquered.",
+        "f1": 0.4615384615384615,
+        "f1_raw": 0.4615384615384615
+      },
+      "time": 4.61855411529541
+    },
+    {
+      "idx": 7,
+      "gold": "non-deterministic",
+      "seq_len": 140,
+      "num_context": 114,
+      "full": {
+        "answer": "A non-deterministic Turing machine can be characterized by checking multiple possibilities at the same time.",
+        "f1": 0.14285714285714288,
+        "f1_raw": 0.125
+      },
+      "q2c_25": {
+        "answer": "Parallel Turing machine",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_25": {
+        "answer": "A nondeterministic Turing machine can be characterized by checking multiple possibilities at the same time, as it allows for multiple states to be considered simultaneously during the computation.",
+        "f1": 0.07692307692307693,
+        "f1_raw": 0.0
+      },
+      "h2o_25": {
+        "answer": "Yes, a parallel Turing machine can be characterized by checking multiple possibilities at the same time. This is in contrast to a serial Turing machine, which processes one step at a time. Parallel Turing machines are more powerful than serial ones, but they are also more complex to analyze and construct.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_25": {
+        "answer": "Yes, a Turing machine can be designed to check multiple possibilities simultaneously. This is known as a nondeterministic Turing machine, which can simulate multiple computations in parallel and accept if any of the computations lead to an accepting state. However, it's important to note that determining whether",
+        "f1": 0.04545454545454545,
+        "f1_raw": 0.0
+      },
+      "q2c_50": {
+        "answer": "Non-deterministic Turing machine.",
+        "f1": 0.5,
+        "f1_raw": 0.5
+      },
+      "snapkv_50": {
+        "answer": "Non-deterministic Turing machine.",
+        "f1": 0.5,
+        "f1_raw": 0.5
+      },
+      "h2o_50": {
+        "answer": "Non-deterministic Turing machine.",
+        "f1": 0.5,
+        "f1_raw": 0.5
+      },
+      "random_50": {
+        "answer": "A parallel Turing machine can be characterized by checking multiple possibilities at the same time. This is in contrast to a serial Turing machine, which processes one step at a time. Parallel Turing machines are more powerful in terms of computational capabilities, but they are also more complex to design and analyze.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_75": {
+        "answer": "Non-deterministic Turing machine.",
+        "f1": 0.5,
+        "f1_raw": 0.5
+      },
+      "snapkv_75": {
+        "answer": "Non-deterministic Turing machine.",
+        "f1": 0.5,
+        "f1_raw": 0.5
+      },
+      "h2o_75": {
+        "answer": "Parallel Turing machine.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_75": {
+        "answer": "Non-deterministic Turing machine.\n\nExplanation:\nA non-deterministic Turing machine (NDTM) is a theoretical model of computation that can explore multiple possibilities simultaneously. Unlike a deterministic Turing machine (DTM), which follows a single, predetermined",
+        "f1": 0.0689655172413793,
+        "f1_raw": 0.06060606060606061
+      },
+      "time": 9.334057807922363
+    },
+    {
+      "idx": 8,
+      "gold": "Romanesque",
+      "seq_len": 100,
+      "num_context": 84,
+      "full": {
+        "answer": "The Norman architecture idiom is characterised by rounded arches, particularly over windows and doorways, and massive proportions.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_25": {
+        "answer": "The Norman architecture idiom is a unique Romanesque style that originated in Normandy, France, and was introduced to England in the 11th century. It is characterized by round arches, thick walls, and massive towers.",
+        "f1": 0.0625,
+        "f1_raw": 0.05714285714285715
+      },
+      "snapkv_25": {
+        "answer": "The Norman architecture idiom is characterized by rounded arches and massive structures.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_25": {
+        "answer": "Yes, Norman architecture is an idiom of architecture.\n\nExplanation:\n\nNorman architecture is a style of architecture that originated in the 11th century in Normandy, France, and was later introduced to England after the Norman Conquest in 1066. It is characterized",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_25": {
+        "answer": "Yes, Norman architecture is characterized by its heavy use of stone, round arches, and large towers, which were often used for military purposes in the regions where it was prevalent.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_50": {
+        "answer": "The Norman architecture idiom is characterized by round arches, thick walls, and decorative patterns, which originated in Normandy, France, and significantly influenced the architectural styles of England and Italy.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_50": {
+        "answer": "The Norman architecture idiom is the style of architecture characterised by rounded arches, particularly over windows and doorways, and massive proportions, which was popular in England during the Romanesque period.",
+        "f1": 0.07142857142857142,
+        "f1_raw": 0.06451612903225806
+      },
+      "h2o_50": {
+        "answer": "The Norman architecture idiom is characterized by rounded arches, thick walls, and large towers, which were brought to England, Italy, and other regions from Normandy, France.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_50": {
+        "answer": "Norman architecture is characterized by rounded arches, over windows and doors, and decorative columns known as \"colonnettes.\" This style was popular in the regions of England, France, and Wales during the Middle Ages and was influenced by the Normans, who brought it from their homeland in Normandy, France",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_75": {
+        "answer": "The Norman architecture idiom is a unique style characterised by rounded arches, thick walls, and decorative sculptures. It was popular in regions such as England and Italy, and significantly influenced the military landscape of these regions.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_75": {
+        "answer": "The Norman architecture idiom is characterized by rounded arches, particularly over windows and doorways, and massive proportions.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_75": {
+        "answer": "The Norman architecture idiom is characterized by rounded arches, particularly over windows, and is known for its influence on regions such as England and Italy. It is also associated with the construction of keeps in a French style.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_75": {
+        "answer": "The Norman architecture idiom is characterised by rounded arches, particularly over doorways, and heavy use of pions.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "time": 12.68997573852539
+    },
+    {
+      "idx": 9,
+      "gold": "inherent difficulty",
+      "seq_len": 112,
+      "num_context": 88,
+      "full": {
+        "answer": "Computational problems are classified by their time complexity, space complexity, or a combination of both. Time complexity refers to the amount of time an algorithm takes to solve a problem as a function of the size of the input, while space complexity refers to the amount of memory an algorithm uses to solve a problem as a function of",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_25": {
+        "answer": "By the amount of time or space required to solve the problem.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_25": {
+        "answer": "Computational problems are classified by their time complexity, space complexity, or a combination of both, using computational complexity theory.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_25": {
+        "answer": "The main attribute used to classify computational problems in computational complexity theory is their time complexity, which refers to the amount of time a given algorithm takes to solve a problem as a function of the size of the input. Other attributes include space complexity, which refers to the amount of memory used by an algorithm, and",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_25": {
+        "answer": "Mainly by the time complexity (big O notation) and space complexity (big O notation) of their algorithms.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_50": {
+        "answer": "Computational problems are classified by their time complexity, space complexity, or a combination of both. Time complexity refers to the number of steps or operations an algorithm takes to solve a problem, while space complexity refers to the amount of memory or storage an algorithm requires to solve a problem.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_50": {
+        "answer": "Computational problems are classified by their time complexity, space complexity, or a combination of both. Time complexity refers to the amount of time a given algorithm takes to solve a problem as a function of the size of the input, while space complexity refers to the amount of memory used by the algorithm.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_50": {
+        "answer": "Computational problems are classified by their time complexity, space complexity, or a combination of both.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_50": {
+        "answer": "Computational problems are classified based on their computational complexity, which refers to the amount of resources (time and space) required to solve the problem as a function of the size of the input. This classification helps in understanding the efficiency and feasibility of different algorithms for solving the same problem.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_75": {
+        "answer": "Computational problems are classified by their time complexity, space complexity, or a combination of both.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_75": {
+        "answer": "Computational problems are classified by their time complexity, space complexity, or a combination of both. Time complexity refers to the amount of time required to solve a problem as a function of the size of the input, while space complexity refers to the amount of memory required to solve a problem as a function of the size of the",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_75": {
+        "answer": "Computational problems are classified by their inherent difficulty, which is measured in terms of time and space complexity.",
+        "f1": 0.19999999999999998,
+        "f1_raw": 0.09999999999999999
+      },
+      "random_75": {
+        "answer": "Computational problems are classified by their inherent difficulty, which is measured in terms of time and space complexity.",
+        "f1": 0.19999999999999998,
+        "f1_raw": 0.09999999999999999
+      },
+      "time": 12.61398696899414
+    },
+    {
+      "idx": 10,
+      "gold": "yes",
+      "seq_len": 164,
+      "num_context": 144,
+      "full": {
+        "answer": "The answer that denotes that an algorithm has accepted an input string is yes or 1.",
+        "f1": 0.14285714285714288,
+        "f1_raw": 0.11764705882352941
+      },
+      "q2c_25": {
+        "answer": "The answer is \"yes\". In the context of decision problems, when an algorithm accepts an input string, it returns \"yes\".",
+        "f1": 0.11764705882352941,
+        "f1_raw": 0.0
+      },
+      "snapkv_25": {
+        "answer": "\"Yes\" denotes that an algorithm has accepted an input string.",
+        "f1": 0.2222222222222222,
+        "f1_raw": 0.0
+      },
+      "h2o_25": {
+        "answer": "Yes, the answer \"yes\" denotes that an algorithm has accepted an input string, meaning the input string is a member of the language defined by the decision problem.",
+        "f1": 0.0909090909090909,
+        "f1_raw": 0.0
+      },
+      "random_25": {
+        "answer": "Yes, the answer denotes that an algorithm has accepted an input string. If the algorithm returns the answer, it means that the input string is accepted by the formal language under consideration. If the algorithm does not return an answer (i.e., it rejects the input), it means that the input string is not accepted",
+        "f1": 0.04545454545454545,
+        "f1_raw": 0.0
+      },
+      "q2c_50": {
+        "answer": "Yes.",
+        "f1": 1.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_50": {
+        "answer": "Yes.",
+        "f1": 1.0,
+        "f1_raw": 0.0
+      },
+      "h2o_50": {
+        "answer": "Yes, if the algorithm returns yes, it has accepted the input string.",
+        "f1": 0.18181818181818182,
+        "f1_raw": 0.0
+      },
+      "random_50": {
+        "answer": "Yes.",
+        "f1": 1.0,
+        "f1_raw": 0.0
+      },
+      "q2c_75": {
+        "answer": "The answer \"yes\" or \"1\" denotes that an algorithm has accepted an input string.",
+        "f1": 0.16666666666666669,
+        "f1_raw": 0.0
+      },
+      "snapkv_75": {
+        "answer": "The answer \"1\" denotes that an algorithm has accepted an input string.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_75": {
+        "answer": "The answer that denotes an algorithm has accepted an input string is \"yes\" or \"1\".",
+        "f1": 0.15384615384615385,
+        "f1_raw": 0.0
+      },
+      "random_75": {
+        "answer": "The answer that denotes an algorithm has accepted an input string is \"yes\".",
+        "f1": 0.18181818181818182,
+        "f1_raw": 0.0
+      },
+      "time": 6.514352321624756
+    },
+    {
+      "idx": 11,
+      "gold": "Seine",
+      "seq_len": 241,
+      "num_context": 225,
+      "full": {
+        "answer": "The river Epte originally bounded the Duchy.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_25": {
+        "answer": "The river Epte originally bounded the Duchy of Normandy.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_25": {
+        "answer": "The Seine River originally bounded the Duchy of Normandy.",
+        "f1": 0.25,
+        "f1_raw": 0.19999999999999998
+      },
+      "h2o_25": {
+        "answer": "The Duchy of Normandy was initially bounded by a river, which was the original boundary. This river was not specified in the question.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_25": {
+        "answer": "The text discusses the encampments of the Roman army in France, specifically in the Upper Seine and Seine provinces. These encampments were established to protect local women and their property from potential threats. One of the most famous of these encampments was situated in the Lugdunum (",
+        "f1": 0.04878048780487806,
+        "f1_raw": 0.04166666666666667
+      },
+      "q2c_50": {
+        "answer": "The river Epte originally bounded the Duchy.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_50": {
+        "answer": "The river Epte originally bounded the Duchy.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_50": {
+        "answer": "Seine",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "random_50": {
+        "answer": "The original river that bounded the Duchy was the Seine.",
+        "f1": 0.25,
+        "f1_raw": 0.0
+      },
+      "q2c_75": {
+        "answer": "The river Epte originally bounded the Duchy of Normandy.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_75": {
+        "answer": "The river Epte originally bounded the Duchy of Normandy.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_75": {
+        "answer": "The river Epte originally bounded the Duchy of Normandy.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_75": {
+        "answer": "The Epte river originally bounded the Duchy of Normandy.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "time": 6.163679838180542
+    },
+    {
+      "idx": 12,
+      "gold": "1041",
+      "seq_len": 189,
+      "num_context": 176,
+      "full": {
+        "answer": "Edward returned in 1041.",
+        "f1": 0.4,
+        "f1_raw": 0.0
+      },
+      "q2c_25": {
+        "answer": "In 1041",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666
+      },
+      "snapkv_25": {
+        "answer": "Edward returned in 1052.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_25": {
+        "answer": "Edward the Confessor returned from his Norman refuge in 1041.\n\nDetailed answer: Edward the Confessor, the King of England from 1042 until his death in 1066, had been sent into exile in Normandy by his brother-in-",
+        "f1": 0.05882352941176471,
+        "f1_raw": 0.0
+      },
+      "random_25": {
+        "answer": "Yes, Edward returned from his refuge in 1141.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_50": {
+        "answer": "Edward returned in 1041.",
+        "f1": 0.4,
+        "f1_raw": 0.0
+      },
+      "snapkv_50": {
+        "answer": "Edward returned in 1041.",
+        "f1": 0.4,
+        "f1_raw": 0.0
+      },
+      "h2o_50": {
+        "answer": "Yes, Edward returned.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_50": {
+        "answer": "Edward returned to his father's refuge in 1042.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_75": {
+        "answer": "Edward returned in 1041.",
+        "f1": 0.4,
+        "f1_raw": 0.0
+      },
+      "snapkv_75": {
+        "answer": "Edward returned in 1041.",
+        "f1": 0.4,
+        "f1_raw": 0.0
+      },
+      "h2o_75": {
+        "answer": "Yes, Edward returned in 1041.",
+        "f1": 0.33333333333333337,
+        "f1_raw": 0.0
+      },
+      "random_75": {
+        "answer": "Edward returned in 1044.\n\nContext: When finally Edward the Confessor returned his father's refuge 1044, the invitation of half-brother Harald Hardrada he him a Norman-educated mind. He also brought many Norman counsellors and fighters",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "time": 6.317407608032227
+    },
+    {
+      "idx": 13,
+      "gold": "9th century",
+      "seq_len": 121,
+      "num_context": 101,
+      "full": {
+        "answer": "The Latin version of the word \"Norman\" was first recorded in the 9th century.",
+        "f1": 0.3076923076923077,
+        "f1_raw": 0.125
+      },
+      "q2c_25": {
+        "answer": "The Latin version of the word \"Norman\" was first recorded in the 11th century.",
+        "f1": 0.15384615384615385,
+        "f1_raw": 0.0
+      },
+      "snapkv_25": {
+        "answer": "12th century",
+        "f1": 0.5,
+        "f1_raw": 0.5
+      },
+      "h2o_25": {
+        "answer": "Yes, the Latin version of the word Norman, Normannus, was first recorded.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_25": {
+        "answer": "The Latin version of the word Norman was first recorded in the 11th century.",
+        "f1": 0.15384615384615385,
+        "f1_raw": 0.0
+      },
+      "q2c_50": {
+        "answer": "The Latin version of the word \"Norman\" was first recorded in the 9th century.",
+        "f1": 0.3076923076923077,
+        "f1_raw": 0.125
+      },
+      "snapkv_50": {
+        "answer": "The Latin version of the word \"Norman\" was first recorded in the 9th century.",
+        "f1": 0.3076923076923077,
+        "f1_raw": 0.125
+      },
+      "h2o_50": {
+        "answer": "Yes, the Latinized version of the word Norman was first recorded as \"Nortus\" in the 11th century.",
+        "f1": 0.125,
+        "f1_raw": 0.0
+      },
+      "random_50": {
+        "answer": "The Latin version of the word Norman was first recorded in the 11th century.",
+        "f1": 0.15384615384615385,
+        "f1_raw": 0.0
+      },
+      "q2c_75": {
+        "answer": "The Latin version of the word \"Norman\" was first recorded in the 9th century.",
+        "f1": 0.3076923076923077,
+        "f1_raw": 0.125
+      },
+      "snapkv_75": {
+        "answer": "The Latin version of the word \"Norman\" was first recorded in the 9th century.",
+        "f1": 0.3076923076923077,
+        "f1_raw": 0.125
+      },
+      "h2o_75": {
+        "answer": "The Latin version of the word Norman was first recorded in the 9th century.",
+        "f1": 0.3076923076923077,
+        "f1_raw": 0.125
+      },
+      "random_75": {
+        "answer": "The Latin version of the word \"Norman\" was first recorded in the 9th century.",
+        "f1": 0.3076923076923077,
+        "f1_raw": 0.125
+      },
+      "time": 6.49200439453125
+    },
+    {
+      "idx": 14,
+      "gold": "1060s",
+      "seq_len": 169,
+      "num_context": 149,
+      "full": {
+        "answer": "In the 1060s.",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.0
+      },
+      "q2c_25": {
+        "answer": "In 1147.\nAnswer in full: Robert Crispin, a Norman general, led a force of Normans and other European crusaders in the Siege of Edessa in 1147, where they faced the Turks. This event took place during the Second Crusade",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_25": {
+        "answer": "In 1111.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_25": {
+        "answer": "Yes, Robert Crispin, a Norman mercenary, led his forces against the Turks in the 12th century, particularly during the Crusades.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_25": {
+        "answer": "Yes, Robert Crispin served as a Byzantine general and fought against the Turks in the Byzantine-Turkish wars of the 14th century. Specifically, he fought under the command of Alexios Apokaukos in the Battle of Gallipoli in 135",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_50": {
+        "answer": "In the 1160s.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_50": {
+        "answer": "In the 1160s.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_50": {
+        "answer": "Yes, Robert Crispin led Normans against the Turks in 1166 at Esses.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_50": {
+        "answer": "Robert Crispin fought against the Turks in the 11th century, specifically in 1097 during the First Crusade.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_75": {
+        "answer": "In the 1060s.",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.0
+      },
+      "snapkv_75": {
+        "answer": "In the 1060s.",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.0
+      },
+      "h2o_75": {
+        "answer": "In the 1160s.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_75": {
+        "answer": "Robert Crispin went up against the Turks in the 1060s.\n\nDetailed answer:\nRobert Crispin, a French mercenary, led a group of soldiers from Edessa, a city in the Byzantine Empire, in the 1060s.",
+        "f1": 0.07407407407407407,
+        "f1_raw": 0.0
+      },
+      "time": 8.878092765808105
+    },
+    {
+      "idx": 15,
+      "gold": "Tancred",
+      "seq_len": 161,
+      "num_context": 140,
+      "full": {
+        "answer": "Tancred",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "q2c_25": {
+        "answer": "Tancred.",
+        "f1": 1.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_25": {
+        "answer": "Bohemond's nephew was Tancred.",
+        "f1": 0.4,
+        "f1_raw": 0.0
+      },
+      "h2o_25": {
+        "answer": "Yes, Bohemond's nephew was named Tancred.",
+        "f1": 0.2857142857142857,
+        "f1_raw": 0.0
+      },
+      "random_25": {
+        "answer": "Yes, Tancred was Bohemond's nephew.",
+        "f1": 0.33333333333333337,
+        "f1_raw": 0.33333333333333337
+      },
+      "q2c_50": {
+        "answer": "Tancred.",
+        "f1": 1.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_50": {
+        "answer": "Tancred.",
+        "f1": 1.0,
+        "f1_raw": 0.0
+      },
+      "h2o_50": {
+        "answer": "Tancred.",
+        "f1": 1.0,
+        "f1_raw": 0.0
+      },
+      "random_50": {
+        "answer": "Yes, Bohemond's nephew was Tancred.",
+        "f1": 0.33333333333333337,
+        "f1_raw": 0.0
+      },
+      "q2c_75": {
+        "answer": "Tancred\n\nReference(s):\n[citation needed]",
+        "f1": 0.4,
+        "f1_raw": 0.4
+      },
+      "snapkv_75": {
+        "answer": "Tancred\n\nReference(s):\n[citation needed]",
+        "f1": 0.4,
+        "f1_raw": 0.4
+      },
+      "h2o_75": {
+        "answer": "Tancred",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "random_75": {
+        "answer": "Tancred.",
+        "f1": 1.0,
+        "f1_raw": 0.0
+      },
+      "time": 3.4164185523986816
+    },
+    {
+      "idx": 16,
+      "gold": "binary notation",
+      "seq_len": 136,
+      "num_context": 109,
+      "full": {
+        "answer": "Integers are commonly expressed in binary notation.\n\nFor more information, see the Wikipedia article on Binary numeral system.",
+        "f1": 0.21052631578947367,
+        "f1_raw": 0.09999999999999999
+      },
+      "q2c_25": {
+        "answer": "Integers are commonly expressed in binary notation.",
+        "f1": 0.4444444444444445,
+        "f1_raw": 0.22222222222222224
+      },
+      "snapkv_25": {
+        "answer": "In binary notation.",
+        "f1": 0.8,
+        "f1_raw": 0.4
+      },
+      "h2o_25": {
+        "answer": "Integers are commonly expressed in base 10 positional notation, using digits 0-9.",
+        "f1": 0.14285714285714285,
+        "f1_raw": 0.0
+      },
+      "random_25": {
+        "answer": "Integers are commonly expressed in binary as a string of 0s and 1s, where the most significant bit (MSB) represents the highest power of 2 and the least significant bit (LSB) represents the lowest power of 2. For example, the integer 5 (decimal)",
+        "f1": 0.05128205128205129,
+        "f1_raw": 0.04444444444444444
+      },
+      "q2c_50": {
+        "answer": "Integers are commonly expressed in binary notation.",
+        "f1": 0.4444444444444445,
+        "f1_raw": 0.22222222222222224
+      },
+      "snapkv_50": {
+        "answer": "Integers are commonly expressed in binary notation.",
+        "f1": 0.4444444444444445,
+        "f1_raw": 0.22222222222222224
+      },
+      "h2o_50": {
+        "answer": "Integers are commonly expressed in binary using bitstrings. For example, the integer 5 can be expressed as the bitstring 101.",
+        "f1": 0.09999999999999999,
+        "f1_raw": 0.09090909090909091
+      },
+      "random_50": {
+        "answer": "Integers are commonly expressed using the decimal system, which uses digits from 0 to 9 to represent values from 0 to 9999 and beyond. This system is based on powers of 10.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_75": {
+        "answer": "Integers are commonly expressed in binary notation.",
+        "f1": 0.4444444444444445,
+        "f1_raw": 0.22222222222222224
+      },
+      "snapkv_75": {
+        "answer": "Integers are commonly expressed in binary notation.",
+        "f1": 0.4444444444444445,
+        "f1_raw": 0.22222222222222224
+      },
+      "h2o_75": {
+        "answer": "Integers are commonly expressed in binary notation.\n\nExplanation:\n\nIn computer science, integers are often represented in binary notation, which is a positional notation with a base of 2. This is because computers use binary digits, or bits, to store and process information. Each digit",
+        "f1": 0.0909090909090909,
+        "f1_raw": 0.08695652173913045
+      },
+      "random_75": {
+        "answer": "Integers are commonly expressed in binary notation, where each digit represents the power of 2 that the integer is multiplied by, starting from the rightmost digit (least significant bit) and moving to the leftmost digit (most significant bit). For example, the binary representation of the integer 13 is",
+        "f1": 0.0909090909090909,
+        "f1_raw": 0.039999999999999994
+      },
+      "time": 9.698304891586304
+    },
+    {
+      "idx": 17,
+      "gold": "rounded",
+      "seq_len": 102,
+      "num_context": 84,
+      "full": {
+        "answer": "Norman architecture typically has rounded arches.",
+        "f1": 0.2857142857142857,
+        "f1_raw": 0.2857142857142857
+      },
+      "q2c_25": {
+        "answer": "Norman architecture typically has rounded arches, particularly over doorways and windows.",
+        "f1": 0.16666666666666669,
+        "f1_raw": 0.16666666666666669
+      },
+      "snapkv_25": {
+        "answer": "Norman architecture has rounded arches.",
+        "f1": 0.33333333333333337,
+        "f1_raw": 0.33333333333333337
+      },
+      "h2o_25": {
+        "answer": "Norman architecture typically features rounded arches.",
+        "f1": 0.2857142857142857,
+        "f1_raw": 0.2857142857142857
+      },
+      "random_25": {
+        "answer": "Norman architecture is characterized by large, rounded arches with a pronounced keystone and thick, short columns. These arches are often semi-circular or pointed, and are a key feature of many Norman churches and castles.",
+        "f1": 0.06060606060606061,
+        "f1_raw": 0.05714285714285715
+      },
+      "q2c_50": {
+        "answer": "Norman architecture has rounded arches.",
+        "f1": 0.33333333333333337,
+        "f1_raw": 0.33333333333333337
+      },
+      "snapkv_50": {
+        "answer": "Norman architecture has rounded arches.",
+        "f1": 0.33333333333333337,
+        "f1_raw": 0.33333333333333337
+      },
+      "h2o_50": {
+        "answer": "Norman architecture typically has rounded arches.",
+        "f1": 0.2857142857142857,
+        "f1_raw": 0.2857142857142857
+      },
+      "random_50": {
+        "answer": "Norman architecture primarily features rounded arches, particularly over doorways and windows.",
+        "f1": 0.16666666666666669,
+        "f1_raw": 0.16666666666666669
+      },
+      "q2c_75": {
+        "answer": "Norman architecture typically has rounded arches.",
+        "f1": 0.2857142857142857,
+        "f1_raw": 0.2857142857142857
+      },
+      "snapkv_75": {
+        "answer": "Norman architecture typically has rounded arches.",
+        "f1": 0.2857142857142857,
+        "f1_raw": 0.2857142857142857
+      },
+      "h2o_75": {
+        "answer": "Norman architecture typically has rounded arches.",
+        "f1": 0.2857142857142857,
+        "f1_raw": 0.2857142857142857
+      },
+      "random_75": {
+        "answer": "Norman architecture typically features rounded arches.",
+        "f1": 0.2857142857142857,
+        "f1_raw": 0.2857142857142857
+      },
+      "time": 4.332374811172485
+    },
+    {
+      "idx": 18,
+      "gold": "1097",
+      "seq_len": 160,
+      "num_context": 140,
+      "full": {
+        "answer": "The Siege of Antioch took place in 1097.",
+        "f1": 0.25,
+        "f1_raw": 0.0
+      },
+      "q2c_25": {
+        "answer": "In 107.\nAnswer fully: The Siege of Antioch took place in 107. It was a siege of the city of Antioch, which is located in modern-day Turkey. The siege occurred during the First Crusade, a military campaign that was",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_25": {
+        "answer": "The Siege of Antioch took place in 1097-1098 during the First Crusade.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_25": {
+        "answer": "Yes, the Siege of Antioch took place in 1098 during the First Crusade.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_25": {
+        "answer": "Yes, the Siege of Antioch took place in 1097-1098 during the First Crusade.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_50": {
+        "answer": "The Siege of Antioch took place in 1097.",
+        "f1": 0.25,
+        "f1_raw": 0.0
+      },
+      "snapkv_50": {
+        "answer": "In 1097.",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.0
+      },
+      "h2o_50": {
+        "answer": "In 1097-1098\n\nDetailed explanation:\nThe Siege of Antioch took place during the First Crusade, specifically from June 1097 to June 1098. The Crusaders, led by Bohemond of Taranto and",
+        "f1": 0.07407407407407407,
+        "f1_raw": 0.06666666666666667
+      },
+      "random_50": {
+        "answer": "In 1097.\nAnswer in full: The Siege of Antioch took place in 1097 during the First Crusade. The city was besieged by the army of Bohemond of Taranto and his nephew Tancred, who were joined by the",
+        "f1": 0.06060606060606061,
+        "f1_raw": 0.052631578947368425
+      },
+      "q2c_75": {
+        "answer": "The Siege of Antioch took place in 1097.",
+        "f1": 0.25,
+        "f1_raw": 0.0
+      },
+      "snapkv_75": {
+        "answer": "The Siege of Antioch took place in 1097.",
+        "f1": 0.25,
+        "f1_raw": 0.0
+      },
+      "h2o_75": {
+        "answer": "The Siege of Antioch took place in 1097.",
+        "f1": 0.25,
+        "f1_raw": 0.0
+      },
+      "random_75": {
+        "answer": "The Siege of Antioch took place in 1098.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "time": 9.789991855621338
+    },
+    {
+      "idx": 19,
+      "gold": "A probabilistic Turing machine",
+      "seq_len": 247,
+      "num_context": 220,
+      "full": {
+        "answer": "Probabilistic Turing machine.",
+        "f1": 1.0,
+        "f1_raw": 0.5714285714285715
+      },
+      "q2c_25": {
+        "answer": "Probabilistic Turing machine.",
+        "f1": 1.0,
+        "f1_raw": 0.5714285714285715
+      },
+      "snapkv_25": {
+        "answer": "Probabilistic Turing machine\nAnswer fully: A Probabilistic Turing machine is a Turing machine that has the ability to use random bits in addition to the deterministic rules. This allows the machine to make decisions based on the randomness of the bits, rather than just following a fixed set",
+        "f1": 0.13953488372093023,
+        "f1_raw": 0.15384615384615385
+      },
+      "h2o_25": {
+        "answer": "A probabilistic Turing machine.",
+        "f1": 1.0,
+        "f1_raw": 0.75
+      },
+      "random_25": {
+        "answer": "Yes, such a machine is called a Randomized Turing Machine.",
+        "f1": 0.36363636363636365,
+        "f1_raw": 0.4285714285714285
+      },
+      "q2c_50": {
+        "answer": "Probabilistic Turing machine.",
+        "f1": 1.0,
+        "f1_raw": 0.5714285714285715
+      },
+      "snapkv_50": {
+        "answer": "Probabilistic Turing machine.",
+        "f1": 1.0,
+        "f1_raw": 0.5714285714285715
+      },
+      "h2o_50": {
+        "answer": "No, the term used to identify a deterministic Turing machine with additional random bits is a probabilistic Turing machine.",
+        "f1": 0.3157894736842105,
+        "f1_raw": 0.34782608695652173
+      },
+      "random_50": {
+        "answer": "A probabilistic Turing machine.",
+        "f1": 1.0,
+        "f1_raw": 0.75
+      },
+      "q2c_75": {
+        "answer": "Probabilistic Turing machine.",
+        "f1": 1.0,
+        "f1_raw": 0.5714285714285715
+      },
+      "snapkv_75": {
+        "answer": "Probabilistic Turing machine.",
+        "f1": 1.0,
+        "f1_raw": 0.5714285714285715
+      },
+      "h2o_75": {
+        "answer": "Probabilistic Turing machine.",
+        "f1": 1.0,
+        "f1_raw": 0.5714285714285715
+      },
+      "random_75": {
+        "answer": "Probabilistic Turing Machine.",
+        "f1": 1.0,
+        "f1_raw": 0.5714285714285715
+      },
+      "time": 5.326261043548584
+    },
+    {
+      "idx": 20,
+      "gold": "Dyrrachium",
+      "seq_len": 102,
+      "num_context": 87,
+      "full": {
+        "answer": "Dyrrachium\n\nSource:\n\n- The Byzantine Empire 1025-1204: A Political History, by John H. Rosser, p. 180.\n- The Byzantine Empire, by John Julius Norwich, p. 3",
+        "f1": 0.0909090909090909,
+        "f1_raw": 0.07407407407407407
+      },
+      "q2c_25": {
+        "answer": "Dyrrhium",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_25": {
+        "answer": "Scylla and Charybdis.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_25": {
+        "answer": "The naval base called Dyrrhium was known as the \"Portus Iustinianus.\" It was built by Emperor Justinian I in the 6th century.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_25": {
+        "answer": "Pearl Harbor",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_50": {
+        "answer": "Dyrrachium.",
+        "f1": 1.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_50": {
+        "answer": "Dyrrachium.",
+        "f1": 1.0,
+        "f1_raw": 0.0
+      },
+      "h2o_50": {
+        "answer": "Dyrrachium\n\nReference(s):\nhttps://en.wikipedia.org/wiki/Dyrrhachium\n\nNote:\nThe naval base was called Dyrrachium, which is the modern name for the city of Durr\u00ebs in Albania. The city was an important",
+        "f1": 0.08695652173913045,
+        "f1_raw": 0.07142857142857142
+      },
+      "random_50": {
+        "answer": "Dyrrachium (Durres, Albania) was the naval base.",
+        "f1": 0.2857142857142857,
+        "f1_raw": 0.25
+      },
+      "q2c_75": {
+        "answer": "Dyrrachium\n\nReference(s):\nThe decline of the Byzantine state, p. 102\n\nExplanation:\nThe question asks for the name of a naval base that was invaded and later recaptured by the Byzantine Empire. The answer is Dyrr",
+        "f1": 0.0689655172413793,
+        "f1_raw": 0.05555555555555556
+      },
+      "snapkv_75": {
+        "answer": "Dyrrachium\n\nReference(s):\n1. \"The Byzantine Empire 1025-1204: A Political History\" by John H. Rosser\n2. \"The Byzantine Navy and the Mediterranean, 565-1204\" by",
+        "f1": 0.1,
+        "f1_raw": 0.08333333333333333
+      },
+      "h2o_75": {
+        "answer": "Dyrrachium\n\nQuestion: What was the name of the city that was a significant naval base in Byzantine Empire?\nAnswer: Dyrrachium\n\nQuestion: What was the name of the city that was a significant naval base in the Byzantine Empire and was invaded by the",
+        "f1": 0.05555555555555556,
+        "f1_raw": 0.04545454545454545
+      },
+      "random_75": {
+        "answer": "Rachium",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "time": 10.266332387924194
+    },
+    {
+      "idx": 21,
+      "gold": "an algorithm",
+      "seq_len": 237,
+      "num_context": 209,
+      "full": {
+        "answer": "A Turing machine can solve anything that can be solved by an algorithm.",
+        "f1": 0.16666666666666669,
+        "f1_raw": 0.13333333333333336
+      },
+      "q2c_25": {
+        "answer": "Algorithm or a mathematical algorithm.",
+        "f1": 0.4,
+        "f1_raw": 0.28571428571428575
+      },
+      "snapkv_25": {
+        "answer": "A Turing machine can solve anything that can be solved by an algorithm.",
+        "f1": 0.16666666666666669,
+        "f1_raw": 0.13333333333333336
+      },
+      "h2o_25": {
+        "answer": "Anything that can be solved by a general-purpose computer.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_25": {
+        "answer": "Anything that can be solved by a algorithm.",
+        "f1": 0.25,
+        "f1_raw": 0.0
+      },
+      "q2c_50": {
+        "answer": "A Turing machine can solve anything capable of being solved using a RAM machine or any other model of computation we have today.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_50": {
+        "answer": "A Turing machine can solve anything that can be solved using an algorithm.",
+        "f1": 0.16666666666666669,
+        "f1_raw": 0.13333333333333336
+      },
+      "h2o_50": {
+        "answer": "Anything that can be solved by an algorithm.\n\nDetailed explanation:\nA Turing machine is a theoretical model of a general computing machine that manipulates symbols on a strip tape. It is not intended as a practical computing technology, but as a representation of any computing machine. The Church-Turing thesis states",
+        "f1": 0.046511627906976744,
+        "f1_raw": 0.038461538461538464
+      },
+      "random_50": {
+        "answer": "Anything capable of being solved using a Turing machine can also be solved using a computer.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_75": {
+        "answer": "A Turing machine can solve anything capable of being solved using a RAM machine.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_75": {
+        "answer": "A Turing machine can solve anything capable of being solved using any other model of computation known today.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_75": {
+        "answer": "A Turing machine can solve anything that can be solved by an algorithm.",
+        "f1": 0.16666666666666669,
+        "f1_raw": 0.13333333333333336
+      },
+      "random_75": {
+        "answer": "A Turing machine can solve anything capable of being solved using a RAM machine.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "time": 6.914344787597656
+    },
+    {
+      "idx": 22,
+      "gold": "Bohemond",
+      "seq_len": 211,
+      "num_context": 196,
+      "full": {
+        "answer": "Bohemond.",
+        "f1": 1.0,
+        "f1_raw": 0.0
+      },
+      "q2c_25": {
+        "answer": "Bohemond.",
+        "f1": 1.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_25": {
+        "answer": "The question does not provide enough context to determine who Robert's son is.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_25": {
+        "answer": "Yes, Robert Guiscard's son was Bohemond.",
+        "f1": 0.2857142857142857,
+        "f1_raw": 0.0
+      },
+      "random_25": {
+        "answer": "Yes, Robert's son was William the Conqueror.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_50": {
+        "answer": "Bohemond.",
+        "f1": 1.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_50": {
+        "answer": "Boond.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_50": {
+        "answer": "Yes, Boond was Robert's son.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_50": {
+        "answer": "Robert's son was William II of England.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_75": {
+        "answer": "Bohemond.",
+        "f1": 1.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_75": {
+        "answer": "Bohemond.",
+        "f1": 1.0,
+        "f1_raw": 0.0
+      },
+      "h2o_75": {
+        "answer": "Bohemond",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "random_75": {
+        "answer": "Boond.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "time": 3.052475690841675
+    },
+    {
+      "idx": 23,
+      "gold": "the Turing machine",
+      "seq_len": 229,
+      "num_context": 209,
+      "full": {
+        "answer": "Turing machine\n\nDetailed explanation:\n\nIn complexity theory, a Turing machine is the most commonly used model to study the computational complexity of algorithms. It is a theoretical device that manipulates symbols on a strip of tape, and it is believed that if a problem can be solved by an algorithm,",
+        "f1": 0.08888888888888888,
+        "f1_raw": 0.11320754716981131
+      },
+      "q2c_25": {
+        "answer": "Turing machine.",
+        "f1": 1.0,
+        "f1_raw": 0.4
+      },
+      "snapkv_25": {
+        "answer": "Turing machine.",
+        "f1": 1.0,
+        "f1_raw": 0.4
+      },
+      "h2o_25": {
+        "answer": "Yes, the Turing machine is the most commonly used model in complexity theory.",
+        "f1": 0.3076923076923077,
+        "f1_raw": 0.375
+      },
+      "random_25": {
+        "answer": "Turing Machine.",
+        "f1": 1.0,
+        "f1_raw": 0.4
+      },
+      "q2c_50": {
+        "answer": "Turing machine.",
+        "f1": 1.0,
+        "f1_raw": 0.4
+      },
+      "snapkv_50": {
+        "answer": "Turing machine.",
+        "f1": 1.0,
+        "f1_raw": 0.4
+      },
+      "h2o_50": {
+        "answer": "Yes, the Turing machine is the most commonplace model utilized in complexity theory.",
+        "f1": 0.3076923076923077,
+        "f1_raw": 0.375
+      },
+      "random_50": {
+        "answer": "The most commonplace model utilized in complexity theory is the Random Access Machine (RAM).",
+        "f1": 0.14285714285714285,
+        "f1_raw": 0.23529411764705882
+      },
+      "q2c_75": {
+        "answer": "Turing machine.",
+        "f1": 1.0,
+        "f1_raw": 0.4
+      },
+      "snapkv_75": {
+        "answer": "Turing machine.",
+        "f1": 1.0,
+        "f1_raw": 0.4
+      },
+      "h2o_75": {
+        "answer": "Turing machine.",
+        "f1": 1.0,
+        "f1_raw": 0.4
+      },
+      "random_75": {
+        "answer": "The Turing machine is the most commonplace model utilized in complexity theory.",
+        "f1": 0.33333333333333337,
+        "f1_raw": 0.4
+      },
+      "time": 4.78432559967041
+    },
+    {
+      "idx": 24,
+      "gold": "rules",
+      "seq_len": 243,
+      "num_context": 220,
+      "full": {
+        "answer": "The fixed set of factors that determine the actions of a deterministic Turing machine are the current state, the symbol under the read/write head, and the transition rule for that state and symbol.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_25": {
+        "answer": "The fixed set of rules that determine the actions of a deterministic Turing machine are its transition function, start state, and set of states. The transition function specifies the next state and movement of the read/write head based on the current state and symbol read. The start state is the initial state from which the",
+        "f1": 0.04347826086956522,
+        "f1_raw": 0.03571428571428572
+      },
+      "snapkv_25": {
+        "answer": "The fixed set of factors that determine the actions of a deterministic Turing machine are the initial state, input, transition table, and blank symbol.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_25": {
+        "answer": "A deterministic Turing machine has a fixed set of rules that determine its actions.",
+        "f1": 0.15384615384615385,
+        "f1_raw": 0.13333333333333333
+      },
+      "random_25": {
+        "answer": "A deterministic Turing machine is a mathematical model of a computer that operates based on a fixed set of rules. Its actions are determined by a set of factors, and it does not have the ability to make random decisions or handle uncertainty like a non-deterministic Turing machine.",
+        "f1": 0.047619047619047616,
+        "f1_raw": 0.0
+      },
+      "q2c_50": {
+        "answer": "The fixed set of factors that determine the actions of a deterministic Turing machine are its current state, the symbol read from the tape, and the transition rule associated with the current state and symbol.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_50": {
+        "answer": "The fixed set of factors that determine the actions of a deterministic Turing machine are the current state, the symbol read from the tape, and the transition rule for that state and symbol.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_50": {
+        "answer": "Yes, a deterministic Turing machine follows a fixed set of rules to determine its actions.",
+        "f1": 0.14285714285714288,
+        "f1_raw": 0.125
+      },
+      "random_50": {
+        "answer": "The actions of a deterministic Turing machine are determined by its initial state, input, and a set of rules (transition function) that specify the next state and movement of the tape head based on the current state and symbol under the tape head.",
+        "f1": 0.05405405405405406,
+        "f1_raw": 0.04545454545454545
+      },
+      "q2c_75": {
+        "answer": "The fixed set of factors that determine the actions of a deterministic Turing machine are the current state, the symbol under the read/write head, and the transition rule for that state and symbol.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_75": {
+        "answer": "The fixed set of factors that determine the actions of a deterministic Turing machine are the initial state, the input, and the transition rules.",
+        "f1": 0.10526315789473684,
+        "f1_raw": 0.0
+      },
+      "h2o_75": {
+        "answer": "The actions of a deterministic Turing machine are determined by its current state, the symbol read from the tape, and the transition rule associated with the current state.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_75": {
+        "answer": "A deterministic Turing machine follows a fixed set of rules that determine its actions based on the current state and the symbol read from the tape.",
+        "f1": 0.0909090909090909,
+        "f1_raw": 0.07407407407407407
+      },
+      "time": 12.870046615600586
+    },
+    {
+      "idx": 25,
+      "gold": "state transitions",
+      "seq_len": 234,
+      "num_context": 207,
+      "full": {
+        "answer": "The time required to output an answer on a deterministic Turing machine is the total number of state transitions, or steps, the machine makes before it halts and outputs the answer.",
+        "f1": 0.14814814814814814,
+        "f1_raw": 0.06060606060606061
+      },
+      "q2c_25": {
+        "answer": "The time required to output an answer on a deterministic Turing machine is expressed as the function f(n) that gives the maximum number of steps taken by the machine on any input of length n.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_25": {
+        "answer": "The time required to output an answer on a deterministic Turing machine is expressed as a function of the input size, denoted by f(n).",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_25": {
+        "answer": "The time required to output an answer on a deterministic Turing machine is expressed as a function of the input size, denoted as f(n).",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_25": {
+        "answer": "The time complexity of a problem on a deterministic Turing machine is expressed as the maximum time required to output an answer for any input of the problem.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_50": {
+        "answer": "The time required to output an answer on a deterministic Turing machine is the total number of state transitions or steps taken by the machine before it halts and outputs the answer.\n\nDetailed explanation:\n\nIn the context of computational complexity theory, the time complexity of a problem is the amount of time",
+        "f1": 0.0909090909090909,
+        "f1_raw": 0.07407407407407407
+      },
+      "snapkv_50": {
+        "answer": "The time required to output an answer on a deterministic Turing machine is the total number of state transitions or steps taken.\n\nDetailed explanation:\n\nIn the context of a deterministic Turing machine, the time required to output an answer is the total number of state transitions or steps taken during the computation",
+        "f1": 0.0909090909090909,
+        "f1_raw": 0.07407407407407407
+      },
+      "h2o_50": {
+        "answer": "The time required to output an answer on a deterministic Turing machine is the total of state transitions and steps taken by the machine before it outputs an answer.",
+        "f1": 0.16,
+        "f1_raw": 0.12903225806451613
+      },
+      "random_50": {
+        "answer": "The time required to output an answer on a deterministic Turing machine is expressed as f(n), where n is the input length.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_75": {
+        "answer": "The time required to output an answer on a deterministic Turing machine is the total number of state transitions, or steps, the machine makes before halting and outputting the answer.\n\nDetailed explanation:\n\nIn the context of computational complexity theory, a deterministic Turing machine is a mathematical model",
+        "f1": 0.1,
+        "f1_raw": 0.04081632653061224
+      },
+      "snapkv_75": {
+        "answer": "The time required to output an answer on a deterministic Turing machine is the total number of state transitions, or steps the machine makes before halting and outputting the answer.\n\nDetailed explanation:\n\nIn the context of computational complexity theory, a deterministic Turing machine is a theoretical model of",
+        "f1": 0.09756097560975609,
+        "f1_raw": 0.039999999999999994
+      },
+      "h2o_75": {
+        "answer": "The time required to output an answer on a deterministic Turing machine is the total number of state transitions, or steps the machine makes before it halts and outputs the answer.",
+        "f1": 0.14814814814814814,
+        "f1_raw": 0.06060606060606061
+      },
+      "random_75": {
+        "answer": "The time required to output an answer on a deterministic Turing machine is expressed as the total number of state transitions, or steps, the machine makes before it halts.",
+        "f1": 0.15384615384615385,
+        "f1_raw": 0.06451612903225806
+      },
+      "time": 14.48709511756897
+    },
+    {
+      "idx": 26,
+      "gold": "1 or 0",
+      "seq_len": 163,
+      "num_context": 144,
+      "full": {
+        "answer": "The two integer responses to a decision problem are 1 (yes) and 0 (no).",
+        "f1": 0.26666666666666666,
+        "f1_raw": 0.23529411764705882
+      },
+      "q2c_25": {
+        "answer": "The two integer responses to a decision problem are \"0\" (reject) and \"1\" (accept).",
+        "f1": 0.26666666666666666,
+        "f1_raw": 0.0
+      },
+      "snapkv_25": {
+        "answer": "Yes or No.",
+        "f1": 0.3333333333333333,
+        "f1_raw": 0.3333333333333333
+      },
+      "h2o_25": {
+        "answer": "Yes, the two possible responses to a decision problem in the context of computational complexity are \"yes\" and \"no\". These responses indicate whether a given instance of the problem belongs to the language or not.",
+        "f1": 0.0625,
+        "f1_raw": 0.05263157894736842
+      },
+      "random_25": {
+        "answer": "Yes, the two integer responses are the solutions to a decision problem.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_50": {
+        "answer": "The two integer responses to a decision problem are 1 (yes) and 0 (no).",
+        "f1": 0.26666666666666666,
+        "f1_raw": 0.23529411764705882
+      },
+      "snapkv_50": {
+        "answer": "Yes and No.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_50": {
+        "answer": "No, a decision problem returns either yes or no, not two integers.",
+        "f1": 0.14285714285714288,
+        "f1_raw": 0.13333333333333333
+      },
+      "random_50": {
+        "answer": "Yes, the two possible responses to a decision problem are \"yes\" and \"no\".",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_75": {
+        "answer": "The two integer responses to a decision problem are 1 and 0, representing yes and no, respectively.",
+        "f1": 0.2222222222222222,
+        "f1_raw": 0.1
+      },
+      "snapkv_75": {
+        "answer": "The two integer responses to a decision problem are 1 (yes) and 0 (no).",
+        "f1": 0.26666666666666666,
+        "f1_raw": 0.23529411764705882
+      },
+      "h2o_75": {
+        "answer": "The two integer responses to a decision problem are typically 1 (yes) and 0 (no), representing acceptance and rejection, respectively.",
+        "f1": 0.1904761904761905,
+        "f1_raw": 0.1739130434782609
+      },
+      "random_75": {
+        "answer": "The two integer responses to a decision problem are 1 (yes) and 0 (no).",
+        "f1": 0.26666666666666666,
+        "f1_raw": 0.23529411764705882
+      },
+      "time": 6.939264535903931
+    },
+    {
+      "idx": 27,
+      "gold": "mathematical models",
+      "seq_len": 144,
+      "num_context": 114,
+      "full": {
+        "answer": "The ability to branch out to check many different possibilities at once.\n\nExplanation:\n\nA non-deterministic Turing machine (NDTM) is a computational model that can explore multiple paths simultaneously, making it a powerful tool for analyzing certain computational problems. Unlike a deterministic",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_25": {
+        "answer": "Non-deterministic Turing machines can analyze the existence of solutions to a problem, even if the machine itself does not know how to find the solution. This is because they can simulate multiple possible paths at once, and if any of those paths leads to a solution, the machine will accept the input.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_25": {
+        "answer": "Non-deterministic Turing machines can capture the ability to explore multiple solutions simultaneously, which can be useful in analyzing complex computational problems.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_25": {
+        "answer": "Non-deterministic Turing machines can capture the concept of nondeterministic polynomial time (NP), which is a class of problems that can be solved quickly if the correct solution is found, but the time complexity increases exponentially with the size of the problem if all possible solutions are checked. This",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_25": {
+        "answer": "Non-deterministic Turing machines can capture the ability to explore multiple solutions simultaneously for a given problem, making them useful for solving complex computational problems.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_50": {
+        "answer": "Non-deterministic Turing machines can capture the ability to explore multiple possibilities simultaneously, which is useful for analyzing problems with multiple solutions or for finding the shortest solution among many possibilities.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_50": {
+        "answer": "Non-deterministic Turing machine captures the ability to explore multiple possibilities simultaneously, making it useful for analyzing problems with many potential solutions.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_50": {
+        "answer": "Non-deterministic Turing machines allow for the analysis of computational problems in terms of multiple possible solutions.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_50": {
+        "answer": "Non-deterministic Turing machines can capture the possibility space of a problem, making it easier to analyze the number of possible solutions.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_75": {
+        "answer": "Non-deterministic Turing machine captures the branching aspect of useful analysis.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_75": {
+        "answer": "The ability to branch and check many possibilities once.\n\nDetailed explanation:\n\nA non-deterministic Turing machine (NDTM) is a computational model that allows for multiple possible paths to be taken during computation. Unlike a deterministic Turing machine (DTM), which has a single",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_75": {
+        "answer": "The ability to capture many possibilities once, which is useful for analyzing mathematical models.",
+        "f1": 0.2666666666666667,
+        "f1_raw": 0.125
+      },
+      "random_75": {
+        "answer": "Non-deterministic Turing machine captures the ability to explore multiple possibilities at once, which is a useful resource in analyzing computational problems.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "time": 13.27755618095398
+    },
+    {
+      "idx": 28,
+      "gold": "Irish",
+      "seq_len": 331,
+      "num_context": 312,
+      "full": {
+        "answer": "Irish culture\n\nQuestion: What are some common Norman-Irish surnames?\nAnswer briefly: Fitzgerald, FitzGibbons, Fitzmaurice, Barry, De B\u00farca, French, De Roche, Devereux, D'Arcy, Treacy, Lacy",
+        "f1": 0.07999999999999999,
+        "f1_raw": 0.07999999999999999
+      },
+      "q2c_25": {
+        "answer": "Irish culture\n\nDetailed explanation:\nThe Normans, who invaded Ireland in 1169, brought their distinct culture and ethnicity with them. However, over time, their culture intermingled with Irish culture, leading to a blending of the two. This fusion of cultures is evident in",
+        "f1": 0.05,
+        "f1_raw": 0.046511627906976744
+      },
+      "snapkv_25": {
+        "answer": "Irish culture\n\nQuestion: What is the origin of the surnames Barry and De B\u00farca (Burke) in Ireland?\nAnswer briefly: Norman extraction",
+        "f1": 0.1,
+        "f1_raw": 0.0909090909090909
+      },
+      "h2o_25": {
+        "answer": "The Normans combined their culture with the existing Irish Gaelic culture, particularly in the areas of language, architecture, and feudalism. They also introduced new elements such as the use of surnames and the Norman-French language.",
+        "f1": 0.06451612903225806,
+        "f1_raw": 0.05555555555555556
+      },
+      "random_25": {
+        "answer": "The Normans combined their culture with the existing Irish culture, particularly in the areas of architecture, names, and language. They built many castles, introduced new names, and had an impact on the Irish language, especially in the formation of Anglo-Irish names.",
+        "f1": 0.05555555555555556,
+        "f1_raw": 0.047619047619047616
+      },
+      "q2c_50": {
+        "answer": "Irish culture.",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666
+      },
+      "snapkv_50": {
+        "answer": "The Normans combined their culture with Irish culture in Ireland.",
+        "f1": 0.19999999999999998,
+        "f1_raw": 0.18181818181818182
+      },
+      "h2o_50": {
+        "answer": "The Normans combined their culture with Irish culture in Ireland, particularly in the southeast region. This intermingling is evident in the adoption of Irish surnames by Norman descendants, such as French, De Roche, and Morell.",
+        "f1": 0.06060606060606061,
+        "f1_raw": 0.05555555555555556
+      },
+      "random_50": {
+        "answer": "The Normans combined their culture with the existing Irish culture, particularly in the east of Ireland, where they built many castles and borrowed from each other. They also intermarried, and their descendants have surnames such as Roche, Verdun, Arcy, Trevereux, and Morel.",
+        "f1": 0.05,
+        "f1_raw": 0.046511627906976744
+      },
+      "q2c_75": {
+        "answer": "The Normans combined with Irish culture in Ireland.",
+        "f1": 0.25,
+        "f1_raw": 0.2222222222222222
+      },
+      "snapkv_75": {
+        "answer": "The Normans combined their culture with Irish culture in Ireland.",
+        "f1": 0.19999999999999998,
+        "f1_raw": 0.18181818181818182
+      },
+      "h2o_75": {
+        "answer": "Irish culture\n\nQuestion: What are some common Norman surnames in Ireland?\nAnswer briefly: French, De Roche, Devereux, 'cy, 'acy, 'acy, Morell, Fitzgerald, Fitzibons, Barry\n\nQuestion: How can one identify Norman descendants in Ireland",
+        "f1": 0.05882352941176471,
+        "f1_raw": 0.05882352941176471
+      },
+      "random_75": {
+        "answer": "The Normans combined their culture with Irish culture in Ireland, particularly in the southeast and southern parts of County Wexford and County Wicklow. This fusion is evident in the adoption of each other's language, culture, and outlook. Norman descendants can still be recognized by their surnames, such",
+        "f1": 0.044444444444444446,
+        "f1_raw": 0.04166666666666667
+      },
+      "time": 14.792683839797974
+    },
+    {
+      "idx": 29,
+      "gold": "the Adriatic",
+      "seq_len": 103,
+      "num_context": 87,
+      "full": {
+        "answer": "Dyrrachium was located in modern-day Durr\u00ebs, Albania.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_25": {
+        "answer": "Dyrrachium was located in modern-day Durres, Albania.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_25": {
+        "answer": "Dyrrachium was located in modern-day Durr\u00ebs, Albania.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_25": {
+        "answer": "Dyrrachium was located in modern-day Albania, on the Adriatic Sea.\n\nExplanation:\nDyrrachium, also known as Dyrrhachium or Durr\u00ebs, is an ancient city in modern-day Albania. It is located on the Ad",
+        "f1": 0.0689655172413793,
+        "f1_raw": 0.12121212121212122
+      },
+      "random_25": {
+        "answer": "Dyrrachium was located in modern-day Albania.\n\nContext: The Battle of Dyrrachium was a significant engagement in the Roman Republic's First Macedonian War, fought between the Romans and the Macedonians. The battle took place near the city of Dyrrachium",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_50": {
+        "answer": "Dyrrachium was located in modern-day Albania.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_50": {
+        "answer": "In modern-day Albania.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_50": {
+        "answer": "Dyrrachium was located in modern-day Albania.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_50": {
+        "answer": "Dyrrachium was located in modern-day Albania.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_75": {
+        "answer": "Dyrrachium was located in modern-day Durres, Albania.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_75": {
+        "answer": "Dyrrachium was located in modern-day Albania.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_75": {
+        "answer": "Dyrrachium was located in modern-day Albania.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_75": {
+        "answer": "Dyrrachium was located in modern-day Durr\u00ebs, Albania.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "time": 7.660173416137695
+    },
+    {
+      "idx": 30,
+      "gold": "Oursel",
+      "seq_len": 240,
+      "num_context": 216,
+      "full": {
+        "answer": "Oursel",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "q2c_25": {
+        "answer": "O Normans\n\nReference(s):\n117, Armenians, Normans, O Normans, Franks, Euphrates valley, Syria, Philaretos Brachamios, Philaretos, Brachamios, castle Afrin, castle Afrin, castle Afrin,",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_25": {
+        "answer": "A Norman named Tancred led the Franks into the Euphrates valley.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_25": {
+        "answer": "Yes, Oel was the leader of the Normans when they entered the Euphrates valley.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_25": {
+        "answer": "Norman Osborn",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_50": {
+        "answer": "Oursel was the leader when the Franks entered the Euphrates valley.",
+        "f1": 0.2222222222222222,
+        "f1_raw": 0.16666666666666669
+      },
+      "snapkv_50": {
+        "answer": "Oursel was the leader when the Franks entered the Euphrates valley.",
+        "f1": 0.2222222222222222,
+        "f1_raw": 0.16666666666666669
+      },
+      "h2o_50": {
+        "answer": "Oursel\n\nReference(s):\nFrom 1073 to114, about 100,000 troops, many of them Normans, were led by Armenian general Philaretus Brachamius in the Euphrates valley. One of these Normans",
+        "f1": 0.07407407407407407,
+        "f1_raw": 0.07142857142857142
+      },
+      "random_50": {
+        "answer": "Rbaud led the Franks into the Euphrates valley.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_75": {
+        "answer": "Oursel",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "snapkv_75": {
+        "answer": "Oursel was the leader when the Franks entered the Euphrates valley.",
+        "f1": 0.2222222222222222,
+        "f1_raw": 0.16666666666666669
+      },
+      "h2o_75": {
+        "answer": "Oursel\n\nQuestion: What was the ethnicity of the majority of Philaretus Brusius' troops?\nAnswer briefly: Norman\n\nQuestion: What was the name of the castle built by Normans in the Euphrates valley?\nAnswer briefly: Afranji",
+        "f1": 0.06666666666666667,
+        "f1_raw": 0.05714285714285715
+      },
+      "random_75": {
+        "answer": "Ours led the Franks into the Euphrates valley.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "time": 8.82356071472168
+    },
+    {
+      "idx": 31,
+      "gold": "north",
+      "seq_len": 146,
+      "num_context": 128,
+      "full": {
+        "answer": "The Normans were located in the north of France.",
+        "f1": 0.25,
+        "f1_raw": 0.19999999999999998
+      },
+      "q2c_25": {
+        "answer": "North of France.",
+        "f1": 0.5,
+        "f1_raw": 0.5
+      },
+      "snapkv_25": {
+        "answer": "France.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_25": {
+        "answer": "Normandy, France.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_25": {
+        "answer": "The Normans were located in the region of France known as Normandy, which is in the northwestern part of the country. The language of Normandy was a dialect of Old French, which evolved into Modern French over time. The Normans adopted and adapted elements of the Latin language, which was the language of the",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_50": {
+        "answer": "The Normans were located in the north of France.",
+        "f1": 0.25,
+        "f1_raw": 0.19999999999999998
+      },
+      "snapkv_50": {
+        "answer": "The Normans were located in the north of France.",
+        "f1": 0.25,
+        "f1_raw": 0.19999999999999998
+      },
+      "h2o_50": {
+        "answer": "Normandy\n\nDetailed explanation:\nThe Normans were a group of Vikings who settled in the region of Normandy, which is located in the northwestern part of France. They established their territory in the 9th century, after invading and conquering the region from the Carolingian Empire.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_50": {
+        "answer": "Normandy\n\nDetailed explanation:\n\nThe Normans were a group of people who originated from the Duchy of Normandy, which is a region in the north of France. They were descendants of Viking raiders who settled in the area in the late 9th and early 1",
+        "f1": 0.052631578947368425,
+        "f1_raw": 0.044444444444444446
+      },
+      "q2c_75": {
+        "answer": "The Normans were located in the north of France.",
+        "f1": 0.25,
+        "f1_raw": 0.19999999999999998
+      },
+      "snapkv_75": {
+        "answer": "The Normans were located in the north of France.",
+        "f1": 0.25,
+        "f1_raw": 0.19999999999999998
+      },
+      "h2o_75": {
+        "answer": "North France\n\nReference(s):\n- The Normans (2019), BBC Two\n- The Normans (2019), BBC Four\n- The Normans (2019), BBC iPlayer\n- The Normans (2019), BBC History\n- The",
+        "f1": 0.1,
+        "f1_raw": 0.06666666666666667
+      },
+      "random_75": {
+        "answer": "Normandy, France.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "time": 8.770454168319702
+    },
+    {
+      "idx": 32,
+      "gold": "Africa",
+      "seq_len": 111,
+      "num_context": 91,
+      "full": {
+        "answer": "Africa",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "q2c_25": {
+        "answer": "Africa",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "snapkv_25": {
+        "answer": "Africa\n\nReference(s):\nThe Canary Islands are located off the northwestern coast of Africa. They are an autonomous community of Spain and consist of seven main islands: Tenerife, Fuerteventura, Gran Canaria, Lanzarote, La Palma, La Gomera,",
+        "f1": 0.06060606060606061,
+        "f1_raw": 0.05555555555555556
+      },
+      "h2o_25": {
+        "answer": "Africa\n\nExplanation: The Canary Islands are an archipelago located in the Atlantic Ocean, off the northwest coast of Africa. They are a Spanish territory and are part of the African continent, geographically speaking.",
+        "f1": 0.07142857142857142,
+        "f1_raw": 0.05882352941176471
+      },
+      "random_25": {
+        "answer": "The Canarian Islands are off the coast of Africa.",
+        "f1": 0.25,
+        "f1_raw": 0.0
+      },
+      "q2c_50": {
+        "answer": "Africa",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "snapkv_50": {
+        "answer": "Africa",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "h2o_50": {
+        "answer": "Africa\n\nReference(s):\nHistory of the Canary Islands, by Antonio de Viana, 1526\nThe Conquest of the Canary Islands, by Jean de B\u00e9thencourt, 1496",
+        "f1": 0.09523809523809523,
+        "f1_raw": 0.08333333333333333
+      },
+      "random_50": {
+        "answer": "Africa",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "q2c_75": {
+        "answer": "Africa",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "snapkv_75": {
+        "answer": "Africa",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "h2o_75": {
+        "answer": "Africa",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "random_75": {
+        "answer": "Africa",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "time": 5.118858814239502
+    },
+    {
+      "idx": 33,
+      "gold": "King Charles III",
+      "seq_len": 253,
+      "num_context": 225,
+      "full": {
+        "answer": "King Charles III of West Francia.",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666
+      },
+      "q2c_25": {
+        "answer": "King Charles III of France.",
+        "f1": 0.7499999999999999,
+        "f1_raw": 0.7499999999999999
+      },
+      "snapkv_25": {
+        "answer": "King Charles III of Francia.",
+        "f1": 0.7499999999999999,
+        "f1_raw": 0.7499999999999999
+      },
+      "h2o_25": {
+        "answer": "Rollo signed the treaty of Saint-Clair-sur-Epte with King Charles III of Francia.",
+        "f1": 0.42857142857142855,
+        "f1_raw": 0.4
+      },
+      "random_25": {
+        "answer": "Rollo, the Viking leader, signed the Treaty of Saint-Clair-sur-Epte with Charles III, the King of West Francia, in 911 AD.",
+        "f1": 0.3,
+        "f1_raw": 0.1739130434782609
+      },
+      "q2c_50": {
+        "answer": "Rollo signed the treaty of Saint-Clair-sur-Epte with King Charles III of Francia.",
+        "f1": 0.42857142857142855,
+        "f1_raw": 0.4
+      },
+      "snapkv_50": {
+        "answer": "King Charles III of Francia.",
+        "f1": 0.7499999999999999,
+        "f1_raw": 0.7499999999999999
+      },
+      "h2o_50": {
+        "answer": "King Charles III of Francia",
+        "f1": 0.7499999999999999,
+        "f1_raw": 0.7499999999999999
+      },
+      "random_50": {
+        "answer": "Rollo signed the treaty of Saint-Clair-sur-Epte with Charles III, the Simple, King of West Francia.",
+        "f1": 0.375,
+        "f1_raw": 0.2222222222222222
+      },
+      "q2c_75": {
+        "answer": "Rollo signed the treaty of Saint-Clair-sur-Epte with King Charles III of West Francia.",
+        "f1": 0.4,
+        "f1_raw": 0.375
+      },
+      "snapkv_75": {
+        "answer": "Rollo signed the treaty of Saint-Clair-sur-Epte with King Charles III of Francia.",
+        "f1": 0.42857142857142855,
+        "f1_raw": 0.4
+      },
+      "h2o_75": {
+        "answer": "Rollo signed the treaty of Saint-Clair-sur-Epte with King Charles III of Francia.",
+        "f1": 0.42857142857142855,
+        "f1_raw": 0.4
+      },
+      "random_75": {
+        "answer": "King Charles III of France",
+        "f1": 0.7499999999999999,
+        "f1_raw": 0.7499999999999999
+      },
+      "time": 6.317401647567749
+    },
+    {
+      "idx": 34,
+      "gold": "Modern English",
+      "seq_len": 166,
+      "num_context": 144,
+      "full": {
+        "answer": "Modern English.",
+        "f1": 1.0,
+        "f1_raw": 0.5
+      },
+      "q2c_25": {
+        "answer": "Modern English.\nAnswer in detail: The Anglo-Norman language, which was a combination of Norman French and Old English, eventually evolved into Middle English. Over time, Middle English transformed into Early Modern English, and eventually, it became the Modern English we speak today. This evolution was influenced by various factors",
+        "f1": 0.08333333333333333,
+        "f1_raw": 0.07843137254901959
+      },
+      "snapkv_25": {
+        "answer": "The Anglo-Norman language evolved into Middle English and eventually Modern English.",
+        "f1": 0.33333333333333337,
+        "f1_raw": 0.3076923076923077
+      },
+      "h2o_25": {
+        "answer": "No, the Anglo-Norman language evolved and eventually merged with Middle English, forming what is now known as Early Modern English.",
+        "f1": 0.1904761904761905,
+        "f1_raw": 0.09090909090909091
+      },
+      "random_25": {
+        "answer": "No, the Anglo-Norman language evolved and eventually merged with Middle English.",
+        "f1": 0.16666666666666669,
+        "f1_raw": 0.0
+      },
+      "q2c_50": {
+        "answer": "Modern English.\nAnswer fully: The Anglo-Norman language eventually merged with the English language, combining Norman and Anglo-Saxon influences. This merged language, known as Middle English, evolved over time into the Modern English we speak today.",
+        "f1": 0.11764705882352941,
+        "f1_raw": 0.1081081081081081
+      },
+      "snapkv_50": {
+        "answer": "Modern English\nAnswer fully: The Anglo-Norman language evolved into Middle English, which eventually developed into Modern English.",
+        "f1": 0.2222222222222222,
+        "f1_raw": 0.21052631578947367
+      },
+      "h2o_50": {
+        "answer": "The Anglo-Norman language eventually merged with the Saxon language, forming the modern English language.",
+        "f1": 0.3076923076923077,
+        "f1_raw": 0.25
+      },
+      "random_50": {
+        "answer": "Yes, Anglo-Norman language evolved into Middle English, which eventually became Modern English.",
+        "f1": 0.2857142857142857,
+        "f1_raw": 0.14285714285714285
+      },
+      "q2c_75": {
+        "answer": "The Anglo-Norman language evolved into Modern English.",
+        "f1": 0.5,
+        "f1_raw": 0.22222222222222224
+      },
+      "snapkv_75": {
+        "answer": "The Anglo-Norman language evolved into Modern English.",
+        "f1": 0.5,
+        "f1_raw": 0.22222222222222224
+      },
+      "h2o_75": {
+        "answer": "It was absorbed into Middle English.",
+        "f1": 0.25,
+        "f1_raw": 0.0
+      },
+      "random_75": {
+        "answer": "The Anglo-Norman language eventually merged with the native languages and traditions, evolving into Middle English.",
+        "f1": 0.13333333333333336,
+        "f1_raw": 0.0
+      },
+      "time": 8.214542627334595
+    },
+    {
+      "idx": 35,
+      "gold": "difficulty",
+      "seq_len": 227,
+      "num_context": 207,
+      "full": {
+        "answer": "Time complexity\n\nDetailed explanation:\nComplexity theory is a branch of theoretical computer science that studies the resources required by algorithms to solve problems. The primary attribute that complexity theory focuses on is the time complexity, which refers to the amount of time an algorithm takes to solve a problem as a function of the size of",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_25": {
+        "answer": "Time complexity\n\nExplanation:\nComplexity theory classifies problems based on the primary attribute of time complexity, which refers to the amount of time a given algorithm takes to solve a problem as a function of the size of the input. Other attributes such as space complexity and computational model are also considered, but",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_25": {
+        "answer": "Complexity theory classifies problems based on their difficulty, which is typically measured in terms of time or space complexity.",
+        "f1": 0.1,
+        "f1_raw": 0.0
+      },
+      "h2o_25": {
+        "answer": "Time complexity\n\nExplanation:\nIn computational complexity theory, problems are classified based on the primary attribute of the computational resources they require, such as time, space, or number of operations. The time complexity of a problem is the amount of time a Turing machine or an algorithm takes to solve it",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_25": {
+        "answer": "Time complexity\n\nExplanation:\nIn computer science, the time complexity of an algorithm is a measure of the amount of time that an algorithm takes to run as a function of the size of the input to the program. The time complexity is usually expressed using Big O notation, which provides an upper bound on the",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_50": {
+        "answer": "Complexity theory classifies problems based on their difficulty, primarily in terms of time and space complexity.",
+        "f1": 0.11764705882352941,
+        "f1_raw": 0.0
+      },
+      "snapkv_50": {
+        "answer": "Complexity theory classifies problems based on their time complexity.\n\nExplanation:\nComplexity theory is a branch of theoretical computer science that studies the resources required to solve computational problems. It focuses on understanding the time, space, and other resources needed to solve problems, and classifies problems based on these",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_50": {
+        "answer": "Time complexity\n\nExplanation:\nIn computational complexity theory, problems are classified based on the primary attribute of time complexity, which refers to the amount of time required to solve a problem using a given computational model, such as a deterministic Turing machine. The time complexity of a problem is often expressed",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_50": {
+        "answer": "Complexity theory classifies problems based on their time complexity, which is the amount of time required to solve a problem as a function of the input size.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_75": {
+        "answer": "Complexity theory classifies problems based on their time complexity.\n\nExplanation:\nComplexity theory is a branch of theoretical computer science that studies the resources required to solve computational problems. It focuses on understanding the time and space complexity of algorithms, which are measures of the computational resources used by an algorithm",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_75": {
+        "answer": "Time complexity\n\nDetailed explanation:\nComplexity theory is a branch of theoretical computer science that focuses on classifying problems based on their computational resources, such as time and space. The primary attribute that complexity theory uses to classify problems is time complexity, which refers to the amount of time a given algorithm takes",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_75": {
+        "answer": "Time complexity\n\nDetailed explanation:\nIn computational complexity theory, problems are classified based on the primary attribute of time complexity, which refers to the amount of time required to solve a problem using a given computational model, such as the deterministic Turing machine. The time complexity of a problem is defined as",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_75": {
+        "answer": "The primary attribute that theory classifies problems based on is the time complexity, which refers to the amount of time required to solve a problem as a function of the input size.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "time": 17.817644834518433
+    },
+    {
+      "idx": 36,
+      "gold": "Norman",
+      "seq_len": 272,
+      "num_context": 248,
+      "full": {
+        "answer": "Norman culture.",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666
+      },
+      "q2c_25": {
+        "answer": "Norman culture.",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666
+      },
+      "snapkv_25": {
+        "answer": "The Norman culture's arrival in Scotland is known as the \"Davidian Revolution\".",
+        "f1": 0.18181818181818182,
+        "f1_raw": 0.15384615384615385
+      },
+      "h2o_25": {
+        "answer": "Yes, the arrival of Norman culture in Scotland under King David I is often referred to as the \"Davidian Revolution\".",
+        "f1": 0.10526315789473684,
+        "f1_raw": 0.09523809523809523
+      },
+      "random_25": {
+        "answer": "The Norman conquest of Scotland, also known as the \"Davidian Revolution,\" was a significant event in Scottish history, marked by the arrival of Norman knights and the establishment of feudalism in the country under King David I. This period saw the introduction of many Norman customs, laws, and institutions, and",
+        "f1": 0.04545454545454545,
+        "f1_raw": 0.0392156862745098
+      },
+      "q2c_50": {
+        "answer": "The arrival of Norman culture in Scotland is known as the \"Davidian Revolution\".\n\nReference(s):\nKing David I of Scotland\nNormans in Scotland\nDavidian Revolution (scholarly term)",
+        "f1": 0.07999999999999999,
+        "f1_raw": 0.07407407407407407
+      },
+      "snapkv_50": {
+        "answer": "Norman culture.\n\nReference(s):\nKing David I of Scotland (1084-1153)\nNorman Conquest of Scotland\nFeudalism in Scotland\nScottish Noble Families of Norman Descent",
+        "f1": 0.08695652173913045,
+        "f1_raw": 0.08695652173913045
+      },
+      "h2o_50": {
+        "answer": "Norman culture.\n\nExplanation: The \"Davidian Revolution\" refers to the introduction of Norman culture into Scotland during the reign of King David I. This cultural shift was brought about by the arrival of Normans in Scotland, who were rewarded with lands by King David I. The Norman influence continued under subsequent",
+        "f1": 0.04347826086956522,
+        "f1_raw": 0.0392156862745098
+      },
+      "random_50": {
+        "answer": "The \"Davidian Revolution\" refers to the introduction of Norman culture and the Norman-derived feudal system in Scotland during the reign of King David I, who married the English king Henry I's sister and brought many Norman customs and practices to Scotland. This period marked a significant shift in Scottish society and politics",
+        "f1": 0.042553191489361694,
+        "f1_raw": 0.03773584905660378
+      },
+      "q2c_75": {
+        "answer": "Norman culture.",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666
+      },
+      "snapkv_75": {
+        "answer": "The arrival of Norman culture in Scotland is known as the \"Davidian Revolution\".\n\nReference(s):\n- \"The Davidian Revolution: Scotland, 1080-1153\" by Michael Penman\n- \"The Normans in Scotland\" by Alexander Grant\n- \"The Scottish",
+        "f1": 0.07407407407407407,
+        "f1_raw": 0.05714285714285715
+      },
+      "h2o_75": {
+        "answer": "Norman culture\n\nQuestion: What was the \"Davidian Revolution\" in Scotland?\nAnswer: The \"Davidian Revolution\" was the arrival and subsequent influence of Norman culture in Scotland, brought about by King David I and his successors. This period saw the introduction of the feudal system, the building",
+        "f1": 0.05,
+        "f1_raw": 0.04347826086956522
+      },
+      "random_75": {
+        "answer": "Norman culture.",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666
+      },
+      "time": 12.827859163284302
+    },
+    {
+      "idx": 37,
+      "gold": "Deabolis",
+      "seq_len": 213,
+      "num_context": 196,
+      "full": {
+        "answer": "The river Deabolis.",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.0
+      },
+      "q2c_25": {
+        "answer": "River Deis.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_25": {
+        "answer": "River Deisis.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_25": {
+        "answer": "The Petrela was located by the river Shkumbin.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_25": {
+        "answer": "The Petrela Castle is located near the River Ribotypu.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_50": {
+        "answer": "The river Deabolis.",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.0
+      },
+      "snapkv_50": {
+        "answer": "River Deabolis.",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.0
+      },
+      "h2o_50": {
+        "answer": "The river Petrela was located by the banks of the Shkumbin River.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_50": {
+        "answer": "River Arobolis.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_75": {
+        "answer": "The river Deabolis.",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.0
+      },
+      "snapkv_75": {
+        "answer": "The river Deabolis.",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.0
+      },
+      "h2o_75": {
+        "answer": "River Deabolis",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666
+      },
+      "random_75": {
+        "answer": "The river Petrela was located by the banks of the river Aabolis (modern-day Shkumbin).",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "time": 3.881246566772461
+    },
+    {
+      "idx": 38,
+      "gold": "10th century",
+      "seq_len": 201,
+      "num_context": 181,
+      "full": {
+        "answer": "The Normans first gained their separate identity in the 10th century.",
+        "f1": 0.3636363636363636,
+        "f1_raw": 0.15384615384615385
+      },
+      "q2c_25": {
+        "answer": "11th century",
+        "f1": 0.5,
+        "f1_raw": 0.5
+      },
+      "snapkv_25": {
+        "answer": "The Normans first gained their separate identity in the 11th century.",
+        "f1": 0.1818181818181818,
+        "f1_raw": 0.0
+      },
+      "h2o_25": {
+        "answer": "The Normans first gained their separate identity in the 10th century.",
+        "f1": 0.3636363636363636,
+        "f1_raw": 0.15384615384615385
+      },
+      "random_25": {
+        "answer": "The Normans first gained their separate identity in the late 9th century, when they were under the rule of the Frankish kingdom of Francia.",
+        "f1": 0.09090909090909091,
+        "f1_raw": 0.0
+      },
+      "q2c_50": {
+        "answer": "The Normans first gained their separate identity in the 11th century.",
+        "f1": 0.1818181818181818,
+        "f1_raw": 0.0
+      },
+      "snapkv_50": {
+        "answer": "The Normans first gained their separate identity in the 10th century.",
+        "f1": 0.3636363636363636,
+        "f1_raw": 0.15384615384615385
+      },
+      "h2o_50": {
+        "answer": "The Normans first gained their separate identity in the 10th century.",
+        "f1": 0.3636363636363636,
+        "f1_raw": 0.15384615384615385
+      },
+      "random_50": {
+        "answer": "The Normans first gained their separate identity in the 10th century.",
+        "f1": 0.3636363636363636,
+        "f1_raw": 0.15384615384615385
+      },
+      "q2c_75": {
+        "answer": "The Normans first gained their separate identity in the 10th century.",
+        "f1": 0.3636363636363636,
+        "f1_raw": 0.15384615384615385
+      },
+      "snapkv_75": {
+        "answer": "The Normans first gained their separate identity in the 10th century.",
+        "f1": 0.3636363636363636,
+        "f1_raw": 0.15384615384615385
+      },
+      "h2o_75": {
+        "answer": "11th century",
+        "f1": 0.5,
+        "f1_raw": 0.5
+      },
+      "random_75": {
+        "answer": "10th century",
+        "f1": 1.0,
+        "f1_raw": 1.0
+      },
+      "time": 5.563750505447388
+    },
+    {
+      "idx": 39,
+      "gold": "Duke Richard II",
+      "seq_len": 171,
+      "num_context": 156,
+      "full": {
+        "answer": "Duke Richard II of Normandy.",
+        "f1": 0.7499999999999999,
+        "f1_raw": 0.7499999999999999
+      },
+      "q2c_25": {
+        "answer": "Duke Richard II of Normandy.",
+        "f1": 0.7499999999999999,
+        "f1_raw": 0.7499999999999999
+      },
+      "snapkv_25": {
+        "answer": "Duke Richard II of Normandy.",
+        "f1": 0.7499999999999999,
+        "f1_raw": 0.7499999999999999
+      },
+      "h2o_25": {
+        "answer": "No, Emma's brother was Duke Richard III of Normandy, not King Canute the Great.",
+        "f1": 0.25,
+        "f1_raw": 0.23529411764705882
+      },
+      "random_25": {
+        "answer": "Yes, Emma's brother was Thomas, Duke of Clarence.",
+        "f1": 0.18181818181818182,
+        "f1_raw": 0.18181818181818182
+      },
+      "q2c_50": {
+        "answer": "Duke Richard II of Normandy.",
+        "f1": 0.7499999999999999,
+        "f1_raw": 0.7499999999999999
+      },
+      "snapkv_50": {
+        "answer": "Duke Richard II Normandy.",
+        "f1": 0.8571428571428571,
+        "f1_raw": 0.8571428571428571
+      },
+      "h2o_50": {
+        "answer": "Yes, Emma's brother was Duke Richard II of Normandy.",
+        "f1": 0.5,
+        "f1_raw": 0.5
+      },
+      "random_50": {
+        "answer": "Duke Richard II of Normandy, who was also known as Richard the Fearless.",
+        "f1": 0.4,
+        "f1_raw": 0.375
+      },
+      "q2c_75": {
+        "answer": "Duke Richard II of Normandy.",
+        "f1": 0.7499999999999999,
+        "f1_raw": 0.7499999999999999
+      },
+      "snapkv_75": {
+        "answer": "Duke Richard II of Normandy.",
+        "f1": 0.7499999999999999,
+        "f1_raw": 0.7499999999999999
+      },
+      "h2o_75": {
+        "answer": "Duke Richard II of Normandy.",
+        "f1": 0.7499999999999999,
+        "f1_raw": 0.7499999999999999
+      },
+      "random_75": {
+        "answer": "Duke Richard II of Normandy.",
+        "f1": 0.7499999999999999,
+        "f1_raw": 0.7499999999999999
+      },
+      "time": 4.037452459335327
+    },
+    {
+      "idx": 40,
+      "gold": "unusual resources",
+      "seq_len": 137,
+      "num_context": 114,
+      "full": {
+        "answer": "Unusual resources such as non-determinism, or mathematical models that capture the essence of the problem, can often affect or facilitate ease of analysis in computational problems.",
+        "f1": 0.15384615384615385,
+        "f1_raw": 0.14285714285714288
+      },
+      "q2c_25": {
+        "answer": "Unusual resources, clear terminology, and well-defined problem statements can often affect or facilitate ease of analysis in computational problems.",
+        "f1": 0.1904761904761905,
+        "f1_raw": 0.09523809523809525
+      },
+      "snapkv_25": {
+        "answer": "Factors that often affect or facilitate ease of analysis in computational problems include the problem's structure, the resources available, the problem's complexity, and the problem-solving techniques used. A well-defined problem with a clear structure, simple resources, and low complexity is generally easier to analyze than a",
+        "f1": 0.048780487804878044,
+        "f1_raw": 0.041666666666666664
+      },
+      "h2o_25": {
+        "answer": "Yes, the availability of unusual resources can often affect or facilitate the ease of analysis in computational problems. For instance, a machine learning model trained on a large dataset can be easier to analyze than one trained on a small dataset due to the increased diversity and complexity of the data. However, it's important to note",
+        "f1": 0.07843137254901959,
+        "f1_raw": 0.0689655172413793
+      },
+      "random_25": {
+        "answer": "Factors that can affect or facilitate ease of analysis in computational problems include the problem's complexity, the choice of algorithms, the efficiency of data structures, the quality of the input data, and the understanding of the problem domain.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_50": {
+        "answer": "Unusual resources, such as time in the case of a deterministic Turing machine, often affect or facilitate ease of analysis in computational problems.",
+        "f1": 0.17391304347826084,
+        "f1_raw": 0.08
+      },
+      "snapkv_50": {
+        "answer": "Unusual resources, such as specialized algorithms or tools, can often aid in the analysis of computational problems. However, the most significant resource is deterministic time, which is crucial for analyzing mathematical models in these problems.",
+        "f1": 0.1142857142857143,
+        "f1_raw": 0.05405405405405405
+      },
+      "h2o_50": {
+        "answer": "Non-determinism can often affect or facilitate ease of analysis in computational problems.\n\nExplanation: Non-determinism is a concept used in computer science to model certain types of computational problems. It allows a machine to explore multiple possibilities simultaneously, which can make the analysis of certain",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_50": {
+        "answer": "1. Structured data: Structured data, such as arrays and graphs, can make it easier to analyze computational problems because they allow for efficient traversal and manipulation of data.\n2. Algorithmic techniques: Techniques like divide-and-conquer, dynamic programming, and greedy algorithms",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_75": {
+        "answer": "The choice of resources for analysis often depends on the specific problem at hand. For instance, non-deterministic Turing machines are useful for analyzing problems that involve multiple possibilities, while deterministic time is important for problems that require a single, well-defined path.",
+        "f1": 0.05,
+        "f1_raw": 0.046511627906976744
+      },
+      "snapkv_75": {
+        "answer": "Unusual resources, such as non-deterministic time, can often affect or facilitate ease of analysis in computational problems.",
+        "f1": 0.21052631578947367,
+        "f1_raw": 0.10526315789473684
+      },
+      "h2o_75": {
+        "answer": "Unusual resources, such as non-determinism, can often affect or facilitate ease of analysis in computational problems, as they can capture mathematical models more directly.",
+        "f1": 0.15384615384615385,
+        "f1_raw": 0.07692307692307693
+      },
+      "random_75": {
+        "answer": "Factors that often affect or facilitate ease of analysis in computational problems include the problem's structure, the resources being used (such as time, space, or non-deterministic Turing machine), the available algorithms, and the understanding of the problem domain.",
+        "f1": 0.05714285714285715,
+        "f1_raw": 0.05
+      },
+      "time": 16.339616298675537
+    },
+    {
+      "idx": 41,
+      "gold": "mathematical models of computation",
+      "seq_len": 158,
+      "num_context": 126,
+      "full": {
+        "answer": "Mathematical models of computation and resource measures like time, storage, communication, circuit complexity, and parallel computing.",
+        "f1": 0.4,
+        "f1_raw": 0.4
+      },
+      "q2c_25": {
+        "answer": "Complexity analysis or Big O notation is used to intuitively assess or quantify the amount of resources required to solve a computational problem.",
+        "f1": 0.08,
+        "f1_raw": 0.07407407407407408
+      },
+      "snapkv_25": {
+        "answer": "Heuristics and Algorithmic Complexity Analysis.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_25": {
+        "answer": "Yes, the Big O notation is a method used to quantify the complexity of an algorithm in terms of the amount of resources required, such as time and space. It provides an upper bound on the number of operations or resources required to solve a problem, and is often used to compare the efficiency of different algorithms.",
+        "f1": 0.038461538461538464,
+        "f1_raw": 0.03278688524590164
+      },
+      "random_25": {
+        "answer": "The method used to intuitively assess or quantify the amount of resources required to solve a computational problem is called algorithm complexity analysis. This method uses various measures such as time complexity, space complexity, and parallel complexity to determine the practical efficiency of an algorithm.",
+        "f1": 0.045454545454545456,
+        "f1_raw": 0.04081632653061225
+      },
+      "q2c_50": {
+        "answer": "The method used to intuitively assess or quantify the amount of resources required to solve a computational problem is through the use of mathematical models of computation and complexity measures, such as time complexity and space complexity.",
+        "f1": 0.21621621621621626,
+        "f1_raw": 0.1951219512195122
+      },
+      "snapkv_50": {
+        "answer": "Intuitively, problem difficulty is assessed by the resources required, and this is quantified using mathematical models of computation, such as computational complexity theory.",
+        "f1": 0.3076923076923077,
+        "f1_raw": 0.22222222222222218
+      },
+      "h2o_50": {
+        "answer": "Intuitively, problem complexity is assessed by understanding the problem's nature and the resources needed to solve it. Quantitatively, complexity measures like time complexity, space complexity, communication complexity, and gate complexity are used.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_50": {
+        "answer": "The role of Turing machine simulation in theory of computation is to intuitively assess or quantify the amount of resources required to solve a computational problem. This is done by simulating the behavior of a Turing machine on a given input and observing the number of steps, space, or other resources used.",
+        "f1": 0.0816326530612245,
+        "f1_raw": 0.07142857142857144
+      },
+      "q2c_75": {
+        "answer": "Intuitive assessment is based on experience and common sense, while quantification is done using mathematical models and complexity measures such as time and space complexity.",
+        "f1": 0.13793103448275865,
+        "f1_raw": 0.13793103448275865
+      },
+      "snapkv_75": {
+        "answer": "Mathematical models of computation and resource measures like time and storage complexity are used to intuitively assess or quantify the amount of resources required to solve a computational problem.",
+        "f1": 0.25806451612903225,
+        "f1_raw": 0.2424242424242424
+      },
+      "h2o_75": {
+        "answer": "Intuition and mathematical models of computation are used to assess or quantify the amount of resources required to solve a computational problem.",
+        "f1": 0.33333333333333337,
+        "f1_raw": 0.3076923076923077
+      },
+      "random_75": {
+        "answer": "Mathematical models of computation are used to intuitively assess or quantify the amount of resources required to solve a computational problem, such as time, storage, communication complexity, circuit complexity, and parallelism.",
+        "f1": 0.2424242424242424,
+        "f1_raw": 0.2285714285714286
+      },
+      "time": 13.322341442108154
+    },
+    {
+      "idx": 42,
+      "gold": "time and storage",
+      "seq_len": 146,
+      "num_context": 126,
+      "full": {
+        "answer": "Time and storage.",
+        "f1": 1.0,
+        "f1_raw": 0.6666666666666666
+      },
+      "q2c_25": {
+        "answer": "Time and Space (or Memory).",
+        "f1": 0.5,
+        "f1_raw": 0.5
+      },
+      "snapkv_25": {
+        "answer": "Time and Space (memory) are the two basic resources used to gauge complexity in computer science.",
+        "f1": 0.2222222222222222,
+        "f1_raw": 0.21052631578947367
+      },
+      "h2o_25": {
+        "answer": "Yes, time and space (or memory) are the two primary resources used to gauge complexity in computer science.",
+        "f1": 0.2,
+        "f1_raw": 0.1904761904761905
+      },
+      "random_25": {
+        "answer": "Yes, time complexity and space complexity are two primary resources used to gauge complexity in computer science. Time complexity measures the amount of time an algorithm takes to run, while space complexity measures the amount of memory or space an algorithm uses. These metrics help in understanding the efficiency of an algorithm and choosing the best one for a given",
+        "f1": 0.07272727272727274,
+        "f1_raw": 0.06349206349206349
+      },
+      "q2c_50": {
+        "answer": "The two primary resources used to gauge complexity are time and storage (space).",
+        "f1": 0.4,
+        "f1_raw": 0.375
+      },
+      "snapkv_50": {
+        "answer": "Time and storage (space).",
+        "f1": 0.8571428571428571,
+        "f1_raw": 0.8571428571428571
+      },
+      "h2o_50": {
+        "answer": "Yes, time and space (or storage) are the two primary resources used to gauge complexity in computational complexity theory.",
+        "f1": 0.2857142857142857,
+        "f1_raw": 0.18181818181818182
+      },
+      "random_50": {
+        "answer": "Yes, time and space are the two primary resources used to gauge computational complexity.",
+        "f1": 0.25,
+        "f1_raw": 0.23529411764705882
+      },
+      "q2c_75": {
+        "answer": "Time and storage.",
+        "f1": 1.0,
+        "f1_raw": 0.6666666666666666
+      },
+      "snapkv_75": {
+        "answer": "Time and storage.",
+        "f1": 1.0,
+        "f1_raw": 0.6666666666666666
+      },
+      "h2o_75": {
+        "answer": "Time and storage.",
+        "f1": 1.0,
+        "f1_raw": 0.6666666666666666
+      },
+      "random_75": {
+        "answer": "The two primary resources used to gauge complexity are time (measured in steps or operations) and space (measured in memory or storage).",
+        "f1": 0.25,
+        "f1_raw": 0.16
+      },
+      "time": 6.270233869552612
+    },
+    {
+      "idx": 43,
+      "gold": "fighting horsemen",
+      "seq_len": 179,
+      "num_context": 160,
+      "full": {
+        "answer": "Fighting horsemen.",
+        "f1": 1.0,
+        "f1_raw": 0.5
+      },
+      "q2c_25": {
+        "answer": "Men\n\nExplanation:\nThe question asks for one of the major exports of the Normans, and the answer provided is \"men.\" This is a reference to the Norman practice of sending large numbers of men to fight as mercenaries in other countries, particularly in England and France. This was a significant",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_25": {
+        "answer": "Wool",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_25": {
+        "answer": "Norman knights were one of the major exports of Normandy.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_25": {
+        "answer": "Wool was one of the Norman's major exports.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_50": {
+        "answer": "Norman knights or fighting horsemen.",
+        "f1": 0.5714285714285715,
+        "f1_raw": 0.28571428571428575
+      },
+      "snapkv_50": {
+        "answer": "Fighting horsemen\n\nReference(s):\n- Normandy, France\n- England\n- Italy\n- Crusaders under Italo-Norman prince Bohemund I and Anglo-Norman king Richard the Lion-Heart.",
+        "f1": 0.19999999999999998,
+        "f1_raw": 0.16
+      },
+      "h2o_50": {
+        "answer": "Norman's major export was wool.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_50": {
+        "answer": "One of the Norman's major exports was knights.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_75": {
+        "answer": "Fighting horsemen.",
+        "f1": 1.0,
+        "f1_raw": 0.5
+      },
+      "snapkv_75": {
+        "answer": "Fighting horsemen.",
+        "f1": 1.0,
+        "f1_raw": 0.5
+      },
+      "h2o_75": {
+        "answer": "Fighting horsemen.",
+        "f1": 1.0,
+        "f1_raw": 0.5
+      },
+      "random_75": {
+        "answer": "Fighting horses.",
+        "f1": 0.5,
+        "f1_raw": 0.5
+      },
+      "time": 5.703392028808594
+    },
+    {
+      "idx": 44,
+      "gold": "911",
+      "seq_len": 244,
+      "num_context": 225,
+      "full": {
+        "answer": "The Duchy of Normandy was founded in 911.",
+        "f1": 0.25,
+        "f1_raw": 0.0
+      },
+      "q2c_25": {
+        "answer": "In 911.",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.0
+      },
+      "snapkv_25": {
+        "answer": "The Duchy of Normandy was founded in the 10th century.\n\nQuestion: What was the original administrative structure of the region that became the Duchy of Normandy?\nAnswer briefly: The original administrative structure of the region that became the Duchy of Normandy was Gallia",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_25": {
+        "answer": "The Duchy of Normandy was founded in 911.",
+        "f1": 0.25,
+        "f1_raw": 0.0
+      },
+      "random_25": {
+        "answer": "The Duchy of Normandy was founded in 911 by Rollo, a Viking chieftain, in the lands given to him by Charles III, King of France, between the Seine and the Loire rivers and the Atlantic Ocean. This area roughly corresponds to the modern region of Normandy",
+        "f1": 0.05,
+        "f1_raw": 0.042553191489361694
+      },
+      "q2c_50": {
+        "answer": "The Duchy of Normandy was founded in 911.",
+        "f1": 0.25,
+        "f1_raw": 0.0
+      },
+      "snapkv_50": {
+        "answer": "The Duchy of Normandy was founded in 911.",
+        "f1": 0.25,
+        "f1_raw": 0.0
+      },
+      "h2o_50": {
+        "answer": "Yes, the Duchy of Normandy was founded in 911.",
+        "f1": 0.2222222222222222,
+        "f1_raw": 0.0
+      },
+      "random_50": {
+        "answer": "Yes, the Duchy of Normandy was founded in 911 as a fief established by Saint-Clair-sur-Epte between Rollo and Charles the Simple.",
+        "f1": 0.10526315789473684,
+        "f1_raw": 0.0909090909090909
+      },
+      "q2c_75": {
+        "answer": "The Duchy of Normandy was founded in 911.",
+        "f1": 0.25,
+        "f1_raw": 0.0
+      },
+      "snapkv_75": {
+        "answer": "The Duchy of Normandy was founded in 911.",
+        "f1": 0.25,
+        "f1_raw": 0.0
+      },
+      "h2o_75": {
+        "answer": "The Duchy of Normandy was founded in 911.",
+        "f1": 0.25,
+        "f1_raw": 0.0
+      },
+      "random_75": {
+        "answer": "The Duchy of Normandy was founded in 911.",
+        "f1": 0.25,
+        "f1_raw": 0.0
+      },
+      "time": 8.703421354293823
+    },
+    {
+      "idx": 45,
+      "gold": "Computational complexity theory",
+      "seq_len": 118,
+      "num_context": 88,
+      "full": {
+        "answer": "Computational complexity theory\n\nQuestion: Can you elaborate on the nature of computational complexity theory?\nAnswer: Computational complexity theory is a field that studies the resources required to solve computational problems, such as time, space, and the number of operations. It aims to classify problems according to their inher",
+        "f1": 0.1276595744680851,
+        "f1_raw": 0.11764705882352941
+      },
+      "q2c_25": {
+        "answer": "Computational complexity theory\n\nExplanation: Computational complexity theory is a branch of theoretical computer science that focuses on classifying computational problems according to their difficulty and the resources required to solve them. This field aims to understand the inherent limitations of computation and to develop efficient algorithms for solving problems. It involves the",
+        "f1": 0.11764705882352941,
+        "f1_raw": 0.1090909090909091
+      },
+      "snapkv_25": {
+        "answer": "Computational complexity theory\n\nQuestion: Can you elaborate on computational complexity theory?\nAnswer: Computational complexity theory is a branch of theoretical computer science that studies the resources required to solve computational problems. It focuses on classifying problems according to their difficulty and the resources needed to solve them, such as time",
+        "f1": 0.12,
+        "f1_raw": 0.11320754716981131
+      },
+      "h2o_25": {
+        "answer": "Theoretical Computer Science, specifically Computational Complexity Theory, is the branch that broadly classifies computational problems by difficulty and class of relationship.",
+        "f1": 0.2608695652173913,
+        "f1_raw": 0.16666666666666666
+      },
+      "random_25": {
+        "answer": "The field of Computational Complexity Theory is a branch of theoretical computer science that focuses on classifying computational problems based on their difficulty and the class of relationship they exhibit. This includes understanding the time and space complexity of algorithms, as well as determining whether problems are solvable and how they relate to one another.",
+        "f1": 0.1111111111111111,
+        "f1_raw": 0.10344827586206896
+      },
+      "q2c_50": {
+        "answer": "Computational complexity theory\n\nQuestion: Can you elaborate on computational complexity theory?\nAnswer: Computational complexity theory is a subfield of theoretical computer science that studies the resources required to solve computational problems. It focuses on classifying problems according to their inherent difficulty and relating these classes to each other.",
+        "f1": 0.12244897959183672,
+        "f1_raw": 0.11764705882352941
+      },
+      "snapkv_50": {
+        "answer": "Computational complexity theory\n\nQuestion: Can you elaborate on computational complexity theory?\nAnswer: Computational complexity theory is a subfield of theoretical computer science that studies the resources required to solve computational problems. It focuses on classifying problems according to their inherent difficulty and relating these classes to each other.",
+        "f1": 0.12244897959183672,
+        "f1_raw": 0.11764705882352941
+      },
+      "h2o_50": {
+        "answer": "Computational complexity theory\n\nQuestion: What is the main focus of computational complexity theory?\nAnswer: The main focus of computational complexity theory is to classify computational problems according to their difficulty and to relate classes of problems.\n\nQuestion: What is a computational problem in the context of comput",
+        "f1": 0.13043478260869565,
+        "f1_raw": 0.12
+      },
+      "random_50": {
+        "answer": "Computational complexity theory.",
+        "f1": 1.0,
+        "f1_raw": 0.6666666666666666
+      },
+      "q2c_75": {
+        "answer": "Computational complexity theory\n\nQuestion: What is the field of study that focuses on classifying computational problems according to their inherent difficulty and relating those classes to each other?\nAnswer briefly: Computational complexity theory\n\nQuestion: What is the branch of theoretical computer science that deals with understanding the time and",
+        "f1": 0.12244897959183672,
+        "f1_raw": 0.11538461538461538
+      },
+      "snapkv_75": {
+        "answer": "Computational complexity theory\n\nQuestion: Can you elaborate on the nature of computational problems in this context?\nAnswer: In computational complexity theory, a computational problem is a task that can be solved by a computer. It is typically defined by a set of inputs and a set of outputs, and the",
+        "f1": 0.13043478260869565,
+        "f1_raw": 0.11320754716981131
+      },
+      "h2o_75": {
+        "answer": "Computational complexity theory\n\nQuestion: Can you elaborate on the nature of computational complexity theory?\nAnswer: Computational complexity theory is a field that studies the inherent difficulty of computational problems and the resources required to solve them. It classifies problems based on the time and space complexity of their solutions,",
+        "f1": 0.1276595744680851,
+        "f1_raw": 0.11538461538461538
+      },
+      "random_75": {
+        "answer": "Theoretical computer science, specifically computational complexity, deals with broadly classifying computational problems by difficulty and class of relationship.",
+        "f1": 0.1904761904761905,
+        "f1_raw": 0.09523809523809525
+      },
+      "time": 18.276679515838623
+    },
+    {
+      "idx": 46,
+      "gold": "A non-deterministic Turing machine",
+      "seq_len": 249,
+      "num_context": 220,
+      "full": {
+        "answer": "A non-deterministic Turing machine.",
+        "f1": 1.0,
+        "f1_raw": 0.75
+      },
+      "q2c_25": {
+        "answer": "A probabilistic Turing machine is capable of multiple actions and extends into a variety of computational paths.",
+        "f1": 0.2222222222222222,
+        "f1_raw": 0.2857142857142857
+      },
+      "snapkv_25": {
+        "answer": "A probabilistic Turing machine.",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.5
+      },
+      "h2o_25": {
+        "answer": "A probabilistic Turing machine is capable of multiple actions and extends into a variety of computational paths, as it incorporates randomness in its decision-making process.",
+        "f1": 0.15384615384615383,
+        "f1_raw": 0.20689655172413793
+      },
+      "random_25": {
+        "answer": "Yes, a nondeterministic Turing machine can take multiple actions and explore multiple computational paths. It is a model of computation that allows for multiple possible outcomes, unlike a deterministic Turing machine, which has a single, predetermined outcome for any given input.",
+        "f1": 0.15,
+        "f1_raw": 0.13333333333333333
+      },
+      "q2c_50": {
+        "answer": "A probabilistic Turing machine is capable of multiple actions and extends into a variety of computational paths.",
+        "f1": 0.2222222222222222,
+        "f1_raw": 0.2857142857142857
+      },
+      "snapkv_50": {
+        "answer": "A non-deterministic Turing machine is capable of multiple actions and extends into a variety of computational paths.",
+        "f1": 0.33333333333333337,
+        "f1_raw": 0.38095238095238093
+      },
+      "h2o_50": {
+        "answer": "Non-deterministic Turing machine.",
+        "f1": 1.0,
+        "f1_raw": 0.5714285714285715
+      },
+      "random_50": {
+        "answer": "Non-deterministic Turing machine.",
+        "f1": 1.0,
+        "f1_raw": 0.5714285714285715
+      },
+      "q2c_75": {
+        "answer": "A non-deterministic Turing machine.",
+        "f1": 1.0,
+        "f1_raw": 0.75
+      },
+      "snapkv_75": {
+        "answer": "A non-deterministic Turing machine.",
+        "f1": 1.0,
+        "f1_raw": 0.75
+      },
+      "h2o_75": {
+        "answer": "A non-deterministic Turing machine.",
+        "f1": 1.0,
+        "f1_raw": 0.75
+      },
+      "random_75": {
+        "answer": "A non-deterministic Turing machine is capable of multiple actions and extends into a variety of computational paths.",
+        "f1": 0.33333333333333337,
+        "f1_raw": 0.38095238095238093
+      },
+      "time": 7.520212411880493
+    },
+    {
+      "idx": 47,
+      "gold": "probabilistic Turing machines, non-deterministic Turing machines",
+      "seq_len": 114,
+      "num_context": 88,
+      "full": {
+        "answer": "Deterministic Turing machines and non-deterministic Turing machines.\n\nDeterministic Turing machines (DTMs) follow a single path during computation, making a decision based on the current state and the symbol read from the tape. On the other hand, non-determin",
+        "f1": 0.16216216216216214,
+        "f1_raw": 0.13953488372093023
+      },
+      "q2c_25": {
+        "answer": "1. Deterministic Turing Machine (DTM): A Turing machine that always follows the same rule for each state and symbol.\n2. Non-deterministic Turing Machine (NDM): A Turing machine that can be in multiple states at once, allowing it to explore multiple",
+        "f1": 0.09302325581395349,
+        "f1_raw": 0.08695652173913045
+      },
+      "snapkv_25": {
+        "answer": "1. Deterministic Turing Machine (DTM): A Turing machine that always follows the same rule for each state and symbol it encounters.\n2. Non-deterministic Turing Machine (NDTM): A Turing machine that can make multiple moves from a single state, exploring",
+        "f1": 0.09756097560975609,
+        "f1_raw": 0.08888888888888889
+      },
+      "h2o_25": {
+        "answer": "1. Deterministic Turing Machines (DTMs): These are Turing machines where the next state and the movement of the tape head are determined by the current state and the symbol read from the tape.\n2. Non-Deterministic Turing Machines (NDTMs): These",
+        "f1": 0.15384615384615385,
+        "f1_raw": 0.13333333333333336
+      },
+      "random_25": {
+        "answer": "1. Deterministic Turing Machines (DTMs): These machines have a single transition for each possible state and input symbol. They are predictable and follow a fixed path during computation.\n2. Non-deterministic Turing Machines (NDTMs): These machines can have multiple",
+        "f1": 0.14285714285714285,
+        "f1_raw": 0.13636363636363635
+      },
+      "q2c_50": {
+        "answer": "1. Deterministic Turing Machine (DTM): A Turing machine that always follows the same rule for each state and symbol.\n2. Non-deterministic Turing Machine (NDTM): A Turing machine that can be in multiple states at once, allowing it to explore multiple",
+        "f1": 0.09302325581395349,
+        "f1_raw": 0.08695652173913045
+      },
+      "snapkv_50": {
+        "answer": "1. Deterministic Turing Machine (DTM): A Turing machine where each state transition is uniquely determined by the current state and the symbol read from the tape.\n2. Non-deterministic Turing Machine (NDM): A Turing machine that can make multiple moves from",
+        "f1": 0.09756097560975609,
+        "f1_raw": 0.08695652173913045
+      },
+      "h2o_50": {
+        "answer": "1. Deterministic Turing Machine (DTM)\n2. Non-deterministic Turing Machine (NDTM)\n\nExplanation:\n\n1. Deterministic Turing Machine (DTM): A DTM is a type of Turing machine where each state",
+        "f1": 0.12903225806451613,
+        "f1_raw": 0.12121212121212122
+      },
+      "random_50": {
+        "answer": "1. Deterministic Turing machines (DTMs)\n2. Non-deterministic Turing machines (NDTMs)\n\nFor a more detailed explanation, deterministic Turing machines (DTMs) are machines that always follow the same sequence of steps based on the current state and",
+        "f1": 0.15789473684210525,
+        "f1_raw": 0.14634146341463414
+      },
+      "q2c_75": {
+        "answer": "Deterministic Turing machines and nondeterministic Turing machines.\n\nDeterministic Turing machines (DTMs) are Turing machines that have a single transition for each possible combination of current state and symbol under the tape head. In contrast, nondeterministic T",
+        "f1": 0.15,
+        "f1_raw": 0.09523809523809525
+      },
+      "snapkv_75": {
+        "answer": "Deterministic Turing machines and nondeterministic Turing machines.\n\nDeterministic Turing machines (DTMs) are a type of Turing machine where each state transition is determined by a single input symbol and the current state. In contrast, nondeterministic T",
+        "f1": 0.15384615384615385,
+        "f1_raw": 0.09523809523809525
+      },
+      "h2o_75": {
+        "answer": "Deterministic Turing machines and non-deterministic Turing machines.",
+        "f1": 0.4615384615384615,
+        "f1_raw": 0.4615384615384615
+      },
+      "random_75": {
+        "answer": "1. Deterministic Turing Machines (DTMs): These are Turing machines that always follow the same rule for each state and symbol.\n2. Non-Deterministic Turing Machines (NDTMs): These are Turing machines that can be in multiple states at once,",
+        "f1": 0.14285714285714285,
+        "f1_raw": 0.13953488372093023
+      },
+      "time": 20.363508224487305
+    },
+    {
+      "idx": 48,
+      "gold": "mosaics",
+      "seq_len": 239,
+      "num_context": 218,
+      "full": {
+        "answer": "Mosaics.",
+        "f1": 1.0,
+        "f1_raw": 0.0
+      },
+      "q2c_25": {
+        "answer": "Norman-influenced sculptures and architectural elements.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_25": {
+        "answer": "Norman sculpture and architecture.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "h2o_25": {
+        "answer": "Yes, Norman churches in Italy preserve the most important type of Norman art.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_25": {
+        "answer": "Norman art in Italy, particularly in churches, is the most important type of Norman art preserved. It is characterized by a fusion of Lombard, Arab, and Greek influences, and is often seen in the form of sculpture, architecture, and decorative arts. This art was often used in coronation cloaks",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_50": {
+        "answer": "Norman osmosaics are the most important type of art preserved in churches.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_50": {
+        "answer": "Norman sculpture and mosaics are the most important types of Norman art preserved in churches in southern Italy.",
+        "f1": 0.1111111111111111,
+        "f1_raw": 0.10526315789473684
+      },
+      "h2o_50": {
+        "answer": "Yes, Norman sculptured fonts and mosaics are among the most important types of Norman art preserved in churches in Norman Italy.",
+        "f1": 0.09523809523809523,
+        "f1_raw": 0.0909090909090909
+      },
+      "random_50": {
+        "answer": "Norman art primarily survives in metalwork, such as ivory and enamel work, and sculpture, particularly in the Palermo, Byzantine, and Arabic influences in the coronation cloak. French Crusaders also brought French art with them, which can be found in churches in southern Italy",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "q2c_75": {
+        "answer": "Mosaics are the most important type of Norman art preserved in churches in southern Italy.",
+        "f1": 0.13333333333333333,
+        "f1_raw": 0.125
+      },
+      "snapkv_75": {
+        "answer": "Mosaics are the most important type of Norman art preserved in churches.",
+        "f1": 0.16666666666666669,
+        "f1_raw": 0.15384615384615385
+      },
+      "h2o_75": {
+        "answer": "Sculptured fonts and osmosais are the most important types of Norman art preserved in churches in southern Italy.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "random_75": {
+        "answer": "Mosaics are the most important type of Norman art preserved in churches.",
+        "f1": 0.16666666666666669,
+        "f1_raw": 0.15384615384615385
+      },
+      "time": 8.611010313034058
+    },
+    {
+      "idx": 49,
+      "gold": "yes",
+      "seq_len": 168,
+      "num_context": 144,
+      "full": {
+        "answer": "The output for a member of the language of a decision problem will be yes or 1, indicating that the input string is accepted by the algorithm deciding the problem.",
+        "f1": 0.08333333333333333,
+        "f1_raw": 0.06451612903225806
+      },
+      "q2c_25": {
+        "answer": "The output for a member of the language of a decision problem will be either \"accept\" or \"reject\", depending on whether the algorithm decides that the input string belongs to the language or not.",
+        "f1": 0.0,
+        "f1_raw": 0.0
+      },
+      "snapkv_25": {
+        "answer": "The output for a member of the language of a decision problem will be \"accept\" or \"yes\" if the input string is in the language, and \"reject\" or \"no\" if it is not.",
+        "f1": 0.07142857142857142,
+        "f1_raw": 0.0
+      },
+      "h2o_25": {
+        "answer": "Yes, the output will be \"yes\" for a member of the language of a decision problem if the instance is a yes-instance, and \"no\" otherwise.",
+        "f1": 0.1,
+        "f1_raw": 0.0
+      },
+      "random_25": {
+        "answer": "Yes, the output will be for a member of the language of the decision problem, as the decision problem is designed to make a yes/no decision based on the input, which is a member of the language.",
+        "f1": 0.0689655172413793,
+        "f1_raw": 0.0
+      },
+      "q2c_50": {
+        "answer": "The output for a member of the language of a decision problem will be \"yes\".",
+        "f1": 0.16666666666666669,
+        "f1_raw": 0.0
+      },
+      "snapkv_50": {
+        "answer": "The output for a member of the language of a decision problem will be \"yes\" if the algorithm accepts the input string, and \"no\" if it rejects the input.",
+        "f1": 0.08695652173913045,
+        "f1_raw": 0.0
+      },
+      "h2o_50": {
+        "answer": "Yes, if the input string is a member of the language, the output will be yes. Otherwise, the output will be no.",
+        "f1": 0.1111111111111111,
+        "f1_raw": 0.0
+      },
+      "random_50": {
+        "answer": "Yes, the output of a decision algorithm will be \"yes\" for a member of the language of a decision problem, and \"no\" for a non-member.",
+        "f1": 0.1,
+        "f1_raw": 0.0
+      },
+      "q2c_75": {
+        "answer": "The output for a member of the language of a decision problem will be yes.",
+        "f1": 0.16666666666666669,
+        "f1_raw": 0.0
+      },
+      "snapkv_75": {
+        "answer": "The output for a member of the language of a decision problem will be yes.",
+        "f1": 0.16666666666666669,
+        "f1_raw": 0.0
+      },
+      "h2o_75": {
+        "answer": "The output for a member of the language of a decision problem will be yes (or 1) if it is accepted by the algorithm deciding the problem.",
+        "f1": 0.0909090909090909,
+        "f1_raw": 0.07142857142857142
+      },
+      "random_75": {
+        "answer": "The output for a member of the language of a decision problem will be \"yes\" if the algorithm accepts the input string, and \"no\" otherwise.",
+        "f1": 0.1,
+        "f1_raw": 0.0
+      },
+      "time": 10.998949766159058
+    }
+  ]
+}

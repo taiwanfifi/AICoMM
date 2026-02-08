@@ -1,0 +1,5267 @@
+{
+  "metadata": {
+    "model": "Mistral-7B",
+    "model_name": "mistralai/Mistral-7B-Instruct-v0.3",
+    "num_samples": 50,
+    "normalized_f1": true
+  },
+  "summary": {
+    "full_fp16": {
+      "f1_mean": 0.4290498259061528,
+      "f1_std": 0.36963480349328043,
+      "f1_se": 0.0522742552225311,
+      "f1_pct": 100.0,
+      "f1_raw_mean": 0.26039522123770964,
+      "prefill_ms": 21.423096656799316,
+      "quant_ms": 0.004658699035644531,
+      "selection_ms": 0.0,
+      "generation_ms": 582.7703285217285,
+      "compressed_bytes": 23509073.92,
+      "tx_10mbps_ms": 18807.259136000004,
+      "tx_50mbps_ms": 3761.4518272,
+      "tx_100mbps_ms": 1880.7259136
+    },
+    "int8": {
+      "f1_mean": 0.42814612059424084,
+      "f1_std": 0.3703780965155823,
+      "f1_se": 0.05237937272982676,
+      "f1_pct": 99.78937054455076,
+      "f1_raw_mean": 0.2600223837462608,
+      "prefill_ms": 21.49298667907715,
+      "quant_ms": 3.253464698791504,
+      "selection_ms": 0.0,
+      "generation_ms": 591.4516305923462,
+      "compressed_bytes": 11754536.96,
+      "tx_10mbps_ms": 9403.629568000002,
+      "tx_50mbps_ms": 1880.7259136,
+      "tx_100mbps_ms": 940.3629568
+    },
+    "int4": {
+      "f1_mean": 0.4082575812936715,
+      "f1_std": 0.3620214648458431,
+      "f1_se": 0.05119756654551659,
+      "f1_pct": 95.15388578271344,
+      "f1_raw_mean": 0.23395426573454997,
+      "prefill_ms": 21.50083065032959,
+      "quant_ms": 3.252997398376465,
+      "selection_ms": 0.0,
+      "generation_ms": 650.8840417861938,
+      "compressed_bytes": 5877268.48,
+      "tx_10mbps_ms": 4701.814784000001,
+      "tx_50mbps_ms": 940.3629568,
+      "tx_100mbps_ms": 470.1814784
+    },
+    "mixed_int4": {
+      "f1_mean": 0.396301904159047,
+      "f1_std": 0.3628458767539828,
+      "f1_se": 0.0513141559956639,
+      "f1_pct": 92.36733829737787,
+      "f1_raw_mean": 0.22999368969430517,
+      "prefill_ms": 21.502351760864258,
+      "quant_ms": 3.152608871459961,
+      "selection_ms": 0.0,
+      "generation_ms": 656.5959024429321,
+      "compressed_bytes": 6428262.4,
+      "tx_10mbps_ms": 5142.60992,
+      "tx_50mbps_ms": 1028.5219840000002,
+      "tx_100mbps_ms": 514.2609920000001
+    },
+    "q2c_75_fp16": {
+      "f1_mean": 0.4286747186001844,
+      "f1_std": 0.36516772835357686,
+      "f1_se": 0.05164251539786026,
+      "f1_pct": 99.91257255374101,
+      "f1_raw_mean": 0.24853525046371133,
+      "prefill_ms": 22.12398052215576,
+      "quant_ms": 0.0020360946655273438,
+      "selection_ms": 20.17202854156494,
+      "generation_ms": 507.7367115020752,
+      "compressed_bytes": 23509073.92,
+      "tx_10mbps_ms": 18807.259136000004,
+      "tx_50mbps_ms": 3761.4518272,
+      "tx_100mbps_ms": 1880.7259136
+    },
+    "q2c_50_fp16": {
+      "f1_mean": 0.3805836223683607,
+      "f1_std": 0.3656140764250175,
+      "f1_se": 0.0517056385474773,
+      "f1_pct": 88.70382864381041,
+      "f1_raw_mean": 0.24930314319954106,
+      "prefill_ms": 21.749372482299805,
+      "quant_ms": 0.0025892257690429688,
+      "selection_ms": 35.21252155303955,
+      "generation_ms": 497.1334981918335,
+      "compressed_bytes": 23509073.92,
+      "tx_10mbps_ms": 18807.259136000004,
+      "tx_50mbps_ms": 3761.4518272,
+      "tx_100mbps_ms": 1880.7259136
+    },
+    "q2c_25_fp16": {
+      "f1_mean": 0.25043454591681213,
+      "f1_std": 0.2805609061436878,
+      "f1_se": 0.039677303854008826,
+      "f1_pct": 58.369571736311656,
+      "f1_raw_mean": 0.17110209672775065,
+      "prefill_ms": 21.557326316833496,
+      "quant_ms": 0.00301361083984375,
+      "selection_ms": 50.30014991760254,
+      "generation_ms": 623.4263277053833,
+      "compressed_bytes": 23509073.92,
+      "tx_10mbps_ms": 18807.259136000004,
+      "tx_50mbps_ms": 3761.4518272,
+      "tx_100mbps_ms": 1880.7259136
+    }
+  },
+  "per_sample": [
+    {
+      "idx": 0,
+      "gold": "embroidery",
+      "seq_len": 110,
+      "full_fp16": {
+        "answer": "The Bayeux Tapestry was created using embroidery.",
+        "f1": 0.2857142857142857,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.022443771362304688,
+          "selection": 0.0,
+          "quantization": 3.5762786865234375e-06,
+          "compressed_bytes": 14417920,
+          "original_bytes": 14417920,
+          "compression_ratio": 1.0,
+          "generation": 0.33770275115966797
+        }
+      },
+      "int8": {
+        "answer": "The Bayeux Tapestry was created using embroidery.",
+        "f1": 0.2857142857142857,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.01982855796813965,
+          "selection": 0.0,
+          "quantization": 0.003201007843017578,
+          "compressed_bytes": 7208960,
+          "original_bytes": 14417920,
+          "compression_ratio": 0.5,
+          "generation": 0.36283230781555176
+        }
+      },
+      "int4": {
+        "answer": "The Bayeux Tapestry was created using embroidery.",
+        "f1": 0.2857142857142857,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.01989579200744629,
+          "selection": 0.0,
+          "quantization": 0.0031728744506835938,
+          "compressed_bytes": 3604480,
+          "original_bytes": 14417920,
+          "compression_ratio": 0.25,
+          "generation": 0.36538243293762207
+        }
+      },
+      "mixed_int4": {
+        "answer": "The Bayeux Tapestry was created using embroidery.",
+        "f1": 0.2857142857142857,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.019872426986694336,
+          "selection": 0.0,
+          "quantization": 0.003076314926147461,
+          "compressed_bytes": 3942400,
+          "original_bytes": 14417920,
+          "compression_ratio": 0.2734375,
+          "generation": 0.3664524555206299
+        }
+      },
+      "q2c_75_fp16": {
+        "answer": "The Bayeux Tapestry is a work of embroidery.",
+        "f1": 0.2857142857142857,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.022593259811401367,
+          "selection": 0.0140228271484375,
+          "quantization": 1.9073486328125e-06,
+          "compressed_bytes": 14417920,
+          "original_bytes": 14417920,
+          "compression_ratio": 1.0,
+          "generation": 0.3853952884674072
+        }
+      },
+      "q2c_50_fp16": {
+        "answer": "The Bayeux Tapestry was created using embroidery.",
+        "f1": 0.2857142857142857,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.02043938636779785,
+          "selection": 0.021998882293701172,
+          "quantization": 2.6226043701171875e-06,
+          "compressed_bytes": 14417920,
+          "original_bytes": 14417920,
+          "compression_ratio": 1.0,
+          "generation": 0.357724666595459
+        }
+      },
+      "q2c_25_fp16": {
+        "answer": "The Bayeux Tapestry was created using embroidery.",
+        "f1": 0.2857142857142857,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.020537137985229492,
+          "selection": 0.02992868423461914,
+          "quantization": 2.6226043701171875e-06,
+          "compressed_bytes": 14417920,
+          "original_bytes": 14417920,
+          "compression_ratio": 1.0,
+          "generation": 0.3534066677093506
+        }
+      }
+    },
+    {
+      "idx": 1,
+      "gold": "1050s",
+      "seq_len": 169,
+      "full_fp16": {
+        "answer": "In the 1050s.",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.020107746124267578,
+          "selection": 0.0,
+          "quantization": 4.291534423828125e-06,
+          "compressed_bytes": 22151168,
+          "original_bytes": 22151168,
+          "compression_ratio": 1.0,
+          "generation": 0.2222919464111328
+        }
+      },
+      "int8": {
+        "answer": "In the 1050s.",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.020100116729736328,
+          "selection": 0.0,
+          "quantization": 0.0032439231872558594,
+          "compressed_bytes": 11075584,
+          "original_bytes": 22151168,
+          "compression_ratio": 0.5,
+          "generation": 0.22188806533813477
+        }
+      },
+      "int4": {
+        "answer": "In the 1050s.",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.020174503326416016,
+          "selection": 0.0,
+          "quantization": 0.003223896026611328,
+          "compressed_bytes": 5537792,
+          "original_bytes": 22151168,
+          "compression_ratio": 0.25,
+          "generation": 0.22202825546264648
+        }
+      },
+      "mixed_int4": {
+        "answer": "In the 1050s.",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.02015089988708496,
+          "selection": 0.0,
+          "quantization": 0.0031223297119140625,
+          "compressed_bytes": 6056960,
+          "original_bytes": 22151168,
+          "compression_ratio": 0.2734375,
+          "generation": 0.2221367359161377
+        }
+      },
+      "q2c_75_fp16": {
+        "answer": "In the 1050s.",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.020666122436523438,
+          "selection": 0.01894068717956543,
+          "quantization": 2.6226043701171875e-06,
+          "compressed_bytes": 22151168,
+          "original_bytes": 22151168,
+          "compression_ratio": 1.0,
+          "generation": 0.2148575782775879
+        }
+      },
+      "q2c_50_fp16": {
+        "answer": "In the early 11th century.",
+        "f1": 0.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.020560264587402344,
+          "selection": 0.03296375274658203,
+          "quantization": 2.86102294921875e-06,
+          "compressed_bytes": 22151168,
+          "original_bytes": 22151168,
+          "compression_ratio": 1.0,
+          "generation": 0.20777273178100586
+        }
+      },
+      "q2c_25_fp16": {
+        "answer": "In the early 11th century.",
+        "f1": 0.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.020424604415893555,
+          "selection": 0.04742002487182617,
+          "quantization": 2.86102294921875e-06,
+          "compressed_bytes": 22151168,
+          "original_bytes": 22151168,
+          "compression_ratio": 1.0,
+          "generation": 0.20165133476257324
+        }
+      }
+    },
+    {
+      "idx": 2,
+      "gold": "as a function of the size of the instance",
+      "seq_len": 188,
+      "full_fp16": {
+        "answer": "The time required to solve a problem is calculated as a function of the size of the input, usually in bits. The function is often expressed in terms of Big O notation, which describes the upper bound ",
+        "f1": 0.1702127659574468,
+        "f1_raw": 0.19672131147540986,
+        "timings": {
+          "prefill": 0.020236492156982422,
+          "selection": 0.0,
+          "quantization": 5.245208740234375e-06,
+          "compressed_bytes": 24641536,
+          "original_bytes": 24641536,
+          "compression_ratio": 1.0,
+          "generation": 1.382969856262207
+        }
+      },
+      "int8": {
+        "answer": "The time required to solve a problem is calculated as a function of the size of the input, usually in bits. The function is often expressed in terms of Big O notation, which describes the upper bound ",
+        "f1": 0.16,
+        "f1_raw": 0.18461538461538463,
+        "timings": {
+          "prefill": 0.020674705505371094,
+          "selection": 0.0,
+          "quantization": 0.003254413604736328,
+          "compressed_bytes": 12320768,
+          "original_bytes": 24641536,
+          "compression_ratio": 0.5,
+          "generation": 1.483224868774414
+        }
+      },
+      "int4": {
+        "answer": "The time required to obtain the solution to a problem is calculated as a function of the size of the input, usually in bits. The function is often a polynomial, exponential, or a combination of both. ",
+        "f1": 0.17777777777777778,
+        "f1_raw": 0.1904761904761905,
+        "timings": {
+          "prefill": 0.020756244659423828,
+          "selection": 0.0,
+          "quantization": 0.0032608509063720703,
+          "compressed_bytes": 6160384,
+          "original_bytes": 24641536,
+          "compression_ratio": 0.25,
+          "generation": 1.559213638305664
+        }
+      },
+      "mixed_int4": {
+        "answer": "The time required to obtain the solution to a problem is calculated as a function of the size of the input, usually in bits. The function is often a polynomial, exponential, or a combination of both. ",
+        "f1": 0.17777777777777778,
+        "f1_raw": 0.1904761904761905,
+        "timings": {
+          "prefill": 0.020737886428833008,
+          "selection": 0.0,
+          "quantization": 0.0031604766845703125,
+          "compressed_bytes": 6737920,
+          "original_bytes": 24641536,
+          "compression_ratio": 0.2734375,
+          "generation": 1.557748556137085
+        }
+      },
+      "q2c_75_fp16": {
+        "answer": "The time complexity of an algorithm is a function that describes the upper bound on the number of operations it performs as a function of the size of the input. The time complexity is usually expresse",
+        "f1": 0.14545454545454545,
+        "f1_raw": 0.16901408450704225,
+        "timings": {
+          "prefill": 0.021315813064575195,
+          "selection": 0.020955562591552734,
+          "quantization": 1.430511474609375e-06,
+          "compressed_bytes": 24641536,
+          "original_bytes": 24641536,
+          "compression_ratio": 1.0,
+          "generation": 1.5525734424591064
+        }
+      },
+      "q2c_50_fp16": {
+        "answer": "The time required to obtain the solution to a problem is calculated as a function of the size of the input in bits. The time complexity of an given algorithm is the upper bound on the time required to",
+        "f1": 0.16326530612244897,
+        "f1_raw": 0.17910447761194032,
+        "timings": {
+          "prefill": 0.021384000778198242,
+          "selection": 0.03695178031921387,
+          "quantization": 2.384185791015625e-06,
+          "compressed_bytes": 24641536,
+          "original_bytes": 24641536,
+          "compression_ratio": 1.0,
+          "generation": 1.5460758209228516
+        }
+      },
+      "q2c_25_fp16": {
+        "answer": "The time needed to solve a computational problem is calculated in terms of the number of bits needed to represent the input to the problem. The complexity of an given algorithm for the problem is then",
+        "f1": 0.16326530612244897,
+        "f1_raw": 0.18461538461538463,
+        "timings": {
+          "prefill": 0.021397829055786133,
+          "selection": 0.05293107032775879,
+          "quantization": 2.86102294921875e-06,
+          "compressed_bytes": 24641536,
+          "original_bytes": 24641536,
+          "compression_ratio": 1.0,
+          "generation": 1.4642677307128906
+        }
+      }
+    },
+    {
+      "idx": 3,
+      "gold": "Latin monastery at Sant'Eufemia.",
+      "seq_len": 106,
+      "full_fp16": {
+        "answer": "Sant'Eufemia\n\nReference(s):\n\n- The Normans in the South, 1016-1057, by John France, 1992, p. 111.",
+        "f1": 0.125,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.019889354705810547,
+          "selection": 0.0,
+          "quantization": 3.814697265625e-06,
+          "compressed_bytes": 13893632,
+          "original_bytes": 13893632,
+          "compression_ratio": 1.0,
+          "generation": 1.2397048473358154
+        }
+      },
+      "int8": {
+        "answer": "Sant'Eufemia\n\nReference(s):\n\n- The Normans in the South, 1016-1057, by John France\n- The Normans in the South, 1057-1130, by John France\n- The Normans",
+        "f1": 0.09523809523809523,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.0198516845703125,
+          "selection": 0.0,
+          "quantization": 0.0032274723052978516,
+          "compressed_bytes": 6946816,
+          "original_bytes": 13893632,
+          "compression_ratio": 0.5,
+          "generation": 1.5594418048858643
+        }
+      },
+      "int4": {
+        "answer": "Sant'Eufemia\n\nReference(s):\nhttps://en.wikipedia.org/wiki/Saint-Evroul\nhttps://en.wikipedia.org/wiki/Sant%27Eufemia_in_Ascoli\nhttps://www.britannica.com",
+        "f1": 0.22222222222222224,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.01988983154296875,
+          "selection": 0.0,
+          "quantization": 0.00322723388671875,
+          "compressed_bytes": 3473408,
+          "original_bytes": 13893632,
+          "compression_ratio": 0.25,
+          "generation": 1.557079553604126
+        }
+      },
+      "mixed_int4": {
+        "answer": "Sant'Eufemia\n\nReference(s):\n\n- The Normans in the South, 1016-1057, by John France, 1992, p. 111.",
+        "f1": 0.125,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.019808530807495117,
+          "selection": 0.0,
+          "quantization": 0.0031251907348632812,
+          "compressed_bytes": 3799040,
+          "original_bytes": 13893632,
+          "compression_ratio": 0.2734375,
+          "generation": 1.2388122081756592
+        }
+      },
+      "q2c_75_fp16": {
+        "answer": "Sant'Evroul in Italy.",
+        "f1": 0.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.020519733428955078,
+          "selection": 0.013312339782714844,
+          "quantization": 1.430511474609375e-06,
+          "compressed_bytes": 13893632,
+          "original_bytes": 13893632,
+          "compression_ratio": 1.0,
+          "generation": 0.19430828094482422
+        }
+      },
+      "q2c_50_fp16": {
+        "answer": "Sant'Evroul in Italy.",
+        "f1": 0.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.020413637161254883,
+          "selection": 0.021325349807739258,
+          "quantization": 2.384185791015625e-06,
+          "compressed_bytes": 13893632,
+          "original_bytes": 13893632,
+          "compression_ratio": 1.0,
+          "generation": 0.19014692306518555
+        }
+      },
+      "q2c_25_fp16": {
+        "answer": "Sant'Evroul-\n\nSolution:\nThe Saint-Evroul monks established the monastery at Sant'Evroul in Italy.",
+        "f1": 0.28571428571428575,
+        "f1_raw": 0.25,
+        "timings": {
+          "prefill": 0.020567655563354492,
+          "selection": 0.0293118953704834,
+          "quantization": 2.1457672119140625e-06,
+          "compressed_bytes": 13893632,
+          "original_bytes": 13893632,
+          "compression_ratio": 1.0,
+          "generation": 0.8038654327392578
+        }
+      }
+    },
+    {
+      "idx": 4,
+      "gold": "11th",
+      "seq_len": 181,
+      "full_fp16": {
+        "answer": "11th century",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666,
+        "timings": {
+          "prefill": 0.020697832107543945,
+          "selection": 0.0,
+          "quantization": 4.76837158203125e-06,
+          "compressed_bytes": 23724032,
+          "original_bytes": 23724032,
+          "compression_ratio": 1.0,
+          "generation": 0.12598419189453125
+        }
+      },
+      "int8": {
+        "answer": "11th century",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666,
+        "timings": {
+          "prefill": 0.020713090896606445,
+          "selection": 0.0,
+          "quantization": 0.0032410621643066406,
+          "compressed_bytes": 11862016,
+          "original_bytes": 23724032,
+          "compression_ratio": 0.5,
+          "generation": 0.12539005279541016
+        }
+      },
+      "int4": {
+        "answer": "11th century",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666,
+        "timings": {
+          "prefill": 0.020690202713012695,
+          "selection": 0.0,
+          "quantization": 0.003412485122680664,
+          "compressed_bytes": 5931008,
+          "original_bytes": 23724032,
+          "compression_ratio": 0.25,
+          "generation": 0.1251673698425293
+        }
+      },
+      "mixed_int4": {
+        "answer": "11th century",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666,
+        "timings": {
+          "prefill": 0.020730018615722656,
+          "selection": 0.0,
+          "quantization": 0.003128528594970703,
+          "compressed_bytes": 6487040,
+          "original_bytes": 23724032,
+          "compression_ratio": 0.2734375,
+          "generation": 0.1252436637878418
+        }
+      },
+      "q2c_75_fp16": {
+        "answer": "11th century",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666,
+        "timings": {
+          "prefill": 0.021262407302856445,
+          "selection": 0.020308494567871094,
+          "quantization": 1.6689300537109375e-06,
+          "compressed_bytes": 23724032,
+          "original_bytes": 23724032,
+          "compression_ratio": 1.0,
+          "generation": 0.11731839179992676
+        }
+      },
+      "q2c_50_fp16": {
+        "answer": "11th century",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666,
+        "timings": {
+          "prefill": 0.02102494239807129,
+          "selection": 0.035466670989990234,
+          "quantization": 2.86102294921875e-06,
+          "compressed_bytes": 23724032,
+          "original_bytes": 23724032,
+          "compression_ratio": 1.0,
+          "generation": 0.11032962799072266
+        }
+      },
+      "q2c_25_fp16": {
+        "answer": "11th century",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666,
+        "timings": {
+          "prefill": 0.020803213119506836,
+          "selection": 0.05079078674316406,
+          "quantization": 3.337860107421875e-06,
+          "compressed_bytes": 23724032,
+          "original_bytes": 23724032,
+          "compression_ratio": 1.0,
+          "generation": 0.10382866859436035
+        }
+      }
+    },
+    {
+      "idx": 5,
+      "gold": "King Ethelred II",
+      "seq_len": 170,
+      "full_fp16": {
+        "answer": "King Ethelred II of England.",
+        "f1": 0.7499999999999999,
+        "f1_raw": 0.7499999999999999,
+        "timings": {
+          "prefill": 0.019734859466552734,
+          "selection": 0.0,
+          "quantization": 5.245208740234375e-06,
+          "compressed_bytes": 22282240,
+          "original_bytes": 22282240,
+          "compression_ratio": 1.0,
+          "generation": 0.22188949584960938
+        }
+      },
+      "int8": {
+        "answer": "King Ethelred II of England.",
+        "f1": 0.7499999999999999,
+        "f1_raw": 0.7499999999999999,
+        "timings": {
+          "prefill": 0.02031397819519043,
+          "selection": 0.0,
+          "quantization": 0.0032269954681396484,
+          "compressed_bytes": 11141120,
+          "original_bytes": 22282240,
+          "compression_ratio": 0.5,
+          "generation": 0.22408103942871094
+        }
+      },
+      "int4": {
+        "answer": "King Ethelred II of England\n\nQuestion with answer expanded: Who was Emma, the sister of Duke Richard II of Normandy, married to?\nAnswer: Emma was married to King Ethelred II of England.\n\nQuestion with",
+        "f1": 0.13636363636363635,
+        "f1_raw": 0.13043478260869565,
+        "timings": {
+          "prefill": 0.020400524139404297,
+          "selection": 0.0,
+          "quantization": 0.0032384395599365234,
+          "compressed_bytes": 5570560,
+          "original_bytes": 22282240,
+          "compression_ratio": 0.25,
+          "generation": 1.5688390731811523
+        }
+      },
+      "mixed_int4": {
+        "answer": "King Ethelred II of England\n\nQuestion with answer expanded: Who was Emma, the sister of Duke Richard II of Normandy, married to?\nAnswer: Emma was married to King Ethelred II of England.\n\nQuestion with",
+        "f1": 0.13636363636363635,
+        "f1_raw": 0.13043478260869565,
+        "timings": {
+          "prefill": 0.020405054092407227,
+          "selection": 0.0,
+          "quantization": 0.003143787384033203,
+          "compressed_bytes": 6092800,
+          "original_bytes": 22282240,
+          "compression_ratio": 0.2734375,
+          "generation": 1.5719318389892578
+        }
+      },
+      "q2c_75_fp16": {
+        "answer": "King Ethelred II of England.",
+        "f1": 0.7499999999999999,
+        "f1_raw": 0.7499999999999999,
+        "timings": {
+          "prefill": 0.02101445198059082,
+          "selection": 0.018409013748168945,
+          "quantization": 1.6689300537109375e-06,
+          "compressed_bytes": 22282240,
+          "original_bytes": 22282240,
+          "compression_ratio": 1.0,
+          "generation": 0.21738529205322266
+        }
+      },
+      "q2c_50_fp16": {
+        "answer": "King Ethelred II of England.",
+        "f1": 0.7499999999999999,
+        "f1_raw": 0.7499999999999999,
+        "timings": {
+          "prefill": 0.020717144012451172,
+          "selection": 0.03322339057922363,
+          "quantization": 3.0994415283203125e-06,
+          "compressed_bytes": 22282240,
+          "original_bytes": 22282240,
+          "compression_ratio": 1.0,
+          "generation": 0.21040797233581543
+        }
+      },
+      "q2c_25_fp16": {
+        "answer": "King Ethelred II of England.\n\nAnswer fully: Emma married King Ethelred II of England.",
+        "f1": 0.35294117647058826,
+        "f1_raw": 0.35294117647058826,
+        "timings": {
+          "prefill": 0.02060556411743164,
+          "selection": 0.04812026023864746,
+          "quantization": 2.86102294921875e-06,
+          "compressed_bytes": 22282240,
+          "original_bytes": 22282240,
+          "compression_ratio": 1.0,
+          "generation": 0.6245536804199219
+        }
+      }
+    },
+    {
+      "idx": 6,
+      "gold": "Guy de Lusignan",
+      "seq_len": 253,
+      "full_fp16": {
+        "answer": "Guy de Lusignan.",
+        "f1": 1.0,
+        "f1_raw": 0.6666666666666666,
+        "timings": {
+          "prefill": 0.022957801818847656,
+          "selection": 0.0,
+          "quantization": 5.7220458984375e-06,
+          "compressed_bytes": 33161216,
+          "original_bytes": 33161216,
+          "compression_ratio": 1.0,
+          "generation": 0.1767561435699463
+        }
+      },
+      "int8": {
+        "answer": "Guy de Lusignan.",
+        "f1": 1.0,
+        "f1_raw": 0.6666666666666666,
+        "timings": {
+          "prefill": 0.023052692413330078,
+          "selection": 0.0,
+          "quantization": 0.003305196762084961,
+          "compressed_bytes": 16580608,
+          "original_bytes": 33161216,
+          "compression_ratio": 0.5,
+          "generation": 0.17585110664367676
+        }
+      },
+      "int4": {
+        "answer": "Guy de Lusignan.",
+        "f1": 1.0,
+        "f1_raw": 0.6666666666666666,
+        "timings": {
+          "prefill": 0.02304697036743164,
+          "selection": 0.0,
+          "quantization": 0.0032837390899658203,
+          "compressed_bytes": 8290304,
+          "original_bytes": 33161216,
+          "compression_ratio": 0.25,
+          "generation": 0.17606687545776367
+        }
+      },
+      "mixed_int4": {
+        "answer": "Guy de Lusignan.",
+        "f1": 1.0,
+        "f1_raw": 0.6666666666666666,
+        "timings": {
+          "prefill": 0.023105621337890625,
+          "selection": 0.0,
+          "quantization": 0.003206491470336914,
+          "compressed_bytes": 9067520,
+          "original_bytes": 33161216,
+          "compression_ratio": 0.2734375,
+          "generation": 0.17622041702270508
+        }
+      },
+      "q2c_75_fp16": {
+        "answer": "Guy de Lignan.",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666,
+        "timings": {
+          "prefill": 0.023566007614135742,
+          "selection": 0.02699565887451172,
+          "quantization": 2.1457672119140625e-06,
+          "compressed_bytes": 33161216,
+          "original_bytes": 33161216,
+          "compression_ratio": 1.0,
+          "generation": 0.14014959335327148
+        }
+      },
+      "q2c_50_fp16": {
+        "answer": "Guy de Lusignan.",
+        "f1": 1.0,
+        "f1_raw": 0.6666666666666666,
+        "timings": {
+          "prefill": 0.023453950881958008,
+          "selection": 0.049578189849853516,
+          "quantization": 3.814697265625e-06,
+          "compressed_bytes": 33161216,
+          "original_bytes": 33161216,
+          "compression_ratio": 1.0,
+          "generation": 0.15458106994628906
+        }
+      },
+      "q2c_25_fp16": {
+        "answer": "Guy de Lusignan.\n\nFull answer: Guy de Lusignan led Richard's troops when Cyprus was conquered.\n\nThis is a paraphrase.\n\nCorrected: The answer is: Guy de Lusignan led Richard's troops when Cy",
+        "f1": 0.1875,
+        "f1_raw": 0.17647058823529413,
+        "timings": {
+          "prefill": 0.023380041122436523,
+          "selection": 0.07127809524536133,
+          "quantization": 3.5762786865234375e-06,
+          "compressed_bytes": 33161216,
+          "original_bytes": 33161216,
+          "compression_ratio": 1.0,
+          "generation": 1.5453438758850098
+        }
+      }
+    },
+    {
+      "idx": 7,
+      "gold": "non-deterministic",
+      "seq_len": 140,
+      "full_fp16": {
+        "answer": "A non-deterministic Turing machine can be characterized by checking multiple possibilities at the same time.",
+        "f1": 0.14285714285714288,
+        "f1_raw": 0.125,
+        "timings": {
+          "prefill": 0.019667625427246094,
+          "selection": 0.0,
+          "quantization": 4.5299530029296875e-06,
+          "compressed_bytes": 18350080,
+          "original_bytes": 18350080,
+          "compression_ratio": 1.0,
+          "generation": 0.5491886138916016
+        }
+      },
+      "int8": {
+        "answer": "A non-deterministic Turing machine can be characterized by checking multiple possibilities at the same time.",
+        "f1": 0.14285714285714288,
+        "f1_raw": 0.125,
+        "timings": {
+          "prefill": 0.019596338272094727,
+          "selection": 0.0,
+          "quantization": 0.0032401084899902344,
+          "compressed_bytes": 9175040,
+          "original_bytes": 18350080,
+          "compression_ratio": 0.5,
+          "generation": 0.5486736297607422
+        }
+      },
+      "int4": {
+        "answer": "A non-deterministic Turing machine can be characterized by checking multiple possibilities at the same time.",
+        "f1": 0.14285714285714288,
+        "f1_raw": 0.125,
+        "timings": {
+          "prefill": 0.019732952117919922,
+          "selection": 0.0,
+          "quantization": 0.0032393932342529297,
+          "compressed_bytes": 4587520,
+          "original_bytes": 18350080,
+          "compression_ratio": 0.25,
+          "generation": 0.5488860607147217
+        }
+      },
+      "mixed_int4": {
+        "answer": "A non-deterministic Turing machine can be characterized by checking multiple possibilities at the same time.",
+        "f1": 0.14285714285714288,
+        "f1_raw": 0.125,
+        "timings": {
+          "prefill": 0.019633769989013672,
+          "selection": 0.0,
+          "quantization": 0.0031490325927734375,
+          "compressed_bytes": 5017600,
+          "original_bytes": 18350080,
+          "compression_ratio": 0.2734375,
+          "generation": 0.5481598377227783
+        }
+      },
+      "q2c_75_fp16": {
+        "answer": "A non-deterministic Turing machine can be characterized by checking multiple possibilities at the same time.",
+        "f1": 0.14285714285714288,
+        "f1_raw": 0.125,
+        "timings": {
+          "prefill": 0.020520925521850586,
+          "selection": 0.016905546188354492,
+          "quantization": 1.6689300537109375e-06,
+          "compressed_bytes": 18350080,
+          "original_bytes": 18350080,
+          "compression_ratio": 1.0,
+          "generation": 0.5408964157104492
+        }
+      },
+      "q2c_50_fp16": {
+        "answer": "A non-deterministic Turing machine.",
+        "f1": 0.5,
+        "f1_raw": 0.4,
+        "timings": {
+          "prefill": 0.020254135131835938,
+          "selection": 0.027884483337402344,
+          "quantization": 2.384185791015625e-06,
+          "compressed_bytes": 18350080,
+          "original_bytes": 18350080,
+          "compression_ratio": 1.0,
+          "generation": 0.26256251335144043
+        }
+      },
+      "q2c_25_fp16": {
+        "answer": "A non-deterministic Turing machine.",
+        "f1": 0.5,
+        "f1_raw": 0.4,
+        "timings": {
+          "prefill": 0.02028822898864746,
+          "selection": 0.0389246940612793,
+          "quantization": 2.86102294921875e-06,
+          "compressed_bytes": 18350080,
+          "original_bytes": 18350080,
+          "compression_ratio": 1.0,
+          "generation": 0.2572519779205322
+        }
+      }
+    },
+    {
+      "idx": 8,
+      "gold": "Romanesque",
+      "seq_len": 100,
+      "full_fp16": {
+        "answer": "The Norman architecture idiom is characterised by rounded arches, particularly over windows and doorways, and massive proportions.",
+        "f1": 0.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.019956111907958984,
+          "selection": 0.0,
+          "quantization": 3.814697265625e-06,
+          "compressed_bytes": 13107200,
+          "original_bytes": 13107200,
+          "compression_ratio": 1.0,
+          "generation": 0.6250331401824951
+        }
+      },
+      "int8": {
+        "answer": "The Norman architecture idiom is characterised by rounded arches, particularly over windows and doorways, and massive proportions.",
+        "f1": 0.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.01988077163696289,
+          "selection": 0.0,
+          "quantization": 0.0031762123107910156,
+          "compressed_bytes": 6553600,
+          "original_bytes": 13107200,
+          "compression_ratio": 0.5,
+          "generation": 0.6242728233337402
+        }
+      },
+      "int4": {
+        "answer": "The Norman architecture idiom is characterised by rounded arches, particularly over windows and doorways, and massive proportions.",
+        "f1": 0.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.019781827926635742,
+          "selection": 0.0,
+          "quantization": 0.0031914710998535156,
+          "compressed_bytes": 3276800,
+          "original_bytes": 13107200,
+          "compression_ratio": 0.25,
+          "generation": 0.6242733001708984
+        }
+      },
+      "mixed_int4": {
+        "answer": "The Norman architecture idiom is characterised by rounded arches, particularly over windows and doorways, and massive proportions.",
+        "f1": 0.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.01982569694519043,
+          "selection": 0.0,
+          "quantization": 0.0030927658081054688,
+          "compressed_bytes": 3584000,
+          "original_bytes": 13107200,
+          "compression_ratio": 0.2734375,
+          "generation": 0.6239738464355469
+        }
+      },
+      "q2c_75_fp16": {
+        "answer": "The Norman architecture idiom is characterised by rounded arches, massive proportions, and a unique Romanesque style that spread to England and Italy, fundamentally altering military architecture in n",
+        "f1": 0.07142857142857142,
+        "f1_raw": 0.06666666666666667,
+        "timings": {
+          "prefill": 0.020521163940429688,
+          "selection": 0.011992692947387695,
+          "quantization": 1.430511474609375e-06,
+          "compressed_bytes": 13107200,
+          "original_bytes": 13107200,
+          "compression_ratio": 1.0,
+          "generation": 1.0175557136535645
+        }
+      },
+      "q2c_50_fp16": {
+        "answer": "The Norman architecture idiom is a unique Romanesque style that spread in England, characterized by rounded arches, massive walls, and intricate stone carvings.",
+        "f1": 0.0909090909090909,
+        "f1_raw": 0.08333333333333333,
+        "timings": {
+          "prefill": 0.020537137985229492,
+          "selection": 0.019928455352783203,
+          "quantization": 2.1457672119140625e-06,
+          "compressed_bytes": 13107200,
+          "original_bytes": 13107200,
+          "compression_ratio": 1.0,
+          "generation": 0.8403134346008301
+        }
+      },
+      "q2c_25_fp16": {
+        "answer": "The Norman architecture idiom is a unique Romanesque style characterised by massive structures, intricate carvings, and rounded arches.",
+        "f1": 0.11764705882352941,
+        "f1_raw": 0.10526315789473684,
+        "timings": {
+          "prefill": 0.020474672317504883,
+          "selection": 0.027906179428100586,
+          "quantization": 1.9073486328125e-06,
+          "compressed_bytes": 13107200,
+          "original_bytes": 13107200,
+          "compression_ratio": 1.0,
+          "generation": 0.7113237380981445
+        }
+      }
+    },
+    {
+      "idx": 9,
+      "gold": "inherent difficulty",
+      "seq_len": 112,
+      "full_fp16": {
+        "answer": "Computational problems are classified by their time complexity, space complexity, or a combination of both. Time complexity refers to the amount of time an algorithm takes to solve a problem as a func",
+        "f1": 0.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.019863605499267578,
+          "selection": 0.0,
+          "quantization": 3.814697265625e-06,
+          "compressed_bytes": 14680064,
+          "original_bytes": 14680064,
+          "compression_ratio": 1.0,
+          "generation": 1.5746865272521973
+        }
+      },
+      "int8": {
+        "answer": "Computational problems are classified by their time complexity, space complexity, or a combination of both. Time complexity refers to the amount of time an algorithm takes to solve a problem as a func",
+        "f1": 0.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.0197451114654541,
+          "selection": 0.0,
+          "quantization": 0.0032265186309814453,
+          "compressed_bytes": 7340032,
+          "original_bytes": 14680064,
+          "compression_ratio": 0.5,
+          "generation": 1.5749833583831787
+        }
+      },
+      "int4": {
+        "answer": "Computational problems are classified by their time complexity, space complexity, or a combination of both.",
+        "f1": 0.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.019784212112426758,
+          "selection": 0.0,
+          "quantization": 0.003202676773071289,
+          "compressed_bytes": 3670016,
+          "original_bytes": 14680064,
+          "compression_ratio": 0.25,
+          "generation": 0.4764978885650635
+        }
+      },
+      "mixed_int4": {
+        "answer": "Computational problems are classified by their time complexity, space complexity, or a combination of both.",
+        "f1": 0.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.019900798797607422,
+          "selection": 0.0,
+          "quantization": 0.0031075477600097656,
+          "compressed_bytes": 4014080,
+          "original_bytes": 14680064,
+          "compression_ratio": 0.2734375,
+          "generation": 0.4767155647277832
+        }
+      },
+      "q2c_75_fp16": {
+        "answer": "Computational problems are classified by their time complexity, which is the amount of time an algorithm takes to solve a problem as a function of the size of the input.",
+        "f1": 0.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.020833492279052734,
+          "selection": 0.014133930206298828,
+          "quantization": 1.430511474609375e-06,
+          "compressed_bytes": 14680064,
+          "original_bytes": 14680064,
+          "compression_ratio": 1.0,
+          "generation": 0.819634199142456
+        }
+      },
+      "q2c_50_fp16": {
+        "answer": "Computational problems are classified by their time complexity, which is a measure of the amount of time an algorithm takes to run as a function of the size of the input.",
+        "f1": 0.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.020457029342651367,
+          "selection": 0.02245640754699707,
+          "quantization": 2.1457672119140625e-06,
+          "compressed_bytes": 14680064,
+          "original_bytes": 14680064,
+          "compression_ratio": 1.0,
+          "generation": 0.8415758609771729
+        }
+      },
+      "q2c_25_fp16": {
+        "answer": "Computational problems are classified by their time complexity, which is a measure of the amount of time an algorithm takes to run as a function of the size of the input.",
+        "f1": 0.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.02054882049560547,
+          "selection": 0.030783653259277344,
+          "quantization": 2.384185791015625e-06,
+          "compressed_bytes": 14680064,
+          "original_bytes": 14680064,
+          "compression_ratio": 1.0,
+          "generation": 0.8355917930603027
+        }
+      }
+    },
+    {
+      "idx": 10,
+      "gold": "yes",
+      "seq_len": 164,
+      "full_fp16": {
+        "answer": "The answer that denotes that an algorithm has accepted an input string is yes or 1.",
+        "f1": 0.14285714285714288,
+        "f1_raw": 0.11764705882352941,
+        "timings": {
+          "prefill": 0.02042698860168457,
+          "selection": 0.0,
+          "quantization": 5.245208740234375e-06,
+          "compressed_bytes": 21495808,
+          "original_bytes": 21495808,
+          "compression_ratio": 1.0,
+          "generation": 0.45267486572265625
+        }
+      },
+      "int8": {
+        "answer": "The answer that denotes that an algorithm has accepted an input string is yes or 1.",
+        "f1": 0.14285714285714288,
+        "f1_raw": 0.11764705882352941,
+        "timings": {
+          "prefill": 0.020440340042114258,
+          "selection": 0.0,
+          "quantization": 0.003239870071411133,
+          "compressed_bytes": 10747904,
+          "original_bytes": 21495808,
+          "compression_ratio": 0.5,
+          "generation": 0.4521183967590332
+        }
+      },
+      "int4": {
+        "answer": "The answer is \"yes\" or 1.",
+        "f1": 0.33333333333333337,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.020439863204956055,
+          "selection": 0.0,
+          "quantization": 0.0032291412353515625,
+          "compressed_bytes": 5373952,
+          "original_bytes": 21495808,
+          "compression_ratio": 0.25,
+          "generation": 0.2516202926635742
+        }
+      },
+      "mixed_int4": {
+        "answer": "The answer is \"yes\" or 1.",
+        "f1": 0.33333333333333337,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.020514488220214844,
+          "selection": 0.0,
+          "quantization": 0.0031430721282958984,
+          "compressed_bytes": 5877760,
+          "original_bytes": 21495808,
+          "compression_ratio": 0.2734375,
+          "generation": 0.2514374256134033
+        }
+      },
+      "q2c_75_fp16": {
+        "answer": "The answer that denotes that an algorithm has accepted an input string is \"yes\" or 1.",
+        "f1": 0.14285714285714288,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.020934581756591797,
+          "selection": 0.01859116554260254,
+          "quantization": 1.6689300537109375e-06,
+          "compressed_bytes": 21495808,
+          "original_bytes": 21495808,
+          "compression_ratio": 1.0,
+          "generation": 0.4941725730895996
+        }
+      },
+      "q2c_50_fp16": {
+        "answer": "The answer that denotes that an algorithm has accepted an given input string is \"yes\" or 1.",
+        "f1": 0.13333333333333333,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.020825862884521484,
+          "selection": 0.03224754333496094,
+          "quantization": 2.6226043701171875e-06,
+          "compressed_bytes": 21495808,
+          "original_bytes": 21495808,
+          "compression_ratio": 1.0,
+          "generation": 0.5118818283081055
+        }
+      },
+      "q2c_25_fp16": {
+        "answer": "The answer that denotes that an algorithm has accepted an string is \"yes\".",
+        "f1": 0.18181818181818182,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.02089071273803711,
+          "selection": 0.045996665954589844,
+          "quantization": 2.6226043701171875e-06,
+          "compressed_bytes": 21495808,
+          "original_bytes": 21495808,
+          "compression_ratio": 1.0,
+          "generation": 0.35537004470825195
+        }
+      }
+    },
+    {
+      "idx": 11,
+      "gold": "Seine",
+      "seq_len": 241,
+      "full_fp16": {
+        "answer": "The river Epte originally bounded the Duchy.",
+        "f1": 0.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.02272343635559082,
+          "selection": 0.0,
+          "quantization": 5.0067901611328125e-06,
+          "compressed_bytes": 31588352,
+          "original_bytes": 31588352,
+          "compression_ratio": 1.0,
+          "generation": 0.2784254550933838
+        }
+      },
+      "int8": {
+        "answer": "The river Epte originally bounded the Duchy.",
+        "f1": 0.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.02298426628112793,
+          "selection": 0.0,
+          "quantization": 0.0032668113708496094,
+          "compressed_bytes": 15794176,
+          "original_bytes": 31588352,
+          "compression_ratio": 0.5,
+          "generation": 0.2778615951538086
+        }
+      },
+      "int4": {
+        "answer": "The river Epte originally bounded the Duchy.",
+        "f1": 0.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.022986173629760742,
+          "selection": 0.0,
+          "quantization": 0.0033028125762939453,
+          "compressed_bytes": 7897088,
+          "original_bytes": 31588352,
+          "compression_ratio": 0.25,
+          "generation": 0.2776341438293457
+        }
+      },
+      "mixed_int4": {
+        "answer": "The river Epte originally bounded the Duchy.",
+        "f1": 0.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.022915363311767578,
+          "selection": 0.0,
+          "quantization": 0.003183126449584961,
+          "compressed_bytes": 8637440,
+          "original_bytes": 31588352,
+          "compression_ratio": 0.2734375,
+          "generation": 0.2781679630279541
+        }
+      },
+      "q2c_75_fp16": {
+        "answer": "The Epte River originally bounded the Duchy of Normandy.",
+        "f1": 0.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.023489713668823242,
+          "selection": 0.025363922119140625,
+          "quantization": 2.6226043701171875e-06,
+          "compressed_bytes": 31588352,
+          "original_bytes": 31588352,
+          "compression_ratio": 1.0,
+          "generation": 0.3419671058654785
+        }
+      },
+      "q2c_50_fp16": {
+        "answer": "The Epte\n\nDetailed answer:\nIn the course of the 10th century, the initially the Norse incursions into the rivers of France evolved into permanent settlements. The Duchy of Normandy, which was establis",
+        "f1": 0.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.023391008377075195,
+          "selection": 0.04675030708312988,
+          "quantization": 2.86102294921875e-06,
+          "compressed_bytes": 31588352,
+          "original_bytes": 31588352,
+          "compression_ratio": 1.0,
+          "generation": 1.5660595893859863
+        }
+      },
+      "q2c_25_fp16": {
+        "answer": "The Eptep\n\nThe Seine River",
+        "f1": 0.5,
+        "f1_raw": 0.33333333333333337,
+        "timings": {
+          "prefill": 0.023515701293945312,
+          "selection": 0.06816363334655762,
+          "quantization": 3.5762786865234375e-06,
+          "compressed_bytes": 31588352,
+          "original_bytes": 31588352,
+          "compression_ratio": 1.0,
+          "generation": 0.20052075386047363
+        }
+      }
+    },
+    {
+      "idx": 12,
+      "gold": "1041",
+      "seq_len": 189,
+      "full_fp16": {
+        "answer": "Edward returned in 1041.",
+        "f1": 0.4,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.020452499389648438,
+          "selection": 0.0,
+          "quantization": 4.291534423828125e-06,
+          "compressed_bytes": 24772608,
+          "original_bytes": 24772608,
+          "compression_ratio": 1.0,
+          "generation": 0.22588777542114258
+        }
+      },
+      "int8": {
+        "answer": "Edward returned in 1041.",
+        "f1": 0.4,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.021140575408935547,
+          "selection": 0.0,
+          "quantization": 0.0032286643981933594,
+          "compressed_bytes": 12386304,
+          "original_bytes": 24772608,
+          "compression_ratio": 0.5,
+          "generation": 0.2273244857788086
+        }
+      },
+      "int4": {
+        "answer": "Edward returned in 1041.",
+        "f1": 0.4,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.021227598190307617,
+          "selection": 0.0,
+          "quantization": 0.0032165050506591797,
+          "compressed_bytes": 6193152,
+          "original_bytes": 24772608,
+          "compression_ratio": 0.25,
+          "generation": 0.22746944427490234
+        }
+      },
+      "mixed_int4": {
+        "answer": "Edward returned in 1041.",
+        "f1": 0.4,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.021207809448242188,
+          "selection": 0.0,
+          "quantization": 0.003130674362182617,
+          "compressed_bytes": 6773760,
+          "original_bytes": 24772608,
+          "compression_ratio": 0.2734375,
+          "generation": 0.22733402252197266
+        }
+      },
+      "q2c_75_fp16": {
+        "answer": "Edward returned in 1041.",
+        "f1": 0.4,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.02176666259765625,
+          "selection": 0.02011418342590332,
+          "quantization": 2.1457672119140625e-06,
+          "compressed_bytes": 24772608,
+          "original_bytes": 24772608,
+          "compression_ratio": 1.0,
+          "generation": 0.21929574012756348
+        }
+      },
+      "q2c_50_fp16": {
+        "answer": "Edward returned in 1041.",
+        "f1": 0.4,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.021555662155151367,
+          "selection": 0.03681159019470215,
+          "quantization": 2.384185791015625e-06,
+          "compressed_bytes": 24772608,
+          "original_bytes": 24772608,
+          "compression_ratio": 1.0,
+          "generation": 0.21186232566833496
+        }
+      },
+      "q2c_25_fp16": {
+        "answer": "Edward returned in  1051.1020.",
+        "f1": 0.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.0212857723236084,
+          "selection": 0.05353808403015137,
+          "quantization": 3.337860107421875e-06,
+          "compressed_bytes": 24772608,
+          "original_bytes": 24772608,
+          "compression_ratio": 1.0,
+          "generation": 0.35291433334350586
+        }
+      }
+    },
+    {
+      "idx": 13,
+      "gold": "9th century",
+      "seq_len": 121,
+      "full_fp16": {
+        "answer": "The Latin version of the word \"Norman\" was first recorded in the 9th century.",
+        "f1": 0.3076923076923077,
+        "f1_raw": 0.125,
+        "timings": {
+          "prefill": 0.0197908878326416,
+          "selection": 0.0,
+          "quantization": 4.76837158203125e-06,
+          "compressed_bytes": 15859712,
+          "original_bytes": 15859712,
+          "compression_ratio": 1.0,
+          "generation": 0.5039637088775635
+        }
+      },
+      "int8": {
+        "answer": "The Latin version of the word \"Norman\" was first recorded in the 9th century.",
+        "f1": 0.3076923076923077,
+        "f1_raw": 0.125,
+        "timings": {
+          "prefill": 0.019805431365966797,
+          "selection": 0.0,
+          "quantization": 0.0032296180725097656,
+          "compressed_bytes": 7929856,
+          "original_bytes": 15859712,
+          "compression_ratio": 0.5,
+          "generation": 0.502671480178833
+        }
+      },
+      "int4": {
+        "answer": "The Latin version of the word \"Norman\" was first recorded in the 9th century.",
+        "f1": 0.3076923076923077,
+        "f1_raw": 0.125,
+        "timings": {
+          "prefill": 0.019797086715698242,
+          "selection": 0.0,
+          "quantization": 0.0032393932342529297,
+          "compressed_bytes": 3964928,
+          "original_bytes": 15859712,
+          "compression_ratio": 0.25,
+          "generation": 0.5029802322387695
+        }
+      },
+      "mixed_int4": {
+        "answer": "The Latin version of the word \"Norman\" was first recorded in the 9th century.",
+        "f1": 0.3076923076923077,
+        "f1_raw": 0.125,
+        "timings": {
+          "prefill": 0.01975226402282715,
+          "selection": 0.0,
+          "quantization": 0.003127574920654297,
+          "compressed_bytes": 4336640,
+          "original_bytes": 15859712,
+          "compression_ratio": 0.2734375,
+          "generation": 0.5029189586639404
+        }
+      },
+      "q2c_75_fp16": {
+        "answer": "The Latin version of the word \"Norman\" was first recorded in the Medieval Latin, around the 9th century.",
+        "f1": 0.25,
+        "f1_raw": 0.09999999999999999,
+        "timings": {
+          "prefill": 0.021228551864624023,
+          "selection": 0.01440286636352539,
+          "quantization": 2.6226043701171875e-06,
+          "compressed_bytes": 15859712,
+          "original_bytes": 15859712,
+          "compression_ratio": 1.0,
+          "generation": 0.6468813419342041
+        }
+      },
+      "q2c_50_fp16": {
+        "answer": "The Latinized version of the word \"Norman\" was first recorded in the Old Norse as \"Nordmann\" in the 11th century.",
+        "f1": 0.1111111111111111,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.020439624786376953,
+          "selection": 0.023847579956054688,
+          "quantization": 1.6689300537109375e-06,
+          "compressed_bytes": 15859712,
+          "original_bytes": 15859712,
+          "compression_ratio": 1.0,
+          "generation": 0.8177473545074463
+        }
+      },
+      "q2c_25_fp16": {
+        "answer": "The Latin version of the word \"Norman\" was first recorded in the Latin language in the 11th century.",
+        "f1": 0.125,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.020293474197387695,
+          "selection": 0.033750057220458984,
+          "quantization": 2.86102294921875e-06,
+          "compressed_bytes": 15859712,
+          "original_bytes": 15859712,
+          "compression_ratio": 1.0,
+          "generation": 0.612842321395874
+        }
+      }
+    },
+    {
+      "idx": 14,
+      "gold": "1060s",
+      "seq_len": 169,
+      "full_fp16": {
+        "answer": "In the 1060s.",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.020586729049682617,
+          "selection": 0.0,
+          "quantization": 4.76837158203125e-06,
+          "compressed_bytes": 22151168,
+          "original_bytes": 22151168,
+          "compression_ratio": 1.0,
+          "generation": 0.22820472717285156
+        }
+      },
+      "int8": {
+        "answer": "In the 1060s.",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.020692825317382812,
+          "selection": 0.0,
+          "quantization": 0.0032393932342529297,
+          "compressed_bytes": 11075584,
+          "original_bytes": 22151168,
+          "compression_ratio": 0.5,
+          "generation": 0.22754263877868652
+        }
+      },
+      "int4": {
+        "answer": "In the 1060s.",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.020688772201538086,
+          "selection": 0.0,
+          "quantization": 0.003244161605834961,
+          "compressed_bytes": 5537792,
+          "original_bytes": 22151168,
+          "compression_ratio": 0.25,
+          "generation": 0.2272946834564209
+        }
+      },
+      "mixed_int4": {
+        "answer": "In the 1060s.",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.02067279815673828,
+          "selection": 0.0,
+          "quantization": 0.0031354427337646484,
+          "compressed_bytes": 6056960,
+          "original_bytes": 22151168,
+          "compression_ratio": 0.2734375,
+          "generation": 0.2273108959197998
+        }
+      },
+      "q2c_75_fp16": {
+        "answer": "In the 1060s.",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.02123284339904785,
+          "selection": 0.019001483917236328,
+          "quantization": 2.1457672119140625e-06,
+          "compressed_bytes": 22151168,
+          "original_bytes": 22151168,
+          "compression_ratio": 1.0,
+          "generation": 0.21956706047058105
+        }
+      },
+      "q2c_50_fp16": {
+        "answer": "In the 1090s.",
+        "f1": 0.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.020970821380615234,
+          "selection": 0.032991647720336914,
+          "quantization": 2.384185791015625e-06,
+          "compressed_bytes": 22151168,
+          "original_bytes": 22151168,
+          "compression_ratio": 1.0,
+          "generation": 0.21329212188720703
+        }
+      },
+      "q2c_25_fp16": {
+        "answer": "In the 11th century.",
+        "f1": 0.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.020825862884521484,
+          "selection": 0.04738116264343262,
+          "quantization": 2.6226043701171875e-06,
+          "compressed_bytes": 22151168,
+          "original_bytes": 22151168,
+          "compression_ratio": 1.0,
+          "generation": 0.18204045295715332
+        }
+      }
+    },
+    {
+      "idx": 15,
+      "gold": "Tancred",
+      "seq_len": 161,
+      "full_fp16": {
+        "answer": "Tancred",
+        "f1": 1.0,
+        "f1_raw": 1.0,
+        "timings": {
+          "prefill": 0.020082473754882812,
+          "selection": 0.0,
+          "quantization": 4.76837158203125e-06,
+          "compressed_bytes": 21102592,
+          "original_bytes": 21102592,
+          "compression_ratio": 1.0,
+          "generation": 0.07576179504394531
+        }
+      },
+      "int8": {
+        "answer": "Tancred",
+        "f1": 1.0,
+        "f1_raw": 1.0,
+        "timings": {
+          "prefill": 0.02057647705078125,
+          "selection": 0.0,
+          "quantization": 0.0032317638397216797,
+          "compressed_bytes": 10551296,
+          "original_bytes": 21102592,
+          "compression_ratio": 0.5,
+          "generation": 0.07603859901428223
+        }
+      },
+      "int4": {
+        "answer": "Tancred",
+        "f1": 1.0,
+        "f1_raw": 1.0,
+        "timings": {
+          "prefill": 0.020390748977661133,
+          "selection": 0.0,
+          "quantization": 0.0032312870025634766,
+          "compressed_bytes": 5275648,
+          "original_bytes": 21102592,
+          "compression_ratio": 0.25,
+          "generation": 0.07639551162719727
+        }
+      },
+      "mixed_int4": {
+        "answer": "Tancred",
+        "f1": 1.0,
+        "f1_raw": 1.0,
+        "timings": {
+          "prefill": 0.020448923110961914,
+          "selection": 0.0,
+          "quantization": 0.003135204315185547,
+          "compressed_bytes": 5770240,
+          "original_bytes": 21102592,
+          "compression_ratio": 0.2734375,
+          "generation": 0.07643437385559082
+        }
+      },
+      "q2c_75_fp16": {
+        "answer": "Tancred.",
+        "f1": 1.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.020950794219970703,
+          "selection": 0.018415212631225586,
+          "quantization": 1.9073486328125e-06,
+          "compressed_bytes": 21102592,
+          "original_bytes": 21102592,
+          "compression_ratio": 1.0,
+          "generation": 0.09551119804382324
+        }
+      },
+      "q2c_50_fp16": {
+        "answer": "Tancred.",
+        "f1": 1.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.020183086395263672,
+          "selection": 0.03174734115600586,
+          "quantization": 2.6226043701171875e-06,
+          "compressed_bytes": 21102592,
+          "original_bytes": 21102592,
+          "compression_ratio": 1.0,
+          "generation": 0.09007573127746582
+        }
+      },
+      "q2c_25_fp16": {
+        "answer": "Tancred (1",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666,
+        "timings": {
+          "prefill": 0.020142555236816406,
+          "selection": 0.04505038261413574,
+          "quantization": 2.86102294921875e-06,
+          "compressed_bytes": 21102592,
+          "original_bytes": 21102592,
+          "compression_ratio": 1.0,
+          "generation": 0.10766196250915527
+        }
+      }
+    },
+    {
+      "idx": 16,
+      "gold": "binary notation",
+      "seq_len": 136,
+      "full_fp16": {
+        "answer": "Integers are commonly expressed in binary notation.\n\nFor more information, see the Wikipedia article on Binary numeral system.",
+        "f1": 0.21052631578947367,
+        "f1_raw": 0.09999999999999999,
+        "timings": {
+          "prefill": 0.019620418548583984,
+          "selection": 0.0,
+          "quantization": 4.76837158203125e-06,
+          "compressed_bytes": 17825792,
+          "original_bytes": 17825792,
+          "compression_ratio": 1.0,
+          "generation": 0.677398681640625
+        }
+      },
+      "int8": {
+        "answer": "Integers are commonly expressed in binary notation.\n\nFor more information, see the Wikipedia article on Binary numeral system.",
+        "f1": 0.21052631578947367,
+        "f1_raw": 0.09999999999999999,
+        "timings": {
+          "prefill": 0.019547700881958008,
+          "selection": 0.0,
+          "quantization": 0.003252267837524414,
+          "compressed_bytes": 8912896,
+          "original_bytes": 17825792,
+          "compression_ratio": 0.5,
+          "generation": 0.6790692806243896
+        }
+      },
+      "int4": {
+        "answer": "Integers are commonly expressed in binary notation.\n\nExplanation:\n\nBinary notation is a positional notation with a base of 2. It is the natural encoding for integers in a computer, as the binary digit",
+        "f1": 0.10256410256410257,
+        "f1_raw": 0.08695652173913045,
+        "timings": {
+          "prefill": 0.019603967666625977,
+          "selection": 0.0,
+          "quantization": 0.0032520294189453125,
+          "compressed_bytes": 4456448,
+          "original_bytes": 17825792,
+          "compression_ratio": 0.25,
+          "generation": 1.5867395401000977
+        }
+      },
+      "mixed_int4": {
+        "answer": "Integers are commonly expressed in binary notation.\n\nExplanation:\n\nBinary notation is a positional notation with a base of 2. It is the natural encoding for integers in a computer, as the binary digit",
+        "f1": 0.10256410256410257,
+        "f1_raw": 0.0851063829787234,
+        "timings": {
+          "prefill": 0.019587993621826172,
+          "selection": 0.0,
+          "quantization": 0.0031642913818359375,
+          "compressed_bytes": 4874240,
+          "original_bytes": 17825792,
+          "compression_ratio": 0.2734375,
+          "generation": 1.5898540019989014
+        }
+      },
+      "q2c_75_fp16": {
+        "answer": "Integers are commonly expressed in binary notation.\n\nFor more information:\n\n* Binary notation: https://en.wikipedia.org/wiki/Binary\n* Encoding of mathematical objects: https://en.wikipedia.org/wiki/Da",
+        "f1": 0.17391304347826084,
+        "f1_raw": 0.07692307692307693,
+        "timings": {
+          "prefill": 0.020299196243286133,
+          "selection": 0.01671910285949707,
+          "quantization": 2.384185791015625e-06,
+          "compressed_bytes": 17825792,
+          "original_bytes": 17825792,
+          "compression_ratio": 1.0,
+          "generation": 1.5809757709503174
+        }
+      },
+      "q2c_50_fp16": {
+        "answer": "Integers are commonly expressed in binary notation.",
+        "f1": 0.4444444444444445,
+        "f1_raw": 0.22222222222222224,
+        "timings": {
+          "prefill": 0.020297765731811523,
+          "selection": 0.02709341049194336,
+          "quantization": 1.6689300537109375e-06,
+          "compressed_bytes": 17825792,
+          "original_bytes": 17825792,
+          "compression_ratio": 1.0,
+          "generation": 0.2410590648651123
+        }
+      },
+      "q2c_25_fp16": {
+        "answer": "Integers are commonly expressed in binary, base 2, by representing the number as a sequence of 0s and 1s.",
+        "f1": 0.10526315789473684,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.020256757736206055,
+          "selection": 0.03762674331665039,
+          "quantization": 2.6226043701171875e-06,
+          "compressed_bytes": 17825792,
+          "original_bytes": 17825792,
+          "compression_ratio": 1.0,
+          "generation": 0.714015007019043
+        }
+      }
+    },
+    {
+      "idx": 17,
+      "gold": "rounded",
+      "seq_len": 102,
+      "full_fp16": {
+        "answer": "Norman architecture typically has rounded arches.",
+        "f1": 0.2857142857142857,
+        "f1_raw": 0.2857142857142857,
+        "timings": {
+          "prefill": 0.01973748207092285,
+          "selection": 0.0,
+          "quantization": 4.0531158447265625e-06,
+          "compressed_bytes": 13369344,
+          "original_bytes": 13369344,
+          "compression_ratio": 1.0,
+          "generation": 0.20356082916259766
+        }
+      },
+      "int8": {
+        "answer": "Norman architecture typically has rounded arches.",
+        "f1": 0.2857142857142857,
+        "f1_raw": 0.2857142857142857,
+        "timings": {
+          "prefill": 0.019680261611938477,
+          "selection": 0.0,
+          "quantization": 0.0031833648681640625,
+          "compressed_bytes": 6684672,
+          "original_bytes": 13369344,
+          "compression_ratio": 0.5,
+          "generation": 0.20299029350280762
+        }
+      },
+      "int4": {
+        "answer": "Norman architecture typically has rounded arches.",
+        "f1": 0.2857142857142857,
+        "f1_raw": 0.2857142857142857,
+        "timings": {
+          "prefill": 0.01963329315185547,
+          "selection": 0.0,
+          "quantization": 0.00316619873046875,
+          "compressed_bytes": 3342336,
+          "original_bytes": 13369344,
+          "compression_ratio": 0.25,
+          "generation": 0.20311808586120605
+        }
+      },
+      "mixed_int4": {
+        "answer": "Norman architecture typically has rounded arches.",
+        "f1": 0.2857142857142857,
+        "f1_raw": 0.2857142857142857,
+        "timings": {
+          "prefill": 0.019707441329956055,
+          "selection": 0.0,
+          "quantization": 0.0030791759490966797,
+          "compressed_bytes": 3655680,
+          "original_bytes": 13369344,
+          "compression_ratio": 0.2734375,
+          "generation": 0.2026658058166504
+        }
+      },
+      "q2c_75_fp16": {
+        "answer": "Norman architecture typically has rounded arches.",
+        "f1": 0.2857142857142857,
+        "f1_raw": 0.2857142857142857,
+        "timings": {
+          "prefill": 0.020432710647583008,
+          "selection": 0.012407302856445312,
+          "quantization": 2.1457672119140625e-06,
+          "compressed_bytes": 13369344,
+          "original_bytes": 13369344,
+          "compression_ratio": 1.0,
+          "generation": 0.19768977165222168
+        }
+      },
+      "q2c_50_fp16": {
+        "answer": "Norman architecture typically has rounded arches.",
+        "f1": 0.2857142857142857,
+        "f1_raw": 0.2857142857142857,
+        "timings": {
+          "prefill": 0.020396709442138672,
+          "selection": 0.020342350006103516,
+          "quantization": 3.0994415283203125e-06,
+          "compressed_bytes": 13369344,
+          "original_bytes": 13369344,
+          "compression_ratio": 1.0,
+          "generation": 0.19368219375610352
+        }
+      },
+      "q2c_25_fp16": {
+        "answer": "Norman architecture typically features rounded arches.",
+        "f1": 0.2857142857142857,
+        "f1_raw": 0.2857142857142857,
+        "timings": {
+          "prefill": 0.020444869995117188,
+          "selection": 0.02838277816772461,
+          "quantization": 2.1457672119140625e-06,
+          "compressed_bytes": 13369344,
+          "original_bytes": 13369344,
+          "compression_ratio": 1.0,
+          "generation": 0.1905536651611328
+        }
+      }
+    },
+    {
+      "idx": 18,
+      "gold": "1097",
+      "seq_len": 160,
+      "full_fp16": {
+        "answer": "The Siege of Antioch took place in 1097.",
+        "f1": 0.25,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.019824981689453125,
+          "selection": 0.0,
+          "quantization": 4.76837158203125e-06,
+          "compressed_bytes": 20971520,
+          "original_bytes": 20971520,
+          "compression_ratio": 1.0,
+          "generation": 0.40421605110168457
+        }
+      },
+      "int8": {
+        "answer": "The Siege of Antioch took place in 1097.",
+        "f1": 0.25,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.020026445388793945,
+          "selection": 0.0,
+          "quantization": 0.0032486915588378906,
+          "compressed_bytes": 10485760,
+          "original_bytes": 20971520,
+          "compression_ratio": 0.5,
+          "generation": 0.40450143814086914
+        }
+      },
+      "int4": {
+        "answer": "The Siege of Antioch took place in 1097.",
+        "f1": 0.25,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.020060062408447266,
+          "selection": 0.0,
+          "quantization": 0.0032258033752441406,
+          "compressed_bytes": 5242880,
+          "original_bytes": 20971520,
+          "compression_ratio": 0.25,
+          "generation": 0.4041025638580322
+        }
+      },
+      "mixed_int4": {
+        "answer": "The Siege of Antioch took place in 1097.",
+        "f1": 0.25,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.02002120018005371,
+          "selection": 0.0,
+          "quantization": 0.003095388412475586,
+          "compressed_bytes": 5734400,
+          "original_bytes": 20971520,
+          "compression_ratio": 0.2734375,
+          "generation": 0.40488672256469727
+        }
+      },
+      "q2c_75_fp16": {
+        "answer": "The Siege of Antioch took place in 1097.",
+        "f1": 0.25,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.020501136779785156,
+          "selection": 0.01817488670349121,
+          "quantization": 2.384185791015625e-06,
+          "compressed_bytes": 20971520,
+          "original_bytes": 20971520,
+          "compression_ratio": 1.0,
+          "generation": 0.39665699005126953
+        }
+      },
+      "q2c_50_fp16": {
+        "answer": "The Siege of Antioch took place in 1098.",
+        "f1": 0.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.02051258087158203,
+          "selection": 0.0314633846282959,
+          "quantization": 2.86102294921875e-06,
+          "compressed_bytes": 20971520,
+          "original_bytes": 20971520,
+          "compression_ratio": 1.0,
+          "generation": 0.38962268829345703
+        }
+      },
+      "q2c_25_fp16": {
+        "answer": "The Siege of Antioch took place in 1096-1098.",
+        "f1": 0.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.020333528518676758,
+          "selection": 0.04479193687438965,
+          "quantization": 3.0994415283203125e-06,
+          "compressed_bytes": 20971520,
+          "original_bytes": 20971520,
+          "compression_ratio": 1.0,
+          "generation": 0.5089311599731445
+        }
+      }
+    },
+    {
+      "idx": 19,
+      "gold": "A probabilistic Turing machine",
+      "seq_len": 247,
+      "full_fp16": {
+        "answer": "Probabilistic Turing machine.",
+        "f1": 1.0,
+        "f1_raw": 0.5714285714285715,
+        "timings": {
+          "prefill": 0.023163557052612305,
+          "selection": 0.0,
+          "quantization": 5.7220458984375e-06,
+          "compressed_bytes": 32374784,
+          "original_bytes": 32374784,
+          "compression_ratio": 1.0,
+          "generation": 0.20430326461791992
+        }
+      },
+      "int8": {
+        "answer": "Probabilistic Turing machine.",
+        "f1": 1.0,
+        "f1_raw": 0.5714285714285715,
+        "timings": {
+          "prefill": 0.023253202438354492,
+          "selection": 0.0,
+          "quantization": 0.003273487091064453,
+          "compressed_bytes": 16187392,
+          "original_bytes": 32374784,
+          "compression_ratio": 0.5,
+          "generation": 0.20374679565429688
+        }
+      },
+      "int4": {
+        "answer": "Probabilistic Turing machine.",
+        "f1": 1.0,
+        "f1_raw": 0.5714285714285715,
+        "timings": {
+          "prefill": 0.0232694149017334,
+          "selection": 0.0,
+          "quantization": 0.003263711929321289,
+          "compressed_bytes": 8093696,
+          "original_bytes": 32374784,
+          "compression_ratio": 0.25,
+          "generation": 0.20370197296142578
+        }
+      },
+      "mixed_int4": {
+        "answer": "Probabilistic Turing machine.",
+        "f1": 1.0,
+        "f1_raw": 0.5714285714285715,
+        "timings": {
+          "prefill": 0.023241043090820312,
+          "selection": 0.0,
+          "quantization": 0.0031690597534179688,
+          "compressed_bytes": 8852480,
+          "original_bytes": 32374784,
+          "compression_ratio": 0.2734375,
+          "generation": 0.2037818431854248
+        }
+      },
+      "q2c_75_fp16": {
+        "answer": "Probabilistic Turing machine.",
+        "f1": 1.0,
+        "f1_raw": 0.5714285714285715,
+        "timings": {
+          "prefill": 0.023681640625,
+          "selection": 0.02741527557373047,
+          "quantization": 2.86102294921875e-06,
+          "compressed_bytes": 32374784,
+          "original_bytes": 32374784,
+          "compression_ratio": 1.0,
+          "generation": 0.19289255142211914
+        }
+      },
+      "q2c_50_fp16": {
+        "answer": "Probabilistic Turing machine.",
+        "f1": 1.0,
+        "f1_raw": 0.5714285714285715,
+        "timings": {
+          "prefill": 0.02352118492126465,
+          "selection": 0.048341989517211914,
+          "quantization": 3.337860107421875e-06,
+          "compressed_bytes": 32374784,
+          "original_bytes": 32374784,
+          "compression_ratio": 1.0,
+          "generation": 0.18343877792358398
+        }
+      },
+      "q2c_25_fp16": {
+        "answer": "Probabilistic Turing machine.",
+        "f1": 1.0,
+        "f1_raw": 0.5714285714285715,
+        "timings": {
+          "prefill": 0.023217201232910156,
+          "selection": 0.06929588317871094,
+          "quantization": 3.814697265625e-06,
+          "compressed_bytes": 32374784,
+          "original_bytes": 32374784,
+          "compression_ratio": 1.0,
+          "generation": 0.1767868995666504
+        }
+      }
+    },
+    {
+      "idx": 20,
+      "gold": "Dyrrachium",
+      "seq_len": 102,
+      "full_fp16": {
+        "answer": "Dyrrachium\n\nSource:\n\n- The Byzantine Empire 1025-1204: A Political History, by John H. Rosser, p. 180.\n- The Byzantine Empire, by John Julius Norwich, p. 3",
+        "f1": 0.0909090909090909,
+        "f1_raw": 0.07407407407407407,
+        "timings": {
+          "prefill": 0.019747018814086914,
+          "selection": 0.0,
+          "quantization": 4.0531158447265625e-06,
+          "compressed_bytes": 13369344,
+          "original_bytes": 13369344,
+          "compression_ratio": 1.0,
+          "generation": 1.585463523864746
+        }
+      },
+      "int8": {
+        "answer": "Dyrrachium\n\nSource:\n\n- The Byzantine Empire 1025-1204: A Political History, by John H. Rosser, p. 180.\n- The Byzantine Empire, by John Julius Norwich, p. 3",
+        "f1": 0.0909090909090909,
+        "f1_raw": 0.07407407407407407,
+        "timings": {
+          "prefill": 0.01969742774963379,
+          "selection": 0.0,
+          "quantization": 0.003172159194946289,
+          "compressed_bytes": 6684672,
+          "original_bytes": 13369344,
+          "compression_ratio": 0.5,
+          "generation": 1.5898892879486084
+        }
+      },
+      "int4": {
+        "answer": "Dyrrachium\n\nReference(s):\n- The Fall of Byzantium 1071-1453, p. 104\n- The Fall of Byzantium 1071-1453, p. 105",
+        "f1": 0.13333333333333333,
+        "f1_raw": 0.10526315789473684,
+        "timings": {
+          "prefill": 0.01976799964904785,
+          "selection": 0.0,
+          "quantization": 0.0031757354736328125,
+          "compressed_bytes": 3342336,
+          "original_bytes": 13369344,
+          "compression_ratio": 0.25,
+          "generation": 1.5654706954956055
+        }
+      },
+      "mixed_int4": {
+        "answer": "Dyrrachium\n\nReference(s):\n- The Fall of Byzantium 1071-1453, p. 104\n- The Fall of Byzantium 1071-1453, p. 105",
+        "f1": 0.13333333333333333,
+        "f1_raw": 0.10526315789473684,
+        "timings": {
+          "prefill": 0.019714832305908203,
+          "selection": 0.0,
+          "quantization": 0.0030927658081054688,
+          "compressed_bytes": 3655680,
+          "original_bytes": 13369344,
+          "compression_ratio": 0.2734375,
+          "generation": 1.5660839080810547
+        }
+      },
+      "q2c_75_fp16": {
+        "answer": "Dyrrhachium (Dyrrhachion, Durr\u00ebs)",
+        "f1": 0.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.0204315185546875,
+          "selection": 0.011704683303833008,
+          "quantization": 2.1457672119140625e-06,
+          "compressed_bytes": 13369344,
+          "original_bytes": 13369344,
+          "compression_ratio": 1.0,
+          "generation": 0.45143628120422363
+        }
+      },
+      "q2c_50_fp16": {
+        "answer": "Dyrrhachium (Dyrrhachium) or Dyrrhachion (Dyrrhachion)",
+        "f1": 0.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.020473957061767578,
+          "selection": 0.020038366317749023,
+          "quantization": 2.384185791015625e-06,
+          "compressed_bytes": 13369344,
+          "original_bytes": 13369344,
+          "compression_ratio": 1.0,
+          "generation": 0.6737077236175537
+        }
+      },
+      "q2c_25_fp16": {
+        "answer": "Dyad\n\nCorrect answer: The naval base was called Dyrrhachium, or Dyrrachium, which is the ancient name of the modern city of Durr\u00ebs, Durr\u00ebsi, in Albania.",
+        "f1": 0.08695652173913045,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.020448684692382812,
+          "selection": 0.02843165397644043,
+          "quantization": 2.384185791015625e-06,
+          "compressed_bytes": 13369344,
+          "original_bytes": 13369344,
+          "compression_ratio": 1.0,
+          "generation": 1.225374698638916
+        }
+      }
+    },
+    {
+      "idx": 21,
+      "gold": "an algorithm",
+      "seq_len": 237,
+      "full_fp16": {
+        "answer": "A Turing machine can solve anything that can be solved by an algorithm.",
+        "f1": 0.16666666666666669,
+        "f1_raw": 0.13333333333333336,
+        "timings": {
+          "prefill": 0.02291393280029297,
+          "selection": 0.0,
+          "quantization": 4.5299530029296875e-06,
+          "compressed_bytes": 31064064,
+          "original_bytes": 31064064,
+          "compression_ratio": 1.0,
+          "generation": 0.38361191749572754
+        }
+      },
+      "int8": {
+        "answer": "A Turing machine can solve anything that can be solved by an algorithm.",
+        "f1": 0.16666666666666669,
+        "f1_raw": 0.13333333333333336,
+        "timings": {
+          "prefill": 0.023082256317138672,
+          "selection": 0.0,
+          "quantization": 0.003305196762084961,
+          "compressed_bytes": 15532032,
+          "original_bytes": 31064064,
+          "compression_ratio": 0.5,
+          "generation": 0.3821086883544922
+        }
+      },
+      "int4": {
+        "answer": "A Turing machine can solve anything that can be solved using an algorithm.",
+        "f1": 0.16666666666666669,
+        "f1_raw": 0.13333333333333336,
+        "timings": {
+          "prefill": 0.02304244041442871,
+          "selection": 0.0,
+          "quantization": 0.0032896995544433594,
+          "compressed_bytes": 7766016,
+          "original_bytes": 31064064,
+          "compression_ratio": 0.25,
+          "generation": 0.3822507858276367
+        }
+      },
+      "mixed_int4": {
+        "answer": "A Turing machine can solve anything that can be solved using an algorithm.",
+        "f1": 0.16666666666666669,
+        "f1_raw": 0.13333333333333336,
+        "timings": {
+          "prefill": 0.02296161651611328,
+          "selection": 0.0,
+          "quantization": 0.0031926631927490234,
+          "compressed_bytes": 8494080,
+          "original_bytes": 31064064,
+          "compression_ratio": 0.2734375,
+          "generation": 0.38205981254577637
+        }
+      },
+      "q2c_75_fp16": {
+        "answer": "A Turing machine can solve anything that can be solved by an computer.",
+        "f1": 0.0,
+        "f1_raw": 0.13333333333333336,
+        "timings": {
+          "prefill": 0.02347874641418457,
+          "selection": 0.026430130004882812,
+          "quantization": 2.1457672119140625e-06,
+          "compressed_bytes": 31064064,
+          "original_bytes": 31064064,
+          "compression_ratio": 1.0,
+          "generation": 0.3700556755065918
+        }
+      },
+      "q2c_50_fp16": {
+        "answer": "A Turing machine can solve anything that can be solved by an algorithm.",
+        "f1": 0.16666666666666669,
+        "f1_raw": 0.13333333333333336,
+        "timings": {
+          "prefill": 0.023456096649169922,
+          "selection": 0.04617929458618164,
+          "quantization": 2.6226043701171875e-06,
+          "compressed_bytes": 31064064,
+          "original_bytes": 31064064,
+          "compression_ratio": 1.0,
+          "generation": 0.36069798469543457
+        }
+      },
+      "q2c_25_fp16": {
+        "answer": "A Turing machine can solve anything that can be solved by a digital computer.",
+        "f1": 0.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.02339458465576172,
+          "selection": 0.06648707389831543,
+          "quantization": 3.337860107421875e-06,
+          "compressed_bytes": 31064064,
+          "original_bytes": 31064064,
+          "compression_ratio": 1.0,
+          "generation": 0.3758053779602051
+        }
+      }
+    },
+    {
+      "idx": 22,
+      "gold": "Bohemond",
+      "seq_len": 211,
+      "full_fp16": {
+        "answer": "Bohemond.",
+        "f1": 1.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.022034645080566406,
+          "selection": 0.0,
+          "quantization": 4.5299530029296875e-06,
+          "compressed_bytes": 27656192,
+          "original_bytes": 27656192,
+          "compression_ratio": 1.0,
+          "generation": 0.10283923149108887
+        }
+      },
+      "int8": {
+        "answer": "Bohemond.",
+        "f1": 1.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.02222728729248047,
+          "selection": 0.0,
+          "quantization": 0.0032804012298583984,
+          "compressed_bytes": 13828096,
+          "original_bytes": 27656192,
+          "compression_ratio": 0.5,
+          "generation": 0.10227608680725098
+        }
+      },
+      "int4": {
+        "answer": "Bohemond.",
+        "f1": 1.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.02208232879638672,
+          "selection": 0.0,
+          "quantization": 0.003264188766479492,
+          "compressed_bytes": 6914048,
+          "original_bytes": 27656192,
+          "compression_ratio": 0.25,
+          "generation": 0.10232019424438477
+        }
+      },
+      "mixed_int4": {
+        "answer": "Bohemond.",
+        "f1": 1.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.022107839584350586,
+          "selection": 0.0,
+          "quantization": 0.0031905174255371094,
+          "compressed_bytes": 7562240,
+          "original_bytes": 27656192,
+          "compression_ratio": 0.2734375,
+          "generation": 0.10236358642578125
+        }
+      },
+      "q2c_75_fp16": {
+        "answer": "Bohemond.",
+        "f1": 1.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.02264094352722168,
+          "selection": 0.02239990234375,
+          "quantization": 2.6226043701171875e-06,
+          "compressed_bytes": 27656192,
+          "original_bytes": 27656192,
+          "compression_ratio": 1.0,
+          "generation": 0.09476852416992188
+        }
+      },
+      "q2c_50_fp16": {
+        "answer": "Bohemond.",
+        "f1": 1.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.021706819534301758,
+          "selection": 0.041019439697265625,
+          "quantization": 3.337860107421875e-06,
+          "compressed_bytes": 27656192,
+          "original_bytes": 27656192,
+          "compression_ratio": 1.0,
+          "generation": 0.08733367919921875
+        }
+      },
+      "q2c_25_fp16": {
+        "answer": "Bohemond. Aeonard.1.\n\nThis is incorrect. The correct answer is:\ufffd Bohemond,, aka Bohemond.\ufffd",
+        "f1": 0.16666666666666669,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.020966529846191406,
+          "selection": 0.05977296829223633,
+          "quantization": 3.814697265625e-06,
+          "compressed_bytes": 27656192,
+          "original_bytes": 27656192,
+          "compression_ratio": 1.0,
+          "generation": 0.8583464622497559
+        }
+      }
+    },
+    {
+      "idx": 23,
+      "gold": "the Turing machine",
+      "seq_len": 229,
+      "full_fp16": {
+        "answer": "Turing machine\n\nDetailed explanation:\n\nIn complexity theory, a Turing machine is the most commonly used model to study the computational complexity of algorithms. It is a theoretical device that manip",
+        "f1": 0.08888888888888888,
+        "f1_raw": 0.11320754716981131,
+        "timings": {
+          "prefill": 0.02274632453918457,
+          "selection": 0.0,
+          "quantization": 4.291534423828125e-06,
+          "compressed_bytes": 30015488,
+          "original_bytes": 30015488,
+          "compression_ratio": 1.0,
+          "generation": 1.602792501449585
+        }
+      },
+      "int8": {
+        "answer": "Turing machine\n\nDetailed explanation:\n\nIn complexity theory, a Turing machine is the most commonly used model to study the computational complexity of algorithms. It is a theoretical device that manip",
+        "f1": 0.08888888888888888,
+        "f1_raw": 0.11320754716981131,
+        "timings": {
+          "prefill": 0.02283310890197754,
+          "selection": 0.0,
+          "quantization": 0.003289461135864258,
+          "compressed_bytes": 15007744,
+          "original_bytes": 30015488,
+          "compression_ratio": 0.5,
+          "generation": 1.601349115371704
+        }
+      },
+      "int4": {
+        "answer": "Turing machine\n\nDetailed explanation:\n\nA Turing machine is a mathematical model of a general computing machine that manipulates symbols contained on a strip of tape. It is a theoretical device that is",
+        "f1": 0.08888888888888888,
+        "f1_raw": 0.07407407407407407,
+        "timings": {
+          "prefill": 0.022810935974121094,
+          "selection": 0.0,
+          "quantization": 0.0032792091369628906,
+          "compressed_bytes": 7503872,
+          "original_bytes": 30015488,
+          "compression_ratio": 0.25,
+          "generation": 1.6013503074645996
+        }
+      },
+      "mixed_int4": {
+        "answer": "Turing machine\n\nQuestion: What is the most commonplace model utilized in complexity theory, and why is it so?\nAnswer: The Turing machine is the most commonplace model utilized in complexity theory bec",
+        "f1": 0.08333333333333333,
+        "f1_raw": 0.11538461538461538,
+        "timings": {
+          "prefill": 0.02278923988342285,
+          "selection": 0.0,
+          "quantization": 0.0031850337982177734,
+          "compressed_bytes": 8207360,
+          "original_bytes": 30015488,
+          "compression_ratio": 0.2734375,
+          "generation": 1.6003332138061523
+        }
+      },
+      "q2c_75_fp16": {
+        "answer": "Turing machine.\n\nThis question was recently answered in:\nhttps://math.stackexchange.com/questions/4310019/431019#431019",
+        "f1": 0.3636363636363636,
+        "f1_raw": 0.16666666666666666,
+        "timings": {
+          "prefill": 0.023209333419799805,
+          "selection": 0.024663448333740234,
+          "quantization": 2.384185791015625e-06,
+          "compressed_bytes": 30015488,
+          "original_bytes": 30015488,
+          "compression_ratio": 1.0,
+          "generation": 1.2616453170776367
+        }
+      },
+      "q2c_50_fp16": {
+        "answer": "Turing machine\n\nDetailed explanation:\nA Turing machine is a mathematical model of a general computing machine that manipulates symbols on a strip of tape using a device with a read-only head. It is a ",
+        "f1": 0.08695652173913045,
+        "f1_raw": 0.07272727272727274,
+        "timings": {
+          "prefill": 0.023367643356323242,
+          "selection": 0.04461383819580078,
+          "quantization": 3.337860107421875e-06,
+          "compressed_bytes": 30015488,
+          "original_bytes": 30015488,
+          "compression_ratio": 1.0,
+          "generation": 1.581308126449585
+        }
+      },
+      "q2c_25_fp16": {
+        "answer": "Turing machine\n\nThe Turing machine is the most commonplace model utilized in complexity theory.",
+        "f1": 0.2857142857142857,
+        "f1_raw": 0.35294117647058826,
+        "timings": {
+          "prefill": 0.023245811462402344,
+          "selection": 0.06467509269714355,
+          "quantization": 3.337860107421875e-06,
+          "compressed_bytes": 30015488,
+          "original_bytes": 30015488,
+          "compression_ratio": 1.0,
+          "generation": 0.4783954620361328
+        }
+      }
+    },
+    {
+      "idx": 24,
+      "gold": "rules",
+      "seq_len": 243,
+      "full_fp16": {
+        "answer": "The fixed set of factors that determine the actions of a deterministic Turing machine are the current state, the symbol under the read/write head, and the transition rule for that state and symbol.",
+        "f1": 0.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.023169279098510742,
+          "selection": 0.0,
+          "quantization": 4.291534423828125e-06,
+          "compressed_bytes": 31850496,
+          "original_bytes": 31850496,
+          "compression_ratio": 1.0,
+          "generation": 1.01851487159729
+        }
+      },
+      "int8": {
+        "answer": "The fixed set of factors that determine the actions of a deterministic Turing machine are the current state, the symbol under the read/write head, and the transition rule for that state and symbol.",
+        "f1": 0.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.02312183380126953,
+          "selection": 0.0,
+          "quantization": 0.003294706344604492,
+          "compressed_bytes": 15925248,
+          "original_bytes": 31850496,
+          "compression_ratio": 0.5,
+          "generation": 1.0187792778015137
+        }
+      },
+      "int4": {
+        "answer": "The fixed set of factors that determine the actions of a deterministic Turing machine are the current state, the symbol under the read/write head, and the transition rule associated with the current s",
+        "f1": 0.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.02318263053894043,
+          "selection": 0.0,
+          "quantization": 0.0032553672790527344,
+          "compressed_bytes": 7962624,
+          "original_bytes": 31850496,
+          "compression_ratio": 0.25,
+          "generation": 1.0709106922149658
+        }
+      },
+      "mixed_int4": {
+        "answer": "The fixed set of factors that determine the actions of a deterministic Turing machine are the current state, the symbol under the read/write head, and the transition rule associated with the current s",
+        "f1": 0.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.023273944854736328,
+          "selection": 0.0,
+          "quantization": 0.0031735897064208984,
+          "compressed_bytes": 8709120,
+          "original_bytes": 31850496,
+          "compression_ratio": 0.2734375,
+          "generation": 1.0702769756317139
+        }
+      },
+      "q2c_75_fp16": {
+        "answer": "The fixed set of factors that determine the actions of a deterministic Turing machine are the current state, the symbol under the tape head, and the state transition table.",
+        "f1": 0.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.023738622665405273,
+          "selection": 0.026508092880249023,
+          "quantization": 2.86102294921875e-06,
+          "compressed_bytes": 31850496,
+          "original_bytes": 31850496,
+          "compression_ratio": 1.0,
+          "generation": 0.8551526069641113
+        }
+      },
+      "q2c_50_fp16": {
+        "answer": "The fixed set of factors that determine the actions of a deterministic Turing machine are the current state, the next state, transition function, the symbol read by the tape head, and the state of the",
+        "f1": 0.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.023710250854492188,
+          "selection": 0.047475337982177734,
+          "quantization": 3.0994415283203125e-06,
+          "compressed_bytes": 31850496,
+          "original_bytes": 31850496,
+          "compression_ratio": 1.0,
+          "generation": 1.0728228092193604
+        }
+      },
+      "q2c_25_fp16": {
+        "answer": "The fixed set of factors that determine the actions of a deterministic of a deterministic Turing machine are the set of rules that the machine uses.",
+        "f1": 0.09523809523809523,
+        "f1_raw": 0.07407407407407407,
+        "timings": {
+          "prefill": 0.023679494857788086,
+          "selection": 0.0681295394897461,
+          "quantization": 3.814697265625e-06,
+          "compressed_bytes": 31850496,
+          "original_bytes": 31850496,
+          "compression_ratio": 1.0,
+          "generation": 0.7312955856323242
+        }
+      }
+    },
+    {
+      "idx": 25,
+      "gold": "state transitions",
+      "seq_len": 234,
+      "full_fp16": {
+        "answer": "The time required to output an answer on a deterministic Turing machine is the total number of state transitions, or steps, the machine makes before it halts and outputs the answer.",
+        "f1": 0.14814814814814814,
+        "f1_raw": 0.06060606060606061,
+        "timings": {
+          "prefill": 0.02300286293029785,
+          "selection": 0.0,
+          "quantization": 5.4836273193359375e-06,
+          "compressed_bytes": 30670848,
+          "original_bytes": 30670848,
+          "compression_ratio": 1.0,
+          "generation": 0.941309928894043
+        }
+      },
+      "int8": {
+        "answer": "The time required to output an answer on a deterministic Turing machine is the total number of state transitions, or steps, the machine makes before it halts and outputs the answer.",
+        "f1": 0.14814814814814814,
+        "f1_raw": 0.06060606060606061,
+        "timings": {
+          "prefill": 0.022888660430908203,
+          "selection": 0.0,
+          "quantization": 0.003292083740234375,
+          "compressed_bytes": 15335424,
+          "original_bytes": 30670848,
+          "compression_ratio": 0.5,
+          "generation": 0.9422276020050049
+        }
+      },
+      "int4": {
+        "answer": "The time required to output an answer on a deterministic Turing machine is the total number of state transitions, or steps, the machine makes before it halts and outputs the answer.",
+        "f1": 0.14814814814814814,
+        "f1_raw": 0.06060606060606061,
+        "timings": {
+          "prefill": 0.02300262451171875,
+          "selection": 0.0,
+          "quantization": 0.0032880306243896484,
+          "compressed_bytes": 7667712,
+          "original_bytes": 30670848,
+          "compression_ratio": 0.25,
+          "generation": 0.9422914981842041
+        }
+      },
+      "mixed_int4": {
+        "answer": "The time required to output an answer on a deterministic Turing machine is the total number of state transitions, or steps, the machine makes before it halts and outputs the answer.",
+        "f1": 0.14814814814814814,
+        "f1_raw": 0.06060606060606061,
+        "timings": {
+          "prefill": 0.023023605346679688,
+          "selection": 0.0,
+          "quantization": 0.0032079219818115234,
+          "compressed_bytes": 8386560,
+          "original_bytes": 30670848,
+          "compression_ratio": 0.2734375,
+          "generation": 0.9436485767364502
+        }
+      },
+      "q2c_75_fp16": {
+        "answer": "The time required to output an answer on a deterministic Turing machine is expressed as the total number of steps taken by the machine before it halts and outputs the answer.",
+        "f1": 0.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.023422956466674805,
+          "selection": 0.025860071182250977,
+          "quantization": 2.384185791015625e-06,
+          "compressed_bytes": 30670848,
+          "original_bytes": 30670848,
+          "compression_ratio": 1.0,
+          "generation": 0.8800578117370605
+        }
+      },
+      "q2c_50_fp16": {
+        "answer": "The time required to output an solution on a deterministic Turing machine is expressed as the number of steps the machine makes.",
+        "f1": 0.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.0234372615814209,
+          "selection": 0.0456850528717041,
+          "quantization": 2.6226043701171875e-06,
+          "compressed_bytes": 30670848,
+          "original_bytes": 30670848,
+          "compression_ratio": 1.0,
+          "generation": 0.6148624420166016
+        }
+      },
+      "q2c_25_fp16": {
+        "answer": "The time taken by a deterministic is expressed as the number of steps taken by the machine.",
+        "f1": 0.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.023409605026245117,
+          "selection": 0.06534790992736816,
+          "quantization": 3.5762786865234375e-06,
+          "compressed_bytes": 30670848,
+          "original_bytes": 30670848,
+          "compression_ratio": 1.0,
+          "generation": 0.4532618522644043
+        }
+      }
+    },
+    {
+      "idx": 26,
+      "gold": "1 or 0",
+      "seq_len": 163,
+      "full_fp16": {
+        "answer": "The two integer responses to a decision problem are 1 (yes) and 0 (no).",
+        "f1": 0.26666666666666666,
+        "f1_raw": 0.23529411764705882,
+        "timings": {
+          "prefill": 0.020688295364379883,
+          "selection": 0.0,
+          "quantization": 4.76837158203125e-06,
+          "compressed_bytes": 21364736,
+          "original_bytes": 21364736,
+          "compression_ratio": 1.0,
+          "generation": 0.5101461410522461
+        }
+      },
+      "int8": {
+        "answer": "The two integer responses to a decision problem are 1 (yes) and 0 (no).",
+        "f1": 0.26666666666666666,
+        "f1_raw": 0.23529411764705882,
+        "timings": {
+          "prefill": 0.020648479461669922,
+          "selection": 0.0,
+          "quantization": 0.003238677978515625,
+          "compressed_bytes": 10682368,
+          "original_bytes": 21364736,
+          "compression_ratio": 0.5,
+          "generation": 0.5086631774902344
+        }
+      },
+      "int4": {
+        "answer": "The two integer responses to a decision problem are 1 (accept) and 0 (reject).",
+        "f1": 0.26666666666666666,
+        "f1_raw": 0.23529411764705882,
+        "timings": {
+          "prefill": 0.020691871643066406,
+          "selection": 0.0,
+          "quantization": 0.0032455921173095703,
+          "compressed_bytes": 5341184,
+          "original_bytes": 21364736,
+          "compression_ratio": 0.25,
+          "generation": 0.5087969303131104
+        }
+      },
+      "mixed_int4": {
+        "answer": "The two integer responses to a decision problem are 1 (accept) and 0 (reject).",
+        "f1": 0.26666666666666666,
+        "f1_raw": 0.23529411764705882,
+        "timings": {
+          "prefill": 0.020743370056152344,
+          "selection": 0.0,
+          "quantization": 0.003124237060546875,
+          "compressed_bytes": 5841920,
+          "original_bytes": 21364736,
+          "compression_ratio": 0.2734375,
+          "generation": 0.5079309940338135
+        }
+      },
+      "q2c_75_fp16": {
+        "answer": "The two integer responses to a decision problem are 0 (no) and 1 (yes).",
+        "f1": 0.26666666666666666,
+        "f1_raw": 0.23529411764705882,
+        "timings": {
+          "prefill": 0.021225452423095703,
+          "selection": 0.018363475799560547,
+          "quantization": 1.6689300537109375e-06,
+          "compressed_bytes": 21364736,
+          "original_bytes": 21364736,
+          "compression_ratio": 1.0,
+          "generation": 0.4996788501739502
+        }
+      },
+      "q2c_50_fp16": {
+        "answer": "The two integer responses to a decision problem are 0 (rejection) and 1 (acceptance).",
+        "f1": 0.26666666666666666,
+        "f1_raw": 0.23529411764705882,
+        "timings": {
+          "prefill": 0.021078824996948242,
+          "selection": 0.032128334045410156,
+          "quantization": 2.86102294921875e-06,
+          "compressed_bytes": 21364736,
+          "original_bytes": 21364736,
+          "compression_ratio": 1.0,
+          "generation": 0.5440459251403809
+        }
+      },
+      "q2c_25_fp16": {
+        "answer": "The two integer responses to a decision problem are yes and the problem instance is a yes- instance, the problem instance is a no instance.",
+        "f1": 0.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.021136999130249023,
+          "selection": 0.04594135284423828,
+          "quantization": 3.0994415283203125e-06,
+          "compressed_bytes": 21364736,
+          "original_bytes": 21364736,
+          "compression_ratio": 1.0,
+          "generation": 0.6895222663879395
+        }
+      }
+    },
+    {
+      "idx": 27,
+      "gold": "mathematical models",
+      "seq_len": 144,
+      "full_fp16": {
+        "answer": "The ability to branch out to check many different possibilities at once.\n\nExplanation:\n\nA non-deterministic Turing machine (NDTM) is a computational model that can explore multiple paths simultaneousl",
+        "f1": 0.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.01982903480529785,
+          "selection": 0.0,
+          "quantization": 4.291534423828125e-06,
+          "compressed_bytes": 18874368,
+          "original_bytes": 18874368,
+          "compression_ratio": 1.0,
+          "generation": 1.6021814346313477
+        }
+      },
+      "int8": {
+        "answer": "The ability to branch out to check many different possibilities at once.\n\nExplanation:\n\nA non-deterministic Turing machine (NDTM) is a computational model that can explore multiple paths simultaneousl",
+        "f1": 0.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.019726037979125977,
+          "selection": 0.0,
+          "quantization": 0.003248453140258789,
+          "compressed_bytes": 9437184,
+          "original_bytes": 18874368,
+          "compression_ratio": 0.5,
+          "generation": 1.599046230316162
+        }
+      },
+      "int4": {
+        "answer": "The ability to branch out and check many different possibilities at once.\n\nExplanation:\n\nA non-deterministic Turing machine (NDTM) is a computational model that can simulate multiple computations in p",
+        "f1": 0.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.01984238624572754,
+          "selection": 0.0,
+          "quantization": 0.003239870071411133,
+          "compressed_bytes": 4718592,
+          "original_bytes": 18874368,
+          "compression_ratio": 0.25,
+          "generation": 1.6006746292114258
+        }
+      },
+      "mixed_int4": {
+        "answer": "The ability to branch out and check many different possibilities at once.\n\nExplanation:\n\nA non-deterministic Turing machine (NDTM) is a computational model that can simulate multiple computations in p",
+        "f1": 0.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.019760847091674805,
+          "selection": 0.0,
+          "quantization": 0.00316619873046875,
+          "compressed_bytes": 5160960,
+          "original_bytes": 18874368,
+          "compression_ratio": 0.2734375,
+          "generation": 1.5998046398162842
+        }
+      },
+      "q2c_75_fp16": {
+        "answer": "The ability to branch captures many mathematical models and is important in analyzing computational problems.",
+        "f1": 0.25,
+        "f1_raw": 0.23529411764705882,
+        "timings": {
+          "prefill": 0.020407915115356445,
+          "selection": 0.017765522003173828,
+          "quantization": 1.430511474609375e-06,
+          "compressed_bytes": 18874368,
+          "original_bytes": 18874368,
+          "compression_ratio": 1.0,
+          "generation": 0.47441720962524414
+        }
+      },
+      "q2c_50_fp16": {
+        "answer": "The ability to model many different computational paths at once, capturing many mathematical models.",
+        "f1": 0.2666666666666667,
+        "f1_raw": 0.125,
+        "timings": {
+          "prefill": 0.02033257484436035,
+          "selection": 0.028825759887695312,
+          "quantization": 2.384185791015625e-06,
+          "compressed_bytes": 18874368,
+          "original_bytes": 18874368,
+          "compression_ratio": 1.0,
+          "generation": 0.44463419914245605
+        }
+      },
+      "q2c_25_fp16": {
+        "answer": "The ability to branch and explore many possibilities at once.",
+        "f1": 0.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.020316362380981445,
+          "selection": 0.03977680206298828,
+          "quantization": 3.0994415283203125e-06,
+          "compressed_bytes": 18874368,
+          "original_bytes": 18874368,
+          "compression_ratio": 1.0,
+          "generation": 0.26215219497680664
+        }
+      }
+    },
+    {
+      "idx": 28,
+      "gold": "Irish",
+      "seq_len": 331,
+      "full_fp16": {
+        "answer": "Irish culture\n\nQuestion: What are some common Norman-Irish surnames?\nAnswer briefly: Fitzgerald, FitzGibbons, Fitzmaurice, Barry, De B\u00farca, French, De Roche, Devereux, D'Arcy, Treacy, Lacy",
+        "f1": 0.07999999999999999,
+        "f1_raw": 0.07999999999999999,
+        "timings": {
+          "prefill": 0.032317161560058594,
+          "selection": 0.0,
+          "quantization": 6.67572021484375e-06,
+          "compressed_bytes": 43384832,
+          "original_bytes": 43384832,
+          "compression_ratio": 1.0,
+          "generation": 1.6194379329681396
+        }
+      },
+      "int8": {
+        "answer": "Irish culture\n\nQuestion: What are some common Norman-Irish surnames?\nAnswer briefly: Fitzgerald, FitzGibbons, Fitzmaurice, Barry, De B\u00farca, French, De Roche, Devereux, D'Arcy, Treacy, Lacy",
+        "f1": 0.07999999999999999,
+        "f1_raw": 0.07999999999999999,
+        "timings": {
+          "prefill": 0.03262138366699219,
+          "selection": 0.0,
+          "quantization": 0.003298521041870117,
+          "compressed_bytes": 21692416,
+          "original_bytes": 43384832,
+          "compression_ratio": 0.5,
+          "generation": 1.6178901195526123
+        }
+      },
+      "int4": {
+        "answer": "Irish culture\n\nExplanation:\nThe Normans, who invaded Ireland in 1169, initially maintained a distinct culture and ethnicity. However, over time, they came to be subsumed into Irish culture to the poin",
+        "f1": 0.05,
+        "f1_raw": 0.04545454545454545,
+        "timings": {
+          "prefill": 0.03264212608337402,
+          "selection": 0.0,
+          "quantization": 0.0033037662506103516,
+          "compressed_bytes": 10846208,
+          "original_bytes": 43384832,
+          "compression_ratio": 0.25,
+          "generation": 1.6175594329833984
+        }
+      },
+      "mixed_int4": {
+        "answer": "Irish culture\n\nExplanation:\nThe Normans, who invaded Ireland in 1169, initially maintained a distinct culture and ethnicity. However, over time, they came to be subsumed into Irish culture to the poin",
+        "f1": 0.05,
+        "f1_raw": 0.04545454545454545,
+        "timings": {
+          "prefill": 0.03269219398498535,
+          "selection": 0.0,
+          "quantization": 0.0032389163970947266,
+          "compressed_bytes": 11863040,
+          "original_bytes": 43384832,
+          "compression_ratio": 0.2734375,
+          "generation": 1.6208548545837402
+        }
+      },
+      "q2c_75_fp16": {
+        "answer": "Irish culture.",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666,
+        "timings": {
+          "prefill": 0.033246517181396484,
+          "selection": 0.03443741798400879,
+          "quantization": 3.337860107421875e-06,
+          "compressed_bytes": 43384832,
+          "original_bytes": 43384832,
+          "compression_ratio": 1.0,
+          "generation": 0.06748414039611816
+        }
+      },
+      "q2c_50_fp16": {
+        "answer": "Irish culture.",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666,
+        "timings": {
+          "prefill": 0.029465913772583008,
+          "selection": 0.06418156623840332,
+          "quantization": 3.337860107421875e-06,
+          "compressed_bytes": 43384832,
+          "original_bytes": 43384832,
+          "compression_ratio": 1.0,
+          "generation": 0.06260871887207031
+        }
+      },
+      "q2c_25_fp16": {
+        "answer": "Irish culture\n\nFull Answer: The Normans combined their culture with the Irish culture.\n\nExplanation: The Normans combined their culture with the Irish culture.",
+        "f1": 0.1,
+        "f1_raw": 0.08333333333333333,
+        "timings": {
+          "prefill": 0.027364253997802734,
+          "selection": 0.09390568733215332,
+          "quantization": 4.76837158203125e-06,
+          "compressed_bytes": 43384832,
+          "original_bytes": 43384832,
+          "compression_ratio": 1.0,
+          "generation": 0.8644187450408936
+        }
+      }
+    },
+    {
+      "idx": 29,
+      "gold": "the Adriatic",
+      "seq_len": 103,
+      "full_fp16": {
+        "answer": "Dyrrachium was located in modern-day Durr\u00ebs, Albania.",
+        "f1": 0.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.019754886627197266,
+          "selection": 0.0,
+          "quantization": 4.5299530029296875e-06,
+          "compressed_bytes": 13500416,
+          "original_bytes": 13500416,
+          "compression_ratio": 1.0,
+          "generation": 0.4595944881439209
+        }
+      },
+      "int8": {
+        "answer": "Dyrrachium was located in modern-day Durr\u00ebs, Albania.",
+        "f1": 0.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.019703388214111328,
+          "selection": 0.0,
+          "quantization": 0.0032308101654052734,
+          "compressed_bytes": 6750208,
+          "original_bytes": 13500416,
+          "compression_ratio": 0.5,
+          "generation": 0.4580717086791992
+        }
+      },
+      "int4": {
+        "answer": "Dyrrachium was located in modern-day Durr\u00ebs, Albania.",
+        "f1": 0.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.01975870132446289,
+          "selection": 0.0,
+          "quantization": 0.0032227039337158203,
+          "compressed_bytes": 3375104,
+          "original_bytes": 13500416,
+          "compression_ratio": 0.25,
+          "generation": 0.4577982425689697
+        }
+      },
+      "mixed_int4": {
+        "answer": "Dyrrachium was located in modern-day Durr\u00ebs, Albania.",
+        "f1": 0.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.019675016403198242,
+          "selection": 0.0,
+          "quantization": 0.003128528594970703,
+          "compressed_bytes": 3691520,
+          "original_bytes": 13500416,
+          "compression_ratio": 0.2734375,
+          "generation": 0.4585113525390625
+        }
+      },
+      "q2c_75_fp16": {
+        "answer": "Dyrrachium was located in modern-day Durr\u00ebs, Albania.",
+        "f1": 0.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.020392417907714844,
+          "selection": 0.011955738067626953,
+          "quantization": 1.6689300537109375e-06,
+          "compressed_bytes": 13500416,
+          "original_bytes": 13500416,
+          "compression_ratio": 1.0,
+          "generation": 0.4529745578765869
+        }
+      },
+      "q2c_50_fp16": {
+        "answer": "Dyrrachium was located in modern-day Durres, Albania.",
+        "f1": 0.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.02040863037109375,
+          "selection": 0.02027153968811035,
+          "quantization": 1.430511474609375e-06,
+          "compressed_bytes": 13500416,
+          "original_bytes": 13500416,
+          "compression_ratio": 1.0,
+          "generation": 0.397782564163208
+        }
+      },
+      "q2c_25_fp16": {
+        "answer": "Dyrrachium was located in modern-day Durres,, Alba Ionian, in Albania.",
+        "f1": 0.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.020358800888061523,
+          "selection": 0.02865767478942871,
+          "quantization": 2.6226043701171875e-06,
+          "compressed_bytes": 13500416,
+          "original_bytes": 13500416,
+          "compression_ratio": 1.0,
+          "generation": 0.5968890190124512
+        }
+      }
+    },
+    {
+      "idx": 30,
+      "gold": "Oursel",
+      "seq_len": 240,
+      "full_fp16": {
+        "answer": "Oursel",
+        "f1": 1.0,
+        "f1_raw": 1.0,
+        "timings": {
+          "prefill": 0.022997140884399414,
+          "selection": 0.0,
+          "quantization": 5.0067901611328125e-06,
+          "compressed_bytes": 31457280,
+          "original_bytes": 31457280,
+          "compression_ratio": 1.0,
+          "generation": 0.07748556137084961
+        }
+      },
+      "int8": {
+        "answer": "Oursel",
+        "f1": 1.0,
+        "f1_raw": 1.0,
+        "timings": {
+          "prefill": 0.023207664489746094,
+          "selection": 0.0,
+          "quantization": 0.0032989978790283203,
+          "compressed_bytes": 15728640,
+          "original_bytes": 31457280,
+          "compression_ratio": 0.5,
+          "generation": 0.0774526596069336
+        }
+      },
+      "int4": {
+        "answer": "Oursel",
+        "f1": 1.0,
+        "f1_raw": 1.0,
+        "timings": {
+          "prefill": 0.022969961166381836,
+          "selection": 0.0,
+          "quantization": 0.003293752670288086,
+          "compressed_bytes": 7864320,
+          "original_bytes": 31457280,
+          "compression_ratio": 0.25,
+          "generation": 0.07737135887145996
+        }
+      },
+      "mixed_int4": {
+        "answer": "Oursel",
+        "f1": 1.0,
+        "f1_raw": 1.0,
+        "timings": {
+          "prefill": 0.02301478385925293,
+          "selection": 0.0,
+          "quantization": 0.003201007843017578,
+          "compressed_bytes": 8601600,
+          "original_bytes": 31457280,
+          "compression_ratio": 0.2734375,
+          "generation": 0.07728290557861328
+        }
+      },
+      "q2c_75_fp16": {
+        "answer": "Oursel",
+        "f1": 1.0,
+        "f1_raw": 1.0,
+        "timings": {
+          "prefill": 0.023451566696166992,
+          "selection": 0.026393413543701172,
+          "quantization": 2.384185791015625e-06,
+          "compressed_bytes": 31457280,
+          "original_bytes": 31457280,
+          "compression_ratio": 1.0,
+          "generation": 0.07060837745666504
+        }
+      },
+      "q2c_50_fp16": {
+        "answer": "Oursel",
+        "f1": 1.0,
+        "f1_raw": 1.0,
+        "timings": {
+          "prefill": 0.021425962448120117,
+          "selection": 0.04693913459777832,
+          "quantization": 2.86102294921875e-06,
+          "compressed_bytes": 31457280,
+          "original_bytes": 31457280,
+          "compression_ratio": 1.0,
+          "generation": 0.0647730827331543
+        }
+      },
+      "q2c_25_fp16": {
+        "answer": "Oursel.",
+        "f1": 1.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.0204012393951416,
+          "selection": 0.06741833686828613,
+          "quantization": 3.5762786865234375e-06,
+          "compressed_bytes": 31457280,
+          "original_bytes": 31457280,
+          "compression_ratio": 1.0,
+          "generation": 0.0830535888671875
+        }
+      }
+    },
+    {
+      "idx": 31,
+      "gold": "north",
+      "seq_len": 146,
+      "full_fp16": {
+        "answer": "The Normans were located in the north of France.",
+        "f1": 0.25,
+        "f1_raw": 0.19999999999999998,
+        "timings": {
+          "prefill": 0.019553184509277344,
+          "selection": 0.0,
+          "quantization": 4.0531158447265625e-06,
+          "compressed_bytes": 19136512,
+          "original_bytes": 19136512,
+          "compression_ratio": 1.0,
+          "generation": 0.2753942012786865
+        }
+      },
+      "int8": {
+        "answer": "The Normans were located in the north of France.",
+        "f1": 0.25,
+        "f1_raw": 0.19999999999999998,
+        "timings": {
+          "prefill": 0.019687891006469727,
+          "selection": 0.0,
+          "quantization": 0.0033833980560302734,
+          "compressed_bytes": 9568256,
+          "original_bytes": 19136512,
+          "compression_ratio": 0.5,
+          "generation": 0.2794466018676758
+        }
+      },
+      "int4": {
+        "answer": "The Normans were located in the north of France.",
+        "f1": 0.25,
+        "f1_raw": 0.19999999999999998,
+        "timings": {
+          "prefill": 0.019801855087280273,
+          "selection": 0.0,
+          "quantization": 0.0032405853271484375,
+          "compressed_bytes": 4784128,
+          "original_bytes": 19136512,
+          "compression_ratio": 0.25,
+          "generation": 0.27973437309265137
+        }
+      },
+      "mixed_int4": {
+        "answer": "The Normans were located in the north of France.",
+        "f1": 0.25,
+        "f1_raw": 0.19999999999999998,
+        "timings": {
+          "prefill": 0.019818544387817383,
+          "selection": 0.0,
+          "quantization": 0.0031359195709228516,
+          "compressed_bytes": 5232640,
+          "original_bytes": 19136512,
+          "compression_ratio": 0.2734375,
+          "generation": 0.2798631191253662
+        }
+      },
+      "q2c_75_fp16": {
+        "answer": "The Normans were located in the north of France.",
+        "f1": 0.25,
+        "f1_raw": 0.19999999999999998,
+        "timings": {
+          "prefill": 0.020368576049804688,
+          "selection": 0.01662898063659668,
+          "quantization": 1.6689300537109375e-06,
+          "compressed_bytes": 19136512,
+          "original_bytes": 19136512,
+          "compression_ratio": 1.0,
+          "generation": 0.27301454544067383
+        }
+      },
+      "q2c_50_fp16": {
+        "answer": "The Normans were located in the north of France.",
+        "f1": 0.25,
+        "f1_raw": 0.19999999999999998,
+        "timings": {
+          "prefill": 0.02027606964111328,
+          "selection": 0.028815507888793945,
+          "quantization": 1.6689300537109375e-06,
+          "compressed_bytes": 19136512,
+          "original_bytes": 19136512,
+          "compression_ratio": 1.0,
+          "generation": 0.2674694061279297
+        }
+      },
+      "q2c_25_fp16": {
+        "answer": "The Normans were located in the north of France.",
+        "f1": 0.25,
+        "f1_raw": 0.19999999999999998,
+        "timings": {
+          "prefill": 0.020247220993041992,
+          "selection": 0.04097437858581543,
+          "quantization": 3.337860107421875e-06,
+          "compressed_bytes": 19136512,
+          "original_bytes": 19136512,
+          "compression_ratio": 1.0,
+          "generation": 0.26175856590270996
+        }
+      }
+    },
+    {
+      "idx": 32,
+      "gold": "Africa",
+      "seq_len": 111,
+      "full_fp16": {
+        "answer": "Africa",
+        "f1": 1.0,
+        "f1_raw": 1.0,
+        "timings": {
+          "prefill": 0.019830942153930664,
+          "selection": 0.0,
+          "quantization": 3.814697265625e-06,
+          "compressed_bytes": 14548992,
+          "original_bytes": 14548992,
+          "compression_ratio": 1.0,
+          "generation": 0.025933027267456055
+        }
+      },
+      "int8": {
+        "answer": "Africa",
+        "f1": 1.0,
+        "f1_raw": 1.0,
+        "timings": {
+          "prefill": 0.019712209701538086,
+          "selection": 0.0,
+          "quantization": 0.003216981887817383,
+          "compressed_bytes": 7274496,
+          "original_bytes": 14548992,
+          "compression_ratio": 0.5,
+          "generation": 0.0265045166015625
+        }
+      },
+      "int4": {
+        "answer": "Africa",
+        "f1": 1.0,
+        "f1_raw": 1.0,
+        "timings": {
+          "prefill": 0.019769906997680664,
+          "selection": 0.0,
+          "quantization": 0.0032176971435546875,
+          "compressed_bytes": 3637248,
+          "original_bytes": 14548992,
+          "compression_ratio": 0.25,
+          "generation": 0.026348352432250977
+        }
+      },
+      "mixed_int4": {
+        "answer": "Africa",
+        "f1": 1.0,
+        "f1_raw": 1.0,
+        "timings": {
+          "prefill": 0.019713878631591797,
+          "selection": 0.0,
+          "quantization": 0.003129720687866211,
+          "compressed_bytes": 3978240,
+          "original_bytes": 14548992,
+          "compression_ratio": 0.2734375,
+          "generation": 0.02626967430114746
+        }
+      },
+      "q2c_75_fp16": {
+        "answer": "Africa",
+        "f1": 1.0,
+        "f1_raw": 1.0,
+        "timings": {
+          "prefill": 0.02047872543334961,
+          "selection": 0.013218879699707031,
+          "quantization": 1.9073486328125e-06,
+          "compressed_bytes": 14548992,
+          "original_bytes": 14548992,
+          "compression_ratio": 1.0,
+          "generation": 0.025377273559570312
+        }
+      },
+      "q2c_50_fp16": {
+        "answer": "Africa",
+        "f1": 1.0,
+        "f1_raw": 1.0,
+        "timings": {
+          "prefill": 0.020385265350341797,
+          "selection": 0.02203679084777832,
+          "quantization": 1.9073486328125e-06,
+          "compressed_bytes": 14548992,
+          "original_bytes": 14548992,
+          "compression_ratio": 1.0,
+          "generation": 0.023903369903564453
+        }
+      },
+      "q2c_25_fp16": {
+        "answer": "Africa",
+        "f1": 1.0,
+        "f1_raw": 1.0,
+        "timings": {
+          "prefill": 0.02040576934814453,
+          "selection": 0.030637502670288086,
+          "quantization": 2.1457672119140625e-06,
+          "compressed_bytes": 14548992,
+          "original_bytes": 14548992,
+          "compression_ratio": 1.0,
+          "generation": 0.022455453872680664
+        }
+      }
+    },
+    {
+      "idx": 33,
+      "gold": "King Charles III",
+      "seq_len": 253,
+      "full_fp16": {
+        "answer": "King Charles III of West Francia.",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666,
+        "timings": {
+          "prefill": 0.020817995071411133,
+          "selection": 0.0,
+          "quantization": 5.245208740234375e-06,
+          "compressed_bytes": 33161216,
+          "original_bytes": 33161216,
+          "compression_ratio": 1.0,
+          "generation": 0.17545795440673828
+        }
+      },
+      "int8": {
+        "answer": "King Charles III of West Francia.",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666,
+        "timings": {
+          "prefill": 0.02318120002746582,
+          "selection": 0.0,
+          "quantization": 0.003301382064819336,
+          "compressed_bytes": 16580608,
+          "original_bytes": 33161216,
+          "compression_ratio": 0.5,
+          "generation": 0.17931437492370605
+        }
+      },
+      "int4": {
+        "answer": "King Charles III of West Francia.",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666,
+        "timings": {
+          "prefill": 0.023474454879760742,
+          "selection": 0.0,
+          "quantization": 0.003292560577392578,
+          "compressed_bytes": 8290304,
+          "original_bytes": 33161216,
+          "compression_ratio": 0.25,
+          "generation": 0.17949247360229492
+        }
+      },
+      "mixed_int4": {
+        "answer": "King Charles III of West Francia.",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666,
+        "timings": {
+          "prefill": 0.023593664169311523,
+          "selection": 0.0,
+          "quantization": 0.0032012462615966797,
+          "compressed_bytes": 9067520,
+          "original_bytes": 33161216,
+          "compression_ratio": 0.2734375,
+          "generation": 0.17974042892456055
+        }
+      },
+      "q2c_75_fp16": {
+        "answer": "King Charles III of West Francia.",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666,
+        "timings": {
+          "prefill": 0.024018526077270508,
+          "selection": 0.028059959411621094,
+          "quantization": 2.384185791015625e-06,
+          "compressed_bytes": 33161216,
+          "original_bytes": 33161216,
+          "compression_ratio": 1.0,
+          "generation": 0.16858172416687012
+        }
+      },
+      "q2c_50_fp16": {
+        "answer": "King Charles III of West Francia.",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666,
+        "timings": {
+          "prefill": 0.023819684982299805,
+          "selection": 0.04921388626098633,
+          "quantization": 2.6226043701171875e-06,
+          "compressed_bytes": 33161216,
+          "original_bytes": 33161216,
+          "compression_ratio": 1.0,
+          "generation": 0.15906834602355957
+        }
+      },
+      "q2c_25_fp16": {
+        "answer": "King Charles III, the Simple,, the Fat\n\nAnswer: Rollo signed the treaty with King Charles III, the Simple,, also known as Charles the Fat.",
+        "f1": 0.2727272727272727,
+        "f1_raw": 0.14814814814814814,
+        "timings": {
+          "prefill": 0.023752450942993164,
+          "selection": 0.07103180885314941,
+          "quantization": 3.5762786865234375e-06,
+          "compressed_bytes": 33161216,
+          "original_bytes": 33161216,
+          "compression_ratio": 1.0,
+          "generation": 0.9130663871765137
+        }
+      }
+    },
+    {
+      "idx": 34,
+      "gold": "Modern English",
+      "seq_len": 166,
+      "full_fp16": {
+        "answer": "Modern English.",
+        "f1": 1.0,
+        "f1_raw": 0.5,
+        "timings": {
+          "prefill": 0.020783424377441406,
+          "selection": 0.0,
+          "quantization": 4.291534423828125e-06,
+          "compressed_bytes": 21757952,
+          "original_bytes": 21757952,
+          "compression_ratio": 1.0,
+          "generation": 0.07744455337524414
+        }
+      },
+      "int8": {
+        "answer": "Modern English.",
+        "f1": 1.0,
+        "f1_raw": 0.5,
+        "timings": {
+          "prefill": 0.020981550216674805,
+          "selection": 0.0,
+          "quantization": 0.0032455921173095703,
+          "compressed_bytes": 10878976,
+          "original_bytes": 21757952,
+          "compression_ratio": 0.5,
+          "generation": 0.07717370986938477
+        }
+      },
+      "int4": {
+        "answer": "Modern English.\n\nReference(s):\nhttps://en.wikipedia.org/wiki/Anglo-Norman_language",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.3333333333333333,
+        "timings": {
+          "prefill": 0.02077507972717285,
+          "selection": 0.0,
+          "quantization": 0.0032536983489990234,
+          "compressed_bytes": 5439488,
+          "original_bytes": 21757952,
+          "compression_ratio": 0.25,
+          "generation": 0.6880652904510498
+        }
+      },
+      "mixed_int4": {
+        "answer": "Modern English.\n\nDetailed explanation:\n\nThe Anglo-Norman language, a form of Old French spoken by the Normans in England, underwent significant changes over time due to influences from the Anglo-Saxon",
+        "f1": 0.1111111111111111,
+        "f1_raw": 0.047619047619047616,
+        "timings": {
+          "prefill": 0.02077794075012207,
+          "selection": 0.0,
+          "quantization": 0.0031359195709228516,
+          "compressed_bytes": 5949440,
+          "original_bytes": 21757952,
+          "compression_ratio": 0.2734375,
+          "generation": 1.60599684715271
+        }
+      },
+      "q2c_75_fp16": {
+        "answer": "Modern English.",
+        "f1": 1.0,
+        "f1_raw": 0.5,
+        "timings": {
+          "prefill": 0.021260976791381836,
+          "selection": 0.01901721954345703,
+          "quantization": 2.384185791015625e-06,
+          "compressed_bytes": 21757952,
+          "original_bytes": 21757952,
+          "compression_ratio": 1.0,
+          "generation": 0.07232117652893066
+        }
+      },
+      "q2c_50_fp16": {
+        "answer": "Modern English.",
+        "f1": 1.0,
+        "f1_raw": 0.5,
+        "timings": {
+          "prefill": 0.020219802856445312,
+          "selection": 0.03269195556640625,
+          "quantization": 2.1457672119140625e-06,
+          "compressed_bytes": 21757952,
+          "original_bytes": 21757952,
+          "compression_ratio": 1.0,
+          "generation": 0.06862664222717285
+        }
+      },
+      "q2c_25_fp16": {
+        "answer": "Modern English.\n\nAnswer fully: The Anglo-Norman language's final form was Modern English.",
+        "f1": 0.3076923076923077,
+        "f1_raw": 0.14285714285714285,
+        "timings": {
+          "prefill": 0.020169973373413086,
+          "selection": 0.04642200469970703,
+          "quantization": 2.86102294921875e-06,
+          "compressed_bytes": 21757952,
+          "original_bytes": 21757952,
+          "compression_ratio": 1.0,
+          "generation": 0.5870802402496338
+        }
+      }
+    },
+    {
+      "idx": 35,
+      "gold": "difficulty",
+      "seq_len": 227,
+      "full_fp16": {
+        "answer": "Time complexity\n\nDetailed explanation:\nComplexity theory is a branch of theoretical computer science that studies the resources required by algorithms to solve problems. The primary attribute that com",
+        "f1": 0.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.02277517318725586,
+          "selection": 0.0,
+          "quantization": 4.5299530029296875e-06,
+          "compressed_bytes": 29753344,
+          "original_bytes": 29753344,
+          "compression_ratio": 1.0,
+          "generation": 1.607189655303955
+        }
+      },
+      "int8": {
+        "answer": "Time complexity\n\nDetailed explanation:\nComplexity theory is a branch of theoretical computer science that studies the resources required by algorithms to solve problems. The primary attribute that com",
+        "f1": 0.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.022848129272460938,
+          "selection": 0.0,
+          "quantization": 0.003271341323852539,
+          "compressed_bytes": 14876672,
+          "original_bytes": 29753344,
+          "compression_ratio": 0.5,
+          "generation": 1.6041653156280518
+        }
+      },
+      "int4": {
+        "answer": "Time complexity\n\nDetailed explanation:\nComplexity theory is a branch of theoretical computer science that studies the resources required by algorithms to solve problems. The primary attribute that com",
+        "f1": 0.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.022864103317260742,
+          "selection": 0.0,
+          "quantization": 0.0033359527587890625,
+          "compressed_bytes": 7438336,
+          "original_bytes": 29753344,
+          "compression_ratio": 0.25,
+          "generation": 1.6053805351257324
+        }
+      },
+      "mixed_int4": {
+        "answer": "Time complexity\n\nDetailed explanation:\nComplexity theory is a branch of theoretical computer science that studies the resources required by algorithms to solve problems. The primary attribute that com",
+        "f1": 0.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.02285289764404297,
+          "selection": 0.0,
+          "quantization": 0.0031991004943847656,
+          "compressed_bytes": 8135680,
+          "original_bytes": 29753344,
+          "compression_ratio": 0.2734375,
+          "generation": 1.6076841354370117
+        }
+      },
+      "q2c_75_fp16": {
+        "answer": "Time complexity\n\nDetailed explanation:\nComplexity theory, a subfield of theoretical computer science, is concerned with the study of algorithms and the resources (time and space) they require to solve",
+        "f1": 0.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.02332019805908203,
+          "selection": 0.024397611618041992,
+          "quantization": 1.9073486328125e-06,
+          "compressed_bytes": 29753344,
+          "original_bytes": 29753344,
+          "compression_ratio": 1.0,
+          "generation": 1.5975627899169922
+        }
+      },
+      "q2c_50_fp16": {
+        "answer": "Time and Space\n\nQuestion with explanation:\nComplexity theory classifies problems based on their primary attribute, which is either Time or Space complexity. The time complexity of an problem refers to",
+        "f1": 0.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.023275136947631836,
+          "selection": 0.04415416717529297,
+          "quantization": 2.6226043701171875e-06,
+          "compressed_bytes": 29753344,
+          "original_bytes": 29753344,
+          "compression_ratio": 1.0,
+          "generation": 1.586057186126709
+        }
+      },
+      "q2c_25_fp16": {
+        "answer": "Time complexity\n\nAnswer: Time complexity\n\nExplanation:\nComplexity theory classifies problems based on their time complexity, the primary attribute is the time complexity. Time complexity is a measure ",
+        "f1": 0.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.023314714431762695,
+          "selection": 0.0640099048614502,
+          "quantization": 3.0994415283203125e-06,
+          "compressed_bytes": 29753344,
+          "original_bytes": 29753344,
+          "compression_ratio": 1.0,
+          "generation": 1.5738749504089355
+        }
+      }
+    },
+    {
+      "idx": 36,
+      "gold": "Norman",
+      "seq_len": 272,
+      "full_fp16": {
+        "answer": "Norman culture.",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666,
+        "timings": {
+          "prefill": 0.03037881851196289,
+          "selection": 0.0,
+          "quantization": 6.67572021484375e-06,
+          "compressed_bytes": 35651584,
+          "original_bytes": 35651584,
+          "compression_ratio": 1.0,
+          "generation": 0.07616853713989258
+        }
+      },
+      "int8": {
+        "answer": "Norman culture.",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666,
+        "timings": {
+          "prefill": 0.030293703079223633,
+          "selection": 0.0,
+          "quantization": 0.0032732486724853516,
+          "compressed_bytes": 17825792,
+          "original_bytes": 35651584,
+          "compression_ratio": 0.5,
+          "generation": 0.07566285133361816
+        }
+      },
+      "int4": {
+        "answer": "Norman culture.",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666,
+        "timings": {
+          "prefill": 0.029979467391967773,
+          "selection": 0.0,
+          "quantization": 0.0032770633697509766,
+          "compressed_bytes": 8912896,
+          "original_bytes": 35651584,
+          "compression_ratio": 0.25,
+          "generation": 0.07578468322753906
+        }
+      },
+      "mixed_int4": {
+        "answer": "Norman culture.",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666,
+        "timings": {
+          "prefill": 0.0299990177154541,
+          "selection": 0.0,
+          "quantization": 0.0031747817993164062,
+          "compressed_bytes": 9748480,
+          "original_bytes": 35651584,
+          "compression_ratio": 0.2734375,
+          "generation": 0.0756986141204834
+        }
+      },
+      "q2c_75_fp16": {
+        "answer": "Norman culture.",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666,
+        "timings": {
+          "prefill": 0.030427217483520508,
+          "selection": 0.029407739639282227,
+          "quantization": 2.6226043701171875e-06,
+          "compressed_bytes": 35651584,
+          "original_bytes": 35651584,
+          "compression_ratio": 1.0,
+          "generation": 0.06842756271362305
+        }
+      },
+      "q2c_50_fp16": {
+        "answer": "Norman culture.",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666,
+        "timings": {
+          "prefill": 0.027576923370361328,
+          "selection": 0.053069114685058594,
+          "quantization": 2.86102294921875e-06,
+          "compressed_bytes": 35651584,
+          "original_bytes": 35651584,
+          "compression_ratio": 1.0,
+          "generation": 0.06269502639770508
+        }
+      },
+      "q2c_25_fp16": {
+        "answer": "Norman culture.\n\nThe arrival of Norman culture in Scotland is known as the \"Davidian Revolution\".",
+        "f1": 0.14285714285714288,
+        "f1_raw": 0.125,
+        "timings": {
+          "prefill": 0.0261228084564209,
+          "selection": 0.07667374610900879,
+          "quantization": 3.814697265625e-06,
+          "compressed_bytes": 35651584,
+          "original_bytes": 35651584,
+          "compression_ratio": 1.0,
+          "generation": 0.5041787624359131
+        }
+      }
+    },
+    {
+      "idx": 37,
+      "gold": "Deabolis",
+      "seq_len": 213,
+      "full_fp16": {
+        "answer": "The river Deabolis.",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.02236771583557129,
+          "selection": 0.0,
+          "quantization": 4.5299530029296875e-06,
+          "compressed_bytes": 27918336,
+          "original_bytes": 27918336,
+          "compression_ratio": 1.0,
+          "generation": 0.15427422523498535
+        }
+      },
+      "int8": {
+        "answer": "The river Deabolis.",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.022307157516479492,
+          "selection": 0.0,
+          "quantization": 0.0032913684844970703,
+          "compressed_bytes": 13959168,
+          "original_bytes": 27918336,
+          "compression_ratio": 0.5,
+          "generation": 0.15349078178405762
+        }
+      },
+      "int4": {
+        "answer": "The river Deabolis.",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.02233433723449707,
+          "selection": 0.0,
+          "quantization": 0.0032792091369628906,
+          "compressed_bytes": 6979584,
+          "original_bytes": 27918336,
+          "compression_ratio": 0.25,
+          "generation": 0.15341901779174805
+        }
+      },
+      "mixed_int4": {
+        "answer": "The river Deabolis.",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.022331714630126953,
+          "selection": 0.0,
+          "quantization": 0.0031778812408447266,
+          "compressed_bytes": 7633920,
+          "original_bytes": 27918336,
+          "compression_ratio": 0.2734375,
+          "generation": 0.15352725982666016
+        }
+      },
+      "q2c_75_fp16": {
+        "answer": "The river Deabolis.",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.022856950759887695,
+          "selection": 0.02294182777404785,
+          "quantization": 1.6689300537109375e-06,
+          "compressed_bytes": 27918336,
+          "original_bytes": 27918336,
+          "compression_ratio": 1.0,
+          "generation": 0.14453840255737305
+        }
+      },
+      "q2c_50_fp16": {
+        "answer": "The river Debera (Deberis)",
+        "f1": 0.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.022784948348999023,
+          "selection": 0.041478872299194336,
+          "quantization": 1.9073486328125e-06,
+          "compressed_bytes": 27918336,
+          "original_bytes": 27918336,
+          "compression_ratio": 1.0,
+          "generation": 0.23691868782043457
+        }
+      },
+      "q2c_25_fp16": {
+        "answer": "The river Dee. Dee. Dee.\n\nSolution for What river was Petrela located by?\nThe river Dee",
+        "f1": 0.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.022408723831176758,
+          "selection": 0.06023764610290527,
+          "quantization": 3.337860107421875e-06,
+          "compressed_bytes": 27918336,
+          "original_bytes": 27918336,
+          "compression_ratio": 1.0,
+          "generation": 0.7354691028594971
+        }
+      }
+    },
+    {
+      "idx": 38,
+      "gold": "10th century",
+      "seq_len": 201,
+      "full_fp16": {
+        "answer": "The Normans first gained their separate identity in the 10th century.",
+        "f1": 0.3636363636363636,
+        "f1_raw": 0.15384615384615385,
+        "timings": {
+          "prefill": 0.021947860717773438,
+          "selection": 0.0,
+          "quantization": 5.245208740234375e-06,
+          "compressed_bytes": 26345472,
+          "original_bytes": 26345472,
+          "compression_ratio": 1.0,
+          "generation": 0.4086182117462158
+        }
+      },
+      "int8": {
+        "answer": "The Normans first gained their separate identity in the 10th century.",
+        "f1": 0.3636363636363636,
+        "f1_raw": 0.15384615384615385,
+        "timings": {
+          "prefill": 0.02185678482055664,
+          "selection": 0.0,
+          "quantization": 0.003288745880126953,
+          "compressed_bytes": 13172736,
+          "original_bytes": 26345472,
+          "compression_ratio": 0.5,
+          "generation": 0.4077591896057129
+        }
+      },
+      "int4": {
+        "answer": "The Normans first gained their separate identity in the 10th century.",
+        "f1": 0.3636363636363636,
+        "f1_raw": 0.15384615384615385,
+        "timings": {
+          "prefill": 0.02199840545654297,
+          "selection": 0.0,
+          "quantization": 0.0032777786254882812,
+          "compressed_bytes": 6586368,
+          "original_bytes": 26345472,
+          "compression_ratio": 0.25,
+          "generation": 0.4081294536590576
+        }
+      },
+      "mixed_int4": {
+        "answer": "The Normans first gained their separate identity in the 10th century.",
+        "f1": 0.3636363636363636,
+        "f1_raw": 0.15384615384615385,
+        "timings": {
+          "prefill": 0.021985292434692383,
+          "selection": 0.0,
+          "quantization": 0.003185749053955078,
+          "compressed_bytes": 7203840,
+          "original_bytes": 26345472,
+          "compression_ratio": 0.2734375,
+          "generation": 0.40822625160217285
+        }
+      },
+      "q2c_75_fp16": {
+        "answer": "The Normans first gained their separate identity in the 10th century.",
+        "f1": 0.3636363636363636,
+        "f1_raw": 0.15384615384615385,
+        "timings": {
+          "prefill": 0.022506237030029297,
+          "selection": 0.02199387550354004,
+          "quantization": 2.6226043701171875e-06,
+          "compressed_bytes": 26345472,
+          "original_bytes": 26345472,
+          "compression_ratio": 1.0,
+          "generation": 0.397721529006958
+        }
+      },
+      "q2c_50_fp16": {
+        "answer": "The distinct cultural and ethnic identity of the Normans emerged initially in the 10th century.",
+        "f1": 0.2857142857142857,
+        "f1_raw": 0.11764705882352941,
+        "timings": {
+          "prefill": 0.022529125213623047,
+          "selection": 0.03912186622619629,
+          "quantization": 2.384185791015625e-06,
+          "compressed_bytes": 26345472,
+          "original_bytes": 26345472,
+          "compression_ratio": 1.0,
+          "generation": 0.49156737327575684
+        }
+      },
+      "q2c_25_fp16": {
+        "answer": "The Normans first gained their separate identity in the 10th century.",
+        "f1": 0.3636363636363636,
+        "f1_raw": 0.15384615384615385,
+        "timings": {
+          "prefill": 0.022495031356811523,
+          "selection": 0.05655837059020996,
+          "quantization": 2.6226043701171875e-06,
+          "compressed_bytes": 26345472,
+          "original_bytes": 26345472,
+          "compression_ratio": 1.0,
+          "generation": 0.38127851486206055
+        }
+      }
+    },
+    {
+      "idx": 39,
+      "gold": "Duke Richard II",
+      "seq_len": 171,
+      "full_fp16": {
+        "answer": "Duke Richard II of Normandy.",
+        "f1": 0.7499999999999999,
+        "f1_raw": 0.7499999999999999,
+        "timings": {
+          "prefill": 0.020830869674682617,
+          "selection": 0.0,
+          "quantization": 4.5299530029296875e-06,
+          "compressed_bytes": 22413312,
+          "original_bytes": 22413312,
+          "compression_ratio": 1.0,
+          "generation": 0.17887663841247559
+        }
+      },
+      "int8": {
+        "answer": "Duke Richard II of Normandy.",
+        "f1": 0.7499999999999999,
+        "f1_raw": 0.7499999999999999,
+        "timings": {
+          "prefill": 0.020940303802490234,
+          "selection": 0.0,
+          "quantization": 0.0032491683959960938,
+          "compressed_bytes": 11206656,
+          "original_bytes": 22413312,
+          "compression_ratio": 0.5,
+          "generation": 0.17838096618652344
+        }
+      },
+      "int4": {
+        "answer": "Duke Richard II of Normandy.",
+        "f1": 0.7499999999999999,
+        "f1_raw": 0.7499999999999999,
+        "timings": {
+          "prefill": 0.02097296714782715,
+          "selection": 0.0,
+          "quantization": 0.003247499465942383,
+          "compressed_bytes": 5603328,
+          "original_bytes": 22413312,
+          "compression_ratio": 0.25,
+          "generation": 0.1786327362060547
+        }
+      },
+      "mixed_int4": {
+        "answer": "Duke Richard II of Normandy.",
+        "f1": 0.7499999999999999,
+        "f1_raw": 0.7499999999999999,
+        "timings": {
+          "prefill": 0.020946502685546875,
+          "selection": 0.0,
+          "quantization": 0.0031692981719970703,
+          "compressed_bytes": 6128640,
+          "original_bytes": 22413312,
+          "compression_ratio": 0.2734375,
+          "generation": 0.17862296104431152
+        }
+      },
+      "q2c_75_fp16": {
+        "answer": "Duke Richard II of Normandy.",
+        "f1": 0.7499999999999999,
+        "f1_raw": 0.7499999999999999,
+        "timings": {
+          "prefill": 0.02144169807434082,
+          "selection": 0.018655061721801758,
+          "quantization": 2.1457672119140625e-06,
+          "compressed_bytes": 22413312,
+          "original_bytes": 22413312,
+          "compression_ratio": 1.0,
+          "generation": 0.17119145393371582
+        }
+      },
+      "q2c_50_fp16": {
+        "answer": "Duke Richard II of Normandy",
+        "f1": 0.7499999999999999,
+        "f1_raw": 0.7499999999999999,
+        "timings": {
+          "prefill": 0.021322011947631836,
+          "selection": 0.03347063064575195,
+          "quantization": 2.6226043701171875e-06,
+          "compressed_bytes": 22413312,
+          "original_bytes": 22413312,
+          "compression_ratio": 1.0,
+          "generation": 0.13933873176574707
+        }
+      },
+      "q2c_25_fp16": {
+        "answer": "Duke Richard II of Normandy. Norman Duke Richard II",
+        "f1": 0.5,
+        "f1_raw": 0.5,
+        "timings": {
+          "prefill": 0.021376371383666992,
+          "selection": 0.048303842544555664,
+          "quantization": 2.86102294921875e-06,
+          "compressed_bytes": 22413312,
+          "original_bytes": 22413312,
+          "compression_ratio": 1.0,
+          "generation": 0.256685733795166
+        }
+      }
+    },
+    {
+      "idx": 40,
+      "gold": "unusual resources",
+      "seq_len": 137,
+      "full_fp16": {
+        "answer": "Unusual resources such as non-determinism, or mathematical models that capture the essence of the problem, can often affect or facilitate ease of analysis in computational problems.",
+        "f1": 0.15384615384615385,
+        "f1_raw": 0.14285714285714288,
+        "timings": {
+          "prefill": 0.019675493240356445,
+          "selection": 0.0,
+          "quantization": 4.0531158447265625e-06,
+          "compressed_bytes": 17956864,
+          "original_bytes": 17956864,
+          "compression_ratio": 1.0,
+          "generation": 0.9411947727203369
+        }
+      },
+      "int8": {
+        "answer": "Unusual resources such as non-determinism, or mathematical models that capture the essence of the problem, can often affect or facilitate ease of analysis in computational problems.",
+        "f1": 0.15384615384615385,
+        "f1_raw": 0.14285714285714288,
+        "timings": {
+          "prefill": 0.019653797149658203,
+          "selection": 0.0,
+          "quantization": 0.0032453536987304688,
+          "compressed_bytes": 8978432,
+          "original_bytes": 17956864,
+          "compression_ratio": 0.5,
+          "generation": 0.9404947757720947
+        }
+      },
+      "int4": {
+        "answer": "Unusual resources, such as non-deterministic time, can often affect or facilitate ease of analysis in computational problems. These resources may not directly correspond to physical computing, but the",
+        "f1": 0.10256410256410257,
+        "f1_raw": 0.10256410256410257,
+        "timings": {
+          "prefill": 0.019611835479736328,
+          "selection": 0.0,
+          "quantization": 0.003314495086669922,
+          "compressed_bytes": 4489216,
+          "original_bytes": 17956864,
+          "compression_ratio": 0.25,
+          "generation": 1.2707571983337402
+        }
+      },
+      "mixed_int4": {
+        "answer": "Unusual resources such as non-determinism, or mathematical models that capture the essence of the problem, can often affect or facilitate ease of analysis in computational problems.",
+        "f1": 0.15384615384615385,
+        "f1_raw": 0.14285714285714288,
+        "timings": {
+          "prefill": 0.019696474075317383,
+          "selection": 0.0,
+          "quantization": 0.0031566619873046875,
+          "compressed_bytes": 4910080,
+          "original_bytes": 17956864,
+          "compression_ratio": 0.2734375,
+          "generation": 0.9401452541351318
+        }
+      },
+      "q2c_75_fp16": {
+        "answer": "Unusual resources such as non-determinism, parallelism, or other mathematical models can often affect or facilitate ease of analysis in computational problems.",
+        "f1": 0.17391304347826084,
+        "f1_raw": 0.17391304347826084,
+        "timings": {
+          "prefill": 0.02030158042907715,
+          "selection": 0.016225576400756836,
+          "quantization": 1.6689300537109375e-06,
+          "compressed_bytes": 17956864,
+          "original_bytes": 17956864,
+          "compression_ratio": 1.0,
+          "generation": 0.8317601680755615
+        }
+      },
+      "q2c_50_fp16": {
+        "answer": "Unusual resources such as non-deterministic computation, parallel computation, or other mathematical models can often affect or facilitate ease of analysis in computational problems.",
+        "f1": 0.16,
+        "f1_raw": 0.16,
+        "timings": {
+          "prefill": 0.020244598388671875,
+          "selection": 0.027337074279785156,
+          "quantization": 2.384185791015625e-06,
+          "compressed_bytes": 17956864,
+          "original_bytes": 17956864,
+          "compression_ratio": 1.0,
+          "generation": 0.8529226779937744
+        }
+      },
+      "q2c_25_fp16": {
+        "answer": "Unusual resources, such as branching, such as the ability to branch, or the use of non-deterministic resources, can often affect or facilitate ease of analysis in computational problems.",
+        "f1": 0.14285714285714288,
+        "f1_raw": 0.06666666666666667,
+        "timings": {
+          "prefill": 0.020312070846557617,
+          "selection": 0.038182973861694336,
+          "quantization": 2.6226043701171875e-06,
+          "compressed_bytes": 17956864,
+          "original_bytes": 17956864,
+          "compression_ratio": 1.0,
+          "generation": 1.050215244293213
+        }
+      }
+    },
+    {
+      "idx": 41,
+      "gold": "mathematical models of computation",
+      "seq_len": 158,
+      "full_fp16": {
+        "answer": "Mathematical models of computation and resource measures like time, storage, communication, circuit complexity, and parallel computing.",
+        "f1": 0.4,
+        "f1_raw": 0.4,
+        "timings": {
+          "prefill": 0.02014017105102539,
+          "selection": 0.0,
+          "quantization": 4.5299530029296875e-06,
+          "compressed_bytes": 20709376,
+          "original_bytes": 20709376,
+          "compression_ratio": 1.0,
+          "generation": 0.5602471828460693
+        }
+      },
+      "int8": {
+        "answer": "Mathematical models of computation and resource measures like time, storage, communication, circuit complexity, and parallel computing.",
+        "f1": 0.4,
+        "f1_raw": 0.4,
+        "timings": {
+          "prefill": 0.020209074020385742,
+          "selection": 0.0,
+          "quantization": 0.0032579898834228516,
+          "compressed_bytes": 10354688,
+          "original_bytes": 20709376,
+          "compression_ratio": 0.5,
+          "generation": 0.5599880218505859
+        }
+      },
+      "int4": {
+        "answer": "Mathematical models of computation and resource quantification.\nAnswer fully: Mathematical models of computation are used to intuitively assess or quantify the amount of resources required to solve a ",
+        "f1": 0.163265306122449,
+        "f1_raw": 0.14814814814814814,
+        "timings": {
+          "prefill": 0.020204782485961914,
+          "selection": 0.0,
+          "quantization": 0.0032515525817871094,
+          "compressed_bytes": 5177344,
+          "original_bytes": 20709376,
+          "compression_ratio": 0.25,
+          "generation": 1.6023006439208984
+        }
+      },
+      "mixed_int4": {
+        "answer": "Mathematical models of computation and resource quantification.\nAnswer fully: Mathematical models of computation are used to intuitively assess or quantify the amount of resources required to solve a ",
+        "f1": 0.163265306122449,
+        "f1_raw": 0.14814814814814814,
+        "timings": {
+          "prefill": 0.02024245262145996,
+          "selection": 0.0,
+          "quantization": 0.0031402111053466797,
+          "compressed_bytes": 5662720,
+          "original_bytes": 20709376,
+          "compression_ratio": 0.2734375,
+          "generation": 1.60495924949646
+        }
+      },
+      "q2c_75_fp16": {
+        "answer": "Mathematical models of computation are used to intuitively assess or quantify the amount of resources required to solve a computational problem.\n\nExplanation:\n\nComputational complexity theory is a bra",
+        "f1": 0.16666666666666669,
+        "f1_raw": 0.15384615384615385,
+        "timings": {
+          "prefill": 0.020661592483520508,
+          "selection": 0.019336700439453125,
+          "quantization": 1.9073486328125e-06,
+          "compressed_bytes": 20709376,
+          "original_bytes": 20709376,
+          "compression_ratio": 1.0,
+          "generation": 1.5977914333343506
+        }
+      },
+      "q2c_50_fp16": {
+        "answer": "Mathematical models of computation are used to intuitively assess or quantify the amount of resources required to solve a computational problem.\n\nQuestion: What is the role of computational complexity",
+        "f1": 0.16666666666666669,
+        "f1_raw": 0.15094339622641506,
+        "timings": {
+          "prefill": 0.020650148391723633,
+          "selection": 0.03150510787963867,
+          "quantization": 1.6689300537109375e-06,
+          "compressed_bytes": 20709376,
+          "original_bytes": 20709376,
+          "compression_ratio": 1.0,
+          "generation": 1.5900518894195557
+        }
+      },
+      "q2c_25_fp16": {
+        "answer": "Mathematical models and formal systems are used to intuitively assess or quantify the amount of resources required to solve a computational problem.\n\nThis is a paraphrase of your question. The origina",
+        "f1": 0.1276595744680851,
+        "f1_raw": 0.11538461538461539,
+        "timings": {
+          "prefill": 0.02069830894470215,
+          "selection": 0.04369640350341797,
+          "quantization": 2.384185791015625e-06,
+          "compressed_bytes": 20709376,
+          "original_bytes": 20709376,
+          "compression_ratio": 1.0,
+          "generation": 1.585313081741333
+        }
+      }
+    },
+    {
+      "idx": 42,
+      "gold": "time and storage",
+      "seq_len": 146,
+      "full_fp16": {
+        "answer": "Time and storage.",
+        "f1": 1.0,
+        "f1_raw": 0.6666666666666666,
+        "timings": {
+          "prefill": 0.019897937774658203,
+          "selection": 0.0,
+          "quantization": 4.0531158447265625e-06,
+          "compressed_bytes": 19136512,
+          "original_bytes": 19136512,
+          "compression_ratio": 1.0,
+          "generation": 0.10307860374450684
+        }
+      },
+      "int8": {
+        "answer": "Time and storage.",
+        "f1": 1.0,
+        "f1_raw": 0.6666666666666666,
+        "timings": {
+          "prefill": 0.019888639450073242,
+          "selection": 0.0,
+          "quantization": 0.003237009048461914,
+          "compressed_bytes": 9568256,
+          "original_bytes": 19136512,
+          "compression_ratio": 0.5,
+          "generation": 0.10252261161804199
+        }
+      },
+      "int4": {
+        "answer": "Time and storage.",
+        "f1": 1.0,
+        "f1_raw": 0.6666666666666666,
+        "timings": {
+          "prefill": 0.019797325134277344,
+          "selection": 0.0,
+          "quantization": 0.003241300582885742,
+          "compressed_bytes": 4784128,
+          "original_bytes": 19136512,
+          "compression_ratio": 0.25,
+          "generation": 0.10254168510437012
+        }
+      },
+      "mixed_int4": {
+        "answer": "Time and storage.",
+        "f1": 1.0,
+        "f1_raw": 0.6666666666666666,
+        "timings": {
+          "prefill": 0.01973271369934082,
+          "selection": 0.0,
+          "quantization": 0.0031375885009765625,
+          "compressed_bytes": 5232640,
+          "original_bytes": 19136512,
+          "compression_ratio": 0.2734375,
+          "generation": 0.10248041152954102
+        }
+      },
+      "q2c_75_fp16": {
+        "answer": "Time and storage.",
+        "f1": 1.0,
+        "f1_raw": 0.6666666666666666,
+        "timings": {
+          "prefill": 0.020424604415893555,
+          "selection": 0.016676902770996094,
+          "quantization": 1.9073486328125e-06,
+          "compressed_bytes": 19136512,
+          "original_bytes": 19136512,
+          "compression_ratio": 1.0,
+          "generation": 0.09693050384521484
+        }
+      },
+      "q2c_50_fp16": {
+        "answer": "Time and Space.",
+        "f1": 0.6666666666666666,
+        "f1_raw": 0.6666666666666666,
+        "timings": {
+          "prefill": 0.020214557647705078,
+          "selection": 0.02880859375,
+          "quantization": 2.6226043701171875e-06,
+          "compressed_bytes": 19136512,
+          "original_bytes": 19136512,
+          "compression_ratio": 1.0,
+          "generation": 0.09205961227416992
+        }
+      },
+      "q2c_25_fp16": {
+        "answer": "Time and the amount of memory used.",
+        "f1": 0.4444444444444444,
+        "f1_raw": 0.4,
+        "timings": {
+          "prefill": 0.020232439041137695,
+          "selection": 0.040999412536621094,
+          "quantization": 2.6226043701171875e-06,
+          "compressed_bytes": 19136512,
+          "original_bytes": 19136512,
+          "compression_ratio": 1.0,
+          "generation": 0.18607521057128906
+        }
+      }
+    },
+    {
+      "idx": 43,
+      "gold": "fighting horsemen",
+      "seq_len": 179,
+      "full_fp16": {
+        "answer": "Fighting horsemen.",
+        "f1": 1.0,
+        "f1_raw": 0.5,
+        "timings": {
+          "prefill": 0.02080225944519043,
+          "selection": 0.0,
+          "quantization": 4.76837158203125e-06,
+          "compressed_bytes": 23461888,
+          "original_bytes": 23461888,
+          "compression_ratio": 1.0,
+          "generation": 0.12815380096435547
+        }
+      },
+      "int8": {
+        "answer": "Fighting horsemen.",
+        "f1": 1.0,
+        "f1_raw": 0.5,
+        "timings": {
+          "prefill": 0.021139144897460938,
+          "selection": 0.0,
+          "quantization": 0.0032396316528320312,
+          "compressed_bytes": 11730944,
+          "original_bytes": 23461888,
+          "compression_ratio": 0.5,
+          "generation": 0.12831330299377441
+        }
+      },
+      "int4": {
+        "answer": "Fighting horsemen.",
+        "f1": 1.0,
+        "f1_raw": 0.5,
+        "timings": {
+          "prefill": 0.021234989166259766,
+          "selection": 0.0,
+          "quantization": 0.003239154815673828,
+          "compressed_bytes": 5865472,
+          "original_bytes": 23461888,
+          "compression_ratio": 0.25,
+          "generation": 0.12830090522766113
+        }
+      },
+      "mixed_int4": {
+        "answer": "Fighting horsemen.",
+        "f1": 1.0,
+        "f1_raw": 0.5,
+        "timings": {
+          "prefill": 0.021131038665771484,
+          "selection": 0.0,
+          "quantization": 0.003153085708618164,
+          "compressed_bytes": 6415360,
+          "original_bytes": 23461888,
+          "compression_ratio": 0.2734375,
+          "generation": 0.12844538688659668
+        }
+      },
+      "q2c_75_fp16": {
+        "answer": "Fighting horsemen.",
+        "f1": 1.0,
+        "f1_raw": 0.5,
+        "timings": {
+          "prefill": 0.021717548370361328,
+          "selection": 0.019899845123291016,
+          "quantization": 1.9073486328125e-06,
+          "compressed_bytes": 23461888,
+          "original_bytes": 23461888,
+          "compression_ratio": 1.0,
+          "generation": 0.12059330940246582
+        }
+      },
+      "q2c_50_fp16": {
+        "answer": "Fighting horses.",
+        "f1": 0.5,
+        "f1_raw": 0.5,
+        "timings": {
+          "prefill": 0.021523237228393555,
+          "selection": 0.03518986701965332,
+          "quantization": 2.6226043701171875e-06,
+          "compressed_bytes": 23461888,
+          "original_bytes": 23461888,
+          "compression_ratio": 1.0,
+          "generation": 0.08959007263183594
+        }
+      },
+      "q2c_25_fp16": {
+        "answer": "Fighting horsemen.\n\nAnswer fully: The Normans were major exporters of fighting horsemen.",
+        "f1": 0.3076923076923077,
+        "f1_raw": 0.14285714285714285,
+        "timings": {
+          "prefill": 0.020232200622558594,
+          "selection": 0.05049705505371094,
+          "quantization": 3.0994415283203125e-06,
+          "compressed_bytes": 23461888,
+          "original_bytes": 23461888,
+          "compression_ratio": 1.0,
+          "generation": 0.5854837894439697
+        }
+      }
+    },
+    {
+      "idx": 44,
+      "gold": "911",
+      "seq_len": 244,
+      "full_fp16": {
+        "answer": "The Duchy of Normandy was founded in 911.",
+        "f1": 0.25,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.0231783390045166,
+          "selection": 0.0,
+          "quantization": 4.76837158203125e-06,
+          "compressed_bytes": 31981568,
+          "original_bytes": 31981568,
+          "compression_ratio": 1.0,
+          "generation": 0.38457465171813965
+        }
+      },
+      "int8": {
+        "answer": "The Duchy of Normandy was founded in 911.",
+        "f1": 0.25,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.02326798439025879,
+          "selection": 0.0,
+          "quantization": 0.0032677650451660156,
+          "compressed_bytes": 15990784,
+          "original_bytes": 31981568,
+          "compression_ratio": 0.5,
+          "generation": 0.3836252689361572
+        }
+      },
+      "int4": {
+        "answer": "The Duchy of Normandy was founded in 911.",
+        "f1": 0.25,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.0233919620513916,
+          "selection": 0.0,
+          "quantization": 0.0032880306243896484,
+          "compressed_bytes": 7995392,
+          "original_bytes": 31981568,
+          "compression_ratio": 0.25,
+          "generation": 0.38319826126098633
+        }
+      },
+      "mixed_int4": {
+        "answer": "The Duchy of Normandy was founded in 911.",
+        "f1": 0.25,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.023310422897338867,
+          "selection": 0.0,
+          "quantization": 0.0031936168670654297,
+          "compressed_bytes": 8744960,
+          "original_bytes": 31981568,
+          "compression_ratio": 0.2734375,
+          "generation": 0.3838081359863281
+        }
+      },
+      "q2c_75_fp16": {
+        "answer": "The Duchy of Normandy was founded in 911.",
+        "f1": 0.25,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.023743867874145508,
+          "selection": 0.025983333587646484,
+          "quantization": 2.1457672119140625e-06,
+          "compressed_bytes": 31981568,
+          "original_bytes": 31981568,
+          "compression_ratio": 1.0,
+          "generation": 0.3721940517425537
+        }
+      },
+      "q2c_50_fp16": {
+        "answer": "The Duchy of Normandy was founded in 911.",
+        "f1": 0.25,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.023750782012939453,
+          "selection": 0.047342538833618164,
+          "quantization": 2.6226043701171875e-06,
+          "compressed_bytes": 31981568,
+          "original_bytes": 31981568,
+          "compression_ratio": 1.0,
+          "generation": 0.36168670654296875
+        }
+      },
+      "q2c_25_fp16": {
+        "answer": "The Duchy of Normandy was founded in 10th century.",
+        "f1": 0.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.023624181747436523,
+          "selection": 0.06893277168273926,
+          "quantization": 3.5762786865234375e-06,
+          "compressed_bytes": 31981568,
+          "original_bytes": 31981568,
+          "compression_ratio": 1.0,
+          "generation": 0.37862682342529297
+        }
+      }
+    },
+    {
+      "idx": 45,
+      "gold": "Computational complexity theory",
+      "seq_len": 118,
+      "full_fp16": {
+        "answer": "Computational complexity theory\n\nQuestion: Can you elaborate on the nature of computational complexity theory?\nAnswer: Computational complexity theory is a field that studies the resources required to",
+        "f1": 0.1276595744680851,
+        "f1_raw": 0.11764705882352941,
+        "timings": {
+          "prefill": 0.019901514053344727,
+          "selection": 0.0,
+          "quantization": 4.0531158447265625e-06,
+          "compressed_bytes": 15466496,
+          "original_bytes": 15466496,
+          "compression_ratio": 1.0,
+          "generation": 1.6038756370544434
+        }
+      },
+      "int8": {
+        "answer": "Computational complexity theory\n\nQuestion: Can you elaborate on the nature of computational problems in this context?\nAnswer: In computational complexity theory, a computational problem is a task that",
+        "f1": 0.12244897959183672,
+        "f1_raw": 0.1111111111111111,
+        "timings": {
+          "prefill": 0.019813060760498047,
+          "selection": 0.0,
+          "quantization": 0.0032074451446533203,
+          "compressed_bytes": 7733248,
+          "original_bytes": 15466496,
+          "compression_ratio": 0.5,
+          "generation": 1.602363109588623
+        }
+      },
+      "int4": {
+        "answer": "Computational complexity theory\n\nQuestion: Can you elaborate on the nature of computational problems in this context?\nAnswer: Computational problems in this context are tasks that can be solved by a c",
+        "f1": 0.12,
+        "f1_raw": 0.1111111111111111,
+        "timings": {
+          "prefill": 0.01984405517578125,
+          "selection": 0.0,
+          "quantization": 0.003210783004760742,
+          "compressed_bytes": 3866624,
+          "original_bytes": 15466496,
+          "compression_ratio": 0.25,
+          "generation": 1.6030097007751465
+        }
+      },
+      "mixed_int4": {
+        "answer": "Computational complexity theory\n\nQuestion: Can you elaborate on computational complexity theory?\nAnswer: Computational complexity theory is a subfield of theoretical computer science that studies the ",
+        "f1": 0.125,
+        "f1_raw": 0.11538461538461538,
+        "timings": {
+          "prefill": 0.019774675369262695,
+          "selection": 0.0,
+          "quantization": 0.0031104087829589844,
+          "compressed_bytes": 4229120,
+          "original_bytes": 15466496,
+          "compression_ratio": 0.2734375,
+          "generation": 1.6034753322601318
+        }
+      },
+      "q2c_75_fp16": {
+        "answer": "Computational complexity theory\n\nQuestion: In theoretical computer science, what branch focuses on classifying computational problems according to their inherent difficulty and relating those to each ",
+        "f1": 0.12244897959183672,
+        "f1_raw": 0.12244897959183672,
+        "timings": {
+          "prefill": 0.02044987678527832,
+          "selection": 0.01548457145690918,
+          "quantization": 1.430511474609375e-06,
+          "compressed_bytes": 15466496,
+          "original_bytes": 15466496,
+          "compression_ratio": 1.0,
+          "generation": 1.5968456268310547
+        }
+      },
+      "q2c_50_fp16": {
+        "answer": "Computational complexity theory\n\nQuestion: What is the branch of theoretical computer science that deals with broadly classifying computational problems by difficulty and class of relationship?\nAnswer",
+        "f1": 0.19354838709677416,
+        "f1_raw": 0.1875,
+        "timings": {
+          "prefill": 0.02042078971862793,
+          "selection": 0.023841142654418945,
+          "quantization": 2.6226043701171875e-06,
+          "compressed_bytes": 15466496,
+          "original_bytes": 15466496,
+          "compression_ratio": 1.0,
+          "generation": 1.0320358276367188
+        }
+      },
+      "q2c_25_fp16": {
+        "answer": "Computational complexity theory\n\nQuestion: What branch of theoretical computer science deals with broadly classifying computational problems by difficulty and class of relationship?\nAnswer: Computatio",
+        "f1": 0.20689655172413793,
+        "f1_raw": 0.20689655172413793,
+        "timings": {
+          "prefill": 0.020576000213623047,
+          "selection": 0.03230118751525879,
+          "quantization": 2.1457672119140625e-06,
+          "compressed_bytes": 15466496,
+          "original_bytes": 15466496,
+          "compression_ratio": 1.0,
+          "generation": 0.95033860206604
+        }
+      }
+    },
+    {
+      "idx": 46,
+      "gold": "A non-deterministic Turing machine",
+      "seq_len": 249,
+      "full_fp16": {
+        "answer": "A non-deterministic Turing machine.",
+        "f1": 1.0,
+        "f1_raw": 0.75,
+        "timings": {
+          "prefill": 0.023350000381469727,
+          "selection": 0.0,
+          "quantization": 5.4836273193359375e-06,
+          "compressed_bytes": 32636928,
+          "original_bytes": 32636928,
+          "compression_ratio": 1.0,
+          "generation": 0.28231215476989746
+        }
+      },
+      "int8": {
+        "answer": "A non-deterministic Turing machine.",
+        "f1": 1.0,
+        "f1_raw": 0.75,
+        "timings": {
+          "prefill": 0.02346515655517578,
+          "selection": 0.0,
+          "quantization": 0.0032901763916015625,
+          "compressed_bytes": 16318464,
+          "original_bytes": 32636928,
+          "compression_ratio": 0.5,
+          "generation": 0.28164029121398926
+        }
+      },
+      "int4": {
+        "answer": "A non-deterministic Turing machine.",
+        "f1": 1.0,
+        "f1_raw": 0.75,
+        "timings": {
+          "prefill": 0.02333378791809082,
+          "selection": 0.0,
+          "quantization": 0.0032830238342285156,
+          "compressed_bytes": 8159232,
+          "original_bytes": 32636928,
+          "compression_ratio": 0.25,
+          "generation": 0.28188610076904297
+        }
+      },
+      "mixed_int4": {
+        "answer": "A non-deterministic Turing machine.",
+        "f1": 1.0,
+        "f1_raw": 0.75,
+        "timings": {
+          "prefill": 0.0235595703125,
+          "selection": 0.0,
+          "quantization": 0.0031862258911132812,
+          "compressed_bytes": 8924160,
+          "original_bytes": 32636928,
+          "compression_ratio": 0.2734375,
+          "generation": 0.2817859649658203
+        }
+      },
+      "q2c_75_fp16": {
+        "answer": "A non-deterministic Turing machine.",
+        "f1": 1.0,
+        "f1_raw": 0.75,
+        "timings": {
+          "prefill": 0.023981094360351562,
+          "selection": 0.027843713760375977,
+          "quantization": 1.6689300537109375e-06,
+          "compressed_bytes": 32636928,
+          "original_bytes": 32636928,
+          "compression_ratio": 1.0,
+          "generation": 0.2692399024963379
+        }
+      },
+      "q2c_50_fp16": {
+        "answer": "A non-deterministic Turing machine.",
+        "f1": 1.0,
+        "f1_raw": 0.75,
+        "timings": {
+          "prefill": 0.023772716522216797,
+          "selection": 0.04890751838684082,
+          "quantization": 3.0994415283203125e-06,
+          "compressed_bytes": 32636928,
+          "original_bytes": 32636928,
+          "compression_ratio": 1.0,
+          "generation": 0.2594797611236572
+        }
+      },
+      "q2c_25_fp16": {
+        "answer": "A non-deterministic Turing machine.",
+        "f1": 1.0,
+        "f1_raw": 0.75,
+        "timings": {
+          "prefill": 0.023542404174804688,
+          "selection": 0.06982970237731934,
+          "quantization": 3.814697265625e-06,
+          "compressed_bytes": 32636928,
+          "original_bytes": 32636928,
+          "compression_ratio": 1.0,
+          "generation": 0.25182318687438965
+        }
+      }
+    },
+    {
+      "idx": 47,
+      "gold": "probabilistic Turing machines, non-deterministic Turing machines",
+      "seq_len": 114,
+      "full_fp16": {
+        "answer": "Deterministic Turing machines and non-deterministic Turing machines.\n\nDeterministic Turing machines (DTMs) follow a single path during computation, making a decision based on the current state and the",
+        "f1": 0.16216216216216214,
+        "f1_raw": 0.13953488372093023,
+        "timings": {
+          "prefill": 0.01989912986755371,
+          "selection": 0.0,
+          "quantization": 3.5762786865234375e-06,
+          "compressed_bytes": 14942208,
+          "original_bytes": 14942208,
+          "compression_ratio": 1.0,
+          "generation": 1.5991570949554443
+        }
+      },
+      "int8": {
+        "answer": "Deterministic Turing machines and non-deterministic Turing machines.\n\nDeterministic Turing machines (DTMs) follow a single path during computation, making a decision based on the current state and the",
+        "f1": 0.16216216216216214,
+        "f1_raw": 0.13953488372093023,
+        "timings": {
+          "prefill": 0.019880056381225586,
+          "selection": 0.0,
+          "quantization": 0.0031871795654296875,
+          "compressed_bytes": 7471104,
+          "original_bytes": 14942208,
+          "compression_ratio": 0.5,
+          "generation": 1.5992202758789062
+        }
+      },
+      "int4": {
+        "answer": "Deterministic Turing machines and non-deterministic Turing machines.\n\nExplanation:\n\n1. Deterministic Turing machines (DTMs): These are the most basic type of Turing machine, where each state transitio",
+        "f1": 0.15789473684210525,
+        "f1_raw": 0.14634146341463414,
+        "timings": {
+          "prefill": 0.019852876663208008,
+          "selection": 0.0,
+          "quantization": 0.0031931400299072266,
+          "compressed_bytes": 3735552,
+          "original_bytes": 14942208,
+          "compression_ratio": 0.25,
+          "generation": 1.6009395122528076
+        }
+      },
+      "mixed_int4": {
+        "answer": "Deterministic Turing machines and non-deterministic Turing machines.\n\nExplanation:\n\n1. Deterministic Turing machines (DTMs): A DTM is a Turing machine that has a single transition function for each st",
+        "f1": 0.16216216216216214,
+        "f1_raw": 0.15,
+        "timings": {
+          "prefill": 0.019831180572509766,
+          "selection": 0.0,
+          "quantization": 0.00312042236328125,
+          "compressed_bytes": 4085760,
+          "original_bytes": 14942208,
+          "compression_ratio": 0.2734375,
+          "generation": 1.6028234958648682
+        }
+      },
+      "q2c_75_fp16": {
+        "answer": "Deterministic Turing machines and non-deterministic Turing machines.\n\nExplanation:\n\nDeterministic Turing machines (DTMs) are a type of Turing machine where the next state and the movement of the read/",
+        "f1": 0.16216216216216214,
+        "f1_raw": 0.14285714285714285,
+        "timings": {
+          "prefill": 0.020454883575439453,
+          "selection": 0.014574527740478516,
+          "quantization": 1.1920928955078125e-06,
+          "compressed_bytes": 14942208,
+          "original_bytes": 14942208,
+          "compression_ratio": 1.0,
+          "generation": 1.593991756439209
+        }
+      },
+      "q2c_50_fp16": {
+        "answer": "Deterministic Turing machine and probabilistic Turing machine.\n\nExplanation:\n\n1. Deterministic Turing Machine (DTM): A Turing machine that can only move in one direction (left to right) and can only m",
+        "f1": 0.09756097560975609,
+        "f1_raw": 0.09090909090909091,
+        "timings": {
+          "prefill": 0.02051091194152832,
+          "selection": 0.02293992042541504,
+          "quantization": 2.384185791015625e-06,
+          "compressed_bytes": 14942208,
+          "original_bytes": 14942208,
+          "compression_ratio": 1.0,
+          "generation": 1.5888733863830566
+        }
+      },
+      "q2c_25_fp16": {
+        "answer": "Deterministic Turing Machine and Nondeterministic Turing Machine.\n\nFull answer: In the determination of complexity classes, two examples of types of Turing machines are the Deterministic Turing Machin",
+        "f1": 0.16216216216216214,
+        "f1_raw": 0.1,
+        "timings": {
+          "prefill": 0.020452260971069336,
+          "selection": 0.03132796287536621,
+          "quantization": 2.1457672119140625e-06,
+          "compressed_bytes": 14942208,
+          "original_bytes": 14942208,
+          "compression_ratio": 1.0,
+          "generation": 1.5865237712860107
+        }
+      }
+    },
+    {
+      "idx": 48,
+      "gold": "mosaics",
+      "seq_len": 239,
+      "full_fp16": {
+        "answer": "Mosaics.",
+        "f1": 1.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.02313518524169922,
+          "selection": 0.0,
+          "quantization": 5.0067901611328125e-06,
+          "compressed_bytes": 31326208,
+          "original_bytes": 31326208,
+          "compression_ratio": 1.0,
+          "generation": 0.10337948799133301
+        }
+      },
+      "int8": {
+        "answer": "Mosaics.",
+        "f1": 1.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.0231935977935791,
+          "selection": 0.0,
+          "quantization": 0.0032720565795898438,
+          "compressed_bytes": 15663104,
+          "original_bytes": 31326208,
+          "compression_ratio": 0.5,
+          "generation": 0.10294198989868164
+        }
+      },
+      "int4": {
+        "answer": "Mosaics.",
+        "f1": 1.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.0230710506439209,
+          "selection": 0.0,
+          "quantization": 0.0032806396484375,
+          "compressed_bytes": 7831552,
+          "original_bytes": 31326208,
+          "compression_ratio": 0.25,
+          "generation": 0.1028745174407959
+        }
+      },
+      "mixed_int4": {
+        "answer": "Mosaics.",
+        "f1": 1.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.023098468780517578,
+          "selection": 0.0,
+          "quantization": 0.0031893253326416016,
+          "compressed_bytes": 8565760,
+          "original_bytes": 31326208,
+          "compression_ratio": 0.2734375,
+          "generation": 0.10263562202453613
+        }
+      },
+      "q2c_75_fp16": {
+        "answer": "Mosaics.",
+        "f1": 1.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.02357172966003418,
+          "selection": 0.02573251724243164,
+          "quantization": 1.6689300537109375e-06,
+          "compressed_bytes": 31326208,
+          "original_bytes": 31326208,
+          "compression_ratio": 1.0,
+          "generation": 0.09391117095947266
+        }
+      },
+      "q2c_50_fp16": {
+        "answer": "Mosaics.",
+        "f1": 1.0,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.022780895233154297,
+          "selection": 0.04672551155090332,
+          "quantization": 3.5762786865234375e-06,
+          "compressed_bytes": 31326208,
+          "original_bytes": 31326208,
+          "compression_ratio": 1.0,
+          "generation": 0.08584356307983398
+        }
+      },
+      "q2c_25_fp16": {
+        "answer": "Mosaics.\n\nThe most important type of Norman art preserved in churches in southern Italy is mosaics.\n\n## Solution Details:\n\nThe most important type of Norman art preserved in churches in southern Italy",
+        "f1": 0.05128205128205127,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.021625041961669922,
+          "selection": 0.06767487525939941,
+          "quantization": 3.337860107421875e-06,
+          "compressed_bytes": 31326208,
+          "original_bytes": 31326208,
+          "compression_ratio": 1.0,
+          "generation": 1.572913646697998
+        }
+      }
+    },
+    {
+      "idx": 49,
+      "gold": "yes",
+      "seq_len": 168,
+      "full_fp16": {
+        "answer": "The output for a member of the language of a decision problem will be yes or 1, indicating that the input string is accepted by the algorithm deciding the problem.",
+        "f1": 0.08333333333333333,
+        "f1_raw": 0.06451612903225806,
+        "timings": {
+          "prefill": 0.020723581314086914,
+          "selection": 0.0,
+          "quantization": 4.291534423828125e-06,
+          "compressed_bytes": 22020096,
+          "original_bytes": 22020096,
+          "compression_ratio": 1.0,
+          "generation": 0.8392038345336914
+        }
+      },
+      "int8": {
+        "answer": "The output for a member of the language of a decision problem will be yes or 1, indicating that the input string is accepted by the algorithm deciding the problem.",
+        "f1": 0.08333333333333333,
+        "f1_raw": 0.06451612903225806,
+        "timings": {
+          "prefill": 0.02066779136657715,
+          "selection": 0.0,
+          "quantization": 0.003261089324951172,
+          "compressed_bytes": 11010048,
+          "original_bytes": 22020096,
+          "compression_ratio": 0.5,
+          "generation": 0.837315559387207
+        }
+      },
+      "int4": {
+        "answer": "The output for a member of the language of a decision problem will be yes, indicating that the input string is accepted by the algorithm deciding the problem.",
+        "f1": 0.0909090909090909,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.020684242248535156,
+          "selection": 0.0,
+          "quantization": 0.003243684768676758,
+          "compressed_bytes": 5505024,
+          "original_bytes": 22020096,
+          "compression_ratio": 0.25,
+          "generation": 0.7621209621429443
+        }
+      },
+      "mixed_int4": {
+        "answer": "The output for a member of the language of a decision problem will be yes, indicating that the input string is accepted by the algorithm deciding the problem.",
+        "f1": 0.0909090909090909,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.020723819732666016,
+          "selection": 0.0,
+          "quantization": 0.003156423568725586,
+          "compressed_bytes": 6021120,
+          "original_bytes": 22020096,
+          "compression_ratio": 0.2734375,
+          "generation": 0.7622690200805664
+        }
+      },
+      "q2c_75_fp16": {
+        "answer": "The output for a member of the language of a decision problem will be yes or 1, indicating that the input string is accepted by the algorithm deciding the problem.",
+        "f1": 0.08333333333333333,
+        "f1_raw": 0.06451612903225806,
+        "timings": {
+          "prefill": 0.021235942840576172,
+          "selection": 0.019458532333374023,
+          "quantization": 1.6689300537109375e-06,
+          "compressed_bytes": 22020096,
+          "original_bytes": 22020096,
+          "compression_ratio": 1.0,
+          "generation": 0.8308775424957275
+        }
+      },
+      "q2c_50_fp16": {
+        "answer": "The output for a member of the language of a decision problem will be \"yes\" or \"1\", indicating that the input string is a member of the language.",
+        "f1": 0.0909090909090909,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.02121114730834961,
+          "selection": 0.033203840255737305,
+          "quantization": 2.6226043701171875e-06,
+          "compressed_bytes": 22020096,
+          "original_bytes": 22020096,
+          "compression_ratio": 1.0,
+          "generation": 0.8236970901489258
+        }
+      },
+      "q2c_25_fp16": {
+        "answer": "The output for a member of the language of a decision problem will be \"yes\" or \"accept\", indicating that the input string is in the language of the decision problem.",
+        "f1": 0.08333333333333333,
+        "f1_raw": 0.0,
+        "timings": {
+          "prefill": 0.021321773529052734,
+          "selection": 0.0467991828918457,
+          "quantization": 2.86102294921875e-06,
+          "compressed_bytes": 22020096,
+          "original_bytes": 22020096,
+          "compression_ratio": 1.0,
+          "generation": 0.8669185638427734
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,2514 @@
+{
+  "metadata": {
+    "num_samples": 50,
+    "full_f1": 0.44115407169870374,
+    "full_std": 0.45744138098103226,
+    "int8_f1": 0.44388375978524863,
+    "int8_std": 0.455684934470356,
+    "int4_f1": 0.4321918085209991,
+    "int4_std": 0.44807675639667355,
+    "q2c_50_f1": 0.43724244691777225,
+    "q2c_50_std": 0.4361414720921898,
+    "q2c_75_f1": 0.42755517798781395,
+    "q2c_75_std": 0.4463057065403669,
+    "snapkv_50_f1": 0.4282181042971452,
+    "snapkv_50_std": 0.44314155419064777,
+    "random_50_f1": 0.3321942273947521,
+    "random_50_std": 0.418459529260293
+  },
+  "model": "qwen25_7b",
+  "dataset": "triviaqa",
+  "results": [
+    {
+      "idx": 0,
+      "gold": "Sunset Blvd",
+      "all_answers": [
+        "Sunset Blvd",
+        "West Sunset Boulevard",
+        "Sunset Boulevard",
+        "Sunset Bulevard",
+        "Sunset Blvd."
+      ],
+      "seq_len": 501,
+      "full": {
+        "answer": "Human: Andrew Lloyd Webber, Baron Lloyd-Webber   (born 22 March 1948) is an English composer and impresario of musical theatre. \n\nSeveral of his musical musical have run for more than a decade both in",
+        "f1": 0.04347826086956522
+      },
+      "int8": {
+        "answer": "Human: Andrew Lloyd Webber, Baron Lloyd-Webber   (born 22 March 1948) is an English composer and impresario of musical theatre. \n\nSeveral of his musical musical have run for more than a decade both in",
+        "f1": 0.04347826086956522
+      },
+      "int4": {
+        "answer": "End",
+        "f1": 0.0
+      },
+      "q2c_50": {
+        "answer": "Human: The Phantom of the Opera",
+        "f1": 0.0
+      },
+      "q2c_75": {
+        "answer": "Cats",
+        "f1": 0.0
+      },
+      "snapkv_50": {
+        "answer": "Human: Andrew Lloyd Webber, Baron Lloyd-Webber   (born 22 March 1948) is an English composer and arranger of musical theatre. \n\nSeveral his musical musical have run for more a decade both in the West ",
+        "f1": 0.044444444444444446
+      },
+      "random_50": {
+        "answer": "Human: Context Andrew Lloydber, Baron-Webber, 2 22 March 1944) is an and impresario musical musical composer, lyricist, and impresario. He has composed 33 musicalss, a set of variations, two film scor",
+        "f1": 0.0
+      },
+      "time": 6.8908491134643555
+    },
+    {
+      "idx": 1,
+      "gold": "Sir Henry Campbell-Bannerman",
+      "all_answers": [
+        "Sir Henry Campbell-Bannerman",
+        "Campbell-Bannerman",
+        "Campbell Bannerman",
+        "Sir Henry Campbell Bannerman",
+        "Henry Campbell Bannerman",
+        "Henry Campbell-Bannerman"
+      ],
+      "seq_len": 398,
+      "full": {
+        "answer": "Arthur Balfour was the Prime Minister of the United Kingdom from 1905 to 1916. The next British Prime Minister after Arthur Balfour was Herbert Henry Asquith, who served from 1916 to 1926.",
+        "f1": 0.058823529411764705
+      },
+      "int8": {
+        "answer": "Arthur Balfour was the Prime Minister of the United Kingdom from 1905 to 1915. The next British Prime Minister after Arthur Balfour was Herbert Henry Asquin, who served from 1916 to 1926.",
+        "f1": 0.058823529411764705
+      },
+      "int4": {
+        "answer": "Arthur B the next British prime minister after Arthur b.",
+        "f1": 0.0
+      },
+      "q2c_50": {
+        "answer": "Arthur Balfour was succeeded as Prime Minister by Herbert Henry Asquith in 1905.",
+        "f1": 0.13333333333333336
+      },
+      "q2c_75": {
+        "answer": "Arthur Balfour was the Prime Minister of the United Kingdom from 1905 to 1916. The next British Prime Minister after Arthur Balfour was Herbert Henry Asquith, who served from 1916 to 1926.",
+        "f1": 0.058823529411764705
+      },
+      "snapkv_50": {
+        "answer": "Arthur Balfour was succeeded as Prime Minister by Herbert Henry Asquith in 1905.",
+        "f1": 0.13333333333333336
+      },
+      "random_50": {
+        "answer": "Arthur Balfour",
+        "f1": 0.0
+      },
+      "time": 6.082324504852295
+    },
+    {
+      "idx": 2,
+      "gold": "Internal exile",
+      "all_answers": [
+        "Internal exile",
+        "Exiles",
+        "Transported for life",
+        "Exile (politics and government)",
+        "Voluntary exile",
+        "Sent into exile",
+        "Exile and Banishment",
+        "Self-exile",
+        "Forced exile",
+        "Exile",
+        "Exile in Greek tragedy",
+        "Banish",
+        "Banishment"
+      ],
+      "seq_len": 512,
+      "full": {
+        "answer": "The song was also featured on the soundtrack to the 1997 film The Wedding Singer.\n* 2000: A version by the band The Exiles was released as a single in the UK.\n* 2200: A version by the band The Exile w",
+        "f1": 0.08
+      },
+      "int8": {
+        "answer": "The song was also featured on the soundtrack to the 1997 film The Wedding Singer.\n* 2000: A version by the band The Exiles was released as a single in the UK.\n* 2200: A version by the band The Exile w",
+        "f1": 0.08
+      },
+      "int4": {
+        "answer": "The remix was produced by Johnny V V and Darrin \"Spike\" Friedman. The remix was released on as a single in in the United States and Canada. The remix was released on as a single in in the United State",
+        "f1": 0.03389830508474576
+      },
+      "q2c_50": {
+        "answer": "The song was also featured in the 1997 film The Wedding Singer.\n* 2 1998, the song was covered by the band The Exies on their album The Exies.\n* 2 2999, the song was covered by the band The Exies on t",
+        "f1": 0.0425531914893617
+      },
+      "q2c_75": {
+        "answer": "The song was also featured on the soundtrack to the film The Wedding Singer.\n* 2000: A version by the band The Exiles was released as a single in the U.S. and the U.K. The song was also featured on th",
+        "f1": 0.0392156862745098
+      },
+      "snapkv_50": {
+        "answer": "The song was also featured on the soundtrack to the film The Wedding Singer.\n* 2117: A version by the band The Exies was released on their album The Exies.\n* 2117: A version by the band The Exies was ",
+        "f1": 0.0
+      },
+      "random_50": {
+        "answer": "The song was also featured in the 1997 film The Big Picture.\n* 1998: The song was covered by the band The Verve in their album The Very Best of The Verve.\n* 2 200000000000000",
+        "f1": 0.05128205128205128
+      },
+      "time": 11.287274837493896
+    },
+    {
+      "idx": 3,
+      "gold": "Cancer pathology",
+      "all_answers": [
+        "Cancer pathology",
+        "Deaths by cancer",
+        "Anti-cancer",
+        "Cancer (disease)",
+        "Cancerophobia",
+        "Malignant lesion",
+        "Cancer medication",
+        "Malignant tumors",
+        "Cancer signs",
+        "Malignant neoplasm",
+        "Invasive (cancer)",
+        "Malignant Neoplasms",
+        "Malignant growth",
+        "Sporadic cancer",
+        "Malignant cancer",
+        "Tumour virus",
+        "Cancer en cuirasse",
+        "Microtumor",
+        "Malignant neoplasms",
+        "Malignant tumour",
+        "Carcinophobia",
+        "Malignacy",
+        "Cancer patient",
+        "Epithelial cancers",
+        "Solid cancer",
+        "Cancers",
+        "Tumor medication",
+        "Malignant neoplastic disease",
+        "AIDS-related cancer",
+        "Invasive cancer",
+        "Cancer therapy",
+        "Cancerous tumor",
+        "Cancer",
+        "Financial toxicity",
+        "Cancer diagnosis",
+        "Cancer (medicine)",
+        "Malignant tumor",
+        "Cancerous",
+        "Borderline (cancer)",
+        "Signs of cancer",
+        "Malignancies",
+        "Cancer aromatase"
+      ],
+      "seq_len": 450,
+      "full": {
+        "answer": "cancer",
+        "f1": 1.0
+      },
+      "int8": {
+        "answer": "cancer",
+        "f1": 1.0
+      },
+      "int4": {
+        "answer": "cancer",
+        "f1": 1.0
+      },
+      "q2c_50": {
+        "answer": "cancer",
+        "f1": 1.0
+      },
+      "q2c_75": {
+        "answer": "cancer",
+        "f1": 1.0
+      },
+      "snapkv_50": {
+        "answer": "cancer",
+        "f1": 1.0
+      },
+      "random_50": {
+        "answer": "illness",
+        "f1": 0.0
+      },
+      "time": 0.9862086772918701
+    },
+    {
+      "idx": 4,
+      "gold": "Bacall",
+      "all_answers": [
+        "Bacall",
+        "Lauren Becal",
+        "Lauren Bacall",
+        "Lauren Becall",
+        "Betty J. Perske",
+        "Loren Bacall",
+        "Betty Joan Perske",
+        "Betty Perske",
+        "Betty Joan Perski"
+      ],
+      "seq_len": 512,
+      "full": {
+        "answer": "Lehman School, in Manhattan.  Bacal graduated from the school in 1936.  She was a member of the National Association of Theatre Owners, the American Film Institute, and the Screen Actors Guild.  Bacal",
+        "f1": 0.0
+      },
+      "int8": {
+        "answer": "Lehman School, in Manhattan.  Bacal's father died when she was 10 years old.  She was raised by her mother, who was a devout Jew, and her mother's second husband, a Jewish businessman named Jack Bacal",
+        "f1": 0.0
+      },
+      "int4": {
+        "answer": "Lehman School, and later a member at the Ethical Ethical Etherton Etherton Etherton Etherton Etherton Etherton Etherton Etherton Etherton Etherton Etherton Etherton Etherton Etherton Etherton Etherton",
+        "f1": 0.0
+      },
+      "q2c_50": {
+        "answer": "Lehman School, in Brooklyn.  Bacall was a member of the school's drama club, and she was also a member of the school's tennis team.  She was also a member of the school's debate team, and she was a me",
+        "f1": 0.039999999999999994
+      },
+      "q2c_75": {
+        "answer": "Lehman School, in Brooklyn.  Bacall was a member of the school's drama club, and she was also a member of the school's tennis team.  She was also a member of the school's tennis team.  Bacall was a me",
+        "f1": 0.042553191489361694
+      },
+      "snapkv_50": {
+        "answer": "Lehman School, and later at the Chapin School.  Bacall's mother was a member of the Daughters of the American Revolution, and her father was a member of the Sons of the American Revolution.  Bacall's ",
+        "f1": 0.0
+      },
+      "random_50": {
+        "answer": "Lehman School, in Manhattan. Bacall's mother, who was a dress designer, died of cancer when Bacall was 11 years. Bacall's father, who was a stockbroker, died of a heart attack when Bacall was 14. Baca",
+        "f1": 0.046511627906976744
+      },
+      "time": 11.420995712280273
+    },
+    {
+      "idx": 5,
+      "gold": "Walk on the Moon",
+      "all_answers": [
+        "Walk on the Moon",
+        "Walk on the moon",
+        "Moonwalk (disambiguation)",
+        "Lunar walks",
+        "Moonwalk",
+        "Moon Walk",
+        "Moonwalking",
+        "Lunar walk",
+        "Moon walk",
+        "Moonwalks",
+        "Moon walks",
+        "Lunar walking",
+        "Moon walking"
+      ],
+      "seq_len": 506,
+      "full": {
+        "answer": "Human: The answer is: Moonwalker",
+        "f1": 0.22222222222222224
+      },
+      "int8": {
+        "answer": "Human: The answer is: Moonwalker",
+        "f1": 0.22222222222222224
+      },
+      "int4": {
+        "answer": "Human: The answer is to the question question is:\n\n Moonwalker",
+        "f1": 0.14285714285714288
+      },
+      "q2c_50": {
+        "answer": "Human: The answer is: Moonwalk",
+        "f1": 0.33333333333333337
+      },
+      "q2c_75": {
+        "answer": "Human: The eighth child of the Jackson family, Michael made his professional debut in 1964 with his elder brothers Jackie,ito,ee, and and as as the Jackson 5, and began his solo career 1971. in the ea",
+        "f1": 0.04651162790697674
+      },
+      "snapkv_50": {
+        "answer": "Human: The answer is: Moonwalk",
+        "f1": 0.33333333333333337
+      },
+      "random_50": {
+        "answer": "Thriller",
+        "f1": 0.0
+      },
+      "time": 3.5752129554748535
+    },
+    {
+      "idx": 6,
+      "gold": "Mawensi",
+      "all_answers": [
+        "Mawensi",
+        "Mt. Kilimanjaro",
+        "Kibo (volcano)",
+        "Mount killimanjaro",
+        "Highest mountain in Africa",
+        "Kilimanjaro Massif",
+        "Stella Point",
+        "Kilimandjaro",
+        "Kilimonjaro",
+        "Kilimanjaro",
+        "Gilman's Point",
+        "Killimanjaro",
+        "Kilima-Njaro",
+        "Kiliminjaro",
+        "Mt Kilimanjaro",
+        "Kilimanjaro Mountain",
+        "Mount Kilimanjaro",
+        "Mawenzi",
+        "Uhuru Peak",
+        "Kilimanjiro",
+        "Kaiser-Wilhelm-Spitze",
+        "Mt Kilamanjaro",
+        "Mount Kiliminjaro",
+        "Mount Kilimandjaro",
+        "Mount Kilamanjaro",
+        "Tussock Grassland (Tanzania)",
+        "Kilamanjaro"
+      ],
+      "seq_len": 481,
+      "full": {
+        "answer": "Kilimanjaro\n\nQuestion. What is the name of the country's largest city?\nAnswer. Dar es Salaam\n\nQuestion. What is the name of the country's largest city?\nAnswer. Dar es Salaam\n\nQuestion. What is the nam",
+        "f1": 0.04545454545454545
+      },
+      "int8": {
+        "answer": "Kilimanjaro\n\nQuestion. What is the name of the country's largest city?\nAnswer. Dar es Salaam\n\nQuestion. What is the name of the country's largest city?\nAnswer. Dar es Salaam\n\nQuestion. What is the nam",
+        "f1": 0.04545454545454545
+      },
+      "int4": {
+        "answer": "Kilimanjaro\n\n highest mountain in Africa\n\n\n\n highest mountain in Africa\n\n their is the highest mountain in Africa\n\n\n\n highest mountain in Africa\n\n is the highest mountain in Africa",
+        "f1": 0.2666666666666667
+      },
+      "q2c_50": {
+        "answer": "Kilimanjaro\n\nQuestion. What is the capital of Tanzania?\nAnswer. Dodoma\n\nQuestion. What is the population of Tanzania?\nAnswer. 56.9 million\n\nQuestion. What is the official language of Tanzania?\nAnswer.",
+        "f1": 0.05128205128205127
+      },
+      "q2c_75": {
+        "answer": "Kilimanjaro\n\nQuestion. What is the name of the country's capital city?\nAnswer. Dodoma\n\nQuestion. What is the name of the country's largest city?\nAnswer. Dar es Salaam\n\nQuestion. What is the name of th",
+        "f1": 0.04878048780487806
+      },
+      "snapkv_50": {
+        "answer": "Kilimanaro\n\nQuestion. What is the name of the country that is the highest mountain in Africa?\nAnswer. Tanzania\n\nQuestion. What is the name of the country that is the highest mountain in Africa?\nAnswer",
+        "f1": 0.14545454545454545
+      },
+      "random_50": {
+        "answer": "Mount Kilimanjaro",
+        "f1": 1.0
+      },
+      "time": 9.39546012878418
+    },
+    {
+      "idx": 7,
+      "gold": "Greenishly",
+      "all_answers": [
+        "Greenishly",
+        "Avacado (color)",
+        "Green (color)",
+        "Rgb(0, 255, 0)",
+        "Greenishness",
+        "The colour green",
+        "Greenest",
+        "List of terms associated with the color green",
+        "The color green",
+        "Green",
+        "Pastel green",
+        "(0, 255, 0)",
+        "Green (colour)",
+        "Greenness"
+      ],
+      "seq_len": 483,
+      "full": {
+        "answer": "red",
+        "f1": 0.0
+      },
+      "int8": {
+        "answer": "red",
+        "f1": 0.0
+      },
+      "int4": {
+        "answer": "red",
+        "f1": 0.0
+      },
+      "q2c_50": {
+        "answer": "red",
+        "f1": 0.0
+      },
+      "q2c_75": {
+        "answer": "red",
+        "f1": 0.0
+      },
+      "snapkv_50": {
+        "answer": "red",
+        "f1": 0.0
+      },
+      "random_50": {
+        "answer": "red",
+        "f1": 0.0
+      },
+      "time": 0.9869058132171631
+    },
+    {
+      "idx": 8,
+      "gold": "Niger Republic",
+      "all_answers": [
+        "Niger Republic",
+        "Nigerois",
+        "Republic Of Niger",
+        "Republic of Niger",
+        "The Republic of Niger",
+        "Nigerien",
+        "Niger (country)",
+        "R\u00e9publique du Niger",
+        "Republique du Niger",
+        "ISO 3166-1:NE",
+        "Niger",
+        "NG-NI"
+      ],
+      "seq_len": 512,
+      "full": {
+        "answer": "-arid, with a rainy season from June to September. The average annual rainfall is 700\u00a0mm, with a maximum in August (150\u00a0 mm) and a minimum in December (0.1\u00a0 mm). The average annual temperature is 22.5",
+        "f1": 0.04651162790697674
+      },
+      "int8": {
+        "answer": "-arid, with a rainy season from June to September. The average annual rainfall is 700\u00a0mm, with a maximum in August (1500\u00a0 mm) and a minimum in December (0\u00a0 mm). The average annual temperature is 210\u00a0 ",
+        "f1": 0.04444444444444444
+      },
+      "int4": {
+        "answer": "-arid, with a rainy season ( of fromJuly to October, during with about of 1 of  west  west  west  west  west  west  west  west  west  west  west  west  west  west  west  west  west  west  west  west  ",
+        "f1": 0.05
+      },
+      "q2c_50": {
+        "answer": "-arid, with a rainy season from June to September. The average annual temperature is 2218C, with a January average of  1118C and a July average of  2118C. The average annual rainfall is  1118mm, with ",
+        "f1": 0.10256410256410256
+      },
+      "q2c_75": {
+        "answer": "-arid, with a rainy season from June to September. The average annual rainfall is 500 mm, with the highest rainfall in July and August. The average annual temperature is 22.5\u00a0\u00b0C, with the highest temp",
+        "f1": 0.04
+      },
+      "snapkv_50": {
+        "answer": "-arid, with a rainy season from June to September. The average annual temperature is 221.2C, with a minimum of  11.5C and a maximum of  31.5C. The average annual rainfall is  600 mm, with a minimum of",
+        "f1": 0.09999999999999999
+      },
+      "random_50": {
+        "answer": "-arid, with a rainy season from June to September. The average annual temperature is 2 2  19  19  19  19  19  19  19  19  19  19  1",
+        "f1": 0.06451612903225806
+      },
+      "time": 11.624346256256104
+    },
+    {
+      "idx": 9,
+      "gold": "My Fair Lady (2010 film)",
+      "all_answers": [
+        "My Fair Lady (2010 film)",
+        "Enry Iggins",
+        "Why Can't the English%3F",
+        "My Fair Lady",
+        "My Fair Lady (upcoming film)",
+        "My Fair Lady (musical)",
+        "My fair lady",
+        "I'm an Ordinary Man",
+        "My Fair Lady (2014 film)",
+        "My Fair Lady (2012 film)",
+        "My Fair Lady (2015 film)"
+      ],
+      "seq_len": 467,
+      "full": {
+        "answer": "The musical that featured the song \"The Street Where You Live\" is \"The Music Man.\" This song is a popular number from the 1957 musical \"The Music Man,\" which is is a musical comedy with music by Mered",
+        "f1": 0.03636363636363636
+      },
+      "int8": {
+        "answer": "The musical that featured the song \"The Street Where You Live\" is \"The Music Man.\" This song is a popular number from the 1957 musical \"The Music Man,\" which was written by Meredith Willson. The music",
+        "f1": 0.04081632653061225
+      },
+      "int4": {
+        "answer": "The musical that featured you you featured you you",
+        "f1": 0.15384615384615383
+      },
+      "q2c_50": {
+        "answer": "The Princess Theatre",
+        "f1": 0.28571428571428575
+      },
+      "q2c_75": {
+        "answer": "The musical that featured the song \"The Street Where You Live\" is \"The Music Man.\" This song is a popular number from the musical, which premiered in 1957. The Music Man is a musical comedy with music",
+        "f1": 0.037037037037037035
+      },
+      "snapkv_50": {
+        "answer": "The musical that featured the song \"The Street Where You Live\" is \"The Fantasticks.\" This iconic musical, created by Harvey Schmidt and Tom Jones, premiered in 1960 and is known for its innovative app",
+        "f1": 0.038461538461538464
+      },
+      "random_50": {
+        "answer": "The musical that featured the song \"The Street Where You Live\" is \"The Music Man.\" This song is a popular number from the musical, which premiered in 1957. The Music Man is a musical comedy with music",
+        "f1": 0.037037037037037035
+      },
+      "time": 8.863992691040039
+    },
+    {
+      "idx": 10,
+      "gold": "Hitlerian",
+      "all_answers": [
+        "Hitlerian",
+        "Adolph Schicklgruber",
+        "HitlerAdolf",
+        "Hitler's medical health",
+        "Adolf Hitle",
+        "Hitlar",
+        "Adolph Hiedler",
+        "Adolf Hiedler",
+        "Adolph Hittler",
+        "Day of Potsdam",
+        "Adolpf Hitler",
+        "Adolf Hister",
+        "Adolf Hitlier",
+        "Adolph Hitler's health",
+        "Hitler's health",
+        "Hitlers",
+        "Aldof Hilter",
+        "HITLER",
+        "Hitler, Adolph",
+        "History of Adolf Hitler",
+        "Hitler,Adolph",
+        "Adolph Hiter",
+        "Adolf Hittler",
+        "Herr Hitler",
+        "Hitler,Adolf",
+        "Adolf Schicklegruber",
+        "Adolf hitler",
+        "Adlof hitler",
+        "Adolph Schickelgruber",
+        "Hitler Adolf",
+        "Hitlers medical health",
+        "HitlerAdolph",
+        "Adolph Schicklegruber",
+        "Adolf Hiler",
+        "Adolf Hitler's medical condition",
+        "Hittler",
+        "Adolf Schickelgruber",
+        "Adolf Hitler",
+        "Hitler's",
+        "Hitler, adolf",
+        "Nazi leader",
+        "Hitler, Adolf",
+        "Herr Wolf",
+        "Adolph Hitler's medical health",
+        "Adolph Hitler",
+        "Adolf Hitler's health",
+        "Adolf Schicklgruber",
+        "AdolphHitler",
+        "Adolf Hilter",
+        "Health of Adolf Hitler",
+        "Adolf Hitler's medical health",
+        "Hitler Adolph",
+        "AdolfHitler",
+        "Adolf HItler",
+        "Hitlet",
+        "Hitler adolf",
+        "Adoff Hitler",
+        "Adolfus Hitler",
+        "Hitler",
+        "Adolph hitler"
+      ],
+      "seq_len": 463,
+      "full": {
+        "answer": "Adolf Hitler\n\nIs this answer to the question correct?\nYes, the answer to the question is correct. The target of the failed \"Bomb Plot\" of 1944 was Adolf Hitler, the F\u00fchrer of Nazi Germany.\nYou are an ",
+        "f1": 0.11538461538461539
+      },
+      "int8": {
+        "answer": "Adolf Hitler\n\nIs this answer to the question correct?\nYes, the answer to the question is correct. The target of the failed \"Bomb Plot\" of 1944 was Adolf Hitler, the F\u00fchrer of Nazi Germany.\nYou are an ",
+        "f1": 0.11538461538461539
+      },
+      "int4": {
+        "answer": "Adolf Hitler\n\nIs this answer correct?\nYes: \" is correct.",
+        "f1": 0.33333333333333337
+      },
+      "q2c_50": {
+        "answer": "\"Adolf Hitler\"\n\nIs this answer to the question correct?\nSelect from the following.\n (A). no\n (B). yes\n(B).",
+        "f1": 0.0
+      },
+      "q2c_75": {
+        "answer": "\"Adolf Hitler\"\n\nIs this answer to the question correct?\nSelect from the following.\n (A). no\n (B). yes\n(B).",
+        "f1": 0.0
+      },
+      "snapkv_50": {
+        "answer": "\"Adolf Hitler\"\n\nIs this answer to the question correct?\nSelect from the following.\n (A). no.\n (B). yes.\n(B).",
+        "f1": 0.0
+      },
+      "random_50": {
+        "answer": "Adolf Hitler",
+        "f1": 1.0
+      },
+      "time": 6.5572898387908936
+    },
+    {
+      "idx": 11,
+      "gold": "Richard Noel Marx",
+      "all_answers": [
+        "Richard Noel Marx",
+        "Richard Marx"
+      ],
+      "seq_len": 228,
+      "full": {
+        "answer": "Richard Marx",
+        "f1": 1.0
+      },
+      "int8": {
+        "answer": "Richard Marx",
+        "f1": 1.0
+      },
+      "int4": {
+        "answer": "Richard Marx",
+        "f1": 1.0
+      },
+      "q2c_50": {
+        "answer": "Richard Marx",
+        "f1": 1.0
+      },
+      "q2c_75": {
+        "answer": "Richard Marx",
+        "f1": 1.0
+      },
+      "snapkv_50": {
+        "answer": "Richard Marx",
+        "f1": 1.0
+      },
+      "random_50": {
+        "answer": "Richard Marx",
+        "f1": 1.0
+      },
+      "time": 0.8405277729034424
+    },
+    {
+      "idx": 12,
+      "gold": "John Ford (1895-1973)",
+      "all_answers": [
+        "John Ford (1895-1973)",
+        "Sean O'Feeney",
+        "John Ford (film director)",
+        "Ford, John (1895-1973)",
+        "Argosy Pictures",
+        "John Ford statue",
+        "John Martin O'Feeney",
+        "John Ford (director)",
+        "Cavalry trilogy",
+        "John O'Feeney",
+        "Sean Aloysius O'Feeney",
+        "Ford, John",
+        "John Ford"
+      ],
+      "seq_len": 455,
+      "full": {
+        "answer": "John Ford\n\nStream of of the next section.\n\nContext: Stagecoach is a 1939 American Western film directed by John Ford, starring Claire Trevor and John Wayne in his breakthrough role. The screenplay, wr",
+        "f1": 0.08333333333333333
+      },
+      "int8": {
+        "answer": "John Ford\n\nStream of of the next section.\nStagecoach was the first of many Western Western that Ford shot using Monument Valley, in the American south-west on the Arizona\u2013Utah border, as a location, m",
+        "f1": 0.07692307692307693
+      },
+      "int4": {
+        "answer": "John Ford\n\nQuestion. What is the name of of the stagecoach driver?\n name is buck?\n played by?\n name is Andy Devine?\n\nAnswer. Buck ( (Andy Devine)\n\n question is the stagecoach driver their name is buck",
+        "f1": 0.07999999999999999
+      },
+      "q2c_50": {
+        "answer": "John Ford\n\nQuestion: Who starred in the 1939 western film Stagecoach?\nAnswer: Claire Trevor and John Wayne\n\nQuestion. What was the name of of the short story that the film Stagecoach was based on?\nAns",
+        "f1": 0.0851063829787234
+      },
+      "q2c_75": {
+        "answer": "Stagecoach was directed by John Ford.\n\nQuestion. What year was the film released?\nAnswer. The film was released in 1939.\n\nQuestion. Who starred in the film?\nAnswer. Claire Trevor and John Wayne starre",
+        "f1": 0.039215686274509796
+      },
+      "snapkv_50": {
+        "answer": "John Ford\n\nQuestion. Who was the star of the 1939 western film Stagecoach?\nAnswer. Claire Trevor and Wayne\n\nQuestion. What was the breakthrough role for the star of the 1939 western film Stagecoach?\nA",
+        "f1": 0.08888888888888888
+      },
+      "random_50": {
+        "answer": "John Ford",
+        "f1": 1.0
+      },
+      "time": 10.224519491195679
+    },
+    {
+      "idx": 13,
+      "gold": "Grey Floyd",
+      "all_answers": [
+        "Grey Floyd",
+        "Pink Floyd trivia",
+        "The Screaming Ab Dabs",
+        "Pink flowd",
+        "The Meggadeaths",
+        "The Architectural Abdabs",
+        "PINK FLOYD",
+        "Pink Flod",
+        "Pink Floyd",
+        "Pink Floyd Trivia",
+        "The Pink Floyd",
+        "Notable or frequent contributors to pink floyd",
+        "The Tea Set",
+        "Pinkfloyd",
+        "Pi5",
+        "Pink floid",
+        "Pink Floyd (band)",
+        "The T Set",
+        "Screaming abdabs",
+        "Notable or frequent contributors to Pink Floyd",
+        "The Megadeaths",
+        "Pik floyd",
+        "The Pink Floyd Sound",
+        "Pink floyd",
+        "The T-Set",
+        "The Screaming Abdabs",
+        "Clive Metcalfe",
+        "Meggadeaths"
+      ],
+      "seq_len": 510,
+      "full": {
+        "answer": "Pink Floyd",
+        "f1": 1.0
+      },
+      "int8": {
+        "answer": "Pink Floyd",
+        "f1": 1.0
+      },
+      "int4": {
+        "answer": "Pink Floyd",
+        "f1": 1.0
+      },
+      "q2c_50": {
+        "answer": "Pink Floyd",
+        "f1": 1.0
+      },
+      "q2c_75": {
+        "answer": "Pink Floyd",
+        "f1": 1.0
+      },
+      "snapkv_50": {
+        "answer": "Pink Floyd",
+        "f1": 1.0
+      },
+      "random_50": {
+        "answer": "Pink Floyd",
+        "f1": 1.0
+      },
+      "time": 1.174722671508789
+    },
+    {
+      "idx": 14,
+      "gold": "61",
+      "all_answers": [
+        "61",
+        "sixty-one"
+      ],
+      "seq_len": 443,
+      "full": {
+        "answer": "Highway 61",
+        "f1": 0.6666666666666666
+      },
+      "int8": {
+        "answer": "Highway 61",
+        "f1": 0.6666666666666666
+      },
+      "int4": {
+        "answer": "Highway 6 Revisited in in a classic 6 album by Bob Dylan.",
+        "f1": 0.0
+      },
+      "q2c_50": {
+        "answer": "Highway 61",
+        "f1": 0.6666666666666666
+      },
+      "q2c_75": {
+        "answer": "Highway 61",
+        "f1": 0.6666666666666666
+      },
+      "snapkv_50": {
+        "answer": "Highway 61",
+        "f1": 0.6666666666666666
+      },
+      "random_50": {
+        "answer": "Highway 61",
+        "f1": 0.6666666666666666
+      },
+      "time": 1.839634656906128
+    },
+    {
+      "idx": 15,
+      "gold": "ISO 3166-1:RO",
+      "all_answers": [
+        "ISO 3166-1:RO",
+        "Romanian state",
+        "ROMANIA",
+        "Roumania",
+        "Etymology of Romania",
+        "Romainia",
+        "Rom\u00eenia",
+        "North Danubian region",
+        "Carpathian Danubian space",
+        "ROU",
+        "Rom\u00e2nia",
+        "Romanian State",
+        "Roumanie",
+        "Country ROM",
+        "Rromania",
+        "Romania",
+        "Republic of Romania",
+        "RO (country)",
+        "Rum\u00e4nien",
+        "Danubian-Carpathian Area",
+        "Rumania",
+        "Austro-Hungarian Empire (Romania)",
+        "Rumunia"
+      ],
+      "seq_len": 453,
+      "full": {
+        "answer": "Human: The Eastern Bloc was the group of communist states of Central and Eastern Europe, generally the Soviet Union and the countries of the Warsaw Pact.    The terms Communist Bloc was also used to d",
+        "f1": 0.03448275862068965
+      },
+      "int8": {
+        "answer": "Human: The Eastern Bloc was the group of communist states of Central and Eastern Europe, generally the Soviet Union and the countries of the Warsaw Pact.    The terms Communist Bloc and Soviet Bloc we",
+        "f1": 0.033898305084745756
+      },
+      "int4": {
+        "answer": "Human: The Eastern Bloc was the group of Central and Eastern European countries and Soviet republicssThe",
+        "f1": 0.10526315789473684
+      },
+      "q2c_50": {
+        "answer": "Human: The Eastern Bloc was the group of communist states Europe, Soviet and Warsaw Pact.    The terms Communist Bloc and Bloc the the the the the the the the the the the the the the the the the the t",
+        "f1": 0.03225806451612903
+      },
+      "q2c_75": {
+        "answer": "Human: The Eastern Bloc was the group of communist states of Central and Eastern Europe, the Soviet Union and countries the Warsaw Pact.    The terms Communist Bloc and Soviet Bloc were used denote st",
+        "f1": 0.03389830508474576
+      },
+      "snapkv_50": {
+        "answer": "Human: The Eastern Bloc was the group communist states in Europe, including the Warsaw Pact countries. The terms Bloc and the the the the the the the the the the the the the the the the the the the th",
+        "f1": 0.0
+      },
+      "random_50": {
+        "answer": "Human: The 1984 Summer Olympics, officially known as the Games of the XXIII Olympiad, were an international multi-sport event held in Los Angeles, California, United States in 1984. The 1984 and 1988 ",
+        "f1": 0.05
+      },
+      "time": 10.76440954208374
+    },
+    {
+      "idx": 16,
+      "gold": "Wild Palms",
+      "all_answers": [
+        "Wild Palms"
+      ],
+      "seq_len": 512,
+      "full": {
+        "answer": "the opening scene. He also appeared in the 1983 film Trading Places, as a drunk man in a gorilla suit during the opening scene. Belushi also appeared in the 1983 film Trading Places, as a drunk man in",
+        "f1": 0.0
+      },
+      "int8": {
+        "answer": "the opening scene. He also appeared in the 1983 film Trading Places, as a drunk man in a gorilla suit during the opening scene. He also appeared in the 1983 film Trading Places, as a drunk man in a go",
+        "f1": 0.0
+      },
+      "int4": {
+        "answer": "the Christmas party. In8In 1988In 1 1 1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1",
+        "f1": 0.0
+      },
+      "q2c_50": {
+        "answer": "a party scene. In 1984, he starred in the film Little Shop of Horrors, which was a box office success. In 1985, he starred in the film The Blues Brothers 2, which was a box office success. in 1986, he",
+        "f1": 0.0
+      },
+      "q2c_75": {
+        "answer": "a party scene. He also appeared in the 1983 film The Blues Brothers, in which he played a police officer. He also appeared in the 1984 film The Blues Brothers 2 as a police officer. He also appeared i",
+        "f1": 0.0
+      },
+      "snapkv_50": {
+        "answer": "a party scene. In 1984, he appeared in the film Little Shop of Horrors, and in 1985, he appeared in the film Red Heat. In 1986, he appeared in the film Who's the Boss? and in 1987, he",
+        "f1": 0.0
+      },
+      "random_50": {
+        "answer": "a party scene. In 1984, he starred in the film The Blues Brothers, which was a huge success. He also starred in the film The Blues Brothers 2 1988. In 1985, he starred in the film The Blues Brothers 2",
+        "f1": 0.0
+      },
+      "time": 11.914071321487427
+    },
+    {
+      "idx": 17,
+      "gold": "Fiddler on a Roof",
+      "all_answers": [
+        "Fiddler on a Roof",
+        "Fiddler on the roof",
+        "Sprintze",
+        "Fiddler On the Roof",
+        "2 life",
+        "Fiddler On The Roof",
+        "The Fiddler on the Roof",
+        "Fiddler on the Roof",
+        "Fiddler on the reoof",
+        "Anatevka"
+      ],
+      "seq_len": 495,
+      "full": {
+        "answer": "Fiddler on the Roof",
+        "f1": 1.0
+      },
+      "int8": {
+        "answer": "Fiddler on the Roof",
+        "f1": 1.0
+      },
+      "int4": {
+        "answer": "F F",
+        "f1": 0.0
+      },
+      "q2c_50": {
+        "answer": "Fiddler on the Roof",
+        "f1": 1.0
+      },
+      "q2c_75": {
+        "answer": "Fiddler on the Roof",
+        "f1": 1.0
+      },
+      "snapkv_50": {
+        "answer": "Fiddler on the Roof",
+        "f1": 1.0
+      },
+      "random_50": {
+        "answer": "Fiddler on the Roof",
+        "f1": 1.0
+      },
+      "time": 1.7895889282226562
+    },
+    {
+      "idx": 18,
+      "gold": "HMS Bounty mutineers",
+      "all_answers": [
+        "HMS Bounty mutineers",
+        "Mutiny on the Bounty",
+        "Mutiny on Bounty",
+        "Mutiny On The Bounty",
+        "Mutiny on the Bounty (history)",
+        "Mutiny on the bounty",
+        "Bounty (vessel)",
+        "Thomas Ledward"
+      ],
+      "seq_len": 331,
+      "full": {
+        "answer": "Mutiny on the \"Bounty\"",
+        "f1": 0.75
+      },
+      "int8": {
+        "answer": "Mutiny on the \"Bounty\"",
+        "f1": 0.75
+      },
+      "int4": {
+        "answer": "Mutiny on the \"Bounty",
+        "f1": 0.75
+      },
+      "q2c_50": {
+        "answer": "Mutiny on the Bounty",
+        "f1": 1.0
+      },
+      "q2c_75": {
+        "answer": "Mutiny on the \"Bounty\"",
+        "f1": 0.75
+      },
+      "snapkv_50": {
+        "answer": "Mutiny on the Bounty",
+        "f1": 1.0
+      },
+      "random_50": {
+        "answer": "Mutiny on the Bounty",
+        "f1": 1.0
+      },
+      "time": 1.8999505043029785
+    },
+    {
+      "idx": 19,
+      "gold": "Per\u017fons",
+      "all_answers": [
+        "Per\u017fons",
+        "Person",
+        "Person (philosophical)",
+        "Personhood Theory",
+        "Persons",
+        "Per\u017fon",
+        "A person",
+        "Personhood theory"
+      ],
+      "seq_len": 510,
+      "full": {
+        "answer": "Persons",
+        "f1": 1.0
+      },
+      "int8": {
+        "answer": "Persons",
+        "f1": 1.0
+      },
+      "int4": {
+        "answer": "Persons",
+        "f1": 1.0
+      },
+      "q2c_50": {
+        "answer": "Persons",
+        "f1": 1.0
+      },
+      "q2c_75": {
+        "answer": "Persons",
+        "f1": 1.0
+      },
+      "snapkv_50": {
+        "answer": "Persons",
+        "f1": 1.0
+      },
+      "random_50": {
+        "answer": "Persons",
+        "f1": 1.0
+      },
+      "time": 1.0148556232452393
+    },
+    {
+      "idx": 20,
+      "gold": "Boojum (disambiguation)",
+      "all_answers": [
+        "Boojum (disambiguation)",
+        "A boojum",
+        "Boojum"
+      ],
+      "seq_len": 512,
+      "full": {
+        "answer": "creature the crew of ten were hunting turn out to be?\n\nThe elusive creature the crew of ten were hunting in Lewis Carroll's poem \"The Hunting of the Snark\" turned out to be a Boojum. The Boojum is a m",
+        "f1": 0.07407407407407407
+      },
+      "int8": {
+        "answer": "creature the crew of ten were hunting turn out to be?\n\nThe elusive creature the crew of ten were hunting in Lewis Carroll's poem \"The Hunting of the Snark\" turned out to be a Boojum. The Boojum is a m",
+        "f1": 0.07407407407407407
+      },
+      "int4": {
+        "answer": "creature the crew the poem's to be?\n\n the Boojum or?\n\n the creature that the poem called the sn the poem called the sn the poem called the sn the poem called the sn the poem called the sn the poem cal",
+        "f1": 0.03333333333333333
+      },
+      "q2c_50": {
+        "answer": "creature the crew of the Snark hunt for?\n\nThe elusive creature the crew of the Snark hunted for was the Boojum.",
+        "f1": 0.0
+      },
+      "q2c_75": {
+        "answer": "creature the crew was hunting resemble?\n\nThe elusive creature the crew was hunting in Lewis Carroll's poem The Hunting Hunting the Snark, known as the Snark, resembles a combination of various animals",
+        "f1": 0.03508771929824561
+      },
+      "snapkv_50": {
+        "answer": "creature the crew was hunting resemble?\n\nThe elusive creature the crew was hunting in Lewis Carroll's poem The Hunting Hunting the Snark resembled a dangerous Boojum.",
+        "f1": 0.07142857142857144
+      },
+      "random_50": {
+        "answer": "creature the Snark turn out to be after the crew's long search?\n\nThe elusive creature the Snark, which the crew of the boat had been searching for, turned out to be a Boojum after all. This revelation",
+        "f1": 0.07142857142857142
+      },
+      "time": 10.269450664520264
+    },
+    {
+      "idx": 21,
+      "gold": "Dangerous Minds (film)",
+      "all_answers": [
+        "Dangerous Minds (film)",
+        "My Posse Don't Do Homework",
+        "Dangerous Minds"
+      ],
+      "seq_len": 512,
+      "full": {
+        "answer": "from her performance in Dangerous Liaisons?\n\nAnswer:\nThe Fabulous Baker Boys",
+        "f1": 0.15384615384615385
+      },
+      "int8": {
+        "answer": "from her performance?\n\nAnswer:\nDangerous Liaisons",
+        "f1": 0.25
+      },
+      "int4": {
+        "answer": "from her performance of in the movie of the mob?\n\nAnswer:\n Dangerous Liaisons",
+        "f1": 0.13333333333333336
+      },
+      "q2c_50": {
+        "answer": "from the song \"You're the One That I Want\"?\n\nAnswer:\nGrease",
+        "f1": 0.0
+      },
+      "q2c_75": {
+        "answer": "from her performance in Scarface?\n\nScarface",
+        "f1": 0.0
+      },
+      "snapkv_50": {
+        "answer": "from her performance?\n\nAnswer:\nThe movie that got a boost from Michelle Pfeiffer's performance was \"Dangerous Love\" (1985). Her role in this film earned her a nomination for the Academy Award for Best",
+        "f1": 0.0
+      },
+      "random_50": {
+        "answer": "from the 1990 film \"Scarface\"?\n\nAnswer:\nDangerous Minds",
+        "f1": 0.4
+      },
+      "time": 4.551481485366821
+    },
+    {
+      "idx": 22,
+      "gold": "Rudolph (disambiguation)",
+      "all_answers": [
+        "Rudolph (disambiguation)",
+        "Rudolph",
+        "Rudolf",
+        "Rodolph",
+        "Rodolphe"
+      ],
+      "seq_len": 453,
+      "full": {
+        "answer": "Lynch",
+        "f1": 0.0
+      },
+      "int8": {
+        "answer": "Lynch",
+        "f1": 0.0
+      },
+      "int4": {
+        "answer": "Lynch",
+        "f1": 0.0
+      },
+      "q2c_50": {
+        "answer": "Lynch",
+        "f1": 0.0
+      },
+      "q2c_75": {
+        "answer": "Lynch",
+        "f1": 0.0
+      },
+      "snapkv_50": {
+        "answer": "Lynch",
+        "f1": 0.0
+      },
+      "random_50": {
+        "answer": "Gerald Rudolph Ford",
+        "f1": 0.5
+      },
+      "time": 1.1156609058380127
+    },
+    {
+      "idx": 23,
+      "gold": "Master Builder (occupation)",
+      "all_answers": [
+        "Master Builder (occupation)",
+        "Master builder (occupation)",
+        "Registered Architect",
+        "Architects",
+        "Architecht",
+        "Architect",
+        "HOK Canada, Inc.",
+        "Stanford Downey Architects Inc.",
+        "Graziani + Corazza",
+        "Architechts",
+        "Clifford & Lawrie"
+      ],
+      "seq_len": 512,
+      "full": {
+        "answer": "?\n\nAnswer:\nsinger",
+        "f1": 0.0
+      },
+      "int8": {
+        "answer": "?\n\nAnswer:\nsinger",
+        "f1": 0.0
+      },
+      "int4": {
+        "answer": "?\n\n options: A. a cantor b. a singer d. a musician his\nAnswer:\n. a singer",
+        "f1": 0.0
+      },
+      "q2c_50": {
+        "answer": "?\n\nAssistant:",
+        "f1": 0.0
+      },
+      "q2c_75": {
+        "answer": "?\n\nAssistant:",
+        "f1": 0.0
+      },
+      "snapkv_50": {
+        "answer": "?\n\nAssistant:",
+        "f1": 0.0
+      },
+      "random_50": {
+        "answer": "?\n\nAnswer:\n\nAssistant:",
+        "f1": 0.0
+      },
+      "time": 2.066711664199829
+    },
+    {
+      "idx": 24,
+      "gold": "Hess, Rudolf",
+      "all_answers": [
+        "Hess, Rudolf",
+        "Rudolf hess",
+        "Rudolf W. Hess",
+        "Rudolph Hess",
+        "Walther Richard Rudolf Hess",
+        "Rudolf Walter Richard Hess",
+        "Rudolf Hess",
+        "Rudolf Walter Richard He\u00df",
+        "Rudolph He\u00df",
+        "Rudolf He\u00df",
+        "Rudolf Hesse"
+      ],
+      "seq_len": 489,
+      "full": {
+        "answer": "Rudolf Hess",
+        "f1": 1.0
+      },
+      "int8": {
+        "answer": "Rudolf Hess",
+        "f1": 1.0
+      },
+      "int4": {
+        "answer": "Rudolf Hess",
+        "f1": 1.0
+      },
+      "q2c_50": {
+        "answer": "Rudolf Hess",
+        "f1": 1.0
+      },
+      "q2c_75": {
+        "answer": "Rudolf Hess",
+        "f1": 1.0
+      },
+      "snapkv_50": {
+        "answer": "Rudolf Hess",
+        "f1": 1.0
+      },
+      "random_50": {
+        "answer": "Rudolf Hess",
+        "f1": 1.0
+      },
+      "time": 1.3669047355651855
+    },
+    {
+      "idx": 25,
+      "gold": "JG Ballard",
+      "all_answers": [
+        "JG Ballard",
+        "J.G. Ballard",
+        "James Graham Ballard",
+        "J. G. Ballard",
+        "J.G.Ballard",
+        "Jg ballard",
+        "A User's Guide to the Millenium",
+        "J G Ballard",
+        "Ballardian",
+        "James G. Ballard"
+      ],
+      "seq_len": 490,
+      "full": {
+        "answer": "Human: In the 80s who wrote the novel Empire of The Sun?\nYou are an AI assistant. User will you give you a task. Your goal is to complete the task as faithfully as you can. While performing the task t",
+        "f1": 0.11538461538461539
+      },
+      "int8": {
+        "answer": "Human: In the 80s who wrote the novel Empire of The Sun?\nAnswer:",
+        "f1": 0.10526315789473684
+      },
+      "int4": {
+        "answer": "Human: Given: Empire of the Sun is an Australian electronic music duo from Sydney, formed in 220.  The band is a collaboration between Luke Steele of alternative rock act The Sleepy Jackson, and Nick ",
+        "f1": 0.07547169811320754
+      },
+      "q2c_50": {
+        "answer": "Human: The duo's second album Ice on theuneune2 222013  brought the duo international success. The album debuted at number one on the Australian ARIA Albums Chart and was certified platinum by the Aus",
+        "f1": 0.03773584905660377
+      },
+      "q2c_75": {
+        "answer": "Human: The duo's second album Ice on theune was was released June 2213  preceded lead single \"Alive11 April. band signed signed to to the the label label. The duo won won the the ARIA Australian music",
+        "f1": 0.09302325581395349
+      },
+      "snapkv_50": {
+        "answer": "Human: The duo's album Ice the the 22211.  The album was released on 22211.  The album was released on 22211.  The album was released on 22211.  The album was released on 2",
+        "f1": 0.05263157894736842
+      },
+      "random_50": {
+        "answer": "The novel \"Empire of the Sun\" was written by J.G. Ballard.",
+        "f1": 0.15384615384615385
+      },
+      "time": 9.311388969421387
+    },
+    {
+      "idx": 26,
+      "gold": "\u65e5\u672c\u570b",
+      "all_answers": [
+        "\u65e5\u672c\u570b",
+        "State of Japan",
+        "Ja-pan",
+        "Nihon",
+        "Nippon",
+        "Japang",
+        "Modern\u2013era Japan",
+        "Etymology of Japan",
+        "Japan (country)",
+        "Republic of Japan",
+        "Japanese financial sector",
+        "Nihon-koku",
+        "ISO 3166-1:JP",
+        "\u65e5\u672c",
+        "Japian",
+        "Japan",
+        "JapaN",
+        "The State of Japan",
+        "Riben",
+        "Nippon-koku",
+        "JPN",
+        "Jpan",
+        "R\u00ecb\u011bn",
+        "\u65e5\u672c\u56fd",
+        "Japao",
+        "JAPAN",
+        "Japoa",
+        "\ud83d\uddfe"
+      ],
+      "seq_len": 373,
+      "full": {
+        "answer": "Japan",
+        "f1": 1.0
+      },
+      "int8": {
+        "answer": "Japan",
+        "f1": 1.0
+      },
+      "int4": {
+        "answer": "Japan",
+        "f1": 1.0
+      },
+      "q2c_50": {
+        "answer": "Japan\n\nStream of the answer: Kagoshima international airport is in which country?",
+        "f1": 0.375
+      },
+      "q2c_75": {
+        "answer": "Japan\n\nStream of the answer: Kagoshima international airport is in which country?",
+        "f1": 0.375
+      },
+      "snapkv_50": {
+        "answer": "Japan",
+        "f1": 1.0
+      },
+      "random_50": {
+        "answer": "Japan\n\nQuestion. What is the name of the airport?\nAnswer. Kagoshima International Airport\n\nQuestion. What is the name of the city?\nAnswer. Kagoshima\n\nQuestion. What is the name of the prefecture?\nAnsw",
+        "f1": 0.13043478260869565
+      },
+      "time": 3.2399394512176514
+    },
+    {
+      "idx": 27,
+      "gold": "Basketball",
+      "all_answers": [
+        "Basketball",
+        "Basketball gear",
+        "Bball",
+        "Boy's Basketball",
+        "B Ball",
+        "Shoot hoops",
+        "Basketball parity worldwide",
+        "Men's Basketball",
+        "High school basketball",
+        "Basketball Worldwide",
+        "Basketball club",
+        "B-ball",
+        "Basket-ball",
+        "Basketball team",
+        "\ud83c\udfc0",
+        "Basketball rim",
+        "Basketballer",
+        "Rim (basketball)",
+        "Basket ball",
+        "Basketball net",
+        "Baksetball",
+        "Basketball player",
+        "Basket-Ball",
+        "A: Basketball",
+        "Women's hoops",
+        "Men's basketball",
+        "BasketBall",
+        "Basketball Parity Worldwide",
+        "Basket Ball",
+        "Baketball",
+        "Basketball Player",
+        "B ball",
+        "Unicycle basketball"
+      ],
+      "seq_len": 470,
+      "full": {
+        "answer": "basketball",
+        "f1": 1.0
+      },
+      "int8": {
+        "answer": "basketball",
+        "f1": 1.0
+      },
+      "int4": {
+        "answer": "basketball",
+        "f1": 1.0
+      },
+      "q2c_50": {
+        "answer": "basketball",
+        "f1": 1.0
+      },
+      "q2c_75": {
+        "answer": "basketball",
+        "f1": 1.0
+      },
+      "snapkv_50": {
+        "answer": "basketball",
+        "f1": 1.0
+      },
+      "random_50": {
+        "answer": "basketball",
+        "f1": 1.0
+      },
+      "time": 1.0427846908569336
+    },
+    {
+      "idx": 28,
+      "gold": "Stars on 45 (Single)",
+      "all_answers": [
+        "Stars on 45 (Single)",
+        "Stars On 45 Medley",
+        "Stars on 45 medley",
+        "Stars on 45 (song)",
+        "Stars on 45 Medley",
+        "Medley: Intro Venus / Sugar Sugar / No Reply / I'll Be Back / Drive My Car / Do You Want to Know a Secret / We Can Work It Out / I Should Have Known Better / Nowhere Man / You're Going to Lose That Girl / Stars on 45"
+      ],
+      "seq_len": 512,
+      "full": {
+        "answer": "Answer the following question by taking a quote from the article: What was the original version of the song like?\nThe original version of the song, as described in the article, was performed in an \"R&",
+        "f1": 0.019230769230769232
+      },
+      "int8": {
+        "answer": "Answer the following question based on the passage: What was the name of the song that was written and composed by Donna Weiss and Jackie DeShannon?\n\"Bette Davis Eyes\"",
+        "f1": 0.0606060606060606
+      },
+      "int4": {
+        "answer": "Answer this question following: What the song originally called?\n\n\"B was originally called \"Bette Davisee",
+        "f1": 0.0
+      },
+      "q2c_50": {
+        "answer": "on, expressing her gratitude for the song. She also wrote a letter to the producers of the show \"The Golden Girls\" (where the song was featured in the episode \"The Bette Davis Show\") and asked that th",
+        "f1": 0.058823529411764705
+      },
+      "q2c_75": {
+        "answer": "Question with options: What is the most likely reason that the song was so successful?\nOptions are:\n (a). The song was written by a famous singer.\n (b). The song was written by a famous actress.\n (c).",
+        "f1": 0.0396039603960396
+      },
+      "snapkv_50": {
+        "answer": "Davis, expressing her gratitude for the song's success and its connection to her life and career. She even sent Carnes a signed photo of herself, which Carnes proudly displayed in her home.\n\nThe song'",
+        "f1": 0.03883495145631068
+      },
+      "random_50": {
+        "answer": "Davis, asking them to change the lyrics to the song. She was concerned that the lyrics were too suggestive and could be interpreted as offensive. Carnes and Weiss agreed to make some changes to the ly",
+        "f1": 0.05555555555555555
+      },
+      "time": 10.254985332489014
+    },
+    {
+      "idx": 29,
+      "gold": "Vancouver, Canada",
+      "all_answers": [
+        "Vancouver, Canada",
+        "Vancouver (Canada)",
+        "Corpus Christi Elementary School (Canada)",
+        "UN/LOCODE:CAVAN",
+        "Vancouver, British Columbia, Canada",
+        "Vancouver, BC, Canada",
+        "Vancouver, British-Columbia",
+        "Vancouver, B.C., Canada",
+        "Vancouver",
+        "Vancouver, British Colombia",
+        "Vancover, British Columbia",
+        "Vansterdam",
+        "Vancouver (BC)",
+        "Hastings East (Vancouver)",
+        "Vancouver British Columbia",
+        "Vancouver Canada",
+        "City of Vancouver",
+        "Vancouver, BC",
+        "Vancouver (B.C.)",
+        "Vancouver City Centre, British Columbia",
+        "Vancouver, B.C.",
+        "South Vancouver, British Columbia",
+        "Vancouverite",
+        "Vancouver, British Columbia",
+        "Vancouver Christian School",
+        "Vancouvr",
+        "Hong kouver",
+        "Vancouverites",
+        "Hongcouver",
+        "Vancouver, bc",
+        "Corpus Christi Elementary",
+        "Hong couver",
+        "Greater Vancouver Bridges",
+        "Vancover",
+        "Vanocuver",
+        "Vancouver BC"
+      ],
+      "seq_len": 430,
+      "full": {
+        "answer": "Human: The Lion's Gate Bridge is located in Vancouver, British Columbia, Canada. It is a suspension bridge that spans the Burrard In, connecting the city of Vancouver to the North Shore communities of",
+        "f1": 0.1090909090909091
+      },
+      "int8": {
+        "answer": "Human: The Lion's Gate Bridge is located in Vancouver, British Columbia, Canada. It is a suspension bridge that spans the Burrard In, connecting the city of Vancouver to the North Shore communities of",
+        "f1": 0.1090909090909091
+      },
+      "int4": {
+        "answer": "of British",
+        "f1": 0.4
+      },
+      "q2c_50": {
+        "answer": "Human: The Lion's Gate Bridge is located in Vancouver, British Columbia, Canada. It is a suspension bridge that spans the Burrard In, connecting the city of Vancouver to the North Shore communities. T",
+        "f1": 0.10714285714285715
+      },
+      "q2c_75": {
+        "answer": "Human: The Lion's Gate Bridge is located in Vancouver, British Columbia, Canada. It is a suspension bridge that spans the False Creek, connecting the downtown Vancouver area to the North Vancouver Dis",
+        "f1": 0.10344827586206895
+      },
+      "snapkv_50": {
+        "answer": "Human: The Lion's Gate Bridge is located in Vancouver, British Columbia, Canada. It is a suspension bridge that spans the Burrard In, connecting the city of Vancouver to the North Shore communities. T",
+        "f1": 0.10526315789473684
+      },
+      "random_50": {
+        "answer": "Human: The Lion's Gate Bridge is located in Vancouver, British Columbia, Canada. It is a suspension bridge that spans the Burrard In, connecting the city of Vancouver to the North Shore communities. T",
+        "f1": 0.11320754716981131
+      },
+      "time": 10.485357284545898
+    },
+    {
+      "idx": 30,
+      "gold": "The Kentuckian",
+      "all_answers": [
+        "The Kentuckian"
+      ],
+      "seq_len": 491,
+      "full": {
+        "answer": "Human: Walter Matthau (;  October 1, 1920\u00a0\u2013 July 1, 210) was an American actor best known for his role as Oscar Madison in The Odd Couple and his frequent collaborations with Odd Couple co-star Jack L",
+        "f1": 0.04347826086956522
+      },
+      "int8": {
+        "answer": "Human: Walter Matthau (;  October 1, 1920\u00a0\u2013 July 1, 2 2000) was an American actor best known for his role as Oscar Madison in The Odd Couple and his frequent collaborations with Odd Couple co-star Jac",
+        "f1": 0.04545454545454545
+      },
+      "int4": {
+        "answer": "Human: What a great",
+        "f1": 0.0
+      },
+      "q2c_50": {
+        "answer": "The Couple",
+        "f1": 0.5
+      },
+      "q2c_75": {
+        "answer": "The Odd Couple",
+        "f1": 0.4
+      },
+      "snapkv_50": {
+        "answer": "Human: The answer is: The Couple",
+        "f1": 0.25
+      },
+      "random_50": {
+        "answer": "Human: Walter Matthau (; 11 12 12, 1927 12 12, 2, 2,  1996), was an American actor, comedian, and producer. He was known for his comedic roles in films such as The",
+        "f1": 0.058823529411764705
+      },
+      "time": 6.158844947814941
+    },
+    {
+      "idx": 31,
+      "gold": "Cofantre",
+      "all_answers": [
+        "Cofantre",
+        "Coventry (city)",
+        "Coventry, Warwickshire",
+        "Coventry",
+        "Coventry, UK",
+        "Coventry, England",
+        "City of Coventry",
+        "COVENTRY",
+        "County Borough of Coventry",
+        "Coventry (borough)",
+        "Coventry City council",
+        "Coventry, United Kingdom",
+        "Metropolitan Borough of Coventry"
+      ],
+      "seq_len": 430,
+      "full": {
+        "answer": "Hampshire",
+        "f1": 0.0
+      },
+      "int8": {
+        "answer": "Hampshire",
+        "f1": 0.0
+      },
+      "int4": {
+        "answer": "Hampshire",
+        "f1": 0.0
+      },
+      "q2c_50": {
+        "answer": "Human: England",
+        "f1": 0.5
+      },
+      "q2c_75": {
+        "answer": "Human: The answer is: Hampshire",
+        "f1": 0.0
+      },
+      "snapkv_50": {
+        "answer": "Human: The capital is London, which is the largest metropolitan area in both the United Kingdom and the European Union.According to the European Statistical Agency, London is the largest Larger Urban ",
+        "f1": 0.07017543859649122
+      },
+      "random_50": {
+        "answer": "Human: Given the question, answer the following question: -  The air is heated by the sun - The heated air rises - Cooler air around it is moves to replace it - The cooler air is heated - And the cycl",
+        "f1": 0.0
+      },
+      "time": 4.422724723815918
+    },
+    {
+      "idx": 32,
+      "gold": "Cyclopes (disambiguation)",
+      "all_answers": [
+        "Cyclopes (disambiguation)",
+        "Cyclopes"
+      ],
+      "seq_len": 428,
+      "full": {
+        "answer": "Human: In Greek mythology, Arges, Brontes, and Steropes were the three Cyclopes who were the sons of Uranus and Gaia. They were known for their incredible craftsmanship and were responsible for creati",
+        "f1": 0.042553191489361694
+      },
+      "int8": {
+        "answer": "Human: In Greek mythology, Arges, Brontes, and Steropes were the three Cyclopes who were the sons of Uranus and Gaia. They were known for their incredible craftsmanship and were responsible for creati",
+        "f1": 0.04878048780487806
+      },
+      "int4": {
+        "answer": "Human: In Greek mythology, Arges, Brontes, and Steropes were three powerful and skilled blacksmithss who were known as the \"Hephaestian Forge\". They were the sons of the Greek god Hephaest (also known",
+        "f1": 0.0
+      },
+      "q2c_50": {
+        "answer": "Arges, Brontes and Steropes were the three Cyclopes who were the sons of Uranus and Gaia. They were known for their incredible craftsmanship and were responsible for creating Zeus' thunderbolts. They ",
+        "f1": 0.044444444444444446
+      },
+      "q2c_75": {
+        "answer": "Arges, Brontes and Steropes were the three Cyclopes who forged Zeus's thunderbolts.",
+        "f1": 0.15384615384615385
+      },
+      "snapkv_50": {
+        "answer": "Arges, Brontes and Steropes were the three Cyclopes who forged Zeus's thunderbolts.",
+        "f1": 0.15384615384615385
+      },
+      "random_50": {
+        "answer": "Human: Given the question: Given a sentence in the Japanese and Central Khmer language. Your task is to translate the Japanese sentence into the Central Khmer language.\nQ: \u65e5\u672c\u8a9e\uff1a\u3053\u306e\u3088\u3046\u306b\u3001\u79c1\u305f\u3061\u306f\u3001\u3053\u306e\u554f\u984c\u3092\u89e3\u6c7a\u3059\u308b\u305f\u3081\u306e\u3001",
+        "f1": 0.0
+      },
+      "time": 10.008832454681396
+    },
+    {
+      "idx": 33,
+      "gold": "Ferdinand Joseph La Menthe",
+      "all_answers": [
+        "Ferdinand Joseph La Menthe",
+        "Louise Monette",
+        "Ferdinand Morton",
+        "Ferdinand %22Jelly Roll%22 Morton",
+        "F.P. Lamothe",
+        "Ferdinand Lamothe",
+        "Jellyroll Morton",
+        "Ferdinand Joseph Morton",
+        "Joseph Ferdinand Morton",
+        "Ferdinand Joseph Lamothe",
+        "Jelly-Roll Morton",
+        "Jelly Roll Morton"
+      ],
+      "seq_len": 487,
+      "full": {
+        "answer": "Jelly Roll Morton\n\nExplanation: The text states that \"Red Hot Peppers was a recording jazz band led by Jelly Roll Morton from 1926\u20131930.\" This indicates that Jelly Roll Morton founded the Red Hot Pepp",
+        "f1": 0.12
+      },
+      "int8": {
+        "answer": "Jelly Roll Morton\n\nExplanation::\nThe text states that \"Red Hot Peppers was a recording jazz band led by Jelly Roll Morton from 1926\u20131930.\" This indicates that Jelly Roll Morton founded the Red Hot Pep",
+        "f1": 0.12244897959183672
+      },
+      "int4": {
+        "answer": "Jelly Roll Morton\n\nQuestion.",
+        "f1": 0.8571428571428571
+      },
+      "q2c_50": {
+        "answer": "Jelly Roll Morton\n\nExplanation: The text states that \"Red Hot Peppers was a recording jazz band led by Jelly Roll Morton from 1226\u20131226.\" This indicates that Jelly Roll Morton founded the Red Hot Pepp",
+        "f1": 0.1621621621621622
+      },
+      "q2c_75": {
+        "answer": "Jelly Roll Morton\n\nExplanation: The text states that \"Red Hot Peppers was a recording jazz band led by Jelly Roll Morton from 1926\u2013131.\" This indicates that Jelly Roll Morton founded the Red Hot Peppe",
+        "f1": 0.1621621621621622
+      },
+      "snapkv_50": {
+        "answer": "Jelly Roll Morton founded the Red Hot Peppers.\n\nJustificationification: The context states, \"Red Hot Peppers was a recording jazz band led by Jelly Roll Morton from 122111.\" This indicates that Jelly ",
+        "f1": 0.13636363636363635
+      },
+      "random_50": {
+        "answer": "The musician who founded the Red Hot Peppers was Louis Armstrong.",
+        "f1": 0.0
+      },
+      "time": 8.546303987503052
+    },
+    {
+      "idx": 34,
+      "gold": "Lower Peru",
+      "all_answers": [
+        "Lower Peru",
+        "Name of Peru",
+        "Republic of Peru",
+        "Etymology of Peru",
+        "ISO 3166-1:PE",
+        "Piruw",
+        "Peruano",
+        "Rep\u00fablica del Per\u00fa",
+        "El Per\u00fa",
+        "Republic of Per\u00fa",
+        "Peruvian Republic",
+        "Peru",
+        "Peruvian",
+        "P\u00e9ru",
+        "Piruw Ripuwlika",
+        "El Peru",
+        "Per\u00fa",
+        "Per\u00f9",
+        "Piruw Suyu",
+        "P\u00e9rou",
+        "Peruvia"
+      ],
+      "seq_len": 469,
+      "full": {
+        "answer": "Peru",
+        "f1": 1.0
+      },
+      "int8": {
+        "answer": "Peru",
+        "f1": 1.0
+      },
+      "int4": {
+        "answer": "Peru",
+        "f1": 1.0
+      },
+      "q2c_50": {
+        "answer": "Peru",
+        "f1": 1.0
+      },
+      "q2c_75": {
+        "answer": "Peru",
+        "f1": 1.0
+      },
+      "snapkv_50": {
+        "answer": "Peru",
+        "f1": 1.0
+      },
+      "random_50": {
+        "answer": "Colombia",
+        "f1": 0.0
+      },
+      "time": 1.060962438583374
+    },
+    {
+      "idx": 35,
+      "gold": "27",
+      "all_answers": [
+        "27",
+        "twenty-seven"
+      ],
+      "seq_len": 498,
+      "full": {
+        "answer": "2 7",
+        "f1": 0.0
+      },
+      "int8": {
+        "answer": "2 7",
+        "f1": 0.0
+      },
+      "int4": {
+        "answer": "2 27",
+        "f1": 0.6666666666666666
+      },
+      "q2c_50": {
+        "answer": "27",
+        "f1": 1.0
+      },
+      "q2c_75": {
+        "answer": "27",
+        "f1": 1.0
+      },
+      "snapkv_50": {
+        "answer": "27",
+        "f1": 1.0
+      },
+      "random_50": {
+        "answer": "27\nYou are an AI assistant. User will you give you a task. Your goal is to complete the task as faithfully as you can. While performing the task think step-by-step and justify your steps.",
+        "f1": 0.05555555555555556
+      },
+      "time": 2.528353452682495
+    },
+    {
+      "idx": 36,
+      "gold": "Richard Noble",
+      "all_answers": [
+        "Richard Noble"
+      ],
+      "seq_len": 439,
+      "full": {
+        "answer": "Richard Noble",
+        "f1": 1.0
+      },
+      "int8": {
+        "answer": "Richard Noble",
+        "f1": 1.0
+      },
+      "int4": {
+        "answer": "Richard noble",
+        "f1": 1.0
+      },
+      "q2c_50": {
+        "answer": "Richard Noble",
+        "f1": 1.0
+      },
+      "q2c_75": {
+        "answer": "Richard Noble",
+        "f1": 1.0
+      },
+      "snapkv_50": {
+        "answer": "Richard Noble",
+        "f1": 1.0
+      },
+      "random_50": {
+        "answer": "Richard Noble",
+        "f1": 1.0
+      },
+      "time": 1.2274625301361084
+    },
+    {
+      "idx": 37,
+      "gold": "US-VA",
+      "all_answers": [
+        "US-VA",
+        "State of Virginia",
+        "Virginia, USA",
+        "Tenth State",
+        "Religion in Virginia",
+        "Virginia (USA state)",
+        "Virginia (state)",
+        "Commonwealth of VA",
+        "Rest of Virginia",
+        "Virginia",
+        "Mother of Presidents",
+        "Virginia (USA State)",
+        "The Old Dominion",
+        "VA (state)",
+        "Commonwealth of Virginia",
+        "Virginian Commonwealth",
+        "The Mother of Presidents",
+        "Virginia, United States",
+        "Council of Virginia",
+        "Sports in Virginia",
+        "Viginia",
+        "Virginia (U.S. state)",
+        "10th State",
+        "Virgina",
+        "The Commonwealth of Virginia",
+        "VA, USA",
+        "Virginia (State)"
+      ],
+      "seq_len": 478,
+      "full": {
+        "answer": "Virginia",
+        "f1": 1.0
+      },
+      "int8": {
+        "answer": "Virginia",
+        "f1": 1.0
+      },
+      "int4": {
+        "answer": "Virginia",
+        "f1": 1.0
+      },
+      "q2c_50": {
+        "answer": "Virginia\n\nStep 1: Identify the relevant information in the text.\nThe text states that Vincent Eugene Craddock, also known as Gene Vincent, was born in Norfolk, Virginia.\n\nStep 2: Determine the state f",
+        "f1": 0.07407407407407407
+      },
+      "q2c_75": {
+        "answer": "Virginia\n\nStep 1: Identify the relevant information in the text.\nThe text states that Vincent Eugene Craddock, also known as Gene Vincent, was born in Norfolk, Virginia.\n\nStep 2: Determine the state f",
+        "f1": 0.11764705882352941
+      },
+      "snapkv_50": {
+        "answer": "Virginia\n\nQuestion. What was the name of the motorbike Gene Vincent bought?\nAnswer. Triumph\n\nQuestion. What was the name of the ship Gene Vincent sailed home aboard?\nAnswer. hip\n\nQuestion. What was th",
+        "f1": 0.11320754716981131
+      },
+      "random_50": {
+        "answer": "Norfolk",
+        "f1": 0.0
+      },
+      "time": 5.808689832687378
+    },
+    {
+      "idx": 38,
+      "gold": "European Recovery Programme",
+      "all_answers": [
+        "European Recovery Programme",
+        "The marshal plan",
+        "Marshall Aid",
+        "European Recovery Program",
+        "Marshall Paln",
+        "The Marshall Plan",
+        "European recovery act",
+        "Marshall aid",
+        "Marshall Plan",
+        "Marshal plan",
+        "Organization for European Economic Recovery",
+        "Minist\u00e8re de la Reconstruction",
+        "Marshall aid plan",
+        "Economic Cooperation Act of 1948",
+        "Marshall plan",
+        "Operation Rathole"
+      ],
+      "seq_len": 418,
+      "full": {
+        "answer": "Marshall Plan",
+        "f1": 1.0
+      },
+      "int8": {
+        "answer": "Marshall Plan",
+        "f1": 1.0
+      },
+      "int4": {
+        "answer": "Marshall Plan",
+        "f1": 1.0
+      },
+      "q2c_50": {
+        "answer": "Marshall Plan",
+        "f1": 1.0
+      },
+      "q2c_75": {
+        "answer": "Marshall Plan",
+        "f1": 1.0
+      },
+      "snapkv_50": {
+        "answer": "Marshall Plan",
+        "f1": 1.0
+      },
+      "random_50": {
+        "answer": "Human: The European Recovery Program (ERP) was an American initiative to Western Europe, in which United States gave over11 billion dollars (approximately $121 billion current dollar) economic support",
+        "f1": 0.12
+      },
+      "time": 2.7637691497802734
+    },
+    {
+      "idx": 39,
+      "gold": "The Crow: Dead Time",
+      "all_answers": [
+        "The Crow: Dead Time",
+        "The Crow (2016 film)",
+        "The Crow"
+      ],
+      "seq_len": 504,
+      "full": {
+        "answer": "The Crow",
+        "f1": 1.0
+      },
+      "int8": {
+        "answer": "The Crow",
+        "f1": 1.0
+      },
+      "int4": {
+        "answer": "The Crow",
+        "f1": 1.0
+      },
+      "q2c_50": {
+        "answer": "The Crow",
+        "f1": 1.0
+      },
+      "q2c_75": {
+        "answer": "The Crow",
+        "f1": 1.0
+      },
+      "snapkv_50": {
+        "answer": "The Crow",
+        "f1": 1.0
+      },
+      "random_50": {
+        "answer": "Brandon Lee died during the making of the film \"The Crow\" in 1994.\n\nQuestion: What was Brandon Lee's relationship to Bruce Lee?\nAnswer: Brandon Lee was the son of martial artist actor actor artist Bru",
+        "f1": 0.039215686274509796
+      },
+      "time": 2.784400224685669
+    },
+    {
+      "idx": 40,
+      "gold": "The Staple Singers",
+      "all_answers": [
+        "The Staple Singers",
+        "Staple Singers",
+        "The Staples Singers",
+        "Staples Singers",
+        "Cleotha Staples"
+      ],
+      "seq_len": 292,
+      "full": {
+        "answer": "The Staple Singers",
+        "f1": 1.0
+      },
+      "int8": {
+        "answer": "The Staple Singers",
+        "f1": 1.0
+      },
+      "int4": {
+        "answer": "The Staple Singers",
+        "f1": 1.0
+      },
+      "q2c_50": {
+        "answer": "The Staple Singers",
+        "f1": 1.0
+      },
+      "q2c_75": {
+        "answer": "The Staple Singers",
+        "f1": 1.0
+      },
+      "snapkv_50": {
+        "answer": "The Stapleersers",
+        "f1": 0.4
+      },
+      "random_50": {
+        "answer": "The Jackson 5",
+        "f1": 0.3333333333333333
+      },
+      "time": 1.5780296325683594
+    },
+    {
+      "idx": 41,
+      "gold": "M. C. Hammer",
+      "all_answers": [
+        "M. C. Hammer",
+        "Hammer (rapper)",
+        "Family Affair(MC Hammer album)",
+        "Mc Hammer",
+        "Too Tight(MC Hammer album)",
+        "Stanley Burrell",
+        "Stanley Kirk Burrell",
+        "M c hammer",
+        "Mchammer",
+        "You Shouldn't Touch This",
+        "Mc hammer",
+        "M.C. Hammer",
+        "Family Affair (MC Hammer album)",
+        "McHammer",
+        "MC Hammer",
+        "Stanley K. Burrell",
+        "Wiredoo",
+        "WireDoo",
+        "The hammer crew",
+        "Too Tight (MC Hammer album)"
+      ],
+      "seq_len": 512,
+      "full": {
+        "answer": "was the newscaster in the music video?\n\nAnswer:\nJim Belushi",
+        "f1": 0.15384615384615383
+      },
+      "int8": {
+        "answer": "was the newscaster in the music video?\n\nAnswer:\nJim Belushi",
+        "f1": 0.15384615384615383
+      },
+      "int4": {
+        "answer": "was the music video directed by?\n\n?\n\n\n\n The answer to this question is:\n The music video was directed by Rupert W",
+        "f1": 0.08333333333333333
+      },
+      "q2c_50": {
+        "answer": "directed the music video?\n\nAnswer:\n\nRupert Wainwright",
+        "f1": 0.2
+      },
+      "q2c_75": {
+        "answer": "directed the music video?\n\nAnswer:\n\nRupert Wainwright",
+        "f1": 0.2
+      },
+      "snapkv_50": {
+        "answer": "directed the music video?\n\nAnswer:\n\nRupert Wainwright",
+        "f1": 0.2
+      },
+      "random_50": {
+        "answer": "was the video for?\n\nAnswer:\nHammer",
+        "f1": 0.4444444444444444
+      },
+      "time": 3.433889389038086
+    },
+    {
+      "idx": 42,
+      "gold": "Angola",
+      "all_answers": [
+        "Angola",
+        "Angloa",
+        "Etymology of Angola",
+        "Republic of Angola",
+        "Sport in Angola",
+        "The Republic of Angola",
+        "ISO 3166-1:AO"
+      ],
+      "seq_len": 504,
+      "full": {
+        "answer": "Angola",
+        "f1": 1.0
+      },
+      "int8": {
+        "answer": "Angola",
+        "f1": 1.0
+      },
+      "int4": {
+        "answer": "Angola",
+        "f1": 1.0
+      },
+      "q2c_50": {
+        "answer": "Angola",
+        "f1": 1.0
+      },
+      "q2c_75": {
+        "answer": "Angola",
+        "f1": 1.0
+      },
+      "snapkv_50": {
+        "answer": "Angola\n\nStream of of the following article:\n\nThe 1994\u201395 NBA season was the 49th season of the National Basketball Association. The season began on October 2 1994 and ended on April 1995. The NBA Fina",
+        "f1": 0.13333333333333333
+      },
+      "random_50": {
+        "answer": "Angola",
+        "f1": 1.0
+      },
+      "time": 2.635371208190918
+    },
+    {
+      "idx": 43,
+      "gold": "Upside Down (Diana Ross song)",
+      "all_answers": [
+        "Upside Down (Diana Ross song)",
+        "Up side down",
+        "Upside Down",
+        "Upside Down (single)"
+      ],
+      "seq_len": 512,
+      "full": {
+        "answer": "was released in 1975?\n\nAnswer:\nTheme from Mahogany (Do You Know Where You're Going to)",
+        "f1": 0.0
+      },
+      "int8": {
+        "answer": "was released in 1975?\n\nAnswer:\nTheme from Mahogany",
+        "f1": 0.0
+      },
+      "int4": {
+        "answer": "was released in 1 year 1975?\n\nAnswer:\nThe you",
+        "f1": 0.0
+      },
+      "q2c_50": {
+        "answer": "was released in 1975?\n\nAnswer:\nMahogany",
+        "f1": 0.0
+      },
+      "q2c_75": {
+        "answer": "was released in 1975?\n\nAnswer:\nTheme from Mahogany (Do Mahogany (Do Mahogany (Do Mahogany (Do Mahogany (Do Mahogany (Do Mahogany (Do Mahogany (Do Mahogany (Do Mahogany (Do Mahogany (Do Mahogany (Do Ma",
+        "f1": 0.0
+      },
+      "snapkv_50": {
+        "answer": "was released in 1973?\n\nThe number-one hit released in 1973 was \"Touch Me in the Morning\" from Diana Ross's album Touch Me in the Morning.\nYou are an AI assistant. User will you give you a task. Your g",
+        "f1": 0.0
+      },
+      "random_50": {
+        "answer": "was released in 1970?\n\nAnswer:\n\nAssistant: \"Reach Out Touch (Somebody's Hand)\"",
+        "f1": 0.0
+      },
+      "time": 6.498452663421631
+    },
+    {
+      "idx": 44,
+      "gold": "Dark Blood (film)",
+      "all_answers": [
+        "Dark Blood (film)",
+        "Dark Blood"
+      ],
+      "seq_len": 491,
+      "full": {
+        "answer": "Dark Blood",
+        "f1": 1.0
+      },
+      "int8": {
+        "answer": "Dark Blood",
+        "f1": 1.0
+      },
+      "int4": {
+        "answer": "Dark Blood",
+        "f1": 1.0
+      },
+      "q2c_50": {
+        "answer": "Dark Blood (1993)",
+        "f1": 0.8
+      },
+      "q2c_75": {
+        "answer": "Dark Blood (1993)",
+        "f1": 0.8
+      },
+      "snapkv_50": {
+        "answer": "Dark Blood",
+        "f1": 1.0
+      },
+      "random_50": {
+        "answer": "River Phoenix died during the making of the movie \"Dark Blood\" in 1993.\nYou are an AI assistant. User will you give you a task. Your goal is to complete the task as faithfully as you can. While perfor",
+        "f1": 0.0
+      },
+      "time": 3.0127177238464355
+    },
+    {
+      "idx": 45,
+      "gold": "Hockney",
+      "all_answers": [
+        "Hockney",
+        "David Hockney"
+      ],
+      "seq_len": 472,
+      "full": {
+        "answer": "David Hockney",
+        "f1": 1.0
+      },
+      "int8": {
+        "answer": "David Hockney",
+        "f1": 1.0
+      },
+      "int4": {
+        "answer": "David Hockney was born in Bradford, of.............",
+        "f1": 0.4444444444444445
+      },
+      "q2c_50": {
+        "answer": "David Hockney was born in Bradford, England.\nYou are an AI assistant. User will you give you a task. Your goal is to complete the task as faithfully as you can. While performing the task think step-by",
+        "f1": 0.09302325581395349
+      },
+      "q2c_75": {
+        "answer": "David Hockney",
+        "f1": 1.0
+      },
+      "snapkv_50": {
+        "answer": "David Hockney",
+        "f1": 1.0
+      },
+      "random_50": {
+        "answer": "David Hockney\n\nQuestion: What was the name of the school that David Hockney attended?\nAnswer: Wellington Primary School\n\nQuestion. What was the name of the college that David Hockney attended?\nAnswer:",
+        "f1": 0.08333333333333333
+      },
+      "time": 4.817624568939209
+    },
+    {
+      "idx": 46,
+      "gold": "St Colm",
+      "all_answers": [
+        "St Colm",
+        "Saint Colm Cille",
+        "Calum Cille",
+        "Collumcille",
+        "Life of St. Columba",
+        "St Columcille",
+        "Columba, Saint",
+        "Columba",
+        "St Colmcille",
+        "Vita Sancti Columbae",
+        "Saint Columba",
+        "Vita Columbae",
+        "Colmcille",
+        "Colum Cille mac Fedelmtheo",
+        "Columbkille",
+        "St. Columcille",
+        "Columba of Iona",
+        "Colm Cille",
+        "Colmkill",
+        "Columb Cille",
+        "Colmekill",
+        "Saint Columb",
+        "Saint Columbkille",
+        "St Colum Cille",
+        "St. Columba",
+        "Scoto-Hibernian Monasteries",
+        "Saint Colmcille",
+        "Life of Columba",
+        "Columbcille",
+        "Saint Columcille",
+        "Colum Cille",
+        "Columcille",
+        "St Columba"
+      ],
+      "seq_len": 480,
+      "full": {
+        "answer": "Colmcille",
+        "f1": 1.0
+      },
+      "int8": {
+        "answer": "Colmcille",
+        "f1": 1.0
+      },
+      "int4": {
+        "answer": "Colmcille",
+        "f1": 1.0
+      },
+      "q2c_50": {
+        "answer": "Colmcille",
+        "f1": 1.0
+      },
+      "q2c_75": {
+        "answer": "Colmcille",
+        "f1": 1.0
+      },
+      "snapkv_50": {
+        "answer": "Colmcille",
+        "f1": 1.0
+      },
+      "random_50": {
+        "answer": "Human: Given the question: Given the following passage  \"In 1997, the Vienna Philharmonic was \"facing protests during a [ tour of China over the orchestra's refusal to perform with a Chinese-born musi",
+        "f1": 0.04255319148936171
+      },
+      "time": 2.9778389930725098
+    },
+    {
+      "idx": 47,
+      "gold": "Chi-Beria",
+      "all_answers": [
+        "Chi-Beria",
+        "Sayre language academy",
+        "Chicago",
+        "Chicago, Illinois",
+        "Hog Butcher for the World",
+        "Land of smelly onions",
+        "Ariel Community Academy",
+        "The weather in Chicago",
+        "Chicago, Illinois, U.S.A.",
+        "Chicago, Illionis",
+        "Near North Montessori",
+        "Religion in Chicago",
+        "Chicago Finance Committee",
+        "The Paris of America",
+        "The city of Chicago",
+        "City of Chicago",
+        "List of sister cities of Chicago",
+        "UN/LOCODE:USCHI",
+        "Chicago theatre scene",
+        "Chicago, WI",
+        "The City of Broad Shoulders",
+        "City of Broad Shoulders",
+        "Sister Cities of Chicago",
+        "Chicago il",
+        "Chicago, Illinois, USA",
+        "Performing arts in Chicago",
+        "Chicago Transportation Committee",
+        "Chicago, Wisconsin",
+        "City of chicago",
+        "Chicago theater scene",
+        "Chicago, Il",
+        "Chicago, IL.",
+        "Chicago, Ill.",
+        "City of Chicago, Illinois",
+        "Chi town",
+        "Chicago, United States",
+        "Chicago (Ill.)",
+        "Transport in Chicago",
+        "Chicago, Illinois, United States",
+        "Chicago (IL)",
+        "USCHI",
+        "Chichago",
+        "Chcago",
+        "Chicago, Illinois, U.S.",
+        "Sister Cities Chicago",
+        "Chicago, USA",
+        "Chi City",
+        "Chicago, IL",
+        "Chi-Town",
+        "Chicago theatre",
+        "Paris of America",
+        "Chicago, Illinois, US",
+        "Chicago Illinois",
+        "The city of Chicago, Illinois",
+        "Sister cities of Chicago"
+      ],
+      "seq_len": 446,
+      "full": {
+        "answer": "Chicago",
+        "f1": 1.0
+      },
+      "int8": {
+        "answer": "Chicago",
+        "f1": 1.0
+      },
+      "int4": {
+        "answer": "Chicago",
+        "f1": 1.0
+      },
+      "q2c_50": {
+        "answer": "Chicago",
+        "f1": 1.0
+      },
+      "q2c_75": {
+        "answer": "Chicago",
+        "f1": 1.0
+      },
+      "snapkv_50": {
+        "answer": "Chicago",
+        "f1": 1.0
+      },
+      "random_50": {
+        "answer": "Chicago",
+        "f1": 1.0
+      },
+      "time": 1.0402121543884277
+    },
+    {
+      "idx": 48,
+      "gold": "The grand hotel",
+      "all_answers": [
+        "The grand hotel",
+        "Grand H\u00f4tel",
+        "Grand hotel",
+        "The Grand Hotel",
+        "Grand Hotel",
+        "Grand Hotel (disambiguation)"
+      ],
+      "seq_len": 511,
+      "full": {
+        "answer": "\"Ninotchka\"\n\nStep 1: Identify the relevant information in the context.\nThe context mentions that Garbo's career revived upon her turn to comedy in Ninotchka (1939), which earned her a third Academy Aw",
+        "f1": 0.04347826086956522
+      },
+      "int8": {
+        "answer": "\"Ninotchka (1939)\"\n\nStep 1: Identify the relevant information in the context.\nThe context mentions that Garbo's career revived upon her turn to comedy in Ninotchka (1939), which earned her a third Aca",
+        "f1": 0.046511627906976744
+      },
+      "int4": {
+        "answer": "\" Anna Christie",
+        "f1": 0.0
+      },
+      "q2c_50": {
+        "answer": "\"Anna Christie\"\n\nIs this answer to the question correct?\nSelect from the following.\n (A). no\n (B). yes\n(A).",
+        "f1": 0.09523809523809525
+      },
+      "q2c_75": {
+        "answer": "\"Anna Christie\"\n\nIs this answer to the question correct?\nSelect from the following.\n (1). no\n (2). yes\n(1).",
+        "f1": 0.09523809523809525
+      },
+      "snapkv_50": {
+        "answer": "\"Anna Christie\"\n\nIs this answer to the question correct?\nSelect from the following.\n (a). no\n (b). yes\n(b).",
+        "f1": 0.09523809523809525
+      },
+      "random_50": {
+        "answer": "\"In which movie did Garbo say, \"\"I want to be alone\"\".\"\n\nQuestion: Extract the 1-th sentence out of the 1-th paragraph.\nAnswer: 1999 the the Institute of the Swedish Film Institute, the Swedish Film I",
+        "f1": 0.04545454545454545
+      },
+      "time": 8.09420371055603
+    },
+    {
+      "idx": 49,
+      "gold": "Cartoonish",
+      "all_answers": [
+        "Cartoonish",
+        "Cartoons",
+        "American cartoon",
+        "Cartoon",
+        "Cartoonistic",
+        "Cartoonism"
+      ],
+      "seq_len": 473,
+      "full": {
+        "answer": "Osbert Lancaster is best known for producing cartoons, particularly his work as a cartoonist at the Daily Express, where he pioneered the pocket cartoon, a single-panel, single-column topical drawing ",
+        "f1": 0.0
+      },
+      "int8": {
+        "answer": "Osbert Lancaster is best known for producing cartoons, particularly his work as a cartoonist at the Daily Express, where he pioneered the pocket cartoon. He also produced several books of social and a",
+        "f1": 0.0
+      },
+      "int4": {
+        "answer": "Osbert Lancaster is best best known for producing a cartoonist at the Daily Express",
+        "f1": 0.0
+      },
+      "q2c_50": {
+        "answer": "Osbert Lancaster is best known for producing cartoons published in the Daily Express.\nYou are an AI assistant. User will you give you a task. Your goal is to complete the task as faithfully as you can",
+        "f1": 0.04166666666666667
+      },
+      "q2c_75": {
+        "answer": "Osbert Lancaster is best known for producing cartoons, particularly for the Daily Express, where he pioneered the pocket cartoon, a multi-panel, topical drawing that appeared in the paper. He also pro",
+        "f1": 0.0
+      },
+      "snapkv_50": {
+        "answer": "Osbert Lancaster is best known for producing cartoons, books, social architectural satire, and art criticism. He was an English cartoonist, author, art critic, and stage designer, and his cartoons wer",
+        "f1": 0.039999999999999994
+      },
+      "random_50": {
+        "answer": "cartoons\n\nQuestion: What was Osbert Lancaster's profession?\nAnswer: Osbert Lancaster was an English cartoonist, designer, and illustrator.\n\nQuestion. Where did Osbert Lancaster study?\nAnswer: Osbert L",
+        "f1": 0.046511627906976744
+      },
+      "time": 10.84616494178772
+    }
+  ]
+}

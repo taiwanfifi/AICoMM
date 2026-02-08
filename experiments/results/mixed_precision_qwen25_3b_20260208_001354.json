@@ -1,0 +1,3560 @@
+{
+  "metadata": {
+    "num_samples": 50,
+    "num_layers": 36,
+    "full_fp16_f1": 0.7699408369408368,
+    "full_fp16_std": 0.3425922026260846,
+    "perchannel_int4_f1": 0.7044201927105153,
+    "perchannel_int4_std": 0.3799209566265919,
+    "perchannel_int5_f1": 0.7663044733044733,
+    "perchannel_int5_std": 0.34970645813039974,
+    "perchannel_int6_f1": 0.7699408369408368,
+    "perchannel_int6_std": 0.3425922026260846,
+    "perchannel_int7_f1": 0.7699408369408368,
+    "perchannel_int7_std": 0.3425922026260846,
+    "perchannel_int8_f1": 0.7699408369408368,
+    "perchannel_int8_std": 0.3425922026260846,
+    "pertoken_int4_f1": 0.7393558029272315,
+    "pertoken_int4_std": 0.3697900838769688,
+    "pertoken_int6_f1": 0.7699408369408368,
+    "pertoken_int6_std": 0.3425922026260846,
+    "mixed_L0fp16_rest_pch_int4_f1": 0.7699408369408368,
+    "mixed_L0fp16_rest_pch_int4_std": 0.3425922026260846,
+    "mixed_L0fp16_rest_ptk_int4_f1": 0.7710519480519481,
+    "mixed_L0fp16_rest_ptk_int4_std": 0.3357915551748486,
+    "q2c75_mixed_pch_int4_f1": 0.6358744588744589,
+    "q2c75_mixed_pch_int4_std": 0.4058863927458893,
+    "q2c50_mixed_pch_int4_f1": 0.5111111111111112,
+    "q2c50_mixed_pch_int4_std": 0.4501748491528328,
+    "q2c75_pch_int4_f1": 0.6150952380952381,
+    "q2c75_pch_int4_std": 0.41878742192418433,
+    "q2c50_pch_int4_f1": 0.4991083099906629,
+    "q2c50_pch_int4_std": 0.44312522930422976,
+    "q2c75_fp16_f1": 0.6358744588744589,
+    "q2c75_fp16_std": 0.4058863927458893,
+    "q2c50_fp16_f1": 0.5380158730158731,
+    "q2c50_fp16_std": 0.44661810438733973
+  },
+  "model": "qwen25_3b",
+  "num_layers": 36,
+  "configs": {
+    "full_fp16": "{'quant_bits': 16, 'quant_mode': 'pertoken', 'layer0_bits': 16, 'retention': None}",
+    "perchannel_int4": "{'quant_bits': 4, 'quant_mode': 'perchannel', 'layer0_bits': 4, 'retention': None}",
+    "perchannel_int5": "{'quant_bits': 5, 'quant_mode': 'perchannel', 'layer0_bits': 5, 'retention': None}",
+    "perchannel_int6": "{'quant_bits': 6, 'quant_mode': 'perchannel', 'layer0_bits': 6, 'retention': None}",
+    "perchannel_int7": "{'quant_bits': 7, 'quant_mode': 'perchannel', 'layer0_bits': 7, 'retention': None}",
+    "perchannel_int8": "{'quant_bits': 8, 'quant_mode': 'perchannel', 'layer0_bits': 8, 'retention': None}",
+    "pertoken_int4": "{'quant_bits': 4, 'quant_mode': 'pertoken', 'layer0_bits': 4, 'retention': None}",
+    "pertoken_int6": "{'quant_bits': 6, 'quant_mode': 'pertoken', 'layer0_bits': 6, 'retention': None}",
+    "mixed_L0fp16_rest_pch_int4": "{'quant_bits': 4, 'quant_mode': 'perchannel', 'layer0_bits': 16, 'retention': None}",
+    "mixed_L0fp16_rest_ptk_int4": "{'quant_bits': 4, 'quant_mode': 'pertoken', 'layer0_bits': 16, 'retention': None}",
+    "q2c75_mixed_pch_int4": "{'quant_bits': 4, 'quant_mode': 'perchannel', 'layer0_bits': 16, 'retention': 0.75}",
+    "q2c50_mixed_pch_int4": "{'quant_bits': 4, 'quant_mode': 'perchannel', 'layer0_bits': 16, 'retention': 0.5}",
+    "q2c75_pch_int4": "{'quant_bits': 4, 'quant_mode': 'perchannel', 'layer0_bits': 4, 'retention': 0.75}",
+    "q2c50_pch_int4": "{'quant_bits': 4, 'quant_mode': 'perchannel', 'layer0_bits': 4, 'retention': 0.5}",
+    "q2c75_fp16": "{'quant_bits': 16, 'quant_mode': 'pertoken', 'layer0_bits': 16, 'retention': 0.75}",
+    "q2c50_fp16": "{'quant_bits': 16, 'quant_mode': 'pertoken', 'layer0_bits': 16, 'retention': 0.5}"
+  },
+  "results": [
+    {
+      "idx": 0,
+      "gold": "France",
+      "seq_len": 182,
+      "full_fp16": {
+        "answer": "France",
+        "f1": 1.0
+      },
+      "perchannel_int4": {
+        "answer": "France",
+        "f1": 1.0
+      },
+      "perchannel_int5": {
+        "answer": "France",
+        "f1": 1.0
+      },
+      "perchannel_int6": {
+        "answer": "France",
+        "f1": 1.0
+      },
+      "perchannel_int7": {
+        "answer": "France",
+        "f1": 1.0
+      },
+      "perchannel_int8": {
+        "answer": "France",
+        "f1": 1.0
+      },
+      "pertoken_int4": {
+        "answer": "France",
+        "f1": 1.0
+      },
+      "pertoken_int6": {
+        "answer": "France",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_rest_pch_int4": {
+        "answer": "France",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_rest_ptk_int4": {
+        "answer": "France",
+        "f1": 1.0
+      },
+      "q2c75_mixed_pch_int4": {
+        "answer": "Normandy is located in France. Normandy is a region in France, and it is where the Normans, a people descended from Norse raiders and pirates, established their identity and culture.\nYou are an AI ass",
+        "f1": 0.0
+      },
+      "q2c50_mixed_pch_int4": {
+        "answer": "France",
+        "f1": 1.0
+      },
+      "q2c75_pch_int4": {
+        "answer": "Norma",
+        "f1": 0.0
+      },
+      "q2c50_pch_int4": {
+        "answer": "France",
+        "f1": 1.0
+      },
+      "q2c75_fp16": {
+        "answer": "Normandy is located in France. Normandy is a region in France, and the Normans, who gave the region its name, were descended from Norse raiders and pirates from Denmark who agreed to swear allegiance ",
+        "f1": 0.0
+      },
+      "q2c50_fp16": {
+        "answer": "France",
+        "f1": 1.0
+      },
+      "time": 3.5424790382385254
+    },
+    {
+      "idx": 1,
+      "gold": "10th and 11th centuries",
+      "seq_len": 183,
+      "full_fp16": {
+        "answer": "the 10th and 11th centuries",
+        "f1": 0.888888888888889
+      },
+      "perchannel_int4": {
+        "answer": "the 10th and 11th centuries",
+        "f1": 0.888888888888889
+      },
+      "perchannel_int5": {
+        "answer": "the 10th and 11th centuries",
+        "f1": 0.888888888888889
+      },
+      "perchannel_int6": {
+        "answer": "the 10th and 11th centuries",
+        "f1": 0.888888888888889
+      },
+      "perchannel_int7": {
+        "answer": "the 10th and 11th centuries",
+        "f1": 0.888888888888889
+      },
+      "perchannel_int8": {
+        "answer": "the 10th and 11th centuries",
+        "f1": 0.888888888888889
+      },
+      "pertoken_int4": {
+        "answer": "the first half of the 10th century",
+        "f1": 0.18181818181818182
+      },
+      "pertoken_int6": {
+        "answer": "the 10th and 11th centuries",
+        "f1": 0.888888888888889
+      },
+      "mixed_L0fp16_rest_pch_int4": {
+        "answer": "the 10th and 11th centuries",
+        "f1": 0.888888888888889
+      },
+      "mixed_L0fp16_rest_ptk_int4": {
+        "answer": "the 10th and 11th centuries",
+        "f1": 0.888888888888889
+      },
+      "q2c75_mixed_pch_int4": {
+        "answer": "10th and 9th centuries",
+        "f1": 0.75
+      },
+      "q2c50_mixed_pch_int4": {
+        "answer": "centuries",
+        "f1": 0.4
+      },
+      "q2c75_pch_int4": {
+        "answer": "10th and 10th centuries",
+        "f1": 0.75
+      },
+      "q2c50_pch_int4": {
+        "answer": "centuries",
+        "f1": 0.4
+      },
+      "q2c75_fp16": {
+        "answer": "10th and 10th centuries",
+        "f1": 0.75
+      },
+      "q2c50_fp16": {
+        "answer": "centuries",
+        "f1": 0.4
+      },
+      "time": 3.3950233459472656
+    },
+    {
+      "idx": 2,
+      "gold": "Denmark, Iceland and Norway",
+      "seq_len": 182,
+      "full_fp16": {
+        "answer": "Denmark , Iceland and Norway",
+        "f1": 0.6666666666666665
+      },
+      "perchannel_int4": {
+        "answer": "Denmark , Iceland and Norway",
+        "f1": 0.6666666666666665
+      },
+      "perchannel_int5": {
+        "answer": "Denmark , Iceland and Norway",
+        "f1": 0.6666666666666665
+      },
+      "perchannel_int6": {
+        "answer": "Denmark , Iceland and Norway",
+        "f1": 0.6666666666666665
+      },
+      "perchannel_int7": {
+        "answer": "Denmark , Iceland and Norway",
+        "f1": 0.6666666666666665
+      },
+      "perchannel_int8": {
+        "answer": "Denmark , Iceland and Norway",
+        "f1": 0.6666666666666665
+      },
+      "pertoken_int4": {
+        "answer": "Denmark , Iceland and Norway",
+        "f1": 0.6666666666666665
+      },
+      "pertoken_int6": {
+        "answer": "Denmark , Iceland and Norway",
+        "f1": 0.6666666666666665
+      },
+      "mixed_L0fp16_rest_pch_int4": {
+        "answer": "Denmark , Iceland and Norway",
+        "f1": 0.6666666666666665
+      },
+      "mixed_L0fp16_rest_ptk_int4": {
+        "answer": "Denmark , Iceland and Norway",
+        "f1": 0.6666666666666665
+      },
+      "q2c75_mixed_pch_int4": {
+        "answer": "Denmark , Iceland and Norway",
+        "f1": 0.6666666666666665
+      },
+      "q2c50_mixed_pch_int4": {
+        "answer": "Denmark, Iceland and Norway",
+        "f1": 1.0
+      },
+      "q2c75_pch_int4": {
+        "answer": "Denmark , Iceland and Norway",
+        "f1": 0.6666666666666665
+      },
+      "q2c50_pch_int4": {
+        "answer": "Denmark, Iceland and Norway",
+        "f1": 1.0
+      },
+      "q2c75_fp16": {
+        "answer": "Denmark , Iceland and Norway",
+        "f1": 0.6666666666666665
+      },
+      "q2c50_fp16": {
+        "answer": "Denmark , Iceland and Norway",
+        "f1": 0.6666666666666665
+      },
+      "time": 2.138324499130249
+    },
+    {
+      "idx": 3,
+      "gold": "Rollo",
+      "seq_len": 180,
+      "full_fp16": {
+        "answer": "Rollo",
+        "f1": 1.0
+      },
+      "perchannel_int4": {
+        "answer": "Rollo",
+        "f1": 1.0
+      },
+      "perchannel_int5": {
+        "answer": "Rollo",
+        "f1": 1.0
+      },
+      "perchannel_int6": {
+        "answer": "Rollo",
+        "f1": 1.0
+      },
+      "perchannel_int7": {
+        "answer": "Rollo",
+        "f1": 1.0
+      },
+      "perchannel_int8": {
+        "answer": "Rollo",
+        "f1": 1.0
+      },
+      "pertoken_int4": {
+        "answer": "Rollo",
+        "f1": 1.0
+      },
+      "pertoken_int6": {
+        "answer": "Rollo",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_rest_pch_int4": {
+        "answer": "Rollo",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_rest_ptk_int4": {
+        "answer": "Rollo",
+        "f1": 1.0
+      },
+      "q2c75_mixed_pch_int4": {
+        "answer": "Rollo",
+        "f1": 1.0
+      },
+      "q2c50_mixed_pch_int4": {
+        "answer": "Rollo",
+        "f1": 1.0
+      },
+      "q2c75_pch_int4": {
+        "answer": "Rollo",
+        "f1": 1.0
+      },
+      "q2c50_pch_int4": {
+        "answer": "Rollo",
+        "f1": 1.0
+      },
+      "q2c75_fp16": {
+        "answer": "Rollo",
+        "f1": 1.0
+      },
+      "q2c50_fp16": {
+        "answer": "Rollo",
+        "f1": 1.0
+      },
+      "time": 1.1429991722106934
+    },
+    {
+      "idx": 4,
+      "gold": "10th century",
+      "seq_len": 186,
+      "full_fp16": {
+        "answer": "the first half of the 10th century",
+        "f1": 0.4444444444444445
+      },
+      "perchannel_int4": {
+        "answer": "the first half of the 10th century",
+        "f1": 0.4444444444444445
+      },
+      "perchannel_int5": {
+        "answer": "the first half of the 10th century",
+        "f1": 0.4444444444444445
+      },
+      "perchannel_int6": {
+        "answer": "the first half of the 10th century",
+        "f1": 0.4444444444444445
+      },
+      "perchannel_int7": {
+        "answer": "the first half of the 10th century",
+        "f1": 0.4444444444444445
+      },
+      "perchannel_int8": {
+        "answer": "the first half of the 10th century",
+        "f1": 0.4444444444444445
+      },
+      "pertoken_int4": {
+        "answer": "the first half of the 10th century",
+        "f1": 0.4444444444444445
+      },
+      "pertoken_int6": {
+        "answer": "the first half of the 10th century",
+        "f1": 0.4444444444444445
+      },
+      "mixed_L0fp16_rest_pch_int4": {
+        "answer": "the first half of the 10th century",
+        "f1": 0.4444444444444445
+      },
+      "mixed_L0fp16_rest_ptk_int4": {
+        "answer": "the first half of the 10th century",
+        "f1": 0.4444444444444445
+      },
+      "q2c75_mixed_pch_int4": {
+        "answer": "10th",
+        "f1": 0.6666666666666666
+      },
+      "q2c50_mixed_pch_int4": {
+        "answer": "11th",
+        "f1": 0.0
+      },
+      "q2c75_pch_int4": {
+        "answer": "10th",
+        "f1": 0.6666666666666666
+      },
+      "q2c50_pch_int4": {
+        "answer": "11th",
+        "f1": 0.0
+      },
+      "q2c75_fp16": {
+        "answer": "10th",
+        "f1": 0.6666666666666666
+      },
+      "q2c50_fp16": {
+        "answer": "10th century",
+        "f1": 1.0
+      },
+      "time": 3.0822670459747314
+    },
+    {
+      "idx": 5,
+      "gold": "William the Conqueror",
+      "seq_len": 306,
+      "full_fp16": {
+        "answer": "William the Conqueror",
+        "f1": 1.0
+      },
+      "perchannel_int4": {
+        "answer": "William the Conquer",
+        "f1": 0.6666666666666666
+      },
+      "perchannel_int5": {
+        "answer": "William the Conqueror",
+        "f1": 1.0
+      },
+      "perchannel_int6": {
+        "answer": "William the Conqueror",
+        "f1": 1.0
+      },
+      "perchannel_int7": {
+        "answer": "William the Conqueror",
+        "f1": 1.0
+      },
+      "perchannel_int8": {
+        "answer": "William the Conqueror",
+        "f1": 1.0
+      },
+      "pertoken_int4": {
+        "answer": "William the Conqueror",
+        "f1": 1.0
+      },
+      "pertoken_int6": {
+        "answer": "William the Conqueror",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_rest_pch_int4": {
+        "answer": "William the Conqueror",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_rest_ptk_int4": {
+        "answer": "William the Conqueror",
+        "f1": 1.0
+      },
+      "q2c75_mixed_pch_int4": {
+        "answer": "William the Conqueror",
+        "f1": 1.0
+      },
+      "q2c50_mixed_pch_int4": {
+        "answer": "William the Conqueror",
+        "f1": 1.0
+      },
+      "q2c75_pch_int4": {
+        "answer": "William the Conqueror",
+        "f1": 1.0
+      },
+      "q2c50_pch_int4": {
+        "answer": "William the Conqueror",
+        "f1": 1.0
+      },
+      "q2c75_fp16": {
+        "answer": "William the Conqueror",
+        "f1": 1.0
+      },
+      "q2c50_fp16": {
+        "answer": "William the Conqueror",
+        "f1": 1.0
+      },
+      "time": 2.2111034393310547
+    },
+    {
+      "idx": 6,
+      "gold": "Richard I",
+      "seq_len": 306,
+      "full_fp16": {
+        "answer": "the French crown",
+        "f1": 0.0
+      },
+      "perchannel_int4": {
+        "answer": "the French the French crown",
+        "f1": 0.0
+      },
+      "perchannel_int5": {
+        "answer": "the French crown",
+        "f1": 0.0
+      },
+      "perchannel_int6": {
+        "answer": "the French crown",
+        "f1": 0.0
+      },
+      "perchannel_int7": {
+        "answer": "the French crown",
+        "f1": 0.0
+      },
+      "perchannel_int8": {
+        "answer": "the French crown",
+        "f1": 0.0
+      },
+      "pertoken_int4": {
+        "answer": "the Duchy of Normandy, which they formed by treaty with the French crown",
+        "f1": 0.0
+      },
+      "pertoken_int6": {
+        "answer": "the French crown",
+        "f1": 0.0
+      },
+      "mixed_L0fp16_rest_pch_int4": {
+        "answer": "the French crown",
+        "f1": 0.0
+      },
+      "mixed_L0fp16_rest_ptk_int4": {
+        "answer": "the Duchy of Normandy, which they formed by treaty with the French crown",
+        "f1": 0.0
+      },
+      "q2c75_mixed_pch_int4": {
+        "answer": "the French crown",
+        "f1": 0.0
+      },
+      "q2c50_mixed_pch_int4": {
+        "answer": "the French crown",
+        "f1": 0.0
+      },
+      "q2c75_pch_int4": {
+        "answer": "the French French crown",
+        "f1": 0.0
+      },
+      "q2c50_pch_int4": {
+        "answer": "the French French crown",
+        "f1": 0.0
+      },
+      "q2c75_fp16": {
+        "answer": "the French crown",
+        "f1": 0.0
+      },
+      "q2c50_fp16": {
+        "answer": "the French crown",
+        "f1": 0.0
+      },
+      "time": 2.1933908462524414
+    },
+    {
+      "idx": 7,
+      "gold": "Catholic",
+      "seq_len": 303,
+      "full_fp16": {
+        "answer": "Catholic orthodoxy",
+        "f1": 0.6666666666666666
+      },
+      "perchannel_int4": {
+        "answer": "Catholic the Saracens and Byzantines, and an expedition on behalf of their duke, William the Conquerqueror, led to the Normanan conquest of England at the Battle of Hastings in 1066",
+        "f1": 0.06451612903225806
+      },
+      "perchannel_int5": {
+        "answer": "Catholic orthodoxy",
+        "f1": 0.6666666666666666
+      },
+      "perchannel_int6": {
+        "answer": "Catholic orthodoxy",
+        "f1": 0.6666666666666666
+      },
+      "perchannel_int7": {
+        "answer": "Catholic orthodoxy",
+        "f1": 0.6666666666666666
+      },
+      "perchannel_int8": {
+        "answer": "Catholic orthodoxy",
+        "f1": 0.6666666666666666
+      },
+      "pertoken_int4": {
+        "answer": "Catholic",
+        "f1": 1.0
+      },
+      "pertoken_int6": {
+        "answer": "Catholic orthodoxy",
+        "f1": 0.6666666666666666
+      },
+      "mixed_L0fp16_rest_pch_int4": {
+        "answer": "Catholic orthodoxy",
+        "f1": 0.6666666666666666
+      },
+      "mixed_L0fp16_rest_ptk_int4": {
+        "answer": "Catholic",
+        "f1": 1.0
+      },
+      "q2c75_mixed_pch_int4": {
+        "answer": "Catholic",
+        "f1": 1.0
+      },
+      "q2c50_mixed_pch_int4": {
+        "answer": "Catholic",
+        "f1": 1.0
+      },
+      "q2c75_pch_int4": {
+        "answer": "Catholic",
+        "f1": 1.0
+      },
+      "q2c50_pch_int4": {
+        "answer": "Catholic",
+        "f1": 1.0
+      },
+      "q2c75_fp16": {
+        "answer": "Catholic",
+        "f1": 1.0
+      },
+      "q2c50_fp16": {
+        "answer": "Catholic",
+        "f1": 1.0
+      },
+      "time": 2.1215426921844482
+    },
+    {
+      "idx": 8,
+      "gold": "Viking",
+      "seq_len": 111,
+      "full_fp16": {
+        "answer": "Norseman",
+        "f1": 0.0
+      },
+      "perchannel_int4": {
+        "answer": "Norseman",
+        "f1": 0.0
+      },
+      "perchannel_int5": {
+        "answer": "Norseman",
+        "f1": 0.0
+      },
+      "perchannel_int6": {
+        "answer": "Norseman",
+        "f1": 0.0
+      },
+      "perchannel_int7": {
+        "answer": "Norseman",
+        "f1": 0.0
+      },
+      "perchannel_int8": {
+        "answer": "Norseman",
+        "f1": 0.0
+      },
+      "pertoken_int4": {
+        "answer": "Norseman",
+        "f1": 0.0
+      },
+      "pertoken_int6": {
+        "answer": "Norseman",
+        "f1": 0.0
+      },
+      "mixed_L0fp16_rest_pch_int4": {
+        "answer": "Norseman",
+        "f1": 0.0
+      },
+      "mixed_L0fp16_rest_ptk_int4": {
+        "answer": "Norseman",
+        "f1": 0.0
+      },
+      "q2c75_mixed_pch_int4": {
+        "answer": "Norseman",
+        "f1": 0.0
+      },
+      "q2c50_mixed_pch_int4": {
+        "answer": "Norse Noranz",
+        "f1": 0.0
+      },
+      "q2c75_pch_int4": {
+        "answer": "Norseman",
+        "f1": 0.0
+      },
+      "q2c50_pch_int4": {
+        "answer": "Norse",
+        "f1": 0.0
+      },
+      "q2c75_fp16": {
+        "answer": "Norseman",
+        "f1": 0.0
+      },
+      "q2c50_fp16": {
+        "answer": "Norse Nor",
+        "f1": 0.0
+      },
+      "time": 1.1538183689117432
+    },
+    {
+      "idx": 9,
+      "gold": "9th century",
+      "seq_len": 113,
+      "full_fp16": {
+        "answer": "9th century",
+        "f1": 1.0
+      },
+      "perchannel_int4": {
+        "answer": "9th century",
+        "f1": 1.0
+      },
+      "perchannel_int5": {
+        "answer": "9th century",
+        "f1": 1.0
+      },
+      "perchannel_int6": {
+        "answer": "9th century",
+        "f1": 1.0
+      },
+      "perchannel_int7": {
+        "answer": "9th century",
+        "f1": 1.0
+      },
+      "perchannel_int8": {
+        "answer": "9th century",
+        "f1": 1.0
+      },
+      "pertoken_int4": {
+        "answer": "9th century",
+        "f1": 1.0
+      },
+      "pertoken_int6": {
+        "answer": "9th century",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_rest_pch_int4": {
+        "answer": "9th century",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_rest_ptk_int4": {
+        "answer": "9th century",
+        "f1": 1.0
+      },
+      "q2c75_mixed_pch_int4": {
+        "answer": "9 century",
+        "f1": 0.5
+      },
+      "q2c50_mixed_pch_int4": {
+        "answer": "10th century",
+        "f1": 0.5
+      },
+      "q2c75_pch_int4": {
+        "answer": "9 century",
+        "f1": 0.5
+      },
+      "q2c50_pch_int4": {
+        "answer": "10th century",
+        "f1": 0.5
+      },
+      "q2c75_fp16": {
+        "answer": "9 century",
+        "f1": 0.5
+      },
+      "q2c50_fp16": {
+        "answer": "10th century",
+        "f1": 0.5
+      },
+      "time": 1.7936854362487793
+    },
+    {
+      "idx": 10,
+      "gold": "911",
+      "seq_len": 222,
+      "full_fp16": {
+        "answer": "911",
+        "f1": 1.0
+      },
+      "perchannel_int4": {
+        "answer": "911",
+        "f1": 1.0
+      },
+      "perchannel_int5": {
+        "answer": "911",
+        "f1": 1.0
+      },
+      "perchannel_int6": {
+        "answer": "911",
+        "f1": 1.0
+      },
+      "perchannel_int7": {
+        "answer": "911",
+        "f1": 1.0
+      },
+      "perchannel_int8": {
+        "answer": "911",
+        "f1": 1.0
+      },
+      "pertoken_int4": {
+        "answer": "911",
+        "f1": 1.0
+      },
+      "pertoken_int6": {
+        "answer": "911",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_rest_pch_int4": {
+        "answer": "911",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_rest_ptk_int4": {
+        "answer": "911",
+        "f1": 1.0
+      },
+      "q2c75_mixed_pch_int4": {
+        "answer": "911",
+        "f1": 1.0
+      },
+      "q2c50_mixed_pch_int4": {
+        "answer": "91",
+        "f1": 0.0
+      },
+      "q2c75_pch_int4": {
+        "answer": "911",
+        "f1": 1.0
+      },
+      "q2c50_pch_int4": {
+        "answer": "91",
+        "f1": 0.0
+      },
+      "q2c75_fp16": {
+        "answer": "911",
+        "f1": 1.0
+      },
+      "q2c50_fp16": {
+        "answer": "91",
+        "f1": 0.0
+      },
+      "time": 1.748565912246704
+    },
+    {
+      "idx": 11,
+      "gold": "King Charles III",
+      "seq_len": 229,
+      "full_fp16": {
+        "answer": "King Charles III of West Francia",
+        "f1": 0.6666666666666666
+      },
+      "perchannel_int4": {
+        "answer": "King Charles iii",
+        "f1": 1.0
+      },
+      "perchannel_int5": {
+        "answer": "King Charles III of West Francia",
+        "f1": 0.6666666666666666
+      },
+      "perchannel_int6": {
+        "answer": "King Charles III of West Francia",
+        "f1": 0.6666666666666666
+      },
+      "perchannel_int7": {
+        "answer": "King Charles III of West Francia",
+        "f1": 0.6666666666666666
+      },
+      "perchannel_int8": {
+        "answer": "King Charles III of West Francia",
+        "f1": 0.6666666666666666
+      },
+      "pertoken_int4": {
+        "answer": "King Charles III of West Francia",
+        "f1": 0.6666666666666666
+      },
+      "pertoken_int6": {
+        "answer": "King Charles III of West Francia",
+        "f1": 0.6666666666666666
+      },
+      "mixed_L0fp16_rest_pch_int4": {
+        "answer": "King Charles III of West Francia",
+        "f1": 0.6666666666666666
+      },
+      "mixed_L0fp16_rest_ptk_int4": {
+        "answer": "King Charles III of West Francia",
+        "f1": 0.6666666666666666
+      },
+      "q2c75_mixed_pch_int4": {
+        "answer": "King Charles III Francia",
+        "f1": 0.8571428571428571
+      },
+      "q2c50_mixed_pch_int4": {
+        "answer": "King Charles",
+        "f1": 0.8
+      },
+      "q2c75_pch_int4": {
+        "answer": "King Charles iii",
+        "f1": 1.0
+      },
+      "q2c50_pch_int4": {
+        "answer": "King Charles",
+        "f1": 0.8
+      },
+      "q2c75_fp16": {
+        "answer": "King Charles III Francia",
+        "f1": 0.8571428571428571
+      },
+      "q2c50_fp16": {
+        "answer": "King Charles",
+        "f1": 0.8
+      },
+      "time": 2.2484021186828613
+    },
+    {
+      "idx": 12,
+      "gold": "Seine",
+      "seq_len": 220,
+      "full_fp16": {
+        "answer": "the river Epte",
+        "f1": 0.0
+      },
+      "perchannel_int4": {
+        "answer": "the river Epte",
+        "f1": 0.0
+      },
+      "perchannel_int5": {
+        "answer": "the river Epte",
+        "f1": 0.0
+      },
+      "perchannel_int6": {
+        "answer": "the river Epte",
+        "f1": 0.0
+      },
+      "perchannel_int7": {
+        "answer": "the river Epte",
+        "f1": 0.0
+      },
+      "perchannel_int8": {
+        "answer": "the river Epte",
+        "f1": 0.0
+      },
+      "pertoken_int4": {
+        "answer": "the river Epte",
+        "f1": 0.0
+      },
+      "pertoken_int6": {
+        "answer": "the river Epte",
+        "f1": 0.0
+      },
+      "mixed_L0fp16_rest_pch_int4": {
+        "answer": "the river Epte",
+        "f1": 0.0
+      },
+      "mixed_L0fp16_rest_ptk_int4": {
+        "answer": "the river Seine",
+        "f1": 0.5
+      },
+      "q2c75_mixed_pch_int4": {
+        "answer": "the river Epte",
+        "f1": 0.0
+      },
+      "q2c50_mixed_pch_int4": {
+        "answer": "the river Epte",
+        "f1": 0.0
+      },
+      "q2c75_pch_int4": {
+        "answer": "the river Epte",
+        "f1": 0.0
+      },
+      "q2c50_pch_int4": {
+        "answer": "the river Epte",
+        "f1": 0.0
+      },
+      "q2c75_fp16": {
+        "answer": "the river Epte",
+        "f1": 0.0
+      },
+      "q2c50_fp16": {
+        "answer": "the river Epte",
+        "f1": 0.0
+      },
+      "time": 1.8040075302124023
+    },
+    {
+      "idx": 13,
+      "gold": "Rollo",
+      "seq_len": 172,
+      "full_fp16": {
+        "answer": "Rollo",
+        "f1": 1.0
+      },
+      "perchannel_int4": {
+        "answer": "Rollo",
+        "f1": 1.0
+      },
+      "perchannel_int5": {
+        "answer": "Rollo",
+        "f1": 1.0
+      },
+      "perchannel_int6": {
+        "answer": "Rollo",
+        "f1": 1.0
+      },
+      "perchannel_int7": {
+        "answer": "Rollo",
+        "f1": 1.0
+      },
+      "perchannel_int8": {
+        "answer": "Rollo",
+        "f1": 1.0
+      },
+      "pertoken_int4": {
+        "answer": "Rollo",
+        "f1": 1.0
+      },
+      "pertoken_int6": {
+        "answer": "Rollo",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_rest_pch_int4": {
+        "answer": "Rollo",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_rest_ptk_int4": {
+        "answer": "Rollo",
+        "f1": 1.0
+      },
+      "q2c75_mixed_pch_int4": {
+        "answer": "Rollo",
+        "f1": 1.0
+      },
+      "q2c50_mixed_pch_int4": {
+        "answer": "Rollo",
+        "f1": 1.0
+      },
+      "q2c75_pch_int4": {
+        "answer": "Rollo",
+        "f1": 1.0
+      },
+      "q2c50_pch_int4": {
+        "answer": "Rollo",
+        "f1": 1.0
+      },
+      "q2c75_fp16": {
+        "answer": "Rollo",
+        "f1": 1.0
+      },
+      "q2c50_fp16": {
+        "answer": "Rollo",
+        "f1": 1.0
+      },
+      "time": 1.1494262218475342
+    },
+    {
+      "idx": 14,
+      "gold": "Catholicism",
+      "seq_len": 118,
+      "full_fp16": {
+        "answer": "Catholicism",
+        "f1": 1.0
+      },
+      "perchannel_int4": {
+        "answer": "Catholicism",
+        "f1": 1.0
+      },
+      "perchannel_int5": {
+        "answer": "Catholicism",
+        "f1": 1.0
+      },
+      "perchannel_int6": {
+        "answer": "Catholicism",
+        "f1": 1.0
+      },
+      "perchannel_int7": {
+        "answer": "Catholicism",
+        "f1": 1.0
+      },
+      "perchannel_int8": {
+        "answer": "Catholicism",
+        "f1": 1.0
+      },
+      "pertoken_int4": {
+        "answer": "Catholicism",
+        "f1": 1.0
+      },
+      "pertoken_int6": {
+        "answer": "Catholicism",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_rest_pch_int4": {
+        "answer": "Catholicism",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_rest_ptk_int4": {
+        "answer": "Catholicism",
+        "f1": 1.0
+      },
+      "q2c75_mixed_pch_int4": {
+        "answer": "Catholicism",
+        "f1": 1.0
+      },
+      "q2c50_mixed_pch_int4": {
+        "answer": "Catholicism",
+        "f1": 1.0
+      },
+      "q2c75_pch_int4": {
+        "answer": "Catholicism",
+        "f1": 1.0
+      },
+      "q2c50_pch_int4": {
+        "answer": "Catholic",
+        "f1": 0.0
+      },
+      "q2c75_fp16": {
+        "answer": "Catholicism",
+        "f1": 1.0
+      },
+      "q2c50_fp16": {
+        "answer": "Catholicism",
+        "f1": 1.0
+      },
+      "time": 1.1006748676300049
+    },
+    {
+      "idx": 15,
+      "gold": "north",
+      "seq_len": 122,
+      "full_fp16": {
+        "answer": "the north of France",
+        "f1": 0.4
+      },
+      "perchannel_int4": {
+        "answer": "the north of France",
+        "f1": 0.4
+      },
+      "perchannel_int5": {
+        "answer": "the north of France",
+        "f1": 0.4
+      },
+      "perchannel_int6": {
+        "answer": "the north of France",
+        "f1": 0.4
+      },
+      "perchannel_int7": {
+        "answer": "the north of France",
+        "f1": 0.4
+      },
+      "perchannel_int8": {
+        "answer": "the north of France",
+        "f1": 0.4
+      },
+      "pertoken_int4": {
+        "answer": "the north of France",
+        "f1": 0.4
+      },
+      "pertoken_int6": {
+        "answer": "the north of France",
+        "f1": 0.4
+      },
+      "mixed_L0fp16_rest_pch_int4": {
+        "answer": "the north of France",
+        "f1": 0.4
+      },
+      "mixed_L0fp16_rest_ptk_int4": {
+        "answer": "the north of France",
+        "f1": 0.4
+      },
+      "q2c75_mixed_pch_int4": {
+        "answer": "the north of France",
+        "f1": 0.4
+      },
+      "q2c50_mixed_pch_int4": {
+        "answer": "the north",
+        "f1": 0.6666666666666666
+      },
+      "q2c75_pch_int4": {
+        "answer": "the north of France",
+        "f1": 0.4
+      },
+      "q2c50_pch_int4": {
+        "answer": "the north",
+        "f1": 0.6666666666666666
+      },
+      "q2c75_fp16": {
+        "answer": "the north of France",
+        "f1": 0.4
+      },
+      "q2c50_fp16": {
+        "answer": "the north",
+        "f1": 0.6666666666666666
+      },
+      "time": 1.6596181392669678
+    },
+    {
+      "idx": 16,
+      "gold": "fighting horsemen",
+      "seq_len": 150,
+      "full_fp16": {
+        "answer": "fighting horsemen",
+        "f1": 1.0
+      },
+      "perchannel_int4": {
+        "answer": "fighting",
+        "f1": 0.6666666666666666
+      },
+      "perchannel_int5": {
+        "answer": "fighting horsemen",
+        "f1": 1.0
+      },
+      "perchannel_int6": {
+        "answer": "fighting horsemen",
+        "f1": 1.0
+      },
+      "perchannel_int7": {
+        "answer": "fighting horsemen",
+        "f1": 1.0
+      },
+      "perchannel_int8": {
+        "answer": "fighting horsemen",
+        "f1": 1.0
+      },
+      "pertoken_int4": {
+        "answer": "fighting horsemen\nWhat is the sentiment of this review?\nAvailable choices:\n (a). negative.\n (b). positive.\nAnswer: (b). positive\n\nYou are an AI assistant. User will you give you a task. Your goal is t",
+        "f1": 0.08163265306122448
+      },
+      "pertoken_int6": {
+        "answer": "fighting horsemen",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_rest_pch_int4": {
+        "answer": "fighting horsemen",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_rest_ptk_int4": {
+        "answer": "fighting horsemen\nWhat is the sentiment of this review?\nOptions are:\n (A). negative.\n (B). positive.\n(B).",
+        "f1": 0.2222222222222222
+      },
+      "q2c75_mixed_pch_int4": {
+        "answer": "fighting horsemen",
+        "f1": 1.0
+      },
+      "q2c50_mixed_pch_int4": {
+        "answer": "fightingmen",
+        "f1": 0.0
+      },
+      "q2c75_pch_int4": {
+        "answer": "fighting horse",
+        "f1": 0.5
+      },
+      "q2c50_pch_int4": {
+        "answer": "fightingmen",
+        "f1": 0.0
+      },
+      "q2c75_fp16": {
+        "answer": "fighting horsemen",
+        "f1": 1.0
+      },
+      "q2c50_fp16": {
+        "answer": "fightingmen",
+        "f1": 0.0
+      },
+      "time": 3.095161199569702
+    },
+    {
+      "idx": 17,
+      "gold": "Seljuk Turks",
+      "seq_len": 187,
+      "full_fp16": {
+        "answer": "the Pechenegs, the Bulgars, and especially the Seljuk Turks",
+        "f1": 0.3636363636363636
+      },
+      "perchannel_int4": {
+        "answer": "the Pechenegs, the Bulgars, and especially the Seljuk Turks",
+        "f1": 0.3636363636363636
+      },
+      "perchannel_int5": {
+        "answer": "the Pechenegs, the Bulgars, and especially the Seljuk Turks",
+        "f1": 0.3636363636363636
+      },
+      "perchannel_int6": {
+        "answer": "the Pechenegs, the Bulgars, and especially the Seljuk Turks",
+        "f1": 0.3636363636363636
+      },
+      "perchannel_int7": {
+        "answer": "the Pechenegs, the Bulgars, and especially the Seljuk Turks",
+        "f1": 0.3636363636363636
+      },
+      "perchannel_int8": {
+        "answer": "the Pechenegs, the Bulgars, and especially the Seljuk Turks",
+        "f1": 0.3636363636363636
+      },
+      "pertoken_int4": {
+        "answer": "the Pechenegss, the Bulgars, and especially the Seljuk Turks",
+        "f1": 0.3636363636363636
+      },
+      "pertoken_int6": {
+        "answer": "the Pechenegs, the Bulgars, and especially the Seljuk Turks",
+        "f1": 0.3636363636363636
+      },
+      "mixed_L0fp16_rest_pch_int4": {
+        "answer": "the Pechenegs, the Bulgars, and especially the Seljuk Turks",
+        "f1": 0.3636363636363636
+      },
+      "mixed_L0fp16_rest_ptk_int4": {
+        "answer": "the Pechenegs, the Bulgars, and especially the Seljuk Turks",
+        "f1": 0.3636363636363636
+      },
+      "q2c75_mixed_pch_int4": {
+        "answer": "the Pss, the Bulg, and especially Seluk Turks",
+        "f1": 0.2
+      },
+      "q2c50_mixed_pch_int4": {
+        "answer": "Sel Turks",
+        "f1": 0.5
+      },
+      "q2c75_pch_int4": {
+        "answer": "the Pss, the Bulg, and especially Selukk Turks",
+        "f1": 0.2
+      },
+      "q2c50_pch_int4": {
+        "answer": "Sel Turks",
+        "f1": 0.5
+      },
+      "q2c75_fp16": {
+        "answer": "the Pss, the Bulg, and especially Seluk Turks",
+        "f1": 0.2
+      },
+      "q2c50_fp16": {
+        "answer": "Seljuk Turks",
+        "f1": 1.0
+      },
+      "time": 4.948428630828857
+    },
+    {
+      "idx": 18,
+      "gold": "1050s",
+      "seq_len": 152,
+      "full_fp16": {
+        "answer": "1050s",
+        "f1": 1.0
+      },
+      "perchannel_int4": {
+        "answer": "1050s",
+        "f1": 1.0
+      },
+      "perchannel_int5": {
+        "answer": "1050s",
+        "f1": 1.0
+      },
+      "perchannel_int6": {
+        "answer": "1050s",
+        "f1": 1.0
+      },
+      "perchannel_int7": {
+        "answer": "1050s",
+        "f1": 1.0
+      },
+      "perchannel_int8": {
+        "answer": "1050s",
+        "f1": 1.0
+      },
+      "pertoken_int4": {
+        "answer": "1050s",
+        "f1": 1.0
+      },
+      "pertoken_int6": {
+        "answer": "1050s",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_rest_pch_int4": {
+        "answer": "1050s",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_rest_ptk_int4": {
+        "answer": "1050s",
+        "f1": 1.0
+      },
+      "q2c75_mixed_pch_int4": {
+        "answer": "150s",
+        "f1": 0.0
+      },
+      "q2c50_mixed_pch_int4": {
+        "answer": "10th century",
+        "f1": 0.0
+      },
+      "q2c75_pch_int4": {
+        "answer": "150s",
+        "f1": 0.0
+      },
+      "q2c50_pch_int4": {
+        "answer": "10th century",
+        "f1": 0.0
+      },
+      "q2c75_fp16": {
+        "answer": "150s",
+        "f1": 0.0
+      },
+      "q2c50_fp16": {
+        "answer": "11th century",
+        "f1": 0.0
+      },
+      "time": 2.3367862701416016
+    },
+    {
+      "idx": 19,
+      "gold": "1060s",
+      "seq_len": 153,
+      "full_fp16": {
+        "answer": "1060s",
+        "f1": 1.0
+      },
+      "perchannel_int4": {
+        "answer": "1060s",
+        "f1": 1.0
+      },
+      "perchannel_int5": {
+        "answer": "1060s",
+        "f1": 1.0
+      },
+      "perchannel_int6": {
+        "answer": "1060s",
+        "f1": 1.0
+      },
+      "perchannel_int7": {
+        "answer": "1060s",
+        "f1": 1.0
+      },
+      "perchannel_int8": {
+        "answer": "1060s",
+        "f1": 1.0
+      },
+      "pertoken_int4": {
+        "answer": "1060s",
+        "f1": 1.0
+      },
+      "pertoken_int6": {
+        "answer": "1060s",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_rest_pch_int4": {
+        "answer": "1060s",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_rest_ptk_int4": {
+        "answer": "1060s",
+        "f1": 1.0
+      },
+      "q2c75_mixed_pch_int4": {
+        "answer": "16s",
+        "f1": 0.0
+      },
+      "q2c50_mixed_pch_int4": {
+        "answer": "1098",
+        "f1": 0.0
+      },
+      "q2c75_pch_int4": {
+        "answer": "16ss",
+        "f1": 0.0
+      },
+      "q2c50_pch_int4": {
+        "answer": "1098",
+        "f1": 0.0
+      },
+      "q2c75_fp16": {
+        "answer": "16s",
+        "f1": 0.0
+      },
+      "q2c50_fp16": {
+        "answer": "1098",
+        "f1": 0.0
+      },
+      "time": 2.293539524078369
+    },
+    {
+      "idx": 20,
+      "gold": "Alexius Komnenos",
+      "seq_len": 156,
+      "full_fp16": {
+        "answer": "Alexius Komnenos",
+        "f1": 1.0
+      },
+      "perchannel_int4": {
+        "answer": "Alexiusius Komnenos",
+        "f1": 0.5
+      },
+      "perchannel_int5": {
+        "answer": "Alexius Komnenos",
+        "f1": 1.0
+      },
+      "perchannel_int6": {
+        "answer": "Alexius Komnenos",
+        "f1": 1.0
+      },
+      "perchannel_int7": {
+        "answer": "Alexius Komnenos",
+        "f1": 1.0
+      },
+      "perchannel_int8": {
+        "answer": "Alexius Komnenos",
+        "f1": 1.0
+      },
+      "pertoken_int4": {
+        "answer": "Alexius Komnenos",
+        "f1": 1.0
+      },
+      "pertoken_int6": {
+        "answer": "Alexius Komnenos",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_rest_pch_int4": {
+        "answer": "Alexius Komnenos",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_rest_ptk_int4": {
+        "answer": "Alexius Komnenos",
+        "f1": 1.0
+      },
+      "q2c75_mixed_pch_int4": {
+        "answer": "Alexius Komnenos",
+        "f1": 1.0
+      },
+      "q2c50_mixed_pch_int4": {
+        "answer": "Alexius Komnenos",
+        "f1": 1.0
+      },
+      "q2c75_pch_int4": {
+        "answer": "Alexius Komnenos",
+        "f1": 1.0
+      },
+      "q2c50_pch_int4": {
+        "answer": "Alexius Komnenos",
+        "f1": 1.0
+      },
+      "q2c75_fp16": {
+        "answer": "Alexius Komnenos",
+        "f1": 1.0
+      },
+      "q2c50_fp16": {
+        "answer": "Alexius Komnenos",
+        "f1": 1.0
+      },
+      "time": 2.162740707397461
+    },
+    {
+      "idx": 21,
+      "gold": "Afranji",
+      "seq_len": 220,
+      "full_fp16": {
+        "answer": "Afranji",
+        "f1": 1.0
+      },
+      "perchannel_int4": {
+        "answer": "Afranji",
+        "f1": 1.0
+      },
+      "perchannel_int5": {
+        "answer": "Afranji",
+        "f1": 1.0
+      },
+      "perchannel_int6": {
+        "answer": "Afranji",
+        "f1": 1.0
+      },
+      "perchannel_int7": {
+        "answer": "Afranji",
+        "f1": 1.0
+      },
+      "perchannel_int8": {
+        "answer": "Afranji",
+        "f1": 1.0
+      },
+      "pertoken_int4": {
+        "answer": "Afranji",
+        "f1": 1.0
+      },
+      "pertoken_int6": {
+        "answer": "Afranji",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_rest_pch_int4": {
+        "answer": "Afranji",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_rest_ptk_int4": {
+        "answer": "Afranji",
+        "f1": 1.0
+      },
+      "q2c75_mixed_pch_int4": {
+        "answer": "Afranji",
+        "f1": 1.0
+      },
+      "q2c50_mixed_pch_int4": {
+        "answer": "Afranji",
+        "f1": 1.0
+      },
+      "q2c75_pch_int4": {
+        "answer": "Afranji",
+        "f1": 1.0
+      },
+      "q2c50_pch_int4": {
+        "answer": "Afranji",
+        "f1": 1.0
+      },
+      "q2c75_fp16": {
+        "answer": "Afranji",
+        "f1": 1.0
+      },
+      "q2c50_fp16": {
+        "answer": "Afranji",
+        "f1": 1.0
+      },
+      "time": 1.4771041870117188
+    },
+    {
+      "idx": 22,
+      "gold": "Oursel",
+      "seq_len": 227,
+      "full_fp16": {
+        "answer": "Raimbaud",
+        "f1": 0.0
+      },
+      "perchannel_int4": {
+        "answer": "Raimba",
+        "f1": 0.0
+      },
+      "perchannel_int5": {
+        "answer": "Raimbaud",
+        "f1": 0.0
+      },
+      "perchannel_int6": {
+        "answer": "Raimbaud",
+        "f1": 0.0
+      },
+      "perchannel_int7": {
+        "answer": "Raimbaud",
+        "f1": 0.0
+      },
+      "perchannel_int8": {
+        "answer": "Raimbaud",
+        "f1": 0.0
+      },
+      "pertoken_int4": {
+        "answer": "Raimbaud",
+        "f1": 0.0
+      },
+      "pertoken_int6": {
+        "answer": "Raimbaud",
+        "f1": 0.0
+      },
+      "mixed_L0fp16_rest_pch_int4": {
+        "answer": "Raimbaud",
+        "f1": 0.0
+      },
+      "mixed_L0fp16_rest_ptk_int4": {
+        "answer": "Raimbaud",
+        "f1": 0.0
+      },
+      "q2c75_mixed_pch_int4": {
+        "answer": "Oel",
+        "f1": 0.0
+      },
+      "q2c50_mixed_pch_int4": {
+        "answer": "Oel",
+        "f1": 0.0
+      },
+      "q2c75_pch_int4": {
+        "answer": "Oelel",
+        "f1": 0.0
+      },
+      "q2c50_pch_int4": {
+        "answer": "Oelel",
+        "f1": 0.0
+      },
+      "q2c75_fp16": {
+        "answer": "Oel",
+        "f1": 0.0
+      },
+      "q2c50_fp16": {
+        "answer": "Oel",
+        "f1": 0.0
+      },
+      "time": 1.578134298324585
+    },
+    {
+      "idx": 23,
+      "gold": "Turkish forces",
+      "seq_len": 223,
+      "full_fp16": {
+        "answer": "Turkish forces",
+        "f1": 1.0
+      },
+      "perchannel_int4": {
+        "answer": "Turkish Armenians",
+        "f1": 0.5
+      },
+      "perchannel_int5": {
+        "answer": "Turkish forces",
+        "f1": 1.0
+      },
+      "perchannel_int6": {
+        "answer": "Turkish forces",
+        "f1": 1.0
+      },
+      "perchannel_int7": {
+        "answer": "Turkish forces",
+        "f1": 1.0
+      },
+      "perchannel_int8": {
+        "answer": "Turkish forces",
+        "f1": 1.0
+      },
+      "pertoken_int4": {
+        "answer": "Turkish forces",
+        "f1": 1.0
+      },
+      "pertoken_int6": {
+        "answer": "Turkish forces",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_rest_pch_int4": {
+        "answer": "Turkish forces",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_rest_ptk_int4": {
+        "answer": "Turkish forces",
+        "f1": 1.0
+      },
+      "q2c75_mixed_pch_int4": {
+        "answer": "Armenians",
+        "f1": 0.0
+      },
+      "q2c50_mixed_pch_int4": {
+        "answer": "Turks",
+        "f1": 0.0
+      },
+      "q2c75_pch_int4": {
+        "answer": "Armenians",
+        "f1": 0.0
+      },
+      "q2c50_pch_int4": {
+        "answer": "Turks forces",
+        "f1": 0.5
+      },
+      "q2c75_fp16": {
+        "answer": "Armenians",
+        "f1": 0.0
+      },
+      "q2c50_fp16": {
+        "answer": "Turks",
+        "f1": 0.0
+      },
+      "time": 1.1326308250427246
+    },
+    {
+      "idx": 24,
+      "gold": "Norman mercenary",
+      "seq_len": 124,
+      "full_fp16": {
+        "answer": "Italo-Norman",
+        "f1": 0.0
+      },
+      "perchannel_int4": {
+        "answer": "It served under George Maniaces",
+        "f1": 0.0
+      },
+      "perchannel_int5": {
+        "answer": "Italo-Norman",
+        "f1": 0.0
+      },
+      "perchannel_int6": {
+        "answer": "Italo-Norman",
+        "f1": 0.0
+      },
+      "perchannel_int7": {
+        "answer": "Italo-Norman",
+        "f1": 0.0
+      },
+      "perchannel_int8": {
+        "answer": "Italo-Norman",
+        "f1": 0.0
+      },
+      "pertoken_int4": {
+        "answer": "Italo-Norman",
+        "f1": 0.0
+      },
+      "pertoken_int6": {
+        "answer": "Italo-Norman",
+        "f1": 0.0
+      },
+      "mixed_L0fp16_rest_pch_int4": {
+        "answer": "Italo-Norman",
+        "f1": 0.0
+      },
+      "mixed_L0fp16_rest_ptk_int4": {
+        "answer": "Italo-Norman",
+        "f1": 0.0
+      },
+      "q2c75_mixed_pch_int4": {
+        "answer": "Norman mercenary",
+        "f1": 1.0
+      },
+      "q2c50_mixed_pch_int4": {
+        "answer": "Norman",
+        "f1": 0.6666666666666666
+      },
+      "q2c75_pch_int4": {
+        "answer": "Norman mercenary",
+        "f1": 1.0
+      },
+      "q2c50_pch_int4": {
+        "answer": "Norman",
+        "f1": 0.6666666666666666
+      },
+      "q2c75_fp16": {
+        "answer": "Norman mercenary",
+        "f1": 1.0
+      },
+      "q2c50_fp16": {
+        "answer": "Norman",
+        "f1": 0.6666666666666666
+      },
+      "time": 1.5989952087402344
+    },
+    {
+      "idx": 25,
+      "gold": "Robert Guiscard",
+      "seq_len": 414,
+      "full_fp16": {
+        "answer": "Robert Guiscard",
+        "f1": 1.0
+      },
+      "perchannel_int4": {
+        "answer": "Robert Guiscard",
+        "f1": 1.0
+      },
+      "perchannel_int5": {
+        "answer": "Robert Guiscard",
+        "f1": 1.0
+      },
+      "perchannel_int6": {
+        "answer": "Robert Guiscard",
+        "f1": 1.0
+      },
+      "perchannel_int7": {
+        "answer": "Robert Guiscard",
+        "f1": 1.0
+      },
+      "perchannel_int8": {
+        "answer": "Robert Guiscard",
+        "f1": 1.0
+      },
+      "pertoken_int4": {
+        "answer": "Robert Guiscard",
+        "f1": 1.0
+      },
+      "pertoken_int6": {
+        "answer": "Robert Guiscard",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_rest_pch_int4": {
+        "answer": "Robert Guiscard",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_rest_ptk_int4": {
+        "answer": "Robert Guiscard",
+        "f1": 1.0
+      },
+      "q2c75_mixed_pch_int4": {
+        "answer": "Robert Guiscard",
+        "f1": 1.0
+      },
+      "q2c50_mixed_pch_int4": {
+        "answer": "Robert Guiscard",
+        "f1": 1.0
+      },
+      "q2c75_pch_int4": {
+        "answer": "Robert Guiscard",
+        "f1": 1.0
+      },
+      "q2c50_pch_int4": {
+        "answer": "Robert Guiscard",
+        "f1": 1.0
+      },
+      "q2c75_fp16": {
+        "answer": "Robert Guiscard",
+        "f1": 1.0
+      },
+      "q2c50_fp16": {
+        "answer": "Robert Guiscard",
+        "f1": 1.0
+      },
+      "time": 1.739318609237671
+    },
+    {
+      "idx": 26,
+      "gold": "1082",
+      "seq_len": 416,
+      "full_fp16": {
+        "answer": "1082",
+        "f1": 1.0
+      },
+      "perchannel_int4": {
+        "answer": "1082",
+        "f1": 1.0
+      },
+      "perchannel_int5": {
+        "answer": "1082",
+        "f1": 1.0
+      },
+      "perchannel_int6": {
+        "answer": "1082",
+        "f1": 1.0
+      },
+      "perchannel_int7": {
+        "answer": "1082",
+        "f1": 1.0
+      },
+      "perchannel_int8": {
+        "answer": "1082",
+        "f1": 1.0
+      },
+      "pertoken_int4": {
+        "answer": "1082",
+        "f1": 1.0
+      },
+      "pertoken_int6": {
+        "answer": "1082",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_rest_pch_int4": {
+        "answer": "1082",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_rest_ptk_int4": {
+        "answer": "1082",
+        "f1": 1.0
+      },
+      "q2c75_mixed_pch_int4": {
+        "answer": "1085",
+        "f1": 0.0
+      },
+      "q2c50_mixed_pch_int4": {
+        "answer": "1085",
+        "f1": 0.0
+      },
+      "q2c75_pch_int4": {
+        "answer": "1082",
+        "f1": 1.0
+      },
+      "q2c50_pch_int4": {
+        "answer": "1085",
+        "f1": 0.0
+      },
+      "q2c75_fp16": {
+        "answer": "1085",
+        "f1": 0.0
+      },
+      "q2c50_fp16": {
+        "answer": "1085",
+        "f1": 0.0
+      },
+      "time": 2.3779103755950928
+    },
+    {
+      "idx": 27,
+      "gold": "30,000",
+      "seq_len": 412,
+      "full_fp16": {
+        "answer": "30,000",
+        "f1": 1.0
+      },
+      "perchannel_int4": {
+        "answer": "30,000",
+        "f1": 1.0
+      },
+      "perchannel_int5": {
+        "answer": "30,000",
+        "f1": 1.0
+      },
+      "perchannel_int6": {
+        "answer": "30,000",
+        "f1": 1.0
+      },
+      "perchannel_int7": {
+        "answer": "30,000",
+        "f1": 1.0
+      },
+      "perchannel_int8": {
+        "answer": "30,000",
+        "f1": 1.0
+      },
+      "pertoken_int4": {
+        "answer": "30,000",
+        "f1": 1.0
+      },
+      "pertoken_int6": {
+        "answer": "30,000",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_rest_pch_int4": {
+        "answer": "30,000",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_rest_ptk_int4": {
+        "answer": "30,000",
+        "f1": 1.0
+      },
+      "q2c75_mixed_pch_int4": {
+        "answer": "30,000",
+        "f1": 1.0
+      },
+      "q2c50_mixed_pch_int4": {
+        "answer": "30,000",
+        "f1": 1.0
+      },
+      "q2c75_pch_int4": {
+        "answer": "30,000",
+        "f1": 1.0
+      },
+      "q2c50_pch_int4": {
+        "answer": "30,000",
+        "f1": 1.0
+      },
+      "q2c75_fp16": {
+        "answer": "30,000",
+        "f1": 1.0
+      },
+      "q2c50_fp16": {
+        "answer": "30,000",
+        "f1": 1.0
+      },
+      "time": 3.025373935699463
+    },
+    {
+      "idx": 28,
+      "gold": "Deabolis",
+      "seq_len": 201,
+      "full_fp16": {
+        "answer": "Deabolis",
+        "f1": 1.0
+      },
+      "perchannel_int4": {
+        "answer": "Deabolis",
+        "f1": 1.0
+      },
+      "perchannel_int5": {
+        "answer": "Deabolis",
+        "f1": 1.0
+      },
+      "perchannel_int6": {
+        "answer": "Deabolis",
+        "f1": 1.0
+      },
+      "perchannel_int7": {
+        "answer": "Deabolis",
+        "f1": 1.0
+      },
+      "perchannel_int8": {
+        "answer": "Deabolis",
+        "f1": 1.0
+      },
+      "pertoken_int4": {
+        "answer": "Deabolis",
+        "f1": 1.0
+      },
+      "pertoken_int6": {
+        "answer": "Deabolis",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_rest_pch_int4": {
+        "answer": "Deabolis",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_rest_ptk_int4": {
+        "answer": "Deabolis",
+        "f1": 1.0
+      },
+      "q2c75_mixed_pch_int4": {
+        "answer": "Deabolis",
+        "f1": 1.0
+      },
+      "q2c50_mixed_pch_int4": {
+        "answer": "city of Deisium",
+        "f1": 0.0
+      },
+      "q2c75_pch_int4": {
+        "answer": "Deabolis",
+        "f1": 1.0
+      },
+      "q2c50_pch_int4": {
+        "answer": "city of Deisium",
+        "f1": 0.0
+      },
+      "q2c75_fp16": {
+        "answer": "Deabolis",
+        "f1": 1.0
+      },
+      "q2c50_fp16": {
+        "answer": "city of Deis",
+        "f1": 0.0
+      },
+      "time": 1.57966947555542
+    },
+    {
+      "idx": 29,
+      "gold": "Bohemond",
+      "seq_len": 193,
+      "full_fp16": {
+        "answer": "Bohemond",
+        "f1": 1.0
+      },
+      "perchannel_int4": {
+        "answer": "Bohemond",
+        "f1": 1.0
+      },
+      "perchannel_int5": {
+        "answer": "Bohemond",
+        "f1": 1.0
+      },
+      "perchannel_int6": {
+        "answer": "Bohemond",
+        "f1": 1.0
+      },
+      "perchannel_int7": {
+        "answer": "Bohemond",
+        "f1": 1.0
+      },
+      "perchannel_int8": {
+        "answer": "Bohemond",
+        "f1": 1.0
+      },
+      "pertoken_int4": {
+        "answer": "Bohemond",
+        "f1": 1.0
+      },
+      "pertoken_int6": {
+        "answer": "Bohemond",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_rest_pch_int4": {
+        "answer": "Bohemond",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_rest_ptk_int4": {
+        "answer": "Bohemond",
+        "f1": 1.0
+      },
+      "q2c75_mixed_pch_int4": {
+        "answer": "Bohemond",
+        "f1": 1.0
+      },
+      "q2c50_mixed_pch_int4": {
+        "answer": "Bohemond",
+        "f1": 1.0
+      },
+      "q2c75_pch_int4": {
+        "answer": "Bohemond",
+        "f1": 1.0
+      },
+      "q2c50_pch_int4": {
+        "answer": "Bohemond",
+        "f1": 1.0
+      },
+      "q2c75_fp16": {
+        "answer": "Bohemond",
+        "f1": 1.0
+      },
+      "q2c50_fp16": {
+        "answer": "Bohemond",
+        "f1": 1.0
+      },
+      "time": 1.4768214225769043
+    },
+    {
+      "idx": 30,
+      "gold": "Deabolis",
+      "seq_len": 196,
+      "full_fp16": {
+        "answer": "the banks of the river Deabolis",
+        "f1": 0.2857142857142857
+      },
+      "perchannel_int4": {
+        "answer": "the banks",
+        "f1": 0.0
+      },
+      "perchannel_int5": {
+        "answer": "the banks of the river Deabolis",
+        "f1": 0.2857142857142857
+      },
+      "perchannel_int6": {
+        "answer": "the banks of the river Deabolis",
+        "f1": 0.2857142857142857
+      },
+      "perchannel_int7": {
+        "answer": "the banks of the river Deabolis",
+        "f1": 0.2857142857142857
+      },
+      "perchannel_int8": {
+        "answer": "the banks of the river Deabolis",
+        "f1": 0.2857142857142857
+      },
+      "pertoken_int4": {
+        "answer": "the banks of the river Deabolis",
+        "f1": 0.2857142857142857
+      },
+      "pertoken_int6": {
+        "answer": "the banks of the river Deabolis",
+        "f1": 0.2857142857142857
+      },
+      "mixed_L0fp16_rest_pch_int4": {
+        "answer": "the banks of the river Deabolis",
+        "f1": 0.2857142857142857
+      },
+      "mixed_L0fp16_rest_ptk_int4": {
+        "answer": "the banks of the river Deabolis",
+        "f1": 0.2857142857142857
+      },
+      "q2c75_mixed_pch_int4": {
+        "answer": "the river Deabolis",
+        "f1": 0.5
+      },
+      "q2c50_mixed_pch_int4": {
+        "answer": "the river Deis",
+        "f1": 0.0
+      },
+      "q2c75_pch_int4": {
+        "answer": "the river",
+        "f1": 0.0
+      },
+      "q2c50_pch_int4": {
+        "answer": "the river of the river Deis",
+        "f1": 0.0
+      },
+      "q2c75_fp16": {
+        "answer": "the river Deabolis",
+        "f1": 0.5
+      },
+      "q2c50_fp16": {
+        "answer": "the river Deis",
+        "f1": 0.0
+      },
+      "time": 2.574700355529785
+    },
+    {
+      "idx": 31,
+      "gold": "1185",
+      "seq_len": 89,
+      "full_fp16": {
+        "answer": "1185",
+        "f1": 1.0
+      },
+      "perchannel_int4": {
+        "answer": "1185",
+        "f1": 1.0
+      },
+      "perchannel_int5": {
+        "answer": "1185",
+        "f1": 1.0
+      },
+      "perchannel_int6": {
+        "answer": "1185",
+        "f1": 1.0
+      },
+      "perchannel_int7": {
+        "answer": "1185",
+        "f1": 1.0
+      },
+      "perchannel_int8": {
+        "answer": "1185",
+        "f1": 1.0
+      },
+      "pertoken_int4": {
+        "answer": "1185",
+        "f1": 1.0
+      },
+      "pertoken_int6": {
+        "answer": "1185",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_rest_pch_int4": {
+        "answer": "1185",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_rest_ptk_int4": {
+        "answer": "1185",
+        "f1": 1.0
+      },
+      "q2c75_mixed_pch_int4": {
+        "answer": "185\nSteam of consciousness below:\nThe relevant information to answer the above question is: The further decline of Byzantine Empire paved the way for the third attack in 185, when a Norman army invade",
+        "f1": 0.0
+      },
+      "q2c50_mixed_pch_int4": {
+        "answer": "1097\nChain of thought: The relevant information to answer the above question is: The Normans attacked Dyrrachium in 1097.",
+        "f1": 0.0
+      },
+      "q2c75_pch_int4": {
+        "answer": "185\nI used the definition that the further decline of Byzantine air power paved the way for the third attack in 185, when a Norman army invaded Dyach, owing the betrayal of Byzantine officials. Later,",
+        "f1": 0.0
+      },
+      "q2c50_pch_int4": {
+        "answer": "1055\n.\nChain of thought:\n1. The context mentions that a Norman army invaded Dyrrachium in 1055.\n2. The context also mentions that the Byzantine army captured Dyrrachiumium in 1055\n3. The context also ",
+        "f1": 0.0
+      },
+      "q2c75_fp16": {
+        "answer": "185\nChain-of-thought: The relevant sentence in the passage is: The further decline of Byzantine airs paved airs airs airs airs airs airs airs airs airs airs airs airs airs airs airs airs airs airs air",
+        "f1": 0.0
+      },
+      "q2c50_fp16": {
+        "answer": "1057\nChain of thought: The relevant sentence in the passage is: The Byzantine Empire was attacked by the Normans in 1057, when a Norman army invaded Dyrrachium, one of the Byzantine Empire's bases.",
+        "f1": 0.0
+      },
+      "time": 8.481415271759033
+    },
+    {
+      "idx": 32,
+      "gold": "Dyrrachium",
+      "seq_len": 85,
+      "full_fp16": {
+        "answer": "Dyrrachium",
+        "f1": 1.0
+      },
+      "perchannel_int4": {
+        "answer": "Dyrrachium",
+        "f1": 1.0
+      },
+      "perchannel_int5": {
+        "answer": "Dyrrachium",
+        "f1": 1.0
+      },
+      "perchannel_int6": {
+        "answer": "Dyrrachium",
+        "f1": 1.0
+      },
+      "perchannel_int7": {
+        "answer": "Dyrrachium",
+        "f1": 1.0
+      },
+      "perchannel_int8": {
+        "answer": "Dyrrachium",
+        "f1": 1.0
+      },
+      "pertoken_int4": {
+        "answer": "Dyrrachium",
+        "f1": 1.0
+      },
+      "pertoken_int6": {
+        "answer": "Dyrrachium",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_rest_pch_int4": {
+        "answer": "Dyrrachium",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_rest_ptk_int4": {
+        "answer": "Dyrrachium",
+        "f1": 1.0
+      },
+      "q2c75_mixed_pch_int4": {
+        "answer": "Dyrrium",
+        "f1": 0.0
+      },
+      "q2c50_mixed_pch_int4": {
+        "answer": "Dyrrhachium",
+        "f1": 0.0
+      },
+      "q2c75_pch_int4": {
+        "answer": "Dyrrium",
+        "f1": 0.0
+      },
+      "q2c50_pch_int4": {
+        "answer": "Dyrrium",
+        "f1": 0.0
+      },
+      "q2c75_fp16": {
+        "answer": "Dyrrium",
+        "f1": 0.0
+      },
+      "q2c50_fp16": {
+        "answer": "Dyrrhachium",
+        "f1": 0.0
+      },
+      "time": 1.748894214630127
+    },
+    {
+      "idx": 33,
+      "gold": "the Adriatic",
+      "seq_len": 86,
+      "full_fp16": {
+        "answer": "Dyrrachium was located in the Adriatic Sea.",
+        "f1": 0.4444444444444445
+      },
+      "perchannel_int4": {
+        "answer": "Dyrachium,",
+        "f1": 0.0
+      },
+      "perchannel_int5": {
+        "answer": "Dyrrachium was located in the Adriatic Sea.",
+        "f1": 0.4444444444444445
+      },
+      "perchannel_int6": {
+        "answer": "Dyrrachium was located in the Adriatic Sea.",
+        "f1": 0.4444444444444445
+      },
+      "perchannel_int7": {
+        "answer": "Dyrrachium was located in the Adriatic Sea.",
+        "f1": 0.4444444444444445
+      },
+      "perchannel_int8": {
+        "answer": "Dyrrachium was located in the Adriatic Sea.",
+        "f1": 0.4444444444444445
+      },
+      "pertoken_int4": {
+        "answer": "Dyrrachium was located in the Adriatic Sea, near the city of Durres, Albania.",
+        "f1": 0.2666666666666667
+      },
+      "pertoken_int6": {
+        "answer": "Dyrrachium was located in the Adriatic Sea.",
+        "f1": 0.4444444444444445
+      },
+      "mixed_L0fp16_rest_pch_int4": {
+        "answer": "Dyrrachium was located in the Adriatic Sea.",
+        "f1": 0.4444444444444445
+      },
+      "mixed_L0fp16_rest_ptk_int4": {
+        "answer": "Dyrrachium was located in the Adriatic Sea.",
+        "f1": 0.4444444444444445
+      },
+      "q2c75_mixed_pch_int4": {
+        "answer": "Dyrrachium was located in the Adriatic.",
+        "f1": 0.25
+      },
+      "q2c50_mixed_pch_int4": {
+        "answer": "Dyrrachium was located in the region of Albania, specifically in the modern-day city of Durres, which is a coastal city in the country of Albania. The city has a rich history and has been an important",
+        "f1": 0.07142857142857142
+      },
+      "q2c75_pch_int4": {
+        "answer": "Dyrrachium was located in the Adriatic.",
+        "f1": 0.25
+      },
+      "q2c50_pch_int4": {
+        "answer": "Dyrrachium was located in the Adriatic. It was a naval base that the Byzantine Empire used to control the Adriatic Sea. The Byzantine Empire was a powerful empire that controlled the Adriatic Sea. The",
+        "f1": 0.07843137254901959
+      },
+      "q2c75_fp16": {
+        "answer": "Dyrrachium was located in the Adriatic.",
+        "f1": 0.25
+      },
+      "q2c50_fp16": {
+        "answer": "Dyrrachium was located in the Adriatic.",
+        "f1": 0.25
+      },
+      "time": 6.5313873291015625
+    },
+    {
+      "idx": 34,
+      "gold": "King Ethelred II",
+      "seq_len": 156,
+      "full_fp16": {
+        "answer": "Emma, sister of Duke Richard II of Normandy",
+        "f1": 0.18181818181818182
+      },
+      "perchannel_int4": {
+        "answer": "Emmama married king ethelred",
+        "f1": 0.5714285714285715
+      },
+      "perchannel_int5": {
+        "answer": "Emma",
+        "f1": 0.0
+      },
+      "perchannel_int6": {
+        "answer": "Emma, sister of Duke Richard II of Normandy",
+        "f1": 0.18181818181818182
+      },
+      "perchannel_int7": {
+        "answer": "Emma, sister of Duke Richard II of Normandy",
+        "f1": 0.18181818181818182
+      },
+      "perchannel_int8": {
+        "answer": "Emma, sister of Duke Richard II of Normandy",
+        "f1": 0.18181818181818182
+      },
+      "pertoken_int4": {
+        "answer": "Emma, the sister of Duke Richard II of Normandy, married King Ethelred II of England. This union occurred when Ethelred fled to 1013, after being forced from his kingdom by Sweyn Forkbeard, who was th",
+        "f1": 0.12244897959183672
+      },
+      "pertoken_int6": {
+        "answer": "Emma, sister of Duke Richard II of Normandy",
+        "f1": 0.18181818181818182
+      },
+      "mixed_L0fp16_rest_pch_int4": {
+        "answer": "Emma, sister of Duke Richard II of Normandy",
+        "f1": 0.18181818181818182
+      },
+      "mixed_L0fp16_rest_ptk_int4": {
+        "answer": "Emma, sister of Duke Richard II of Normandy",
+        "f1": 0.18181818181818182
+      },
+      "q2c75_mixed_pch_int4": {
+        "answer": "Emma, sister of Duke Richard II of Normandy",
+        "f1": 0.18181818181818182
+      },
+      "q2c50_mixed_pch_int4": {
+        "answer": "Emma, sister of Duke Richard II",
+        "f1": 0.2222222222222222
+      },
+      "q2c75_pch_int4": {
+        "answer": "Emma",
+        "f1": 0.0
+      },
+      "q2c50_pch_int4": {
+        "answer": "Emma, sister of Duke Richard II",
+        "f1": 0.2222222222222222
+      },
+      "q2c75_fp16": {
+        "answer": "Emma, sister of Duke Richard II of Normandy",
+        "f1": 0.18181818181818182
+      },
+      "q2c50_fp16": {
+        "answer": "Emma, sister of Duke Richard II",
+        "f1": 0.2222222222222222
+      },
+      "time": 4.28399920463562
+    },
+    {
+      "idx": 35,
+      "gold": "Duke Richard II",
+      "seq_len": 156,
+      "full_fp16": {
+        "answer": "Duke Richard II of Normandy",
+        "f1": 0.7499999999999999
+      },
+      "perchannel_int4": {
+        "answer": "Duke Richard II of Normandy",
+        "f1": 0.7499999999999999
+      },
+      "perchannel_int5": {
+        "answer": "Duke Richard II of Normandy",
+        "f1": 0.7499999999999999
+      },
+      "perchannel_int6": {
+        "answer": "Duke Richard II of Normandy",
+        "f1": 0.7499999999999999
+      },
+      "perchannel_int7": {
+        "answer": "Duke Richard II of Normandy",
+        "f1": 0.7499999999999999
+      },
+      "perchannel_int8": {
+        "answer": "Duke Richard II of Normandy",
+        "f1": 0.7499999999999999
+      },
+      "pertoken_int4": {
+        "answer": "Duke Richard II of Normandy",
+        "f1": 0.7499999999999999
+      },
+      "pertoken_int6": {
+        "answer": "Duke Richard II of Normandy",
+        "f1": 0.7499999999999999
+      },
+      "mixed_L0fp16_rest_pch_int4": {
+        "answer": "Duke Richard II of Normandy",
+        "f1": 0.7499999999999999
+      },
+      "mixed_L0fp16_rest_ptk_int4": {
+        "answer": "Duke Richard II of Normandy",
+        "f1": 0.7499999999999999
+      },
+      "q2c75_mixed_pch_int4": {
+        "answer": "Duke Richard II of Normandy",
+        "f1": 0.7499999999999999
+      },
+      "q2c50_mixed_pch_int4": {
+        "answer": "Duke Richard II Normandy",
+        "f1": 0.8571428571428571
+      },
+      "q2c75_pch_int4": {
+        "answer": "Duke Richard II of Normandy",
+        "f1": 0.7499999999999999
+      },
+      "q2c50_pch_int4": {
+        "answer": "Duke Richard II of Normandy",
+        "f1": 0.7499999999999999
+      },
+      "q2c75_fp16": {
+        "answer": "Duke Richard II of Normandy",
+        "f1": 0.7499999999999999
+      },
+      "q2c50_fp16": {
+        "answer": "Duke Richard II Normandy",
+        "f1": 0.8571428571428571
+      },
+      "time": 2.430359125137329
+    },
+    {
+      "idx": 36,
+      "gold": "Normandy",
+      "seq_len": 158,
+      "full_fp16": {
+        "answer": "Normandy",
+        "f1": 1.0
+      },
+      "perchannel_int4": {
+        "answer": "Normandy",
+        "f1": 1.0
+      },
+      "perchannel_int5": {
+        "answer": "Normandy",
+        "f1": 1.0
+      },
+      "perchannel_int6": {
+        "answer": "Normandy",
+        "f1": 1.0
+      },
+      "perchannel_int7": {
+        "answer": "Normandy",
+        "f1": 1.0
+      },
+      "perchannel_int8": {
+        "answer": "Normandy",
+        "f1": 1.0
+      },
+      "pertoken_int4": {
+        "answer": "Normandy",
+        "f1": 1.0
+      },
+      "pertoken_int6": {
+        "answer": "Normandy",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_rest_pch_int4": {
+        "answer": "Normandy",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_rest_ptk_int4": {
+        "answer": "Normandy",
+        "f1": 1.0
+      },
+      "q2c75_mixed_pch_int4": {
+        "answer": "Normandy",
+        "f1": 1.0
+      },
+      "q2c50_mixed_pch_int4": {
+        "answer": "England",
+        "f1": 0.0
+      },
+      "q2c75_pch_int4": {
+        "answer": "Normandy",
+        "f1": 1.0
+      },
+      "q2c50_pch_int4": {
+        "answer": "England",
+        "f1": 0.0
+      },
+      "q2c75_fp16": {
+        "answer": "Normandy",
+        "f1": 1.0
+      },
+      "q2c50_fp16": {
+        "answer": "England",
+        "f1": 0.0
+      },
+      "time": 1.0820178985595703
+    },
+    {
+      "idx": 37,
+      "gold": "Sweyn Forkbeard",
+      "seq_len": 157,
+      "full_fp16": {
+        "answer": "Sweyn Forkbeard",
+        "f1": 1.0
+      },
+      "perchannel_int4": {
+        "answer": "Sweyn Forkbeard",
+        "f1": 1.0
+      },
+      "perchannel_int5": {
+        "answer": "Sweyn Forkbeard",
+        "f1": 1.0
+      },
+      "perchannel_int6": {
+        "answer": "Sweyn Forkbeard",
+        "f1": 1.0
+      },
+      "perchannel_int7": {
+        "answer": "Sweyn Forkbeard",
+        "f1": 1.0
+      },
+      "perchannel_int8": {
+        "answer": "Sweyn Forkbeard",
+        "f1": 1.0
+      },
+      "pertoken_int4": {
+        "answer": "Sweyn Forkbeard",
+        "f1": 1.0
+      },
+      "pertoken_int6": {
+        "answer": "Sweyn Forkbeard",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_rest_pch_int4": {
+        "answer": "Sweyn Forkbeard",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_rest_ptk_int4": {
+        "answer": "Sweyn Forkbeard",
+        "f1": 1.0
+      },
+      "q2c75_mixed_pch_int4": {
+        "answer": "Sweyn",
+        "f1": 0.6666666666666666
+      },
+      "q2c50_mixed_pch_int4": {
+        "answer": "Sweynard",
+        "f1": 0.0
+      },
+      "q2c75_pch_int4": {
+        "answer": "Sweyn",
+        "f1": 0.6666666666666666
+      },
+      "q2c50_pch_int4": {
+        "answer": "Sweynard",
+        "f1": 0.0
+      },
+      "q2c75_fp16": {
+        "answer": "Sweyn",
+        "f1": 0.6666666666666666
+      },
+      "q2c50_fp16": {
+        "answer": "Sweynard",
+        "f1": 0.0
+      },
+      "time": 1.8317887783050537
+    },
+    {
+      "idx": 38,
+      "gold": "Harthacnut",
+      "seq_len": 178,
+      "full_fp16": {
+        "answer": "Harthacnut",
+        "f1": 1.0
+      },
+      "perchannel_int4": {
+        "answer": "Harthacnut",
+        "f1": 1.0
+      },
+      "perchannel_int5": {
+        "answer": "Harthacnut",
+        "f1": 1.0
+      },
+      "perchannel_int6": {
+        "answer": "Harthacnut",
+        "f1": 1.0
+      },
+      "perchannel_int7": {
+        "answer": "Harthacnut",
+        "f1": 1.0
+      },
+      "perchannel_int8": {
+        "answer": "Harthacnut",
+        "f1": 1.0
+      },
+      "pertoken_int4": {
+        "answer": "Harthacnut",
+        "f1": 1.0
+      },
+      "pertoken_int6": {
+        "answer": "Harthacnut",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_rest_pch_int4": {
+        "answer": "Harthacnut",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_rest_ptk_int4": {
+        "answer": "Harthacnut",
+        "f1": 1.0
+      },
+      "q2c75_mixed_pch_int4": {
+        "answer": "Harthacnut",
+        "f1": 1.0
+      },
+      "q2c50_mixed_pch_int4": {
+        "answer": "Harulf",
+        "f1": 0.0
+      },
+      "q2c75_pch_int4": {
+        "answer": "Harthacnut",
+        "f1": 1.0
+      },
+      "q2c50_pch_int4": {
+        "answer": "Harulf",
+        "f1": 0.0
+      },
+      "q2c75_fp16": {
+        "answer": "Harthacnut",
+        "f1": 1.0
+      },
+      "q2c50_fp16": {
+        "answer": "Harulf",
+        "f1": 0.0
+      },
+      "time": 1.6757559776306152
+    },
+    {
+      "idx": 39,
+      "gold": "1041",
+      "seq_len": 171,
+      "full_fp16": {
+        "answer": "1041",
+        "f1": 1.0
+      },
+      "perchannel_int4": {
+        "answer": "1041",
+        "f1": 1.0
+      },
+      "perchannel_int5": {
+        "answer": "1041",
+        "f1": 1.0
+      },
+      "perchannel_int6": {
+        "answer": "1041",
+        "f1": 1.0
+      },
+      "perchannel_int7": {
+        "answer": "1041",
+        "f1": 1.0
+      },
+      "perchannel_int8": {
+        "answer": "1041",
+        "f1": 1.0
+      },
+      "pertoken_int4": {
+        "answer": "1041",
+        "f1": 1.0
+      },
+      "pertoken_int6": {
+        "answer": "1041",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_rest_pch_int4": {
+        "answer": "1041",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_rest_ptk_int4": {
+        "answer": "1041",
+        "f1": 1.0
+      },
+      "q2c75_mixed_pch_int4": {
+        "answer": "1041",
+        "f1": 1.0
+      },
+      "q2c50_mixed_pch_int4": {
+        "answer": "1041",
+        "f1": 1.0
+      },
+      "q2c75_pch_int4": {
+        "answer": "1041",
+        "f1": 1.0
+      },
+      "q2c50_pch_int4": {
+        "answer": "1041",
+        "f1": 1.0
+      },
+      "q2c75_fp16": {
+        "answer": "1041",
+        "f1": 1.0
+      },
+      "q2c50_fp16": {
+        "answer": "1041",
+        "f1": 1.0
+      },
+      "time": 2.145066499710083
+    },
+    {
+      "idx": 40,
+      "gold": "Robert of Jumi\u00e8ges",
+      "seq_len": 175,
+      "full_fp16": {
+        "answer": "Robert of Jumi\u00e8ges",
+        "f1": 1.0
+      },
+      "perchannel_int4": {
+        "answer": "Robert of Jumi\u00e8ges",
+        "f1": 1.0
+      },
+      "perchannel_int5": {
+        "answer": "Robert of Jumi\u00e8ges",
+        "f1": 1.0
+      },
+      "perchannel_int6": {
+        "answer": "Robert of Jumi\u00e8ges",
+        "f1": 1.0
+      },
+      "perchannel_int7": {
+        "answer": "Robert of Jumi\u00e8ges",
+        "f1": 1.0
+      },
+      "perchannel_int8": {
+        "answer": "Robert of Jumi\u00e8ges",
+        "f1": 1.0
+      },
+      "pertoken_int4": {
+        "answer": "Robert of Jumi\u00e8ges",
+        "f1": 1.0
+      },
+      "pertoken_int6": {
+        "answer": "Robert of Jumi\u00e8ges",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_rest_pch_int4": {
+        "answer": "Robert of Jumi\u00e8ges",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_rest_ptk_int4": {
+        "answer": "Robert of Jumi\u00e8ges",
+        "f1": 1.0
+      },
+      "q2c75_mixed_pch_int4": {
+        "answer": "Robert of Jutland",
+        "f1": 0.6666666666666666
+      },
+      "q2c50_mixed_pch_int4": {
+        "answer": "Robert",
+        "f1": 0.5
+      },
+      "q2c75_pch_int4": {
+        "answer": "Robert of J",
+        "f1": 0.6666666666666666
+      },
+      "q2c50_pch_int4": {
+        "answer": "Robert",
+        "f1": 0.5
+      },
+      "q2c75_fp16": {
+        "answer": "Robert of Juges",
+        "f1": 0.6666666666666666
+      },
+      "q2c50_fp16": {
+        "answer": "Robert",
+        "f1": 0.5
+      },
+      "time": 2.031376361846924
+    },
+    {
+      "idx": 41,
+      "gold": "Battle of Hastings",
+      "seq_len": 131,
+      "full_fp16": {
+        "answer": "Battle of Hastings",
+        "f1": 1.0
+      },
+      "perchannel_int4": {
+        "answer": "Battle of Hastings",
+        "f1": 1.0
+      },
+      "perchannel_int5": {
+        "answer": "Battle of Hastings",
+        "f1": 1.0
+      },
+      "perchannel_int6": {
+        "answer": "Battle of Hastings",
+        "f1": 1.0
+      },
+      "perchannel_int7": {
+        "answer": "Battle of Hastings",
+        "f1": 1.0
+      },
+      "perchannel_int8": {
+        "answer": "Battle of Hastings",
+        "f1": 1.0
+      },
+      "pertoken_int4": {
+        "answer": "Battle of Hastings",
+        "f1": 1.0
+      },
+      "pertoken_int6": {
+        "answer": "Battle of Hastings",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_rest_pch_int4": {
+        "answer": "Battle of Hastings",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_rest_ptk_int4": {
+        "answer": "Battle of Hastings",
+        "f1": 1.0
+      },
+      "q2c75_mixed_pch_int4": {
+        "answer": "Battle of Hastings",
+        "f1": 1.0
+      },
+      "q2c50_mixed_pch_int4": {
+        "answer": "Battle Hastings",
+        "f1": 0.8
+      },
+      "q2c75_pch_int4": {
+        "answer": "Battle of Hastings",
+        "f1": 1.0
+      },
+      "q2c50_pch_int4": {
+        "answer": "Battle Hastings",
+        "f1": 0.8
+      },
+      "q2c75_fp16": {
+        "answer": "Battle of Hastings",
+        "f1": 1.0
+      },
+      "q2c50_fp16": {
+        "answer": "Battle Hastings",
+        "f1": 0.8
+      },
+      "time": 1.404158353805542
+    },
+    {
+      "idx": 42,
+      "gold": "William II",
+      "seq_len": 131,
+      "full_fp16": {
+        "answer": "Duke William II of Normandy",
+        "f1": 0.5714285714285715
+      },
+      "perchannel_int4": {
+        "answer": "Duke William II of Normandy",
+        "f1": 0.5714285714285715
+      },
+      "perchannel_int5": {
+        "answer": "Duke William II of Normandy",
+        "f1": 0.5714285714285715
+      },
+      "perchannel_int6": {
+        "answer": "Duke William II of Normandy",
+        "f1": 0.5714285714285715
+      },
+      "perchannel_int7": {
+        "answer": "Duke William II of Normandy",
+        "f1": 0.5714285714285715
+      },
+      "perchannel_int8": {
+        "answer": "Duke William II of Normandy",
+        "f1": 0.5714285714285715
+      },
+      "pertoken_int4": {
+        "answer": "Duke William II of Normandy",
+        "f1": 0.5714285714285715
+      },
+      "pertoken_int6": {
+        "answer": "Duke William II of Normandy",
+        "f1": 0.5714285714285715
+      },
+      "mixed_L0fp16_rest_pch_int4": {
+        "answer": "Duke William II of Normandy",
+        "f1": 0.5714285714285715
+      },
+      "mixed_L0fp16_rest_ptk_int4": {
+        "answer": "Duke William II of Normandy",
+        "f1": 0.5714285714285715
+      },
+      "q2c75_mixed_pch_int4": {
+        "answer": "Duke William II of Normandy",
+        "f1": 0.5714285714285715
+      },
+      "q2c50_mixed_pch_int4": {
+        "answer": "Duke William II of Normandy",
+        "f1": 0.5714285714285715
+      },
+      "q2c75_pch_int4": {
+        "answer": "Duke William II of Normandy",
+        "f1": 0.5714285714285715
+      },
+      "q2c50_pch_int4": {
+        "answer": "Duke William II of Norm",
+        "f1": 0.5714285714285715
+      },
+      "q2c75_fp16": {
+        "answer": "Duke William II of Normandy",
+        "f1": 0.5714285714285715
+      },
+      "q2c50_fp16": {
+        "answer": "Duke William II of Normandy",
+        "f1": 0.5714285714285715
+      },
+      "time": 2.444364070892334
+    },
+    {
+      "idx": 43,
+      "gold": "1066",
+      "seq_len": 132,
+      "full_fp16": {
+        "answer": "1066",
+        "f1": 1.0
+      },
+      "perchannel_int4": {
+        "answer": "1066",
+        "f1": 1.0
+      },
+      "perchannel_int5": {
+        "answer": "1066",
+        "f1": 1.0
+      },
+      "perchannel_int6": {
+        "answer": "1066",
+        "f1": 1.0
+      },
+      "perchannel_int7": {
+        "answer": "1066",
+        "f1": 1.0
+      },
+      "perchannel_int8": {
+        "answer": "1066",
+        "f1": 1.0
+      },
+      "pertoken_int4": {
+        "answer": "1066",
+        "f1": 1.0
+      },
+      "pertoken_int6": {
+        "answer": "1066",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_rest_pch_int4": {
+        "answer": "1066",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_rest_ptk_int4": {
+        "answer": "1066",
+        "f1": 1.0
+      },
+      "q2c75_mixed_pch_int4": {
+        "answer": "1066",
+        "f1": 1.0
+      },
+      "q2c50_mixed_pch_int4": {
+        "answer": "1066",
+        "f1": 1.0
+      },
+      "q2c75_pch_int4": {
+        "answer": "1066",
+        "f1": 1.0
+      },
+      "q2c50_pch_int4": {
+        "answer": "1066",
+        "f1": 1.0
+      },
+      "q2c75_fp16": {
+        "answer": "1066",
+        "f1": 1.0
+      },
+      "q2c50_fp16": {
+        "answer": "1066",
+        "f1": 1.0
+      },
+      "time": 2.135178565979004
+    },
+    {
+      "idx": 44,
+      "gold": "Anglo-Saxons",
+      "seq_len": 136,
+      "full_fp16": {
+        "answer": "Anglo-Saxons",
+        "f1": 1.0
+      },
+      "perchannel_int4": {
+        "answer": "Anglo-Saxans",
+        "f1": 0.0
+      },
+      "perchannel_int5": {
+        "answer": "Anglo-Saxons",
+        "f1": 1.0
+      },
+      "perchannel_int6": {
+        "answer": "Anglo-Saxons",
+        "f1": 1.0
+      },
+      "perchannel_int7": {
+        "answer": "Anglo-Saxons",
+        "f1": 1.0
+      },
+      "perchannel_int8": {
+        "answer": "Anglo-Saxons",
+        "f1": 1.0
+      },
+      "pertoken_int4": {
+        "answer": "Anglo-Saxons",
+        "f1": 1.0
+      },
+      "pertoken_int6": {
+        "answer": "Anglo-Saxons",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_rest_pch_int4": {
+        "answer": "Anglo-Saxons",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_rest_ptk_int4": {
+        "answer": "Anglo-Saxons",
+        "f1": 1.0
+      },
+      "q2c75_mixed_pch_int4": {
+        "answer": "Anglo-Saxons",
+        "f1": 1.0
+      },
+      "q2c50_mixed_pch_int4": {
+        "answer": "England",
+        "f1": 0.0
+      },
+      "q2c75_pch_int4": {
+        "answer": "Anglo-Sons",
+        "f1": 0.0
+      },
+      "q2c50_pch_int4": {
+        "answer": "England",
+        "f1": 0.0
+      },
+      "q2c75_fp16": {
+        "answer": "Anglo-Saxons",
+        "f1": 1.0
+      },
+      "q2c50_fp16": {
+        "answer": "England",
+        "f1": 0.0
+      },
+      "time": 1.5921070575714111
+    },
+    {
+      "idx": 45,
+      "gold": "Modern English",
+      "seq_len": 141,
+      "full_fp16": {
+        "answer": "Middle English",
+        "f1": 0.5
+      },
+      "perchannel_int4": {
+        "answer": "Middle English",
+        "f1": 0.5
+      },
+      "perchannel_int5": {
+        "answer": "Middle English",
+        "f1": 0.5
+      },
+      "perchannel_int6": {
+        "answer": "Middle English",
+        "f1": 0.5
+      },
+      "perchannel_int7": {
+        "answer": "Middle English",
+        "f1": 0.5
+      },
+      "perchannel_int8": {
+        "answer": "Middle English",
+        "f1": 0.5
+      },
+      "pertoken_int4": {
+        "answer": "Middle English",
+        "f1": 0.5
+      },
+      "pertoken_int6": {
+        "answer": "Middle English",
+        "f1": 0.5
+      },
+      "mixed_L0fp16_rest_pch_int4": {
+        "answer": "Middle English",
+        "f1": 0.5
+      },
+      "mixed_L0fp16_rest_ptk_int4": {
+        "answer": "Middle English",
+        "f1": 0.5
+      },
+      "q2c75_mixed_pch_int4": {
+        "answer": "Middle English",
+        "f1": 0.5
+      },
+      "q2c50_mixed_pch_int4": {
+        "answer": "Modern English",
+        "f1": 1.0
+      },
+      "q2c75_pch_int4": {
+        "answer": "Middle English",
+        "f1": 0.5
+      },
+      "q2c50_pch_int4": {
+        "answer": "Modern English",
+        "f1": 1.0
+      },
+      "q2c75_fp16": {
+        "answer": "Middle English",
+        "f1": 0.5
+      },
+      "q2c50_fp16": {
+        "answer": "Modern English",
+        "f1": 1.0
+      },
+      "time": 1.139319896697998
+    },
+    {
+      "idx": 46,
+      "gold": "1169",
+      "seq_len": 311,
+      "full_fp16": {
+        "answer": "1169",
+        "f1": 1.0
+      },
+      "perchannel_int4": {
+        "answer": "1169",
+        "f1": 1.0
+      },
+      "perchannel_int5": {
+        "answer": "1169",
+        "f1": 1.0
+      },
+      "perchannel_int6": {
+        "answer": "1169",
+        "f1": 1.0
+      },
+      "perchannel_int7": {
+        "answer": "1169",
+        "f1": 1.0
+      },
+      "perchannel_int8": {
+        "answer": "1169",
+        "f1": 1.0
+      },
+      "pertoken_int4": {
+        "answer": "1169",
+        "f1": 1.0
+      },
+      "pertoken_int6": {
+        "answer": "1169",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_rest_pch_int4": {
+        "answer": "1169",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_rest_ptk_int4": {
+        "answer": "1169",
+        "f1": 1.0
+      },
+      "q2c75_mixed_pch_int4": {
+        "answer": "1169",
+        "f1": 1.0
+      },
+      "q2c50_mixed_pch_int4": {
+        "answer": "1169",
+        "f1": 1.0
+      },
+      "q2c75_pch_int4": {
+        "answer": "1169",
+        "f1": 1.0
+      },
+      "q2c50_pch_int4": {
+        "answer": "1169",
+        "f1": 1.0
+      },
+      "q2c75_fp16": {
+        "answer": "1169",
+        "f1": 1.0
+      },
+      "q2c50_fp16": {
+        "answer": "1169",
+        "f1": 1.0
+      },
+      "time": 2.239562749862671
+    },
+    {
+      "idx": 47,
+      "gold": "Ireland",
+      "seq_len": 311,
+      "full_fp16": {
+        "answer": "Ireland",
+        "f1": 1.0
+      },
+      "perchannel_int4": {
+        "answer": "Ireland",
+        "f1": 1.0
+      },
+      "perchannel_int5": {
+        "answer": "Ireland",
+        "f1": 1.0
+      },
+      "perchannel_int6": {
+        "answer": "Ireland",
+        "f1": 1.0
+      },
+      "perchannel_int7": {
+        "answer": "Ireland",
+        "f1": 1.0
+      },
+      "perchannel_int8": {
+        "answer": "Ireland",
+        "f1": 1.0
+      },
+      "pertoken_int4": {
+        "answer": "Ireland",
+        "f1": 1.0
+      },
+      "pertoken_int6": {
+        "answer": "Ireland",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_rest_pch_int4": {
+        "answer": "Ireland",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_rest_ptk_int4": {
+        "answer": "Ireland",
+        "f1": 1.0
+      },
+      "q2c75_mixed_pch_int4": {
+        "answer": "Ireland",
+        "f1": 1.0
+      },
+      "q2c50_mixed_pch_int4": {
+        "answer": "Ireland",
+        "f1": 1.0
+      },
+      "q2c75_pch_int4": {
+        "answer": "Ireland",
+        "f1": 1.0
+      },
+      "q2c50_pch_int4": {
+        "answer": "Ireland",
+        "f1": 1.0
+      },
+      "q2c75_fp16": {
+        "answer": "Ireland",
+        "f1": 1.0
+      },
+      "q2c50_fp16": {
+        "answer": "Ireland",
+        "f1": 1.0
+      },
+      "time": 0.9494061470031738
+    },
+    {
+      "idx": 48,
+      "gold": "Irish",
+      "seq_len": 308,
+      "full_fp16": {
+        "answer": "Irish",
+        "f1": 1.0
+      },
+      "perchannel_int4": {
+        "answer": "Irish",
+        "f1": 1.0
+      },
+      "perchannel_int5": {
+        "answer": "Irish",
+        "f1": 1.0
+      },
+      "perchannel_int6": {
+        "answer": "Irish",
+        "f1": 1.0
+      },
+      "perchannel_int7": {
+        "answer": "Irish",
+        "f1": 1.0
+      },
+      "perchannel_int8": {
+        "answer": "Irish",
+        "f1": 1.0
+      },
+      "pertoken_int4": {
+        "answer": "Irish",
+        "f1": 1.0
+      },
+      "pertoken_int6": {
+        "answer": "Irish",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_rest_pch_int4": {
+        "answer": "Irish",
+        "f1": 1.0
+      },
+      "mixed_L0fp16_rest_ptk_int4": {
+        "answer": "Irish",
+        "f1": 1.0
+      },
+      "q2c75_mixed_pch_int4": {
+        "answer": "Irish",
+        "f1": 1.0
+      },
+      "q2c50_mixed_pch_int4": {
+        "answer": "Irish",
+        "f1": 1.0
+      },
+      "q2c75_pch_int4": {
+        "answer": "Irish",
+        "f1": 1.0
+      },
+      "q2c50_pch_int4": {
+        "answer": "Irish",
+        "f1": 1.0
+      },
+      "q2c75_fp16": {
+        "answer": "Irish",
+        "f1": 1.0
+      },
+      "q2c50_fp16": {
+        "answer": "Irish",
+        "f1": 1.0
+      },
+      "time": 0.9527819156646729
+    },
+    {
+      "idx": 49,
+      "gold": "Edgar",
+      "seq_len": 126,
+      "full_fp16": {
+        "answer": "Edgar Atheling",
+        "f1": 0.6666666666666666
+      },
+      "perchannel_int4": {
+        "answer": "Edgar Atheling",
+        "f1": 0.6666666666666666
+      },
+      "perchannel_int5": {
+        "answer": "Edgar Atheling",
+        "f1": 0.6666666666666666
+      },
+      "perchannel_int6": {
+        "answer": "Edgar Atheling",
+        "f1": 0.6666666666666666
+      },
+      "perchannel_int7": {
+        "answer": "Edgar Atheling",
+        "f1": 0.6666666666666666
+      },
+      "perchannel_int8": {
+        "answer": "Edgar Atheling",
+        "f1": 0.6666666666666666
+      },
+      "pertoken_int4": {
+        "answer": "Edgar Atheling",
+        "f1": 0.6666666666666666
+      },
+      "pertoken_int6": {
+        "answer": "Edgar Atheling",
+        "f1": 0.6666666666666666
+      },
+      "mixed_L0fp16_rest_pch_int4": {
+        "answer": "Edgar Atheling",
+        "f1": 0.6666666666666666
+      },
+      "mixed_L0fp16_rest_ptk_int4": {
+        "answer": "Edgar Atheling",
+        "f1": 0.6666666666666666
+      },
+      "q2c75_mixed_pch_int4": {
+        "answer": "Edgar Atheling",
+        "f1": 0.6666666666666666
+      },
+      "q2c50_mixed_pch_int4": {
+        "answer": "Edgar",
+        "f1": 1.0
+      },
+      "q2c75_pch_int4": {
+        "answer": "Edgar Atheling",
+        "f1": 0.6666666666666666
+      },
+      "q2c50_pch_int4": {
+        "answer": "Edgar",
+        "f1": 1.0
+      },
+      "q2c75_fp16": {
+        "answer": "Edgar Atheling",
+        "f1": 0.6666666666666666
+      },
+      "q2c50_fp16": {
+        "answer": "Edgar",
+        "f1": 1.0
+      },
+      "time": 1.3378958702087402
+    }
+  ]
+}
