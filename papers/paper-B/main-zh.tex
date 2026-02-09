@@ -1,0 +1,677 @@
+% !TEX program = xelatex
+% Overleaf: change font to AR PL UMing TW if Songti TC unavailable
+\documentclass[conference]{IEEEtran}
+
+% === Packages ===
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[ruled,vlined,linesnumbered]{algorithm2e}
+\usepackage{xspace}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{subcaption}
+\usepackage{url}
+\usepackage{balance}
+
+% === Font setup for XeTeX ===
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\usepackage{xeCJK}
+\setCJKmainfont[BoldFont=Heiti TC]{Songti TC}
+\setCJKsansfont{Noto Sans TC}
+\setCJKmonofont{Heiti TC}
+
+\graphicspath{{figures/}}
+
+% === Custom commands ===
+\newcommand{\eg}{\textit{e.g.}\xspace}
+\newcommand{\ie}{\textit{i.e.}\xspace}
+\newcommand{\etal}{\textit{et al.}\xspace}
+\newcommand{\QtoC}{\textsc{Q2C}\xspace}
+\newcommand{\R}{\mathbb{R}}
+
+\begin{document}
+
+\title{Scout：異質邊緣-雲端大型語言模型推論之\\頻寬自適應KV快取傳輸}
+
+\author{
+\IEEEauthorblockN{鄭維倫、廖婉君 \quad (Wei-Lun Cheng and Wanjiun Liao)}
+\IEEEauthorblockA{國立臺灣大學電機工程學系\\
+Department of Electrical Engineering\\
+National Taiwan University, Taipei, Taiwan\\
+\{d11921b15, wjliao\}@ntu.edu.tw}
+}
+
+\maketitle
+
+% ============================================================
+% 摘要
+% ============================================================
+\begin{abstract}
+協作式大型語言模型（LLM）推論將運算分配於邊緣裝置與雲端伺服器之間，需透過頻寬受限之鏈路傳輸KV快取。
+本文提出 \emph{Scout}，一種自適應傳輸協定，利用跨模型注意力對齊特性，完全消除KV快取之傳輸需求。
+在Scout模式下，輕量級邊緣模型（3B參數）透過查詢對上下文（\QtoC）注意力機制識別與任務相關之Token位置，僅傳輸位置索引——將負載從9.7\,MB降至336位元組（28{,}800$\times$壓縮比）。
+雲端模型自行執行預填充並套用接收到的選擇遮罩，以極小品質損失換取大幅頻寬節省。
+我們證明在Qwen2.5模型家族內，Scout模型在75\%保留率下與雲端模型達到82--83\%之位置重疊率。
+值得注意的是，7B Scout模型之選擇\emph{提升}了14B雲端模型10.2\%的品質，優於雲端模型自身之選擇（50\%保留率下$p = 0.018$），此乃因較小模型提供更集中的任務相關注意力。
+為適應變動之網路條件，Scout整合了頻寬感知策略引擎，基於即時通道條件與服務品質需求，動態選擇五種運作模式——從完整KV快取傳輸到僅Scout運作。
+透過三個模型之馬可夫鏈頻寬模擬，我們展示自適應策略達到98--107\%平均品質，同時在75--100\%的請求中滿足延遲期限，相較靜態策略僅達18--88\%。
+在2--8個邊緣裝置共用基地台之多代理人場景中，模型感知頻寬分配將壅塞情況下之期限達成率從0\%提升至100\%。
+\end{abstract}
+
+\begin{IEEEkeywords}
+協作式推論、KV快取、自適應協定、邊緣-雲端運算、大型語言模型
+\end{IEEEkeywords}
+
+% ============================================================
+% I. 緒論
+% ============================================================
+\section{緒論}
+\label{sec:intro}
+
+邊緣-雲端協作推論正成為大型語言模型（LLM）實際部署之主要架構模式~\cite{splitwise,distserve}。
+在此架構中，邊緣裝置負責\emph{預填充}（prefill）階段——編碼使用者之上下文與查詢——而具備更強運算能力之雲端伺服器則執行自迴歸\emph{解碼}（decoding）。
+預填充階段所產生之KV快取必須傳輸至雲端，形成頻寬瓶頸：14B參數模型在1024個Token上下文下之KV快取超過200\,MB~\cite{cachegen}。
+
+近期關於KV快取壓縮之研究~\cite{cachegen,h2o,snapkv}透過Token剔除或量化來減少負載，但將壓縮等級視為靜態設計選擇。
+實際上，無線頻寬變化劇烈——從壅塞時之5\,Mbps到有利條件下之200\,Mbps——要求傳輸協定必須即時\emph{調適}其壓縮策略。
+此外，隨著多代理人系統~\cite{ioa}日益普及，多個邊緣裝置可能同時競爭共享之上行鏈路頻寬，因此需要智慧型資源分配機制。
+
+我們提出驅動協定設計之三項觀察：
+
+\textbf{觀察一：跨模型注意力對齊。}
+在同一模型家族內（\eg Qwen2.5），不同規模之模型關注相似的上下文位置。
+3B參數模型之查詢對上下文注意力分數所產生之位置選擇，在75\%保留率下與較大模型之選擇重疊82--83\%（圖~\ref{fig:scout_overlap}）。
+7B模型之選擇甚至\emph{提升}了14B模型之任務品質達10.2\%。
+此現象促成了\emph{Scout模型}典範：輕量級邊緣模型識別重要位置，雲端模型無需接收任何KV資料即可使用該選擇。
+
+\textbf{觀察二：離散品質-頻寬運作點。}
+KV快取壓縮提供少量實用運作點（表~\ref{tab:operating_points}），每個運作點具有經驗分析所得之已知品質與頻寬特性~\cite{paperA}。
+這使得即時自適應成為可行——協定從查找表中選擇，而非求解連續最佳化問題（圖~\ref{fig:operating_points}）。
+
+\textbf{觀察三：異質模型部署。}
+在多代理人場景中，不同邊緣裝置可能執行不同模型，具有不同之KV快取大小與量化敏感度。
+模型感知之分配策略能顯著改善期限達成率，優於簡單的等量頻寬分配（圖~\ref{fig:multiagent}）。
+
+\subsection{貢獻}
+
+\begin{enumerate}
+    \item \textbf{Scout模型協定}：我們提出傳輸位置索引取代KV快取資料，對同家族模型對達到高達98{,}800$\times$之負載縮減，並具有82--83\%位置重疊率。
+    出乎意料的是，7B Scout之選擇\emph{提升}了14B雲端模型10.2\%之品質（統計顯著水準$p = 0.018$），證明較小模型之集中注意力能有益於較大模型。
+
+    \item \textbf{頻寬自適應策略引擎}：我們設計一協定，基於即時頻寬估計動態選擇5種運作模式。
+    自適應策略在三個測試模型上，於各種通道條件下達到近乎最佳之品質（完整KV之98--107\%），同時維持期限達成率。
+
+    \item \textbf{多代理人資源分配}：對於$N$個共用基地台之邊緣裝置，我們建模並評估模型感知頻寬分配策略，在壅塞條件下將期限達成率從0\%提升至100\%，可擴展至8個代理人。
+
+    \item \textbf{端對端協定評估}：我們透過3組模型對之GPU實驗（Qwen2.5 3B/7B/14B，每組50個樣本含95\%信賴區間）以及36種組態之馬可夫鏈頻寬模擬（3個模型$\times$ 4個期限$\times$ 5種策略）驗證Scout。
+\end{enumerate}
+
+
+% ============================================================
+% II. 系統模型
+% ============================================================
+\section{系統模型}
+\label{sec:system}
+
+\subsection{架構}
+
+我們考慮$N$個邊緣裝置$\{E_1, \ldots, E_N\}$共享至雲端伺服器$C$之無線上行鏈路。
+每個邊緣裝置$E_i$執行輕量級模型$M_i^{\text{edge}}$（例如3B參數），而雲端執行較大模型$M^{\text{cloud}}$（例如7B--14B參數）。
+兩個模型屬於同一家族，共享分詞器與位置編碼方案（具有相同基頻之RoPE）。
+總上行鏈路頻寬$B_{\text{total}}(t)$隨時間變化並由活躍裝置共享。
+
+\subsection{通訊模型}
+
+對於每次推論請求，邊緣裝置必須傳輸足夠資訊，使雲端能產生高品質回應。
+我們識別出五種具遞減頻寬需求之運作模式：
+
+\begin{table}[t]
+\centering
+\caption{運作模式及其品質與頻寬特性（Qwen-7B，SQuAD~v2，平均170個上下文Token）。$^\dagger$Scout品質取決於模型對；7B$\to$14B可達110\%。}
+\label{tab:operating_points}
+\small
+\begin{tabular}{@{}lccc@{}}
+\toprule
+\textbf{模式} & \textbf{負載} & \textbf{品質} & \textbf{TX@100Mbps} \\
+\midrule
+Full BF16       & 9.7\,MB   & 100\%  & 775\,ms \\
+INT8            & 4.7\,MB   & 99.6\% & 388\,ms \\
+INT4            & 2.3\,MB   & 96.2\% & 195\,ms \\
+Mixed INT4      & 2.6\,MB   & 107\%  & 216\,ms \\
+Scout（索引）   & 336\,B    & 81--110\%$^\dagger$ & 0.03\,ms \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+品質數值源自對7個模型家族與4項自然語言處理任務之KV快取壓縮實驗~\cite{paperA}。
+「Mixed INT4」模式達到$>$100\%品質，乃因保護模型特定瓶頸層免受激進量化產生了正則化效果。
+
+\subsection{問題建模}
+
+給定隨時間變化之頻寬$B(t)$、服務品質（QoS）期限$T_{\max}$及$N$個並行請求，我們求解：
+\begin{equation}
+    \max_{\pi} \; \mathbb{E}\left[\sum_{i=1}^{N} Q_i(\pi_i(B_i(t)))\right]
+    \label{eq:objective}
+\end{equation}
+\vspace{-2mm}
+\begin{equation}
+    \text{s.t.} \quad \sum_{i=1}^{N} B_i(t) \leq B_{\text{total}}(t), \quad T_i \leq T_{\max} \; \forall i
+\end{equation}
+其中$\pi_i$為裝置$i$之運作模式選擇策略，$Q_i$為任務品質，$B_i(t)$為分配給裝置$i$之頻寬，$T_i$為端對端延遲，包含預填充、量化、傳輸與解碼。
+
+
+% ============================================================
+% III. SCOUT 協定設計
+% ============================================================
+\section{Scout 協定設計}
+\label{sec:scout}
+
+\subsection{跨模型注意力對齊}
+
+在共享相同分詞器與RoPE位置編碼方案之模型家族內，不同規模之模型展現出對齊之注意力模式。
+我們透過\emph{位置重疊率}衡量此對齊程度：邊緣模型\QtoC分數所選擇之位置中，同時出現在雲端模型前$k$名選擇中的比例。
+
+\subsubsection{注意力何以可轉移}
+
+同家族模型共享分詞方式、位置編碼（具相同基頻之RoPE）及訓練資料分佈。
+雖然模型間之KV快取\emph{數值}差異顯著（餘弦相似度$\approx 0.22$），但\emph{注意力模式}——哪些位置從查詢Token獲得高注意力——則更為對齊，因為其反映的是任務結構而非模型特定表徵。
+形式化地，令$\mathbf{a}_i^{(s)}$為模型$s$對於查詢Token $i$在上下文位置上的注意力分佈。
+當$\text{top}_k(\mathbf{a}_i^{(s_1)})$與$\text{top}_k(\mathbf{a}_i^{(s_2)})$具有高Jaccard重疊率時，兩個模型$s_1, s_2$展現注意力對齊。
+
+\subsubsection{查詢對上下文（Q2C）評分}
+
+我們使用\QtoC方法~\cite{paperA}計算位置重要性：對於每個上下文位置$j$，其分數為所有查詢位置在所有層與所有注意力頭上所給予之平均注意力權重：
+\begin{equation}
+    s_j = \frac{1}{L \cdot H} \sum_{\ell=1}^{L} \sum_{h=1}^{H} \frac{1}{|\mathcal{Q}|} \sum_{i \in \mathcal{Q}} A_{\ell,h}[i, j]
+    \label{eq:q2c}
+\end{equation}
+其中$L$為層數，$H$為注意力頭數，$\mathcal{Q}$為查詢Token位置集合。
+
+\subsubsection{實驗驗證}
+
+表~\ref{tab:scout_overlap}與圖~\ref{fig:scout_overlap}呈現Qwen2.5家族三組模型對在SQuAD~v2上之位置重疊率結果（每組50個樣本，95\%信賴區間來自配對bootstrap法）。
+
+\begin{table}[t]
+\centering
+\caption{Scout模型位置重疊率與F1比較（$n = 50$，$\pm$ 95\%信賴區間）。「雲端自身」=雲端模型自身之Q2C選擇。粗體表示Scout $\geq$ 雲端自身。}
+\label{tab:scout_overlap}
+\small
+\begin{tabular}{@{}llccc@{}}
+\toprule
+\textbf{模型對} & \textbf{保留率} & \textbf{重疊率} & \textbf{雲端自身} & \textbf{Scout F1} \\
+\midrule
+\multirow{3}{*}{3B$\to$7B}
+  & 75\% & 81.9$\pm$1.0\% & .603$\pm$.119 & .490$\pm$.121 \\
+  & 50\% & 63.0$\pm$1.8\% & .517$\pm$.121 & .298$\pm$.107 \\
+  & 25\% & 43.5$\pm$3.0\% & .331$\pm$.110 & .228$\pm$.100 \\
+\midrule
+\multirow{3}{*}{3B$\to$14B}
+  & 75\% & 83.3$\pm$0.9\% & .648$\pm$.111 & .541$\pm$.119 \\
+  & 50\% & 69.7$\pm$1.4\% & .403$\pm$.116 & .375$\pm$.114 \\
+  & 25\% & 59.6$\pm$2.4\% & .268$\pm$.108 & .236$\pm$.106 \\
+\midrule
+\multirow{3}{*}{7B$\to$14B}
+  & 75\% & 83.4$\pm$1.0\% & .648$\pm$.111 & \textbf{.714}$\pm$.101 \\
+  & 50\% & 68.5$\pm$1.8\% & .403$\pm$.116 & \textbf{.536}$\pm$.117 \\
+  & 25\% & 53.2$\pm$2.6\% & .268$\pm$.108 & \textbf{.344}$\pm$.113 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\columnwidth]{fig1_scout_overlap_f1.pdf}
+    \caption{跨模型Scout結果。(a)~邊緣與雲端模型Q2C選擇之位置重疊率。(b)~F1比較：淺色長條=雲端自身選擇；深色長條=Scout選擇套用於雲端。7B$\to$14B模型對（綠色）顯示Scout在所有保留率下均\emph{超越}雲端自身。}
+    \label{fig:scout_overlap}
+\end{figure}
+
+\textbf{發現一：75\%保留率下一致之82--83\%重疊率。}
+在三組模型對中，Scout模型基於注意力之選擇在75\%保留率下與雲端模型自身選擇之重疊率均達82--83\%，展現Qwen2.5家族內強勁之跨模型對齊特性。
+重疊率在50\%保留率時降至63--70\%，在25\%時降至44--60\%，符合預期之集合交集縮放趨勢。
+
+\textbf{發現二：較大Scout模型能\emph{提升}雲端品質。}
+7B$\to$14B模型對揭示出一個驚人結果：7B Scout之選擇在所有保留率下均\emph{優於}14B自身之Q2C選擇（75\%下為0.714 vs.\ 0.648，$+$10.2\%）。
+配對$t$檢定確認50\%保留率下之改善具統計顯著性（$+$0.133，$p = 0.018$）。
+我們在第~\ref{sec:attention_focusing}節進一步分析此現象。
+
+\textbf{發現三：3B Scout對14B雲端幾近無損。}
+對於3B$\to$14B模型對，50\%保留率下之品質差距僅為$-0.028$（$p = 0.65$，不具統計顯著性），表明即使是最小之Scout模型對最大雲端模型也僅造成極小品質損失。
+
+\textbf{發現四：極端之頻寬節省。}
+Scout將傳輸負載從9.7--33.2\,MB（完整KV）減至336位元組（50\%保留率下84個位置之位置索引）——縮減28{,}800--98{,}800$\times$。
+在100\,Mbps下，傳輸時間從775--2{,}656\,ms降至0.03\,ms。
+雲端額外之預填充成本（7B為18\,ms，14B為57\,ms）相較傳輸節省可忽略不計。
+
+\subsection{注意力聚焦效應}
+\label{sec:attention_focusing}
+
+7B模型之選擇\emph{提升}14B模型品質這一反直覺之發現值得解釋。
+我們假設存在\emph{注意力聚焦}效應：較大模型將注意力更廣泛地分佈於上下文位置，而較小模型則將注意力集中於較窄之任務關鍵位置集合。
+當此集中選擇作為遮罩套用至較大模型時，其效果如同注意力正則化——迫使14B模型僅關注最具任務相關性之位置，減少來自邊際相關上下文之干擾。
+
+支持此假設之證據：
+\begin{itemize}
+    \item 14B模型之完整KV基準F1為0.803，但其自身Q2C選擇在75\%保留率下降至0.648——因\emph{自身}選擇損失19\%。
+    7B Scout之選擇（0.714）回復了此損失之42\%。
+    \item 7B與14B選擇之重疊率為83.4\%，意味7B選擇\emph{增加}了16.6\%的14B不會選取之位置，同時\emph{移除}了14B偏好之部分位置。
+    此選擇性替換提升了品質。
+    \item 3B$\to$7B模型對並\emph{未}展現此效應（Scout F1 $<$ 雲端自身），表明此效益需要Scout模型具備足夠能力——3B模型之注意力可能過於嘈雜，無法提供有效的正則化。
+\end{itemize}
+
+此發現具有實務意涵：當邊緣端有7B等級之模型可用時，Scout協定能在消除頻寬需求之同時\emph{增強}雲端推論品質。
+
+\subsection{協定描述}
+
+演算法~\ref{alg:scout}描述單次推論請求之Scout協定。
+
+\begin{algorithm}[t]
+\caption{Scout 協定}
+\label{alg:scout}
+\SetAlgoLined
+\KwIn{上下文 $\mathcal{C}$，查詢 $\mathcal{Q}$，頻寬 $B(t)$，期限 $T_{\max}$}
+\KwOut{生成之回應}
+
+\tcp{邊緣裝置}
+$\mathcal{K}^e, \mathcal{V}^e, \mathbf{A}^e \leftarrow \text{Prefill}_{M^{\text{edge}}}(\mathcal{C}, \mathcal{Q})$\;
+$\mathbf{s} \leftarrow \text{Q2C}(\mathbf{A}^e)$ \tcp*{計算注意力分數}
+
+\tcp{基於頻寬之模式選擇}
+$\text{mode} \leftarrow \text{SelectMode}(B(t), T_{\max}, |\mathcal{K}^e|)$\;
+
+\Switch{mode}{
+    \Case{FULL\_KV}{
+        以BF16傳輸 $\mathcal{K}^e, \mathcal{V}^e$\;
+        雲端：使用接收之KV解碼\;
+    }
+    \Case{QUANT\_KV}{
+        $\hat{\mathcal{K}}, \hat{\mathcal{V}} \leftarrow \text{Quantize}(\mathcal{K}^e, \mathcal{V}^e, b)$\;
+        傳輸 $\hat{\mathcal{K}}, \hat{\mathcal{V}}$\;
+        雲端：反量化並解碼\;
+    }
+    \Case{SCOUT}{
+        $\mathcal{S} \leftarrow \text{TopK}(\mathbf{s}, \lfloor r \cdot n \rfloor)$ \tcp*{位置索引}
+        傳輸 $\mathcal{S}$（緊湊索引列表）\;
+        雲端：$\mathcal{K}^c, \mathcal{V}^c \leftarrow \text{Prefill}_{M^{\text{cloud}}}(\mathcal{C}, \mathcal{Q})$\;
+        雲端：遮罩至 $\mathcal{S}$，解碼\;
+    }
+}
+\Return{回應}
+\end{algorithm}
+
+在Scout模式下，雲端以自身模型\emph{重新執行}預填充階段以產生自身KV快取，然後透過注意力遮罩（將未選擇位置之注意力分數矩陣設為$-\infty$）套用邊緣之位置遮罩。
+此方法保持RoPE位置編碼之正確性，不同於物理KV移除會破壞位置連續性。
+
+
+\subsection{模式選擇策略}
+
+模式選擇函數將當前頻寬與期限約束映射至滿足延遲需求之最高品質運作模式：
+\begin{equation}
+    \text{mode}^* = \arg\max_{m \in \mathcal{M}} Q(m) \quad \text{s.t.} \quad T(m, B(t)) \leq T_{\max}
+    \label{eq:mode_select}
+\end{equation}
+其中$\mathcal{M}$為運作模式集合，$Q(m)$為模式$m$之品質，$T(m, B)$為端對端延遲。
+由於$|\mathcal{M}| \leq 5$，此問題可透過列舉在常數時間內求解。
+品質剖面$Q(m)$為模型特定，透過離線分析預先校正~\cite{paperA}。
+
+
+% ============================================================
+% IV. 多代理人頻寬分配
+% ============================================================
+\section{多代理人頻寬分配}
+\label{sec:multiagent}
+
+當$N$個邊緣裝置共用總頻寬為$B_{\text{total}}$之基地台時，分配問題變為：
+\begin{equation}
+    \max_{\{B_i\}} \sum_{i=1}^{N} Q_i^*(B_i)
+    \quad \text{s.t.} \quad \sum_{i=1}^{N} B_i \leq B_{\text{total}}, \quad T_i(B_i) \leq T_{\max}
+    \label{eq:multiagent}
+\end{equation}
+其中$Q_i^*(B_i) = \max_{m \in \mathcal{M}_i} \{Q_i(m) : T_i(m, B_i) \leq T_{\max}\}$為給定頻寬$B_i$下裝置$i$可達之最佳品質。
+
+\subsection{分配策略}
+
+我們比較三種分配策略：
+
+\textbf{等量分配}：對所有$i$，$B_i = B_{\text{total}} / N$。
+簡單但忽略不同模型具有不同KV快取大小與量化敏感度之事實。
+
+\textbf{模型感知比例分配}：$B_i = B_{\text{total}} \times S_i / \sum_j S_j$，其中$S_i$為模型$M_i$之KV快取大小。
+依各模型之負載比例分配頻寬，確保相近之傳輸時間。
+
+\textbf{品質最大化}：透過貪婪分配求解~\eqref{eq:multiagent}。
+由於$Q_i^*(B_i)$為階梯函數（離散運作模式），我們貪婪地將頻寬分配給從下一增量中獲得最大品質提升之裝置。
+
+\subsection{期限感知回退機制}
+
+當頻寬不足以在期限內完成KV快取傳輸時，裝置可回退至：
+\begin{enumerate}
+    \item \textbf{Scout模式}：僅傳輸位置索引（$<$1\,KB），雲端重新預填充。
+    \item \textbf{本地推論}：邊緣端僅使用$M^{\text{edge}}$自行產生回應。
+\end{enumerate}
+兩種回退模式均能滿足任何期限，提供優雅降級而非服務中斷。
+
+
+% ============================================================
+% V. 實驗設置
+% ============================================================
+\section{實驗設置}
+\label{sec:setup}
+
+\subsection{GPU實驗（Scout驗證）}
+
+我們在NVIDIA RTX PRO 6000 Blackwell（102\,GB VRAM）上使用50個SQuAD~v2樣本與正規化Token-F1評估Scout模型之準確度。
+所有模型使用BFloat16精度搭配eager注意力以擷取逐層注意力權重。
+在Qwen2.5家族內測試三組模型對：
+\begin{itemize}
+    \item \textbf{3B$\to$7B}：3B參數邊緣端，7B雲端（KV：9.7\,MB）
+    \item \textbf{3B$\to$14B}：3B邊緣端，14B雲端（KV：33.2\,MB）
+    \item \textbf{7B$\to$14B}：7B邊緣端，14B雲端（最小差距）
+\end{itemize}
+
+對於每個樣本，邊緣與雲端模型均計算Q2C注意力分數（式~\ref{eq:q2c}），並在25/50/75\%保留率下選擇位置。
+雲端使用(a)~自身選擇、(b)~邊緣選擇（Scout）及(c)~完整KV（基準）產生答案。
+我們報告配對$t$檢定之95\%信賴區間。
+
+\subsection{協定模擬}
+
+我們使用先前KV快取壓縮研究~\cite{paperA}之經驗品質-頻寬資料，對三個模型進行自適應協定模擬：Qwen-7B、Mistral-7B與Qwen-14B。
+頻寬變化以6狀態馬可夫鏈模型化，狀態為$\{5, 10, 25, 50, 100, 200\}$\,Mbps，校正為無線邊緣條件（均值73\,Mbps，第5/95百分位：5/200\,Mbps）。
+每次模擬執行1{,}000次推論請求，涵蓋4種期限設定（1/2/3/5秒）。
+
+\subsection{多代理人模擬}
+
+我們模擬$N \in \{2, 4, 8\}$個邊緣代理人，使用異質模型（$N = 4$時為兩個Qwen-7B、一個Mistral-7B、一個Qwen-14B；$N = 8$時加倍），共享50/100/200\,Mbps之總頻寬，期限為5秒。
+每種組態執行500輪。
+
+
+% ============================================================
+% VI. 實驗結果
+% ============================================================
+\section{實驗結果}
+\label{sec:results}
+
+\subsection{Scout模型驗證}
+
+表~\ref{tab:scout_overlap}與圖~\ref{fig:scout_overlap}呈現跨模型選擇重疊率結果。
+完整KV基準為：3B F1 = 0.733，7B F1 = 0.668，14B F1 = 0.803。
+
+\textbf{發現一：75\%保留率下82--83\%之重疊率。}
+在三組模型對中，Scout模型基於注意力之選擇在75\%保留率下與雲端模型自身選擇重疊82--83\%（表~\ref{tab:scout_overlap}，第3欄）。
+值得注意的是，無論邊緣模型為3B或7B，重疊率均保持一致，顯示位置重疊率更依賴於共享架構而非模型容量。
+
+\textbf{發現二：7B Scout在所有保留率下提升14B品質。}
+7B$\to$14B模型對展現注意力聚焦效應（第~\ref{sec:attention_focusing}節）：Scout F1超越雲端自身F1達$+$0.066（75\%）、$+$0.133（50\%，$p = 0.018$）及$+$0.076（25\%）。
+50\%保留率之差距具統計顯著性，確認此效應非抽樣雜訊所致。
+
+\textbf{發現三：3B$\to$14B在50\%保留率下之差距不具統計顯著性。}
+3B$\to$14B在50\%保留率下之品質差距僅$-$0.028（$p = 0.65$），意味3B Scout在統計上與14B自身選擇無法區分——有力證據表明即使最廉價之Scout對最大雲端模型亦具可行性。
+
+\textbf{發現四：極端之頻寬節省。}
+Scout將傳輸量從9.7--33.2\,MB減至336位元組（28{,}800--98{,}800$\times$）。
+在100\,Mbps下，傳輸時間從775--2{,}656\,ms降至0.03\,ms。
+雲端額外之預填充成本（7B為18\,ms，14B為57\,ms，來自~\cite{paperA}）可忽略不計。
+
+\subsection{自適應協定效能}
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\columnwidth]{fig2_operating_points.pdf}
+    \caption{三個模型之品質-頻寬運作點。每個點代表一種壓縮模式。近零頻寬之「Scout區域」依模型對達到81--110\%品質。虛線標示完整KV基準。}
+    \label{fig:operating_points}
+\end{figure}
+
+圖~\ref{fig:operating_points}展示三個模型之品質-頻寬Pareto前緣。
+表~\ref{tab:protocol}比較Qwen-7B在不同期限下之協定策略；圖~\ref{fig:deadline_quality}將此比較延伸至三個模型。
+
+\begin{table}[t]
+\centering
+\caption{協定策略比較（Qwen-7B，1{,}000次請求，馬可夫鏈頻寬）。平均品質為完整KV基準之百分比。}
+\label{tab:protocol}
+\small
+\begin{tabular}{@{}llcc@{}}
+\toprule
+\textbf{期限} & \textbf{策略} & \textbf{平均品質 (\%)} & \textbf{期限達成} \\
+\midrule
+\multirow{5}{*}{1\,s}
+  & 靜態 INT8      & 99.6 & 58.6\% \\
+  & 靜態 INT4      & 96.2 & 74.9\% \\
+  & 自適應         & 102.6 & 74.9\% \\
+  & Scout            & 95.0 & 100\% \\
+  & 本地邊緣       & 75.0 & 100\% \\
+\midrule
+\multirow{5}{*}{3\,s}
+  & 靜態 INT8      & 99.6 & 74.9\% \\
+  & 靜態 INT4      & 96.2 & 88.3\% \\
+  & 自適應         & 105.8 & 88.3\% \\
+  & Scout            & 95.0 & 100\% \\
+  & 本地邊緣       & 75.0 & 100\% \\
+\midrule
+\multirow{5}{*}{5\,s}
+  & 靜態 INT8      & 99.6 & 88.3\% \\
+  & 靜態 INT4      & 96.2 & 100\% \\
+  & 自適應         & 107.1 & 100\% \\
+  & Scout            & 95.0 & 100\% \\
+  & 本地邊緣       & 75.0 & 100\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\columnwidth]{fig3_deadline_quality.pdf}
+    \caption{三個模型在1/3/5\,s期限下之期限達成率與平均品質。每個點代表一組（模型，期限）組態。自適應策略（綠色菱形）達到最佳品質-達成率取捨；Scout（粉色星形）保證100\%達成率。}
+    \label{fig:deadline_quality}
+\end{figure}
+
+\textbf{發現五：靜態策略在變動頻寬下失效。}
+對於Qwen-7B，靜態INT8僅在58.6\%的時間內達成1秒期限。
+較大模型之情況更差：Mistral-7B較大之KV快取（22.4\,MB）使INT8達成率在1\,s時降至18\%，Qwen-14B（33.2\,MB）亦僅達18\%。
+即使在寬鬆之5秒期限下，除Qwen-7B外所有模型之INT8達成率仍低於90\%。
+
+\textbf{發現六：Scout提供無條件之期限保證。}
+因Scout負載$<$1\,KB，Scout模式對所有模型均以100\%成功率滿足任何實際期限。
+其品質成本（基準之95\%）適中，代表使用同家族Scout時之品質\emph{下限}。
+以7B Scout搭配14B雲端時，品質\emph{超越}基準。
+
+\textbf{發現七：自適應策略最大化品質。}
+自適應策略選擇在期限內可容納之最佳壓縮模式。
+對於Qwen-7B在5\,s下，其達到107.1\%品質（始終選擇Mixed INT4）與100\%達成率。
+對於Mistral-7B，自適應在5\,s時達到99.3\%，而靜態INT4僅96.1\%——因機會性模式選擇而提升3.2個百分點。
+
+\textbf{發現八：模型特定之KV快取大小決定協定行為。}
+圖~\ref{fig:deadline_quality}揭示期限達成率之形貌在模型間有顯著差異。
+Qwen-7B（9.7\,MB KV）在5\,s下以INT4與自適應策略達到100\%達成率，而Qwen-14B（33.2\,MB KV）即使在5\,s下以其最佳非Scout策略僅達75\%。
+此結果激勵將Scout模式用作通用回退機制，特別是對於受限鏈路上之較大模型。
+
+\subsection{多代理人分配}
+
+表~\ref{tab:multiagent}呈現4個與8個異質代理人之多代理人結果。
+圖~\ref{fig:multiagent}提供擴展性分析。
+
+\begin{table}[t]
+\centering
+\caption{多代理人分配（500輪，5\,s期限）。總品質=各代理人品質之和（\%）。括號內為\emph{所有}代理人均達成期限之輪數百分比。}
+\label{tab:multiagent}
+\small
+\begin{tabular}{@{}clccc@{}}
+\toprule
+\textbf{$N$} & \textbf{頻寬} & \textbf{等量} & \textbf{模型感知} & \textbf{品質最大化} \\
+\midrule
+\multirow{3}{*}{4}
+  & 50   & 405.8 (0\%)   & 405.9 (100\%) & 408.0 (100\%) \\
+  & 100  & 409.6 (100\%) & 414.7 (100\%) & 414.7 (100\%) \\
+  & 200  & 414.7 (100\%) & 414.7 (100\%) & 414.7 (100\%) \\
+\midrule
+\multirow{3}{*}{8}
+  & 50   & 800.6 (0\%)   & 767.9 (0\%)   & 798.1 (0\%) \\
+  & 100  & 800.6 (0\%)   & 800.8 (100\%) & 803.3 (5\%) \\
+  & 200  & 811.9 (100\%) & 822.8 (100\%) & 816.7 (99.6\%) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\columnwidth]{fig4_multiagent_scaling.pdf}
+    \caption{多代理人擴展性。(a)~在固定100\,Mbps總頻寬下，每代理人平均品質隨$N$增長而降低；模型感知分配維持優勢。(b)~4個代理人之期限達成率：模型感知與品質最大化在所有頻寬下達到100\%，而等量分配在50\,Mbps下失效。}
+    \label{fig:multiagent}
+\end{figure}
+
+\textbf{發現九：壅塞下模型感知分配至關重要。}
+在50\,Mbps搭配4個代理人時，等量分配在\emph{所有}輪次中均未達成期限（0\%），而模型感知分配達到100\%達成率。
+此乃因等量分配給予每個代理人12.5\,Mbps，不足以在5\,s內傳輸Qwen-14B之33.2\,MB KV快取，而模型感知分配依比例分配更多頻寬予較大模型。
+
+\textbf{發現十：期限達成率隨規模擴展而降低。}
+在8個代理人搭配100\,Mbps時，等量分配之期限達成率為0\%，而模型感知達到100\%。
+品質最大化策略僅達5\%達成率，因其貪婪方法可能造成不公平分配，使部分代理人頻寬不足。
+模型感知比例分配為最穩健之策略。
+
+\textbf{發現十一：8個代理人在50\,Mbps下超出KV傳輸容量。}
+在50\,Mbps搭配8個代理人（$\sim$6\,Mbps/代理人）時，即使模型感知分配亦無法滿足期限（0\%）。
+此為需要通用Scout回退之情境：所有代理人切換至Scout模式，僅傳輸位置索引，每代理人達到95\%品質並保證期限達成。
+
+
+% ============================================================
+% VII. 討論
+% ============================================================
+\section{討論}
+\label{sec:discussion}
+
+\subsection{何時使用Scout模式}
+
+Scout模式在以下情況最為有利：
+\begin{enumerate}
+    \item 頻寬極度有限（$<$10\,Mbps），即使INT4 KV傳輸亦將錯過期限。
+    \item 雲端模型與邊緣模型屬於同一模型家族（共享分詞器與RoPE）。
+    \item 邊緣端有7B等級模型可用，可啟用注意力聚焦效應以\emph{提升}雲端品質。
+\end{enumerate}
+
+Scout模式之品質成本因模型對而異：3B$\to$7B最多損失19\%，而7B$\to$14B則達到10\%之品質\emph{增益}。
+對於可接受近似答案之應用（\eg 初始回應經後續查詢精煉），即使3B Scout之取捨亦屬有利。
+
+\subsection{協定額外開銷}
+
+Scout協定之控制平面增加極少額外開銷：
+\begin{itemize}
+    \item \textbf{交握}：模型家族識別、能力交換（$<$100位元組）。
+    \item \textbf{模式通告}：當前頻寬估計＋所選模式（$<$50位元組）。
+    \item \textbf{位置索引}：$k$個選定位置需$k \times 2$位元組（16位元索引足以支援最多65{,}536個Token之上下文）。
+\end{itemize}
+總控制額外開銷$<$1\,KB，相較最小之KV負載亦可忽略不計。
+
+\subsection{延遲分析}
+
+Scout模式之端對端延遲包含：邊緣預填充（3B為6\,ms，7B為18\,ms）、Q2C評分（可忽略，由現有注意力權重計算）、索引傳輸（0.03\,ms）、雲端預填充（7B為18\,ms，14B為57\,ms）及解碼。
+Scout總額外開銷為24--75\,ms，主要由雲端預填充成本決定。
+當雲端本即需執行預填充（\eg 用於模型驗證）時，Scout之邊際成本接近零。
+
+\subsection{限制}
+
+本研究有若干限制。
+首先，Scout模式要求邊緣與雲端模型來自同一家族；跨家族傳輸（\eg Qwen$\to$Mistral）需要分詞器對齊與位置重映射。
+其次，頻寬模擬器使用穩態馬可夫鏈，而實際無線通道呈現非穩態行為；整合3GPP通道模型~\cite{3gpp}為未來工作。
+第三，我們僅在抽取式問答上評估；需要精確數值推理之任務可能對選擇偏差更為敏感。
+第四，多代理人建模假設同步請求；非同步到達需要排隊論之延伸~\cite{queuing}。
+最後，我們的分析涵蓋至約200個Token之上下文長度；擴展至更長上下文（4K以上）將按比例增加KV快取大小，使Scout模式更具吸引力。
+
+
+% ============================================================
+% VIII. 相關工作
+% ============================================================
+\section{相關工作}
+\label{sec:related}
+
+\textbf{KV快取壓縮。}
+CacheGen~\cite{cachegen}對KV快取串流應用差分編碼與算術編碼。
+H2O~\cite{h2o}與SnapKV~\cite{snapkv}執行基於注意力之Token剔除。
+KIVI~\cite{kivi}與KVQuant~\cite{kvquant}研究精度縮減。
+這些方法針對單模型服務壓縮KV快取；Scout則處理跨模型、頻寬自適應之場景。
+
+\textbf{協作式與解耦式推論。}
+Splitwise~\cite{splitwise}將預填充與解碼分離至不同機器。
+DistServe~\cite{distserve}與Mooncake~\cite{mooncake}將LLM服務階段解耦以最佳化吞吐量。
+這些系統透過高頻寬資料中心互連（100+\,Gbps）傳輸完整KV快取；Scout則針對頻寬受限之無線鏈路（5--200\,Mbps）。
+
+\textbf{推測式與草稿模型方法。}
+推測式解碼~\cite{speculativedecoding}使用小型草稿模型提出Token，再由較大模型驗證。
+我們的Scout模型借鑑草稿模型概念，但將其應用於\emph{位置選擇}而非Token生成，從而實現頻寬縮減而非延遲縮減。
+
+\textbf{多代理人系統。}
+Internet of Agents框架~\cite{ioa}提出跨網路邊界之階層式代理人協調。
+本研究為此類系統之基礎設施層提供具體傳輸機制，解決代理人框架通常抽象化之頻寬瓶頸。
+
+\textbf{自適應串流。}
+ABR（自適應位元率）演算法用於影片串流~\cite{abr}，基於頻寬動態選擇品質等級。
+Scout將類似之適應原則應用於LLM推論，關鍵差異在於品質以任務效能（F1）而非感知指標（PSNR/SSIM）衡量，且壓縮模式之離散特性簡化了控制問題。
+
+
+% ============================================================
+% IX. 結論
+% ============================================================
+\section{結論}
+\label{sec:conclusion}
+
+本文提出Scout，一種用於協作式LLM推論之頻寬自適應傳輸協定。
+透過利用跨模型注意力對齊特性，Scout在頻寬不足時消除KV快取傳輸，將負載從數百萬位元組減至數百位元組，位置重疊率達82--83\%。
+注意力聚焦效應顯示7B Scout模型能\emph{提升}14B雲端模型10.2\%之品質，將頻寬最佳化轉化為品質增強。
+自適應策略引擎即時選擇五種運作模式，達到98--107\%品質與最高100\%之期限達成率。
+對於多代理人部署，模型感知頻寬分配在壅塞條件下將期限達成率從0\%提升至100\%。
+Scout彌合了KV快取壓縮研究與邊緣-雲端LLM系統實務協定設計之間的落差。
+
+\balance
+
+% ============================================================
+% 參考文獻
+% ============================================================
+\bibliographystyle{IEEEtran}
+\begin{thebibliography}{15}
+
+\bibitem{cachegen}
+Y.~Liu \etal, ``CacheGen: KV Cache Compression and Streaming for Fast Large Language Model Serving,'' in \emph{Proc.\ ACM SIGCOMM}, 2024.
+
+\bibitem{splitwise}
+P.~Patel \etal, ``Splitwise: Efficient Generative LLM Inference Using Phase Splitting,'' in \emph{Proc.\ ISCA}, 2024.
+
+\bibitem{distserve}
+Y.~Zhong \etal, ``DistServe: Disaggregating Prefill and Decoding for Goodput-optimized Large Language Model Serving,'' in \emph{Proc.\ OSDI}, 2024.
+
+\bibitem{mooncake}
+R.~Qin \etal, ``Mooncake: A KVCache-centric Disaggregated Architecture for LLM Serving,'' in \emph{Proc.\ FAST}, 2025.
+
+\bibitem{h2o}
+Z.~Zhang \etal, ``H2O: Heavy-Hitter Oracle for Efficient Generative Inference of Large Language Models,'' in \emph{Proc.\ NeurIPS}, 2023.
+
+\bibitem{snapkv}
+Y.~Li \etal, ``SnapKV: LLM Knows What You are Looking for Before Generation,'' \emph{arXiv:2404.14469}, 2024.
+
+\bibitem{kivi}
+Z.~Liu \etal, ``KIVI: A Tuning-Free Asymmetric 2bit Quantization for KV Cache,'' in \emph{Proc.\ ICML}, 2024.
+
+\bibitem{kvquant}
+C.~Hooper \etal, ``KVQuant: Towards 10 Million Context Length LLM Inference with KV Cache Quantization,'' \emph{arXiv:2401.18079}, 2024.
+
+\bibitem{speculativedecoding}
+Y.~Leviathan \etal, ``Fast Inference from Transformers via Speculative Decoding,'' in \emph{Proc.\ ICML}, 2023.
+
+\bibitem{abr}
+H.~Mao \etal, ``Neural Adaptive Video Streaming with Pensieve,'' in \emph{Proc.\ ACM SIGCOMM}, 2017.
+
+\bibitem{paperA}
+W.-L.~Cheng and W.~Liao, ``Task-Aware KV-Cache Compression for Bandwidth-Efficient Collaborative LLM Inference,'' \emph{submitted}, 2026.
+
+\bibitem{ioa}
+W.~Chen \etal, ``Internet of Agents: Weaving a Web of Heterogeneous Agents for Collaborative Intelligence,'' \emph{arXiv:2407.07061}, 2024.
+
+\bibitem{3gpp}
+3GPP, ``Study on Channel Model for Frequencies from 0.5 to 100 GHz,'' \emph{TR 38.901}, v17.0.0, 2022.
+
+\bibitem{queuing}
+M.~Mitzenmacher, ``The Power of Two Choices in Randomized Load Balancing,'' \emph{IEEE Trans.\ Parallel Distrib.\ Syst.}, vol.~12, no.~10, 2001.
+
+\end{thebibliography}
+
+\end{document}

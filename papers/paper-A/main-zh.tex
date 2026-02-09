@@ -1,0 +1,766 @@
+% Overleaf: change font to AR PL UMing TW if Songti TC unavailable
+% !TEX program = xelatex
+\documentclass[conference]{IEEEtran}
+
+% === Packages ===
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[ruled,vlined,linesnumbered]{algorithm2e}
+\usepackage{xspace}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{subcaption}
+\usepackage{url}
+\usepackage{balance}
+
+% === Font setup for XeTeX ===
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\usepackage{xeCJK}
+\setCJKmainfont[BoldFont=Heiti TC]{Songti TC}
+\setCJKsansfont{Noto Sans TC}
+\setCJKmonofont{Heiti TC}
+
+% === Custom commands ===
+\newcommand{\eg}{\textit{e.g.}\xspace}
+\newcommand{\ie}{\textit{i.e.}\xspace}
+\newcommand{\etal}{\textit{et al.}\xspace}
+\newcommand{\QtoC}{\textsc{Q2C}\xspace}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\bK}{\mathbf{K}}
+\newcommand{\bV}{\mathbf{V}}
+\newcommand{\bQ}{\mathbf{Q}}
+\newcommand{\bA}{\mathbf{A}}
+
+\begin{document}
+
+\title{任務感知KV快取壓縮用於頻寬高效之\\協作式大型語言模型推論}
+
+\author{
+\IEEEauthorblockN{鄭維倫、廖婉君}
+\IEEEauthorblockA{國立臺灣大學電機工程學系\\
+台北，臺灣\\
+\{d11921b15, wjliao\}@ntu.edu.tw}
+}
+
+\maketitle
+
+% 摘要
+\begin{abstract}
+跨越邊緣與雲端之協作式大型語言模型（LLM）推論，需要在裝置間傳輸鍵值（KV）快取狀態。
+一個140億參數模型在1024個 Token 上下文下所產生之KV快取超過200\,MB——對於頻寬受限之無線網路而言並不實際。
+我們提出一套壓縮管線，結合(1)~\QtoC，一種新穎的任務感知 Token 選取方法，利用查詢對上下文之注意力分數來識別與當前任務最相關的上下文位置；以及(2)~一套診斷式混合精度量化方案，可識別模型特定之瓶頸層並保護其免於過度量化。
+透過對7個模型家族（11億至140億參數）、4項自然語言處理任務，以及512至4096個 Token 之上下文長度的系統性評估，我們展示以下發現：
+在25\% Token 保留率下，\QtoC 在4個模型家族中一致地超越現有最佳選取方法，較SnapKV高出29--47\%，較H2O高出92--128\%；
+INT8量化具有普遍無損特性，而INT4脆弱性為模型特定屬性（非由架構決定）；
+混合精度量化透過保護單一瓶頸層，可在3.6倍壓縮下達成無損品質。
+我們進一步證明，差分編碼——CacheGen之核心技術——在與量化結合時會降低任務品質，與其降低變異數之設計動機相悖。
+延遲分析顯示，INT8量化以3\,ms的額外開銷將傳輸時間減半，在100\,Mbps下達成淨44\%之延遲降低。
+我們的研究結果提供了首個全面的KV快取可壓縮性特徵分析，以及適用於邊緣-雲端LLM系統之實用壓縮協定。
+\end{abstract}
+
+\begin{IEEEkeywords}
+KV快取壓縮、協作式推論、邊緣-雲端運算、大型語言模型、量化
+\end{IEEEkeywords}
+
+% I. 緒論
+\section{緒論}
+\label{sec:intro}
+
+大型語言模型（LLM）在分散式環境中的部署，推動了\emph{協作式推論}的研究興趣，其中運算階段被分割於邊緣與雲端裝置之間~\cite{cachegen,splitwise}。
+在此類架構中，邊緣裝置執行\emph{預填充}（prefill）階段——對使用者的上下文與查詢進行編碼——而雲端伺服器執行\emph{解碼}（decode）階段，以自迴歸方式生成 Token。
+預填充階段所產生的鍵值（KV）快取必須傳輸至雲端，形成頻寬瓶頸。
+
+以一個具代表性的70億參數模型（Qwen2.5-7B：28層、4個KV頭、128維頭維度）為例，1024個 Token 之上下文所產生的KV快取大小為 $2 \times 28 \times 4 \times 1024 \times 128 \times 2 = 58$\,MB（BF16格式）。
+在100\,Mbps——典型的5G上行頻寬——下，需要約4.6秒的傳輸延遲，對於互動式應用而言無法接受。
+在邊緣部署常見的較低頻寬（10--50\,Mbps）下，延遲更超過10秒。
+
+現有的KV快取壓縮方法僅從有限面向解決此問題。
+CacheGen~\cite{cachegen}採用差分編碼與逐層量化搭配算術編碼，對所有 Token 進行均一壓縮而未考慮任務相關性。
+H2O~\cite{h2o}與SnapKV~\cite{snapkv}透過 Token 淘汰來減少快取位置數量，但使用與任務無關的注意力模式（累積式或近期窗口注意力）。
+KIVI~\cite{kivi}與KVQuant~\cite{kvquant}研究純量化方法，但未分析模型特定之敏感度，也未將量化與選取結合。
+
+我們識別出先前工作的三個關鍵限制：
+\begin{enumerate}
+    \item \textbf{缺乏任務感知選取}：現有方法基於通用注意力模式選取 Token，忽略了正在回答的特定查詢。
+    \item \textbf{缺乏模型特定分析}：量化敏感度在不同模型家族間差異極大（INT4下從77\%到100\%），但先前工作採用統一策略。
+    \item \textbf{未經驗證的假設}：差分編碼被假設基於降低變異數而有益，但其與量化的交互作用未在下游任務上被評估。
+\end{enumerate}
+
+\subsection{貢獻}
+
+我們做出以下貢獻：
+
+\begin{enumerate}
+    \item \textbf{\QtoC（查詢對上下文）選取}：一種任務感知 Token 選取方法，利用查詢對上下文位置的注意力來識別與任務最相關的 Token。在25\%保留率——頻寬受限傳輸最相關的操作點——下，\QtoC 在4個模型家族中一致地超越SnapKV 29--47\%，超越H2O 92--128\%。
+
+    \item \textbf{診斷式混合精度量化}：一套模型特定方案，對每層執行INT4敏感度分析以識別瓶頸層，再以較高精度加以保護。此方法在3.6倍壓縮（原始頻寬的27.7\%）下達成無損品質。
+
+    \item \textbf{全面的跨架構特徵分析}：首個橫跨7個模型家族、4項自然語言處理任務與4種上下文長度（75+實驗組態）的KV快取可壓縮性系統性研究，揭示INT4脆弱性為訓練過程中湧現的屬性，而非架構特徵。
+
+    \item \textbf{差分編碼的反面發現}：我們證明CacheGen的差分編碼技術相較直接量化，使任務品質下降5.6--14.0個百分點，儘管其將鍵變異數降低高達735倍。
+
+    \item \textbf{延遲分析}：我們提供各階段計時量測，顯示傳輸時間以43倍之比主導端對端延遲，而INT8以可忽略的品質代價達成44\%之延遲降低。
+\end{enumerate}
+
+
+% II. 系統模型
+\section{系統模型}
+\label{sec:system}
+
+\subsection{邊緣-雲端協作式推論}
+
+我們考慮一個分割推論架構，其中邊緣裝置 $E$ 與雲端伺服器 $C$ 協作處理一個LLM推論請求。
+邊緣裝置接收包含上下文 Token $\mathcal{C} = \{c_1, \ldots, c_n\}$ 與查詢 Token $\mathcal{Q} = \{q_1, \ldots, q_m\}$ 的使用者提示，執行預填充前向傳遞以產生KV快取，將其壓縮並傳輸至雲端。
+雲端伺服器解壓縮KV快取，並執行自迴歸解碼以生成回應。
+
+\subsection{KV快取結構}
+
+對於一個具有 $L$ 層、每層 $H$ 個KV頭、頭維度 $d$、序列長度 $n$ 的Transformer模型，KV快取包含：
+\begin{equation}
+    \bK, \bV \in \R^{L \times H \times n \times d}
+\end{equation}
+其中 $\bK^{(l)} \in \R^{H \times n \times d}$ 與 $\bV^{(l)} \in \R^{H \times n \times d}$ 分別為第 $l$ 層的鍵張量與值張量。
+在BF16精度下，KV快取總大小為 $2 \times L \times H \times n \times d \times 2$ 位元組。
+
+\subsection{問題公式化}
+
+給定頻寬預算 $B$ 位元，我們的目標為：
+\begin{equation}
+    \max_{\phi} \; \text{TaskMetric}\big(\text{Decode}(\phi(\bK, \bV), \mathcal{Q})\big)
+    \label{eq:objective}
+\end{equation}
+\vspace{-2mm}
+\begin{equation}
+    \text{s.t.} \quad \text{Size}(\phi(\bK, \bV)) \leq B
+\end{equation}
+其中 $\phi$ 為壓縮函數，$\text{TaskMetric}$ 為任務特定之品質度量（擷取式問答使用 token-F1，選擇題使用正確率）。
+
+\subsection{壓縮維度}
+
+我們識別出四個正交的壓縮軸：
+
+\begin{enumerate}
+    \item \textbf{Token 選取}（位置層級）：保留 $n$ 個上下文位置中的比例 $r \in (0, 1]$，大小縮減為原來的 $r$ 倍。
+    \item \textbf{量化}（精度層級）：從16位元降低至 $b$ 位元表示，大小縮減為原來的 $b/16$ 倍。
+    \item \textbf{層精度}（層層級）：為每層指定不同位元寬度 $b^{(l)}$，實現異質壓縮。
+    \item \textbf{殘差編碼}（冗餘層級）：編碼相鄰位置之間的差異，利用序列冗餘性。
+\end{enumerate}
+
+組合壓縮比為：
+\begin{equation}
+    \rho = r \times \frac{\bar{b}}{16}, \quad \bar{b} = \frac{1}{L}\sum_{l=1}^{L} b^{(l)}
+\end{equation}
+其中 $\bar{b}$ 為各層的平均位元寬度。
+例如，在75\%保留率（$r=0.75$）、1層使用FP16而27層使用INT4（$\bar{b} \approx 4.43$）的情況下，壓縮比為 $\rho = 0.75 \times 4.43/16 = 20.8\%$。
+
+
+% III. 方法論
+\section{方法論}
+\label{sec:method}
+
+\subsection{\QtoC：查詢對上下文注意力選取}
+
+\subsubsection{直覺}
+在預填充前向傳遞過程中，模型計算注意力權重，揭示每個 Token 對其他每個位置的關注程度。
+\emph{查詢 Token}對\emph{上下文位置}的注意力權重，直接衡量哪些上下文 Token 與回答特定問題最為相關。
+我們利用此訊號進行任務感知的 Token 選取。
+
+\subsubsection{演算法}
+令 $\bA^{(l,h)} \in \R^{(n+m) \times (n+m)}$ 為第 $l$ 層、第 $h$ 個頭的注意力權重矩陣，其中 $n$ 為上下文 Token 數量，$m$ 為查詢 Token 數量。
+我們定義上下文位置 $j$ 的 \QtoC 分數為：
+\begin{equation}
+    s_j = \sum_{h=1}^{H'} \sum_{i=n+1}^{n+m} \bA^{(L,h)}_{i,j}
+    \label{eq:q2c_score}
+\end{equation}
+其中 $H'$ 為最後一層 $L$ 的注意力頭數量，外層加總涵蓋查詢位置 $i \in [n+1, n+m]$。
+此公式彙整了查詢 Token 對每個上下文位置所投注的全部注意力。
+
+給定保留率 $r$，我們根據 \QtoC 分數選取前 $\lfloor r \cdot n \rfloor$ 個上下文位置。
+未被選取的位置在解碼過程中，其注意力權重在所有後續層中被設定為 $-\infty$ 進行遮罩，從而保留了已保留位置的位置編碼（RoPE）。
+
+\subsubsection{與替代方法之比較}
+
+\textbf{SnapKV}~\cite{snapkv}使用\emph{所有}位置的注意力（上下文對上下文與查詢對上下文）來計算重要性分數，以自引用的上下文注意力稀釋了任務相關訊號。
+
+\textbf{H2O}~\cite{h2o}跨解碼步驟累積注意力分數，使選取偏向早期 Token（「注意力沉積」現象~\cite{streamingllm}），而非任務相關的 Token。
+
+\textbf{\QtoC}專注於最後一層的查詢$\to$上下文注意力，直接衡量查詢對每個上下文位置的依賴程度。此方法無需額外運算——注意力權重在預填充過程中已被計算。
+
+\subsection{混合精度量化}
+\label{sec:mixed_prec}
+
+\subsubsection{逐 Token 量化}
+我們使用對稱式逐 Token 最小-最大量化。
+對於張量 $\mathbf{t} \in \R^d$（一個 Token 的KV向量），$b$ 位元量化表示為：
+\begin{equation}
+    \hat{\mathbf{t}} = \text{clamp}\!\left(\left\lfloor \frac{\mathbf{t}}{s} \right\rceil, q_{\min}, q_{\max}\right) \cdot s
+\end{equation}
+其中 $s = \|\mathbf{t}\|_\infty / q_{\max}$ 為逐 Token 縮放因子，$q_{\max} = 2^{b-1}-1$，$q_{\min} = -2^{b-1}$，$\lfloor \cdot \rceil$ 表示四捨五入。
+
+\subsubsection{瓶頸層之發現}
+
+對所有層進行均一INT4量化會顯著降低部分模型的任務品質（例如Qwen-7B：基準的77\%）。
+我們發現此降級是\emph{局部化的}：
+\begin{itemize}
+    \item \emph{僅}將第0層量化為INT4（其餘使用FP16）$\to$ 基準的78.3\%
+    \item \emph{僅}保持第0層為FP16（其餘使用INT4）$\to$ 基準的101.1\%
+\end{itemize}
+單一層即導致幾乎所有品質損失。我們稱之為\emph{瓶頸層}。
+
+\subsubsection{診斷方案}
+
+對於新模型 $M$：
+\begin{enumerate}
+    \item 執行均一INT4量化；量測總降級量 $\Delta_{\text{total}}$。
+    \item 若 $\Delta_{\text{total}} > 5\%$：對每層 $l$，\emph{僅}將第 $l$ 層量化為INT4並量測逐層敏感度 $\Delta^{(l)}$。
+    \item 識別瓶頸層（個別降級量 $\Delta^{(l)} > 3\%$ 者）。
+    \item 將瓶頸層保持為FP16；其餘層以INT4量化。
+    \item 若 $\Delta_{\text{total}} \leq 5\%$：使用均一INT4。
+\end{enumerate}
+
+\textbf{頻寬成本}：在 $L$ 層中有 $k$ 個瓶頸層以FP16保護時，有效平均位元寬度為：
+\begin{equation}
+    \bar{b} = \frac{k \cdot 16 + (L-k) \cdot 4}{L}
+\end{equation}
+以Qwen-7B為例（$L=28$, $k=1$）：$\bar{b} = 4.43$ 位元，即 $\bar{b}/16 = 27.7\%$ 的原始頻寬。
+
+\subsection{組合壓縮管線}
+
+演算法~\ref{alg:pipeline}描述在邊緣裝置上執行的完整壓縮管線。
+
+\begin{algorithm}[t]
+\caption{任務感知KV快取壓縮}
+\label{alg:pipeline}
+\SetAlgoLined
+\KwIn{輸入 Token $x = [\mathcal{C}; \mathcal{Q}]$、保留率 $r$、目標位元寬度 $b$、瓶頸層集合 $\mathcal{B}$}
+\KwOut{壓縮後KV快取 $\hat{\bK}, \hat{\bV}$、選取遮罩 $\mathbf{m}$}
+$\bK, \bV, \bA \leftarrow \text{Prefill}(x)$ \tcp*{前向傳遞}
+\For{$j \leftarrow 1$ \KwTo $n$}{
+    $s_j \leftarrow \sum_{h,i} \bA^{(L,h)}_{i,j}$ \tcp*{Q2C分數}
+}
+$\mathcal{S} \leftarrow \text{TopK}(\{s_j\}_{j=1}^n, \lfloor r \cdot n \rfloor)$ \tcp*{選取位置}
+$\mathbf{m}[j] \leftarrow \mathbb{1}[j \in \mathcal{S}]$ \tcp*{選取遮罩}
+\For{$l \leftarrow 1$ \KwTo $L$}{
+    $b^{(l)} \leftarrow 16$ \textbf{if} $l \in \mathcal{B}$ \textbf{else} $b$\;
+    $\hat{\bK}^{(l)}, \hat{\bV}^{(l)} \leftarrow \text{Quantize}(\bK^{(l)}, \bV^{(l)}, b^{(l)})$\;
+}
+\Return{$\hat{\bK}, \hat{\bV}, \mathbf{m}$}
+\end{algorithm}
+
+
+% IV. 實驗設定
+\section{實驗設定}
+\label{sec:setup}
+
+\subsection{模型}
+
+我們評估7個模型家族，涵蓋多種架構（表~\ref{tab:models}）。
+模型參數量從11億至140億，包含分組查詢注意力（GQA）與多頭注意力（MHA）架構，KV頭數量從2至32。
+
+\begin{table}[t]
+\centering
+\caption{評估之模型。GQA = 分組查詢注意力，MHA = 多頭注意力。}
+\label{tab:models}
+\small
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+\textbf{模型} & \textbf{參數量} & \textbf{層數} & \textbf{KV頭數} & \textbf{架構} \\
+\midrule
+Qwen2.5-3B       & 3B   & 36 & 2  & GQA \\
+Qwen2.5-7B       & 7B   & 28 & 4  & GQA \\
+Qwen2.5-14B      & 14B  & 48 & 8  & GQA \\
+Yi-1.5-6B-Chat   & 6B   & 32 & 4  & GQA \\
+Mistral-7B-v0.3  & 7B   & 32 & 8  & GQA \\
+Phi-3.5-mini     & 3.8B & 32 & 32 & MHA \\
+Pythia-2.8B      & 2.8B & 32 & 32 & MHA \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{任務與評估指標}
+
+我們在4項難度遞增的自然語言處理任務上進行評估：
+
+\begin{itemize}
+    \item \textbf{SQuAD v2}~\cite{squad}：擷取式問答。評估指標：token-F1。
+    \item \textbf{TriviaQA}~\cite{triviaqa}：開放領域問答（附檢索上下文）。評估指標：token-F1。
+    \item \textbf{HotpotQA}~\cite{hotpotqa}：多跳推理問答。評估指標：token-F1。
+    \item \textbf{MMLU}~\cite{mmlu}：多選知識問答。評估指標：正確率。
+\end{itemize}
+
+每項實驗在每個組態下使用50個樣本。
+我們依照SQuAD~v2評估慣例報告正規化 token-F1（在分詞前進行小寫轉換、移除冠詞與標點符號）。
+上下文長度於標準實驗中為100--500個 Token，於擴展實驗中為512--4096個 Token。
+每項實驗獨立隨機抽取50個樣本；在每個表格中，所有方法均在相同樣本集上進行比較。
+
+\subsection{基準方法}
+
+我們與以下方法進行比較：
+\begin{itemize}
+    \item \textbf{完整KV（BF16）}：無壓縮之上界。
+    \item \textbf{均一INT$b$}：在所有層上使用 $b$ 位元標準對稱逐 Token 量化。
+    \item \textbf{H2O}~\cite{h2o}：Heavy Hitter Oracle——累積注意力淘汰。
+    \item \textbf{SnapKV}~\cite{snapkv}：觀察窗口注意力選取。
+    \item \textbf{隨機}：均勻隨機位置選取（下界）。
+    \item \textbf{CacheGen風格}~\cite{cachegen}：基於錨點的差分編碼搭配分組量化（我們對其核心技術的重現）。
+\end{itemize}
+
+\subsection{實作細節}
+
+所有實驗使用PyTorch搭配HuggingFace Transformers，在NVIDIA RTX PRO 6000（Blackwell架構，102\,GB顯示記憶體）上執行。
+模型以BF16搭配 eager 注意力執行，以啟用注意力權重擷取。
+量化在預填充後對KV快取張量進行原地操作。
+生成過程使用手動自迴歸迴圈搭配修改後的KV快取。
+
+
+% V. 結果
+\section{結果}
+\label{sec:results}
+
+\subsection{\QtoC 選取優於所有基準方法}
+
+表~\ref{tab:selection}比較各選取方法在SQuAD~v2上25--75\%保留率下的表現。
+在25\%保留率——頻寬最受限的區間——下，\QtoC 在所有四個模型中達到最高F1。
+
+\begin{table}[t]
+\centering
+\caption{選取方法比較（SQuAD~v2，50個樣本，正規化 token-F1）。每個模型在每個保留率下最佳方法以粗體標示。}
+\label{tab:selection}
+\small
+\begin{tabular}{@{}llcccc@{}}
+\toprule
+\textbf{模型} & \textbf{保留率} & \textbf{\QtoC} & \textbf{SnapKV} & \textbf{H2O} & \textbf{隨機} \\
+\midrule
+\multirow{3}{*}{\shortstack{Qwen-3B\\(F1: 0.785)}}
+  & 75\% & \textbf{0.672} & 0.639 & 0.545 & 0.392 \\
+  & 50\% & 0.523 & \textbf{0.546} & 0.312 & 0.246 \\
+  & 25\% & \textbf{0.390} & 0.272 & 0.203 & 0.130 \\
+\midrule
+\multirow{3}{*}{\shortstack{Qwen-7B\\(F1: 0.805)}}
+  & 75\% & 0.691 & \textbf{0.694} & 0.570 & 0.447 \\
+  & 50\% & \textbf{0.600} & 0.564 & 0.429 & 0.202 \\
+  & 25\% & \textbf{0.428} & 0.292 & 0.205 & 0.193 \\
+\midrule
+\multirow{3}{*}{\shortstack{Mistral-7B\\(F1: 0.429)}}
+  & 75\% & \textbf{0.397} & 0.355 & 0.362 & 0.256 \\
+  & 50\% & 0.350 & \textbf{0.354} & 0.224 & 0.205 \\
+  & 25\% & \textbf{0.294} & 0.205 & 0.129 & 0.104 \\
+\midrule
+\multirow{3}{*}{\shortstack{Qwen-14B\\(F1: 0.770)}}
+  & 75\% & \textbf{0.737} & 0.662 & 0.529 & 0.425 \\
+  & 50\% & \textbf{0.594} & 0.522 & 0.359 & 0.186 \\
+  & 25\% & \textbf{0.360} & 0.279 & 0.160 & 0.192 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+在中等保留率（50--75\%）下，\QtoC 與SnapKV表現相近，SnapKV偶爾以微小差距勝出（例如Qwen-3B在50\%時為0.546對0.523）。
+在25\%保留率——頻寬受限傳輸最相關的區間——下，\QtoC 的優勢在所有四個模型中一致：F1較SnapKV高29--47\%，較H2O高92--128\%。
+雖然在 $n$=50 的條件下，由於高逐樣本變異數，\QtoC 與SnapKV之間的個別成對差異未達統計顯著（Wilcoxon $p$\,=\,0.14--0.29），但 \QtoC 在所有四個模型於25\%保留率下的一致性優勢值得注意。
+Q2C$>$H2O的差距在所有模型上均達統計顯著（$p < 0.01$）。
+
+\textbf{跨模型一致性}：Q2C$>$SnapKV$>$H2O$>$隨機的排序在25\%保留率下於所有四個模型中成立，橫跨兩個模型家族（Qwen、Mistral）、2--8個KV頭，以及30億至140億參數。
+
+\textbf{上下文長度擴展}：\QtoC 相較基準方法的優勢隨上下文長度增長，從短上下文的5--10個百分點到4096個 Token 時的約20個百分點，因為較長的上下文包含更多與任務無關的 Token，而任務無關方法無法有效過濾。
+
+\subsection{量化：INT8無損，INT4與模型相關}
+
+表~\ref{tab:quantization}呈現在SQuAD~v2上對全部7個模型的量化結果。
+
+\begin{table}[t]
+\centering
+\caption{量化品質佔基準F1之百分比（SQuAD~v2，正規化 token-F1）。「瓶頸」指INT4損害是否集中於單一層。$^\dagger$為基礎模型，基準值接近零（F1\,=\,0.058）。}
+\label{tab:quantization}
+\small
+\begin{tabular}{@{}lccccl@{}}
+\toprule
+\textbf{模型} & \textbf{INT8} & \textbf{INT4} & \textbf{混合} & \textbf{KV-H} & \textbf{瓶頸} \\
+\midrule
+Qwen-14B   & 100\%  & 95.5\% & 95.6\% & 8  & 無 \\
+Qwen-7B    & 101\%  & 77\%   & 101\%  & 4  & L0（100\%） \\
+Qwen-3B    & 100\%  & 96\%   & ---    & 2  & L0（弱） \\
+Yi-6B      & 99.5\% & 100\%  & 100\%  & 4  & 無 \\
+Mistral-7B & 99.8\% & 96\%   & 94\%   & 8  & 無 \\
+Phi-3.5    & 100\%  & 92\%   & 92\%   & 32 & 分散式 \\
+Pythia-2.8B$^\dagger$ & 103\% & 85\% & 76\% & 32 & 分散式 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{發現1：INT8具有普遍無損特性。}
+在所有7個模型家族中，INT8量化保持基準品質的99\%以上（均無統計顯著差異，Wilcoxon $p > 0.6$）。
+Pythia-2.8B在INT8下顯示103\%，但其接近零的基準值（F1\,=\,0.058）使百分比比較不可靠。
+
+\textbf{發現2：INT4脆弱性為模型特定屬性。}
+在經過指令微調的模型中，INT4品質從77\%（Qwen-7B）到100\%（Yi-6B）不等。
+關鍵的是，Yi-6B與Qwen-7B具有相同的GQA配置（4個KV頭、128維頭維度），但展現相反的INT4行為（100\%對77\%）。
+此結果\emph{反駁}了INT4敏感度由KV頭數量或架構類型決定的假說。
+Qwen-7B的降級達統計顯著（Wilcoxon $p$\,=\,0.002）。
+
+\textbf{發現3：兩種損害模式。}
+當INT4使品質降低超過5\%時，我們觀察到兩種模式：
+\begin{itemize}
+    \item \emph{集中式}：損害集中於單一層（Qwen-7B/3B的第0層）。混合精度可完全恢復品質。
+    \item \emph{分散式}：損害分佈於多層（Phi-3.5、Pythia-2.8B）。混合精度無法帶來改善。
+\end{itemize}
+
+\subsection{任務相關之量化敏感度}
+
+表~\ref{tab:task_quant}展示Qwen-7B（INT4最脆弱之模型）在不同任務下的INT4敏感度。
+
+\begin{table}[t]
+\centering
+\caption{Qwen-7B各任務之INT4品質佔基準百分比。}
+\label{tab:task_quant}
+\small
+\begin{tabular}{@{}llcc@{}}
+\toprule
+\textbf{任務} & \textbf{類型} & \textbf{INT4（\%）} & \textbf{混合精度（\%）} \\
+\midrule
+MMLU      & 多選題 & 100\%  & ---  \\
+TriviaQA  & 開放領域問答  & 98\%   & --- \\
+SQuAD v2  & 擷取式問答   & 77\%   & 101\% \\
+HotpotQA  & 多跳問答    & 63\%   & 94\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{發現4}：量化敏感度遵循任務難度階層。
+需要精確 Token 定位的任務（擷取式、多跳問答）最為敏感。
+推理任務（MMLU）與開放領域問答（TriviaQA）具有穩健性，因為答案可從近似表示中推導。
+
+\subsection{上下文長度擴展}
+
+我們使用大海撈針（needle-in-haystack）設定，測試512至4096個 Token 上下文長度下的KV快取量化。
+表~\ref{tab:context_scaling}揭示INT4脆弱模型與INT4穩健模型之間的顯著分歧。
+
+\begin{table}[t]
+\centering
+\caption{INT4品質之上下文長度擴展（佔基準百分比）。}
+\label{tab:context_scaling}
+\small
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+\textbf{Token數} & \multicolumn{2}{c}{\textbf{Qwen-7B（脆弱）}} & \multicolumn{2}{c}{\textbf{Yi-6B（穩健）}} \\
+\cmidrule(lr){2-3} \cmidrule(lr){4-5}
+& INT4 & 混合 & INT4 & 混合 \\
+\midrule
+512   & 70.9\% & 92.2\%  & 97.7\% & --- \\
+1024  & 55.3\% & 96.8\%  & 99.0\% & --- \\
+2048  & 56.6\% & 101.5\% & 100\%  & --- \\
+4096  & 41.6\% & 106\%   & 97.8\% & --- \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{發現5}：對於INT4脆弱模型，降級與上下文長度呈單調關係：512個 Token 時為70.9\%，劣化至4096個 Token 時的41.6\%。
+保護第0層的混合精度不僅恢復品質，在長上下文下更\emph{提升}了品質（4096個 Token 時達106\%），暗示存在有益的正則化效果。
+
+\textbf{發現6}：INT4穩健模型（Yi-6B）在所有測試的上下文長度下均維持97.7\%以上的品質，確認穩健性為穩定的模型屬性。
+
+\subsection{差分編碼之反面發現}
+
+差分編碼是CacheGen~\cite{cachegen}的核心壓縮技術，其動機為降低 Token 間的冗餘。
+我們實作三種變體：序列差分（相對前一位置的累積差異）、分組序列差分（每 $g$ 個位置重設）、以及基於錨點的差分（每個位置儲存與群組錨點的差異）——即CacheGen所使用的方法。
+
+\subsubsection{序列差分為災難性方法}
+
+序列差分搭配INT4量化僅達基準F1的16.1\%（直接INT4為72.5\%），因為量化誤差透過累積求和重建過程不斷累積。
+
+\subsubsection{CacheGen的基於錨點差分仍然劣於直接量化}
+
+表~\ref{tab:delta}比較差分編碼變體與直接量化。
+即使是群組大小為10的基於錨點差分（其架構上不存在誤差累積），仍較直接INT4低5.6個百分點。
+
+\begin{table}[t]
+\centering
+\caption{差分編碼與直接量化之比較（Qwen-7B，SQuAD~v2）。$g$~=~群組大小。}
+\label{tab:delta}
+\small
+\begin{tabular}{@{}lcc@{}}
+\toprule
+\textbf{方法} & \textbf{F1} & \textbf{佔基準\%} \\
+\midrule
+FP16（基準）         & 0.829 & 100\% \\
+\midrule
+直接INT4             & 0.601 & 72.5\% \\
+分組序列INT4（$g$=10） & 0.545 & 65.8\% \\
+分組序列INT4（$g$=4）  & 0.563 & 68.0\% \\
+錨點INT4（$g$=10）      & 0.554 & 66.9\% \\
+錨點INT4（$g$=4）       & 0.485 & 58.5\% \\
+\midrule
+直接INT8             & 0.835 & 100.8\% \\
+錨點INT8（$g$=10）    & 0.806 & 97.3\% \\
+\midrule
+混合直接INT4       & 0.840 & 101.3\% \\
+混合錨點INT4（$g$=10） & 0.782 & 94.3\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{發現7}：差分編碼在所有測試組態下，其任務品質均嚴格劣於直接量化。
+根本問題在於，差分值雖然對鍵具有較低的變異數（降低523--735倍），但在量化範圍內分佈更為均勻，導致每個元素的量化誤差更高。
+我們透過熵分析加以確認：INT4+差分達到每元素7.94位元，而直接INT4為6.13位元，意味差分編碼後的值\emph{更難}量化。
+
+\textbf{值變異數}：CacheGen報告鍵的變異數降低，但我們發現差分編碼實際上\emph{增加}了值張量的變異數1.4--1.7倍，這部分解釋了品質損失。
+
+\subsubsection{差分編碼具有模型相依性}
+
+在INT4穩健的Yi-6B上，基於錨點的INT4差分\emph{提升}了HotpotQA品質，從85.1\%升至94.3\%，增加了9.2個百分點。
+差分編碼的平滑效果可以使基準量化雜訊溫和但多跳任務需要跨位置一致性的模型受益。
+此結果突顯最佳壓縮管線必須具備模型感知能力。
+
+
+\subsection{組合管線效能}
+
+表~\ref{tab:combined}呈現三個模型在不同壓縮組態下的精確品質與頻寬量測。
+
+\begin{table}[t]
+\centering
+\caption{壓縮管線效能（SQuAD~v2，50個樣本，正規化F1）。BW = 頻寬佔BF16大小之百分比。}
+\label{tab:combined}
+\small
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+\textbf{管線} & \textbf{BW} & \textbf{Qwen-7B} & \textbf{Mistral-7B} & \textbf{Qwen-14B} \\
+\midrule
+完整BF16        & 100\%  & 100\%  & 100\%  & 100\% \\
+INT8             & 50\%   & 99.6\% & 99.8\% & 100\% \\
+INT4             & 25\%   & 96.2\% & 96.1\% & 95.5\% \\
+混合INT4       & 27.7\% & 107\%  & 93.5\% & 95.6\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{關鍵發現}：INT8在所有測試模型上提供普遍安全的2倍壓縮。
+對於Qwen-7B，混合精度方案（第0層使用FP16，其餘INT4）以3.6倍壓縮超越基準品質（107\%），顯示存在有益的正則化效果。
+INT4在所有三個模型上以4倍壓縮提供一致的約96\%品質。
+
+\subsection{壓縮延遲分析}
+
+表~\ref{tab:timing}呈現壓縮管線各階段的計時，量測於RTX PRO 6000 Blackwell GPU上。
+對於每個模型，我們報告50個樣本的平均實際經過時間。
+
+\begin{table}[t]
+\centering
+\caption{壓縮管線計時（ms）與100\,Mbps下之模擬傳輸。}
+\label{tab:timing}
+\small
+\begin{tabular}{@{}lcccccc@{}}
+\toprule
+\textbf{模型} & \textbf{預填充} & \textbf{量化} & \textbf{KV大小} & \textbf{傳輸} & \textbf{總計} \\
+& (ms) & (ms) & (MB) & (ms) & (ms) \\
+\midrule
+\multicolumn{6}{@{}l}{\textit{Qwen-7B（基準F1: 0.696）}} \\
+\quad BF16    & 25 & --- & 9.3  & 780  & 972 \\
+\quad INT8    & 18 & 3.4 & 4.7  & 390  & 579 \\
+\quad INT4    & 18 & 2.8 & 2.3  & 195  & 424 \\
+\quad 混合   & 18 & 2.7 & 2.6  & 216  & 392 \\
+\midrule
+\multicolumn{6}{@{}l}{\textit{Mistral-7B（基準F1: 0.434）}} \\
+\quad BF16    & 21 & --- & 22.4 & 1881 & 2485 \\
+\quad INT8    & 22 & 3.3 & 11.2 & 940  & 1557 \\
+\quad INT4    & 22 & 3.3 & 5.6  & 470  & 1146 \\
+\midrule
+\multicolumn{6}{@{}l}{\textit{Qwen-14B（基準F1: 0.773）}} \\
+\quad BF16    & 53 & --- & 31.9 & 2676 & 3059 \\
+\quad INT8    & 56 & 4.8 & 15.9 & 1338 & 1730 \\
+\quad INT4    & 57 & 4.8 & 8.0  & 669  & 1124 \\
+\quad 混合   & 57 & 4.7 & 8.5  & 711  & 1121 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{發現8}：傳輸時間主導端對端延遲。
+對於Qwen-14B在100\,Mbps下，BF16傳輸耗時2.7秒，而整個壓縮管線（預填充+量化）僅需62\,ms——43倍的比率。
+INT8量化以3.3\,ms的量化開銷將傳輸時間減半（2.7秒 $\to$ 1.3秒），達成\textbf{淨延遲降低1.3秒}（44\%改善）。
+INT4將傳輸降低至0.7秒——相較BF16提升4倍——代價為4.5\%的品質損失。
+
+\textbf{頻寬擴展}：在10\,Mbps（典型邊緣上行）下，未壓縮的Qwen-14B KV快取需要26.8秒——明顯不切實際。
+INT4壓縮將其降低至6.7秒；搭配50\%保留率的 \QtoC 選取，有效傳輸降至3.3秒。
+
+
+% VI. 討論
+\section{討論}
+\label{sec:discussion}
+
+\subsection{實際部署指引}
+
+根據我們的特徵分析，我們建議：
+
+\begin{enumerate}
+    \item \textbf{始終先量化至INT8}——普遍無損，2倍壓縮。
+    \item \textbf{執行逐層INT4敏感度測試}（每個模型一次性成本）以識別瓶頸層。
+    \item \textbf{若為INT4穩健模型}：使用均一INT4以達4倍壓縮；加入 \QtoC 選取以進一步縮減。
+    \item \textbf{若為INT4脆弱且瓶頸集中}：使用混合精度（以FP16保護瓶頸層）達3.6倍無損壓縮。
+    \item \textbf{若為INT4脆弱且損害分散}：維持INT8；以 \QtoC 選取作為主要壓縮機制。
+    \item \textbf{避免在INT4下使用差分編碼}——儘管降低變異數但會劣化品質。
+\end{enumerate}
+
+\subsection{與CacheGen之比較}
+
+表~\ref{tab:vs_cachegen}總結與CacheGen~\cite{cachegen}（最直接可比之系統）的差異。
+CacheGen著重於系統層級最佳化（CUDA核心、算術編碼），而我們的工作處理壓縮品質維度，證明任務感知選取與模型特定量化所帶來的品質提升大於編碼層級技術。
+
+\begin{table}[t]
+\centering
+\caption{與CacheGen之比較。}
+\label{tab:vs_cachegen}
+\small
+\begin{tabular}{@{}p{1.6cm}p{2.8cm}p{2.8cm}@{}}
+\toprule
+\textbf{面向} & \textbf{CacheGen} & \textbf{本研究} \\
+\midrule
+選取方法    & 無（所有 Token） & \QtoC 任務感知 \\
+差分編碼   & 核心技術    & 反面證據 \\
+層精度  & 漸進式啟發法  & 診斷式方案 \\
+模型       & LLaMA、Mistral    & 7個家族 \\
+任務        & 3項長上下文    & 4項多元任務 \\
+上下文      & 未研究       & 512--4096 Token \\
+延遲      & CUDA核心      & 各階段計時 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{研究限制}
+
+我們的工作有以下限制。
+首先，雖然我們量測各階段延遲並模擬傳輸時間，但未實作具有真實網路條件（抖動、封包遺失）的完整發送端-接收端原型。
+其次，我們最大的模型為140億參數，而生產環境部署使用700億以上參數的模型。
+第三，我們未在量化之上施加熵編碼，此技術可能提供額外壓縮。
+第四，\QtoC 選取需要完整的預填充過程以計算注意力權重，無法在序列中途應用。
+最後，我們的逐 Token 量化為每個 Token 每層儲存一個縮放因子；更精密的分組量化可降低此額外開銷。
+
+% VII. 相關工作
+\section{相關工作}
+\label{sec:related}
+
+\textbf{KV快取淘汰。}
+H2O~\cite{h2o}基於累積注意力識別「重度使用者」Token，並淘汰低分位置。
+SnapKV~\cite{snapkv}使用近期觀察窗口來選取重要位置。
+StreamingLLM~\cite{streamingllm}發現保留初始「注意力沉積」Token 可實現無限長度生成。
+Scissorhands~\cite{scissorhands}利用重要性的持久性，在測試時修剪KV快取。
+FastGen~\cite{fastgen}分析逐頭注意力結構以制定自適應壓縮策略。
+這些方法與任務無關；我們的 \QtoC 使用查詢特定的注意力進行任務感知選取。
+Quest~\cite{quest}是最相近的工作，在推論時使用查詢感知的頁面級稀疏性；\QtoC 的不同之處在於以 Token 粒度進行跨裝置傳輸操作，並將選取與量化結合。
+
+\textbf{KV快取量化。}
+KIVI~\cite{kivi}提出逐通道鍵量化與逐 Token 值量化。
+KVQuant~\cite{kvquant}使用非均勻量化搭配逐通道校準。
+GEAR~\cite{gear}結合超低精度量化與低秩殘差近似。
+QAQ~\cite{qaq}根據注意力分數分配位元寬度。
+這些工作研究單一模型；我們提供首個橫跨7個模型家族的跨架構特徵分析，揭示INT4脆弱性為模型特定之訓練屬性。
+
+\textbf{KV快取串流與重用。}
+CacheGen~\cite{cachegen}是最直接相關的工作，提出差分編碼搭配逐層位元分配與算術編碼，用於KV快取的網路傳輸。
+我們證明其核心差分編碼技術在與量化結合時會降低任務品質，且任務感知選取（CacheGen中缺少此功能）提供更大的品質增益。
+CacheBlend~\cite{cacheblend}透過選擇性重新運算來處理檢索增強生成（RAG）中預計算KV片段的融合，而CachedAttention~\cite{cachedattention}為多輪重用持久化KV快取。
+這些方法最佳化單一服務系統內的KV快取重用；我們的工作針對頻寬受限下的跨裝置傳輸。
+
+\textbf{協作式推論系統。}
+DistServe~\cite{distserve}與Mooncake~\cite{mooncake}將預填充與解碼階段分散至GPU叢集，但透過高頻寬互連傳輸完整KV快取。
+我們的工作處理互補問題——當頻寬有限時\emph{該傳輸什麼}，透過任務感知壓縮加以解決。
+
+\textbf{架構級壓縮。}
+DeepSeek-V2~\cite{deepseek}中的多潛在注意力（MLA）透過低秩投影在架構層級壓縮KV快取。
+分組查詢注意力（GQA）~\cite{gqa}在查詢頭之間共享鍵值頭。
+PALU~\cite{palu}在推論時施加低秩分解。
+這些方法與我們的事後壓縮方法正交，可以組合使用。
+
+
+% VIII. 結論
+\section{結論}
+\label{sec:conclusion}
+
+我們提出一套任務感知KV快取壓縮管線，用於頻寬高效之協作式LLM推論。
+透過橫跨7個模型家族、4項任務與4種上下文長度的系統性評估，我們確立以下結論：
+(1)~\QtoC 查詢對上下文注意力選取在25\% Token 保留率下，超越現有方法——較SnapKV高29--47\%，較H2O高92--128\%；
+(2)~INT8量化具有普遍無損特性，而INT4脆弱性為與架構無關之湧現模型屬性；
+(3)~搭配瓶頸層保護的混合精度量化，對INT4脆弱模型達成3.6倍無損壓縮；
+(4)~差分編碼在與過度量化結合時會降低任務品質，與其降低變異數之設計動機相悖；
+(5)~傳輸時間以43倍之比主導端對端延遲（遠超壓縮開銷），使得即使簡單的量化也高度有效。
+我們的壓縮管線在100\,Mbps下，將140億參數模型的KV快取傳輸時間從2.7秒降低至0.7秒，實現了頻寬受限之邊緣-雲端鏈路上的實用協作式推論。
+
+\balance
+
+% 參考文獻
+\bibliographystyle{IEEEtran}
+% 暫時使用行內參考文獻。投稿時替換為 .bib 檔案。
+\begin{thebibliography}{20}
+
+\bibitem{cachegen}
+Y.~Liu \etal, ``CacheGen: KV Cache Compression and Streaming for Fast Large Language Model Serving,'' in \emph{Proc.\ ACM SIGCOMM}, 2024.
+
+\bibitem{splitwise}
+P.~Patel \etal, ``Splitwise: Efficient Generative LLM Inference Using Phase Splitting,'' in \emph{Proc.\ ISCA}, 2024.
+
+\bibitem{h2o}
+Z.~Zhang \etal, ``H2O: Heavy-Hitter Oracle for Efficient Generative Inference of Large Language Models,'' in \emph{Proc.\ NeurIPS}, 2023.
+
+\bibitem{snapkv}
+Y.~Li \etal, ``SnapKV: LLM Knows What You are Looking for Before Generation,'' \emph{arXiv:2404.14469}, 2024.
+
+\bibitem{kivi}
+Z.~Liu \etal, ``KIVI: A Tuning-Free Asymmetric 2bit Quantization for KV Cache,'' in \emph{Proc.\ ICML}, 2024.
+
+\bibitem{kvquant}
+C.~Hooper \etal, ``KVQuant: Towards 10 Million Context Length LLM Inference with KV Cache Quantization,'' \emph{arXiv:2401.18079}, 2024.
+
+\bibitem{streamingllm}
+G.~Xiao \etal, ``Efficient Streaming Language Models with Attention Sinks,'' in \emph{Proc.\ ICLR}, 2024.
+
+\bibitem{squad}
+P.~Rajpurkar \etal, ``Know What You Don't Know: Unanswerable Questions for SQuAD,'' in \emph{Proc.\ ACL}, 2018.
+
+\bibitem{triviaqa}
+M.~Joshi \etal, ``TriviaQA: A Large Scale Distantly Supervised Challenge Dataset for Reading Comprehension,'' in \emph{Proc.\ ACL}, 2017.
+
+\bibitem{hotpotqa}
+Z.~Yang \etal, ``HotpotQA: A Dataset for Diverse, Explainable Multi-hop Question Answering,'' in \emph{Proc.\ EMNLP}, 2018.
+
+\bibitem{mmlu}
+D.~Hendrycks \etal, ``Measuring Massive Multitask Language Understanding,'' in \emph{Proc.\ ICLR}, 2021.
+
+\bibitem{deepseek}
+DeepSeek-AI, ``DeepSeek-V2: A Strong, Economical, and Efficient Mixture-of-Experts Language Model,'' \emph{arXiv:2405.04434}, 2024.
+
+\bibitem{gqa}
+J.~Ainslie \etal, ``GQA: Training Generalized Multi-Query Transformer Models from Multi-Head Checkpoints,'' in \emph{Proc.\ EMNLP}, 2023.
+
+\bibitem{palu}
+C.~Chang \etal, ``PALU: Compressing KV-Cache with Low-Rank Projection,'' \emph{arXiv:2407.21118}, 2024.
+
+\bibitem{qaq}
+H.~Dong \etal, ``QAQ: Quality Adaptive Quantization for LLM KV Cache,'' \emph{arXiv:2403.04643}, 2024.
+
+\bibitem{scissorhands}
+Z.~Liu \etal, ``Scissorhands: Exploiting the Persistence of Importance Hypothesis for LLM KV Cache Compression at Test Time,'' in \emph{Proc.\ NeurIPS}, 2023.
+
+\bibitem{fastgen}
+S.~Ge \etal, ``Model Tells You What to Discard: Adaptive KV Cache Compression for LLMs,'' in \emph{Proc.\ ICLR}, 2024.
+
+\bibitem{quest}
+J.~Tang \etal, ``Quest: Query-Aware Sparsity for Efficient Long-Context LLM Inference,'' in \emph{Proc.\ ICML}, 2024.
+
+\bibitem{gear}
+H.~Kang \etal, ``GEAR: An Efficient KV Cache Compression Recipe for Near-Lossless Generative Inference of LLM,'' in \emph{Proc.\ NeurIPS ENLSP Workshop}, 2024.
+
+\bibitem{cacheblend}
+J.~Yao \etal, ``CacheBlend: Fast Large Language Model Serving for RAG with Cached Knowledge Fusion,'' in \emph{Proc.\ EuroSys}, 2025.
+
+\bibitem{cachedattention}
+B.~Gao \etal, ``Cost-Efficient Large Language Model Serving for Multi-turn Conversations with CachedAttention,'' in \emph{Proc.\ USENIX ATC}, 2024.
+
+\bibitem{distserve}
+Y.~Zhong \etal, ``DistServe: Disaggregating Prefill and Decoding for Goodput-optimized Large Language Model Serving,'' in \emph{Proc.\ OSDI}, 2024.
+
+\bibitem{mooncake}
+R.~Qin \etal, ``Mooncake: A KVCache-centric Disaggregated Architecture for LLM Serving,'' in \emph{Proc.\ FAST}, 2025.
+
+\end{thebibliography}
+
+\end{document}

@@ -43,6 +43,9 @@ ENV/
 
 # Compiled PDFs (figures are tracked, compiled papers are not)
 papers/*/main.pdf
+papers/*/main-zh.pdf
+papers/*/*.pdf
+!papers/*/figures/*.pdf
 
 # Environment / credentials
 .env
