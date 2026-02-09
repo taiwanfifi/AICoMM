@@ -53,6 +53,10 @@ papers/*/*.pdf
 # Claude Code local config
 .claude/
 
+# Export / utility scripts
+export_project.py
+*_export.txt
+
 # Internal / archived files (not for public)
 archive/
 CLAUDE.md

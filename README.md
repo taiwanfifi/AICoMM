@@ -121,4 +121,4 @@ cd papers/paper-B && pdflatex main.tex
 
 ## License
 
-This research is provided for academic and educational purposes.
+This project is licensed under the [MIT License](LICENSE).
