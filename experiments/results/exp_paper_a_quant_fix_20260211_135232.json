@@ -1,0 +1,4443 @@
+{
+  "metadata": {
+    "experiment": "paper_a_quant_fix",
+    "description": "Fixed quantization: manual generation from quantized cache (Qwen-7B, n=200)",
+    "bug_fixed": "original used past_key_values=None in generate(), ignoring quantized cache",
+    "model": "Qwen/Qwen2.5-7B",
+    "n_samples": 200,
+    "seed": 42,
+    "timestamp": "20260211_135232"
+  },
+  "summary": {
+    "model": "Qwen/Qwen2.5-7B",
+    "n_valid": 200,
+    "full_f1_mean": 0.7051920918449704,
+    "sensitive_layers": [
+      0,
+      1,
+      2,
+      3,
+      13,
+      19,
+      27
+    ],
+    "elapsed_minutes": 7.855540510018667,
+    "BF16_mean": 0.7062830571661991,
+    "BF16_ci95": 0.054640474873989105,
+    "BF16_pct": 100.15470470157632,
+    "INT8_mean": 0.7008188468588591,
+    "INT8_ci95": 0.05488324828289065,
+    "INT8_pct": 99.37985053481388,
+    "INT4_mean": 0.48413301258379393,
+    "INT4_ci95": 0.05843775971461435,
+    "INT4_pct": 68.65264346869985,
+    "Mixed-INT4_mean": 0.6600023675864586,
+    "Mixed-INT4_ci95": 0.05770915103209523,
+    "Mixed-INT4_pct": 93.59185606573047,
+    "INT8_vs_BF16_p": 0.7234447760137854,
+    "INT4_vs_BF16_p": 1.4817189269460527e-11,
+    "Mixed-INT4_vs_BF16_p": 0.0488916398702383
+  },
+  "per_sample": [
+    {
+      "sample_idx": 0,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "the Ludendorff Bridge"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "Ludendorff Bridge"
+        },
+        "INT4": {
+          "f1": 1.0,
+          "answer": "the Ludendorff Bridge"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "Ludendorff Bridge"
+        }
+      }
+    },
+    {
+      "sample_idx": 1,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "unknown"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "unknown"
+        },
+        "INT4": {
+          "f1": 0.0,
+          "answer": "The type of process involved in the depletion of the Sun's oxygen-1 is a process of called \"fraction"
+        },
+        "Mixed-INT4": {
+          "f1": 0.0,
+          "answer": "The type of process involved in the depletion of the Sun's oxygen-16 is a process of chemical and ph"
+        }
+      }
+    },
+    {
+      "sample_idx": 2,
+      "full_f1": 0.7499999999999999,
+      "quantization": {
+        "BF16": {
+          "f1": 0.7499999999999999,
+          "answer": "adaptive and innate"
+        },
+        "INT8": {
+          "f1": 0.7499999999999999,
+          "answer": "adaptive and innate"
+        },
+        "INT4": {
+          "f1": 0.7499999999999999,
+          "answer": "adaptive and innate"
+        },
+        "Mixed-INT4": {
+          "f1": 0.7499999999999999,
+          "answer": "adaptive and innate"
+        }
+      }
+    },
+    {
+      "sample_idx": 3,
+      "full_f1": 0.18181818181818182,
+      "quantization": {
+        "BF16": {
+          "f1": 0.18181818181818182,
+          "answer": "Prussia"
+        },
+        "INT8": {
+          "f1": 0.18181818181818182,
+          "answer": "Prussia"
+        },
+        "INT4": {
+          "f1": 0.4615384615384615,
+          "answer": "In the European theatre"
+        },
+        "Mixed-INT4": {
+          "f1": 0.0,
+          "answer": "Europe"
+        }
+      }
+    },
+    {
+      "sample_idx": 4,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "Tears"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "Tears"
+        },
+        "INT4": {
+          "f1": 0.0,
+          "answer": "and urine"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "Tears"
+        }
+      }
+    },
+    {
+      "sample_idx": 5,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "CBSE"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "CBSE"
+        },
+        "INT4": {
+          "f1": 1.0,
+          "answer": "CBSE"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "CBSE"
+        }
+      }
+    },
+    {
+      "sample_idx": 6,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "ten million"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "ten million"
+        },
+        "INT4": {
+          "f1": 1.0,
+          "answer": "ten million"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "ten million"
+        }
+      }
+    },
+    {
+      "sample_idx": 7,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "McCrary"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "McCrary"
+        },
+        "INT4": {
+          "f1": 1.0,
+          "answer": "McCrary"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "McCrary"
+        }
+      }
+    },
+    {
+      "sample_idx": 8,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "1996"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "1996"
+        },
+        "INT4": {
+          "f1": 0.0,
+          "answer": "2 12 19 1 1 1 1 1 1 1 9 1 0  was  was  was  is  it  at  at  at  at  at  at  at  at  at  at  at  at  "
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "1996"
+        }
+      }
+    },
+    {
+      "sample_idx": 9,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "planning,[citation needed] design, and financing"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "planning,[citation needed] design, and financing"
+        },
+        "INT4": {
+          "f1": 1.0,
+          "answer": "planning,[citation needed] design, and financing"
+        },
+        "Mixed-INT4": {
+          "f1": 0.0,
+          "answer": "planning"
+        }
+      }
+    },
+    {
+      "sample_idx": 10,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "the dukes"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "the dukes"
+        },
+        "INT4": {
+          "f1": 0.6666666666666666,
+          "answer": "the d dukes"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "the dukes"
+        }
+      }
+    },
+    {
+      "sample_idx": 11,
+      "full_f1": 0.0,
+      "quantization": {
+        "BF16": {
+          "f1": 0.0,
+          "answer": "hundreds of thousands of Protestants,"
+        },
+        "INT8": {
+          "f1": 0.0,
+          "answer": "hundreds of thousands of Protestants, many of whom became intellectuals, doctors and business leader"
+        },
+        "INT4": {
+          "f1": 0.0,
+          "answer": "."
+        },
+        "Mixed-INT4": {
+          "f1": 0.0,
+          "answer": "hundreds of thousands of Protestants, many of whom became intellectuals, doctors and business leader"
+        }
+      }
+    },
+    {
+      "sample_idx": 12,
+      "full_f1": 0.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "No"
+        },
+        "INT8": {
+          "f1": 0.0,
+          "answer": "BSkyB does not have veto over the presence of channels on their EPG"
+        },
+        "INT4": {
+          "f1": 0.18181818181818182,
+          "answer": "No, BSkyB cannot veto the presence of channels on their Epg."
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "No"
+        }
+      }
+    },
+    {
+      "sample_idx": 13,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "breaking the law for self-gratification"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "breaking the law for self-gratification"
+        },
+        "INT4": {
+          "f1": 1.0,
+          "answer": "breaking the law for self-gratification"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "breaking the law for self-gratification"
+        }
+      }
+    },
+    {
+      "sample_idx": 14,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "kilopond"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "kilopond"
+        },
+        "INT4": {
+          "f1": 1.0,
+          "answer": "kilopond"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "kilopond"
+        }
+      }
+    },
+    {
+      "sample_idx": 15,
+      "full_f1": 0.6666666666666666,
+      "quantization": {
+        "BF16": {
+          "f1": 0.6666666666666666,
+          "answer": "paintings"
+        },
+        "INT8": {
+          "f1": 0.6666666666666666,
+          "answer": "paintings"
+        },
+        "INT4": {
+          "f1": 0.2222222222222222,
+          "answer": "one of the best collections of paintings in the country including some paintings from Adolf Hitler's"
+        },
+        "Mixed-INT4": {
+          "f1": 0.6666666666666666,
+          "answer": "paintings"
+        }
+      }
+    },
+    {
+      "sample_idx": 16,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "William Maclure"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "William Maclure"
+        },
+        "INT4": {
+          "f1": 0.2666666666666667,
+          "answer": "The first geological map of the U. S was produced in 1 by William Maclure"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "William Maclure"
+        }
+      }
+    },
+    {
+      "sample_idx": 17,
+      "full_f1": 0.8,
+      "quantization": {
+        "BF16": {
+          "f1": 0.8,
+          "answer": "25 million"
+        },
+        "INT8": {
+          "f1": 0.8,
+          "answer": "25 million"
+        },
+        "INT4": {
+          "f1": 0.4444444444444444,
+          "answer": "25 million Chinese and other Asians"
+        },
+        "Mixed-INT4": {
+          "f1": 0.8,
+          "answer": "25 million"
+        }
+      }
+    },
+    {
+      "sample_idx": 18,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "probabilistic Turing machines, non-deterministic Turing machines"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "probabilistic Turing machines, non-deterministic Turing machines"
+        },
+        "INT4": {
+          "f1": 0.8333333333333334,
+          "answer": "deterministic Turing machines, probabilistic Turing machines"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "probabilistic Turing machines, non-deterministic Turing machines"
+        }
+      }
+    },
+    {
+      "sample_idx": 19,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "cartels"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "cartels"
+        },
+        "INT4": {
+          "f1": 0.4,
+          "answer": "Article 6 banned cartels"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "cartels"
+        }
+      }
+    },
+    {
+      "sample_idx": 20,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "over 100 billion dollars"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "over 100 billion dollars"
+        },
+        "INT4": {
+          "f1": 0.75,
+          "answer": "over 1 billion dollars"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "over 100 billion dollars"
+        }
+      }
+    },
+    {
+      "sample_idx": 21,
+      "full_f1": 0.0,
+      "quantization": {
+        "BF16": {
+          "f1": 0.0,
+          "answer": "January"
+        },
+        "INT8": {
+          "f1": 0.0,
+          "answer": "January"
+        },
+        "INT4": {
+          "f1": 0.0,
+          "answer": ""
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "April"
+        }
+      }
+    },
+    {
+      "sample_idx": 22,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "168,637"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "168,637"
+        },
+        "INT4": {
+          "f1": 1.0,
+          "answer": "168,637"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "168,637"
+        }
+      }
+    },
+    {
+      "sample_idx": 23,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "4,222,000"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "4,222,000"
+        },
+        "INT4": {
+          "f1": 0.0,
+          "answer": ""
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "4,222,000"
+        }
+      }
+    },
+    {
+      "sample_idx": 24,
+      "full_f1": 0.16666666666666669,
+      "quantization": {
+        "BF16": {
+          "f1": 0.0,
+          "answer": "F and \u2212F"
+        },
+        "INT8": {
+          "f1": 0.16666666666666669,
+          "answer": "F and \u2212F are equal in magnitude and opposite in direction"
+        },
+        "INT4": {
+          "f1": 0.0,
+          "answer": ""
+        },
+        "Mixed-INT4": {
+          "f1": 0.16666666666666669,
+          "answer": "F and \u2212F are equal in magnitude and opposite in direction"
+        }
+      }
+    },
+    {
+      "sample_idx": 25,
+      "full_f1": 0.0,
+      "quantization": {
+        "BF16": {
+          "f1": 0.0,
+          "answer": "rock units"
+        },
+        "INT8": {
+          "f1": 0.0,
+          "answer": "rock units"
+        },
+        "INT4": {
+          "f1": 0.0,
+          "answer": "datable material"
+        },
+        "Mixed-INT4": {
+          "f1": 0.0,
+          "answer": "rock units"
+        }
+      }
+    },
+    {
+      "sample_idx": 26,
+      "full_f1": 0.6,
+      "quantization": {
+        "BF16": {
+          "f1": 0.6,
+          "answer": "the Art Deco style in painting and art"
+        },
+        "INT8": {
+          "f1": 0.6,
+          "answer": "the Art Deco style in painting and art"
+        },
+        "INT4": {
+          "f1": 0.6,
+          "answer": "the Art Deco style in painting and art"
+        },
+        "Mixed-INT4": {
+          "f1": 0.6,
+          "answer": "the Art Deco style in painting and art"
+        }
+      }
+    },
+    {
+      "sample_idx": 27,
+      "full_f1": 0.0,
+      "quantization": {
+        "BF16": {
+          "f1": 0.0,
+          "answer": "Private Bill Committees"
+        },
+        "INT8": {
+          "f1": 0.0,
+          "answer": "Private Bill Committees"
+        },
+        "INT4": {
+          "f1": 0.0,
+          "answer": ": Private Bill Committees"
+        },
+        "Mixed-INT4": {
+          "f1": 0.0,
+          "answer": "Private Bill Committees"
+        }
+      }
+    },
+    {
+      "sample_idx": 28,
+      "full_f1": 0.0,
+      "quantization": {
+        "BF16": {
+          "f1": 0.0,
+          "answer": "2200"
+        },
+        "INT8": {
+          "f1": 0.0,
+          "answer": "2200"
+        },
+        "INT4": {
+          "f1": 0.0,
+          "answer": "220 the IPCC Third Assessmentment Report published?"
+        },
+        "Mixed-INT4": {
+          "f1": 0.0,
+          "answer": "2200"
+        }
+      }
+    },
+    {
+      "sample_idx": 29,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "English"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "English"
+        },
+        "INT4": {
+          "f1": 1.0,
+          "answer": "English"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "English"
+        }
+      }
+    },
+    {
+      "sample_idx": 30,
+      "full_f1": 0.5,
+      "quantization": {
+        "BF16": {
+          "f1": 0.5,
+          "answer": "declined"
+        },
+        "INT8": {
+          "f1": 0.5,
+          "answer": "declined"
+        },
+        "INT4": {
+          "f1": 0.09090909090909091,
+          "answer": "The rate of deforestation in in the Amazon region of Brazil between 220 20 18% higher than in the pr"
+        },
+        "Mixed-INT4": {
+          "f1": 0.11764705882352941,
+          "answer": "The rate of deforestation in the Amazon region of Brazil decreased significantly between 22004 and 2"
+        }
+      }
+    },
+    {
+      "sample_idx": 31,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "through various associations and other arrangements"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "through various associations and other arrangements"
+        },
+        "INT4": {
+          "f1": 1.0,
+          "answer": "through various associations and other arrangements"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "through various associations and other arrangements"
+        }
+      }
+    },
+    {
+      "sample_idx": 32,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "most rigorous, intense"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "most rigorous, intense"
+        },
+        "INT4": {
+          "f1": 0.8,
+          "answer": "most rigorous"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "the most rigorous, intense"
+        }
+      }
+    },
+    {
+      "sample_idx": 33,
+      "full_f1": 0.6153846153846153,
+      "quantization": {
+        "BF16": {
+          "f1": 0.6153846153846153,
+          "answer": "The majority rule is used to avoid absolute powers and the high risk of a conflict of interest."
+        },
+        "INT8": {
+          "f1": 0.6153846153846153,
+          "answer": "The majority rule is used to avoid absolute powers and the high risk of a conflict of interest."
+        },
+        "INT4": {
+          "f1": 0.06451612903225806,
+          "answer": ": The majority rule is is and is reflect much similarity to the checks and balances system of the us"
+        },
+        "Mixed-INT4": {
+          "f1": 0.6470588235294118,
+          "answer": "The relevant information to answer the above question is: The reason for the majority rule is the hi"
+        }
+      }
+    },
+    {
+      "sample_idx": 34,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "females"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "females"
+        },
+        "INT4": {
+          "f1": 1.0,
+          "answer": "females"
+        },
+        "Mixed-INT4": {
+          "f1": 0.0,
+          "answer": "female"
+        }
+      }
+    },
+    {
+      "sample_idx": 35,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "cytokine TGF-\u03b2"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "cytokine TGF-\u03b2"
+        },
+        "INT4": {
+          "f1": 0.6666666666666666,
+          "answer": "TGF-\u03b2"
+        },
+        "Mixed-INT4": {
+          "f1": 0.6666666666666666,
+          "answer": "TGF-\u03b2"
+        }
+      }
+    },
+    {
+      "sample_idx": 36,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "orientalism"
+        },
+        "INT8": {
+          "f1": 0.0,
+          "answer": "orientallism"
+        },
+        "INT4": {
+          "f1": 1.0,
+          "answer": ". Orientalism"
+        },
+        "Mixed-INT4": {
+          "f1": 0.0,
+          "answer": "orientallism"
+        }
+      }
+    },
+    {
+      "sample_idx": 37,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "to avoid being targeted by the boycott"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "to avoid being targeted by the boycott"
+        },
+        "INT4": {
+          "f1": 0.4615384615384615,
+          "answer": "some they sought to disassociate themselves from United States foreign policy in the Middle East to "
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "to avoid being targeted by the boycott"
+        }
+      }
+    },
+    {
+      "sample_idx": 38,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "1976"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "1976"
+        },
+        "INT4": {
+          "f1": 0.0,
+          "answer": "1 1 1 1  in  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "1976"
+        }
+      }
+    },
+    {
+      "sample_idx": 39,
+      "full_f1": 0.0,
+      "quantization": {
+        "BF16": {
+          "f1": 0.0,
+          "answer": "91% to 93%"
+        },
+        "INT8": {
+          "f1": 0.0,
+          "answer": "91% to 93"
+        },
+        "INT4": {
+          "f1": 0.047619047619047616,
+          "answer": "::: The sieve method of of producing O\n2 gas is involves passing a stream clean, dry air through one"
+        },
+        "Mixed-INT4": {
+          "f1": 0.0,
+          "answer": "91% to 93"
+        }
+      }
+    },
+    {
+      "sample_idx": 40,
+      "full_f1": 0.6666666666666666,
+      "quantization": {
+        "BF16": {
+          "f1": 0.6666666666666666,
+          "answer": "Hilux"
+        },
+        "INT8": {
+          "f1": 0.6666666666666666,
+          "answer": "Hilux"
+        },
+        "INT4": {
+          "f1": 0.8,
+          "answer": ": Toyota Hilux Surf"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "Toyota Hilux"
+        }
+      }
+    },
+    {
+      "sample_idx": 41,
+      "full_f1": 0.5,
+      "quantization": {
+        "BF16": {
+          "f1": 0.5,
+          "answer": "1338\u201339"
+        },
+        "INT8": {
+          "f1": 0.5,
+          "answer": "1338\u201339"
+        },
+        "INT4": {
+          "f1": 0.0,
+          "answer": "1 1338"
+        },
+        "Mixed-INT4": {
+          "f1": 0.0,
+          "answer": "700"
+        }
+      }
+    },
+    {
+      "sample_idx": 42,
+      "full_f1": 0.0,
+      "quantization": {
+        "BF16": {
+          "f1": 0.0,
+          "answer": "1.4 times normal"
+        },
+        "INT8": {
+          "f1": 0.0,
+          "answer": "1.4 times normal"
+        },
+        "INT4": {
+          "f1": 0.2857142857142857,
+          "answer": "1 O\n in, the O\n in in the astronaut's arterial blood is only marginally more than normal sea-level O"
+        },
+        "Mixed-INT4": {
+          "f1": 0.0,
+          "answer": "1.4 times normal"
+        }
+      }
+    },
+    {
+      "sample_idx": 43,
+      "full_f1": 0.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "a steep and steady decline"
+        },
+        "INT8": {
+          "f1": 0.0,
+          "answer": "The defeat along with economic stagnation in the defeated countries, was blamed on the secular Arab "
+        },
+        "INT4": {
+          "f1": 0.13333333333333333,
+          "answer": ": the popularity and credibility of of secular, socialist and nationalist politics declined."
+        },
+        "Mixed-INT4": {
+          "f1": 0.0,
+          "answer": ":\n\nThe defeat along with economic stagnation in the defeated countries, was blamed on the secular Ar"
+        }
+      }
+    },
+    {
+      "sample_idx": 44,
+      "full_f1": 0.923076923076923,
+      "quantization": {
+        "BF16": {
+          "f1": 0.923076923076923,
+          "answer": "Court of Justice of the European Union"
+        },
+        "INT8": {
+          "f1": 0.923076923076923,
+          "answer": "Court of Justice of the European Union"
+        },
+        "INT4": {
+          "f1": 0.923076923076923,
+          "answer": ": the Court of Justice of the European Union"
+        },
+        "Mixed-INT4": {
+          "f1": 0.923076923076923,
+          "answer": "Court of Justice of the European Union"
+        }
+      }
+    },
+    {
+      "sample_idx": 45,
+      "full_f1": 0.0,
+      "quantization": {
+        "BF16": {
+          "f1": 0.0,
+          "answer": "2 the Last Glacial Maximum (LGM) and subsequent deglaciation."
+        },
+        "INT8": {
+          "f1": 0.0,
+          "answer": "2 the Last Glacial Maximum (LGM) and subsequent deglaciation."
+        },
+        "INT4": {
+          "f1": 0.0,
+          "answer": "2 2  2  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1"
+        },
+        "Mixed-INT4": {
+          "f1": 0.0,
+          "answer": "2 2  2  2  1,0  2  2  2  2  1,0  0  2  2  2  1,"
+        }
+      }
+    },
+    {
+      "sample_idx": 46,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "Commissioners"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "Commissioners"
+        },
+        "INT4": {
+          "f1": 1.0,
+          "answer": ": the Commissioners"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "Commissioners"
+        }
+      }
+    },
+    {
+      "sample_idx": 47,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "nearly $40 per barrel"
+        },
+        "INT8": {
+          "f1": 0.6666666666666666,
+          "answer": "nearly $40"
+        },
+        "INT4": {
+          "f1": 0.36363636363636365,
+          "answer": "nearly $40 the highest price price of oil"
+        },
+        "Mixed-INT4": {
+          "f1": 0.6666666666666666,
+          "answer": "nearly $40"
+        }
+      }
+    },
+    {
+      "sample_idx": 48,
+      "full_f1": 0.4,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "\"Wise up or die.\""
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "\"Wise up or die.\""
+        },
+        "INT4": {
+          "f1": 0.6666666666666666,
+          "answer": "die or"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "\"Wise up or die.\""
+        }
+      }
+    },
+    {
+      "sample_idx": 49,
+      "full_f1": 0.0,
+      "quantization": {
+        "BF16": {
+          "f1": 0.0,
+          "answer": "2110"
+        },
+        "INT8": {
+          "f1": 0.0,
+          "answer": "2 1100"
+        },
+        "INT4": {
+          "f1": 0.0,
+          "answer": "2110"
+        },
+        "Mixed-INT4": {
+          "f1": 0.0,
+          "answer": "2 2110"
+        }
+      }
+    },
+    {
+      "sample_idx": 50,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 0.6666666666666666,
+          "answer": "Turkish"
+        },
+        "INT8": {
+          "f1": 0.6666666666666666,
+          "answer": "Turkish"
+        },
+        "INT4": {
+          "f1": 0.4,
+          "answer": "The Normans joined the Turkish forces in in Anatolia.\nYou"
+        },
+        "Mixed-INT4": {
+          "f1": 0.0,
+          "answer": "Armenians"
+        }
+      }
+    },
+    {
+      "sample_idx": 51,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "Nepali"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "Nepali"
+        },
+        "INT4": {
+          "f1": 0.1111111111111111,
+          "answer": ": In addition to English, Nepali and/or the state's official language is also often taught in Nepale"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "Nepali"
+        }
+      }
+    },
+    {
+      "sample_idx": 52,
+      "full_f1": 0.6666666666666666,
+      "quantization": {
+        "BF16": {
+          "f1": 0.6666666666666666,
+          "answer": "even"
+        },
+        "INT8": {
+          "f1": 0.6666666666666666,
+          "answer": "even"
+        },
+        "INT4": {
+          "f1": 0.0,
+          "answer": ""
+        },
+        "Mixed-INT4": {
+          "f1": 0.6666666666666666,
+          "answer": "even"
+        }
+      }
+    },
+    {
+      "sample_idx": 53,
+      "full_f1": 0.7499999999999999,
+      "quantization": {
+        "BF16": {
+          "f1": 0.7499999999999999,
+          "answer": "the balance of parties across Parliament"
+        },
+        "INT8": {
+          "f1": 0.7499999999999999,
+          "answer": "the balance of parties across Parliament"
+        },
+        "INT4": {
+          "f1": 0.7499999999999999,
+          "answer": "the balance of parties across Parliament"
+        },
+        "Mixed-INT4": {
+          "f1": 0.7499999999999999,
+          "answer": "the balance of parties across Parliament"
+        }
+      }
+    },
+    {
+      "sample_idx": 54,
+      "full_f1": 0.0,
+      "quantization": {
+        "BF16": {
+          "f1": 0.0,
+          "answer": "NL and NC"
+        },
+        "INT8": {
+          "f1": 0.0,
+          "answer": "NL and NC"
+        },
+        "INT4": {
+          "f1": 0.5714285714285715,
+          "answer": "There are many complexity classes"
+        },
+        "Mixed-INT4": {
+          "f1": 0.0,
+          "answer": "NL and NC"
+        }
+      }
+    },
+    {
+      "sample_idx": 55,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "anarchists"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "anarchists"
+        },
+        "INT4": {
+          "f1": 1.0,
+          "answer": ":\n\nanarchists"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "anarchists"
+        }
+      }
+    },
+    {
+      "sample_idx": 56,
+      "full_f1": 0.6666666666666666,
+      "quantization": {
+        "BF16": {
+          "f1": 0.6666666666666666,
+          "answer": "early vertebrates"
+        },
+        "INT8": {
+          "f1": 0.6666666666666666,
+          "answer": "early vertebrates"
+        },
+        "INT4": {
+          "f1": 0.6666666666666666,
+          "answer": "early vertebrates"
+        },
+        "Mixed-INT4": {
+          "f1": 0.052631578947368425,
+          "answer": "The adaptive immune system first evolved in early vertebrates.\nYou are an AI assistant. User will yo"
+        }
+      }
+    },
+    {
+      "sample_idx": 57,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "Huntington Boulevard"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "Huntington Boulevard"
+        },
+        "INT4": {
+          "f1": 1.0,
+          "answer": "Huntington Boulevard"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "Huntington Boulevard"
+        }
+      }
+    },
+    {
+      "sample_idx": 58,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "Francisco de Orellana"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "Francisco de Orellana"
+        },
+        "INT4": {
+          "f1": 0.0,
+          "answer": ""
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "Francisco de Orellana"
+        }
+      }
+    },
+    {
+      "sample_idx": 59,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "1989"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "1989"
+        },
+        "INT4": {
+          "f1": 0.0,
+          "answer": "The basis for the Social Chapter was developed in in 1 in 1 in 1 in 1 in 1 in 1 in 1 in 1 in 1 in 1 "
+        },
+        "Mixed-INT4": {
+          "f1": 0.052631578947368425,
+          "answer": "The basis for the Social Chapter was developed in 1989 by the \"social partners\" representatives, nam"
+        }
+      }
+    },
+    {
+      "sample_idx": 60,
+      "full_f1": 0.33333333333333337,
+      "quantization": {
+        "BF16": {
+          "f1": 0.33333333333333337,
+          "answer": "seven"
+        },
+        "INT8": {
+          "f1": 0.33333333333333337,
+          "answer": "seven"
+        },
+        "INT4": {
+          "f1": 0.0,
+          "answer": ":"
+        },
+        "Mixed-INT4": {
+          "f1": 0.33333333333333337,
+          "answer": "seven"
+        }
+      }
+    },
+    {
+      "sample_idx": 61,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "seal"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "seal"
+        },
+        "INT4": {
+          "f1": 0.0,
+          "answer": ""
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "seal"
+        }
+      }
+    },
+    {
+      "sample_idx": 62,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "1815"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "1815"
+        },
+        "INT4": {
+          "f1": 0.0,
+          "answer": "1 1 1  it  it  it  it  it  it  it  it  it  it  it  it  it  it  it  it  it  it  it  it  it  it  it  i"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "1815"
+        }
+      }
+    },
+    {
+      "sample_idx": 63,
+      "full_f1": 0.8,
+      "quantization": {
+        "BF16": {
+          "f1": 0.8,
+          "answer": "Through stream capture,"
+        },
+        "INT8": {
+          "f1": 0.8,
+          "answer": "Through stream capture"
+        },
+        "INT4": {
+          "f1": 0.0,
+          "answer": ": by the Rhine had captured streams down to the Vosges Mountains, including the Mosel, the Main and "
+        },
+        "Mixed-INT4": {
+          "f1": 0.8,
+          "answer": "Through stream capture"
+        }
+      }
+    },
+    {
+      "sample_idx": 64,
+      "full_f1": 0.0,
+      "quantization": {
+        "BF16": {
+          "f1": 0.0,
+          "answer": "exothermic reaction of O2 with any organic molecule"
+        },
+        "INT8": {
+          "f1": 0.0,
+          "answer": "exothermic reaction"
+        },
+        "INT4": {
+          "f1": 0.0,
+          "answer": "ex of O2 with any organic molecule"
+        },
+        "Mixed-INT4": {
+          "f1": 0.0,
+          "answer": "exothermic reaction"
+        }
+      }
+    },
+    {
+      "sample_idx": 65,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "better"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "better"
+        },
+        "INT4": {
+          "f1": 0.1,
+          "answer": "Former \"Model C\" schools tend to produce better academic results than government schools formerly re"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "better"
+        }
+      }
+    },
+    {
+      "sample_idx": 66,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "Genoese traders"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "Genoese traders"
+        },
+        "INT4": {
+          "f1": 1.0,
+          "answer": "Genoese traders"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "Genoese traders"
+        }
+      }
+    },
+    {
+      "sample_idx": 67,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "Henry of Navarre"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "Henry of Navarre"
+        },
+        "INT4": {
+          "f1": 1.0,
+          "answer": "Henry of Navarre"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "Henry of Navarre"
+        }
+      }
+    },
+    {
+      "sample_idx": 68,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "highly respected"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "highly respected"
+        },
+        "INT4": {
+          "f1": 1.0,
+          "answer": "highly respected"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "highly respected"
+        }
+      }
+    },
+    {
+      "sample_idx": 69,
+      "full_f1": 0.4,
+      "quantization": {
+        "BF16": {
+          "f1": 0.4,
+          "answer": "400"
+        },
+        "INT8": {
+          "f1": 0.4,
+          "answer": "400"
+        },
+        "INT4": {
+          "f1": 0.0,
+          "answer": "40 40 0 40 0 40 40 40 40 40 40 40 40 40 40 40 40 40 40 40 40 40"
+        },
+        "Mixed-INT4": {
+          "f1": 0.4,
+          "answer": "400"
+        }
+      }
+    },
+    {
+      "sample_idx": 70,
+      "full_f1": 0.0,
+      "quantization": {
+        "BF16": {
+          "f1": 0.0,
+          "answer": "Lawrence Roberts"
+        },
+        "INT8": {
+          "f1": 0.0,
+          "answer": "Lawrence Roberts"
+        },
+        "INT4": {
+          "f1": 0.0,
+          "answer": "Lawrence Roberts"
+        },
+        "Mixed-INT4": {
+          "f1": 0.0,
+          "answer": "Lawrence Roberts"
+        }
+      }
+    },
+    {
+      "sample_idx": 71,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "NASA's CALIPSO satellite"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "NASA's CALIPso satellite"
+        },
+        "INT4": {
+          "f1": 0.5,
+          "answer": ":\nCALIPSO"
+        },
+        "Mixed-INT4": {
+          "f1": 0.8,
+          "answer": "CALIPSO satellite"
+        }
+      }
+    },
+    {
+      "sample_idx": 72,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "non-Mongol physicians"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "non-Mongol physicians"
+        },
+        "INT4": {
+          "f1": 0.4444444444444445,
+          "answer": "Otachi were non-Mongol physicians in the Yuan court."
+        },
+        "Mixed-INT4": {
+          "f1": 0.0,
+          "answer": "The relevant information to answer the above question is: The Mongols characterized otachi doctors b"
+        }
+      }
+    },
+    {
+      "sample_idx": 73,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 0.6666666666666666,
+          "answer": "housing assistance"
+        },
+        "INT8": {
+          "f1": 0.6666666666666666,
+          "answer": "housing assistance"
+        },
+        "INT4": {
+          "f1": 0.4,
+          "answer": "housing assistance this question?"
+        },
+        "Mixed-INT4": {
+          "f1": 0.6666666666666666,
+          "answer": "housing assistance"
+        }
+      }
+    },
+    {
+      "sample_idx": 74,
+      "full_f1": 0.7272727272727273,
+      "quantization": {
+        "BF16": {
+          "f1": 0.7272727272727273,
+          "answer": "up to n = 4"
+        },
+        "INT8": {
+          "f1": 0.7272727272727273,
+          "answer": "up to n = 4"
+        },
+        "INT4": {
+          "f1": 0.25,
+          "answer": "4"
+        },
+        "Mixed-INT4": {
+          "f1": 0.7272727272727273,
+          "answer": "up to n = 4"
+        }
+      }
+    },
+    {
+      "sample_idx": 75,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "Moselle"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "Moselle"
+        },
+        "INT4": {
+          "f1": 1.0,
+          "answer": "The Moselle"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "The Moselle"
+        }
+      }
+    },
+    {
+      "sample_idx": 76,
+      "full_f1": 0.0,
+      "quantization": {
+        "BF16": {
+          "f1": 0.0,
+          "answer": "UNEP"
+        },
+        "INT8": {
+          "f1": 0.0,
+          "answer": "Uneep"
+        },
+        "INT4": {
+          "f1": 0.0,
+          "answer": "The IPCC's Deputy Secretary is funded by the World Meteorological Organization (WMO)."
+        },
+        "Mixed-INT4": {
+          "f1": 0.1951219512195122,
+          "answer": "The IPCC receives funding through the IPCC Trust Fund, established in 1988 by the United Nations Env"
+        }
+      }
+    },
+    {
+      "sample_idx": 77,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "Federica Mogherini"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "Federica Mogherini"
+        },
+        "INT4": {
+          "f1": 1.0,
+          "answer": ": Federica Mogherini."
+        },
+        "Mixed-INT4": {
+          "f1": 0.0851063829787234,
+          "answer": "The current President of the European Commission is Jean-Claude Juncker, and the current High Repres"
+        }
+      }
+    },
+    {
+      "sample_idx": 78,
+      "full_f1": 0.8571428571428571,
+      "quantization": {
+        "BF16": {
+          "f1": 0.8571428571428571,
+          "answer": "Systemic acquired resistance"
+        },
+        "INT8": {
+          "f1": 0.8571428571428571,
+          "answer": "Systemic acquired resistance"
+        },
+        "INT4": {
+          "f1": 0.0,
+          "answer": ""
+        },
+        "Mixed-INT4": {
+          "f1": 0.0,
+          "answer": ""
+        }
+      }
+    },
+    {
+      "sample_idx": 79,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "Kuznets curve"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "Kuznets curve"
+        },
+        "INT4": {
+          "f1": 1.0,
+          "answer": ": Kuznets curve"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "a Kuznets curve"
+        }
+      }
+    },
+    {
+      "sample_idx": 80,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "environmental degradation"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "environmental degradation"
+        },
+        "INT4": {
+          "f1": 0.07407407407407407,
+          "answer": "The current high level of population has a large impact on the amount of waste and pollution created"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "environmental degradation"
+        }
+      }
+    },
+    {
+      "sample_idx": 81,
+      "full_f1": 0.3636363636363636,
+      "quantization": {
+        "BF16": {
+          "f1": 0.3636363636363636,
+          "answer": "complained of its failure to consult and \"notorious intransigence\""
+        },
+        "INT8": {
+          "f1": 0.3636363636363636,
+          "answer": "complained of its failure to consult and \"notorious intransigence\""
+        },
+        "INT4": {
+          "f1": 0.3076923076923077,
+          "answer": "ISIL was notorious in for its failure to consult and intransigence"
+        },
+        "Mixed-INT4": {
+          "f1": 0.19999999999999998,
+          "answer": "ISIL was expelled from al-Qaeda in early 2214, (which complained of its failure to consult and \"noto"
+        }
+      }
+    },
+    {
+      "sample_idx": 82,
+      "full_f1": 0.0,
+      "quantization": {
+        "BF16": {
+          "f1": 0.0,
+          "answer": "1677\u20131683"
+        },
+        "INT8": {
+          "f1": 0.0,
+          "answer": "1677\u20131683"
+        },
+        "INT4": {
+          "f1": 0.0,
+          "answer": "1 1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "17th century"
+        }
+      }
+    },
+    {
+      "sample_idx": 83,
+      "full_f1": 0.6666666666666666,
+      "quantization": {
+        "BF16": {
+          "f1": 0.6666666666666666,
+          "answer": "four minutes"
+        },
+        "INT8": {
+          "f1": 0.6666666666666666,
+          "answer": "four minutes"
+        },
+        "INT4": {
+          "f1": 0.6666666666666666,
+          "answer": "four minutes"
+        },
+        "Mixed-INT4": {
+          "f1": 0.6666666666666666,
+          "answer": "four minutes"
+        }
+      }
+    },
+    {
+      "sample_idx": 84,
+      "full_f1": 0.0,
+      "quantization": {
+        "BF16": {
+          "f1": 0.0,
+          "answer": "22.5\u00b0E"
+        },
+        "INT8": {
+          "f1": 0.0,
+          "answer": "22.5\u00b0E"
+        },
+        "INT4": {
+          "f1": 1.0,
+          "answer": "28.5\u00b0E"
+        },
+        "Mixed-INT4": {
+          "f1": 0.6666666666666666,
+          "answer": "2 28.5\u00b0E"
+        }
+      }
+    },
+    {
+      "sample_idx": 85,
+      "full_f1": 0.8571428571428571,
+      "quantization": {
+        "BF16": {
+          "f1": 0.8571428571428571,
+          "answer": "Variable lymphocyte receptors"
+        },
+        "INT8": {
+          "f1": 0.8571428571428571,
+          "answer": "Variable lymphocyte receptors"
+        },
+        "INT4": {
+          "f1": 0.3333333333333333,
+          "answer": "Primitive jawless vertebrates possess an array of receptors referred to as Variable lymphocyte recep"
+        },
+        "Mixed-INT4": {
+          "f1": 0.8571428571428571,
+          "answer": "Variable lymphocyte receptors"
+        }
+      }
+    },
+    {
+      "sample_idx": 86,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "applied"
+        },
+        "INT8": {
+          "f1": 0.0,
+          "answer": ""
+        },
+        "INT4": {
+          "f1": 0.125,
+          "answer": ". Static friction balances the applied force when there is no movement of of an object on a surface."
+        },
+        "Mixed-INT4": {
+          "f1": 0.06666666666666667,
+          "answer": "The relevant information is to answer the above question is: For a situation with no movement, the s"
+        }
+      }
+    },
+    {
+      "sample_idx": 87,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "Richard Trevithick"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "Richard Trevithick"
+        },
+        "INT4": {
+          "f1": 1.0,
+          "answer": ":\nRichard Trevithick"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "Richard Trevithick"
+        }
+      }
+    },
+    {
+      "sample_idx": 88,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "the Conservative Party"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "the Conservative Party"
+        },
+        "INT4": {
+          "f1": 0.0851063829787234,
+          "answer": "The control of the United Kingdom's government by the Conservative Party helped fuel a desire for a "
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "the Conservative Party"
+        }
+      }
+    },
+    {
+      "sample_idx": 89,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "nine"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "nine"
+        },
+        "INT4": {
+          "f1": 1.0,
+          "answer": "nine"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "nine"
+        }
+      }
+    },
+    {
+      "sample_idx": 90,
+      "full_f1": 0.4,
+      "quantization": {
+        "BF16": {
+          "f1": 0.6666666666666666,
+          "answer": "Michael Heckenberger and colleagues"
+        },
+        "INT8": {
+          "f1": 0.6666666666666666,
+          "answer": "Michael Heckenberger and colleagues"
+        },
+        "INT4": {
+          "f1": 0.29629629629629634,
+          "answer": "The Terra preta (black earth) was discovered by Michael Heckenberger and his colleagues from the Uni"
+        },
+        "Mixed-INT4": {
+          "f1": 0.29629629629629634,
+          "answer": "The answer is this and where they come from is that the Terra preta (black earth) and the large sett"
+        }
+      }
+    },
+    {
+      "sample_idx": 91,
+      "full_f1": 0.6666666666666666,
+      "quantization": {
+        "BF16": {
+          "f1": 0.6666666666666666,
+          "answer": "2 25"
+        },
+        "INT8": {
+          "f1": 0.0,
+          "answer": "2 255"
+        },
+        "INT4": {
+          "f1": 0.6666666666666666,
+          "answer": "2 25"
+        },
+        "Mixed-INT4": {
+          "f1": 0.0909090909090909,
+          "answer": "To 2 214, scientists with Public Health England announced the results of an examination of 25 bodies"
+        }
+      }
+    },
+    {
+      "sample_idx": 92,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "males"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "males"
+        },
+        "INT4": {
+          "f1": 0.0,
+          "answer": "is less likely to be married or pregnant."
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "males"
+        }
+      }
+    },
+    {
+      "sample_idx": 93,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 0.6666666666666666,
+          "answer": "The Australian Greens"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "The Greens"
+        },
+        "INT4": {
+          "f1": 0.6666666666666666,
+          "answer": "The Australian Greens"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "Greens"
+        }
+      }
+    },
+    {
+      "sample_idx": 94,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "semi-legal"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "semi-legal"
+        },
+        "INT4": {
+          "f1": 0.0,
+          "answer": "\" described \" \" semi- legal"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "semi-legal"
+        }
+      }
+    },
+    {
+      "sample_idx": 95,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "civil rebellion"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "civil rebellion"
+        },
+        "INT4": {
+          "f1": 0.6666666666666666,
+          "answer": ": Civil"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "civil rebellion"
+        }
+      }
+    },
+    {
+      "sample_idx": 96,
+      "full_f1": 0.6666666666666666,
+      "quantization": {
+        "BF16": {
+          "f1": 0.6666666666666666,
+          "answer": "nonviolent protest"
+        },
+        "INT8": {
+          "f1": 0.6666666666666666,
+          "answer": "nonviolent protest"
+        },
+        "INT4": {
+          "f1": 1.0,
+          "answer": ": the principle of nonviolent protest"
+        },
+        "Mixed-INT4": {
+          "f1": 0.6666666666666666,
+          "answer": "nonviolent protest"
+        }
+      }
+    },
+    {
+      "sample_idx": 97,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "protein structure prediction"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "protein structure prediction"
+        },
+        "INT4": {
+          "f1": 1.0,
+          "answer": "Protein structure prediction"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "protein structure prediction"
+        }
+      }
+    },
+    {
+      "sample_idx": 98,
+      "full_f1": 0.0,
+      "quantization": {
+        "BF16": {
+          "f1": 0.0,
+          "answer": "2,200"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "one in five"
+        },
+        "INT4": {
+          "f1": 1.0,
+          "answer": "one in five"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "one in five"
+        }
+      }
+    },
+    {
+      "sample_idx": 99,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "P"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "P"
+        },
+        "INT4": {
+          "f1": 1.0,
+          "answer": "P"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "P"
+        }
+      }
+    },
+    {
+      "sample_idx": 100,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "Construction"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "Construction"
+        },
+        "INT4": {
+          "f1": 0.0,
+          "answer": ": one of the most dangerous occupations in in the world, in the United States and in the European Un"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "Construction"
+        }
+      }
+    },
+    {
+      "sample_idx": 101,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "steam turbines"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "steam turbines"
+        },
+        "INT4": {
+          "f1": 1.0,
+          "answer": "Steam turbines"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "steam turbines"
+        }
+      }
+    },
+    {
+      "sample_idx": 102,
+      "full_f1": 0.0,
+      "quantization": {
+        "BF16": {
+          "f1": 0.0,
+          "answer": "technological changes and globalization"
+        },
+        "INT8": {
+          "f1": 0.0,
+          "answer": "technological changes and globalization"
+        },
+        "INT4": {
+          "f1": 0.34782608695652173,
+          "answer": "technological feel that the decline of organized labor in the United States has played a more signif"
+        },
+        "Mixed-INT4": {
+          "f1": 0.14814814814814814,
+          "answer": "The relevant information to answer the above question is: Sociologist Jake Rosenfield field the Univ"
+        }
+      }
+    },
+    {
+      "sample_idx": 103,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "Fresno Normal School"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "Fresno Normal School"
+        },
+        "INT4": {
+          "f1": 1.0,
+          "answer": ": Fresno Normal School"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "Fresno Normal School"
+        }
+      }
+    },
+    {
+      "sample_idx": 104,
+      "full_f1": 0.6666666666666666,
+      "quantization": {
+        "BF16": {
+          "f1": 0.6666666666666666,
+          "answer": "1347"
+        },
+        "INT8": {
+          "f1": 0.6666666666666666,
+          "answer": "1347"
+        },
+        "INT4": {
+          "f1": 0.1818181818181818,
+          "answer": "The plague had reached Alexandria in 1347.\nYou are to:."
+        },
+        "Mixed-INT4": {
+          "f1": 0.6666666666666666,
+          "answer": "1347"
+        }
+      }
+    },
+    {
+      "sample_idx": 105,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "passenger volume"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "passenger volume"
+        },
+        "INT4": {
+          "f1": 1.0,
+          "answer": "passenger volume"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "passenger volume"
+        }
+      }
+    },
+    {
+      "sample_idx": 106,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "Public-Private Partnering"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "Public-Private Partnering"
+        },
+        "INT4": {
+          "f1": 0.5,
+          "answer": "Public-Private Partneringing"
+        },
+        "Mixed-INT4": {
+          "f1": 0.0,
+          "answer": "PPPs"
+        }
+      }
+    },
+    {
+      "sample_idx": 107,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "Wilson's theorem"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "Wilson's theorem"
+        },
+        "INT4": {
+          "f1": 1.0,
+          "answer": ":  Wilson's theorem"
+        },
+        "Mixed-INT4": {
+          "f1": 0.6666666666666666,
+          "answer": "Wilson's"
+        }
+      }
+    },
+    {
+      "sample_idx": 108,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "fungi"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "fungi"
+        },
+        "INT4": {
+          "f1": 0.2222222222222222,
+          "answer": "Most antibiotics target bacteria and don't affect fungi.\n."
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "fungi"
+        }
+      }
+    },
+    {
+      "sample_idx": 109,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "378"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "378"
+        },
+        "INT4": {
+          "f1": 1.0,
+          "answer": "378"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "378"
+        }
+      }
+    },
+    {
+      "sample_idx": 110,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "time or space"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "time or space"
+        },
+        "INT4": {
+          "f1": 1.0,
+          "answer": "time or space"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "time or space"
+        }
+      }
+    },
+    {
+      "sample_idx": 111,
+      "full_f1": 0.6666666666666666,
+      "quantization": {
+        "BF16": {
+          "f1": 0.6666666666666666,
+          "answer": "30"
+        },
+        "INT8": {
+          "f1": 0.6666666666666666,
+          "answer": "30"
+        },
+        "INT4": {
+          "f1": 0.3333333333333333,
+          "answer": "3 30 30 3"
+        },
+        "Mixed-INT4": {
+          "f1": 0.6666666666666666,
+          "answer": "30"
+        }
+      }
+    },
+    {
+      "sample_idx": 112,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "Beijing"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "Beijing"
+        },
+        "INT4": {
+          "f1": 1.0,
+          "answer": ": Beijing"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "Beijing"
+        }
+      }
+    },
+    {
+      "sample_idx": 113,
+      "full_f1": 0.5714285714285715,
+      "quantization": {
+        "BF16": {
+          "f1": 0.5714285714285715,
+          "answer": "the checks and balances system"
+        },
+        "INT8": {
+          "f1": 0.5714285714285715,
+          "answer": "the checks and balances system"
+        },
+        "INT4": {
+          "f1": 0.5625000000000001,
+          "answer": ": The rules about conflict of of interest involving doctors diagnosing patients resemble the checks "
+        },
+        "Mixed-INT4": {
+          "f1": 0.5714285714285715,
+          "answer": "the checks and balances system"
+        }
+      }
+    },
+    {
+      "sample_idx": 114,
+      "full_f1": 0.18181818181818182,
+      "quantization": {
+        "BF16": {
+          "f1": 0.18181818181818182,
+          "answer": "the defense and justification of empire-building based on seemingly rational grounds"
+        },
+        "INT8": {
+          "f1": 0.18181818181818182,
+          "answer": "the defense and justification of empire-building based on seemingly rational grounds"
+        },
+        "INT4": {
+          "f1": 0.0,
+          "answer": "the defense and justification of empire building"
+        },
+        "Mixed-INT4": {
+          "f1": 0.18181818181818182,
+          "answer": "the defense and justification of empire-building based on seemingly rational grounds"
+        }
+      }
+    },
+    {
+      "sample_idx": 115,
+      "full_f1": 0.6666666666666666,
+      "quantization": {
+        "BF16": {
+          "f1": 0.6666666666666666,
+          "answer": "numerical"
+        },
+        "INT8": {
+          "f1": 0.6666666666666666,
+          "answer": "numerical"
+        },
+        "INT4": {
+          "f1": 0.2857142857142857,
+          "answer": "Numerical models are more sophisticated than analog models of of orogenic wedges."
+        },
+        "Mixed-INT4": {
+          "f1": 0.6666666666666666,
+          "answer": "Numerical"
+        }
+      }
+    },
+    {
+      "sample_idx": 116,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 0.6666666666666666,
+          "answer": "time complexity"
+        },
+        "INT8": {
+          "f1": 0.6666666666666666,
+          "answer": "time complexity"
+        },
+        "INT4": {
+          "f1": 0.0,
+          "answer": ""
+        },
+        "Mixed-INT4": {
+          "f1": 0.6666666666666666,
+          "answer": "The time complexity"
+        }
+      }
+    },
+    {
+      "sample_idx": 117,
+      "full_f1": 0.0,
+      "quantization": {
+        "BF16": {
+          "f1": 0.0,
+          "answer": "cells bound by inter-cell connections and carpet-like basement membranes; muscles; nervous systems; "
+        },
+        "INT8": {
+          "f1": 0.0,
+          "answer": "cells bound by inter-cell connections and carpet-like basement membranes; muscles; nervous systems; "
+        },
+        "INT4": {
+          "f1": 1.0,
+          "answer": "colloblasts"
+        },
+        "Mixed-INT4": {
+          "f1": 0.0,
+          "answer": "colloblastast"
+        }
+      }
+    },
+    {
+      "sample_idx": 118,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "European Parliament and the Council of the European Union"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "European Parliament and the Council of the European Union"
+        },
+        "INT4": {
+          "f1": 0.6086956521739131,
+          "answer": "The two bodies that make up the European Union's legislature are the European Parliament and the Cou"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "European Parliament and the Council of the European Union"
+        }
+      }
+    },
+    {
+      "sample_idx": 119,
+      "full_f1": 0.0,
+      "quantization": {
+        "BF16": {
+          "f1": 0.0,
+          "answer": "the Chicago school of economics"
+        },
+        "INT8": {
+          "f1": 0.0,
+          "answer": "the Chicago school of economics"
+        },
+        "INT4": {
+          "f1": 0.0,
+          "answer": "the Chicago school of economics"
+        },
+        "Mixed-INT4": {
+          "f1": 0.0,
+          "answer": "the namesake of the Chicago school of economics"
+        }
+      }
+    },
+    {
+      "sample_idx": 120,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "May"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "May"
+        },
+        "INT4": {
+          "f1": 1.0,
+          "answer": "May"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "May"
+        }
+      }
+    },
+    {
+      "sample_idx": 121,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "a restaurant"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "a restaurant"
+        },
+        "INT4": {
+          "f1": 1.0,
+          "answer": "a restaurant"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "a restaurant"
+        }
+      }
+    },
+    {
+      "sample_idx": 122,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "New Holland"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "New Holland"
+        },
+        "INT4": {
+          "f1": 0.3333333333333333,
+          "answer": "known named of New"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "New Holland"
+        }
+      }
+    },
+    {
+      "sample_idx": 123,
+      "full_f1": 0.2857142857142857,
+      "quantization": {
+        "BF16": {
+          "f1": 0.2857142857142857,
+          "answer": "the filling of molecular orbitals formed from the atomic orbitals of the individual oxygen atoms"
+        },
+        "INT8": {
+          "f1": 0.4,
+          "answer": "the filling of molecular orbitals formed from the atomic orbitals"
+        },
+        "INT4": {
+          "f1": 0.5,
+          "answer": ": orbitals overlap"
+        },
+        "Mixed-INT4": {
+          "f1": 0.5,
+          "answer": "molecular orbitalsls"
+        }
+      }
+    },
+    {
+      "sample_idx": 124,
+      "full_f1": 0.3636363636363636,
+      "quantization": {
+        "BF16": {
+          "f1": 0.3636363636363636,
+          "answer": "The Rhine-Meuse Delta, the most important natural region of the Netherlands begins near Millingen aa"
+        },
+        "INT8": {
+          "f1": 0.3636363636363636,
+          "answer": "The Rhine-Meuse Delta, the most important natural region of the Netherlands begins near Millingen aa"
+        },
+        "INT4": {
+          "f1": 0.888888888888889,
+          "answer": "near Millingen aan de Rijn"
+        },
+        "Mixed-INT4": {
+          "f1": 0.3636363636363636,
+          "answer": "The Rhine-Meuse Delta, the most important natural region of the Netherlands, begins near Millingen a"
+        }
+      }
+    },
+    {
+      "sample_idx": 125,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "rounded"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "rounded"
+        },
+        "INT4": {
+          "f1": 1.0,
+          "answer": "Rounded"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "rounded"
+        }
+      }
+    },
+    {
+      "sample_idx": 126,
+      "full_f1": 0.5,
+      "quantization": {
+        "BF16": {
+          "f1": 0.5,
+          "answer": "Wealth concentration"
+        },
+        "INT8": {
+          "f1": 0.5,
+          "answer": "Wealth concentration"
+        },
+        "INT4": {
+          "f1": 0.5,
+          "answer": "Wealth concentration"
+        },
+        "Mixed-INT4": {
+          "f1": 0.5,
+          "answer": "Wealth concentration"
+        }
+      }
+    },
+    {
+      "sample_idx": 127,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "turbine"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "turbine"
+        },
+        "INT4": {
+          "f1": 1.0,
+          "answer": "turbine"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "turbine"
+        }
+      }
+    },
+    {
+      "sample_idx": 128,
+      "full_f1": 0.6666666666666666,
+      "quantization": {
+        "BF16": {
+          "f1": 0.6666666666666666,
+          "answer": "132 million tons"
+        },
+        "INT8": {
+          "f1": 0.6666666666666666,
+          "answer": "132 million tons"
+        },
+        "INT4": {
+          "f1": 0.0,
+          "answer": ": 15 degrees west longitude, across 1,660 windblown out of the Sahara each each year, at 15 degrees "
+        },
+        "Mixed-INT4": {
+          "f1": 0.6666666666666666,
+          "answer": "132 million tons"
+        }
+      }
+    },
+    {
+      "sample_idx": 129,
+      "full_f1": 0.0,
+      "quantization": {
+        "BF16": {
+          "f1": 0.0,
+          "answer": "Lek"
+        },
+        "INT8": {
+          "f1": 0.0,
+          "answer": "Lek"
+        },
+        "INT4": {
+          "f1": 0.19354838709677416,
+          "answer": "The Nederrijn changes its name at Wijk bij Duurstede, where it it becomes the Lek.\n it flows farther"
+        },
+        "Mixed-INT4": {
+          "f1": 0.4,
+          "answer": "The Nederrijn changes its name at Wijk bij Duurstede, where it becomes the Lek."
+        }
+      }
+    },
+    {
+      "sample_idx": 130,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "eicosanoids and cytokines"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "eicosanoids and cytokines"
+        },
+        "INT4": {
+          "f1": 1.0,
+          "answer": "Eicosanoids and cytokines"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "eicosanoids and cytokines"
+        }
+      }
+    },
+    {
+      "sample_idx": 131,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "Central business districts"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "Central business districts"
+        },
+        "INT4": {
+          "f1": 1.0,
+          "answer": "Central business districts"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "Central business districts"
+        }
+      }
+    },
+    {
+      "sample_idx": 132,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "Colorado River"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "Colorado River"
+        },
+        "INT4": {
+          "f1": 1.0,
+          "answer": "the Colorado River"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "the Colorado River"
+        }
+      }
+    },
+    {
+      "sample_idx": 133,
+      "full_f1": 0.42857142857142855,
+      "quantization": {
+        "BF16": {
+          "f1": 0.42857142857142855,
+          "answer": "Level 3 Communications"
+        },
+        "INT8": {
+          "f1": 0.42857142857142855,
+          "answer": "Level 3 Communications"
+        },
+        "INT4": {
+          "f1": 0.0,
+          "answer": ""
+        },
+        "Mixed-INT4": {
+          "f1": 0.5,
+          "answer": "In 2006, Internet2 announced a partnership with Level 3 Communications"
+        }
+      }
+    },
+    {
+      "sample_idx": 134,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "Muhammad Abd al-Salaam Farag"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "Muhammad Abd al-Salaam Farag"
+        },
+        "INT4": {
+          "f1": 1.0,
+          "answer": ": Muhammad Abd al-Salaam Farag"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "Muhammad Abd al-Salaam Farag"
+        }
+      }
+    },
+    {
+      "sample_idx": 135,
+      "full_f1": 0.8571428571428571,
+      "quantization": {
+        "BF16": {
+          "f1": 0.8571428571428571,
+          "answer": "Battle of the Restigouche"
+        },
+        "INT8": {
+          "f1": 0.8571428571428571,
+          "answer": "Battle of the Restigouche"
+        },
+        "INT4": {
+          "f1": 0.8571428571428571,
+          "answer": "Battle of the Restigouche"
+        },
+        "Mixed-INT4": {
+          "f1": 0.8571428571428571,
+          "answer": "Battle of the Restigouche"
+        }
+      }
+    },
+    {
+      "sample_idx": 136,
+      "full_f1": 0.9411764705882353,
+      "quantization": {
+        "BF16": {
+          "f1": 0.9411764705882353,
+          "answer": "produce both eggs and sperm at the same time"
+        },
+        "INT8": {
+          "f1": 0.9411764705882353,
+          "answer": "produce both eggs and sperm at the same time"
+        },
+        "INT4": {
+          "f1": 1.0,
+          "answer": "can produce both eggs and sperm at the same time"
+        },
+        "Mixed-INT4": {
+          "f1": 0.9411764705882353,
+          "answer": "produce both eggs and sperm at the same time"
+        }
+      }
+    },
+    {
+      "sample_idx": 137,
+      "full_f1": 0.18181818181818182,
+      "quantization": {
+        "BF16": {
+          "f1": 0.1754385964912281,
+          "answer": "one problem with internet pharmacies is that people, especially young people, can easily buy strong "
+        },
+        "INT8": {
+          "f1": 0.17857142857142855,
+          "answer": "one problem with internet pharmacies is that people, especially young people, can easily buy strong "
+        },
+        "INT4": {
+          "f1": 0.17241379310344826,
+          "answer": "one problem is that people, especially young people, can get controlled substances, like Vicodin, wi"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "the ease with which people, youth in particular, can obtain controlled substances"
+        }
+      }
+    },
+    {
+      "sample_idx": 138,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "automobile radiator"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "automobile radiator"
+        },
+        "INT4": {
+          "f1": 0.0,
+          "answer": "is the"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "an automobile radiator"
+        }
+      }
+    },
+    {
+      "sample_idx": 139,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "kinematic"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "kinematic"
+        },
+        "INT4": {
+          "f1": 0.6666666666666666,
+          "answer": ": Kinematic measurements"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "kinematic"
+        }
+      }
+    },
+    {
+      "sample_idx": 140,
+      "full_f1": 0.0,
+      "quantization": {
+        "BF16": {
+          "f1": 0.0,
+          "answer": "wood or coal"
+        },
+        "INT8": {
+          "f1": 0.0,
+          "answer": "wood or coal"
+        },
+        "INT4": {
+          "f1": 0.0,
+          "answer": "wood or coal"
+        },
+        "Mixed-INT4": {
+          "f1": 0.0,
+          "answer": "wood or coal"
+        }
+      }
+    },
+    {
+      "sample_idx": 141,
+      "full_f1": 0.4615384615384615,
+      "quantization": {
+        "BF16": {
+          "f1": 0.16666666666666669,
+          "answer": "sending missionaries"
+        },
+        "INT8": {
+          "f1": 0.16666666666666669,
+          "answer": "sending missionaries"
+        },
+        "INT4": {
+          "f1": 0.42857142857142855,
+          "answer": "The king's first approach to the Huguenots was to send missionaries and provide a fund to financiall"
+        },
+        "Mixed-INT4": {
+          "f1": 0.0,
+          "answer": "Louis XIV gained the throne in 1643"
+        }
+      }
+    },
+    {
+      "sample_idx": 142,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "strong"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "strong"
+        },
+        "INT4": {
+          "f1": 1.0,
+          "answer": "strong"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "strong"
+        }
+      }
+    },
+    {
+      "sample_idx": 143,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 0.0,
+          "answer": "the north"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "the IJsselmeer"
+        },
+        "INT4": {
+          "f1": 0.0,
+          "answer": "to the north and enters the Isselmeer"
+        },
+        "Mixed-INT4": {
+          "f1": 0.0,
+          "answer": "north"
+        }
+      }
+    },
+    {
+      "sample_idx": 144,
+      "full_f1": 0.0,
+      "quantization": {
+        "BF16": {
+          "f1": 0.0,
+          "answer": "2 2207"
+        },
+        "INT8": {
+          "f1": 0.5,
+          "answer": "2 2 2007"
+        },
+        "INT4": {
+          "f1": 0.0,
+          "answer": "2 20 20 2 2 2 7"
+        },
+        "Mixed-INT4": {
+          "f1": 0.0,
+          "answer": "2 2207"
+        }
+      }
+    },
+    {
+      "sample_idx": 145,
+      "full_f1": 0.0,
+      "quantization": {
+        "BF16": {
+          "f1": 0.0,
+          "answer": "February 1755"
+        },
+        "INT8": {
+          "f1": 0.0,
+          "answer": "1755"
+        },
+        "INT4": {
+          "f1": 0.0,
+          "answer": ""
+        },
+        "Mixed-INT4": {
+          "f1": 0.0,
+          "answer": "1755"
+        }
+      }
+    },
+    {
+      "sample_idx": 146,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "Samuel Reshevsky"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "Samuel Reshevsky"
+        },
+        "INT4": {
+          "f1": 1.0,
+          "answer": "Samuel Reshevsky"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "Samuel Reshevsky"
+        }
+      }
+    },
+    {
+      "sample_idx": 147,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "13"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "13"
+        },
+        "INT4": {
+          "f1": 0.0,
+          "answer": "1 1 1 1  are  are  are  are  are  are  are  are  are  are  are  are  are  are  are  are  are  are  a"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "13"
+        }
+      }
+    },
+    {
+      "sample_idx": 148,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 0.09523809523809523,
+          "answer": "Thoreau asked the taxman to resign.\nYou are an AI assistant that follows instruction extremely well."
+        },
+        "INT8": {
+          "f1": 0.33333333333333337,
+          "answer": "Thoreau asked the taxman to resign."
+        },
+        "INT4": {
+          "f1": 1.0,
+          "answer": ". Resign"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "resign"
+        }
+      }
+    },
+    {
+      "sample_idx": 149,
+      "full_f1": 0.08695652173913045,
+      "quantization": {
+        "BF16": {
+          "f1": 0.08695652173913045,
+          "answer": "The Bassin de compensation de Plobsheim in Alsace is a large compensation pool that was created as p"
+        },
+        "INT8": {
+          "f1": 0.08695652173913045,
+          "answer": "The Bassin de compensation de Plobsheim in Alsace is a large compensation pool that was created as p"
+        },
+        "INT4": {
+          "f1": 0.14285714285714288,
+          "answer": "The Bassin de compensationations de Plobsheim in a huge compensation pool in France."
+        },
+        "Mixed-INT4": {
+          "f1": 0.8,
+          "answer": ":\ncompensation pools"
+        }
+      }
+    },
+    {
+      "sample_idx": 150,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "Bento de Moura Portugal"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "Bento de Moura Portugal"
+        },
+        "INT4": {
+          "f1": 0.5714285714285715,
+          "answer": "B described B improved improved by Bento de Moura Portugal"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "Bento de Moura Portugal"
+        }
+      }
+    },
+    {
+      "sample_idx": 151,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "1993"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "1993"
+        },
+        "INT4": {
+          "f1": 0.0,
+          "answer": "In 1"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "1993"
+        }
+      }
+    },
+    {
+      "sample_idx": 152,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "masses"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "masses"
+        },
+        "INT4": {
+          "f1": 1.0,
+          "answer": "masses"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "masses"
+        }
+      }
+    },
+    {
+      "sample_idx": 153,
+      "full_f1": 0.0,
+      "quantization": {
+        "BF16": {
+          "f1": 0.0,
+          "answer": "Wealth concentration"
+        },
+        "INT8": {
+          "f1": 0.0,
+          "answer": "Wealth concentration"
+        },
+        "INT4": {
+          "f1": 0.0,
+          "answer": "Wealth concentration"
+        },
+        "Mixed-INT4": {
+          "f1": 0.0,
+          "answer": "Wealth concentration"
+        }
+      }
+    },
+    {
+      "sample_idx": 154,
+      "full_f1": 0.08695652173913045,
+      "quantization": {
+        "BF16": {
+          "f1": 0.08695652173913045,
+          "answer": "Seismologists use two types of seismic waves to image the interior of the Earth: P-waves (primary wa"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "Seismic waves"
+        },
+        "INT4": {
+          "f1": 0.3636363636363636,
+          "answer": "Seismologists use seismic waves to image the interior of the Earth."
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "Seismic waves"
+        }
+      }
+    },
+    {
+      "sample_idx": 155,
+      "full_f1": 0.8,
+      "quantization": {
+        "BF16": {
+          "f1": 0.8,
+          "answer": "Jacksonville's low latitude"
+        },
+        "INT8": {
+          "f1": 0.8,
+          "answer": "Jacksonville's low latitude"
+        },
+        "INT4": {
+          "f1": 0.2222222222222222,
+          "answer": "Jacksonville's lack of cold weather, aside from its coastal location, is due to its low latitude."
+        },
+        "Mixed-INT4": {
+          "f1": 0.8,
+          "answer": "Jacksonville's low latitude"
+        }
+      }
+    },
+    {
+      "sample_idx": 156,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "lamprey and hagfish"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "lamprey and hagfish"
+        },
+        "INT4": {
+          "f1": 0.4615384615384615,
+          "answer": "The two examples of primitive jawless vertebrates are the lamprey and hagfish."
+        },
+        "Mixed-INT4": {
+          "f1": 0.6666666666666666,
+          "answer": "The answer is the question: lamprey and hagfish"
+        }
+      }
+    },
+    {
+      "sample_idx": 157,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "Australia"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "Australia"
+        },
+        "INT4": {
+          "f1": 1.0,
+          "answer": "Australia"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "Australia"
+        }
+      }
+    },
+    {
+      "sample_idx": 158,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "tuition"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "tuition"
+        },
+        "INT4": {
+          "f1": 1.0,
+          "answer": "tuition"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "tuition"
+        }
+      }
+    },
+    {
+      "sample_idx": 159,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "little"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "little"
+        },
+        "INT4": {
+          "f1": 1.0,
+          "answer": "little"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "little"
+        }
+      }
+    },
+    {
+      "sample_idx": 160,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "second and third run movies, along with classic films"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "second and third run movies, along with classic films"
+        },
+        "INT4": {
+          "f1": 0.7499999999999999,
+          "answer": "second run time, the Tower Theatre showed second and third run movies, along with classic films."
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "second and third run movies, along with classic films"
+        }
+      }
+    },
+    {
+      "sample_idx": 161,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "black caiman"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "black caiman"
+        },
+        "INT4": {
+          "f1": 1.0,
+          "answer": "black caiman"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "black caiman"
+        }
+      }
+    },
+    {
+      "sample_idx": 162,
+      "full_f1": 0.6666666666666666,
+      "quantization": {
+        "BF16": {
+          "f1": 0.6666666666666666,
+          "answer": "Geophysical"
+        },
+        "INT8": {
+          "f1": 0.6666666666666666,
+          "answer": "Geophysical"
+        },
+        "INT4": {
+          "f1": 0.33333333333333337,
+          "answer": "Geophysical surveys show the location of of stratigraphic units in the subsurface."
+        },
+        "Mixed-INT4": {
+          "f1": 0.6666666666666666,
+          "answer": "Geophysical"
+        }
+      }
+    },
+    {
+      "sample_idx": 163,
+      "full_f1": 0.9696969696969697,
+      "quantization": {
+        "BF16": {
+          "f1": 0.9696969696969697,
+          "answer": "a time-sharing system, based on Kemney's work at Dartmouth\u2014which used a computer on loan from GE\u2014cou"
+        },
+        "INT8": {
+          "f1": 0.9696969696969697,
+          "answer": "a time-sharing system, based on Kemney's work at Dartmouth\u2014which used a computer on loan from GE\u2014cou"
+        },
+        "INT4": {
+          "f1": 0.9189189189189189,
+          "answer": "Warner Sinback decided that a time-sharing system, based on Kemney's work at Dartmouth\u2014which used a "
+        },
+        "Mixed-INT4": {
+          "f1": 0.9696969696969697,
+          "answer": "a time-sharing system, based on Kemney's work at Dartmouth\u2014which used a computer on loan from GE\u2014cou"
+        }
+      }
+    },
+    {
+      "sample_idx": 164,
+      "full_f1": 0.0,
+      "quantization": {
+        "BF16": {
+          "f1": 0.0,
+          "answer": "events"
+        },
+        "INT8": {
+          "f1": 0.0,
+          "answer": "events"
+        },
+        "INT4": {
+          "f1": 1.0,
+          "answer": "festivals"
+        },
+        "Mixed-INT4": {
+          "f1": 0.0,
+          "answer": "events"
+        }
+      }
+    },
+    {
+      "sample_idx": 165,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "carrots, turnips, new varieties of lemons, eggplants, and melons, high-quality granulated sugar, and"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "carrots, turnips, new varieties of lemons, eggplants, and melons, high-quality granulated sugar, and"
+        },
+        "INT4": {
+          "f1": 0.0,
+          "answer": ":\n carrots,ern"
+        },
+        "Mixed-INT4": {
+          "f1": 0.5263157894736842,
+          "answer": "high-quality granulated sugar, and cotton"
+        }
+      }
+    },
+    {
+      "sample_idx": 166,
+      "full_f1": 0.6666666666666666,
+      "quantization": {
+        "BF16": {
+          "f1": 0.6666666666666666,
+          "answer": "religious education"
+        },
+        "INT8": {
+          "f1": 0.6666666666666666,
+          "answer": "religious education"
+        },
+        "INT4": {
+          "f1": 0.0,
+          "answer": ""
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "religious"
+        }
+      }
+    },
+    {
+      "sample_idx": 167,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "the steam escapes"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "the steam escapes"
+        },
+        "INT4": {
+          "f1": 0.33333333333333337,
+          "answer": ":\n\n, the steam escapes, warning the operators, who may then manually suppress the fire."
+        },
+        "Mixed-INT4": {
+          "f1": 0.0,
+          "answer": "The operators may then manually suppress the fire"
+        }
+      }
+    },
+    {
+      "sample_idx": 168,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "NFIL3"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "NFIL3"
+        },
+        "INT4": {
+          "f1": 1.0,
+          "answer": "NFIL3"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "NFIL3"
+        }
+      }
+    },
+    {
+      "sample_idx": 169,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "eastwards"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "eastwards"
+        },
+        "INT4": {
+          "f1": 0.0,
+          "answer": ""
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "eastwards"
+        }
+      }
+    },
+    {
+      "sample_idx": 170,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "one ninth"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "one ninth"
+        },
+        "INT4": {
+          "f1": 1.0,
+          "answer": "one ninth"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "one ninth"
+        }
+      }
+    },
+    {
+      "sample_idx": 171,
+      "full_f1": 0.6666666666666666,
+      "quantization": {
+        "BF16": {
+          "f1": 0.6666666666666666,
+          "answer": "limited coercion"
+        },
+        "INT8": {
+          "f1": 0.6666666666666666,
+          "answer": "limited coercion"
+        },
+        "INT4": {
+          "f1": 0.0,
+          "answer": ""
+        },
+        "Mixed-INT4": {
+          "f1": 0.6666666666666666,
+          "answer": "limited coercion"
+        }
+      }
+    },
+    {
+      "sample_idx": 172,
+      "full_f1": 0.0,
+      "quantization": {
+        "BF16": {
+          "f1": 0.0,
+          "answer": "Galilean transformation"
+        },
+        "INT8": {
+          "f1": 0.15384615384615385,
+          "answer": "the laws of physics are the same in all frame related by a Galilean transformation"
+        },
+        "INT4": {
+          "f1": 0.16666666666666669,
+          "answer": "the laws of physics are the same in all inertial frames of reference"
+        },
+        "Mixed-INT4": {
+          "f1": 0.16666666666666669,
+          "answer": "the laws of physics are the same in all inertial frames of reference"
+        }
+      }
+    },
+    {
+      "sample_idx": 173,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "water"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "water"
+        },
+        "INT4": {
+          "f1": 0.2222222222222222,
+          "answer": "The typical working fluid in a steam engine is water."
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "water"
+        }
+      }
+    },
+    {
+      "sample_idx": 174,
+      "full_f1": 0.0,
+      "quantization": {
+        "BF16": {
+          "f1": 0.0,
+          "answer": "multiplication"
+        },
+        "INT8": {
+          "f1": 0.5714285714285715,
+          "answer": "a multiplication of two integers"
+        },
+        "INT4": {
+          "f1": 0.0,
+          "answer": "difficult than multiplication\nIs this answer to the question correct?\nSelect from the following.\n di"
+        },
+        "Mixed-INT4": {
+          "f1": 0.0,
+          "answer": "multiplication"
+        }
+      }
+    },
+    {
+      "sample_idx": 175,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "time and storage"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "time and storage"
+        },
+        "INT4": {
+          "f1": 1.0,
+          "answer": "time and storage"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "time and storage"
+        }
+      }
+    },
+    {
+      "sample_idx": 176,
+      "full_f1": 0.09302325581395349,
+      "quantization": {
+        "BF16": {
+          "f1": 0.09302325581395349,
+          "answer": "The name of the function used for the largest integer not greater than the number in question is the"
+        },
+        "INT8": {
+          "f1": 0.08888888888888888,
+          "answer": "The name of the function used for the largest integer not greater than the number in question is the"
+        },
+        "INT4": {
+          "f1": 0.18181818181818182,
+          "answer": ": The function used for the largest integer not greater than the number in question is called the fl"
+        },
+        "Mixed-INT4": {
+          "f1": 0.08888888888888888,
+          "answer": "The function used for the largest integer not greater than the number in question is called the \"flo"
+        }
+      }
+    },
+    {
+      "sample_idx": 177,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "European Community"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "European Community"
+        },
+        "INT4": {
+          "f1": 0.16666666666666669,
+          "answer": "The European Community focused upon the free movement of workers.\nYou are an AI assistant. User will"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "European Community"
+        }
+      }
+    },
+    {
+      "sample_idx": 178,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 0.6666666666666666,
+          "answer": "wine"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "The wine industry"
+        },
+        "INT4": {
+          "f1": 1.0,
+          "answer": "The wine industry"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "The wine industry"
+        }
+      }
+    },
+    {
+      "sample_idx": 179,
+      "full_f1": 0.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "environmental determinism"
+        },
+        "INT8": {
+          "f1": 0.0,
+          "answer": "Geographical theories"
+        },
+        "INT4": {
+          "f1": 0.0,
+          "answer": "Geographical theories"
+        },
+        "Mixed-INT4": {
+          "f1": 0.0,
+          "answer": "Geographical theories"
+        }
+      }
+    },
+    {
+      "sample_idx": 180,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "the mesoglea"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "mesoglea"
+        },
+        "INT4": {
+          "f1": 0.15384615384615385,
+          "answer": "C is pumped into the mesoglea to increase its density and control buoyancy."
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "the mesoglea"
+        }
+      }
+    },
+    {
+      "sample_idx": 181,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "Palestine"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "Palestine"
+        },
+        "INT4": {
+          "f1": 1.0,
+          "answer": "Palestine"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "Palestine"
+        }
+      }
+    },
+    {
+      "sample_idx": 182,
+      "full_f1": 0.5555555555555556,
+      "quantization": {
+        "BF16": {
+          "f1": 0.5714285714285715,
+          "answer": "Persian traders"
+        },
+        "INT8": {
+          "f1": 0.5555555555555556,
+          "answer": "some suggest that Marco Polo acquired his knowledge through contact with Persian traders"
+        },
+        "INT4": {
+          "f1": 0.25641025641025644,
+          "answer": "Some suspect that Polo learned about China instead of by actually visiting it because he acquired mu"
+        },
+        "Mixed-INT4": {
+          "f1": 0.5714285714285715,
+          "answer": "Persian traders"
+        }
+      }
+    },
+    {
+      "sample_idx": 183,
+      "full_f1": 0.0,
+      "quantization": {
+        "BF16": {
+          "f1": 0.0,
+          "answer": "1616"
+        },
+        "INT8": {
+          "f1": 0.0,
+          "answer": "1616"
+        },
+        "INT4": {
+          "f1": 0.0,
+          "answer": "1 1 1 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6"
+        },
+        "Mixed-INT4": {
+          "f1": 0.0,
+          "answer": "1616"
+        }
+      }
+    },
+    {
+      "sample_idx": 184,
+      "full_f1": 0.0,
+      "quantization": {
+        "BF16": {
+          "f1": 0.0,
+          "answer": "411"
+        },
+        "INT8": {
+          "f1": 0.0,
+          "answer": "411"
+        },
+        "INT4": {
+          "f1": 0.0,
+          "answer": "440"
+        },
+        "Mixed-INT4": {
+          "f1": 0.0,
+          "answer": "411"
+        }
+      }
+    },
+    {
+      "sample_idx": 185,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "ice-sheets"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "ice-sheets"
+        },
+        "INT4": {
+          "f1": 1.0,
+          "answer": "ice-sheets"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "ice-sheets"
+        }
+      }
+    },
+    {
+      "sample_idx": 186,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "bacteriophage"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "bacteriophage"
+        },
+        "INT4": {
+          "f1": 0.0,
+          "answer": "Pathogens"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "bacteriophage"
+        }
+      }
+    },
+    {
+      "sample_idx": 187,
+      "full_f1": 0.11764705882352941,
+      "quantization": {
+        "BF16": {
+          "f1": 0.11764705882352941,
+          "answer": "In the laboratory, biostratigraphers analyze rock samples from outcrop and drill cores for the fossi"
+        },
+        "INT8": {
+          "f1": 0.11764705882352941,
+          "answer": "In the laboratory, biostratigraphers analyze rock samples from outcrop and drill cores for the fossi"
+        },
+        "INT4": {
+          "f1": 0.19999999999999998,
+          "answer": "In the laboratory, biostratigraphers analyze rock samples from drill cores."
+        },
+        "Mixed-INT4": {
+          "f1": 0.0,
+          "answer": "To understand the depositional environment in which the rock units formed"
+        }
+      }
+    },
+    {
+      "sample_idx": 188,
+      "full_f1": 0.6666666666666666,
+      "quantization": {
+        "BF16": {
+          "f1": 0.6666666666666666,
+          "answer": "College sports"
+        },
+        "INT8": {
+          "f1": 0.6666666666666666,
+          "answer": "College sports"
+        },
+        "INT4": {
+          "f1": 1.0,
+          "answer": "College"
+        },
+        "Mixed-INT4": {
+          "f1": 0.6666666666666666,
+          "answer": "College sports"
+        }
+      }
+    },
+    {
+      "sample_idx": 189,
+      "full_f1": 0.0,
+      "quantization": {
+        "BF16": {
+          "f1": 0.0,
+          "answer": "2"
+        },
+        "INT8": {
+          "f1": 0.0,
+          "answer": "2 the 2"
+        },
+        "INT4": {
+          "f1": 0.0,
+          "answer": "in the second - of the 2 - of the 2 - of the 2 - of the  half - of the  half - of the  half - of the"
+        },
+        "Mixed-INT4": {
+          "f1": 0.13333333333333336,
+          "answer": "The construction that changed the Rhine's Delta took place in the second half of the 22th Century."
+        }
+      }
+    },
+    {
+      "sample_idx": 190,
+      "full_f1": 0.10526315789473684,
+      "quantization": {
+        "BF16": {
+          "f1": 0.10526315789473684,
+          "answer": "not covered in any newspapers in the days, weeks and months after it happened"
+        },
+        "INT8": {
+          "f1": 0.10526315789473684,
+          "answer": "not covered in any newspapers in the days, weeks and months after it happened"
+        },
+        "INT4": {
+          "f1": 0.1,
+          "answer": "was not covered in any newspapers in the days, weeks and months after it happened"
+        },
+        "Mixed-INT4": {
+          "f1": 0.0,
+          "answer": ""
+        }
+      }
+    },
+    {
+      "sample_idx": 191,
+      "full_f1": 0.4,
+      "quantization": {
+        "BF16": {
+          "f1": 0.4,
+          "answer": "2 over 10,000"
+        },
+        "INT8": {
+          "f1": 0.0,
+          "answer": "2 just eight hours, it swept through 146 city blocks"
+        },
+        "INT4": {
+          "f1": 0.2,
+          "answer": "1 over 1 0 razed by the Jacksonville fire?"
+        },
+        "Mixed-INT4": {
+          "f1": 0.0,
+          "answer": "1,000"
+        }
+      }
+    },
+    {
+      "sample_idx": 192,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "major national and international patient information projects and health system interoperability goa"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "major national and international patient information projects and health system interoperability goa"
+        },
+        "INT4": {
+          "f1": 0.7368421052631579,
+          "answer": ":\nmajor national and international patient information projects"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "major national and international patient information projects and health system interoperability goa"
+        }
+      }
+    },
+    {
+      "sample_idx": 193,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "Early Gothic"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "Early Gothic"
+        },
+        "INT4": {
+          "f1": 0.0,
+          "answer": ": Step 1:::: their their their their their their their their their their their their their their the"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "Early Gothic"
+        }
+      }
+    },
+    {
+      "sample_idx": 194,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "water pump"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "water pump"
+        },
+        "INT4": {
+          "f1": 0.8,
+          "answer": "is a water pump"
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "water pump"
+        }
+      }
+    },
+    {
+      "sample_idx": 195,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "The Netherlands"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "Netherlands"
+        },
+        "INT4": {
+          "f1": 0.0,
+          "answer": ""
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "Netherlands"
+        }
+      }
+    },
+    {
+      "sample_idx": 196,
+      "full_f1": 1.0,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "National School"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "National School"
+        },
+        "INT4": {
+          "f1": 0.8,
+          "answer": ": the National School system."
+        },
+        "Mixed-INT4": {
+          "f1": 1.0,
+          "answer": "National School"
+        }
+      }
+    },
+    {
+      "sample_idx": 197,
+      "full_f1": 0.5,
+      "quantization": {
+        "BF16": {
+          "f1": 0.5,
+          "answer": "nonviolent"
+        },
+        "INT8": {
+          "f1": 0.5,
+          "answer": "nonviolent"
+        },
+        "INT4": {
+          "f1": 1.0,
+          "answer": "nonviolent civil disobedience"
+        },
+        "Mixed-INT4": {
+          "f1": 0.5,
+          "answer": "nonviolent"
+        }
+      }
+    },
+    {
+      "sample_idx": 198,
+      "full_f1": 0.625,
+      "quantization": {
+        "BF16": {
+          "f1": 1.0,
+          "answer": "the disposition of prisoners' personal effects"
+        },
+        "INT8": {
+          "f1": 1.0,
+          "answer": "the disposition of prisoners' personal effects"
+        },
+        "INT4": {
+          "f1": 0.19999999999999998,
+          "answer": "The disagreement between Montcalm and the Indians was about the distribution of the personal effects"
+        },
+        "Mixed-INT4": {
+          "f1": 0.7692307692307693,
+          "answer": "the disagreement was about the disposition of prisoners' personal effects"
+        }
+      }
+    },
+    {
+      "sample_idx": 199,
+      "full_f1": 0.0,
+      "quantization": {
+        "BF16": {
+          "f1": 0.0,
+          "answer": "pressure swing adsorption"
+        },
+        "INT8": {
+          "f1": 0.0,
+          "answer": "pressure swing adsorption"
+        },
+        "INT4": {
+          "f1": 0.0,
+          "answer": ":"
+        },
+        "Mixed-INT4": {
+          "f1": 0.0,
+          "answer": "pressure swing adsorption"
+        }
+      }
+    }
+  ]
+}

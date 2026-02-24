@@ -1,0 +1,24 @@
+{
+  "metadata": {
+    "experiment": "eager_overhead",
+    "description": "Benchmark eager vs SDPA with/without output_attentions (reviewer 2.1)",
+    "model": "Qwen/Qwen2.5-7B",
+    "timestamp": "20260211_111947"
+  },
+  "results": {
+    "eager": {
+      "no_attn_ms": 52.343167434446514,
+      "no_attn_std_ms": 0.6124144698633611,
+      "with_attn_ms": 52.571185980923474,
+      "with_attn_std_ms": 0.08210085098987864,
+      "seq_len": 501
+    },
+    "sdpa": {
+      "no_attn_ms": 43.19838401861489,
+      "no_attn_std_ms": 0.08339839566214712,
+      "with_attn_ms": null,
+      "with_attn_std_ms": null,
+      "seq_len": 501
+    }
+  }
+}

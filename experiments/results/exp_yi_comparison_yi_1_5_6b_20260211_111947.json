@@ -1,0 +1,512 @@
+{
+  "model": "Yi-1.5-6B",
+  "summary": {
+    "model": "01-ai/Yi-1.5-6B",
+    "n_valid": 100,
+    "mean_f1": 0.6589495623710575,
+    "std_f1": 0.3989097747887929,
+    "ci95_f1": 0.07955110866436253
+  },
+  "per_sample": [
+    {
+      "sample_idx": 0,
+      "f1": 1.0,
+      "answer": "The Ludendorff Bridge"
+    },
+    {
+      "sample_idx": 1,
+      "f1": 1.0,
+      "answer": "Unknown"
+    },
+    {
+      "sample_idx": 2,
+      "f1": 0.7499999999999999,
+      "answer": "adaptive and innate"
+    },
+    {
+      "sample_idx": 3,
+      "f1": 0.8333333333333333,
+      "answer": "France concentrated its forces against Prussia and its allies in the European theatre of the war."
+    },
+    {
+      "sample_idx": 4,
+      "f1": 0.05882352941176471,
+      "answer": "Answer: \nTears\nExplanation: \nThe flushing action of tears expels pathogens from the eyes.\nThe flushi"
+    },
+    {
+      "sample_idx": 5,
+      "f1": 1.0,
+      "answer": "CBSE"
+    },
+    {
+      "sample_idx": 6,
+      "f1": 0.0,
+      "answer": "10000000"
+    },
+    {
+      "sample_idx": 7,
+      "f1": 1.0,
+      "answer": "McCrary"
+    },
+    {
+      "sample_idx": 8,
+      "f1": 1.0,
+      "answer": "1996"
+    },
+    {
+      "sample_idx": 9,
+      "f1": 0.6666666666666665,
+      "answer": "planning, design, and financing"
+    },
+    {
+      "sample_idx": 10,
+      "f1": 1.0,
+      "answer": "the dukes"
+    },
+    {
+      "sample_idx": 11,
+      "f1": 0.2666666666666667,
+      "answer": "The revocation forbade Protestant services, required education of children as Catholics, and prohibi"
+    },
+    {
+      "sample_idx": 12,
+      "f1": 0.08333333333333333,
+      "answer": "BSkyB has no veto over the presence of channels on their EPG, with open access being an enforced par"
+    },
+    {
+      "sample_idx": 13,
+      "f1": 0.05128205128205128,
+      "answer": "One theory is that, while disobedience may be helpful, any great amount of it would undermine the la"
+    },
+    {
+      "sample_idx": 14,
+      "f1": 1.0,
+      "answer": "kilopond"
+    },
+    {
+      "sample_idx": 15,
+      "f1": 0.6666666666666666,
+      "answer": "paintings"
+    },
+    {
+      "sample_idx": 16,
+      "f1": 1.0,
+      "answer": "William Maclure"
+    },
+    {
+      "sample_idx": 17,
+      "f1": 0.8,
+      "answer": "25 million"
+    },
+    {
+      "sample_idx": 18,
+      "f1": 0.24489795918367346,
+      "answer": "Many types of Turing machines are used to define complexity classes, such as deterministic Turing ma"
+    },
+    {
+      "sample_idx": 19,
+      "f1": 1.0,
+      "answer": "cartels"
+    },
+    {
+      "sample_idx": 20,
+      "f1": 1.0,
+      "answer": "over 100 billion dollars"
+    },
+    {
+      "sample_idx": 21,
+      "f1": 1.0,
+      "answer": "April"
+    },
+    {
+      "sample_idx": 22,
+      "f1": 1.0,
+      "answer": "168637"
+    },
+    {
+      "sample_idx": 23,
+      "f1": 1.0,
+      "answer": "4,222,000"
+    },
+    {
+      "sample_idx": 24,
+      "f1": 0.0,
+      "answer": "Newton's Third Law"
+    },
+    {
+      "sample_idx": 25,
+      "f1": 0.4,
+      "answer": "Fossil sequences in which there is datable material"
+    },
+    {
+      "sample_idx": 26,
+      "f1": 0.6,
+      "answer": "Art Deco style in painting and art."
+    },
+    {
+      "sample_idx": 27,
+      "f1": 0.0,
+      "answer": "Private Bill Committees"
+    },
+    {
+      "sample_idx": 28,
+      "f1": 1.0,
+      "answer": "2001"
+    },
+    {
+      "sample_idx": 29,
+      "f1": 1.0,
+      "answer": "English"
+    },
+    {
+      "sample_idx": 30,
+      "f1": 0.0,
+      "answer": "decreased"
+    },
+    {
+      "sample_idx": 31,
+      "f1": 1.0,
+      "answer": "Through various associations and other arrangements."
+    },
+    {
+      "sample_idx": 32,
+      "f1": 0.5,
+      "answer": "rigorous, intense learning experience.\n\nTrue"
+    },
+    {
+      "sample_idx": 33,
+      "f1": 0.8148148148148148,
+      "answer": "The reason for the majority rule is the high risk of a conflict of interest and/or the avoidance of "
+    },
+    {
+      "sample_idx": 34,
+      "f1": 1.0,
+      "answer": "females"
+    },
+    {
+      "sample_idx": 35,
+      "f1": 0.6666666666666666,
+      "answer": "TGF-\u03b2"
+    },
+    {
+      "sample_idx": 36,
+      "f1": 1.0,
+      "answer": "orientalism"
+    },
+    {
+      "sample_idx": 37,
+      "f1": 0.2181818181818182,
+      "answer": "The crisis had a major impact on international relations and created a rift within NATO. Some Europe"
+    },
+    {
+      "sample_idx": 38,
+      "f1": 1.0,
+      "answer": "1976"
+    },
+    {
+      "sample_idx": 39,
+      "f1": 0.0,
+      "answer": "90% to 93% O\n2."
+    },
+    {
+      "sample_idx": 40,
+      "f1": 1.0,
+      "answer": "Toyota Hilux"
+    },
+    {
+      "sample_idx": 41,
+      "f1": 0.0,
+      "answer": "61"
+    },
+    {
+      "sample_idx": 42,
+      "f1": 0.0,
+      "answer": "1.4 times normal\n\nFalse"
+    },
+    {
+      "sample_idx": 43,
+      "f1": 0.4210526315789474,
+      "answer": "A steep and steady decline in the popularity and credibility of secular, socialist and nationalist p"
+    },
+    {
+      "sample_idx": 44,
+      "f1": 1.0,
+      "answer": "The Court of Justice of the European Union (CJEU)"
+    },
+    {
+      "sample_idx": 45,
+      "f1": 1.0,
+      "answer": "21,000"
+    },
+    {
+      "sample_idx": 46,
+      "f1": 1.0,
+      "answer": "Commissioners"
+    },
+    {
+      "sample_idx": 47,
+      "f1": 0.8571428571428571,
+      "answer": "$40 per barrel"
+    },
+    {
+      "sample_idx": 48,
+      "f1": 1.0,
+      "answer": "Wise up or die."
+    },
+    {
+      "sample_idx": 49,
+      "f1": 1.0,
+      "answer": "2100"
+    },
+    {
+      "sample_idx": 50,
+      "f1": 0.18181818181818182,
+      "answer": "Some Normans joined Turkish forces to aid in the destruction of the Armenians vassal-states of Sasso"
+    },
+    {
+      "sample_idx": 51,
+      "f1": 0.33333333333333337,
+      "answer": "Nepali and/or the state's official language"
+    },
+    {
+      "sample_idx": 52,
+      "f1": 0.8,
+      "answer": "Even numbers\n\nFalse"
+    },
+    {
+      "sample_idx": 53,
+      "f1": 0.7499999999999999,
+      "answer": "the balance of parties across Parliament"
+    },
+    {
+      "sample_idx": 54,
+      "f1": 0.0,
+      "answer": "NL and NC"
+    },
+    {
+      "sample_idx": 55,
+      "f1": 1.0,
+      "answer": "Anarchists"
+    },
+    {
+      "sample_idx": 56,
+      "f1": 0.6666666666666666,
+      "answer": "early vertebrates"
+    },
+    {
+      "sample_idx": 57,
+      "f1": 1.0,
+      "answer": "Huntington Boulevard"
+    },
+    {
+      "sample_idx": 58,
+      "f1": 1.0,
+      "answer": "Francisco de Orellana"
+    },
+    {
+      "sample_idx": 59,
+      "f1": 1.0,
+      "answer": "1989"
+    },
+    {
+      "sample_idx": 60,
+      "f1": 0.0,
+      "answer": "7"
+    },
+    {
+      "sample_idx": 61,
+      "f1": 1.0,
+      "answer": "The seal"
+    },
+    {
+      "sample_idx": 62,
+      "f1": 1.0,
+      "answer": "1815"
+    },
+    {
+      "sample_idx": 63,
+      "f1": 0.3076923076923077,
+      "answer": "Through stream capture\n\nThrough stream capture, the Rhine extended its watershed southward."
+    },
+    {
+      "sample_idx": 64,
+      "f1": 0.0,
+      "answer": "Oxygen is a colorless, odorless, tasteless diatomic gas with the formula O\n2. It is the most abundan"
+    },
+    {
+      "sample_idx": 65,
+      "f1": 1.0,
+      "answer": "better"
+    },
+    {
+      "sample_idx": 66,
+      "f1": 1.0,
+      "answer": "Genoese traders"
+    },
+    {
+      "sample_idx": 67,
+      "f1": 1.0,
+      "answer": "Henry of Navarre"
+    },
+    {
+      "sample_idx": 68,
+      "f1": 1.0,
+      "answer": "highly respected"
+    },
+    {
+      "sample_idx": 69,
+      "f1": 0.6666666666666666,
+      "answer": "400 m"
+    },
+    {
+      "sample_idx": 70,
+      "f1": 0.7499999999999999,
+      "answer": "suggested for use in the ARPANET."
+    },
+    {
+      "sample_idx": 71,
+      "f1": 0.5,
+      "answer": "CALIPSO"
+    },
+    {
+      "sample_idx": 72,
+      "f1": 1.0,
+      "answer": "non-Mongol physicians"
+    },
+    {
+      "sample_idx": 73,
+      "f1": 0.6666666666666666,
+      "answer": "housing assistance"
+    },
+    {
+      "sample_idx": 74,
+      "f1": 0.4117647058823529,
+      "answer": "Fermat conjectured that all numbers of the form 22n + 1 are prime (they are called Fermat numbers) a"
+    },
+    {
+      "sample_idx": 75,
+      "f1": 0.05555555555555556,
+      "answer": "the Main.\n\nThe Rhine is the longest river in Germany. It is here that the Rhine encounters some more"
+    },
+    {
+      "sample_idx": 76,
+      "f1": 0.0,
+      "answer": "UNEP"
+    },
+    {
+      "sample_idx": 77,
+      "f1": 1.0,
+      "answer": "Federica Mogherini"
+    },
+    {
+      "sample_idx": 78,
+      "f1": 1.0,
+      "answer": "Systemic acquired resistance (SAR)"
+    },
+    {
+      "sample_idx": 79,
+      "f1": 1.0,
+      "answer": "Kuznets curve"
+    },
+    {
+      "sample_idx": 80,
+      "f1": 0.6666666666666666,
+      "answer": "the amount of environmental degradation"
+    },
+    {
+      "sample_idx": 81,
+      "f1": 0.0,
+      "answer": "(d)."
+    },
+    {
+      "sample_idx": 82,
+      "f1": 1.0,
+      "answer": "17th century"
+    },
+    {
+      "sample_idx": 83,
+      "f1": 0.6666666666666666,
+      "answer": "four minutes"
+    },
+    {
+      "sample_idx": 84,
+      "f1": 1.0,
+      "answer": "28.5\u00b0E"
+    },
+    {
+      "sample_idx": 85,
+      "f1": 1.0,
+      "answer": "Variable lymphocyte receptors (VLRs)"
+    },
+    {
+      "sample_idx": 86,
+      "f1": 0.13333333333333333,
+      "answer": "The static friction balances the applied force when there is no movement of an object on a surface."
+    },
+    {
+      "sample_idx": 87,
+      "f1": 1.0,
+      "answer": "Richard Trevithick"
+    },
+    {
+      "sample_idx": 88,
+      "f1": 1.0,
+      "answer": "the Conservative Party"
+    },
+    {
+      "sample_idx": 89,
+      "f1": 0.0,
+      "answer": "9"
+    },
+    {
+      "sample_idx": 90,
+      "f1": 0.10526315789473682,
+      "answer": "The development of this fertile soil allowed agriculture and silviculture in the previously hostile "
+    },
+    {
+      "sample_idx": 91,
+      "f1": 1.0,
+      "answer": "25"
+    },
+    {
+      "sample_idx": 92,
+      "f1": 0.0,
+      "answer": "men"
+    },
+    {
+      "sample_idx": 93,
+      "f1": 1.0,
+      "answer": "The Greens"
+    },
+    {
+      "sample_idx": 94,
+      "f1": 0.0,
+      "answer": "the only opposition group in Egypt able to field candidates during elections."
+    },
+    {
+      "sample_idx": 95,
+      "f1": 1.0,
+      "answer": "Civil rebellion"
+    },
+    {
+      "sample_idx": 96,
+      "f1": 0.6666666666666666,
+      "answer": "nonviolent protest"
+    },
+    {
+      "sample_idx": 97,
+      "f1": 0.6666666666666666,
+      "answer": "Protein structure prediction in biology.\n\nTrue"
+    },
+    {
+      "sample_idx": 98,
+      "f1": 0.0,
+      "answer": "20%"
+    },
+    {
+      "sample_idx": 99,
+      "f1": 1.0,
+      "answer": "P"
+    }
+  ]
+}

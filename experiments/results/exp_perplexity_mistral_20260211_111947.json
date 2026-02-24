@@ -1,0 +1,45 @@
+{
+  "metadata": {
+    "experiment": "perplexity_mistral",
+    "description": "Mistral-7B WikiText-2 perplexity (extends F2)",
+    "model": "mistralai/Mistral-7B-v0.3",
+    "timestamp": "20260211_111947"
+  },
+  "results": {
+    "Mistral-7B": {
+      "model": "mistralai/Mistral-7B-v0.3",
+      "sensitive_layers": [
+        8,
+        13,
+        17,
+        19,
+        21,
+        23,
+        27,
+        29
+      ],
+      "conditions": {
+        "BF16": {
+          "mean_ppl": 6.486202977092786,
+          "std_ppl": 2.4944564935152007,
+          "n_segments": 100
+        },
+        "INT8": {
+          "mean_ppl": 6.489128733771582,
+          "std_ppl": 2.5005144693764616,
+          "n_segments": 100
+        },
+        "INT4": {
+          "mean_ppl": 6.512859466195866,
+          "std_ppl": 2.506367751808005,
+          "n_segments": 100
+        },
+        "Mixed-INT4": {
+          "mean_ppl": 6.510913397942675,
+          "std_ppl": 2.510604101303105,
+          "n_segments": 100
+        }
+      }
+    }
+  }
+}

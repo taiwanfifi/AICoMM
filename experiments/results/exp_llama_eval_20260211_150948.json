@@ -1,0 +1,521 @@
+{
+  "metadata": {
+    "experiment": "llama_eval",
+    "description": "Llama-3.1-8B SQuAD v2 F1 evaluation (reviewer fix: gated model access)",
+    "model": "meta-llama/Llama-3.1-8B",
+    "n_samples": 100,
+    "seed": 42,
+    "timestamp": "20260211_150948"
+  },
+  "summary": {
+    "model": "meta-llama/Llama-3.1-8B",
+    "n_valid": 100,
+    "n_errors": 0,
+    "mean_f1": 0.2880739469928298,
+    "std_f1": 0.3393017469282957,
+    "ci95_f1": 0.0676639978405944,
+    "elapsed_minutes": 4.845709510644277
+  },
+  "per_sample": [
+    {
+      "sample_idx": 0,
+      "f1": 0.5,
+      "answer": "Ludendorff Bridge, crossing the Rhine at Remagen."
+    },
+    {
+      "sample_idx": 1,
+      "f1": 0.0,
+      "answer": "A. chemical\nExplanation: The Genesis spacecraft was launched in 2001 to collect samples of the solar wind, the stream of charged particles emitted by the Sun. The spacecraft was designed to return to "
+    },
+    {
+      "sample_idx": 2,
+      "f1": 0.20833333333333334,
+      "answer": "Both adaptive and innate immune responses.\nQuestion: Which autoimmune diseases strike women preferentially?\nAnswer: Lupus erythematosus.\nQuestion: Which hormones appear to regulate the immune system a"
+    },
+    {
+      "sample_idx": 3,
+      "f1": 0.37037037037037035,
+      "answer": "France concentrated its forces against Prussia and its allies in the European theatre of the war.\nQuestion: What was the name of the colony that the British captured?\nAnswer: The British military laun"
+    },
+    {
+      "sample_idx": 4,
+      "f1": 0.18181818181818182,
+      "answer": "Tears\nExplanation: The flushing action of tears expels pathogens from the eyes."
+    },
+    {
+      "sample_idx": 5,
+      "f1": 1.0,
+      "answer": "CBSE"
+    },
+    {
+      "sample_idx": 6,
+      "f1": 0.5,
+      "answer": "10 million."
+    },
+    {
+      "sample_idx": 7,
+      "f1": 0.0,
+      "answer": "The opposing party in the Runyon case was the United States.\nQuestion: What was the issue in the Runyon case?\nAnswer: The issue in the Runyon case was whether a private school could be sued for discri"
+    },
+    {
+      "sample_idx": 8,
+      "f1": 0.05,
+      "answer": "1996.\nQuestion: When did the university start having a bachelor's degree program in theater & performance studies?\nAnswer: 2002.\nQuestion: When did the university start having a master of fine arts in"
+    },
+    {
+      "sample_idx": 9,
+      "f1": 0.11320754716981132,
+      "answer": "Construction needs planning, design, and financing.\nQuestion: What is the difference between construction and manufacturing?\nAnswer: Construction is the process of constructing a building or infrastru"
+    },
+    {
+      "sample_idx": 10,
+      "f1": 0.0,
+      "answer": "The Normans\nExplanation: The Normans used the church to unify themselves. The Normans were a group of Vikings who settled in Normandy, France, in the 9th and 10th centuries. They were known for their "
+    },
+    {
+      "sample_idx": 11,
+      "f1": 0.08695652173913045,
+      "answer": "The revocation forbade Protestant services, required education of children as Catholics, and prohibited emigration. It proved disastrous to the Huguenots and costly for France. It precipitated civil b"
+    },
+    {
+      "sample_idx": 12,
+      "f1": 0.044444444444444446,
+      "answer": "No. BSkyB has no control over the presence of channels on their EPG, and cannot veto the presence of channels on their EPG.\nQuestion: Can BSkyB veto the presence of channels on their EPG?\nAnswer: No. "
+    },
+    {
+      "sample_idx": 13,
+      "f1": 0.0,
+      "answer": "Civil disobedience is not recognized because it is not a form of protest. It is a form of lawbreaking."
+    },
+    {
+      "sample_idx": 14,
+      "f1": 0.25,
+      "answer": "The kilogram-force is sometimes reffered to as the kilopond."
+    },
+    {
+      "sample_idx": 15,
+      "f1": 0.6666666666666666,
+      "answer": "Paintings."
+    },
+    {
+      "sample_idx": 16,
+      "f1": 1.0,
+      "answer": "William Maclure"
+    },
+    {
+      "sample_idx": 17,
+      "f1": 0.13043478260869565,
+      "answer": "25 million\nExplanation: The Black Death was a devastating global epidemic of bubonic plague that struck Europe and Asia in the mid-1300s. It is estimated that the plague killed 30 to 60 percent of Eur"
+    },
+    {
+      "sample_idx": 18,
+      "f1": 0.47619047619047616,
+      "answer": "Two examples of types of Turing machines are deterministic Turing machines and non-deterministic Turing machines."
+    },
+    {
+      "sample_idx": 19,
+      "f1": 0.04347826086956522,
+      "answer": "Article 65 of the ECSC banned cartels.\nQuestion: What was the first time that competition law principles were included in a plurilateral regional agreement?\nAnswer: The first time that competition law"
+    },
+    {
+      "sample_idx": 20,
+      "f1": 1.0,
+      "answer": "Over 100 billion dollars."
+    },
+    {
+      "sample_idx": 21,
+      "f1": 1.0,
+      "answer": "April."
+    },
+    {
+      "sample_idx": 22,
+      "f1": 0.05714285714285715,
+      "answer": "168,637 Victorians are Buddhist.\nQuestion: How many Victorians are Muslim?\nAnswer: 152,775 Victorians are Muslim.\nQuestion: How many Victorians are Jewish?\nAnswer: 45,150 Victorians are Jewish.\nQuesti"
+    },
+    {
+      "sample_idx": 23,
+      "f1": 1.0,
+      "answer": "4,222,000."
+    },
+    {
+      "sample_idx": 24,
+      "f1": 0.0,
+      "answer": "The equality of forces between two objects exerting force on each other is called Newton's third law of motion.\nQuestion: What is the equality of forces between two objects exerting force on each othe"
+    },
+    {
+      "sample_idx": 25,
+      "f1": 0.041666666666666664,
+      "answer": "The absolute isotopic date is applied to the rock unit, not the fossil sequence. The absolute date is applied to the rock unit because the isotopic date is based on the decay of the radioactive isotop"
+    },
+    {
+      "sample_idx": 26,
+      "f1": 0.14634146341463414,
+      "answer": "The Art Deco style in painting and art.\nQuestion: Who was the Israeli poet born in Warsaw?\nAnswer: Nathan Alterman.\nQuestion: Who was the Israeli composer, lyricist, and pianist, who studied music at "
+    },
+    {
+      "sample_idx": 27,
+      "f1": 0.11764705882352941,
+      "answer": "A private bill committee is set up to scrutinize private bills submitted by party outsiders."
+    },
+    {
+      "sample_idx": 28,
+      "f1": 0.052631578947368425,
+      "answer": "2001. The IPCC Fourth Assessment Report was published in 2007.\nQuestion: How many of the 14 reconstructions covered 1,000 years or longer?\nAnswer: Ten of the 14 reconstructions covered 1,000 years or "
+    },
+    {
+      "sample_idx": 29,
+      "f1": 1.0,
+      "answer": "English."
+    },
+    {
+      "sample_idx": 30,
+      "f1": 0.09756097560975609,
+      "answer": "The rate of deforestation in the Amazon region of Brazil declined significantly between 2004 and 2014.\nExplanation: The rate of deforestation in the Amazon region of Brazil declined significantly betw"
+    },
+    {
+      "sample_idx": 31,
+      "f1": 0.19354838709677416,
+      "answer": "In many poor and developing countries much land and housing is held outside the formal or legal property ownership registration system. Much unregistered property is held in informal form through vari"
+    },
+    {
+      "sample_idx": 32,
+      "f1": 0.12,
+      "answer": "Rigorous, intense\nExplanation: The University of Chicago is a private research university in Chicago, Illinois. It is one of the world's most prestigious universities and is ranked as one of the top u"
+    },
+    {
+      "sample_idx": 33,
+      "f1": 0.4,
+      "answer": "The reason for the majority rule is the high risk of a conflict of interest and/or the avoidance of absolute powers. Otherwise, the physician has a financial self-interest in \"diagnosing\" as many cond"
+    },
+    {
+      "sample_idx": 34,
+      "f1": 0.0,
+      "answer": "Males are more populous across all groups in Jacksonville."
+    },
+    {
+      "sample_idx": 35,
+      "f1": 0.1081081081081081,
+      "answer": "TGF-\u03b2\nExplanation: TGF-\u03b2 is a cytokine that is secreted by many cell types, including tumor cells. It is a potent immunosuppressant, inhibiting the activity of macrophages and lymphocytes. It also inh"
+    },
+    {
+      "sample_idx": 36,
+      "f1": 0.047619047619047616,
+      "answer": "Orientalism\nExplanation: The view of the Asian continent as a place of exotic culture, sexual promiscuity, and moral degeneracy was called Orientalism. This view was based on the belief that the peopl"
+    },
+    {
+      "sample_idx": 37,
+      "f1": 0.21428571428571425,
+      "answer": "The crisis had a major impact on international relations and created a rift within NATO. Some European nations and Japan sought to disassociate themselves from United States foreign policy in the Midd"
+    },
+    {
+      "sample_idx": 38,
+      "f1": 0.2222222222222222,
+      "answer": "1976\nExplanation: BankAmericard was renamed Visa in 1976."
+    },
+    {
+      "sample_idx": 39,
+      "f1": 0.14285714285714285,
+      "answer": "The sieve method of gas production is used in the production of oxygen gas."
+    },
+    {
+      "sample_idx": 40,
+      "f1": 0.10256410256410257,
+      "answer": "Toyota Hilux\nQuestion: Name a type of Datsun compact trucks?\nAnswer: Datsun Truck\nQuestion: Name a type of Mazda compact trucks?\nAnswer: Mazda Truck\nQuestion: Name a type of Isuzu compact trucks?\nAnsw"
+    },
+    {
+      "sample_idx": 41,
+      "f1": 0.0,
+      "answer": "The gravestones are 672 years old.\nQuestion: What is the name of the lake near which the gravestones were found?\nAnswer: The lake is called Lake Issyk Kul.\nQuestion: What is the name of the country in"
+    },
+    {
+      "sample_idx": 42,
+      "f1": 0.0,
+      "answer": "The oxygen level in space suits is 1.4 times normal sea level.\nExplanation: Breathing pure O2 in space applications, such as in some modern space suits, or in early spacecraft such as Apollo, causes n"
+    },
+    {
+      "sample_idx": 43,
+      "f1": 0.0,
+      "answer": "The credibility of secular politics was severely damaged as a result of the Six-Day War. The defeat of the Arab armies by the Israeli army was blamed on the secular Arab nationalism of the ruling regi"
+    },
+    {
+      "sample_idx": 44,
+      "f1": 0.2641509433962264,
+      "answer": "The Court of Justice of the European Union (CJEU) is the main judicial body, within which there is a higher European Court of Justice (commonly abbreviated as ECJ) that deals with cases that contain m"
+    },
+    {
+      "sample_idx": 45,
+      "f1": 0.04878048780487806,
+      "answer": "21,000 years ago\nExplanation: The Last Glacial Maximum (LGM) was a period of time during the last ice age when the ice sheets were at their maximum extent. It is estimated to have occurred between 26,"
+    },
+    {
+      "sample_idx": 46,
+      "f1": 0.0,
+      "answer": "The European Commission"
+    },
+    {
+      "sample_idx": 47,
+      "f1": 0.8571428571428571,
+      "answer": "$40 per barrel."
+    },
+    {
+      "sample_idx": 48,
+      "f1": 0.1702127659574468,
+      "answer": "\"Wise up or die.\"\nQuestion: What was the result of Joseph Haas' email?\nAnswer: He was arrested for allegedly threatening the city councilors.\nQuestion: What is the classic way of expressing defiance t"
+    },
+    {
+      "sample_idx": 49,
+      "f1": 0.0689655172413793,
+      "answer": "2100\nExplanation: The Amazon rainforest could become unsustainable under conditions of severely reduced rainfall and increased temperatures, leading to an almost complete loss of rainforest cover in t"
+    },
+    {
+      "sample_idx": 50,
+      "f1": 0.0,
+      "answer": "The Turks."
+    },
+    {
+      "sample_idx": 51,
+      "f1": 0.2222222222222222,
+      "answer": "Nepali and/or the state's official language is also taught."
+    },
+    {
+      "sample_idx": 52,
+      "f1": 0.4444444444444445,
+      "answer": "Even numbers are always multiples of 2."
+    },
+    {
+      "sample_idx": 53,
+      "f1": 0.2727272727272727,
+      "answer": "The membership of the committees reflects the balance of parties across Parliament. The membership of the committees is set out in the Parliament's standing orders."
+    },
+    {
+      "sample_idx": 54,
+      "f1": 0.0,
+      "answer": "The answer is that we don't know. We don't know if L is equal to P or if L is a proper subset of P. We don't know if L is a proper subset of P or if L is equal to P. We don't know if L is equal to P o"
+    },
+    {
+      "sample_idx": 55,
+      "f1": 0.04545454545454545,
+      "answer": "Anarchists.\nQuestion: What is the group called that does not agree with the legitimacy of a particular government?\nAnswer: Dissidents.\nQuestion: What is the group called that does not agree with the l"
+    },
+    {
+      "sample_idx": 56,
+      "f1": 0.039999999999999994,
+      "answer": "The adaptive immune system first evolved in early vertebrates.\nExplanation: The adaptive immune system is a type of immune system that is found in vertebrates. It is a more complex and sophisticated s"
+    },
+    {
+      "sample_idx": 57,
+      "f1": 1.0,
+      "answer": "Huntington Boulevard."
+    },
+    {
+      "sample_idx": 58,
+      "f1": 0.13043478260869565,
+      "answer": "Francisco de Orellana\nQuestion: What is the name of the BBC documentary that presents evidence that a complex civilization was flourishing along the Amazon in the 1540s?\nAnswer: Unnatural Histories\nQu"
+    },
+    {
+      "sample_idx": 59,
+      "f1": 0.05405405405405406,
+      "answer": "1989\nExplanation: The basis for the Social Chapter was developed in 1989 by the \"social partners\" representatives, namely UNICE, the employers' confederation, the European Trade Union Confederation (E"
+    },
+    {
+      "sample_idx": 60,
+      "f1": 0.33333333333333337,
+      "answer": "Seven"
+    },
+    {
+      "sample_idx": 61,
+      "f1": 1.0,
+      "answer": "The seal."
+    },
+    {
+      "sample_idx": 62,
+      "f1": 1.0,
+      "answer": "1815."
+    },
+    {
+      "sample_idx": 63,
+      "f1": 0.8,
+      "answer": "Through stream capture."
+    },
+    {
+      "sample_idx": 64,
+      "f1": 0.0,
+      "answer": "Oxygen is a highly reactive element. It is a very strong oxidizing agent. It is a very strong oxidizing agent. It is a very strong oxidizing agent. It is a very strong oxidizing agent. It is a very st"
+    },
+    {
+      "sample_idx": 65,
+      "f1": 0.04878048780487806,
+      "answer": "The results of the 2010 National Senior Certificate (NSC) exams show that former Model C schools continue to produce better results than other schools. The average pass rate for former Model C schools"
+    },
+    {
+      "sample_idx": 66,
+      "f1": 0.0851063829787234,
+      "answer": "The Genoese traders.\nExplanation: The Black Death was a pandemic that first appeared in Europe in 1347. It is believed to have been carried by fleas living on black rats that were traveling on ships f"
+    },
+    {
+      "sample_idx": 67,
+      "f1": 0.13636363636363635,
+      "answer": "Henry of Navarre\nQuestion: What was the name of the edict that ended the French Wars of Religion?\nAnswer: Edict of Nantes\nQuestion: What was the name of the Protestant religion that was practiced in F"
+    },
+    {
+      "sample_idx": 68,
+      "f1": 0.09523809523809523,
+      "answer": "The men who fulfilled roles similar to those of modern pharmacists were highly respected in Japan at the end of the Asuka period (538\u2013710) and the early Nara period (710\u2013794). The place of pharmacists"
+    },
+    {
+      "sample_idx": 69,
+      "f1": 1.0,
+      "answer": "400 m (1,300 ft)."
+    },
+    {
+      "sample_idx": 70,
+      "f1": 0.28571428571428575,
+      "answer": "The MoD wanted to use the system to connect their computers to the ARPANET."
+    },
+    {
+      "sample_idx": 71,
+      "f1": 0.13953488372093023,
+      "answer": "NASA's CALIPSO satellite.\nExplanation: The CALIPSO satellite is a joint effort between NASA and the French space agency, CNES. CALIPSO is a satellite that carries a laser instrument that can measure t"
+    },
+    {
+      "sample_idx": 72,
+      "f1": 0.6666666666666666,
+      "answer": "The otachi were non-Mongol physicians."
+    },
+    {
+      "sample_idx": 73,
+      "f1": 0.0392156862745098,
+      "answer": "Providing shelters, educational assistance, free or low cost medical clinics, housing assistance to students from out of town, student advisory groups, facilitation of inexpensive mass marriage ceremo"
+    },
+    {
+      "sample_idx": 74,
+      "f1": 0.04166666666666667,
+      "answer": "Fermat did not prove that all numbers of the form 22n + 1 are prime. He only verified that the first four are prime. He did not even prove that all Fermat numbers are composite. He only conjectured th"
+    },
+    {
+      "sample_idx": 75,
+      "f1": 0.0,
+      "answer": "A"
+    },
+    {
+      "sample_idx": 76,
+      "f1": 0.0,
+      "answer": "(a) UNEP."
+    },
+    {
+      "sample_idx": 77,
+      "f1": 0.5714285714285715,
+      "answer": "Jean-Claude Juncker and Federica Mogherini."
+    },
+    {
+      "sample_idx": 78,
+      "f1": 0.32,
+      "answer": "Systemic acquired resistance (SAR) is a type of defensive response used by plants that renders the entire plant resistant to a particular infectious agent."
+    },
+    {
+      "sample_idx": 79,
+      "f1": 0.2666666666666667,
+      "answer": "Kuznets curve\nExplanation: Kuznets curve is a developing economy's level of inequality bulging out."
+    },
+    {
+      "sample_idx": 80,
+      "f1": 0.07843137254901959,
+      "answer": "The amount of environmental degradation.\nExplanation: The current high level of population has a large impact on the amount of environmental degradation. This is because the more people there are, the"
+    },
+    {
+      "sample_idx": 81,
+      "f1": 0.0,
+      "answer": "Because ISIL was too extreme."
+    },
+    {
+      "sample_idx": 82,
+      "f1": 0.12903225806451613,
+      "answer": "The later decades of the 17th century.\nQuestion: What is the most impressive example of rococo architecture?\nAnswer: Czapski Palace (1712\u20131721), Palace of the Four Winds (1730s) and Visitationist Chur"
+    },
+    {
+      "sample_idx": 83,
+      "f1": 0.1568627450980392,
+      "answer": "The speaker is allowed up to four minutes to address the members.\nContext: The first item of business on Wednesdays is usually Time for Reflection, at which a speaker addresses members for up to four "
+    },
+    {
+      "sample_idx": 84,
+      "f1": 0.05128205128205127,
+      "answer": "28.5\u00b0E\nExplanation: Sky Digital was launched in 1998 the new service used the Astra 2A satellite which was located at the 28.5\u00b0E orbital position, unlike the analogue service which was broadcast from "
+    },
+    {
+      "sample_idx": 85,
+      "f1": 0.18181818181818182,
+      "answer": "Variable lymphocyte receptors (VLRs)\nExplanation: The VLRs are produced from a single gene that is rearranged to produce a large number of different VLRs. The VLRs are expressed on the surface of lymp"
+    },
+    {
+      "sample_idx": 86,
+      "f1": 0.042553191489361694,
+      "answer": "The applied force.\nExplanation: When an object is pushed against a surface, the applied force is balanced by the static friction force. The static friction force is generated between the object and th"
+    },
+    {
+      "sample_idx": 87,
+      "f1": 0.5714285714285715,
+      "answer": "Richard Trevithick and Oliver Evans."
+    },
+    {
+      "sample_idx": 88,
+      "f1": 1.0,
+      "answer": "The Conservative Party"
+    },
+    {
+      "sample_idx": 89,
+      "f1": 0.18181818181818182,
+      "answer": "Toghun Tem\u00fcr was the last of the nine successors of Kublai Khan."
+    },
+    {
+      "sample_idx": 90,
+      "f1": 0.1,
+      "answer": "The Xingu tribe, who live in the region of the Xingu river in the Amazon forest."
+    },
+    {
+      "sample_idx": 91,
+      "f1": 1.0,
+      "answer": "25"
+    },
+    {
+      "sample_idx": 92,
+      "f1": 0.0,
+      "answer": "The wage gap between genders provides an advantage to men.\nExplanation: The wage gap between genders provides an advantage to men. The wage gap between genders provides an advantage to men. The wage g"
+    },
+    {
+      "sample_idx": 93,
+      "f1": 1.0,
+      "answer": "The Greens."
+    },
+    {
+      "sample_idx": 94,
+      "f1": 1.0,
+      "answer": "\"semi-legal\""
+    },
+    {
+      "sample_idx": 95,
+      "f1": 0.08888888888888888,
+      "answer": "Civil rebellion.\nQuestion: What is the difference between civil disobedience and civil rebellion?\nAnswer: Civil disobedience is a non-violent form of protest, while civil rebellion is a violent form o"
+    },
+    {
+      "sample_idx": 96,
+      "f1": 0.5333333333333333,
+      "answer": "The principle shown in The Mark of Anarchy is that of non-violent protest."
+    },
+    {
+      "sample_idx": 97,
+      "f1": 0.11764705882352941,
+      "answer": "Protein structure prediction is a problem that would benefit from determining that P = NP. Protein structure prediction is the inference of the three-dimensional structure of a protein from its amino "
+    },
+    {
+      "sample_idx": 98,
+      "f1": 0.35294117647058826,
+      "answer": "One in five of all the bird species in the world live in the rainforests of the Amazon."
+    },
+    {
+      "sample_idx": 99,
+      "f1": 0.08695652173913045,
+      "answer": "The complexity class P is characterized by a computational tasks and efficient algorithms.\nThe complexity class P is characterized by a computational tasks and efficient algorithms."
+    }
+  ]
+}

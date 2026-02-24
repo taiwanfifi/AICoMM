@@ -1,0 +1,512 @@
+{
+  "model": "Yi-6B-Chat",
+  "summary": {
+    "model": "01-ai/Yi-6B-Chat",
+    "n_valid": 100,
+    "mean_f1": 0.1611117808749959,
+    "std_f1": 0.15926597829695283,
+    "ci95_f1": 0.03176102955297361
+  },
+  "per_sample": [
+    {
+      "sample_idx": 0,
+      "f1": 0.1,
+      "answer": "The Ludendorff Bridge\n\nIn World War II, it was recognized that the Rhine would present a formidable "
+    },
+    {
+      "sample_idx": 1,
+      "f1": 0.0,
+      "answer": "The depletion of the Sun's oxygen-16 was likely due to a process that occurred during the formation "
+    },
+    {
+      "sample_idx": 2,
+      "f1": 0.22727272727272727,
+      "answer": "Female sex hormones are known immunostimulators of both adaptive and innate immune responses.\n\nThe g"
+    },
+    {
+      "sample_idx": 3,
+      "f1": 0.3846153846153846,
+      "answer": "France concentrated its forces against Prussia and its allies in the European theatre of the war.\n\nT"
+    },
+    {
+      "sample_idx": 4,
+      "f1": 0.047619047619047616,
+      "answer": "Tears\n\nThe flushing action of tears expels pathogens from the eyes. Tears are produced by the lacrim"
+    },
+    {
+      "sample_idx": 5,
+      "f1": 0.05,
+      "answer": "The CBSE and the CISCE are notable Examination Boards in multiple Indian states, along with the NENB"
+    },
+    {
+      "sample_idx": 6,
+      "f1": 0.18181818181818182,
+      "answer": "Ten million people.\n\nThe provided context and the question are consistent, and the answer provided ("
+    },
+    {
+      "sample_idx": 7,
+      "f1": 0.2222222222222222,
+      "answer": "McCrary\n\nThe opposing party in the Runyon case was McCrary."
+    },
+    {
+      "sample_idx": 8,
+      "f1": 0.06666666666666667,
+      "answer": "1996\n\nQuestion: When did the university start having a bachelor's degree program in Theater & Perfor"
+    },
+    {
+      "sample_idx": 9,
+      "f1": 0.11764705882352941,
+      "answer": "Planning, design, and financing are all necessary for construction to occur. These three elements ar"
+    },
+    {
+      "sample_idx": 10,
+      "f1": 0.05,
+      "answer": "The dukes\n\nContext: The Normans did not have a rich and distinctive tradition of visual arts, but th"
+    },
+    {
+      "sample_idx": 11,
+      "f1": 0.10256410256410257,
+      "answer": "The revocation forbade Protestant services, required education of children as Catholics, and prohibi"
+    },
+    {
+      "sample_idx": 12,
+      "f1": 0.044444444444444446,
+      "answer": "No, BSkyB has no veto over the presence of channels on their EPG. Open access is an enforced part of"
+    },
+    {
+      "sample_idx": 13,
+      "f1": 0.06451612903225806,
+      "answer": "One main reason that civil disobedience is not recognized is that it would undermine the law by enco"
+    },
+    {
+      "sample_idx": 14,
+      "f1": 0.16666666666666669,
+      "answer": "kilopond\n\nThe kilogram-force (kgf) (sometimes kilopond) is sometimes reffered to as kilopond."
+    },
+    {
+      "sample_idx": 15,
+      "f1": 0.14814814814814814,
+      "answer": "Some paintings from Adolf Hitler's private collection.\n\nThe provided text states that the National M"
+    },
+    {
+      "sample_idx": 16,
+      "f1": 0.25,
+      "answer": "William Maclure\n\nThe first geological map of the U.S. was produced by William Maclure in 1809."
+    },
+    {
+      "sample_idx": 17,
+      "f1": 0.10256410256410256,
+      "answer": "25 million\n\nThe plague disease, caused by Yersinia pestis, is enzootic (commonly present) in populat"
+    },
+    {
+      "sample_idx": 18,
+      "f1": 0.22727272727272727,
+      "answer": "Two examples of types of Turing machines used to define complexity classes are deterministic Turing "
+    },
+    {
+      "sample_idx": 19,
+      "f1": 0.2857142857142857,
+      "answer": "Article 65 of the ECSC banned cartels."
+    },
+    {
+      "sample_idx": 20,
+      "f1": 1.0,
+      "answer": "Over 100 billion dollars."
+    },
+    {
+      "sample_idx": 21,
+      "f1": 0.052631578947368425,
+      "answer": "April\n\nQuestion: Which month is the last in the year Parliament takes a two week vacation?\nAnswer: O"
+    },
+    {
+      "sample_idx": 22,
+      "f1": 0.06060606060606061,
+      "answer": "168,637\n\nReference: Victorian Government, Australian Bureau of Statistics\n\nVerification: The most re"
+    },
+    {
+      "sample_idx": 23,
+      "f1": 0.09523809523809523,
+      "answer": "4,222,000.\n\nThe given information states that as of March 31st, 2012, Sky had announced that a total"
+    },
+    {
+      "sample_idx": 24,
+      "f1": 0.0,
+      "answer": "The equality of forces between two objects exerting force on each other is described by Newton's Thi"
+    },
+    {
+      "sample_idx": 25,
+      "f1": 0.10256410256410257,
+      "answer": "Fossil sequences in which there is datable material.\n\nThe absolute isotopic date is applied to fossi"
+    },
+    {
+      "sample_idx": 26,
+      "f1": 0.375,
+      "answer": "Lempicka represented the Art Deco style in painting and art better than anyone else."
+    },
+    {
+      "sample_idx": 27,
+      "f1": 0.11764705882352941,
+      "answer": "A Private Bill Committee is set up to scrutinize private bills submitted by party outsiders."
+    },
+    {
+      "sample_idx": 28,
+      "f1": 0.06060606060606061,
+      "answer": "The IPCC Third Assessment Report (AR3) was published in 2001.\n\nThe information provided in the conte"
+    },
+    {
+      "sample_idx": 29,
+      "f1": 0.08695652173913045,
+      "answer": "In Nepalese private schools, the primary language of instruction is English. However, Nepali and/or "
+    },
+    {
+      "sample_idx": 30,
+      "f1": 0.05555555555555555,
+      "answer": "There was a decline in the rate of deforestation in the Amazon region of Brazil between 2004 and 201"
+    },
+    {
+      "sample_idx": 31,
+      "f1": 0.18181818181818182,
+      "answer": "Unregistered property is held in informal form through various associations and other arrangements.R"
+    },
+    {
+      "sample_idx": 32,
+      "f1": 0.13043478260869565,
+      "answer": "UChicago claims to have the most rigorous, intense learning experience compared to other universitie"
+    },
+    {
+      "sample_idx": 33,
+      "f1": 0.25806451612903225,
+      "answer": "Majority rule is used to address the high risk of conflict of interest and to avoid absolute power. "
+    },
+    {
+      "sample_idx": 34,
+      "f1": 0.0,
+      "answer": "Males\n\nContext: As of 2010[update], there were 366,273 households out of which 11.8% were vacant. 23"
+    },
+    {
+      "sample_idx": 35,
+      "f1": 0.10526315789473684,
+      "answer": "TGF-\u03b2\n\nTGF-\u03b2 is a cytokine that suppresses the immune response by suppressing the activity of macrop"
+    },
+    {
+      "sample_idx": 36,
+      "f1": 0.0,
+      "answer": "orientalismIn this task, you are given a sentence in the English language and your task is to conver"
+    },
+    {
+      "sample_idx": 37,
+      "f1": 0.5217391304347826,
+      "answer": "The European nations and Japan separated themselves from United States during the crisis to avoid be"
+    },
+    {
+      "sample_idx": 38,
+      "f1": 0.1111111111111111,
+      "answer": "1976\n\nIn 1976, BankAmericard was renamed and spun off into a separate company known today as Visa In"
+    },
+    {
+      "sample_idx": 39,
+      "f1": 0.04545454545454545,
+      "answer": "The sieve method of gas production is increasingly used.\n\nThe sieve method of gas production involve"
+    },
+    {
+      "sample_idx": 40,
+      "f1": 0.1142857142857143,
+      "answer": "Toyota Hilux\n\nContext: Compact trucks were introduced, such as the Toyota Hilux and the Datsun Truck"
+    },
+    {
+      "sample_idx": 41,
+      "f1": 0.14634146341463414,
+      "answer": "Nestorian graves dating to 1338\u201339 near Lake Issyk Kul in Kyrgyzstan have inscriptions referring to "
+    },
+    {
+      "sample_idx": 42,
+      "f1": 0.047619047619047616,
+      "answer": "The oxygen partial pressure in a spacesuit breathing system is typically about 30 kPa, which is abou"
+    },
+    {
+      "sample_idx": 43,
+      "f1": 0.0,
+      "answer": "The credibility of secular politics declined as a result of the Six-Day War."
+    },
+    {
+      "sample_idx": 44,
+      "f1": 0.2978723404255319,
+      "answer": "The Court of Justice of the European Union (CJEU)\n\nThe judicial branch of the EU has played an impor"
+    },
+    {
+      "sample_idx": 45,
+      "f1": 0.2222222222222222,
+      "answer": "The Last Glacial Maximum occurred approximately 21,000 years ago."
+    },
+    {
+      "sample_idx": 46,
+      "f1": 0.05405405405405406,
+      "answer": "Commissioners\n\nThe European Commission is the main executive body of the European Union. Article 17("
+    },
+    {
+      "sample_idx": 47,
+      "f1": 0.3636363636363636,
+      "answer": "$40 per barrel\n\nIn 1979, during the oil crisis, the world price of oil peaked at nearly $40 per barr"
+    },
+    {
+      "sample_idx": 48,
+      "f1": 0.18181818181818182,
+      "answer": "Joseph Haas allegedly sent an email to the Lebanon, New Hampshire city councilors stating, \"Wise up "
+    },
+    {
+      "sample_idx": 49,
+      "f1": 0.039999999999999994,
+      "answer": "If one computer model turns out correct, by the year 2100 there would be a nearly complete loss of r"
+    },
+    {
+      "sample_idx": 50,
+      "f1": 0.1,
+      "answer": "Turkish forces\n\nContext: Some Normans joined Turkish forces to aid in the destruction of the Armenia"
+    },
+    {
+      "sample_idx": 51,
+      "f1": 0.08333333333333333,
+      "answer": "Nepali and/or the state's official language.\n\nIn addition to teaching English, Nepalese private scho"
+    },
+    {
+      "sample_idx": 52,
+      "f1": 0.4444444444444445,
+      "answer": "Even numbers are always multiples of 2."
+    },
+    {
+      "sample_idx": 53,
+      "f1": 0.12244897959183672,
+      "answer": "The membership of the committees reflect the balance of parties across Parliament.\n\nCommittees are c"
+    },
+    {
+      "sample_idx": 54,
+      "f1": 0.07692307692307693,
+      "answer": "The relationship between L (the set of all problems that can be solved in logarithmic space) and P ("
+    },
+    {
+      "sample_idx": 55,
+      "f1": 0.04347826086956522,
+      "answer": "Anarchists.\n\nThe term \"anarchists\" refers to a group of people who do not agree with the concept of "
+    },
+    {
+      "sample_idx": 56,
+      "f1": 0.25,
+      "answer": "The adaptive immune system evolved in early vertebrates."
+    },
+    {
+      "sample_idx": 57,
+      "f1": 0.1142857142857143,
+      "answer": "Huntington Boulevard\n\nExplanation: The passage describes how homes from the early 20th century line "
+    },
+    {
+      "sample_idx": 58,
+      "f1": 0.3,
+      "answer": "Francisco de Orellana\n\nThe first European to travel the length of the Amazon River was Francisco de "
+    },
+    {
+      "sample_idx": 59,
+      "f1": 0.0909090909090909,
+      "answer": "The basis for the Social Chapter was developed in 1989.\n\nThe provided context provides the informati"
+    },
+    {
+      "sample_idx": 60,
+      "f1": 0.22727272727272727,
+      "answer": "7\n\nThe four-year, full-time undergraduate program at Harvard University comprises a minority of enro"
+    },
+    {
+      "sample_idx": 61,
+      "f1": 0.11764705882352941,
+      "answer": "In an adjustable spring-loaded valve, the seal needs to be broken to allow an operator to tamper wit"
+    },
+    {
+      "sample_idx": 62,
+      "f1": 0.05,
+      "answer": "1815\n\nThe First British Empire was based on mercantilism, and involved colonies and holdings primari"
+    },
+    {
+      "sample_idx": 63,
+      "f1": 0.11764705882352941,
+      "answer": "Through stream capture. \nQuestion: What period was the Rhine able to capture streams down to the Vos"
+    },
+    {
+      "sample_idx": 64,
+      "f1": 0.0,
+      "answer": "Oxygen is necessary for life because it is a component of the molecule that is used by most living o"
+    },
+    {
+      "sample_idx": 65,
+      "f1": 0.03636363636363636,
+      "answer": "Former \"Model C\" schools tend to produce better academic results than government schools formerly re"
+    },
+    {
+      "sample_idx": 66,
+      "f1": 0.12121212121212122,
+      "answer": "Genoese traders\n\nExplanation: The passage states that \"Plague was reportedly first introduced to Eur"
+    },
+    {
+      "sample_idx": 67,
+      "f1": 0.20689655172413793,
+      "answer": "Henry of Navarre\n\nReference: https://en.wikipedia.org/wiki/Henry_IV_of_France\n\nThe article states th"
+    },
+    {
+      "sample_idx": 68,
+      "f1": 0.1,
+      "answer": "Highly respected.\n\nIn Japan during the Asuka and Nara periods, the men who performed duties similar "
+    },
+    {
+      "sample_idx": 69,
+      "f1": 0.6153846153846153,
+      "answer": "The average width of the Rhine is 400 m (1,300 ft)."
+    },
+    {
+      "sample_idx": 70,
+      "f1": 0.5454545454545454,
+      "answer": "The system was suggested for use in the ARPANET.\n\nYes"
+    },
+    {
+      "sample_idx": 71,
+      "f1": 0.13636363636363635,
+      "answer": "NASA's CALIPSO satellite has measured the amount of dust that travels from the Sahara to the Amazon."
+    },
+    {
+      "sample_idx": 72,
+      "f1": 0.6666666666666666,
+      "answer": "Otachi were non-Mongol physicians."
+    },
+    {
+      "sample_idx": 73,
+      "f1": 0.052631578947368425,
+      "answer": "The Muslim Brotherhood is known for providing housing assistance to students from out of town.\n\nThe "
+    },
+    {
+      "sample_idx": 74,
+      "f1": 0.16326530612244897,
+      "answer": "Fermat verified Fermat's little theorem up to n = 4.\n\nFermat's little theorem states that for any pr"
+    },
+    {
+      "sample_idx": 75,
+      "f1": 0.05555555555555556,
+      "answer": "The Main.\n\nThe Rhine is the longest river in Germany. It is here that the Rhine encounters some more"
+    },
+    {
+      "sample_idx": 76,
+      "f1": 0.0,
+      "answer": "The IPCC's Deputy Secretary is funded by UNEP."
+    },
+    {
+      "sample_idx": 77,
+      "f1": 0.11764705882352941,
+      "answer": "Jean-Claude Juncker and Federica Mogherini\n\nThe European Commission is the main executive body of th"
+    },
+    {
+      "sample_idx": 78,
+      "f1": 0.16,
+      "answer": "Systemic acquired resistance (SAR) is a type of defensive response used by plants that renders the e"
+    },
+    {
+      "sample_idx": 79,
+      "f1": 0.3076923076923077,
+      "answer": "The a developing economy's level of inequality bulging out is called the Kuznets curve."
+    },
+    {
+      "sample_idx": 80,
+      "f1": 0.05,
+      "answer": "The current high level of population has a large impact on the Environmental Kuznets Curve (EKC).\n\nT"
+    },
+    {
+      "sample_idx": 81,
+      "f1": 0.11764705882352941,
+      "answer": "al-Qaeda complained of its failure to consult and \"notorious intransigence\"\n\nExplanation: According "
+    },
+    {
+      "sample_idx": 82,
+      "f1": 0.25,
+      "answer": "The building activity in the palaces and churches took place in the later decades of the 17th centur"
+    },
+    {
+      "sample_idx": 83,
+      "f1": 0.3076923076923077,
+      "answer": "A speaker addressing the members during the Time for Reflection is typically allowed up to four minu"
+    },
+    {
+      "sample_idx": 84,
+      "f1": 0.05555555555555556,
+      "answer": "28.5\u00b0E\n\nThe provided context states that when Sky Digital was launched in 1998, it used the Astra 2A"
+    },
+    {
+      "sample_idx": 85,
+      "f1": 0.4444444444444445,
+      "answer": "Primitive jawless vertebrates possess an array of receptors referred to as Variable lymphocyte recep"
+    },
+    {
+      "sample_idx": 86,
+      "f1": 0.042553191489361694,
+      "answer": "When there is no movement of an object on a surface, static friction balances the applied force. The"
+    },
+    {
+      "sample_idx": 87,
+      "f1": 0.12121212121212122,
+      "answer": "Richard Trevithick\n\nAround 1800 Richard Trevithick and, separately, Oliver Evans in 1801 introduced "
+    },
+    {
+      "sample_idx": 88,
+      "f1": 0.08888888888888888,
+      "answer": "The Conservative Party\n\nIn the aftermath of the 1979 referendum defeat, the Campaign for a Scottish "
+    },
+    {
+      "sample_idx": 89,
+      "f1": 0.06666666666666667,
+      "answer": "9\n\nContext: The 13-year-old Toghun Tem\u00fcr (Emperor Huizong), the last of the nine successors of Kubla"
+    },
+    {
+      "sample_idx": 90,
+      "f1": 0.3018867924528302,
+      "answer": "Michael Heckenberger and colleagues of the University of Florida discovered this and they came from "
+    },
+    {
+      "sample_idx": 91,
+      "f1": 0.05714285714285715,
+      "answer": "25 \nQuestion: What was the name of the area in London where Public Health England exhume bodies? \nAn"
+    },
+    {
+      "sample_idx": 92,
+      "f1": 0.038461538461538464,
+      "answer": "The wage gap between genders provides an advantage to males in the labor market.\n\nIn many countries,"
+    },
+    {
+      "sample_idx": 93,
+      "f1": 0.052631578947368425,
+      "answer": "The Greens\n\nThe centre-left Australian Labor Party (ALP), the centre-right Liberal Party of Australi"
+    },
+    {
+      "sample_idx": 94,
+      "f1": 0.047619047619047616,
+      "answer": "semi-legal\n\nReference: Despite periodic repression, the Brotherhood has become one of the most influ"
+    },
+    {
+      "sample_idx": 95,
+      "f1": 0.2857142857142857,
+      "answer": "When violence is used, civil disobedience is sometimes called civil rebellion.\n\nYes"
+    },
+    {
+      "sample_idx": 96,
+      "f1": 0.2758620689655173,
+      "answer": "The principle of nonviolent protest.\n\nReference:\n- \"The Mask of Anarchy\" by Percy Bysshe Shelley\n- \""
+    },
+    {
+      "sample_idx": 97,
+      "f1": 0.11538461538461538,
+      "answer": "If it is determined that P = NP, then many important problems in biology, such as protein structure "
+    },
+    {
+      "sample_idx": 98,
+      "f1": 0.13333333333333333,
+      "answer": "One in five of all the bird species in the world live in the rainforests of the Amazon.\n\nThe provide"
+    },
+    {
+      "sample_idx": 99,
+      "f1": 0.16666666666666669,
+      "answer": "The complexity class P is characterized by computational tasks and efficient algorithms."
+    }
+  ]
+}
