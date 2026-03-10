@@ -61,3 +61,6 @@ export_project.py
 archive/
 CLAUDE.md
 ROADMAP.md
+
+# Obsidian vault config
+.obsidian/

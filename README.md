@@ -38,17 +38,21 @@ Source: [`papers/paper-B/main.tex`](papers/paper-B/main.tex) | Figures: [`papers
 
 ```
 papers/
-  paper-A/                  # KV-cache compression paper (IEEE format, 7 pages)
-  paper-B/                  # Scout protocol paper (IEEE format, 7 pages)
-    figures/                # 4 publication-ready figures (PDF + PNG)
+  paper-A/                  # KV-cache compression paper (IEEE, 7 pages)
+  paper-B/                  # Scout protocol paper (IEEE, 7 pages)
+  jsac/                     # Merged journal paper (IEEE JSAC, 15 pages)
+  mlsys/                    # MLSys format submission
 
 experiments/
-  scripts/                  # 39 GPU experiment scripts (batches 2--30)
-  results/                  # 25 JSON result files with per-sample data
-  figures/                  # Figure generation scripts
-  poc/                      # Proof-of-concept experiments
+  scripts/                  # 22 core experiment scripts (run_exp_*.py)
+  results/                  # 26 core JSON result files
+  legacy-scripts/           # 41 old batch scripts (historical)
+  legacy-results/           # 23 old batch results (exploratory)
+  poc/                      # Proof-of-concept (TinyLlama, CPU-only)
 
-research/                   # 19 research directions and ideas
+research/                   # 19 research directions + survey + future ideas
+reviewer/                   # Review history organized by round (R0-R4)
+docs/                       # Project status, advisor notes, reference guides
 ```
 
 ## Key Results

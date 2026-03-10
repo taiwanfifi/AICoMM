@@ -43,16 +43,16 @@ National Taiwan University, Taipei, Taiwan\\
 % ABSTRACT
 % ============================================================
 \begin{abstract}
-Collaborative large language model (LLM) inference across edge-cloud boundaries requires transmitting key-value (KV) cache states between devices.
-A 14B-parameter model's KV-cache for a 1024-token context exceeds 200\,MB---impractical for bandwidth-constrained wireless networks.
+Efficient key-value (KV) cache management is critical across multiple LLM deployment scenarios: disaggregated serving systems transfer KV-caches between prefill and decode servers~\cite{splitwise,distserve}; long-context inference requires evicting tokens to fit within GPU memory; and edge-cloud collaborative inference transmits KV states across bandwidth-constrained links.
+A 14B-parameter model's KV-cache for a 1024-token context exceeds 200\,MB, creating bottlenecks in all three settings.
 We propose a compression pipeline combining (1)~\QtoC, a novel task-aware token selection method that uses query-to-context attention scores to identify context positions most relevant to the current task, and (2)~a diagnostic mixed-precision quantization recipe that identifies model-specific bottleneck layers and protects them from aggressive quantization.
 Through systematic evaluation across 7 model families (1.1B--14B parameters), 4 NLP tasks, and context lengths from 512 to 4096 tokens, we show that:
 \QtoC outperforms state-of-the-art selection methods by 29--47\% over SnapKV and 92--128\% over H2O at 25\% token retention across 4 model families;
 INT8 quantization is universally lossless while INT4 fragility is model-specific (not determined by architecture);
 and mixed-precision quantization achieves lossless quality at 3.6$\times$ compression by protecting a single bottleneck layer.
 We further demonstrate that delta encoding---the core technique in CacheGen---degrades task quality when combined with quantization, contrary to its variance-reduction motivation.
-Latency analysis shows that INT8 quantization halves transmission time with 3\,ms overhead, yielding a net 44\% latency reduction at 100\,Mbps.
-Our findings provide the first comprehensive characterization of KV-cache compressibility and a practical compression protocol for edge-cloud LLM systems.
+Latency analysis shows that INT8 quantization halves KV-cache transfer time with 3\,ms overhead, yielding a net 44\% latency reduction at 100\,Mbps.
+Our findings provide the first comprehensive characterization of KV-cache compressibility across architectures, applicable to disaggregated serving, memory-constrained inference, and edge-cloud systems.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -65,13 +65,14 @@ KV-cache compression, collaborative inference, edge-cloud computing, large langu
 \section{Introduction}
 \label{sec:intro}
 
-The deployment of large language models (LLMs) in distributed environments is driving interest in \emph{collaborative inference}, where computational stages are split across edge and cloud devices~\cite{cachegen,splitwise}.
-In such architectures, an edge device performs the \emph{prefill} pass---encoding the user's context and query---while a cloud server executes the \emph{decode} pass, generating tokens autoregressively.
-The key-value (KV) cache produced during prefill must be transmitted to the cloud, creating a bandwidth bottleneck.
+As large language models (LLMs) scale to billions of parameters, the key-value (KV) cache has emerged as a critical bottleneck across multiple deployment settings.
+\emph{Disaggregated serving} systems~\cite{splitwise,distserve,mooncake} separate prefill and decode phases across different GPU pools, transferring KV-caches over datacenter interconnects where even at 100\,Gbps, a 14B model's 200\,MB cache adds measurable latency to time-to-first-token (TTFT).
+\emph{Long-context inference} requires fitting KV-caches into limited GPU memory; a 14B model at 4096 tokens consumes over 800\,MB of VRAM for KV storage alone, necessitating token eviction under memory pressure.
+\emph{Edge-cloud collaborative inference}~\cite{cachegen} splits computation across devices, requiring KV-cache transmission over bandwidth-constrained links.
 
+In all three settings, KV-cache compression directly improves system performance---reducing transfer latency, fitting longer contexts into memory, or enabling inference over constrained networks.
 For a representative 7B-parameter model (Qwen2.5-7B: 28~layers, 4~KV heads, 128~head dimension), a 1024-token context produces a KV-cache of size $2 \times 28 \times 4 \times 1024 \times 128 \times 2 = 58$\,MB in BF16.
-At 100\,Mbps---typical for 5G uplink---this requires $\sim$4.6 seconds of transmission latency, which is unacceptable for interactive applications.
-At lower bandwidths common in edge deployments (10--50\,Mbps), latency exceeds 10 seconds.
+Yet the quality impact of compression varies dramatically across models and methods, and no systematic characterization exists.
 
 Existing approaches to KV-cache compression address this problem along narrow dimensions.
 CacheGen~\cite{cachegen} applies delta encoding and layer-wise quantization with arithmetic coding, compressing all tokens uniformly without considering task relevance.
@@ -90,9 +91,9 @@ We identify three key limitations of prior work:
 We make the following contributions:
 
 \begin{enumerate}
-    \item \textbf{\QtoC (Query-to-Context) selection}: A task-aware token selection method that uses the query's attention over context positions to identify the most task-relevant tokens. At 25\% retention---the most relevant operating point for bandwidth-constrained transmission---\QtoC outperforms SnapKV by 29--47\% and H2O by 92--128\% consistently across 4 model families.
+    \item \textbf{\QtoC (Query-to-Context) selection}: A task-aware token selection method that uses the query's attention over context positions to identify the most task-relevant tokens. At 25\% retention---the most aggressive operating point for memory-constrained or bandwidth-constrained settings---\QtoC outperforms SnapKV by 29--47\% and H2O by 92--128\% consistently across 4 model families.
 
-    \item \textbf{Diagnostic mixed-precision quantization}: A model-specific recipe that runs per-layer INT4 sensitivity analysis to identify bottleneck layers, then protects them with higher precision. This achieves lossless quality at 3.6$\times$ compression (27.7\% of original bandwidth).
+    \item \textbf{Diagnostic mixed-precision quantization}: A model-specific recipe that runs per-layer INT4 sensitivity analysis to identify bottleneck layers, then protects them with higher precision. This achieves lossless quality at 3.6$\times$ compression (27.7\% of original size).
 
     \item \textbf{Comprehensive cross-architecture characterization}: The first systematic study of KV-cache compressibility across 7 model families, 4 NLP tasks, and 4 context lengths (75+ experimental configurations), revealing that INT4 fragility is an emergent training property rather than an architectural characteristic.
 

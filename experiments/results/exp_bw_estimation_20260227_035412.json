@@ -1,0 +1,2306 @@
+{
+  "metadata": {
+    "experiment": "bw_estimation_validation",
+    "timestamp": "2026-02-27T03:54:11.620894",
+    "num_steps": 5000,
+    "operating_modes": [
+      "Full BF16",
+      "INT8",
+      "Mixed-INT4",
+      "INT4",
+      "Scout"
+    ],
+    "model": "Qwen-7B (primary)"
+  },
+  "estimation_error": {
+    "urban_mmwave": {
+      "trace_stats": {
+        "mean": 171.97360506453992,
+        "std": 136.05412899992047,
+        "median": 155.46564406098219,
+        "p5": 2.0,
+        "p95": 426.3550949676521
+      },
+      "absolute_error": {
+        "mean": -34.44072452783424,
+        "std": 77.16579935223261,
+        "median": -31.129543602118893,
+        "p5": -164.73549228614934,
+        "p95": 82.8868303916191,
+        "mae": 66.43045068777752
+      },
+      "relative_error": {
+        "mean": 3.6804523070086623,
+        "std": 10.975289311301353,
+        "median": -0.19260210916241316,
+        "p5": -0.55215603080696,
+        "p95": 28.472193181597905,
+        "mape": 4.099990138298683
+      },
+      "underestimate_rate": 0.653
+    },
+    "urban_sub6": {
+      "trace_stats": {
+        "mean": 52.40123358193955,
+        "std": 30.101740740706084,
+        "median": 50.9138162358376,
+        "p5": 5.0,
+        "p95": 104.3658079592374
+      },
+      "absolute_error": {
+        "mean": -10.489893604335801,
+        "std": 14.51364776382706,
+        "median": -10.654486764267547,
+        "p5": -33.77693541717282,
+        "p95": 12.936123466168116,
+        "mae": 14.441441608473042
+      },
+      "relative_error": {
+        "mean": 0.05861851423811147,
+        "std": 1.029739191162267,
+        "median": -0.20471325739230178,
+        "p5": -0.45501804556542674,
+        "p95": 1.5825869904634564,
+        "mape": 0.45627580543633994
+      },
+      "underestimate_rate": 0.7768
+    },
+    "suburban_mixed": {
+      "trace_stats": {
+        "mean": 69.27243940753267,
+        "std": 47.21410515502597,
+        "median": 65.32719073739833,
+        "p5": 3.0,
+        "p95": 152.338088120751
+      },
+      "absolute_error": {
+        "mean": -13.851454309004295,
+        "std": 24.748737789732,
+        "median": -13.587137757711774,
+        "p5": -54.94681748294045,
+        "p95": 25.38988100390397,
+        "mae": 22.490615887329774
+      },
+      "relative_error": {
+        "mean": 0.5668965300896499,
+        "std": 2.499493218563729,
+        "median": -0.2010850000650888,
+        "p5": -0.507919317068198,
+        "p95": 5.675775688089958,
+        "mape": 0.975707404666562
+      },
+      "underestimate_rate": 0.7126
+    },
+    "vehicular": {
+      "trace_stats": {
+        "mean": 48.51501108291043,
+        "std": 47.3781878632782,
+        "median": 38.427786076932804,
+        "p5": 1.0,
+        "p95": 137.6231063102237
+      },
+      "absolute_error": {
+        "mean": -9.719722216446877,
+        "std": 32.3936296568956,
+        "median": -4.2309058425144634,
+        "p5": -67.70275681256852,
+        "p95": 35.44018133544799,
+        "mae": 26.199937073091757
+      },
+      "relative_error": {
+        "mean": 4.502576052725362,
+        "std": 9.278171492712112,
+        "median": -0.1061743176310194,
+        "p5": -0.6138557906614607,
+        "p95": 24.254042054935795,
+        "mape": 4.923918888285928
+      },
+      "underestimate_rate": 0.5418
+    }
+  },
+  "mode_selection": {
+    "urban_mmwave": {
+      "d500ms": {
+        "exact_match_rate": 0.4984,
+        "quality_match_rate": 0.4984,
+        "overconservative_rate": 0.3564,
+        "underconservative_rate": 0.1452,
+        "oracle_avg_quality": 95.86,
+        "estimated_avg_quality": 94.91,
+        "quality_gap": 0.96,
+        "oracle_deadline_rate": 1.0,
+        "estimated_deadline_rate": 0.8432
+      },
+      "d1000ms": {
+        "exact_match_rate": 0.657,
+        "quality_match_rate": 0.657,
+        "overconservative_rate": 0.1342,
+        "underconservative_rate": 0.2088,
+        "oracle_avg_quality": 97.73,
+        "estimated_avg_quality": 98.81,
+        "quality_gap": -1.08,
+        "oracle_deadline_rate": 1.0,
+        "estimated_deadline_rate": 0.7868
+      },
+      "d2000ms": {
+        "exact_match_rate": 0.7794,
+        "quality_match_rate": 0.7794,
+        "overconservative_rate": 0.0234,
+        "underconservative_rate": 0.1972,
+        "oracle_avg_quality": 98.3,
+        "estimated_avg_quality": 99.77,
+        "quality_gap": -1.47,
+        "oracle_deadline_rate": 1.0,
+        "estimated_deadline_rate": 0.8014
+      },
+      "d3000ms": {
+        "exact_match_rate": 0.8102,
+        "quality_match_rate": 0.8102,
+        "overconservative_rate": 0.0082,
+        "underconservative_rate": 0.1816,
+        "oracle_avg_quality": 98.39,
+        "estimated_avg_quality": 99.94,
+        "quality_gap": -1.54,
+        "oracle_deadline_rate": 1.0,
+        "estimated_deadline_rate": 0.8184
+      },
+      "d5000ms": {
+        "exact_match_rate": 0.837,
+        "quality_match_rate": 0.837,
+        "overconservative_rate": 0.001,
+        "underconservative_rate": 0.162,
+        "oracle_avg_quality": 98.5,
+        "estimated_avg_quality": 99.99,
+        "quality_gap": -1.49,
+        "oracle_deadline_rate": 1.0,
+        "estimated_deadline_rate": 0.838
+      }
+    },
+    "urban_sub6": {
+      "d500ms": {
+        "exact_match_rate": 0.7104,
+        "quality_match_rate": 0.7104,
+        "overconservative_rate": 0.2104,
+        "underconservative_rate": 0.0792,
+        "oracle_avg_quality": 89.39,
+        "estimated_avg_quality": 88.66,
+        "quality_gap": 0.73,
+        "oracle_deadline_rate": 1.0,
+        "estimated_deadline_rate": 0.9932
+      },
+      "d1000ms": {
+        "exact_match_rate": 0.586,
+        "quality_match_rate": 0.586,
+        "overconservative_rate": 0.3432,
+        "underconservative_rate": 0.0708,
+        "oracle_avg_quality": 95.48,
+        "estimated_avg_quality": 93.94,
+        "quality_gap": 1.54,
+        "oracle_deadline_rate": 1.0,
+        "estimated_deadline_rate": 0.9336
+      },
+      "d2000ms": {
+        "exact_match_rate": 0.6632,
+        "quality_match_rate": 0.6632,
+        "overconservative_rate": 0.233,
+        "underconservative_rate": 0.1038,
+        "oracle_avg_quality": 98.31,
+        "estimated_avg_quality": 98.24,
+        "quality_gap": 0.07,
+        "oracle_deadline_rate": 1.0,
+        "estimated_deadline_rate": 0.8894
+      },
+      "d3000ms": {
+        "exact_match_rate": 0.7732,
+        "quality_match_rate": 0.7732,
+        "overconservative_rate": 0.113,
+        "underconservative_rate": 0.1138,
+        "oracle_avg_quality": 98.87,
+        "estimated_avg_quality": 99.42,
+        "quality_gap": -0.54,
+        "oracle_deadline_rate": 1.0,
+        "estimated_deadline_rate": 0.8846
+      },
+      "d5000ms": {
+        "exact_match_rate": 0.8694,
+        "quality_match_rate": 0.8694,
+        "overconservative_rate": 0.0312,
+        "underconservative_rate": 0.0994,
+        "oracle_avg_quality": 99.48,
+        "estimated_avg_quality": 99.9,
+        "quality_gap": -0.43,
+        "oracle_deadline_rate": 1.0,
+        "estimated_deadline_rate": 0.9006
+      }
+    },
+    "suburban_mixed": {
+      "d500ms": {
+        "exact_match_rate": 0.634,
+        "quality_match_rate": 0.634,
+        "overconservative_rate": 0.3038,
+        "underconservative_rate": 0.0622,
+        "oracle_avg_quality": 91.35,
+        "estimated_avg_quality": 89.48,
+        "quality_gap": 1.88,
+        "oracle_deadline_rate": 1.0,
+        "estimated_deadline_rate": 0.9664
+      },
+      "d1000ms": {
+        "exact_match_rate": 0.5174,
+        "quality_match_rate": 0.5174,
+        "overconservative_rate": 0.365,
+        "underconservative_rate": 0.1176,
+        "oracle_avg_quality": 96.4,
+        "estimated_avg_quality": 95.49,
+        "quality_gap": 0.91,
+        "oracle_deadline_rate": 1.0,
+        "estimated_deadline_rate": 0.8748
+      },
+      "d2000ms": {
+        "exact_match_rate": 0.6806,
+        "quality_match_rate": 0.6806,
+        "overconservative_rate": 0.1564,
+        "underconservative_rate": 0.163,
+        "oracle_avg_quality": 98.16,
+        "estimated_avg_quality": 98.8,
+        "quality_gap": -0.64,
+        "oracle_deadline_rate": 1.0,
+        "estimated_deadline_rate": 0.8332
+      },
+      "d3000ms": {
+        "exact_match_rate": 0.768,
+        "quality_match_rate": 0.768,
+        "overconservative_rate": 0.0744,
+        "underconservative_rate": 0.1576,
+        "oracle_avg_quality": 98.58,
+        "estimated_avg_quality": 99.51,
+        "quality_gap": -0.93,
+        "oracle_deadline_rate": 1.0,
+        "estimated_deadline_rate": 0.8402
+      },
+      "d5000ms": {
+        "exact_match_rate": 0.842,
+        "quality_match_rate": 0.842,
+        "overconservative_rate": 0.0196,
+        "underconservative_rate": 0.1384,
+        "oracle_avg_quality": 98.2,
+        "estimated_avg_quality": 99.9,
+        "quality_gap": -1.69,
+        "oracle_deadline_rate": 1.0,
+        "estimated_deadline_rate": 0.8614
+      }
+    },
+    "vehicular": {
+      "d500ms": {
+        "exact_match_rate": 0.6654,
+        "quality_match_rate": 0.6654,
+        "overconservative_rate": 0.285,
+        "underconservative_rate": 0.0496,
+        "oracle_avg_quality": 90.81,
+        "estimated_avg_quality": 89.26,
+        "quality_gap": 1.54,
+        "oracle_deadline_rate": 1.0,
+        "estimated_deadline_rate": 0.9752
+      },
+      "d1000ms": {
+        "exact_match_rate": 0.4362,
+        "quality_match_rate": 0.4362,
+        "overconservative_rate": 0.387,
+        "underconservative_rate": 0.1768,
+        "oracle_avg_quality": 94.34,
+        "estimated_avg_quality": 92.94,
+        "quality_gap": 1.4,
+        "oracle_deadline_rate": 1.0,
+        "estimated_deadline_rate": 0.7988
+      },
+      "d2000ms": {
+        "exact_match_rate": 0.467,
+        "quality_match_rate": 0.467,
+        "overconservative_rate": 0.2254,
+        "underconservative_rate": 0.3076,
+        "oracle_avg_quality": 96.11,
+        "estimated_avg_quality": 97.38,
+        "quality_gap": -1.27,
+        "oracle_deadline_rate": 1.0,
+        "estimated_deadline_rate": 0.6764
+      },
+      "d3000ms": {
+        "exact_match_rate": 0.5614,
+        "quality_match_rate": 0.5614,
+        "overconservative_rate": 0.1046,
+        "underconservative_rate": 0.334,
+        "oracle_avg_quality": 96.61,
+        "estimated_avg_quality": 98.74,
+        "quality_gap": -2.13,
+        "oracle_deadline_rate": 1.0,
+        "estimated_deadline_rate": 0.6584
+      },
+      "d5000ms": {
+        "exact_match_rate": 0.633,
+        "quality_match_rate": 0.633,
+        "overconservative_rate": 0.036,
+        "underconservative_rate": 0.331,
+        "oracle_avg_quality": 96.89,
+        "estimated_avg_quality": 99.56,
+        "quality_gap": -2.67,
+        "oracle_deadline_rate": 1.0,
+        "estimated_deadline_rate": 0.6658
+      }
+    }
+  },
+  "alpha_sensitivity": {
+    "alpha_0.1": {
+      "alpha": 0.1,
+      "mape": 7.4602,
+      "mae_mbps": 33.71,
+      "mode_match_rate": 0.3508,
+      "quality_gap": -2.77,
+      "oracle_deadline_rate": 1.0,
+      "est_deadline_rate": 0.5884,
+      "mode_switches": 579,
+      "switch_rate": 0.1158
+    },
+    "alpha_0.2": {
+      "alpha": 0.2,
+      "mape": 6.068,
+      "mae_mbps": 29.71,
+      "mode_match_rate": 0.4092,
+      "quality_gap": -1.88,
+      "oracle_deadline_rate": 1.0,
+      "est_deadline_rate": 0.6304,
+      "mode_switches": 1199,
+      "switch_rate": 0.2398
+    },
+    "alpha_0.3": {
+      "alpha": 0.3,
+      "mape": 4.9239,
+      "mae_mbps": 26.2,
+      "mode_match_rate": 0.467,
+      "quality_gap": -1.27,
+      "oracle_deadline_rate": 1.0,
+      "est_deadline_rate": 0.6764,
+      "mode_switches": 1687,
+      "switch_rate": 0.3374
+    },
+    "alpha_0.5": {
+      "alpha": 0.5,
+      "mape": 3.0963,
+      "mae_mbps": 20.14,
+      "mode_match_rate": 0.5924,
+      "quality_gap": -0.51,
+      "oracle_deadline_rate": 1.0,
+      "est_deadline_rate": 0.7768,
+      "mode_switches": 2415,
+      "switch_rate": 0.483
+    },
+    "alpha_0.7": {
+      "alpha": 0.7,
+      "mape": 1.676,
+      "mae_mbps": 15.05,
+      "mode_match_rate": 0.7278,
+      "quality_gap": 0.05,
+      "oracle_deadline_rate": 1.0,
+      "est_deadline_rate": 0.8738,
+      "mode_switches": 2602,
+      "switch_rate": 0.5204
+    },
+    "alpha_0.9": {
+      "alpha": 0.9,
+      "mape": 0.568,
+      "mae_mbps": 11.03,
+      "mode_match_rate": 0.8598,
+      "quality_gap": 0.38,
+      "oracle_deadline_rate": 1.0,
+      "est_deadline_rate": 0.9776,
+      "mode_switches": 2623,
+      "switch_rate": 0.5246
+    }
+  },
+  "conservative_factor": {
+    "urban_mmwave": {
+      "cf_0.6": {
+        "conservative_factor": 0.6,
+        "avg_quality": 99.55,
+        "deadline_rate": 0.8152
+      },
+      "cf_0.7": {
+        "conservative_factor": 0.7,
+        "avg_quality": 99.68,
+        "deadline_rate": 0.8084
+      },
+      "cf_0.8": {
+        "conservative_factor": 0.8,
+        "avg_quality": 99.77,
+        "deadline_rate": 0.8014
+      },
+      "cf_0.9": {
+        "conservative_factor": 0.9,
+        "avg_quality": 99.82,
+        "deadline_rate": 0.796
+      },
+      "cf_1.0": {
+        "conservative_factor": 1.0,
+        "avg_quality": 99.87,
+        "deadline_rate": 0.7944
+      }
+    },
+    "vehicular": {
+      "cf_0.6": {
+        "conservative_factor": 0.6,
+        "avg_quality": 96.03,
+        "deadline_rate": 0.7502
+      },
+      "cf_0.7": {
+        "conservative_factor": 0.7,
+        "avg_quality": 96.87,
+        "deadline_rate": 0.7122
+      },
+      "cf_0.8": {
+        "conservative_factor": 0.8,
+        "avg_quality": 97.38,
+        "deadline_rate": 0.6764
+      },
+      "cf_0.9": {
+        "conservative_factor": 0.9,
+        "avg_quality": 97.81,
+        "deadline_rate": 0.6456
+      },
+      "cf_1.0": {
+        "conservative_factor": 1.0,
+        "avg_quality": 98.18,
+        "deadline_rate": 0.6184
+      }
+    }
+  },
+  "sudden_drops": {
+    "blockage_events": [
+      [
+        {
+          "step": -5,
+          "true_bw": 218.4,
+          "est_bw": 121.5,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": -4,
+          "true_bw": 219.4,
+          "est_bw": 137.7,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": -3,
+          "true_bw": 313.1,
+          "est_bw": 171.5,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": -2,
+          "true_bw": 242.2,
+          "est_bw": 178.2,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": -1,
+          "true_bw": 308.5,
+          "est_bw": 198.8,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 0,
+          "true_bw": 2.0,
+          "est_bw": 139.6,
+          "oracle_mode": "Scout",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": 1,
+          "true_bw": 2.0,
+          "est_bw": 98.2,
+          "oracle_mode": "Scout",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": 2,
+          "true_bw": 2.0,
+          "est_bw": 69.2,
+          "oracle_mode": "Scout",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": 3,
+          "true_bw": 2.0,
+          "est_bw": 48.9,
+          "oracle_mode": "Scout",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": 4,
+          "true_bw": 2.0,
+          "est_bw": 34.7,
+          "oracle_mode": "Scout",
+          "est_mode": "INT8",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": 5,
+          "true_bw": 2.0,
+          "est_bw": 24.8,
+          "oracle_mode": "Scout",
+          "est_mode": "INT8",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": 6,
+          "true_bw": 2.0,
+          "est_bw": 17.8,
+          "oracle_mode": "Scout",
+          "est_mode": "Mixed-INT4",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": 7,
+          "true_bw": 18.6,
+          "est_bw": 17.0,
+          "oracle_mode": "Mixed-INT4",
+          "est_mode": "Mixed-INT4",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 8,
+          "true_bw": 2.0,
+          "est_bw": 12.3,
+          "oracle_mode": "Scout",
+          "est_mode": "Mixed-INT4",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": 9,
+          "true_bw": 214.2,
+          "est_bw": 60.1,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 10,
+          "true_bw": 159.6,
+          "est_bw": 80.3,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 11,
+          "true_bw": 257.9,
+          "est_bw": 118.1,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 12,
+          "true_bw": 377.3,
+          "est_bw": 173.2,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 13,
+          "true_bw": 309.8,
+          "est_bw": 195.6,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 14,
+          "true_bw": 246.0,
+          "est_bw": 196.0,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        }
+      ],
+      [
+        {
+          "step": -5,
+          "true_bw": 2.0,
+          "est_bw": 52.1,
+          "oracle_mode": "Scout",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": -4,
+          "true_bw": 2.0,
+          "est_bw": 36.9,
+          "oracle_mode": "Scout",
+          "est_mode": "INT8",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": -3,
+          "true_bw": 2.0,
+          "est_bw": 26.3,
+          "oracle_mode": "Scout",
+          "est_mode": "INT8",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": -2,
+          "true_bw": 30.1,
+          "est_bw": 25.7,
+          "oracle_mode": "INT8",
+          "est_mode": "INT8",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": -1,
+          "true_bw": 169.8,
+          "est_bw": 58.7,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 0,
+          "true_bw": 2.0,
+          "est_bw": 41.6,
+          "oracle_mode": "Scout",
+          "est_mode": "INT8",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": 1,
+          "true_bw": 2.0,
+          "est_bw": 29.6,
+          "oracle_mode": "Scout",
+          "est_mode": "INT8",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": 2,
+          "true_bw": 2.0,
+          "est_bw": 21.2,
+          "oracle_mode": "Scout",
+          "est_mode": "INT8",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": 3,
+          "true_bw": 2.0,
+          "est_bw": 15.3,
+          "oracle_mode": "Scout",
+          "est_mode": "Mixed-INT4",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": 4,
+          "true_bw": 2.0,
+          "est_bw": 11.2,
+          "oracle_mode": "Scout",
+          "est_mode": "INT4",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": 5,
+          "true_bw": 177.6,
+          "est_bw": 50.5,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 6,
+          "true_bw": 224.7,
+          "est_bw": 89.3,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 7,
+          "true_bw": 152.2,
+          "est_bw": 99.0,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 8,
+          "true_bw": 81.6,
+          "est_bw": 88.9,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 9,
+          "true_bw": 2.0,
+          "est_bw": 62.7,
+          "oracle_mode": "Scout",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": 10,
+          "true_bw": 63.1,
+          "est_bw": 59.0,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 11,
+          "true_bw": 35.9,
+          "est_bw": 49.9,
+          "oracle_mode": "INT8",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": 12,
+          "true_bw": 2.0,
+          "est_bw": 35.4,
+          "oracle_mode": "Scout",
+          "est_mode": "INT8",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": 13,
+          "true_bw": 2.0,
+          "est_bw": 25.3,
+          "oracle_mode": "Scout",
+          "est_mode": "INT8",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": 14,
+          "true_bw": 2.0,
+          "est_bw": 18.2,
+          "oracle_mode": "Scout",
+          "est_mode": "Mixed-INT4",
+          "oracle_meets": true,
+          "est_meets": false
+        }
+      ],
+      [
+        {
+          "step": -5,
+          "true_bw": 2.0,
+          "est_bw": 62.7,
+          "oracle_mode": "Scout",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": -4,
+          "true_bw": 63.1,
+          "est_bw": 59.0,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": -3,
+          "true_bw": 35.9,
+          "est_bw": 49.9,
+          "oracle_mode": "INT8",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": -2,
+          "true_bw": 2.0,
+          "est_bw": 35.4,
+          "oracle_mode": "Scout",
+          "est_mode": "INT8",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": -1,
+          "true_bw": 2.0,
+          "est_bw": 25.3,
+          "oracle_mode": "Scout",
+          "est_mode": "INT8",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": 0,
+          "true_bw": 2.0,
+          "est_bw": 18.2,
+          "oracle_mode": "Scout",
+          "est_mode": "Mixed-INT4",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": 1,
+          "true_bw": 2.0,
+          "est_bw": 13.2,
+          "oracle_mode": "Scout",
+          "est_mode": "Mixed-INT4",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": 2,
+          "true_bw": 2.0,
+          "est_bw": 9.7,
+          "oracle_mode": "Scout",
+          "est_mode": "Scout",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 3,
+          "true_bw": 2.0,
+          "est_bw": 7.3,
+          "oracle_mode": "Scout",
+          "est_mode": "Scout",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 4,
+          "true_bw": 2.0,
+          "est_bw": 5.6,
+          "oracle_mode": "Scout",
+          "est_mode": "Scout",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 5,
+          "true_bw": 3.0,
+          "est_bw": 4.6,
+          "oracle_mode": "Scout",
+          "est_mode": "Scout",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 6,
+          "true_bw": 42.2,
+          "est_bw": 13.4,
+          "oracle_mode": "INT8",
+          "est_mode": "Mixed-INT4",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 7,
+          "true_bw": 108.8,
+          "est_bw": 35.5,
+          "oracle_mode": "Full BF16",
+          "est_mode": "INT8",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 8,
+          "true_bw": 67.0,
+          "est_bw": 40.9,
+          "oracle_mode": "Full BF16",
+          "est_mode": "INT8",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 9,
+          "true_bw": 34.6,
+          "est_bw": 36.9,
+          "oracle_mode": "INT8",
+          "est_mode": "INT8",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 10,
+          "true_bw": 2.0,
+          "est_bw": 26.3,
+          "oracle_mode": "Scout",
+          "est_mode": "INT8",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": 11,
+          "true_bw": 2.0,
+          "est_bw": 18.9,
+          "oracle_mode": "Scout",
+          "est_mode": "Mixed-INT4",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": 12,
+          "true_bw": 8.4,
+          "est_bw": 15.3,
+          "oracle_mode": "Scout",
+          "est_mode": "Mixed-INT4",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": 13,
+          "true_bw": 135.7,
+          "est_bw": 43.3,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 14,
+          "true_bw": 79.4,
+          "est_bw": 49.3,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        }
+      ],
+      [
+        {
+          "step": -5,
+          "true_bw": 51.2,
+          "est_bw": 25.6,
+          "oracle_mode": "Full BF16",
+          "est_mode": "INT8",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": -4,
+          "true_bw": 137.3,
+          "est_bw": 50.8,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": -3,
+          "true_bw": 69.8,
+          "est_bw": 52.3,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": -2,
+          "true_bw": 117.7,
+          "est_bw": 64.9,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": -1,
+          "true_bw": 3.0,
+          "est_bw": 46.1,
+          "oracle_mode": "Scout",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": 0,
+          "true_bw": 2.0,
+          "est_bw": 32.8,
+          "oracle_mode": "Scout",
+          "est_mode": "INT8",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": 1,
+          "true_bw": 2.0,
+          "est_bw": 23.4,
+          "oracle_mode": "Scout",
+          "est_mode": "INT8",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": 2,
+          "true_bw": 2.0,
+          "est_bw": 16.9,
+          "oracle_mode": "Scout",
+          "est_mode": "Mixed-INT4",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": 3,
+          "true_bw": 2.0,
+          "est_bw": 12.3,
+          "oracle_mode": "Scout",
+          "est_mode": "Mixed-INT4",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": 4,
+          "true_bw": 2.0,
+          "est_bw": 9.1,
+          "oracle_mode": "Scout",
+          "est_mode": "Scout",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 5,
+          "true_bw": 256.7,
+          "est_bw": 68.0,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 6,
+          "true_bw": 285.5,
+          "est_bw": 116.1,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 7,
+          "true_bw": 310.8,
+          "est_bw": 155.9,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 8,
+          "true_bw": 196.4,
+          "est_bw": 156.2,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 9,
+          "true_bw": 136.6,
+          "est_bw": 142.1,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 10,
+          "true_bw": 149.1,
+          "est_bw": 135.3,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 11,
+          "true_bw": 241.5,
+          "est_bw": 152.7,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 12,
+          "true_bw": 422.1,
+          "est_bw": 208.2,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 13,
+          "true_bw": 412.8,
+          "est_bw": 244.8,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 14,
+          "true_bw": 437.9,
+          "est_bw": 276.4,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        }
+      ],
+      [
+        {
+          "step": -5,
+          "true_bw": 164.7,
+          "est_bw": 110.4,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": -4,
+          "true_bw": 162.3,
+          "est_bw": 116.2,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": -3,
+          "true_bw": 128.2,
+          "est_bw": 112.1,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": -2,
+          "true_bw": 3.0,
+          "est_bw": 79.2,
+          "oracle_mode": "Scout",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": -1,
+          "true_bw": 58.9,
+          "est_bw": 69.6,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 0,
+          "true_bw": 2.0,
+          "est_bw": 49.2,
+          "oracle_mode": "Scout",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": 1,
+          "true_bw": 2.0,
+          "est_bw": 34.9,
+          "oracle_mode": "Scout",
+          "est_mode": "INT8",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": 2,
+          "true_bw": 2.0,
+          "est_bw": 24.9,
+          "oracle_mode": "Scout",
+          "est_mode": "INT8",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": 3,
+          "true_bw": 2.0,
+          "est_bw": 17.9,
+          "oracle_mode": "Scout",
+          "est_mode": "Mixed-INT4",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": 4,
+          "true_bw": 2.0,
+          "est_bw": 13.0,
+          "oracle_mode": "Scout",
+          "est_mode": "Mixed-INT4",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": 5,
+          "true_bw": 289.2,
+          "est_bw": 78.5,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 6,
+          "true_bw": 405.0,
+          "est_bw": 152.2,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 7,
+          "true_bw": 512.9,
+          "est_bw": 229.6,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 8,
+          "true_bw": 605.7,
+          "est_bw": 306.1,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 9,
+          "true_bw": 506.0,
+          "est_bw": 335.7,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 10,
+          "true_bw": 515.7,
+          "est_bw": 358.8,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 11,
+          "true_bw": 480.9,
+          "est_bw": 366.5,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 12,
+          "true_bw": 322.5,
+          "est_bw": 334.0,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 13,
+          "true_bw": 315.3,
+          "est_bw": 309.5,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 14,
+          "true_bw": 386.4,
+          "est_bw": 309.4,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        }
+      ],
+      [
+        {
+          "step": -5,
+          "true_bw": 2.0,
+          "est_bw": 16.2,
+          "oracle_mode": "Scout",
+          "est_mode": "Mixed-INT4",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": -4,
+          "true_bw": 70.1,
+          "est_bw": 28.2,
+          "oracle_mode": "Full BF16",
+          "est_mode": "INT8",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": -3,
+          "true_bw": 102.5,
+          "est_bw": 44.3,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": -2,
+          "true_bw": 33.2,
+          "est_bw": 39.0,
+          "oracle_mode": "INT8",
+          "est_mode": "INT8",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": -1,
+          "true_bw": 136.9,
+          "est_bw": 60.1,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 0,
+          "true_bw": 2.0,
+          "est_bw": 42.6,
+          "oracle_mode": "Scout",
+          "est_mode": "INT8",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": 1,
+          "true_bw": 2.0,
+          "est_bw": 30.3,
+          "oracle_mode": "Scout",
+          "est_mode": "INT8",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": 2,
+          "true_bw": 2.0,
+          "est_bw": 21.7,
+          "oracle_mode": "Scout",
+          "est_mode": "INT8",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": 3,
+          "true_bw": 2.0,
+          "est_bw": 15.7,
+          "oracle_mode": "Scout",
+          "est_mode": "Mixed-INT4",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": 4,
+          "true_bw": 2.0,
+          "est_bw": 11.4,
+          "oracle_mode": "Scout",
+          "est_mode": "INT4",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": 5,
+          "true_bw": 312.0,
+          "est_bw": 82.9,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 6,
+          "true_bw": 317.2,
+          "est_bw": 134.2,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 7,
+          "true_bw": 406.9,
+          "est_bw": 191.6,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 8,
+          "true_bw": 517.4,
+          "est_bw": 258.3,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 9,
+          "true_bw": 442.2,
+          "est_bw": 286.9,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 10,
+          "true_bw": 389.8,
+          "est_bw": 294.4,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 11,
+          "true_bw": 459.3,
+          "est_bw": 316.3,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 12,
+          "true_bw": 420.5,
+          "est_bw": 322.3,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 13,
+          "true_bw": 300.6,
+          "est_bw": 297.8,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 14,
+          "true_bw": 149.8,
+          "est_bw": 244.4,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        }
+      ],
+      [
+        {
+          "step": -5,
+          "true_bw": 118.1,
+          "est_bw": 60.6,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": -4,
+          "true_bw": 190.3,
+          "est_bw": 88.1,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": -3,
+          "true_bw": 212.9,
+          "est_bw": 112.8,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": -2,
+          "true_bw": 238.1,
+          "est_bw": 136.1,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": -1,
+          "true_bw": 154.3,
+          "est_bw": 132.3,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 0,
+          "true_bw": 2.0,
+          "est_bw": 93.1,
+          "oracle_mode": "Scout",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": 1,
+          "true_bw": 2.0,
+          "est_bw": 65.6,
+          "oracle_mode": "Scout",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": 2,
+          "true_bw": 2.0,
+          "est_bw": 46.4,
+          "oracle_mode": "Scout",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": 3,
+          "true_bw": 2.0,
+          "est_bw": 33.0,
+          "oracle_mode": "Scout",
+          "est_mode": "INT8",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": 4,
+          "true_bw": 2.0,
+          "est_bw": 23.6,
+          "oracle_mode": "Scout",
+          "est_mode": "INT8",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": 5,
+          "true_bw": 198.3,
+          "est_bw": 64.1,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 6,
+          "true_bw": 192.4,
+          "est_bw": 91.0,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 7,
+          "true_bw": 157.5,
+          "est_bw": 101.5,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 8,
+          "true_bw": 81.7,
+          "est_bw": 90.7,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 9,
+          "true_bw": 132.7,
+          "est_bw": 95.3,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 10,
+          "true_bw": 206.9,
+          "est_bw": 116.4,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 11,
+          "true_bw": 277.0,
+          "est_bw": 148.0,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 12,
+          "true_bw": 318.0,
+          "est_bw": 179.9,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 13,
+          "true_bw": 219.7,
+          "est_bw": 178.6,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 14,
+          "true_bw": 269.6,
+          "est_bw": 189.8,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        }
+      ],
+      [
+        {
+          "step": -5,
+          "true_bw": 16.2,
+          "est_bw": 85.7,
+          "oracle_mode": "Mixed-INT4",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": -4,
+          "true_bw": 2.0,
+          "est_bw": 60.4,
+          "oracle_mode": "Scout",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": -3,
+          "true_bw": 3.0,
+          "est_bw": 43.0,
+          "oracle_mode": "Scout",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": -2,
+          "true_bw": 126.5,
+          "est_bw": 60.5,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": -1,
+          "true_bw": 190.3,
+          "est_bw": 88.0,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 0,
+          "true_bw": 2.0,
+          "est_bw": 62.1,
+          "oracle_mode": "Scout",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": 1,
+          "true_bw": 2.0,
+          "est_bw": 43.9,
+          "oracle_mode": "Scout",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": 2,
+          "true_bw": 2.0,
+          "est_bw": 31.2,
+          "oracle_mode": "Scout",
+          "est_mode": "INT8",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": 3,
+          "true_bw": 2.0,
+          "est_bw": 22.3,
+          "oracle_mode": "Scout",
+          "est_mode": "INT8",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": 4,
+          "true_bw": 2.0,
+          "est_bw": 16.1,
+          "oracle_mode": "Scout",
+          "est_mode": "Mixed-INT4",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": 5,
+          "true_bw": 155.7,
+          "est_bw": 48.7,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 6,
+          "true_bw": 38.1,
+          "est_bw": 43.2,
+          "oracle_mode": "INT8",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": 7,
+          "true_bw": 2.0,
+          "est_bw": 30.7,
+          "oracle_mode": "Scout",
+          "est_mode": "INT8",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": 8,
+          "true_bw": 21.5,
+          "est_bw": 26.7,
+          "oracle_mode": "INT8",
+          "est_mode": "INT8",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 9,
+          "true_bw": 8.1,
+          "est_bw": 20.6,
+          "oracle_mode": "Scout",
+          "est_mode": "Mixed-INT4",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": 10,
+          "true_bw": 61.0,
+          "est_bw": 29.1,
+          "oracle_mode": "Full BF16",
+          "est_mode": "INT8",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 11,
+          "true_bw": 24.1,
+          "est_bw": 26.1,
+          "oracle_mode": "INT8",
+          "est_mode": "INT8",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 12,
+          "true_bw": 20.8,
+          "est_bw": 23.3,
+          "oracle_mode": "INT8",
+          "est_mode": "INT8",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 13,
+          "true_bw": 43.8,
+          "est_bw": 26.8,
+          "oracle_mode": "Full BF16",
+          "est_mode": "INT8",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 14,
+          "true_bw": 2.0,
+          "est_bw": 19.2,
+          "oracle_mode": "Scout",
+          "est_mode": "Mixed-INT4",
+          "oracle_meets": true,
+          "est_meets": false
+        }
+      ],
+      [
+        {
+          "step": -5,
+          "true_bw": 8.1,
+          "est_bw": 20.6,
+          "oracle_mode": "Scout",
+          "est_mode": "Mixed-INT4",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": -4,
+          "true_bw": 61.0,
+          "est_bw": 29.1,
+          "oracle_mode": "Full BF16",
+          "est_mode": "INT8",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": -3,
+          "true_bw": 24.1,
+          "est_bw": 26.1,
+          "oracle_mode": "INT8",
+          "est_mode": "INT8",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": -2,
+          "true_bw": 20.8,
+          "est_bw": 23.3,
+          "oracle_mode": "INT8",
+          "est_mode": "INT8",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": -1,
+          "true_bw": 43.8,
+          "est_bw": 26.8,
+          "oracle_mode": "Full BF16",
+          "est_mode": "INT8",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 0,
+          "true_bw": 2.0,
+          "est_bw": 19.2,
+          "oracle_mode": "Scout",
+          "est_mode": "Mixed-INT4",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": 1,
+          "true_bw": 2.0,
+          "est_bw": 14.0,
+          "oracle_mode": "Scout",
+          "est_mode": "Mixed-INT4",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": 2,
+          "true_bw": 2.0,
+          "est_bw": 10.2,
+          "oracle_mode": "Scout",
+          "est_mode": "INT4",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": 3,
+          "true_bw": 2.0,
+          "est_bw": 7.7,
+          "oracle_mode": "Scout",
+          "est_mode": "Scout",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 4,
+          "true_bw": 2.0,
+          "est_bw": 5.8,
+          "oracle_mode": "Scout",
+          "est_mode": "Scout",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 5,
+          "true_bw": 96.1,
+          "est_bw": 27.2,
+          "oracle_mode": "Full BF16",
+          "est_mode": "INT8",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 6,
+          "true_bw": 326.8,
+          "est_bw": 97.4,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 7,
+          "true_bw": 374.5,
+          "est_bw": 158.1,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 8,
+          "true_bw": 435.4,
+          "est_bw": 215.2,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 9,
+          "true_bw": 439.0,
+          "est_bw": 256.0,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 10,
+          "true_bw": 487.9,
+          "est_bw": 296.3,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 11,
+          "true_bw": 3.0,
+          "est_bw": 208.1,
+          "oracle_mode": "Scout",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": 12,
+          "true_bw": 2.0,
+          "est_bw": 146.2,
+          "oracle_mode": "Scout",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": 13,
+          "true_bw": 13.3,
+          "est_bw": 105.5,
+          "oracle_mode": "Mixed-INT4",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": 14,
+          "true_bw": 157.9,
+          "est_bw": 111.7,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        }
+      ],
+      [
+        {
+          "step": -5,
+          "true_bw": 349.2,
+          "est_bw": 317.1,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": -4,
+          "true_bw": 540.1,
+          "est_bw": 351.6,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": -3,
+          "true_bw": 557.3,
+          "est_bw": 379.9,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": -2,
+          "true_bw": 564.5,
+          "est_bw": 401.4,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": -1,
+          "true_bw": 444.6,
+          "est_bw": 387.7,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 0,
+          "true_bw": 2.0,
+          "est_bw": 271.9,
+          "oracle_mode": "Scout",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": 1,
+          "true_bw": 2.0,
+          "est_bw": 190.8,
+          "oracle_mode": "Scout",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": 2,
+          "true_bw": 2.0,
+          "est_bw": 134.0,
+          "oracle_mode": "Scout",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": 3,
+          "true_bw": 2.0,
+          "est_bw": 94.3,
+          "oracle_mode": "Scout",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": 4,
+          "true_bw": 2.0,
+          "est_bw": 66.5,
+          "oracle_mode": "Scout",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": 5,
+          "true_bw": 13.3,
+          "est_bw": 49.7,
+          "oracle_mode": "Mixed-INT4",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": false
+        },
+        {
+          "step": 6,
+          "true_bw": 100.3,
+          "est_bw": 58.9,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 7,
+          "true_bw": 106.2,
+          "est_bw": 66.7,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 8,
+          "true_bw": 82.6,
+          "est_bw": 66.5,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 9,
+          "true_bw": 164.2,
+          "est_bw": 86.0,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 10,
+          "true_bw": 142.9,
+          "est_bw": 94.5,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 11,
+          "true_bw": 247.4,
+          "est_bw": 125.5,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 12,
+          "true_bw": 351.0,
+          "est_bw": 172.1,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 13,
+          "true_bw": 528.5,
+          "est_bw": 247.3,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        },
+        {
+          "step": 14,
+          "true_bw": 485.1,
+          "est_bw": 289.6,
+          "oracle_mode": "Full BF16",
+          "est_mode": "Full BF16",
+          "oracle_meets": true,
+          "est_meets": true
+        }
+      ]
+    ],
+    "summary": {
+      "total_blockage_window_steps": 200,
+      "est_deadline_misses_in_window": 77,
+      "oracle_deadline_misses_in_window": 0,
+      "avg_recovery_steps": 0.4,
+      "max_recovery_steps": 2
+    }
+  }
+}

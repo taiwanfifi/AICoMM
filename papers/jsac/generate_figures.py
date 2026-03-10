@@ -368,15 +368,16 @@ def fig7_multiagent():
 # Figure 8: Long Context Overlap Stability
 # ============================================================
 def fig8_long_context():
-    """Overlap stability at 1K and 2K context lengths."""
+    """Overlap stability across context lengths (1K, 2K for 7B->14B; 4K for 3B->7B)."""
     fig, ax = plt.subplots(figsize=(3.5, 2.5))
 
-    ctx_lengths = [1024, 2048]
-    ret_75 = [83.3, 82.7]
-    ret_50 = [69.4, 68.2]
-    ret_25 = [55.6, 53.9]
+    # 7B->14B at 1K, 2K; 3B->7B at 4K (14B OOM prevents overlap at 4K)
+    ctx_labels = ['1024\n(7B→14B)', '2048\n(7B→14B)', '4096\n(3B→7B)']
+    ret_75 = [83.3, 82.7, 80.2]
+    ret_50 = [69.4, 68.2, 62.9]
+    ret_25 = [55.6, 53.9, 47.7]
 
-    x = np.arange(len(ctx_lengths))
+    x = np.arange(len(ctx_labels))
     width = 0.22
 
     ax.bar(x - width, ret_75, width, label='75% Ret.', color='#4CAF50',
@@ -386,10 +387,13 @@ def fig8_long_context():
     ax.bar(x + width, ret_25, width, label='25% Ret.', color='#F44336',
            edgecolor='black', linewidth=0.5)
 
+    # Add a subtle divider between 7B->14B and 3B->7B groups
+    ax.axvline(x=1.5, color='gray', linestyle=':', alpha=0.5, linewidth=0.8)
+
     ax.set_xlabel("Context Length (tokens)")
     ax.set_ylabel("Position Overlap (%)")
     ax.set_xticks(x)
-    ax.set_xticklabels(['1024', '2048'])
+    ax.set_xticklabels(ctx_labels, fontsize=7)
     ax.set_ylim(0, 100)
     ax.legend(fontsize=7)
     ax.grid(axis='y', alpha=0.3)

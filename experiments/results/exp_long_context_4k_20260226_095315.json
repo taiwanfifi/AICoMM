@@ -1,0 +1,5596 @@
+{
+  "metadata": {
+    "experiment": "long_context_4k",
+    "description": "Scout protocol at 4096-token context length",
+    "target_length": 4096,
+    "num_samples": 100,
+    "retentions": [
+      0.75,
+      0.5,
+      0.25
+    ],
+    "seed": 123,
+    "timestamp": "20260226_095315",
+    "elapsed_minutes": 65.67538230419159
+  },
+  "summaries": {
+    "3B->7B": {
+      "edge_model": "Qwen/Qwen2.5-3B",
+      "cloud_model": "Qwen/Qwen2.5-7B",
+      "target_length": 4096,
+      "num_valid": 100,
+      "full_analysis": true,
+      "cloud_full_f1_mean": 0.034616154947108776,
+      "cloud_full_f1_ci95": 0.01821625005872337,
+      "avg_actual_tokens": 4340.44,
+      "retention_results": {
+        "75%": {
+          "scout_f1_mean": 0.026758602985155124,
+          "scout_f1_ci95": 0.012056158128256602,
+          "cloud_own_f1_mean": 0.029556375546311263,
+          "cloud_own_f1_ci95": 0.0130533757597813,
+          "overlap_pct_mean": 80.17701433505388,
+          "overlap_pct_std": 1.7617281900792805,
+          "scout_vs_own_gap": -0.0027977725611561394,
+          "paired_ttest_p": 0.17412274742942574
+        },
+        "50%": {
+          "scout_f1_mean": 0.01928855770569863,
+          "scout_f1_ci95": 0.008905874119837067,
+          "cloud_own_f1_mean": 0.026229910270881854,
+          "cloud_own_f1_ci95": 0.010952010917141338,
+          "overlap_pct_mean": 62.86100611345399,
+          "overlap_pct_std": 3.6394275959346882,
+          "scout_vs_own_gap": -0.0069413525651832245,
+          "paired_ttest_p": 0.003748265060457505
+        },
+        "25%": {
+          "scout_f1_mean": 0.023052401164436145,
+          "scout_f1_ci95": 0.021292483261598574,
+          "cloud_own_f1_mean": 0.02009442690379453,
+          "cloud_own_f1_ci95": 0.008833009769632763,
+          "overlap_pct_mean": 47.65182220887777,
+          "overlap_pct_std": 5.502747008284204,
+          "scout_vs_own_gap": 0.0029579742606416146,
+          "paired_ttest_p": 0.7767710967903405
+        }
+      }
+    },
+    "7B->14B": {
+      "edge_model": "Qwen/Qwen2.5-7B",
+      "cloud_model": "Qwen/Qwen2.5-14B",
+      "target_length": 4096,
+      "num_valid": 100,
+      "full_analysis": false,
+      "cloud_full_f1_mean": 0.04343057827931464,
+      "cloud_full_f1_ci95": 0.027760687133025184,
+      "avg_actual_tokens": 4340.44,
+      "retention_results": {
+        "75%": {
+          "scout_f1_mean": 0.033803627526422776,
+          "scout_f1_ci95": 0.021535373737568714,
+          "scout_vs_full_gap": -0.009626950752891862,
+          "scout_vs_full_p": 0.17807723599334174
+        },
+        "50%": {
+          "scout_f1_mean": 0.04566334113189881,
+          "scout_f1_ci95": 0.02979692635548552,
+          "scout_vs_full_gap": 0.002232762852584169,
+          "scout_vs_full_p": 0.8591095856281729
+        },
+        "25%": {
+          "scout_f1_mean": 0.04884049978842777,
+          "scout_f1_ci95": 0.03428212764200583,
+          "scout_vs_full_gap": 0.005409921509113132,
+          "scout_vs_full_p": 0.716117639043945
+        }
+      }
+    }
+  },
+  "per_sample": {
+    "3B->7B": [
+      {
+        "sample_idx": 0,
+        "gold": "Ticonderoga Point,",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 79.83450812136071,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 62.206896551724135,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 47.83808647654094,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 1,
+        "gold": "sediment deposits",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 78.6699356420472,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 58.11494252873564,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 37.62649494020239,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 2,
+        "gold": "ranked above",
+        "cloud_full_f1": 0.08695652173913045,
+        "actual_tokens": 4317,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.1,
+            "scout_f1": 0.0,
+            "overlap_pct": 80.5210918114144,
+            "n_selected": 3224,
+            "context_len": 4299
+          },
+          "50%": {
+            "cloud_own_f1": 0.08695652173913045,
+            "scout_f1": 0.0,
+            "overlap_pct": 60.95858538855281,
+            "n_selected": 2149,
+            "context_len": 4299
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.047619047619047616,
+            "overlap_pct": 41.43389199255121,
+            "n_selected": 1074,
+            "context_len": 4299
+          }
+        }
+      },
+      {
+        "sample_idx": 3,
+        "gold": "combustion chamber",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 79.98774134232302,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 64.45977011494253,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 54.09383624655014,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 4,
+        "gold": "highest on Earth",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.04,
+            "scout_f1": 0.0,
+            "overlap_pct": 81.18296046582898,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 65.10344827586206,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 47.93008279668813,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 5,
+        "gold": "share recordings",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 76.76984370211461,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 57.24137931034483,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 41.03035878564857,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 6,
+        "gold": "the United Nations",
+        "cloud_full_f1": 0.04545454545454545,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 80.72326080294208,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 66.29885057471265,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 52.52989880404784,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 7,
+        "gold": "User Datagram Protocol",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 81.30554704259883,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 62.98850574712643,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 49.12603495860166,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 8,
+        "gold": "stoking",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 77.99570946981305,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 56.59770114942528,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 39.28242870285189,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 9,
+        "gold": "second",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 78.91510879558689,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 58.298850574712645,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 39.55841766329347,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 10,
+        "gold": "12%",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 77.53600980692615,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 57.14942528735632,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 40.47838086476541,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 11,
+        "gold": "the same",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 77.96506282562059,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 60.73563218390805,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 48.758049678012874,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 12,
+        "gold": "small-business proprietors",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 81.36684033098376,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 64.13793103448275,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 46.45814167433303,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 13,
+        "gold": "68,511",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 79.16028194912657,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 60.64367816091954,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 44.52621895124195,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 14,
+        "gold": "Neutrophils",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 81.42813361936868,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 65.33333333333333,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 52.345906163753455,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 15,
+        "gold": "IgE",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 80.81520073551947,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 63.356321839080465,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 44.61821527138915,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 16,
+        "gold": "English Premier League Football",
+        "cloud_full_f1": 0.1568627450980392,
+        "actual_tokens": 4349,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.15384615384615385,
+            "scout_f1": 0.15094339622641506,
+            "overlap_pct": 81.97477699169487,
+            "n_selected": 3251,
+            "context_len": 4335
+          },
+          "50%": {
+            "cloud_own_f1": 0.14814814814814814,
+            "scout_f1": 0.13953488372093026,
+            "overlap_pct": 69.68158744808491,
+            "n_selected": 2167,
+            "context_len": 4335
+          },
+          "25%": {
+            "cloud_own_f1": 0.17391304347826084,
+            "scout_f1": 0.14285714285714285,
+            "overlap_pct": 58.818097876269626,
+            "n_selected": 1083,
+            "context_len": 4335
+          }
+        }
+      },
+      {
+        "sample_idx": 17,
+        "gold": "ocean liners",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 80.35550107263255,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 62.94252873563219,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 47.56209751609936,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 18,
+        "gold": "Gandhi",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 79.98774134232302,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 62.804597701149426,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 45.722171113155476,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 19,
+        "gold": "San Diego",
+        "cloud_full_f1": 0.14285714285714288,
+        "actual_tokens": 4294,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.08333333333333333,
+            "scout_f1": 0.07407407407407407,
+            "overlap_pct": 82.76721720162044,
+            "n_selected": 3209,
+            "context_len": 4279
+          },
+          "50%": {
+            "cloud_own_f1": 0.07999999999999999,
+            "scout_f1": 0.07547169811320754,
+            "overlap_pct": 64.14212248714352,
+            "n_selected": 2139,
+            "context_len": 4279
+          },
+          "25%": {
+            "cloud_own_f1": 0.09756097560975609,
+            "scout_f1": 0.13333333333333336,
+            "overlap_pct": 48.643592142188965,
+            "n_selected": 1069,
+            "context_len": 4279
+          }
+        }
+      },
+      {
+        "sample_idx": 20,
+        "gold": "24 August \u2013 3 October 1572",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 81.09102053325161,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 63.44827586206897,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 44.06623735050598,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 21,
+        "gold": "the British Landgrave Edmund Bellinger",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 78.60864235366228,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 60.827586206896555,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 50.68997240110396,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 22,
+        "gold": "400 m wide",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 80.35550107263255,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 65.05747126436782,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 52.62189512419503,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 23,
+        "gold": "religious",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 80.72326080294208,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 63.95402298850574,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 45.17019319227231,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 24,
+        "gold": "via the ballast tanks of ships",
+        "cloud_full_f1": 0.22727272727272727,
+        "actual_tokens": 4350,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.20833333333333334,
+            "scout_f1": 0.21739130434782605,
+            "overlap_pct": 80.74074074074075,
+            "n_selected": 3240,
+            "context_len": 4321
+          },
+          "50%": {
+            "cloud_own_f1": 0.21276595744680848,
+            "scout_f1": 0.15384615384615385,
+            "overlap_pct": 63.888888888888886,
+            "n_selected": 2160,
+            "context_len": 4321
+          },
+          "25%": {
+            "cloud_own_f1": 0.18604651162790697,
+            "scout_f1": 0.049999999999999996,
+            "overlap_pct": 45.925925925925924,
+            "n_selected": 1080,
+            "context_len": 4321
+          }
+        }
+      },
+      {
+        "sample_idx": 25,
+        "gold": "55.1%",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 77.32148329757892,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 58.94252873563218,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 42.1343146274149,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 26,
+        "gold": "political parties",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 79.3748084584738,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 58.02298850574713,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 40.110395584176636,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 27,
+        "gold": "to protect their tribal lands from commercial interests",
+        "cloud_full_f1": 0.03703703703703704,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0425531914893617,
+            "scout_f1": 0.11538461538461538,
+            "overlap_pct": 78.33282255593012,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.043478260869565216,
+            "scout_f1": 0.0,
+            "overlap_pct": 58.896551724137936,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.043478260869565216,
+            "scout_f1": 0.0909090909090909,
+            "overlap_pct": 49.86200551977921,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 28,
+        "gold": "8.8",
+        "cloud_full_f1": 0.044444444444444446,
+        "actual_tokens": 3978,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 79.42664418212479,
+            "n_selected": 2965,
+            "context_len": 3954
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 60.54628224582701,
+            "n_selected": 1977,
+            "context_len": 3954
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 39.37246963562753,
+            "n_selected": 988,
+            "context_len": 3954
+          }
+        }
+      },
+      {
+        "sample_idx": 29,
+        "gold": "New South Wales",
+        "cloud_full_f1": 0.048780487804878044,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.05405405405405406,
+            "scout_f1": 0.05714285714285714,
+            "overlap_pct": 77.93441618142813,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.05714285714285714,
+            "scout_f1": 0.0588235294117647,
+            "overlap_pct": 58.25287356321839,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.05555555555555555,
+            "scout_f1": 0.05714285714285714,
+            "overlap_pct": 41.766329346826126,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 30,
+        "gold": "life expectancy is lower",
+        "cloud_full_f1": 0.22222222222222224,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.3636363636363636,
+            "scout_f1": 0.3636363636363636,
+            "overlap_pct": 80.72548416845989,
+            "n_selected": 3253,
+            "context_len": 4338
+          },
+          "50%": {
+            "cloud_own_f1": 0.17391304347826084,
+            "scout_f1": 0.1568627450980392,
+            "overlap_pct": 64.54587367450438,
+            "n_selected": 2169,
+            "context_len": 4338
+          },
+          "25%": {
+            "cloud_own_f1": 0.13559322033898305,
+            "scout_f1": 0.3333333333333333,
+            "overlap_pct": 50.0,
+            "n_selected": 1084,
+            "context_len": 4338
+          }
+        }
+      },
+      {
+        "sample_idx": 31,
+        "gold": "$230 million",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 83.17499233833895,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 68.87356321839081,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 56.301747930082804,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 32,
+        "gold": "Duisburg",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 80.35550107263255,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 65.05747126436782,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 52.62189512419503,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 33,
+        "gold": "Roman Catholic",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 80.72326080294208,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 63.95402298850574,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 45.17019319227231,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 34,
+        "gold": "passenger",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 81.18296046582898,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 67.49425287356323,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 56.02575896964122,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 35,
+        "gold": "Louis XIII",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 80.35550107263255,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 64.04597701149424,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 51.24195032198712,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 36,
+        "gold": "the most cost efficient bidder",
+        "cloud_full_f1": 0.04166666666666667,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.04347826086956521,
+            "overlap_pct": 82.07171314741036,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.04444444444444444,
+            "scout_f1": 0.04444444444444444,
+            "overlap_pct": 66.52873563218391,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.045454545454545456,
+            "scout_f1": 0.0,
+            "overlap_pct": 49.21803127874885,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 37,
+        "gold": "distinction",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 81.67330677290838,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 61.10344827586207,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 41.67433302667894,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 38,
+        "gold": "throughout its North American provinces",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 78.54734906527734,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 63.40229885057471,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 49.21803127874885,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 39,
+        "gold": "9th",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 81.4894269077536,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 64.27586206896552,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 44.80220791168353,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 40,
+        "gold": "connected via dial-up connections or dedicated async connections",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 78.60864235366228,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 59.03448275862069,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 43.6982520699172,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 41,
+        "gold": "Within the last 5\u201310 million years",
+        "cloud_full_f1": 0.4444444444444445,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.2222222222222222,
+            "scout_f1": 0.2222222222222222,
+            "overlap_pct": 82.25707257072571,
+            "n_selected": 3252,
+            "context_len": 4337
+          },
+          "50%": {
+            "cloud_own_f1": 0.25000000000000006,
+            "scout_f1": 0.25000000000000006,
+            "overlap_pct": 67.38929889298892,
+            "n_selected": 2168,
+            "context_len": 4337
+          },
+          "25%": {
+            "cloud_own_f1": 0.08333333333333333,
+            "scout_f1": 0.0,
+            "overlap_pct": 54.70479704797048,
+            "n_selected": 1084,
+            "context_len": 4337
+          }
+        }
+      },
+      {
+        "sample_idx": 42,
+        "gold": "the smallest subfield",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4320,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.08333333333333333,
+            "scout_f1": 0.08333333333333333,
+            "overlap_pct": 83.5867204467887,
+            "n_selected": 3223,
+            "context_len": 4298
+          },
+          "50%": {
+            "cloud_own_f1": 0.08695652173913045,
+            "scout_f1": 0.09302325581395349,
+            "overlap_pct": 68.63657515123313,
+            "n_selected": 2149,
+            "context_len": 4298
+          },
+          "25%": {
+            "cloud_own_f1": 0.08888888888888888,
+            "scout_f1": 0.08333333333333333,
+            "overlap_pct": 49.906890130353815,
+            "n_selected": 1074,
+            "context_len": 4298
+          }
+        }
+      },
+      {
+        "sample_idx": 43,
+        "gold": "8,000 years ago",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 79.19092859331903,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 61.149425287356316,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 45.722171113155476,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 44,
+        "gold": "1568\u20131609",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 78.36346920012258,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 59.90804597701149,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 43.42226310947562,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 45,
+        "gold": "Vendobionta",
+        "cloud_full_f1": 0.05405405405405406,
+        "actual_tokens": 4282,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.046511627906976744,
+            "scout_f1": 0.05405405405405406,
+            "overlap_pct": 84.21875,
+            "n_selected": 3200,
+            "context_len": 4267
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 71.87060478199719,
+            "n_selected": 2133,
+            "context_len": 4267
+          },
+          "25%": {
+            "cloud_own_f1": 0.046511627906976744,
+            "scout_f1": 1.0,
+            "overlap_pct": 57.129455909943715,
+            "n_selected": 1066,
+            "context_len": 4267
+          }
+        }
+      },
+      {
+        "sample_idx": 46,
+        "gold": "approximately fifty percent",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 80.47808764940238,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 64.73563218390804,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 47.56209751609936,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 47,
+        "gold": "80 percent",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 78.70058228623967,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 60.0,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 40.29438822447102,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 48,
+        "gold": "The Fresno Barn",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 81.18296046582898,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 63.49425287356322,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 49.770009199632014,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 49,
+        "gold": "concurring, smaller assessments of special problems",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 78.70058228623967,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.03846153846153846,
+            "scout_f1": 0.0,
+            "overlap_pct": 61.47126436781609,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0392156862745098,
+            "overlap_pct": 46.91812327506899,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 50,
+        "gold": "counterflow",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 79.3748084584738,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 61.839080459770116,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 47.65409383624655,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 51,
+        "gold": "1872",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 81.42813361936868,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 64.36781609195403,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 50.873965041398336,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 52,
+        "gold": "Scottish rivers",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 84.0024517315354,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 67.49425287356323,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 55.473781048758056,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 53,
+        "gold": "MHC I (major histocompatibility complex)",
+        "cloud_full_f1": 0.0425531914893617,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 79.71192154459087,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 61.42528735632183,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 42.778288868445266,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 54,
+        "gold": "Jay Berwanger",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 80.72326080294208,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 65.42528735632183,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 51.97792088316467,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 55,
+        "gold": "one-fifth",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 79.95709469813056,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 58.34482758620689,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 36.61453541858325,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 56,
+        "gold": "greater tendency to take on debts",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0392156862745098,
+            "scout_f1": 0.03846153846153846,
+            "overlap_pct": 80.57002758197977,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.03846153846153846,
+            "scout_f1": 0.06451612903225806,
+            "overlap_pct": 64.27586206896552,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.04347826086956522,
+            "scout_f1": 0.03773584905660377,
+            "overlap_pct": 50.873965041398336,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 57,
+        "gold": "Rhijn",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 79.6812749003984,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 62.66666666666667,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 52.52989880404784,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 58,
+        "gold": "German army",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 80.69261415874962,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 62.206896551724135,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 45.446182152713895,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 59,
+        "gold": "centripetal",
+        "cloud_full_f1": 0.04545454545454545,
+        "actual_tokens": 4334,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 84.93827160493828,
+            "n_selected": 3240,
+            "context_len": 4321
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 70.27777777777777,
+            "n_selected": 2160,
+            "context_len": 4321
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 51.57407407407407,
+            "n_selected": 1080,
+            "context_len": 4321
+          }
+        }
+      },
+      {
+        "sample_idx": 60,
+        "gold": "9th century",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 78.63928899785473,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 59.81609195402299,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 38.822447102115916,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 61,
+        "gold": "Juveniles will luminesce more brightly",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 77.13760343242416,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 55.770114942528735,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 36.982520699172035,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 62,
+        "gold": "Staten Island",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 80.66196751455715,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 66.75862068965517,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 59.337626494940196,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 63,
+        "gold": "Charleston, South Carolina",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 78.60864235366228,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 60.827586206896555,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 50.68997240110396,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 64,
+        "gold": "incentive for the democratic changes",
+        "cloud_full_f1": 0.17777777777777776,
+        "actual_tokens": 4336,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.16,
+            "scout_f1": 0.1568627450980392,
+            "overlap_pct": 80.52550231839258,
+            "n_selected": 3235,
+            "context_len": 4314
+          },
+          "50%": {
+            "cloud_own_f1": 0.125,
+            "scout_f1": 0.08333333333333334,
+            "overlap_pct": 60.96430227167362,
+            "n_selected": 2157,
+            "context_len": 4314
+          },
+          "25%": {
+            "cloud_own_f1": 0.125,
+            "scout_f1": 0.0,
+            "overlap_pct": 41.28014842300556,
+            "n_selected": 1078,
+            "context_len": 4314
+          }
+        }
+      },
+      {
+        "sample_idx": 65,
+        "gold": "available information about climate change based on published sources",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.04081632653061225,
+            "overlap_pct": 78.2715292675452,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 60.689655172413794,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 48.20607175712971,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 66,
+        "gold": "Oligocene",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 79.03769537235674,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 59.54022988505747,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 43.42226310947562,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 67,
+        "gold": "former flooded terraces",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 78.08764940239044,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 57.56321839080459,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 43.42226310947562,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 68,
+        "gold": "T cells",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 79.22157523751149,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 62.06896551724138,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 50.873965041398336,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 69,
+        "gold": "15 kilometres",
+        "cloud_full_f1": 0.046511627906976744,
+        "actual_tokens": 4306,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0909090909090909,
+            "scout_f1": 0.05,
+            "overlap_pct": 82.70068450528936,
+            "n_selected": 3214,
+            "context_len": 4286
+          },
+          "50%": {
+            "cloud_own_f1": 0.09756097560975609,
+            "scout_f1": 0.0,
+            "overlap_pct": 66.07559496033598,
+            "n_selected": 2143,
+            "context_len": 4286
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 47.43230625583566,
+            "n_selected": 1071,
+            "context_len": 4286
+          }
+        }
+      },
+      {
+        "sample_idx": 70,
+        "gold": "1622",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 76.55531719276739,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 56.50574712643678,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 44.80220791168353,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 71,
+        "gold": "the integer factorization problem",
+        "cloud_full_f1": 0.0909090909090909,
+        "actual_tokens": 4188,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.13953488372093023,
+            "scout_f1": 0.12244897959183672,
+            "overlap_pct": 81.472,
+            "n_selected": 3125,
+            "context_len": 4167
+          },
+          "50%": {
+            "cloud_own_f1": 0.13953488372093023,
+            "scout_f1": 0.04545454545454545,
+            "overlap_pct": 65.33845415266443,
+            "n_selected": 2083,
+            "context_len": 4167
+          },
+          "25%": {
+            "cloud_own_f1": 0.08695652173913045,
+            "scout_f1": 0.0,
+            "overlap_pct": 48.222862632084535,
+            "n_selected": 1041,
+            "context_len": 4167
+          }
+        }
+      },
+      {
+        "sample_idx": 72,
+        "gold": "magma or lava flows",
+        "cloud_full_f1": 0.1568627450980392,
+        "actual_tokens": 4336,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.17391304347826084,
+            "scout_f1": 0.17391304347826084,
+            "overlap_pct": 78.97340754483612,
+            "n_selected": 3234,
+            "context_len": 4313
+          },
+          "50%": {
+            "cloud_own_f1": 0.2285714285714286,
+            "scout_f1": 0.08695652173913042,
+            "overlap_pct": 56.3543599257885,
+            "n_selected": 2156,
+            "context_len": 4313
+          },
+          "25%": {
+            "cloud_own_f1": 0.16666666666666669,
+            "scout_f1": 0.0,
+            "overlap_pct": 36.54916512059369,
+            "n_selected": 1078,
+            "context_len": 4313
+          }
+        }
+      },
+      {
+        "sample_idx": 73,
+        "gold": "immunological memory",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 78.48605577689243,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 60.64367816091954,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 46.826126954921804,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 74,
+        "gold": "Air",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 80.20226785167024,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 66.3448275862069,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 54.09383624655014,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 75,
+        "gold": "supplanted by the Internet Protocol (IP) at the network layer, and the Asynchronous Transfer Mode (ATM) and or versions of Multi-Protocol Label Switching",
+        "cloud_full_f1": 0.05970149253731343,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.07142857142857142,
+            "scout_f1": 0.03508771929824561,
+            "overlap_pct": 81.36684033098376,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.05970149253731343,
+            "scout_f1": 0.058823529411764705,
+            "overlap_pct": 62.390804597701155,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.03773584905660378,
+            "scout_f1": 0.06060606060606061,
+            "overlap_pct": 45.3541858325667,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 76,
+        "gold": "17th century",
+        "cloud_full_f1": 0.1142857142857143,
+        "actual_tokens": 4316,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.2666666666666667,
+            "scout_f1": 0.14814814814814814,
+            "overlap_pct": 83.0077519379845,
+            "n_selected": 3225,
+            "context_len": 4300
+          },
+          "50%": {
+            "cloud_own_f1": 0.1081081081081081,
+            "scout_f1": 0.08333333333333333,
+            "overlap_pct": 68.97674418604652,
+            "n_selected": 2150,
+            "context_len": 4300
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 55.44186046511628,
+            "n_selected": 1075,
+            "context_len": 4300
+          }
+        }
+      },
+      {
+        "sample_idx": 77,
+        "gold": "182 million tons",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 78.42476248850751,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 60.321839080459775,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 49.86200551977921,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 78,
+        "gold": "exceeds any given number",
+        "cloud_full_f1": 0.19999999999999998,
+        "actual_tokens": 4312,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.21621621621621626,
+            "scout_f1": 0.16666666666666669,
+            "overlap_pct": 81.84357541899442,
+            "n_selected": 3222,
+            "context_len": 4297
+          },
+          "50%": {
+            "cloud_own_f1": 0.20512820512820512,
+            "scout_f1": 0.18181818181818182,
+            "overlap_pct": 70.39106145251397,
+            "n_selected": 2148,
+            "context_len": 4297
+          },
+          "25%": {
+            "cloud_own_f1": 0.17777777777777776,
+            "scout_f1": 0.04651162790697674,
+            "overlap_pct": 58.56610800744879,
+            "n_selected": 1074,
+            "context_len": 4297
+          }
+        }
+      },
+      {
+        "sample_idx": 79,
+        "gold": "mantle",
+        "cloud_full_f1": 0.039999999999999994,
+        "actual_tokens": 4342,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.04081632653061225,
+            "scout_f1": 0.047619047619047616,
+            "overlap_pct": 81.89947579401789,
+            "n_selected": 3243,
+            "context_len": 4324
+          },
+          "50%": {
+            "cloud_own_f1": 0.038461538461538464,
+            "scout_f1": 0.05128205128205127,
+            "overlap_pct": 69.05642923219241,
+            "n_selected": 2162,
+            "context_len": 4324
+          },
+          "25%": {
+            "cloud_own_f1": 0.04081632653061225,
+            "scout_f1": 0.04545454545454545,
+            "overlap_pct": 56.52173913043478,
+            "n_selected": 1081,
+            "context_len": 4324
+          }
+        }
+      },
+      {
+        "sample_idx": 80,
+        "gold": "Oxygen",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 77.87312289304322,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 59.44827586206897,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 40.938362465501385,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 81,
+        "gold": "castles",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 79.2828685258964,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 63.44827586206897,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 52.52989880404784,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 82,
+        "gold": "Edinburgh Pentlands",
+        "cloud_full_f1": 0.10256410256410257,
+        "actual_tokens": 4340,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.09756097560975609,
+            "scout_f1": 0.09756097560975609,
+            "overlap_pct": 84.26896977174584,
+            "n_selected": 3242,
+            "context_len": 4323
+          },
+          "50%": {
+            "cloud_own_f1": 0.08163265306122448,
+            "scout_f1": 0.0851063829787234,
+            "overlap_pct": 70.19898195279963,
+            "n_selected": 2161,
+            "context_len": 4323
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 55.925925925925924,
+            "n_selected": 1080,
+            "context_len": 4323
+          }
+        }
+      },
+      {
+        "sample_idx": 83,
+        "gold": "declines",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 78.57799570946982,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 60.827586206896555,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 43.146274149034035,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 84,
+        "gold": "Brookhaven",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 80.17162120747778,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 64.59770114942529,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 46.18215271389145,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 85,
+        "gold": "Diepoldsau",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 78.24088262335275,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 57.42528735632184,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 46.09015639374425,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 86,
+        "gold": "The mermaid",
+        "cloud_full_f1": 0.6666666666666666,
+        "actual_tokens": 4308,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.052631578947368425,
+            "scout_f1": 0.046511627906976744,
+            "overlap_pct": 80.79429103319889,
+            "n_selected": 3223,
+            "context_len": 4298
+          },
+          "50%": {
+            "cloud_own_f1": 0.05,
+            "scout_f1": 0.05128205128205127,
+            "overlap_pct": 66.5425779432294,
+            "n_selected": 2149,
+            "context_len": 4298
+          },
+          "25%": {
+            "cloud_own_f1": 0.06060606060606061,
+            "scout_f1": 0.05555555555555556,
+            "overlap_pct": 52.513966480446925,
+            "n_selected": 1074,
+            "context_len": 4298
+          }
+        }
+      },
+      {
+        "sample_idx": 87,
+        "gold": "European Parliament and the Council of the European Union",
+        "cloud_full_f1": 0.038461538461538464,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.04081632653061224,
+            "scout_f1": 0.043478260869565216,
+            "overlap_pct": 79.25222188170396,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.07692307692307693,
+            "scout_f1": 0.0784313725490196,
+            "overlap_pct": 59.218390804597696,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.09523809523809522,
+            "scout_f1": 0.08163265306122448,
+            "overlap_pct": 39.46642134314627,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 88,
+        "gold": "consumption",
+        "cloud_full_f1": 0.042553191489361694,
+        "actual_tokens": 4339,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.039999999999999994,
+            "scout_f1": 0.03773584905660378,
+            "overlap_pct": 80.99938309685379,
+            "n_selected": 3242,
+            "context_len": 4323
+          },
+          "50%": {
+            "cloud_own_f1": 0.046511627906976744,
+            "scout_f1": 0.039999999999999994,
+            "overlap_pct": 61.91577973160574,
+            "n_selected": 2161,
+            "context_len": 4323
+          },
+          "25%": {
+            "cloud_own_f1": 0.05,
+            "scout_f1": 0.0,
+            "overlap_pct": 42.31481481481482,
+            "n_selected": 1080,
+            "context_len": 4323
+          }
+        }
+      },
+      {
+        "sample_idx": 89,
+        "gold": "1 February 2007",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 80.41679436101748,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 64.6896551724138,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 54.829806807727685,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 90,
+        "gold": "y through the port's trade with Constantinople, and ports on the Black Sea",
+        "cloud_full_f1": 0.04081632653061224,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.03921568627450981,
+            "scout_f1": 0.0,
+            "overlap_pct": 79.58933496782102,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.038461538461538464,
+            "scout_f1": 0.0,
+            "overlap_pct": 62.390804597701155,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 50.68997240110396,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 91,
+        "gold": "spin",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 78.94575543977935,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 60.8735632183908,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 47.286108555657776,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 92,
+        "gold": "Karakorum",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 79.65062825620595,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 61.793103448275865,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 45.3541858325667,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 93,
+        "gold": "Theodor Fontane",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 80.44744100520992,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 64.04597701149424,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 51.609935602575895,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 94,
+        "gold": "The Greens",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 81.58136684033099,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 63.63218390804598,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 46.36614535418583,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 95,
+        "gold": "modern soils",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4185,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 83.09364014062001,
+            "n_selected": 3129,
+            "context_len": 4172
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 68.07286673058485,
+            "n_selected": 2086,
+            "context_len": 4172
+          },
+          "25%": {
+            "cloud_own_f1": 0.047619047619047616,
+            "scout_f1": 0.0,
+            "overlap_pct": 55.608820709491845,
+            "n_selected": 1043,
+            "context_len": 4172
+          }
+        }
+      },
+      {
+        "sample_idx": 96,
+        "gold": "journalism",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 76.89243027888446,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 56.00000000000001,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 42.594296228150874,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 97,
+        "gold": "histocompatibility",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 80.57002758197977,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 63.310344827586206,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 50.229990800367986,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 98,
+        "gold": "an estimated total of 75,000 to 100,000 people",
+        "cloud_full_f1": 0.044444444444444446,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.08888888888888889,
+            "scout_f1": 0.08888888888888889,
+            "overlap_pct": 78.9764020839718,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.06666666666666667,
+            "scout_f1": 0.046511627906976744,
+            "overlap_pct": 63.08045977011494,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.12121212121212123,
+            "scout_f1": 0.0,
+            "overlap_pct": 47.83808647654094,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      },
+      {
+        "sample_idx": 99,
+        "gold": "inertia",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 83.11369904995402,
+            "n_selected": 3263,
+            "context_len": 4351
+          },
+          "50%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 67.86206896551724,
+            "n_selected": 2175,
+            "context_len": 4351
+          },
+          "25%": {
+            "cloud_own_f1": 0.0,
+            "scout_f1": 0.0,
+            "overlap_pct": 55.65777368905243,
+            "n_selected": 1087,
+            "context_len": 4351
+          }
+        }
+      }
+    ],
+    "7B->14B": [
+      {
+        "sample_idx": 0,
+        "gold": "Ticonderoga Point,",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 1,
+        "gold": "sediment deposits",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 2,
+        "gold": "ranked above",
+        "cloud_full_f1": 0.08695652173913045,
+        "actual_tokens": 4317,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0851063829787234,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3224
+          },
+          "50%": {
+            "scout_f1": 0.08888888888888888,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2149
+          },
+          "25%": {
+            "scout_f1": 0.07999999999999999,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1074
+          }
+        }
+      },
+      {
+        "sample_idx": 3,
+        "gold": "combustion chamber",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 4,
+        "gold": "highest on Earth",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 5,
+        "gold": "share recordings",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 6,
+        "gold": "the United Nations",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 7,
+        "gold": "User Datagram Protocol",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 8,
+        "gold": "stoking",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 9,
+        "gold": "second",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 10,
+        "gold": "12%",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 11,
+        "gold": "the same",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 12,
+        "gold": "small-business proprietors",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 13,
+        "gold": "68,511",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 14,
+        "gold": "Neutrophils",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 15,
+        "gold": "IgE",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 16,
+        "gold": "English Premier League Football",
+        "cloud_full_f1": 0.18181818181818182,
+        "actual_tokens": 4349,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.18181818181818182,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3251
+          },
+          "50%": {
+            "scout_f1": 0.16666666666666669,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2167
+          },
+          "25%": {
+            "scout_f1": 1.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1083
+          }
+        }
+      },
+      {
+        "sample_idx": 17,
+        "gold": "ocean liners",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 18,
+        "gold": "Gandhi",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 19,
+        "gold": "San Diego",
+        "cloud_full_f1": 0.1142857142857143,
+        "actual_tokens": 4294,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.08888888888888888,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3209
+          },
+          "50%": {
+            "scout_f1": 0.07692307692307693,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2139
+          },
+          "25%": {
+            "scout_f1": 0.07999999999999999,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1069
+          }
+        }
+      },
+      {
+        "sample_idx": 20,
+        "gold": "24 August \u2013 3 October 1572",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 21,
+        "gold": "the British Landgrave Edmund Bellinger",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 22,
+        "gold": "400 m wide",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 23,
+        "gold": "religious",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 24,
+        "gold": "via the ballast tanks of ships",
+        "cloud_full_f1": 0.888888888888889,
+        "actual_tokens": 4350,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.24390243902439027,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3240
+          },
+          "50%": {
+            "scout_f1": 0.25,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2160
+          },
+          "25%": {
+            "scout_f1": 0.1777777777777778,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1080
+          }
+        }
+      },
+      {
+        "sample_idx": 25,
+        "gold": "55.1%",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 26,
+        "gold": "political parties",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 27,
+        "gold": "to protect their tribal lands from commercial interests",
+        "cloud_full_f1": 0.03921568627450981,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.07692307692307693,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 28,
+        "gold": "8.8",
+        "cloud_full_f1": 0.05405405405405406,
+        "actual_tokens": 3978,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.05,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2965
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1977
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 988
+          }
+        }
+      },
+      {
+        "sample_idx": 29,
+        "gold": "New South Wales",
+        "cloud_full_f1": 0.047619047619047616,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.048780487804878044,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.05405405405405406,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.05128205128205128,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 30,
+        "gold": "life expectancy is lower",
+        "cloud_full_f1": 0.14814814814814814,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.14285714285714288,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3253
+          },
+          "50%": {
+            "scout_f1": 0.17777777777777776,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2169
+          },
+          "25%": {
+            "scout_f1": 0.15384615384615385,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1084
+          }
+        }
+      },
+      {
+        "sample_idx": 31,
+        "gold": "$230 million",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 32,
+        "gold": "Duisburg",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 33,
+        "gold": "Roman Catholic",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 34,
+        "gold": "passenger",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 35,
+        "gold": "Louis XIII",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 36,
+        "gold": "the most cost efficient bidder",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 37,
+        "gold": "distinction",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 38,
+        "gold": "throughout its North American provinces",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.041666666666666664,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 39,
+        "gold": "9th",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 40,
+        "gold": "connected via dial-up connections or dedicated async connections",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 41,
+        "gold": "Within the last 5\u201310 million years",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3252
+          },
+          "50%": {
+            "scout_f1": 0.4210526315789473,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2168
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1084
+          }
+        }
+      },
+      {
+        "sample_idx": 42,
+        "gold": "the smallest subfield",
+        "cloud_full_f1": 0.09523809523809523,
+        "actual_tokens": 4320,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.08695652173913045,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3223
+          },
+          "50%": {
+            "scout_f1": 0.08888888888888888,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2149
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1074
+          }
+        }
+      },
+      {
+        "sample_idx": 43,
+        "gold": "8,000 years ago",
+        "cloud_full_f1": 0.05,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 44,
+        "gold": "1568\u20131609",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 45,
+        "gold": "Vendobionta",
+        "cloud_full_f1": 0.06451612903225806,
+        "actual_tokens": 4282,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.047619047619047616,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3200
+          },
+          "50%": {
+            "scout_f1": 1.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2133
+          },
+          "25%": {
+            "scout_f1": 1.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1066
+          }
+        }
+      },
+      {
+        "sample_idx": 46,
+        "gold": "approximately fifty percent",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.04545454545454545,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.044444444444444446,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 47,
+        "gold": "80 percent",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 48,
+        "gold": "The Fresno Barn",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 49,
+        "gold": "concurring, smaller assessments of special problems",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.041666666666666664,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 50,
+        "gold": "counterflow",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 51,
+        "gold": "1872",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 52,
+        "gold": "Scottish rivers",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 53,
+        "gold": "MHC I (major histocompatibility complex)",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 54,
+        "gold": "Jay Berwanger",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 55,
+        "gold": "one-fifth",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 56,
+        "gold": "greater tendency to take on debts",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.04081632653061224,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 57,
+        "gold": "Rhijn",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 58,
+        "gold": "German army",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 59,
+        "gold": "centripetal",
+        "cloud_full_f1": 0.04878048780487806,
+        "actual_tokens": 4334,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.047619047619047616,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3240
+          },
+          "50%": {
+            "scout_f1": 0.044444444444444446,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2160
+          },
+          "25%": {
+            "scout_f1": 0.04081632653061225,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1080
+          }
+        }
+      },
+      {
+        "sample_idx": 60,
+        "gold": "9th century",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 61,
+        "gold": "Juveniles will luminesce more brightly",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 62,
+        "gold": "Staten Island",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 63,
+        "gold": "Charleston, South Carolina",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 64,
+        "gold": "incentive for the democratic changes",
+        "cloud_full_f1": 0.1568627450980392,
+        "actual_tokens": 4336,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.1568627450980392,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3235
+          },
+          "50%": {
+            "scout_f1": 0.11320754716981131,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2157
+          },
+          "25%": {
+            "scout_f1": 0.11538461538461539,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1078
+          }
+        }
+      },
+      {
+        "sample_idx": 65,
+        "gold": "available information about climate change based on published sources",
+        "cloud_full_f1": 0.08,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.038461538461538464,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.08333333333333333,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 66,
+        "gold": "Oligocene",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 67,
+        "gold": "former flooded terraces",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 68,
+        "gold": "T cells",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 69,
+        "gold": "15 kilometres",
+        "cloud_full_f1": 0.1,
+        "actual_tokens": 4306,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0851063829787234,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3214
+          },
+          "50%": {
+            "scout_f1": 0.1081081081081081,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2143
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1071
+          }
+        }
+      },
+      {
+        "sample_idx": 70,
+        "gold": "1622",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 71,
+        "gold": "the integer factorization problem",
+        "cloud_full_f1": 0.1276595744680851,
+        "actual_tokens": 4188,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.13636363636363635,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3125
+          },
+          "50%": {
+            "scout_f1": 0.13636363636363635,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2083
+          },
+          "25%": {
+            "scout_f1": 0.1090909090909091,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1041
+          }
+        }
+      },
+      {
+        "sample_idx": 72,
+        "gold": "magma or lava flows",
+        "cloud_full_f1": 1.0,
+        "actual_tokens": 4336,
+        "conditions": {
+          "75%": {
+            "scout_f1": 1.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3234
+          },
+          "50%": {
+            "scout_f1": 1.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2156
+          },
+          "25%": {
+            "scout_f1": 1.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1078
+          }
+        }
+      },
+      {
+        "sample_idx": 73,
+        "gold": "immunological memory",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 74,
+        "gold": "Air",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 75,
+        "gold": "supplanted by the Internet Protocol (IP) at the network layer, and the Asynchronous Transfer Mode (ATM) and or versions of Multi-Protocol Label Switching",
+        "cloud_full_f1": 0.030303030303030304,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.03125000000000001,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.03125000000000001,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.061538461538461535,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 76,
+        "gold": "17th century",
+        "cloud_full_f1": 0.09756097560975609,
+        "actual_tokens": 4316,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.09756097560975609,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3225
+          },
+          "50%": {
+            "scout_f1": 0.09302325581395349,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2150
+          },
+          "25%": {
+            "scout_f1": 0.12903225806451613,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1075
+          }
+        }
+      },
+      {
+        "sample_idx": 77,
+        "gold": "182 million tons",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 78,
+        "gold": "exceeds any given number",
+        "cloud_full_f1": 0.163265306122449,
+        "actual_tokens": 4312,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.15384615384615385,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3222
+          },
+          "50%": {
+            "scout_f1": 0.15384615384615385,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2148
+          },
+          "25%": {
+            "scout_f1": 0.163265306122449,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1074
+          }
+        }
+      },
+      {
+        "sample_idx": 79,
+        "gold": "mantle",
+        "cloud_full_f1": 0.044444444444444446,
+        "actual_tokens": 4342,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.046511627906976744,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3243
+          },
+          "50%": {
+            "scout_f1": 0.046511627906976744,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2162
+          },
+          "25%": {
+            "scout_f1": 0.04081632653061225,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1081
+          }
+        }
+      },
+      {
+        "sample_idx": 80,
+        "gold": "Oxygen",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 81,
+        "gold": "castles",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.04347826086956522,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 82,
+        "gold": "Edinburgh Pentlands",
+        "cloud_full_f1": 0.09302325581395349,
+        "actual_tokens": 4340,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.1081081081081081,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3242
+          },
+          "50%": {
+            "scout_f1": 0.07843137254901959,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2161
+          },
+          "25%": {
+            "scout_f1": 0.09523809523809523,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1080
+          }
+        }
+      },
+      {
+        "sample_idx": 83,
+        "gold": "declines",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 84,
+        "gold": "Brookhaven",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 85,
+        "gold": "Diepoldsau",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 86,
+        "gold": "The mermaid",
+        "cloud_full_f1": 0.33333333333333337,
+        "actual_tokens": 4308,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.047619047619047616,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3223
+          },
+          "50%": {
+            "scout_f1": 0.047619047619047616,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2149
+          },
+          "25%": {
+            "scout_f1": 0.04545454545454545,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1074
+          }
+        }
+      },
+      {
+        "sample_idx": 87,
+        "gold": "European Parliament and the Council of the European Union",
+        "cloud_full_f1": 0.07272727272727272,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.07407407407407407,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0851063829787234,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.08,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 88,
+        "gold": "consumption",
+        "cloud_full_f1": 0.039999999999999994,
+        "actual_tokens": 4339,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0392156862745098,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3242
+          },
+          "50%": {
+            "scout_f1": 0.042553191489361694,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2161
+          },
+          "25%": {
+            "scout_f1": 0.04081632653061225,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1080
+          }
+        }
+      },
+      {
+        "sample_idx": 89,
+        "gold": "1 February 2007",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 90,
+        "gold": "y through the port's trade with Constantinople, and ports on the Black Sea",
+        "cloud_full_f1": 0.0425531914893617,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.038461538461538464,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.04081632653061224,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0851063829787234,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 91,
+        "gold": "spin",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 92,
+        "gold": "Karakorum",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 93,
+        "gold": "Theodor Fontane",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 94,
+        "gold": "The Greens",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 95,
+        "gold": "modern soils",
+        "cloud_full_f1": 0.09302325581395349,
+        "actual_tokens": 4185,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.10256410256410257,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3129
+          },
+          "50%": {
+            "scout_f1": 0.09302325581395349,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2086
+          },
+          "25%": {
+            "scout_f1": 0.07999999999999999,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1043
+          }
+        }
+      },
+      {
+        "sample_idx": 96,
+        "gold": "journalism",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 97,
+        "gold": "histocompatibility",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 98,
+        "gold": "an estimated total of 75,000 to 100,000 people",
+        "cloud_full_f1": 0.04878048780487805,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0784313725490196,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.08695652173913043,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      },
+      {
+        "sample_idx": 99,
+        "gold": "inertia",
+        "cloud_full_f1": 0.0,
+        "actual_tokens": 4352,
+        "conditions": {
+          "75%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 3263
+          },
+          "50%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 2175
+          },
+          "25%": {
+            "scout_f1": 0.0,
+            "cloud_own_f1": null,
+            "overlap_pct": null,
+            "n_selected": 1087
+          }
+        }
+      }
+    ]
+  }
+}
